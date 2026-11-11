@@ -2,6 +2,12 @@
 
 The Windows exactness job and portable build jobs answer different questions. Windows runs the complete Debug and Release test battery against committed native CSPICE N0067 fixtures. The portable jobs build every target, reject Clippy warnings, generate documentation and verify crate packaging. A separate Linux job checks the declared MSRV. A portable build is not evidence of bitwise numerical parity on that platform.
 
+Publication is currently blocked by the remote exactness failures recorded in
+[the runtime math investigation](reference/RUNTIME_MATH_INVESTIGATION.md).
+The separate Runtime math diagnostic workflow records native/OS/FMA evidence
+on Windows Server 2022 and 2025. Its successful execution does not satisfy
+or bypass the strict acceptance job.
+
 ## Reproduce the Windows acceptance gate
 
 Use Python 3.11 x86_64 and the stable Rust MSVC toolchain:

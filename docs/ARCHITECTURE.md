@@ -29,3 +29,8 @@ Each group has a mod.rs describing its purpose. Private algorithm helpers stay p
 Time 0.1.18 supplies ET/LSK/SCLK contracts. Production does not link CSPICE. The independent native engine, official archive and downloaded mission kernels remain outside the published runtime package.
 
 Tests and generators live in tests/ and tools/. Large fixtures are kept in the Git repository, excluded from crates.io, and regenerated only through independent references. See [validation](VALIDATION.md).
+
+Runtime diagnostics live in tools/diagnose_runtime_math.py and the isolated
+tools/reference/runtime_math_probe.rs process. They record native/OS math
+provenance; they are not production numerical implementations or acceptance
+substitutes.

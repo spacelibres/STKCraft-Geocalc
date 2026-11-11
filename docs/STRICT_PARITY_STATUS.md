@@ -4,6 +4,12 @@ This project targets all NASA NAIF/SPICE WebGeocalc computational features and i
 
 ## Acceptance
 
+**Publication is blocked.** The first remote Windows Server 2022 run reports
+271 passed and 13 failed tests in both Debug and Release, with zero ignored
+tests. The passing local Windows result does not certify that runtime. See
+[the runtime investigation](reference/RUNTIME_MATH_INVESTIGATION.md). Original
+expectations and strict comparisons remain unchanged.
+
 The independent reference is CSPICE N0067. The complete official archive contains 2,229 C files; archive, selected source, native reference binary and kernel SHA-256 hashes are recorded in [the provenance manifest](reference/CSPICE_N0067.json). Production uses Rust, without linking CSPICE.
 
 Unrounded native doubles, flags, classifications, counts, ordering and window endpoints must match exactly. Tests marked bit-exact compare IEEE-754 representations. Search convergence settings are inputs, not comparison tolerances. Missing kernels, skipped tests, absent columns and nonfinite values cannot establish conformance.

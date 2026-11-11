@@ -3,6 +3,18 @@
 All notable changes are recorded in English using [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and [Semantic Versioning](https://semver.org/).
 Versions 0.1.2 through 0.1.5 below describe verified local checkpoints before Git initialization; they were not separately published releases.
 
+## [0.1.7] - 2026-11-11
+
+### Added
+
+- Isolated native/Rust dynamic/static UCRT and FMA diagnostics with unchanged VSEP and PROP2B expectations, native DLL verification, linker/library provenance and raw-bit evidence.
+- Windows Server 2022/2025 diagnostic artifacts, separate from numerical acceptance.
+- A documented publication blocker for thirteen remote exactness failures in both Debug and Release; no numerical repair or publication is claimed.
+
+### Fixed
+
+- Preserve original review evidence, nested captures and the remote CI failure report byte-for-byte in Git.
+
 ## [0.1.6] - 2026-11-11
 
 ### Added

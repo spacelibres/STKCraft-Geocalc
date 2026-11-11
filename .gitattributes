@@ -17,12 +17,14 @@
 *.dsk binary
 *.das binary
 # Preserve original reference captures and kernel text as evidence.
+docs/review-2026-11-11/** -text -whitespace
 docs/review-2026-11-11/*.json -text -whitespace
 docs/review-2026-11-11/*.jsonl -text -whitespace
 docs/review-2026-11-11/*.html -text -whitespace
 docs/review-2026-11-11/*.log -text -whitespace
 docs/review-2026-11-11/*.tm -text -whitespace
 docs/review-2026-11-11/*.http-headers.txt -text -whitespace
+docs/reference/CI_43023402135_FAILURE.json -text -whitespace
 *.tf -whitespace
 *.tpc -whitespace
 *.tsc -whitespace

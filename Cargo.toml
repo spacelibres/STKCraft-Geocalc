@@ -1,6 +1,6 @@
 [package]
 name = "stkcraft-geocalc"
-version = "0.1.6"
+version = "0.1.7"
 edition = "2021"
 rust-version = "1.75"
 authors = ["STKCraft"]
@@ -11,7 +11,7 @@ repository = "https://github.com/spacelibres/STKCraft-Geocalc"
 homepage = "https://www.stkcraft.com"
 readme = "README.md"
 documentation = "https://docs.rs/stkcraft-geocalc"
-include = ["src/**/*.rs", "Cargo.toml", "Cargo.lock", "README.md", "LICENSE", "ATTRIBUTION.md", "CHANGELOG.md", "docs/API.md", "docs/MCP.md", "docs/NUMERICS.md", "docs/STRICT_REMAINING_GAPS.md", "docs/reference/*.json", ".agents/skills/**"]
+include = ["src/**/*.rs", "Cargo.toml", "Cargo.lock", "README.md", "LICENSE", "ATTRIBUTION.md", "CHANGELOG.md", "docs/API.md", "docs/MCP.md", "docs/NUMERICS.md", "docs/STRICT_REMAINING_GAPS.md", "docs/reference/*.json", "docs/reference/RUNTIME_MATH_INVESTIGATION.md", ".agents/skills/**"]
 keywords = ["spice", "naif", "ephemeris", "spk", "geometry"]
 categories = ["science"]
 

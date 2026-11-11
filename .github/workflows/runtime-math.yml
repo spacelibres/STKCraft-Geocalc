@@ -1,0 +1,37 @@
+name: Runtime math diagnostic
+
+on:
+  push:
+    branches: ['**']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  diagnostic:
+    name: Observe native and Rust math (${{ matrix.os }})
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-2022, windows-2025]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          architecture: x64
+      - name: Install pinned native oracle
+        run: 'python -m pip install --only-binary=:all: -r tools/requirements-reference.txt'
+      - name: Record native fixture drift and runtime dispatch
+        run: python tools/diagnose_runtime_math.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: runtime-math-${{ matrix.os }}
+          path: target/runtime-math/*.json
+          if-no-files-found: error

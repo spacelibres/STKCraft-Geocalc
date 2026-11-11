@@ -19,7 +19,9 @@
 
 ## Installation and status
 
-Version 0.1.6 is a versioned implementation checkpoint. Complete WebGeocalc
+Version 0.1.7 is an investigation checkpoint; remote exactness failures block
+publication. See [the runtime investigation](docs/reference/RUNTIME_MATH_INVESTIGATION.md).
+Complete WebGeocalc
 option-level conformance remains open; see the gap register above.
 The crate requires Rust 1.75 or newer and uses `std`.
 
@@ -30,7 +32,7 @@ cargo install stkcraft-geocalc --features mcp --bins
 
 ```toml
 [dependencies]
-stkcraft-geocalc = "0.1.6"
+stkcraft-geocalc = "0.1.7"
 ```
 
 The optional `mcp` feature installs `stkcraft-geocalc-mcp` alongside
