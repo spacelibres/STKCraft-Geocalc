@@ -1,0 +1,17 @@
+{
+  "summary": {
+    "4": {
+      "queries": 10000,
+      "mismatches": 0
+    },
+    "5": {
+      "queries": 10000,
+      "mismatches": 0
+    },
+    "6": {
+      "queries": 10000,
+      "mismatches": 0
+    }
+  },
+  "first_failures": []
+}

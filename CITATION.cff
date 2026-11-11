@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If you use this software, cite it using the metadata below."
+title: "stkcraft-geocalc: NAIF/SPICE-aligned geometry in Rust"
+abstract: >-
+  Rust ephemeris, reference-frame, attitude, surface geometry and event-search
+  calculations, with independent CSPICE N0067 references and an optional MCP
+  server. Versioned implementation checkpoints do not claim complete
+  WebGeocalc option-level certification.
+authors:
+  - name: "STKCraft"
+    website: "https://www.stkcraft.com"
+type: software
+license: MIT
+repository-code: "https://github.com/spacelibres/STKCraft-Geocalc"
+url: "https://www.stkcraft.com"
+version: "0.1.6"
+date-released: "2026-11-11"
+keywords:
+  - rust
+  - astronomy
+  - spice
+  - naif
+  - ephemeris
+  - geometry
+  - mcp

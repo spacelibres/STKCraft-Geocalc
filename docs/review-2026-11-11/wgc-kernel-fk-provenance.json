@@ -1,0 +1,110 @@
+[
+  {
+    "relativePath": "fk/RSSD0002.TF",
+    "path": "target\\kernels\\RSSD0002.TF",
+    "bytes": 56096,
+    "sha256": "8c26c450013584ebb21584e732734bbfd95030b316d26bef6cb26c7e6c72dc07"
+  },
+  {
+    "relativePath": "fk/codes_300ast_20100725.tf",
+    "path": "target\\kernels\\codes_300ast_20100725.tf",
+    "bytes": 25584,
+    "sha256": "15ee3b1731817774672725ccc226b249eb9ca5aa5d0a6a7805c91e5f57497f40"
+  },
+  {
+    "relativePath": "fk/EARTHFIXEDITRF93.TF",
+    "path": "target\\kernels\\EARTHFIXEDITRF93.TF",
+    "bytes": 3134,
+    "sha256": "6c868a46aec9b64d8902bba16c8522cf5e8d65dc5d0931e8c66458a60fbb85bc"
+  },
+  {
+    "relativePath": "fk/moon_080317.tf",
+    "path": "target\\kernels\\moon_080317.tf",
+    "bytes": 21437,
+    "sha256": "78732477b96f9863e7b0d65bcee3c22b8707ca5ed0db56d1173319cb2e8c7993"
+  },
+  {
+    "relativePath": "fk/moon_de440_250416.tf",
+    "path": "target\\kernels\\moon_de440_250416.tf",
+    "bytes": 19478,
+    "sha256": "a47c71e9c9f33796bdafb2c9d69a7ee447b6016ecad80f71cd6f3e479f9cf768"
+  },
+  {
+    "relativePath": "fk/moon_assoc_me.tf",
+    "path": "target\\kernels\\moon_assoc_me.tf",
+    "bytes": 8468,
+    "sha256": "52c622043ce0447d575e59ee01642f1894921e68c10f934ceff065f362da6c1c"
+  },
+  {
+    "relativePath": "fk/jup347_nameid.tf",
+    "path": "target\\kernels\\jup347_nameid.tf",
+    "bytes": 3771,
+    "sha256": "1303dfccf7d758965c698fbcf0c110b41f73da67639fe63f0724de414f559228"
+  },
+  {
+    "relativePath": "fk/jup348_nameid.tf",
+    "path": "target\\kernels\\jup348_nameid.tf",
+    "bytes": 539,
+    "sha256": "c80fa162869789639123225024831d21c611380771aba3fffdd368c07b2c5e79"
+  },
+  {
+    "relativePath": "fk/jup349_nameid.tf",
+    "path": "target\\kernels\\jup349_nameid.tf",
+    "bytes": 1287,
+    "sha256": "03ea700f2b05391e9cec4f41117ed6ca8b4b08c8856abb49c09e8aa88648eba7"
+  },
+  {
+    "relativePath": "fk/nep098_nameid.tf",
+    "path": "target\\kernels\\nep098_nameid.tf",
+    "bytes": 330,
+    "sha256": "c61ecda345d23c5b4b6e0252504e5c59e6debc21fb65774c7dc77c6a71b27f57"
+  },
+  {
+    "relativePath": "fk/nep104_nameid.tf",
+    "path": "target\\kernels\\nep104_nameid.tf",
+    "bytes": 401,
+    "sha256": "bcd74bd7c791b8d368953b794e8f76806784c1da5bbb22550700ce5b0f624d59"
+  },
+  {
+    "relativePath": "fk/sat455_nameid.tf",
+    "path": "target\\kernels\\sat455_nameid.tf",
+    "bytes": 9832,
+    "sha256": "dc435939e80a35ff467764343a38d6588bd8f2620b6d07d41943ae2e38dd9003"
+  },
+  {
+    "relativePath": "fk/sat456_nameid.tf",
+    "path": "target\\kernels\\sat456_nameid.tf",
+    "bytes": 1184,
+    "sha256": "57bcb7caa96085938324bca1f5f8996e0ca7e9510b348fc65b897b889b55e6e8"
+  },
+  {
+    "relativePath": "fk/sat457_nameid.tf",
+    "path": "target\\kernels\\sat457_nameid.tf",
+    "bytes": 6302,
+    "sha256": "9e6edc2d9f38b8e137fef020a168db532c878a289b81500711cf3e1d0bf568e2"
+  },
+  {
+    "relativePath": "fk/sat458_nameid.tf",
+    "path": "target\\kernels\\sat458_nameid.tf",
+    "bytes": 1071,
+    "sha256": "69832c484e0c83b69b3cc54cd98a2adadadade95ed718a14ed1fc1b5f286ce3e"
+  },
+  {
+    "relativePath": "fk/sat459_nameid.tf",
+    "path": "target\\kernels\\sat459_nameid.tf",
+    "bytes": 1596,
+    "sha256": "e0fc8ba2a487b0d83bf5685411005f29b1bd6c9760c783377eebf042b6888c6e"
+  },
+  {
+    "relativePath": "fk/sat480_nameid.tf",
+    "path": "target\\kernels\\sat480_nameid.tf",
+    "bytes": 320,
+    "sha256": "c1c20ff442f69ad1663511b9e447e87627484acd1b27fa0ccae82c747af28acd"
+  },
+  {
+    "relativePath": "fk/ura117_nameid.tf",
+    "path": "target\\kernels\\ura117_nameid.tf",
+    "bytes": 323,
+    "sha256": "686d4b7acee62bf167d8c6d178c57159c73923654e582cb6d1f1fb1e220f65f1"
+  }
+]

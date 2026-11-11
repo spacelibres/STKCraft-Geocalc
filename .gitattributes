@@ -1,0 +1,30 @@
+* text=auto eol=lf
+*.rs text eol=lf
+*.toml text eol=lf
+*.md text eol=lf
+*.py text eol=lf
+*.csv text eol=lf
+.githooks/* text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.cff text eol=lf
+*.json text eol=lf
+*.jsonl text eol=lf
+*.bsp binary
+*.bpc binary
+*.bc binary
+*.bds binary
+*.dsk binary
+*.das binary
+# Preserve original reference captures and kernel text as evidence.
+docs/review-2026-11-11/*.json -text -whitespace
+docs/review-2026-11-11/*.jsonl -text -whitespace
+docs/review-2026-11-11/*.html -text -whitespace
+docs/review-2026-11-11/*.log -text -whitespace
+docs/review-2026-11-11/*.tm -text -whitespace
+docs/review-2026-11-11/*.http-headers.txt -text -whitespace
+*.tf -whitespace
+*.tpc -whitespace
+*.tsc -whitespace
+*.tls -whitespace
+*.ti -whitespace

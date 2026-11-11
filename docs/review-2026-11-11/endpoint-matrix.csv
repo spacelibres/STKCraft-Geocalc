@@ -1,0 +1,12 @@
+﻿method,route,NASA_observed_samples,NASA_status_values,local_implementation
+GET,/,1,VERSION_RESPONSE,MISSING
+GET,/kernel-sets,1,OK,MISSING
+GET,/kernel-set/{id}/bodies,1,OK,MISSING
+GET,/kernel-set/{id}/frames,1,OK,MISSING
+GET,/kernel-set/{id}/instruments,1,OK,MISSING
+GET,/kernel-set/{id}/surfaces,1,OK,MISSING
+POST,/dsk-surfaces,1,OK,MISSING
+POST,/calculation/new,27,"ERROR,OK",MISSING
+GET,/calculation/{id},14,"ERROR,OK",MISSING
+GET,/calculation/{id}/results,27,"ERROR,OK",MISSING
+GET,/calculation/{id}/cancel,3,"ERROR,OK",MISSING

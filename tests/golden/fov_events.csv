@@ -1,0 +1,4 @@
+# CSPICE gftfov/gfrfov result windows.
+family,instrument,start,end
+target,12350,780486.2975934986,1157409.6488651354
+ray,12345,0.0,2592000.0

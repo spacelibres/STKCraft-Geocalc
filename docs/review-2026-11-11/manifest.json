@@ -1,0 +1,71 @@
+{
+  "date": "2026-11-11 Asia/Shanghai",
+  "official_version": "2.11.2",
+  "official_build": "5520 N67 19-OCT-2026",
+  "contract_table_records": 361,
+  "calculation_types": 25,
+  "main_live_requests": 73,
+  "all_documented_examples_returned_OK": true,
+  "cargo_tests_passed": 62,
+  "observed_phases_in_main_run": [
+    "CALCULATING",
+    "COMPLETE",
+    "DISPATCHED",
+    "LOADING_KERNELS"
+  ],
+  "files": {
+    "calculation-matrix.csv": "458a9edc684da7a0a3c7141580c1a1b9d2d3993b414e970327c29fcdba012268",
+    "cargo-test.log": "20b56b8fc43819a1268c42a7b88ba4467b9918eabd3f137110bb5b5a8ffee940",
+    "contract-fields.csv": "03df6b0682a3f4f5c728ec0e0f81616be2729bbe5752d99ca2b245f9066650fe",
+    "contract-fields.json": "d83a7c5fb1b09adc49d2aa3b925c6a2fbdf01c69b94cb952fbc3573808b70433",
+    "coordinate-repro.txt": "f069035716c04059b5c82db79f5f793f929efa48bcf55b322ef943d75e2e33a0",
+    "documented-requests.json": "c837f4c829a39a6c71103a6475e4e1ee3c33c3d2d7b71eae0e21cb908060abf4",
+    "endpoint-matrix.csv": "8ea0b651d30dbfad2f07df13cff76435512190c14ed427ef2edf91f7deeedc6a",
+    "equality-repro.txt": "02b175aab797cfa542c9e79d6cf7650ead20caeaad679d3d127abfb2f2a3f3fd",
+    "false-pass-repro.json": "9f3dcdbe9a7ac3ad662e13e50abd39a494a9dcce58263d4e661a8ee923548cde",
+    "frames-locations-live.json": "e84a80de8c57c23213b8a287fcc2b1a94be0f649efdbaded5a95e9ec586c810d",
+    "frames-locations-summary.json": "272228f6e789d8ff54a3e0d08801d56da22833f064336dc0789d0105bf62da02",
+    "frames-locations.log": "a6b993c10dd3f18d912a41aba7a834f08872f64ae736bc7c1917bcd5cf170ae0",
+    "geometry-samples-summary.json": "266a0c17d98226d38d0432fce52df4946e3a8bb585e416e925efaa5af2c3a5a8",
+    "geometry-samples.log": "80b3229c058ff4e88e7d51b026c1e9d936b111789f3b3a1d5ae8d5f5198dc9a0",
+    "http-calculation-matrix.superseded.csv": "0a2982a9823c846d00555e0ff2384680e8b91c5049818a6378e3f9ce6f77ad52",
+    "lifecycle-probes.json": "bd3ad435bec15eff02b54846ac528056df20241e318492430fc8612f2d98bbb4",
+    "live-probes.json": "bb83fd31e7f0084bac1399696623ca882478540fcb3a7a081489b677332c017d",
+    "numeric-defects.json": "ad111d4a15c152bbe4e7e12bd42ee3a9c95a8bffd9f2b5d255d05cf605e31ec6",
+    "official-api-info.html": "7e8272096615d519fef90cb10b498cf5856fdf15f287ec0f2d3dc7d34dd3cbcd",
+    "official-version.json": "07d7ff921326020459e03a29d3b36a2e2b664692137f7a2d580281ffbeeb2a71",
+    "reproduce-coordinates.rs": "adab9478d8534331c0a7cb3b3618473df233cca250c989570a4c15d40e4ca7db",
+    "reproduce-equality.rs": "292219fc47f71f0812baf948921018805a9c324bedeb1af41785c712a981fc94",
+    "reproduce-false-pass.py": "15b06e21111e3f9b1677323d3d964f89365c1d83a0ea4070673064419103a996",
+    "reproduce-numeric.py": "6be611c640fa19131be231b062975ea60c70e88f35ff08f71043714fa8d17ac8",
+    "reproduce-spk-priority.py": "291d1777896318da8931064a99af7e576192d299a365d5a64bd34b3414fb0cc0",
+    "spk-priority-repro.json": "399fe550e85013fa06d9d8b85a468670abbed751a86c775c0752a366f55051e3",
+    "subpoint-test.log": "bc142ce31fc9ddcb7114c5a81c1c98f1957fd5f1d2c3549ace2896f8117fd360",
+    "superseded-http-review.md": "a9b44a6aef2c7229bf6c7bb45d8986f09a0e21259253c39e8c81390f24c8780c",
+    "targeted-live.json": "39d980f4e9c554cea6548ca11ce06033018259c916237e1eb477d865ee80dbef",
+    "time-tests.log": "972e572c6ab0c3b446cbac5e966efba76d9fc5ae069579120f0abf992c625e6e"
+  },
+  "final_numeric_groups": {
+    "frames": {
+      "worst": 4.558411870192458e-09,
+      "count": 87,
+      "failures": [],
+      "pass_by_existing_tolerance": true
+    },
+    "locations": {
+      "worst": 1.7171259969472885e-08,
+      "count": 29,
+      "failures": [],
+      "pass_by_existing_tolerance": true
+    }
+  },
+  "report_sha256": "5bd556fb2a3eb03fc78bd52d965967f3d3ffebdc323fdde458502864abfe62fe",
+  "audit_scope": "WebGeocalc functional coverage and numerical result parity; no local HTTP compatibility requirement",
+  "supersedes": "superseded-http-review.md; its HTTP blocker F01 is withdrawn",
+  "time_component": {
+    "owner": "../STKCraft-time",
+    "local_version": "0.1.15",
+    "fresh_default_all_targets_tests_passed": 108,
+    "missing_from_geocalc": false
+  }
+}

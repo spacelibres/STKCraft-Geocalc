@@ -1,0 +1,72 @@
+[
+  {
+    "id": "target_fov",
+    "result": {
+      "status": "OK",
+      "message": "The request was successful.",
+      "calculationId": "c03f32aa-6437-4518-a20d-550c5fe7bbf9",
+      "columns": [
+        {
+          "name": "Start Time",
+          "type": "DATE",
+          "units": "",
+          "outputID": "DATE"
+        },
+        {
+          "name": "Stop Time",
+          "type": "DATE",
+          "units": "",
+          "outputID": "DATE"
+        },
+        {
+          "name": "Duration (secs)",
+          "type": "NUMBER",
+          "units": "s",
+          "outputID": "DURATION"
+        }
+      ],
+      "rows": [
+        [
+          "403904651.199269",
+          "403906000.000000",
+          "1348.80073082"
+        ]
+      ]
+    }
+  },
+  {
+    "id": "ray_fov",
+    "result": {
+      "status": "OK",
+      "message": "The request was successful.",
+      "calculationId": "1108423f-8f8a-4789-aae7-067b711170a3",
+      "columns": [
+        {
+          "name": "Start Time",
+          "type": "DATE",
+          "units": "",
+          "outputID": "DATE"
+        },
+        {
+          "name": "Stop Time",
+          "type": "DATE",
+          "units": "",
+          "outputID": "DATE"
+        },
+        {
+          "name": "Duration (secs)",
+          "type": "NUMBER",
+          "units": "s",
+          "outputID": "DURATION"
+        }
+      ],
+      "rows": [
+        [
+          "403905462.168452",
+          "403905723.953323",
+          "261.78487039"
+        ]
+      ]
+    }
+  }
+]

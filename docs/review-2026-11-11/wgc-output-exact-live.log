@@ -1,0 +1,37 @@
+=== State Vector ===
+  PASS (WGC output formatting equality)
+  raw results: (4.598405212163925e-09, 4.925334973204798e-09, 4.287878496711528e-09, 1)
+=== State Representations ===
+  PASS (WGC output formatting equality)
+  raw results: (0.49253349500000004, 4.92533495e-09, 82)
+=== Angular Separation ===
+  PASS (WGC output formatting equality)
+  raw results: (4.8054e-09, 4)
+=== Phase Angle ===
+  PASS (WGC output formatting equality)
+  raw results: (2.64873e-09, 1)
+=== Angular Size ===
+  PASS (WGC output formatting equality)
+  raw results: (2.60536053e-09, 3)
+=== Osculating Elements ===
+  PASS (WGC output formatting equality)
+  raw results: ({'angles': 4.03653e-09, 'distance': 3e-09, 'eccentricity': 3.53807064e-09, 'period': 4.6e-09, 'speed': 4.7885289e-09, 'gm': 4.1e-09}, 1)
+=== Planetocentric Solar Longitude ===
+  PASS (WGC output formatting equality)
+  raw results: (4.61585e-09, 1)
+=== Illumination Angles ===
+  PASS (WGC output formatting equality)
+  raw results: (4.56483e-09, 1)
+=== Surface Intercept ===
+  PASS (WGC output formatting equality)
+  raw results: (3.22381e-09, 1)
+=== Tangent Point ===
+  PASS (WGC output formatting equality)
+  raw results: (3.567388e-09, 1)
+=== Frame Transformation ===
+  PASS (WGC output formatting equality)
+  raw results: (4.5437278e-09, 29, [])
+=== Locations ===
+  PASS (WGC output formatting equality)
+  raw results: (4.47e-09, 4, [])
+OVERALL: PASS (WGC output formatting equality only)

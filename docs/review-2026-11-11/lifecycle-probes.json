@@ -1,0 +1,86 @@
+[
+  {
+    "method": "POST",
+    "path": "/calculation/new",
+    "request": {
+      "calculationType": "STATE_VECTOR",
+      "kernels": [
+        {
+          "type": "KERNEL_SET",
+          "id": 1
+        }
+      ],
+      "target": "MOON",
+      "observer": "EARTH",
+      "referenceFrame": "J2000",
+      "aberrationCorrection": "NONE",
+      "stateRepresentation": "RECTANGULAR",
+      "timeSystem": "TDB",
+      "timeFormat": "SECONDS_PAST_J2000",
+      "times": [
+        "0"
+      ]
+    },
+    "response": {
+      "status": "OK",
+      "message": "The request was successful.",
+      "calculationId": "49d35ba7-7849-487a-8cbc-5461bed033e9",
+      "result": {
+        "phase": "COMPLETE",
+        "expiresIn": 600
+      }
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/calculation/49d35ba7-7849-487a-8cbc-5461bed033e9/cancel",
+    "request": null,
+    "response": {
+      "status": "OK",
+      "message": "The request was successful.",
+      "calculationId": "49d35ba7-7849-487a-8cbc-5461bed033e9",
+      "result": {
+        "phase": "CANCELLED"
+      }
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/calculation/49d35ba7-7849-487a-8cbc-5461bed033e9",
+    "request": null,
+    "response": {
+      "status": "OK",
+      "message": "The request was successful.",
+      "calculationId": "49d35ba7-7849-487a-8cbc-5461bed033e9",
+      "result": {
+        "phase": "CANCELLED"
+      }
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/calculation/49d35ba7-7849-487a-8cbc-5461bed033e9/cancel",
+    "request": null,
+    "response": {
+      "status": "ERROR",
+      "message": "The request has failed.",
+      "calculationId": "49d35ba7-7849-487a-8cbc-5461bed033e9",
+      "error": {
+        "shortDescription": "The calculation cannot be cancelled at this point."
+      }
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/calculation/49d35ba7-7849-487a-8cbc-5461bed033e9/results",
+    "request": null,
+    "response": {
+      "status": "ERROR",
+      "message": "The request has failed.",
+      "calculationId": "49d35ba7-7849-487a-8cbc-5461bed033e9",
+      "error": {
+        "shortDescription": "The requested calculation has been cancelled. No results."
+      }
+    }
+  }
+]

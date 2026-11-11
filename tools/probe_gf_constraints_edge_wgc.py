@@ -1,0 +1,7 @@
+from pathlib import Path
+exec(Path('tools/probe_gf_constraints_wgc.py').read_text().split('common=')[0])
+out=Path('docs/review-2026-11-11/gf-constraints-edge-live.json')
+base={'calculationType':'GF_ANGULAR_SEPARATION_SEARCH','kernels':[{'type':'KERNEL_SET','id':1}],'timeSystem':'TDB','timeFormat':'SECONDS_PAST_J2000','intervals':[{'startTime':'0','endTime':'100'}],'timeStep':10,'timeStepUnits':'SECONDS','outputTimeSystem':'TDB','outputTimeFormat':'SECONDS_PAST_J2000','outputDurationUnits':'SECONDS','target1':'MOON','shape1':'POINT','target2':'MOON','shape2':'POINT','observer':'EARTH','aberrationCorrection':'NONE','shouldComplementWindow':False,'intervalAdjustment':'NO_ADJUSTMENT','intervalFiltering':'NO_FILTERING'}
+for label,lo,hi in [('constant_lower_equal',0,1),('constant_upper_equal',-1,0),('constant_inside',-1,1),('constant_equal',0,0)]:calc(label,{**base,'condition':{'relationalCondition':'RANGE','referenceValue':lo,'upperLimit':hi}})
+lon={**base,'calculationType':'GF_COORDINATE_SEARCH','target':'MOON','referenceFrame':'IAU_EARTH','intervals':[{'startTime':'0','endTime':'86400'}],'timeStep':60}
+for label,lo,hi in [('longitude_full',-180,180),('longitude_full_reverse',180,-180),('longitude_full_0',0,360),('longitude_multiturn',-720,720),('longitude_equiv',10,370),('longitude_equal',10,10)]:calc(label,{**lon,'condition':{'coordinateSystem':'LATITUDINAL','coordinate':'LONGITUDE','relationalCondition':'RANGE','referenceValue':lo,'upperLimit':hi}})

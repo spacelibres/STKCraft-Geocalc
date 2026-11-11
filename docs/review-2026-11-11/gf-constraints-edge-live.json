@@ -1,0 +1,1324 @@
+[
+  {
+    "method": "POST",
+    "path": "/calculation/new",
+    "payload": {
+      "calculationType": "GF_ANGULAR_SEPARATION_SEARCH",
+      "kernels": [
+        {
+          "type": "KERNEL_SET",
+          "id": 1
+        }
+      ],
+      "timeSystem": "TDB",
+      "timeFormat": "SECONDS_PAST_J2000",
+      "intervals": [
+        {
+          "startTime": "0",
+          "endTime": "100"
+        }
+      ],
+      "timeStep": 10,
+      "timeStepUnits": "SECONDS",
+      "outputTimeSystem": "TDB",
+      "outputTimeFormat": "SECONDS_PAST_J2000",
+      "outputDurationUnits": "SECONDS",
+      "target1": "MOON",
+      "shape1": "POINT",
+      "target2": "MOON",
+      "shape2": "POINT",
+      "observer": "EARTH",
+      "aberrationCorrection": "NONE",
+      "shouldComplementWindow": false,
+      "intervalAdjustment": "NO_ADJUSTMENT",
+      "intervalFiltering": "NO_FILTERING",
+      "condition": {
+        "relationalCondition": "RANGE",
+        "referenceValue": 0,
+        "upperLimit": 1
+      }
+    },
+    "response": {
+      "status": "ERROR",
+      "message": "The request has failed.",
+      "calculationId": "5e26cd28-9608-4cf5-a08a-e08c779c1455",
+      "error": {
+        "shortDescription": "CSPICE_N0067: CSPICE.gfsep: SPICE(BODIESNOTDISTINCT): [gfsep_c --> GFSEP --> GFEVNT --> ZZGFSPIN] All three objects associated with an ANGULAR SEPARATION search must be distinct. The objects whose angular separation is of interest were 301 and 301. The observer was 399."
+      }
+    }
+  },
+  {
+    "label": "constant_lower_equal",
+    "payload": {
+      "calculationType": "GF_ANGULAR_SEPARATION_SEARCH",
+      "kernels": [
+        {
+          "type": "KERNEL_SET",
+          "id": 1
+        }
+      ],
+      "timeSystem": "TDB",
+      "timeFormat": "SECONDS_PAST_J2000",
+      "intervals": [
+        {
+          "startTime": "0",
+          "endTime": "100"
+        }
+      ],
+      "timeStep": 10,
+      "timeStepUnits": "SECONDS",
+      "outputTimeSystem": "TDB",
+      "outputTimeFormat": "SECONDS_PAST_J2000",
+      "outputDurationUnits": "SECONDS",
+      "target1": "MOON",
+      "shape1": "POINT",
+      "target2": "MOON",
+      "shape2": "POINT",
+      "observer": "EARTH",
+      "aberrationCorrection": "NONE",
+      "shouldComplementWindow": false,
+      "intervalAdjustment": "NO_ADJUSTMENT",
+      "intervalFiltering": "NO_FILTERING",
+      "condition": {
+        "relationalCondition": "RANGE",
+        "referenceValue": 0,
+        "upperLimit": 1
+      }
+    },
+    "final": {
+      "status": "ERROR",
+      "message": "The request has failed.",
+      "calculationId": "5e26cd28-9608-4cf5-a08a-e08c779c1455",
+      "error": {
+        "shortDescription": "CSPICE_N0067: CSPICE.gfsep: SPICE(BODIESNOTDISTINCT): [gfsep_c --> GFSEP --> GFEVNT --> ZZGFSPIN] All three objects associated with an ANGULAR SEPARATION search must be distinct. The objects whose angular separation is of interest were 301 and 301. The observer was 399."
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/calculation/new",
+    "payload": {
+      "calculationType": "GF_ANGULAR_SEPARATION_SEARCH",
+      "kernels": [
+        {
+          "type": "KERNEL_SET",
+          "id": 1
+        }
+      ],
+      "timeSystem": "TDB",
+      "timeFormat": "SECONDS_PAST_J2000",
+      "intervals": [
+        {
+          "startTime": "0",
+          "endTime": "100"
+        }
+      ],
+      "timeStep": 10,
+      "timeStepUnits": "SECONDS",
+      "outputTimeSystem": "TDB",
+      "outputTimeFormat": "SECONDS_PAST_J2000",
+      "outputDurationUnits": "SECONDS",
+      "target1": "MOON",
+      "shape1": "POINT",
+      "target2": "MOON",
+      "shape2": "POINT",
+      "observer": "EARTH",
+      "aberrationCorrection": "NONE",
+      "shouldComplementWindow": false,
+      "intervalAdjustment": "NO_ADJUSTMENT",
+      "intervalFiltering": "NO_FILTERING",
+      "condition": {
+        "relationalCondition": "RANGE",
+        "referenceValue": -1,
+        "upperLimit": 0
+      }
+    },
+    "response": {
+      "status": "ERROR",
+      "message": "The request has failed.",
+      "calculationId": "7a4ac6ed-9107-478e-a7a4-aa993a7ded76",
+      "error": {
+        "shortDescription": "CSPICE_N0067: CSPICE.gfsep: SPICE(BODIESNOTDISTINCT): [gfsep_c --> GFSEP --> GFEVNT --> ZZGFSPIN] All three objects associated with an ANGULAR SEPARATION search must be distinct. The objects whose angular separation is of interest were 301 and 301. The observer was 399."
+      }
+    }
+  },
+  {
+    "label": "constant_upper_equal",
+    "payload": {
+      "calculationType": "GF_ANGULAR_SEPARATION_SEARCH",
+      "kernels": [
+        {
+          "type": "KERNEL_SET",
+          "id": 1
+        }
+      ],
+      "timeSystem": "TDB",
+      "timeFormat": "SECONDS_PAST_J2000",
+      "intervals": [
+        {
+          "startTime": "0",
+          "endTime": "100"
+        }
+      ],
+      "timeStep": 10,
+      "timeStepUnits": "SECONDS",
+      "outputTimeSystem": "TDB",
+      "outputTimeFormat": "SECONDS_PAST_J2000",
+      "outputDurationUnits": "SECONDS",
+      "target1": "MOON",
+      "shape1": "POINT",
+      "target2": "MOON",
+      "shape2": "POINT",
+      "observer": "EARTH",
+      "aberrationCorrection": "NONE",
+      "shouldComplementWindow": false,
+      "intervalAdjustment": "NO_ADJUSTMENT",
+      "intervalFiltering": "NO_FILTERING",
+      "condition": {
+        "relationalCondition": "RANGE",
+        "referenceValue": -1,
+        "upperLimit": 0
+      }
+    },
+    "final": {
+      "status": "ERROR",
+      "message": "The request has failed.",
+      "calculationId": "7a4ac6ed-9107-478e-a7a4-aa993a7ded76",
+      "error": {
+        "shortDescription": "CSPICE_N0067: CSPICE.gfsep: SPICE(BODIESNOTDISTINCT): [gfsep_c --> GFSEP --> GFEVNT --> ZZGFSPIN] All three objects associated with an ANGULAR SEPARATION search must be distinct. The objects whose angular separation is of interest were 301 and 301. The observer was 399."
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/calculation/new",
+    "payload": {
+      "calculationType": "GF_ANGULAR_SEPARATION_SEARCH",
+      "kernels": [
+        {
+          "type": "KERNEL_SET",
+          "id": 1
+        }
+      ],
+      "timeSystem": "TDB",
+      "timeFormat": "SECONDS_PAST_J2000",
+      "intervals": [
+        {
+          "startTime": "0",
+          "endTime": "100"
+        }
+      ],
+      "timeStep": 10,
+      "timeStepUnits": "SECONDS",
+      "outputTimeSystem": "TDB",
+      "outputTimeFormat": "SECONDS_PAST_J2000",
+      "outputDurationUnits": "SECONDS",
+      "target1": "MOON",
+      "shape1": "POINT",
+      "target2": "MOON",
+      "shape2": "POINT",
+      "observer": "EARTH",
+      "aberrationCorrection": "NONE",
+      "shouldComplementWindow": false,
+      "intervalAdjustment": "NO_ADJUSTMENT",
+      "intervalFiltering": "NO_FILTERING",
+      "condition": {
+        "relationalCondition": "RANGE",
+        "referenceValue": -1,
+        "upperLimit": 1
+      }
+    },
+    "response": {
+      "status": "ERROR",
+      "message": "The request has failed.",
+      "calculationId": "3afb9756-0fad-47ad-a211-029d0b81224b",
+      "error": {
+        "shortDescription": "CSPICE_N0067: CSPICE.gfsep: SPICE(BODIESNOTDISTINCT): [gfsep_c --> GFSEP --> GFEVNT --> ZZGFSPIN] All three objects associated with an ANGULAR SEPARATION search must be distinct. The objects whose angular separation is of interest were 301 and 301. The observer was 399."
+      }
+    }
+  },
+  {
+    "label": "constant_inside",
+    "payload": {
+      "calculationType": "GF_ANGULAR_SEPARATION_SEARCH",
+      "kernels": [
+        {
+          "type": "KERNEL_SET",
+          "id": 1
+        }
+      ],
+      "timeSystem": "TDB",
+      "timeFormat": "SECONDS_PAST_J2000",
+      "intervals": [
+        {
+          "startTime": "0",
+          "endTime": "100"
+        }
+      ],
+      "timeStep": 10,
+      "timeStepUnits": "SECONDS",
+      "outputTimeSystem": "TDB",
+      "outputTimeFormat": "SECONDS_PAST_J2000",
+      "outputDurationUnits": "SECONDS",
+      "target1": "MOON",
+      "shape1": "POINT",
+      "target2": "MOON",
+      "shape2": "POINT",
+      "observer": "EARTH",
+      "aberrationCorrection": "NONE",
+      "shouldComplementWindow": false,
+      "intervalAdjustment": "NO_ADJUSTMENT",
+      "intervalFiltering": "NO_FILTERING",
+      "condition": {
+        "relationalCondition": "RANGE",
+        "referenceValue": -1,
+        "upperLimit": 1
+      }
+    },
+    "final": {
+      "status": "ERROR",
+      "message": "The request has failed.",
+      "calculationId": "3afb9756-0fad-47ad-a211-029d0b81224b",
+      "error": {
+        "shortDescription": "CSPICE_N0067: CSPICE.gfsep: SPICE(BODIESNOTDISTINCT): [gfsep_c --> GFSEP --> GFEVNT --> ZZGFSPIN] All three objects associated with an ANGULAR SEPARATION search must be distinct. The objects whose angular separation is of interest were 301 and 301. The observer was 399."
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/calculation/new",
+    "payload": {
+      "calculationType": "GF_ANGULAR_SEPARATION_SEARCH",
+      "kernels": [
+        {
+          "type": "KERNEL_SET",
+          "id": 1
+        }
+      ],
+      "timeSystem": "TDB",
+      "timeFormat": "SECONDS_PAST_J2000",
+      "intervals": [
+        {
+          "startTime": "0",
+          "endTime": "100"
+        }
+      ],
+      "timeStep": 10,
+      "timeStepUnits": "SECONDS",
+      "outputTimeSystem": "TDB",
+      "outputTimeFormat": "SECONDS_PAST_J2000",
+      "outputDurationUnits": "SECONDS",
+      "target1": "MOON",
+      "shape1": "POINT",
+      "target2": "MOON",
+      "shape2": "POINT",
+      "observer": "EARTH",
+      "aberrationCorrection": "NONE",
+      "shouldComplementWindow": false,
+      "intervalAdjustment": "NO_ADJUSTMENT",
+      "intervalFiltering": "NO_FILTERING",
+      "condition": {
+        "relationalCondition": "RANGE",
+        "referenceValue": 0,
+        "upperLimit": 0
+      }
+    },
+    "response": {
+      "status": "ERROR",
+      "message": "The request has failed.",
+      "calculationId": "9e0f2a59-7796-4e4a-bc60-940b60e512ec",
+      "error": {
+        "shortDescription": "CSPICE_N0067: CSPICE.gfsep: SPICE(BODIESNOTDISTINCT): [gfsep_c --> GFSEP --> GFEVNT --> ZZGFSPIN] All three objects associated with an ANGULAR SEPARATION search must be distinct. The objects whose angular separation is of interest were 301 and 301. The observer was 399."
+      }
+    }
+  },
+  {
+    "label": "constant_equal",
+    "payload": {
+      "calculationType": "GF_ANGULAR_SEPARATION_SEARCH",
+      "kernels": [
+        {
+          "type": "KERNEL_SET",
+          "id": 1
+        }
+      ],
+      "timeSystem": "TDB",
+      "timeFormat": "SECONDS_PAST_J2000",
+      "intervals": [
+        {
+          "startTime": "0",
+          "endTime": "100"
+        }
+      ],
+      "timeStep": 10,
+      "timeStepUnits": "SECONDS",
+      "outputTimeSystem": "TDB",
+      "outputTimeFormat": "SECONDS_PAST_J2000",
+      "outputDurationUnits": "SECONDS",
+      "target1": "MOON",
+      "shape1": "POINT",
+      "target2": "MOON",
+      "shape2": "POINT",
+      "observer": "EARTH",
+      "aberrationCorrection": "NONE",
+      "shouldComplementWindow": false,
+      "intervalAdjustment": "NO_ADJUSTMENT",
+      "intervalFiltering": "NO_FILTERING",
+      "condition": {
+        "relationalCondition": "RANGE",
+        "referenceValue": 0,
+        "upperLimit": 0
+      }
+    },
+    "final": {
+      "status": "ERROR",
+      "message": "The request has failed.",
+      "calculationId": "9e0f2a59-7796-4e4a-bc60-940b60e512ec",
+      "error": {
+        "shortDescription": "CSPICE_N0067: CSPICE.gfsep: SPICE(BODIESNOTDISTINCT): [gfsep_c --> GFSEP --> GFEVNT --> ZZGFSPIN] All three objects associated with an ANGULAR SEPARATION search must be distinct. The objects whose angular separation is of interest were 301 and 301. The observer was 399."
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/calculation/new",
+    "payload": {
+      "calculationType": "GF_COORDINATE_SEARCH",
+      "kernels": [
+        {
+          "type": "KERNEL_SET",
+          "id": 1
+        }
+      ],
+      "timeSystem": "TDB",
+      "timeFormat": "SECONDS_PAST_J2000",
+      "intervals": [
+        {
+          "startTime": "0",
+          "endTime": "86400"
+        }
+      ],
+      "timeStep": 60,
+      "timeStepUnits": "SECONDS",
+      "outputTimeSystem": "TDB",
+      "outputTimeFormat": "SECONDS_PAST_J2000",
+      "outputDurationUnits": "SECONDS",
+      "target1": "MOON",
+      "shape1": "POINT",
+      "target2": "MOON",
+      "shape2": "POINT",
+      "observer": "EARTH",
+      "aberrationCorrection": "NONE",
+      "shouldComplementWindow": false,
+      "intervalAdjustment": "NO_ADJUSTMENT",
+      "intervalFiltering": "NO_FILTERING",
+      "target": "MOON",
+      "referenceFrame": "IAU_EARTH",
+      "condition": {
+        "coordinateSystem": "LATITUDINAL",
+        "coordinate": "LONGITUDE",
+        "relationalCondition": "RANGE",
+        "referenceValue": -180,
+        "upperLimit": 180
+      }
+    },
+    "response": {
+      "status": "OK",
+      "message": "The request was successful.",
+      "calculationId": "6ba09600-830d-408c-a353-2e90f7a47edd",
+      "result": {
+        "phase": "COMPLETE",
+        "expiresIn": 600
+      }
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/calculation/6ba09600-830d-408c-a353-2e90f7a47edd/results",
+    "payload": null,
+    "response": {
+      "status": "OK",
+      "message": "The request was successful.",
+      "calculationId": "6ba09600-830d-408c-a353-2e90f7a47edd",
+      "columns": [
+        {
+          "name": "Start Time",
+          "type": "DATE",
+          "units": "",
+          "outputID": "DATE"
+        },
+        {
+          "name": "Stop Time",
+          "type": "DATE",
+          "units": "",
+          "outputID": "DATE"
+        },
+        {
+          "name": "Duration (secs)",
+          "type": "NUMBER",
+          "units": "s",
+          "outputID": "DURATION"
+        }
+      ],
+      "rows": [
+        [
+          "0.000000",
+          "86400.000000",
+          86400.0
+        ]
+      ]
+    }
+  },
+  {
+    "label": "longitude_full",
+    "payload": {
+      "calculationType": "GF_COORDINATE_SEARCH",
+      "kernels": [
+        {
+          "type": "KERNEL_SET",
+          "id": 1
+        }
+      ],
+      "timeSystem": "TDB",
+      "timeFormat": "SECONDS_PAST_J2000",
+      "intervals": [
+        {
+          "startTime": "0",
+          "endTime": "86400"
+        }
+      ],
+      "timeStep": 60,
+      "timeStepUnits": "SECONDS",
+      "outputTimeSystem": "TDB",
+      "outputTimeFormat": "SECONDS_PAST_J2000",
+      "outputDurationUnits": "SECONDS",
+      "target1": "MOON",
+      "shape1": "POINT",
+      "target2": "MOON",
+      "shape2": "POINT",
+      "observer": "EARTH",
+      "aberrationCorrection": "NONE",
+      "shouldComplementWindow": false,
+      "intervalAdjustment": "NO_ADJUSTMENT",
+      "intervalFiltering": "NO_FILTERING",
+      "target": "MOON",
+      "referenceFrame": "IAU_EARTH",
+      "condition": {
+        "coordinateSystem": "LATITUDINAL",
+        "coordinate": "LONGITUDE",
+        "relationalCondition": "RANGE",
+        "referenceValue": -180,
+        "upperLimit": 180
+      }
+    },
+    "final": {
+      "status": "OK",
+      "message": "The request was successful.",
+      "calculationId": "6ba09600-830d-408c-a353-2e90f7a47edd",
+      "columns": [
+        {
+          "name": "Start Time",
+          "type": "DATE",
+          "units": "",
+          "outputID": "DATE"
+        },
+        {
+          "name": "Stop Time",
+          "type": "DATE",
+          "units": "",
+          "outputID": "DATE"
+        },
+        {
+          "name": "Duration (secs)",
+          "type": "NUMBER",
+          "units": "s",
+          "outputID": "DURATION"
+        }
+      ],
+      "rows": [
+        [
+          "0.000000",
+          "86400.000000",
+          86400.0
+        ]
+      ]
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/calculation/new",
+    "payload": {
+      "calculationType": "GF_COORDINATE_SEARCH",
+      "kernels": [
+        {
+          "type": "KERNEL_SET",
+          "id": 1
+        }
+      ],
+      "timeSystem": "TDB",
+      "timeFormat": "SECONDS_PAST_J2000",
+      "intervals": [
+        {
+          "startTime": "0",
+          "endTime": "86400"
+        }
+      ],
+      "timeStep": 60,
+      "timeStepUnits": "SECONDS",
+      "outputTimeSystem": "TDB",
+      "outputTimeFormat": "SECONDS_PAST_J2000",
+      "outputDurationUnits": "SECONDS",
+      "target1": "MOON",
+      "shape1": "POINT",
+      "target2": "MOON",
+      "shape2": "POINT",
+      "observer": "EARTH",
+      "aberrationCorrection": "NONE",
+      "shouldComplementWindow": false,
+      "intervalAdjustment": "NO_ADJUSTMENT",
+      "intervalFiltering": "NO_FILTERING",
+      "target": "MOON",
+      "referenceFrame": "IAU_EARTH",
+      "condition": {
+        "coordinateSystem": "LATITUDINAL",
+        "coordinate": "LONGITUDE",
+        "relationalCondition": "RANGE",
+        "referenceValue": 180,
+        "upperLimit": -180
+      }
+    },
+    "response": {
+      "status": "OK",
+      "message": "The request was successful.",
+      "calculationId": "d83bb1bc-2039-4f6f-be9a-6a30207f7399",
+      "result": {
+        "phase": "COMPLETE",
+        "expiresIn": 600
+      }
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/calculation/d83bb1bc-2039-4f6f-be9a-6a30207f7399/results",
+    "payload": null,
+    "response": {
+      "status": "OK",
+      "message": "The request was successful.",
+      "calculationId": "d83bb1bc-2039-4f6f-be9a-6a30207f7399",
+      "columns": [
+        {
+          "name": "Start Time",
+          "type": "DATE",
+          "units": "",
+          "outputID": "DATE"
+        },
+        {
+          "name": "Stop Time",
+          "type": "DATE",
+          "units": "",
+          "outputID": "DATE"
+        },
+        {
+          "name": "Duration (secs)",
+          "type": "NUMBER",
+          "units": "s",
+          "outputID": "DURATION"
+        }
+      ],
+      "rows": []
+    }
+  },
+  {
+    "label": "longitude_full_reverse",
+    "payload": {
+      "calculationType": "GF_COORDINATE_SEARCH",
+      "kernels": [
+        {
+          "type": "KERNEL_SET",
+          "id": 1
+        }
+      ],
+      "timeSystem": "TDB",
+      "timeFormat": "SECONDS_PAST_J2000",
+      "intervals": [
+        {
+          "startTime": "0",
+          "endTime": "86400"
+        }
+      ],
+      "timeStep": 60,
+      "timeStepUnits": "SECONDS",
+      "outputTimeSystem": "TDB",
+      "outputTimeFormat": "SECONDS_PAST_J2000",
+      "outputDurationUnits": "SECONDS",
+      "target1": "MOON",
+      "shape1": "POINT",
+      "target2": "MOON",
+      "shape2": "POINT",
+      "observer": "EARTH",
+      "aberrationCorrection": "NONE",
+      "shouldComplementWindow": false,
+      "intervalAdjustment": "NO_ADJUSTMENT",
+      "intervalFiltering": "NO_FILTERING",
+      "target": "MOON",
+      "referenceFrame": "IAU_EARTH",
+      "condition": {
+        "coordinateSystem": "LATITUDINAL",
+        "coordinate": "LONGITUDE",
+        "relationalCondition": "RANGE",
+        "referenceValue": 180,
+        "upperLimit": -180
+      }
+    },
+    "final": {
+      "status": "OK",
+      "message": "The request was successful.",
+      "calculationId": "d83bb1bc-2039-4f6f-be9a-6a30207f7399",
+      "columns": [
+        {
+          "name": "Start Time",
+          "type": "DATE",
+          "units": "",
+          "outputID": "DATE"
+        },
+        {
+          "name": "Stop Time",
+          "type": "DATE",
+          "units": "",
+          "outputID": "DATE"
+        },
+        {
+          "name": "Duration (secs)",
+          "type": "NUMBER",
+          "units": "s",
+          "outputID": "DURATION"
+        }
+      ],
+      "rows": []
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/calculation/new",
+    "payload": {
+      "calculationType": "GF_COORDINATE_SEARCH",
+      "kernels": [
+        {
+          "type": "KERNEL_SET",
+          "id": 1
+        }
+      ],
+      "timeSystem": "TDB",
+      "timeFormat": "SECONDS_PAST_J2000",
+      "intervals": [
+        {
+          "startTime": "0",
+          "endTime": "86400"
+        }
+      ],
+      "timeStep": 60,
+      "timeStepUnits": "SECONDS",
+      "outputTimeSystem": "TDB",
+      "outputTimeFormat": "SECONDS_PAST_J2000",
+      "outputDurationUnits": "SECONDS",
+      "target1": "MOON",
+      "shape1": "POINT",
+      "target2": "MOON",
+      "shape2": "POINT",
+      "observer": "EARTH",
+      "aberrationCorrection": "NONE",
+      "shouldComplementWindow": false,
+      "intervalAdjustment": "NO_ADJUSTMENT",
+      "intervalFiltering": "NO_FILTERING",
+      "target": "MOON",
+      "referenceFrame": "IAU_EARTH",
+      "condition": {
+        "coordinateSystem": "LATITUDINAL",
+        "coordinate": "LONGITUDE",
+        "relationalCondition": "RANGE",
+        "referenceValue": 0,
+        "upperLimit": 360
+      }
+    },
+    "response": {
+      "status": "OK",
+      "message": "The request was successful.",
+      "calculationId": "b8bf4993-df82-47c8-b9d8-2b3bc87b3bfb",
+      "result": {
+        "phase": "COMPLETE",
+        "expiresIn": 600
+      }
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/calculation/b8bf4993-df82-47c8-b9d8-2b3bc87b3bfb/results",
+    "payload": null,
+    "response": {
+      "status": "OK",
+      "message": "The request was successful.",
+      "calculationId": "b8bf4993-df82-47c8-b9d8-2b3bc87b3bfb",
+      "columns": [
+        {
+          "name": "Start Time",
+          "type": "DATE",
+          "units": "",
+          "outputID": "DATE"
+        },
+        {
+          "name": "Stop Time",
+          "type": "DATE",
+          "units": "",
+          "outputID": "DATE"
+        },
+        {
+          "name": "Duration (secs)",
+          "type": "NUMBER",
+          "units": "s",
+          "outputID": "DURATION"
+        }
+      ],
+      "rows": []
+    }
+  },
+  {
+    "label": "longitude_full_0",
+    "payload": {
+      "calculationType": "GF_COORDINATE_SEARCH",
+      "kernels": [
+        {
+          "type": "KERNEL_SET",
+          "id": 1
+        }
+      ],
+      "timeSystem": "TDB",
+      "timeFormat": "SECONDS_PAST_J2000",
+      "intervals": [
+        {
+          "startTime": "0",
+          "endTime": "86400"
+        }
+      ],
+      "timeStep": 60,
+      "timeStepUnits": "SECONDS",
+      "outputTimeSystem": "TDB",
+      "outputTimeFormat": "SECONDS_PAST_J2000",
+      "outputDurationUnits": "SECONDS",
+      "target1": "MOON",
+      "shape1": "POINT",
+      "target2": "MOON",
+      "shape2": "POINT",
+      "observer": "EARTH",
+      "aberrationCorrection": "NONE",
+      "shouldComplementWindow": false,
+      "intervalAdjustment": "NO_ADJUSTMENT",
+      "intervalFiltering": "NO_FILTERING",
+      "target": "MOON",
+      "referenceFrame": "IAU_EARTH",
+      "condition": {
+        "coordinateSystem": "LATITUDINAL",
+        "coordinate": "LONGITUDE",
+        "relationalCondition": "RANGE",
+        "referenceValue": 0,
+        "upperLimit": 360
+      }
+    },
+    "final": {
+      "status": "OK",
+      "message": "The request was successful.",
+      "calculationId": "b8bf4993-df82-47c8-b9d8-2b3bc87b3bfb",
+      "columns": [
+        {
+          "name": "Start Time",
+          "type": "DATE",
+          "units": "",
+          "outputID": "DATE"
+        },
+        {
+          "name": "Stop Time",
+          "type": "DATE",
+          "units": "",
+          "outputID": "DATE"
+        },
+        {
+          "name": "Duration (secs)",
+          "type": "NUMBER",
+          "units": "s",
+          "outputID": "DURATION"
+        }
+      ],
+      "rows": []
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/calculation/new",
+    "payload": {
+      "calculationType": "GF_COORDINATE_SEARCH",
+      "kernels": [
+        {
+          "type": "KERNEL_SET",
+          "id": 1
+        }
+      ],
+      "timeSystem": "TDB",
+      "timeFormat": "SECONDS_PAST_J2000",
+      "intervals": [
+        {
+          "startTime": "0",
+          "endTime": "86400"
+        }
+      ],
+      "timeStep": 60,
+      "timeStepUnits": "SECONDS",
+      "outputTimeSystem": "TDB",
+      "outputTimeFormat": "SECONDS_PAST_J2000",
+      "outputDurationUnits": "SECONDS",
+      "target1": "MOON",
+      "shape1": "POINT",
+      "target2": "MOON",
+      "shape2": "POINT",
+      "observer": "EARTH",
+      "aberrationCorrection": "NONE",
+      "shouldComplementWindow": false,
+      "intervalAdjustment": "NO_ADJUSTMENT",
+      "intervalFiltering": "NO_FILTERING",
+      "target": "MOON",
+      "referenceFrame": "IAU_EARTH",
+      "condition": {
+        "coordinateSystem": "LATITUDINAL",
+        "coordinate": "LONGITUDE",
+        "relationalCondition": "RANGE",
+        "referenceValue": -720,
+        "upperLimit": 720
+      }
+    },
+    "response": {
+      "status": "OK",
+      "message": "The request was successful.",
+      "calculationId": "df8d56a8-1b5e-4e8d-bc0c-9e817e86f911",
+      "result": {
+        "phase": "COMPLETE",
+        "expiresIn": 600
+      }
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/calculation/df8d56a8-1b5e-4e8d-bc0c-9e817e86f911/results",
+    "payload": null,
+    "response": {
+      "status": "OK",
+      "message": "The request was successful.",
+      "calculationId": "df8d56a8-1b5e-4e8d-bc0c-9e817e86f911",
+      "columns": [
+        {
+          "name": "Start Time",
+          "type": "DATE",
+          "units": "",
+          "outputID": "DATE"
+        },
+        {
+          "name": "Stop Time",
+          "type": "DATE",
+          "units": "",
+          "outputID": "DATE"
+        },
+        {
+          "name": "Duration (secs)",
+          "type": "NUMBER",
+          "units": "s",
+          "outputID": "DURATION"
+        }
+      ],
+      "rows": []
+    }
+  },
+  {
+    "label": "longitude_multiturn",
+    "payload": {
+      "calculationType": "GF_COORDINATE_SEARCH",
+      "kernels": [
+        {
+          "type": "KERNEL_SET",
+          "id": 1
+        }
+      ],
+      "timeSystem": "TDB",
+      "timeFormat": "SECONDS_PAST_J2000",
+      "intervals": [
+        {
+          "startTime": "0",
+          "endTime": "86400"
+        }
+      ],
+      "timeStep": 60,
+      "timeStepUnits": "SECONDS",
+      "outputTimeSystem": "TDB",
+      "outputTimeFormat": "SECONDS_PAST_J2000",
+      "outputDurationUnits": "SECONDS",
+      "target1": "MOON",
+      "shape1": "POINT",
+      "target2": "MOON",
+      "shape2": "POINT",
+      "observer": "EARTH",
+      "aberrationCorrection": "NONE",
+      "shouldComplementWindow": false,
+      "intervalAdjustment": "NO_ADJUSTMENT",
+      "intervalFiltering": "NO_FILTERING",
+      "target": "MOON",
+      "referenceFrame": "IAU_EARTH",
+      "condition": {
+        "coordinateSystem": "LATITUDINAL",
+        "coordinate": "LONGITUDE",
+        "relationalCondition": "RANGE",
+        "referenceValue": -720,
+        "upperLimit": 720
+      }
+    },
+    "final": {
+      "status": "OK",
+      "message": "The request was successful.",
+      "calculationId": "df8d56a8-1b5e-4e8d-bc0c-9e817e86f911",
+      "columns": [
+        {
+          "name": "Start Time",
+          "type": "DATE",
+          "units": "",
+          "outputID": "DATE"
+        },
+        {
+          "name": "Stop Time",
+          "type": "DATE",
+          "units": "",
+          "outputID": "DATE"
+        },
+        {
+          "name": "Duration (secs)",
+          "type": "NUMBER",
+          "units": "s",
+          "outputID": "DURATION"
+        }
+      ],
+      "rows": []
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/calculation/new",
+    "payload": {
+      "calculationType": "GF_COORDINATE_SEARCH",
+      "kernels": [
+        {
+          "type": "KERNEL_SET",
+          "id": 1
+        }
+      ],
+      "timeSystem": "TDB",
+      "timeFormat": "SECONDS_PAST_J2000",
+      "intervals": [
+        {
+          "startTime": "0",
+          "endTime": "86400"
+        }
+      ],
+      "timeStep": 60,
+      "timeStepUnits": "SECONDS",
+      "outputTimeSystem": "TDB",
+      "outputTimeFormat": "SECONDS_PAST_J2000",
+      "outputDurationUnits": "SECONDS",
+      "target1": "MOON",
+      "shape1": "POINT",
+      "target2": "MOON",
+      "shape2": "POINT",
+      "observer": "EARTH",
+      "aberrationCorrection": "NONE",
+      "shouldComplementWindow": false,
+      "intervalAdjustment": "NO_ADJUSTMENT",
+      "intervalFiltering": "NO_FILTERING",
+      "target": "MOON",
+      "referenceFrame": "IAU_EARTH",
+      "condition": {
+        "coordinateSystem": "LATITUDINAL",
+        "coordinate": "LONGITUDE",
+        "relationalCondition": "RANGE",
+        "referenceValue": 10,
+        "upperLimit": 370
+      }
+    },
+    "response": {
+      "status": "OK",
+      "message": "The request was successful.",
+      "calculationId": "af5fd153-585f-415b-991a-0fc4a91e2fed",
+      "result": {
+        "phase": "COMPLETE",
+        "expiresIn": 600
+      }
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/calculation/af5fd153-585f-415b-991a-0fc4a91e2fed/results",
+    "payload": null,
+    "response": {
+      "status": "OK",
+      "message": "The request was successful.",
+      "calculationId": "af5fd153-585f-415b-991a-0fc4a91e2fed",
+      "columns": [
+        {
+          "name": "Start Time",
+          "type": "DATE",
+          "units": "",
+          "outputID": "DATE"
+        },
+        {
+          "name": "Stop Time",
+          "type": "DATE",
+          "units": "",
+          "outputID": "DATE"
+        },
+        {
+          "name": "Duration (secs)",
+          "type": "NUMBER",
+          "units": "s",
+          "outputID": "DURATION"
+        }
+      ],
+      "rows": []
+    }
+  },
+  {
+    "label": "longitude_equiv",
+    "payload": {
+      "calculationType": "GF_COORDINATE_SEARCH",
+      "kernels": [
+        {
+          "type": "KERNEL_SET",
+          "id": 1
+        }
+      ],
+      "timeSystem": "TDB",
+      "timeFormat": "SECONDS_PAST_J2000",
+      "intervals": [
+        {
+          "startTime": "0",
+          "endTime": "86400"
+        }
+      ],
+      "timeStep": 60,
+      "timeStepUnits": "SECONDS",
+      "outputTimeSystem": "TDB",
+      "outputTimeFormat": "SECONDS_PAST_J2000",
+      "outputDurationUnits": "SECONDS",
+      "target1": "MOON",
+      "shape1": "POINT",
+      "target2": "MOON",
+      "shape2": "POINT",
+      "observer": "EARTH",
+      "aberrationCorrection": "NONE",
+      "shouldComplementWindow": false,
+      "intervalAdjustment": "NO_ADJUSTMENT",
+      "intervalFiltering": "NO_FILTERING",
+      "target": "MOON",
+      "referenceFrame": "IAU_EARTH",
+      "condition": {
+        "coordinateSystem": "LATITUDINAL",
+        "coordinate": "LONGITUDE",
+        "relationalCondition": "RANGE",
+        "referenceValue": 10,
+        "upperLimit": 370
+      }
+    },
+    "final": {
+      "status": "OK",
+      "message": "The request was successful.",
+      "calculationId": "af5fd153-585f-415b-991a-0fc4a91e2fed",
+      "columns": [
+        {
+          "name": "Start Time",
+          "type": "DATE",
+          "units": "",
+          "outputID": "DATE"
+        },
+        {
+          "name": "Stop Time",
+          "type": "DATE",
+          "units": "",
+          "outputID": "DATE"
+        },
+        {
+          "name": "Duration (secs)",
+          "type": "NUMBER",
+          "units": "s",
+          "outputID": "DURATION"
+        }
+      ],
+      "rows": []
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/calculation/new",
+    "payload": {
+      "calculationType": "GF_COORDINATE_SEARCH",
+      "kernels": [
+        {
+          "type": "KERNEL_SET",
+          "id": 1
+        }
+      ],
+      "timeSystem": "TDB",
+      "timeFormat": "SECONDS_PAST_J2000",
+      "intervals": [
+        {
+          "startTime": "0",
+          "endTime": "86400"
+        }
+      ],
+      "timeStep": 60,
+      "timeStepUnits": "SECONDS",
+      "outputTimeSystem": "TDB",
+      "outputTimeFormat": "SECONDS_PAST_J2000",
+      "outputDurationUnits": "SECONDS",
+      "target1": "MOON",
+      "shape1": "POINT",
+      "target2": "MOON",
+      "shape2": "POINT",
+      "observer": "EARTH",
+      "aberrationCorrection": "NONE",
+      "shouldComplementWindow": false,
+      "intervalAdjustment": "NO_ADJUSTMENT",
+      "intervalFiltering": "NO_FILTERING",
+      "target": "MOON",
+      "referenceFrame": "IAU_EARTH",
+      "condition": {
+        "coordinateSystem": "LATITUDINAL",
+        "coordinate": "LONGITUDE",
+        "relationalCondition": "RANGE",
+        "referenceValue": 10,
+        "upperLimit": 10
+      }
+    },
+    "response": {
+      "status": "OK",
+      "message": "The request was successful.",
+      "calculationId": "b0883e85-39f5-4bb0-b359-fd7ef1120828",
+      "result": {
+        "phase": "COMPLETE",
+        "expiresIn": 600
+      }
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/calculation/b0883e85-39f5-4bb0-b359-fd7ef1120828/results",
+    "payload": null,
+    "response": {
+      "status": "OK",
+      "message": "The request was successful.",
+      "calculationId": "b0883e85-39f5-4bb0-b359-fd7ef1120828",
+      "columns": [
+        {
+          "name": "Start Time",
+          "type": "DATE",
+          "units": "",
+          "outputID": "DATE"
+        },
+        {
+          "name": "Stop Time",
+          "type": "DATE",
+          "units": "",
+          "outputID": "DATE"
+        },
+        {
+          "name": "Duration (secs)",
+          "type": "NUMBER",
+          "units": "s",
+          "outputID": "DURATION"
+        }
+      ],
+      "rows": [
+        [
+          "72298.810065",
+          "72298.810065",
+          0.0
+        ]
+      ]
+    }
+  },
+  {
+    "label": "longitude_equal",
+    "payload": {
+      "calculationType": "GF_COORDINATE_SEARCH",
+      "kernels": [
+        {
+          "type": "KERNEL_SET",
+          "id": 1
+        }
+      ],
+      "timeSystem": "TDB",
+      "timeFormat": "SECONDS_PAST_J2000",
+      "intervals": [
+        {
+          "startTime": "0",
+          "endTime": "86400"
+        }
+      ],
+      "timeStep": 60,
+      "timeStepUnits": "SECONDS",
+      "outputTimeSystem": "TDB",
+      "outputTimeFormat": "SECONDS_PAST_J2000",
+      "outputDurationUnits": "SECONDS",
+      "target1": "MOON",
+      "shape1": "POINT",
+      "target2": "MOON",
+      "shape2": "POINT",
+      "observer": "EARTH",
+      "aberrationCorrection": "NONE",
+      "shouldComplementWindow": false,
+      "intervalAdjustment": "NO_ADJUSTMENT",
+      "intervalFiltering": "NO_FILTERING",
+      "target": "MOON",
+      "referenceFrame": "IAU_EARTH",
+      "condition": {
+        "coordinateSystem": "LATITUDINAL",
+        "coordinate": "LONGITUDE",
+        "relationalCondition": "RANGE",
+        "referenceValue": 10,
+        "upperLimit": 10
+      }
+    },
+    "final": {
+      "status": "OK",
+      "message": "The request was successful.",
+      "calculationId": "b0883e85-39f5-4bb0-b359-fd7ef1120828",
+      "columns": [
+        {
+          "name": "Start Time",
+          "type": "DATE",
+          "units": "",
+          "outputID": "DATE"
+        },
+        {
+          "name": "Stop Time",
+          "type": "DATE",
+          "units": "",
+          "outputID": "DATE"
+        },
+        {
+          "name": "Duration (secs)",
+          "type": "NUMBER",
+          "units": "s",
+          "outputID": "DURATION"
+        }
+      ],
+      "rows": [
+        [
+          "72298.810065",
+          "72298.810065",
+          0.0
+        ]
+      ]
+    }
+  }
+]

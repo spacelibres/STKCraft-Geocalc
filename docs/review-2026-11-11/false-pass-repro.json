@@ -1,0 +1,10 @@
+{
+  "scenario": "135 remote rows; zero local output rows",
+  "run_state_result": [
+    0.0,
+    0.0,
+    0.0,
+    0
+  ],
+  "existing_pass_predicate": true
+}

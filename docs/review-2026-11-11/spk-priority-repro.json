@@ -1,0 +1,12 @@
+{
+  "case": "same target/center, overlapping epochs, older segment x=1 then newer x=2",
+  "cspice_state": [
+    2.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "local_output": "10001,0,5,NONE,1.0,0.0,0.0,0.0,0.0,0.0,3.3356409519815205e-6\n"
+}

@@ -1,0 +1,1 @@
+f(t)=1e-9*t, condition f(t)=0; exact solution [0,0]; local result: [Interval { start: -10.0, end: 10.0 }]

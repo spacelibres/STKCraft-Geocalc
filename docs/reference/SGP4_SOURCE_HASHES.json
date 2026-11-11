@@ -1,0 +1,15 @@
+{
+  "reference": "Official CSPICE N0067 C source",
+  "sha256": {
+    "zzsgp4.c": "48c72194a01524804fb54d572a7df00ffc8f804b0ee77d626bd8827ef28e2238",
+    "zzinil.c": "5af401670c87c6857596f2202462831b7d10f1a213962193513852657bf0347d",
+    "zzdscm.c": "1c0f84231c107569b87c3ff68ca5dcd55731d35abce27eabd1b7b079d7e0ef58",
+    "zzdsin.c": "0bb5b6a384d018a5607ded9381fc153e6df2dc298d01ef8894f24e30a1da97d2",
+    "zzdspr.c": "7ab22f803e1edf35271211d11dfb86b6cb8e8175a77eda5b23cd80eed5a9d3ba",
+    "zzdspc.c": "152d79c5638b61bd8ef6196b666140a8002df5641cf7667b0cae903ffd4e43f7",
+    "d_mod.c": "0c5c10162688c30e02cf9ac27d211f78bc15022e2ecd199259c2b88ee61941d3",
+    "pow_dd.c": "6f2ee4e028b352222a7fc79b6b3bad333c87c93f243d0f971ee86a8a8b9a6209",
+    "d_int.c": "8fba529db17cf835c5ecab55e4ba1f808faf284060939d785c52441ea1399be4",
+    "d_sign.c": "e905d9e55c2e5a71f94f0d182a5174da03b72a3559755d7c40daddffcbcc74bb"
+  }
+}

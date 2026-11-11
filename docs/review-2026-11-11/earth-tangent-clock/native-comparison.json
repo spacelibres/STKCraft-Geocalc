@@ -1,0 +1,204 @@
+{
+  "nativeCidfrm399": [
+    10013,
+    "IAU_EARTH"
+  ],
+  "all18ActualFksLoaded": true,
+  "checked": 24,
+  "passed": true,
+  "hypotheticalItrfMismatches": 24,
+  "cases": [
+    {
+      "epoch": -500000000.0,
+      "correction": "NONE",
+      "locus": "TANGENT POINT",
+      "nativeDefaultFrameClock": "08:54:11",
+      "NASA": "08:54:11",
+      "hypotheticalITRF93DefaultClock": "08:54:23"
+    },
+    {
+      "epoch": -500000000.0,
+      "correction": "NONE",
+      "locus": "SURFACE POINT",
+      "nativeDefaultFrameClock": "08:54:11",
+      "NASA": "08:54:11",
+      "hypotheticalITRF93DefaultClock": "08:54:23"
+    },
+    {
+      "epoch": -500000000.0,
+      "correction": "LT",
+      "locus": "TANGENT POINT",
+      "nativeDefaultFrameClock": "08:54:11",
+      "NASA": "08:54:11",
+      "hypotheticalITRF93DefaultClock": "08:54:23"
+    },
+    {
+      "epoch": -500000000.0,
+      "correction": "LT",
+      "locus": "SURFACE POINT",
+      "nativeDefaultFrameClock": "08:54:11",
+      "NASA": "08:54:11",
+      "hypotheticalITRF93DefaultClock": "08:54:23"
+    },
+    {
+      "epoch": -500000000.0,
+      "correction": "XLT",
+      "locus": "TANGENT POINT",
+      "nativeDefaultFrameClock": "08:54:11",
+      "NASA": "08:54:11",
+      "hypotheticalITRF93DefaultClock": "08:54:23"
+    },
+    {
+      "epoch": -500000000.0,
+      "correction": "XLT",
+      "locus": "SURFACE POINT",
+      "nativeDefaultFrameClock": "08:54:11",
+      "NASA": "08:54:11",
+      "hypotheticalITRF93DefaultClock": "08:54:23"
+    },
+    {
+      "epoch": 0.0,
+      "correction": "NONE",
+      "locus": "TANGENT POINT",
+      "nativeDefaultFrameClock": "08:04:39",
+      "NASA": "08:04:39",
+      "hypotheticalITRF93DefaultClock": "08:04:51"
+    },
+    {
+      "epoch": 0.0,
+      "correction": "NONE",
+      "locus": "SURFACE POINT",
+      "nativeDefaultFrameClock": "08:04:39",
+      "NASA": "08:04:39",
+      "hypotheticalITRF93DefaultClock": "08:04:51"
+    },
+    {
+      "epoch": 0.0,
+      "correction": "LT",
+      "locus": "TANGENT POINT",
+      "nativeDefaultFrameClock": "08:04:39",
+      "NASA": "08:04:39",
+      "hypotheticalITRF93DefaultClock": "08:04:51"
+    },
+    {
+      "epoch": 0.0,
+      "correction": "LT",
+      "locus": "SURFACE POINT",
+      "nativeDefaultFrameClock": "08:04:39",
+      "NASA": "08:04:39",
+      "hypotheticalITRF93DefaultClock": "08:04:51"
+    },
+    {
+      "epoch": 0.0,
+      "correction": "XLT",
+      "locus": "TANGENT POINT",
+      "nativeDefaultFrameClock": "08:04:39",
+      "NASA": "08:04:39",
+      "hypotheticalITRF93DefaultClock": "08:04:51"
+    },
+    {
+      "epoch": 0.0,
+      "correction": "XLT",
+      "locus": "SURFACE POINT",
+      "nativeDefaultFrameClock": "08:04:39",
+      "NASA": "08:04:39",
+      "hypotheticalITRF93DefaultClock": "08:04:51"
+    },
+    {
+      "epoch": 500000000.0,
+      "correction": "NONE",
+      "locus": "TANGENT POINT",
+      "nativeDefaultFrameClock": "07:43:36",
+      "NASA": "07:43:36",
+      "hypotheticalITRF93DefaultClock": "07:43:51"
+    },
+    {
+      "epoch": 500000000.0,
+      "correction": "NONE",
+      "locus": "SURFACE POINT",
+      "nativeDefaultFrameClock": "07:43:36",
+      "NASA": "07:43:36",
+      "hypotheticalITRF93DefaultClock": "07:43:51"
+    },
+    {
+      "epoch": 500000000.0,
+      "correction": "LT",
+      "locus": "TANGENT POINT",
+      "nativeDefaultFrameClock": "07:43:36",
+      "NASA": "07:43:36",
+      "hypotheticalITRF93DefaultClock": "07:43:51"
+    },
+    {
+      "epoch": 500000000.0,
+      "correction": "LT",
+      "locus": "SURFACE POINT",
+      "nativeDefaultFrameClock": "07:43:36",
+      "NASA": "07:43:36",
+      "hypotheticalITRF93DefaultClock": "07:43:51"
+    },
+    {
+      "epoch": 500000000.0,
+      "correction": "XLT",
+      "locus": "TANGENT POINT",
+      "nativeDefaultFrameClock": "07:43:36",
+      "NASA": "07:43:36",
+      "hypotheticalITRF93DefaultClock": "07:43:51"
+    },
+    {
+      "epoch": 500000000.0,
+      "correction": "XLT",
+      "locus": "SURFACE POINT",
+      "nativeDefaultFrameClock": "07:43:36",
+      "NASA": "07:43:36",
+      "hypotheticalITRF93DefaultClock": "07:43:51"
+    },
+    {
+      "epoch": 0.0,
+      "correction": "LT+S",
+      "locus": "TANGENT POINT",
+      "nativeDefaultFrameClock": "08:04:39",
+      "NASA": "08:04:39",
+      "hypotheticalITRF93DefaultClock": "08:04:51"
+    },
+    {
+      "epoch": 0.0,
+      "correction": "LT+S",
+      "locus": "SURFACE POINT",
+      "nativeDefaultFrameClock": "08:04:39",
+      "NASA": "08:04:39",
+      "hypotheticalITRF93DefaultClock": "08:04:51"
+    },
+    {
+      "epoch": 0.0,
+      "correction": "CN+S",
+      "locus": "TANGENT POINT",
+      "nativeDefaultFrameClock": "08:04:39",
+      "NASA": "08:04:39",
+      "hypotheticalITRF93DefaultClock": "08:04:51"
+    },
+    {
+      "epoch": 0.0,
+      "correction": "CN+S",
+      "locus": "SURFACE POINT",
+      "nativeDefaultFrameClock": "08:04:39",
+      "NASA": "08:04:39",
+      "hypotheticalITRF93DefaultClock": "08:04:51"
+    },
+    {
+      "epoch": 0.0,
+      "correction": "XCN+S",
+      "locus": "TANGENT POINT",
+      "nativeDefaultFrameClock": "08:04:39",
+      "NASA": "08:04:39",
+      "hypotheticalITRF93DefaultClock": "08:04:51"
+    },
+    {
+      "epoch": 0.0,
+      "correction": "XCN+S",
+      "locus": "SURFACE POINT",
+      "nativeDefaultFrameClock": "08:04:39",
+      "NASA": "08:04:39",
+      "hypotheticalITRF93DefaultClock": "08:04:51"
+    }
+  ]
+}

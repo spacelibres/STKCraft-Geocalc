@@ -1,0 +1,224 @@
+=== State Vector ===
+  FAIL
+  raw results: (4.598405212163925e-09, 4.925334973204798e-09, 4.287878496711528e-09, 1)
+  301,399,0.0,NONE/DISTANCE: actual='402448.6398904589' reference=Decimal('402448.63989046'); raw difference=1.1E-9
+  301,399,0.0,NONE/SPEED: actual='0.9739623352114711' reference=Decimal('0.97396234'); raw difference=4.7885289E-9
+  301,399,0.0,NONE/X: actual='-291608.3847334454' reference=Decimal('-291608.38473345'); raw difference=4.6E-9
+  301,399,0.0,NONE/Y: actual='-266716.83330418577' reference=Decimal('-266716.83330419'); raw difference=4.23E-9
+  301,399,0.0,NONE/Z: actual='-76102.48704883647' reference=Decimal('-76102.48704884'); raw difference=3.53E-9
+  301,399,0.0,NONE/D_X_DT: actual='0.6435313874619292' reference=Decimal('0.64353139'); raw difference=2.5380708E-9
+  301,399,0.0,NONE/D_Y_DT: actual='-0.6660876843353001' reference=Decimal('-0.66608768'); raw difference=4.3353001E-9
+  301,399,0.0,NONE/D_Z_DT: actual='-0.30132570507466505' reference=Decimal('-0.30132571'); raw difference=4.92533495E-9
+  301,399,0.0,NONE/LIGHT_TIME: actual='1.3424241642878785' reference=Decimal('1.34242416'); raw difference=4.2878785E-9
+=== State Representations ===
+  FAIL
+  raw results: (0.49253349500000004, 4.92533495e-09, 82)
+  301,399,0.0,NONE,0,RECTANGULAR,true,true/DISTANCE: actual='402448.6398904589' reference=Decimal('402448.63989046'); raw difference=1.1E-9
+  301,399,0.0,NONE,0,RECTANGULAR,true,true/SPEED: actual='0.9739623352114711' reference=Decimal('0.97396234'); raw difference=4.7885289E-9
+  301,399,0.0,NONE,0,RECTANGULAR,true,true/X: actual='-291608.3847334454' reference=Decimal('-291608.38473345'); raw difference=4.6E-9
+  301,399,0.0,NONE,0,RECTANGULAR,true,true/Y: actual='-266716.83330418577' reference=Decimal('-266716.83330419'); raw difference=4.23E-9
+  301,399,0.0,NONE,0,RECTANGULAR,true,true/Z: actual='-76102.48704883647' reference=Decimal('-76102.48704884'); raw difference=3.53E-9
+  301,399,0.0,NONE,0,RECTANGULAR,true,true/D_X_DT: actual='0.6435313874619292' reference=Decimal('0.64353139'); raw difference=2.5380708E-9
+  301,399,0.0,NONE,0,RECTANGULAR,true,true/D_Y_DT: actual='-0.6660876843353001' reference=Decimal('-0.66608768'); raw difference=4.3353001E-9
+  301,399,0.0,NONE,0,RECTANGULAR,true,true/D_Z_DT: actual='-0.30132570507466505' reference=Decimal('-0.30132571'); raw difference=4.92533495E-9
+  301,399,0.0,NONE,0,RECTANGULAR,true,true/LIGHT_TIME: actual='1.3424241642878785' reference=Decimal('1.34242416'); raw difference=4.2878785E-9
+  301,399,0.0,NONE,0,RA_DEC,true,true/RIGHT_ASCENSION: actual='222.44729948013773' reference=Decimal('222.44729948'); raw difference=1.3773E-10
+  301,399,0.0,NONE,0,RA_DEC,true,true/DECLINATION: actual='-10.900186044210084' reference=Decimal('-10.90018604'); raw difference=4.210084E-9
+  301,399,0.0,NONE,0,RA_DEC,true,true/RANGE: actual='402448.6398904589' reference=Decimal('402448.63989046'); raw difference=1.1E-9
+  301,399,0.0,NONE,0,RA_DEC,true,true/D_RIGHT_ASCENSION_DT: actual='0.00013423055471475944' reference=Decimal('0.00013423'); raw difference=5.5471475944E-10
+  301,399,0.0,NONE,0,RA_DEC,true,true/D_DECLINATION_DT: actual='-4.280653046065587e-5' reference=Decimal('-0.0000428065305'); raw difference=3.934413E-14
+  301,399,0.0,NONE,0,RA_DEC,true,true/D_RANGE_DT: actual='0.032126546674946174' reference=Decimal('0.03212655'); raw difference=3.325053826E-9
+  301,399,0.0,NONE,0,RA_DEC,true,true/SPEED: actual='0.9739623352114711' reference=Decimal('0.97396234'); raw difference=4.7885289E-9
+  301,399,0.0,NONE,0,RA_DEC,true,true/LIGHT_TIME: actual='1.3424241642878785' reference=Decimal('1.34242416'); raw difference=4.2878785E-9
+  301,399,0.0,NONE,0,LATITUDINAL,true,true/LONGITUDE: actual='-137.55270051986224' reference=Decimal('-137.55270052'); raw difference=1.3776E-10
+  301,399,0.0,NONE,0,LATITUDINAL,true,true/LATITUDE: actual='-10.900186044210084' reference=Decimal('-10.90018604'); raw difference=4.210084E-9
+  301,399,0.0,NONE,0,LATITUDINAL,true,true/RADIUS: actual='402448.6398904589' reference=Decimal('402448.63989046'); raw difference=1.1E-9
+  53 additional failures (use --report)
+=== Angular Separation ===
+  FAIL
+  raw results: (4.8054e-09, 4)
+  399,10,301,0.0,NONE,POINT,POINT: numeric cell: actual='57.2098289548054' reference=Decimal('57.20982895'); raw difference=4.8054E-9
+  399,10,301,0.0,NONE,POINT,SPHERE: numeric cell: actual='56.96247814610808' reference=Decimal('56.96247815'); raw difference=3.89192E-9
+  399,10,301,0.0,NONE,SPHERE,POINT: numeric cell: actual='56.938858101634246' reference=Decimal('56.9388581'); raw difference=1.634246E-9
+  399,10,301,0.0,NONE,SPHERE,SPHERE: numeric cell: actual='56.691507292936926' reference=Decimal('56.69150729'); raw difference=2.936926E-9
+=== Phase Angle ===
+  FAIL
+  raw results: (2.64873e-09, 1)
+  301,10,399,0.0,NONE: numeric cell: actual='122.65820180264873' reference=Decimal('122.6582018'); raw difference=2.64873E-9
+=== Angular Size ===
+  FAIL
+  raw results: (2.60536053e-09, 3)
+  399,301,0.0,NONE,MAX_RADIUS/ANGULAR_SIZE: actual='0.49470161739463947' reference=Decimal('0.49470162'); raw difference=2.60536053E-9
+  399,301,0.0,NONE,MIN_RADIUS/ANGULAR_SIZE: actual='0.49470161739463947' reference=Decimal('0.49470162'); raw difference=2.60536053E-9
+  399,301,0.0,NONE,LIMB_EXTENTS/MIN_ANGULAR_SIZE: actual='0.49470161739463947' reference=Decimal('0.49470162'); raw difference=2.60536053E-9
+  399,301,0.0,NONE,LIMB_EXTENTS/MAX_ANGULAR_SIZE: actual='0.4947016173946421' reference=Decimal('0.49470162'); raw difference=2.6053579E-9
+=== Osculating Elements ===
+  FAIL
+  raw results: ({'angles': 4.03653e-09, 'distance': 3e-09, 'eccentricity': 3.53807064e-09, 'period': 4.6e-09, 'speed': 4.7885289e-09, 'gm': 4.1e-09}, 1)
+  301,399,0.0,NONE: numeric cell: actual='20.942303952414743' reference=Decimal('20.94230395'); raw difference=2.414743E-9
+  301,399,0.0,NONE: numeric cell: actual='12.236438463504559' reference=Decimal('12.23643846'); raw difference=3.504559E-9
+  301,399,0.0,NONE: numeric cell: actual='68.05335131996789' reference=Decimal('68.05335132'); raw difference=3.211E-11
+  301,399,0.0,NONE: numeric cell: actual='140.14966388403653' reference=Decimal('140.14966388'); raw difference=4.03653E-9
+  301,399,0.0,NONE: numeric cell: actual='143.88822636039' reference=Decimal('143.88822636'); raw difference=3.9E-10
+  301,399,0.0,NONE: numeric cell: actual='365451.161777677' reference=Decimal('365451.16177768'); raw difference=3E-9
+  301,399,0.0,NONE: numeric cell: actual='386138.42908616166' reference=Decimal('386138.42908616'); raw difference=1.66E-9
+  301,399,0.0,NONE: numeric cell: actual='402448.6398904589' reference=Decimal('402448.63989046'); raw difference=1.1E-9
+  301,399,0.0,NONE: numeric cell: actual='0.05357474353807064' reference=Decimal('0.05357474'); raw difference=3.53807064E-9
+  301,399,0.0,NONE: numeric cell: actual='2387951.6110753054' reference=Decimal('2387951.61107531'); raw difference=4.6E-9
+  301,399,0.0,NONE: numeric cell: actual='0.9739623352114711' reference=Decimal('0.97396234'); raw difference=4.7885289E-9
+  GM: actual='398600.4354360959' reference=Decimal('398600.4354361'); raw difference=4.1E-9
+=== Planetocentric Solar Longitude ===
+  FAIL
+  raw results: (4.61585e-09, 1)
+  301,0.0,NONE: numeric cell: actual='156.25893728461585' reference=Decimal('156.25893728'); raw difference=4.61585E-9
+=== Illumination Angles ===
+  FAIL
+  raw results: (4.56483e-09, 1)
+  301,399,10.0,20.0,0.0,0.0,NONE,10,IAU_MOON/INCIDENCE_ANGLE: actual='124.90921336456483' reference=Decimal('124.90921336'); raw difference=4.56483E-9
+  301,399,10.0,20.0,0.0,0.0,NONE,10,IAU_MOON/EMISSION_ANGLE: actual='27.280425258109396' reference=Decimal('27.28042526'); raw difference=1.890604E-9
+  301,399,10.0,20.0,0.0,0.0,NONE,10,IAU_MOON/PHASE_ANGLE: actual='122.63141557388053' reference=Decimal('122.63141557'); raw difference=3.88053E-9
+  301,399,10.0,20.0,0.0,0.0,NONE,10,IAU_MOON/OBSERVER_ALTITUDE: actual='400903.6963039897' reference=Decimal('400903.69630399'); raw difference=3E-10
+  301,399,10.0,20.0,0.0,0.0,NONE,10,IAU_MOON/LIGHT_TIME: actual='1.3372707871923508' reference=Decimal('1.33727079'); raw difference=2.8076492E-9
+=== Surface Intercept ===
+  FAIL
+  raw results: (3.22381e-09, 1)
+  301,399,0.0,NONE,IAU_MOON/X: actual='1718.8327587018002' reference=Decimal('1718.8327587'); raw difference=1.8002E-9
+  301,399,0.0,NONE,IAU_MOON/Y: actual='151.04685518043044' reference=Decimal('151.04685518'); raw difference=4.3044E-10
+  301,399,0.0,NONE,IAU_MOON/Z: actual='-203.36557022677619' reference=Decimal('-203.36557023'); raw difference=3.22381E-9
+  301,399,0.0,NONE,IAU_MOON/OBSERVER_ALTITUDE: actual='400711.2398904588' reference=Decimal('400711.23989046'); raw difference=1.2E-9
+  301,399,0.0,NONE,IAU_MOON/INCIDENCE_ANGLE: actual='122.65877236315296' reference=Decimal('122.65877236'); raw difference=3.15296E-9
+  301,399,0.0,NONE,IAU_MOON/EMISSION_ANGLE: actual='7.951386703658792e-16' reference=Decimal('7.9513867E-16'); raw difference=3.658792E-25
+  301,399,0.0,NONE,IAU_MOON/PHASE_ANGLE: actual='122.65877236315296' reference=Decimal('122.65877236'); raw difference=3.15296E-9
+  301,399,0.0,NONE,IAU_MOON/LIGHT_TIME: actual='1.3366288216979056' reference=Decimal('1.33662882'); raw difference=1.6979056E-9
+=== Tangent Point ===
+  FAIL
+  raw results: (3.567388e-09, 1)
+  301,399,0.0,NONE,0.0,0.0,0.0,TANGENT_POINT,IAU_MOON/TANGENT_POINT_LONGITUDE: actual='5.0221129910108875' reference=Decimal('5.02211299'); raw difference=1.0108875E-9
+  301,399,0.0,NONE,0.0,0.0,0.0,TANGENT_POINT,IAU_MOON/TANGENT_POINT_LATITUDE: actual='-6.721976383567388' reference=Decimal('-6.72197638'); raw difference=3.567388E-9
+  301,399,0.0,NONE,0.0,0.0,0.0,TANGENT_POINT,IAU_MOON/SURFACE_POINT_LONGITUDE: actual='5.0221129910108875' reference=Decimal('5.02211299'); raw difference=1.0108875E-9
+  301,399,0.0,NONE,0.0,0.0,0.0,TANGENT_POINT,IAU_MOON/SURFACE_POINT_LATITUDE: actual='-6.721976383567388' reference=Decimal('-6.72197638'); raw difference=3.567388E-9
+  301,399,0.0,NONE,0.0,0.0,0.0,TANGENT_POINT,IAU_MOON/SURFACE_POINT_ALTITUDE: actual='-1.561844525848901e-12' reference=Decimal('-1.56184453E-12'); raw difference=4.151099E-21
+  301,399,0.0,NONE,0.0,0.0,0.0,TANGENT_POINT,IAU_MOON/DISTANCE_TO_TANGENT_POINT: actual='400711.23989045894' reference=Decimal('400711.23989046'); raw difference=1.06E-9
+  301,399,0.0,NONE,0.0,0.0,0.0,TANGENT_POINT,IAU_MOON/INCIDENCE_ANGLE: actual='122.65877236315261' reference=Decimal('122.65877236'); raw difference=3.15261E-9
+  301,399,0.0,NONE,0.0,0.0,0.0,TANGENT_POINT,IAU_MOON/EMISSION_ANGLE: actual='4.0474354764015335e-13' reference=Decimal('4.04743548E-13'); raw difference=3.5984665E-22
+  301,399,0.0,NONE,0.0,0.0,0.0,TANGENT_POINT,IAU_MOON/PHASE_ANGLE: actual='122.65877236315299' reference=Decimal('122.65877236'); raw difference=3.15299E-9
+  301,399,0.0,NONE,0.0,0.0,0.0,TANGENT_POINT,IAU_MOON/LIGHT_TIME: actual='1.3366288216979059' reference=Decimal('1.33662882'); raw difference=1.6979059E-9
+=== Sub-observer Point ===
+  FAIL
+  raw results: (4.13813e-09, 4)
+  observer,301,399,0.0,NONE,NEAR_POINT_ELLIPSOID,IAU_MOON/X: actual='1718.8327587018' reference=Decimal('1718.8327587'); raw difference=1.8E-9
+  observer,301,399,0.0,NONE,NEAR_POINT_ELLIPSOID,IAU_MOON/Y: actual='151.04685518043044' reference=Decimal('151.04685518'); raw difference=4.3044E-10
+  observer,301,399,0.0,NONE,NEAR_POINT_ELLIPSOID,IAU_MOON/Z: actual='-203.36557022677619' reference=Decimal('-203.36557023'); raw difference=3.22381E-9
+  observer,301,399,0.0,NONE,NEAR_POINT_ELLIPSOID,IAU_MOON/SUB_POINT_RADIUS: actual='1737.3999999999999' reference=Decimal('1737.4'); raw difference=1E-13
+  observer,301,399,0.0,NONE,NEAR_POINT_ELLIPSOID,IAU_MOON/OBSERVER_ALTITUDE: actual='400711.2398904588' reference=Decimal('400711.23989046'); raw difference=1.2E-9
+  observer,301,399,0.0,NONE,NEAR_POINT_ELLIPSOID,IAU_MOON/INCIDENCE_ANGLE: actual='122.65877236315296' reference=Decimal('122.65877236'); raw difference=3.15296E-9
+  observer,301,399,0.0,NONE,NEAR_POINT_ELLIPSOID,IAU_MOON/EMISSION_ANGLE: actual='7.951386703658792e-16' reference=Decimal('7.9513867E-16'); raw difference=3.658792E-25
+  observer,301,399,0.0,NONE,NEAR_POINT_ELLIPSOID,IAU_MOON/PHASE_ANGLE: actual='122.65877236315296' reference=Decimal('122.65877236'); raw difference=3.15296E-9
+  observer,301,399,0.0,NONE,NEAR_POINT_ELLIPSOID,IAU_MOON/LIGHT_TIME: actual='1.3366288216979056' reference=Decimal('1.33662882'); raw difference=1.6979056E-9
+  observer,301,399,0.0,NONE,INTERCEPT_ELLIPSOID,IAU_MOON/X: actual='1718.8327587018002' reference=Decimal('1718.8327587'); raw difference=1.8002E-9
+  observer,301,399,0.0,NONE,INTERCEPT_ELLIPSOID,IAU_MOON/Y: actual='151.04685518043044' reference=Decimal('151.04685518'); raw difference=4.3044E-10
+  observer,301,399,0.0,NONE,INTERCEPT_ELLIPSOID,IAU_MOON/Z: actual='-203.36557022677619' reference=Decimal('-203.36557023'); raw difference=3.22381E-9
+  observer,301,399,0.0,NONE,INTERCEPT_ELLIPSOID,IAU_MOON/OBSERVER_ALTITUDE: actual='400711.2398904588' reference=Decimal('400711.23989046'); raw difference=1.2E-9
+  observer,301,399,0.0,NONE,INTERCEPT_ELLIPSOID,IAU_MOON/INCIDENCE_ANGLE: actual='122.65877236315296' reference=Decimal('122.65877236'); raw difference=3.15296E-9
+  observer,301,399,0.0,NONE,INTERCEPT_ELLIPSOID,IAU_MOON/EMISSION_ANGLE: actual='7.951386703658792e-16' reference=Decimal('7.9513867E-16'); raw difference=3.658792E-25
+  observer,301,399,0.0,NONE,INTERCEPT_ELLIPSOID,IAU_MOON/PHASE_ANGLE: actual='122.65877236315296' reference=Decimal('122.65877236'); raw difference=3.15296E-9
+  observer,301,399,0.0,NONE,INTERCEPT_ELLIPSOID,IAU_MOON/LIGHT_TIME: actual='1.3366288216979056' reference=Decimal('1.33662882'); raw difference=1.6979056E-9
+  observer,301,399,0.0,NONE,NEAR_POINT_ELLIPSOID,MOON_ME/X: actual='1718.8344661639997' reference=Decimal('1718.83446616'); raw difference=3.9997E-9
+  observer,301,399,0.0,NONE,NEAR_POINT_ELLIPSOID,MOON_ME/Y: actual='151.08815993737755' reference=Decimal('151.08815994'); raw difference=2.62245E-9
+  observer,301,399,0.0,NONE,NEAR_POINT_ELLIPSOID,MOON_ME/Z: actual='-203.32045114413813' reference=Decimal('-203.32045114'); raw difference=4.13813E-9
+  14 additional failures (use --report)
+=== Sub-solar Point ===
+  FAIL
+  raw results: (4.91661e-09, 4)
+  solar,301,399,0.0,NONE,NEAR_POINT_ELLIPSOID,IAU_MOON/X: actual='-810.4013777515588' reference=Decimal('-810.40137775'); raw difference=1.5588E-9
+  solar,301,399,0.0,NONE,NEAR_POINT_ELLIPSOID,IAU_MOON/Y: actual='-1536.7018955545623' reference=Decimal('-1536.70189555'); raw difference=4.5623E-9
+  solar,301,399,0.0,NONE,NEAR_POINT_ELLIPSOID,IAU_MOON/Z: actual='18.858715157476436' reference=Decimal('18.85871516'); raw difference=2.523564E-9
+  solar,301,399,0.0,NONE,NEAR_POINT_ELLIPSOID,IAU_MOON/SUB_POINT_RADIUS: actual='1737.4000000000003' reference=Decimal('1737.4'); raw difference=3E-13
+  solar,301,399,0.0,NONE,NEAR_POINT_ELLIPSOID,IAU_MOON/OBSERVER_ALTITUDE: actual='403388.83858816465' reference=Decimal('403388.83858816'); raw difference=4.65E-9
+  solar,301,399,0.0,NONE,NEAR_POINT_ELLIPSOID,IAU_MOON/INCIDENCE_ANGLE: actual='7.11263096504485e-15' reference=Decimal('7.11263097E-15'); raw difference=4.95515E-24
+  solar,301,399,0.0,NONE,NEAR_POINT_ELLIPSOID,IAU_MOON/EMISSION_ANGLE: actual='122.86596204508339' reference=Decimal('122.86596205'); raw difference=4.91661E-9
+  solar,301,399,0.0,NONE,NEAR_POINT_ELLIPSOID,IAU_MOON/PHASE_ANGLE: actual='122.86596204508342' reference=Decimal('122.86596205'); raw difference=4.91658E-9
+  solar,301,399,0.0,NONE,NEAR_POINT_ELLIPSOID,IAU_MOON/LIGHT_TIME: actual='1.3455603295669456' reference=Decimal('1.34556033'); raw difference=4.330544E-10
+  solar,301,399,0.0,NONE,INTERCEPT_ELLIPSOID,IAU_MOON/X: actual='-810.4013777515587' reference=Decimal('-810.40137775'); raw difference=1.5587E-9
+  solar,301,399,0.0,NONE,INTERCEPT_ELLIPSOID,IAU_MOON/Y: actual='-1536.701895554562' reference=Decimal('-1536.70189555'); raw difference=4.562E-9
+  solar,301,399,0.0,NONE,INTERCEPT_ELLIPSOID,IAU_MOON/Z: actual='18.858715157476436' reference=Decimal('18.85871516'); raw difference=2.523564E-9
+  solar,301,399,0.0,NONE,INTERCEPT_ELLIPSOID,IAU_MOON/OBSERVER_ALTITUDE: actual='403388.83858816465' reference=Decimal('403388.83858816'); raw difference=4.65E-9
+  solar,301,399,0.0,NONE,INTERCEPT_ELLIPSOID,IAU_MOON/INCIDENCE_ANGLE: actual='7.11471403170689e-15' reference=Decimal('7.11471403E-15'); raw difference=1.70689E-24
+  solar,301,399,0.0,NONE,INTERCEPT_ELLIPSOID,IAU_MOON/EMISSION_ANGLE: actual='122.86596204508339' reference=Decimal('122.86596205'); raw difference=4.91661E-9
+  solar,301,399,0.0,NONE,INTERCEPT_ELLIPSOID,IAU_MOON/PHASE_ANGLE: actual='122.86596204508342' reference=Decimal('122.86596205'); raw difference=4.91658E-9
+  solar,301,399,0.0,NONE,INTERCEPT_ELLIPSOID,IAU_MOON/LIGHT_TIME: actual='1.3455603295669456' reference=Decimal('1.34556033'); raw difference=4.330544E-10
+  solar,301,399,0.0,NONE,NEAR_POINT_ELLIPSOID,MOON_ME/X: actual='-810.3701416835161' reference=Decimal('-810.37014168'); raw difference=3.5161E-9
+  solar,301,399,0.0,NONE,NEAR_POINT_ELLIPSOID,MOON_ME/Y: actual='-1536.7191466086051' reference=Decimal('-1536.71914661'); raw difference=1.3949E-9
+  solar,301,399,0.0,NONE,NEAR_POINT_ELLIPSOID,MOON_ME/Z: actual='18.795156672888847' reference=Decimal('18.79515667'); raw difference=2.888847E-9
+  14 additional failures (use --report)
+=== Pointing Direction ===
+  FAIL
+  raw results: (4.99092e-09, 7)
+  POSITION,301,399,0.0,NONE,J2000,MOON_ME,PRESERVE_ORIGINAL,RECTANGULAR,false,VECTOR,1.0,2.0,3.0,X,false,false/X: actual='-398148.1484428138' reference=Decimal('-398148.14844281'); raw difference=3.8E-9
+  POSITION,301,399,0.0,NONE,J2000,MOON_ME,PRESERVE_ORIGINAL,RECTANGULAR,false,VECTOR,1.0,2.0,3.0,X,false,false/Y: actual='-34997.82690822477' reference=Decimal('-34997.82690822'); raw difference=4.77E-9
+  POSITION,301,399,0.0,NONE,J2000,MOON_ME,PRESERVE_ORIGINAL,RECTANGULAR,false,VECTOR,1.0,2.0,3.0,X,false,false/Z: actual='47096.83378892188' reference=Decimal('47096.83378892'); raw difference=1.88E-9
+  POSITION,301,399,0.0,LT+S,J2000,J2000,UNIT,RA_DEC,false,VECTOR,1.0,2.0,3.0,X,false,false/RIGHT_ASCENSION: actual='222.44711928678896' reference=Decimal('222.44711929'); raw difference=3.21104E-9
+  POSITION,301,399,0.0,LT+S,J2000,J2000,UNIT,RA_DEC,false,VECTOR,1.0,2.0,3.0,X,false,false/DECLINATION: actual='-10.900128579917405' reference=Decimal('-10.90012858'); raw difference=8.2595E-11
+  VELOCITY,10,399,500000000.0,CN+S,IAU_MOON,IAU_EARTH,PRESERVE_ORIGINAL,LATITUDINAL,false,VECTOR,1.0,2.0,3.0,X,false,false/LONGITUDE: actual='-101.88108441291261' reference=Decimal('-101.88108441'); raw difference=2.91261E-9
+  VELOCITY,10,399,500000000.0,CN+S,IAU_MOON,IAU_EARTH,PRESERVE_ORIGINAL,LATITUDINAL,false,VECTOR,1.0,2.0,3.0,X,false,false/LATITUDE: actual='18.14237914549624' reference=Decimal('18.14237915'); raw difference=4.50376E-9
+  VELOCITY,10,399,500000000.0,CN+S,IAU_MOON,IAU_EARTH,PRESERVE_ORIGINAL,LATITUDINAL,false,VECTOR,1.0,2.0,3.0,X,false,false/RADIUS: actual='364.7503552209844' reference=Decimal('364.75035522'); raw difference=9.844E-10
+  VELOCITY,301,399,0.0,NONE,B1950,J2000,UNIT,CYLINDRICAL,false,VECTOR,1.0,2.0,3.0,X,false,false/LONGITUDE: actual='314.01326052164154' reference=Decimal('314.01326052'); raw difference=1.64154E-9
+  VELOCITY,301,399,0.0,NONE,B1950,J2000,UNIT,CYLINDRICAL,false,VECTOR,1.0,2.0,3.0,X,false,false/Z: actual='-0.3093812708981605' reference=Decimal('-0.30938127'); raw difference=8.981605E-10
+  VELOCITY,301,399,0.0,NONE,B1950,J2000,UNIT,CYLINDRICAL,false,VECTOR,1.0,2.0,3.0,X,false,false/RADIUS: actual='0.9509380785400483' reference=Decimal('0.95093808'); raw difference=1.4599517E-9
+  VECTOR,0,399,500000000.0,LT,MOON_ME,IAU_EARTH,PRESERVE_ORIGINAL,SPHERICAL,true,VECTOR,3.0,4.0,5.0,X,false,false/LONGITUDE: actual='-61.05318876958306' reference=Decimal('-61.05318877'); raw difference=4.1694E-10
+  VECTOR,0,399,500000000.0,LT,MOON_ME,IAU_EARTH,PRESERVE_ORIGINAL,SPHERICAL,true,VECTOR,3.0,4.0,5.0,X,false,false/COLATITUDE: actual='139.61044469999104' reference=Decimal('139.6104447'); raw difference=8.96E-12
+  VECTOR,0,399,500000000.0,LT,MOON_ME,IAU_EARTH,PRESERVE_ORIGINAL,SPHERICAL,true,VECTOR,3.0,4.0,5.0,X,false,false/RADIUS: actual='7.0710678118654755' reference=Decimal('7.07106781'); raw difference=1.8654755E-9
+  VECTOR,0,399,0.0,S,J2000,MOON_ME,UNIT,AZ_EL,true,VECTOR,3.0,4.0,5.0,X,false,false/AZIMUTH: actual='156.5752316595204' reference=Decimal('156.57523166'); raw difference=4.796E-10
+  VECTOR,0,399,0.0,S,J2000,MOON_ME,UNIT,AZ_EL,true,VECTOR,3.0,4.0,5.0,X,false,false/ELEVATION: actual='23.68180393500908' reference=Decimal('23.68180394'); raw difference=4.99092E-9
+  VECTOR,0,399,500000000.0,S,J2000,J2000,PRESERVE_ORIGINAL,RECTANGULAR,true,AXIS,1.0,0.0,0.0,X,false,false/X: actual='-0.9999999973440405' reference=Decimal('-1.0'); raw difference=2.6559595E-9
+  VECTOR,0,399,500000000.0,S,J2000,J2000,PRESERVE_ORIGINAL,RECTANGULAR,true,AXIS,1.0,0.0,0.0,X,false,false/Y: actual='-6.687104209715334e-5' reference=Decimal('-0.0000668710421'); raw difference=2.84666E-15
+  VECTOR,0,399,500000000.0,S,J2000,J2000,PRESERVE_ORIGINAL,RECTANGULAR,true,AXIS,1.0,0.0,0.0,X,false,false/Z: actual='-2.8985904673386752e-5' reference=Decimal('-0.0000289859047'); raw difference=2.6613248E-14
+=== Frame Transformation ===
+  FAIL
+  raw results: (4.5437278e-09, 29, [])
+  J2000->IAU_MARS EULER_ANGLES/NOT_INCLUDED/ANGLE3: actual='-29.500698108133893' reference=Decimal('-29.50069811'); raw difference=1.866107E-9
+  J2000->IAU_MARS EULER_ANGLES/NOT_INCLUDED/ANGLE2: actual='23.62211765291712' reference=Decimal('23.62211765'); raw difference=2.91712E-9
+  J2000->IAU_MARS EULER_ANGLES/NOT_INCLUDED/ANGLE1: actual='-97.01505949433835' reference=Decimal('-97.01505949'); raw difference=4.33835E-9
+  J2000->IAU_MARS EULER_ANGLES/VECTOR_IN_FRAME1/ANGLE3: actual='-29.500698108133893' reference=Decimal('-29.50069811'); raw difference=1.866107E-9
+  J2000->IAU_MARS EULER_ANGLES/VECTOR_IN_FRAME1/ANGLE2: actual='23.62211765291712' reference=Decimal('23.62211765'); raw difference=2.91712E-9
+  J2000->IAU_MARS EULER_ANGLES/VECTOR_IN_FRAME1/ANGLE1: actual='-97.01505949433835' reference=Decimal('-97.01505949'); raw difference=4.33835E-9
+  J2000->IAU_MARS EULER_ANGLES/VECTOR_IN_FRAME1/AV_X: actual='0.0018119458867748711' reference=Decimal('0.00181195'); raw difference=4.1132251289E-9
+  J2000->IAU_MARS EULER_ANGLES/VECTOR_IN_FRAME1/AV_Y: actual='-0.001650012178871767' reference=Decimal('-0.00165001'); raw difference=2.178871767E-9
+  J2000->IAU_MARS EULER_ANGLES/VECTOR_IN_FRAME1/AV_Z: actual='0.0032385276886209013' reference=Decimal('0.00323853'); raw difference=2.3113790987E-9
+  J2000->IAU_MARS EULER_ANGLES/VECTOR_IN_FRAME1/AV_MAG: actual='0.0040612497678657695' reference=Decimal('0.00406125'); raw difference=2.321342305E-10
+  J2000->IAU_MARS EULER_ANGLES/VECTOR_IN_FRAME2/ANGLE3: actual='-29.500698108133893' reference=Decimal('-29.50069811'); raw difference=1.866107E-9
+  J2000->IAU_MARS EULER_ANGLES/VECTOR_IN_FRAME2/ANGLE2: actual='23.62211765291712' reference=Decimal('23.62211765'); raw difference=2.91712E-9
+  J2000->IAU_MARS EULER_ANGLES/VECTOR_IN_FRAME2/ANGLE1: actual='-97.01505949433835' reference=Decimal('-97.01505949'); raw difference=4.33835E-9
+  J2000->IAU_MARS EULER_ANGLES/VECTOR_IN_FRAME2/AV_X: actual='-9.568727101528173e-13' reference=Decimal('-9.5687271E-13'); raw difference=1.528173E-22
+  J2000->IAU_MARS EULER_ANGLES/VECTOR_IN_FRAME2/AV_Y: actual='2.7983750067646743e-11' reference=Decimal('2.79837501E-11'); raw difference=3.2353257E-20
+  J2000->IAU_MARS EULER_ANGLES/VECTOR_IN_FRAME2/AV_Z: actual='0.004061249767865769' reference=Decimal('0.00406125'); raw difference=2.32134231E-10
+  J2000->IAU_MARS EULER_ANGLES/VECTOR_IN_FRAME2/AV_MAG: actual='0.004061249767865769' reference=Decimal('0.00406125'); raw difference=2.32134231E-10
+  J2000->IAU_MARS EULER_ANGLES/EULER_ANGLE_DERIVATIVES/ANGLE3: actual='-29.500698108133893' reference=Decimal('-29.50069811'); raw difference=1.866107E-9
+  J2000->IAU_MARS EULER_ANGLES/EULER_ANGLE_DERIVATIVES/ANGLE2: actual='23.62211765291712' reference=Decimal('23.62211765'); raw difference=2.91712E-9
+  J2000->IAU_MARS EULER_ANGLES/EULER_ANGLE_DERIVATIVES/ANGLE1: actual='-97.01505949433835' reference=Decimal('-97.01505949'); raw difference=4.33835E-9
+  296 additional failures (use --report)
+=== Locations ===
+  FAIL
+  raw results: (4.47e-09, 4, [])
+  point observer NONE CENTER/DISTANCE: actual='400590.0775951798' reference=Decimal('400590.07759518'); raw difference=2E-10
+  point observer NONE CENTER/SPEED: actual='27.893348706262454' reference=Decimal('27.89334871'); raw difference=3.737546E-9
+  point observer NONE CENTER/X: actual='213656.37346191553' reference=Decimal('213656.37346192'); raw difference=4.47E-9
+  point observer NONE CENTER/Y: actual='-329362.08803613693' reference=Decimal('-329362.08803614'); raw difference=3.07E-9
+  point observer NONE CENTER/Z: actual='-79649.1011329735' reference=Decimal('-79649.10113297'); raw difference=3.5E-9
+  point observer NONE CENTER/D_X_DT: actual='-23.589244540034855' reference=Decimal('-23.58924454'); raw difference=3.4855E-11
+  point observer NONE CENTER/D_Y_DT: actual='-14.88272980194423' reference=Decimal('-14.8827298'); raw difference=1.94423E-9
+  point observer NONE CENTER/D_Z_DT: actual='-0.3013266033895645' reference=Decimal('-0.3013266'); raw difference=3.3895645E-9
+  point observer NONE CENTER/LIGHT_TIME: actual='1.3362246677839367' reference=Decimal('1.33622467'); raw difference=2.2160633E-9
+  point target NONE/DISTANCE: actual='401468.84195735335' reference=Decimal('401468.84195735'); raw difference=3.35E-9
+  point target NONE/SPEED: actual='0.9710395944284261' reference=Decimal('0.97103959'); raw difference=4.4284261E-9
+  point target NONE/X: actual='-292098.1945189615' reference=Decimal('-292098.19451896'); raw difference=1.5E-9
+  point target NONE/Y: actual='-265335.6192122059' reference=Decimal('-265335.61921221'); raw difference=4.1E-9
+  point target NONE/Z: actual='-73843.65239217633' reference=Decimal('-73843.65239218'); raw difference=3.67E-9
+  point target NONE/D_X_DT: actual='0.6377058230595825' reference=Decimal('0.63770582'); raw difference=3.0595825E-9
+  point target NONE/D_Y_DT: actual='-0.6671424155630244' reference=Decimal('-0.66714242'); raw difference=4.4369756E-9
+  point target NONE/D_Z_DT: actual='-0.3019439923899059' reference=Decimal('-0.30194399'); raw difference=2.3899059E-9
+  point target NONE/LIGHT_TIME: actual='1.3391559101775448' reference=Decimal('1.33915591'); raw difference=1.775448E-10
+  cv point target NONE/DISTANCE: actual='7003.5705179572515' reference=Decimal('7003.57051796'); raw difference=2.7485E-9
+  cv point target NONE/SPEED: actual='7.4027089636159555' reference=Decimal('7.40270896'); raw difference=3.6159555E-9
+  9 additional failures (use --report)
+OVERALL: FAIL

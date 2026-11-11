@@ -1,0 +1,4 @@
+interface:
+  display_name: "STKCraft Geocalc MCP"
+  short_description: "Run and use the local geometry MCP server"
+  default_prompt: "Use $stkcraft-geocalc-mcp to discover geometry tools and run a kernel-backed calculation."

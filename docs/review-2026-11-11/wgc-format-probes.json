@@ -1,0 +1,492 @@
+[
+  {
+    "request": {
+      "calculationType": "POINTING_DIRECTION",
+      "kernels": [
+        {
+          "type": "KERNEL_SET",
+          "id": 1
+        }
+      ],
+      "direction": {
+        "directionType": "VECTOR",
+        "directionVectorType": "VECTOR_IN_REFERENCE_FRAME",
+        "directionFrame": "J2000",
+        "directionVectorX": 12345678901.2345,
+        "directionVectorY": 12345678850.0,
+        "directionVectorZ": 12345678950.0,
+        "aberrationCorrection": "NONE",
+        "antiVectorFlag": false
+      },
+      "referenceFrame": "J2000",
+      "coordinateRepresentation": "RECTANGULAR",
+      "vectorMagnitude": "PRESERVE_ORIGINAL",
+      "timeSystem": "TDB",
+      "timeFormat": "SECONDS_PAST_J2000",
+      "times": [
+        "0.0"
+      ],
+      "outputTimeSystem": "TDB",
+      "outputTimeFormat": "SECONDS_PAST_J2000"
+    },
+    "result": {
+      "status": "OK",
+      "message": "The request was successful.",
+      "calculationId": "ca4208e7-3cab-4513-bf0f-2aba8f407077",
+      "columns": [
+        {
+          "name": "TDB seconds past J2000",
+          "type": "NUMBER",
+          "units": "",
+          "outputID": "DATE"
+        },
+        {
+          "name": "X (same as input)",
+          "type": "NUMBER",
+          "units": "same as input",
+          "outputID": "X"
+        },
+        {
+          "name": "Y (same as input)",
+          "type": "NUMBER",
+          "units": "same as input",
+          "outputID": "Y"
+        },
+        {
+          "name": "Z (same as input)",
+          "type": "NUMBER",
+          "units": "same as input",
+          "outputID": "Z"
+        }
+      ],
+      "rows": [
+        [
+          "0.0",
+          "1.23456789E+10",
+          "1.23456789E+10",
+          "1.2345679E+10"
+        ]
+      ]
+    }
+  },
+  {
+    "request": {
+      "calculationType": "POINTING_DIRECTION",
+      "kernels": [
+        {
+          "type": "KERNEL_SET",
+          "id": 1
+        }
+      ],
+      "direction": {
+        "directionType": "VECTOR",
+        "directionVectorType": "VECTOR_IN_REFERENCE_FRAME",
+        "directionFrame": "J2000",
+        "directionVectorX": 9.9999999994e-05,
+        "directionVectorY": 0.0001,
+        "directionVectorZ": 0.000100000000001,
+        "aberrationCorrection": "NONE",
+        "antiVectorFlag": false
+      },
+      "referenceFrame": "J2000",
+      "coordinateRepresentation": "RECTANGULAR",
+      "vectorMagnitude": "PRESERVE_ORIGINAL",
+      "timeSystem": "TDB",
+      "timeFormat": "SECONDS_PAST_J2000",
+      "times": [
+        "0.0"
+      ],
+      "outputTimeSystem": "TDB",
+      "outputTimeFormat": "SECONDS_PAST_J2000"
+    },
+    "result": {
+      "status": "OK",
+      "message": "The request was successful.",
+      "calculationId": "02a43101-ba02-400c-a086-8a443f0502f3",
+      "columns": [
+        {
+          "name": "TDB seconds past J2000",
+          "type": "NUMBER",
+          "units": "",
+          "outputID": "DATE"
+        },
+        {
+          "name": "X (same as input)",
+          "type": "NUMBER",
+          "units": "same as input",
+          "outputID": "X"
+        },
+        {
+          "name": "Y (same as input)",
+          "type": "NUMBER",
+          "units": "same as input",
+          "outputID": "Y"
+        },
+        {
+          "name": "Z (same as input)",
+          "type": "NUMBER",
+          "units": "same as input",
+          "outputID": "Z"
+        }
+      ],
+      "rows": [
+        [
+          "0.0",
+          "0.00010",
+          "0.00010",
+          "0.00010"
+        ]
+      ]
+    }
+  },
+  {
+    "request": {
+      "calculationType": "POINTING_DIRECTION",
+      "kernels": [
+        {
+          "type": "KERNEL_SET",
+          "id": 1
+        }
+      ],
+      "direction": {
+        "directionType": "VECTOR",
+        "directionVectorType": "VECTOR_IN_REFERENCE_FRAME",
+        "directionFrame": "J2000",
+        "directionVectorX": 9999999999.999,
+        "directionVectorY": 10000000000.0,
+        "directionVectorZ": -12345678850.0,
+        "aberrationCorrection": "NONE",
+        "antiVectorFlag": false
+      },
+      "referenceFrame": "J2000",
+      "coordinateRepresentation": "RECTANGULAR",
+      "vectorMagnitude": "PRESERVE_ORIGINAL",
+      "timeSystem": "TDB",
+      "timeFormat": "SECONDS_PAST_J2000",
+      "times": [
+        "0.0"
+      ],
+      "outputTimeSystem": "TDB",
+      "outputTimeFormat": "SECONDS_PAST_J2000"
+    },
+    "result": {
+      "status": "OK",
+      "message": "The request was successful.",
+      "calculationId": "e903b443-f9a2-487b-b915-786ff08acf16",
+      "columns": [
+        {
+          "name": "TDB seconds past J2000",
+          "type": "NUMBER",
+          "units": "",
+          "outputID": "DATE"
+        },
+        {
+          "name": "X (same as input)",
+          "type": "NUMBER",
+          "units": "same as input",
+          "outputID": "X"
+        },
+        {
+          "name": "Y (same as input)",
+          "type": "NUMBER",
+          "units": "same as input",
+          "outputID": "Y"
+        },
+        {
+          "name": "Z (same as input)",
+          "type": "NUMBER",
+          "units": "same as input",
+          "outputID": "Z"
+        }
+      ],
+      "rows": [
+        [
+          "0.0",
+          "9999999999.999",
+          "1.0E+10",
+          "-1.23456789E+10"
+        ]
+      ]
+    }
+  },
+  {
+    "request": {
+      "calculationType": "POINTING_DIRECTION",
+      "kernels": [
+        {
+          "type": "KERNEL_SET",
+          "id": 1
+        }
+      ],
+      "direction": {
+        "directionType": "VECTOR",
+        "directionVectorType": "VECTOR_IN_REFERENCE_FRAME",
+        "directionFrame": "J2000",
+        "directionVectorX": 0.001953125,
+        "directionVectorY": 0.005859375,
+        "directionVectorZ": -0.001953125,
+        "aberrationCorrection": "NONE",
+        "antiVectorFlag": false
+      },
+      "referenceFrame": "J2000",
+      "coordinateRepresentation": "RECTANGULAR",
+      "vectorMagnitude": "PRESERVE_ORIGINAL",
+      "timeSystem": "TDB",
+      "timeFormat": "SECONDS_PAST_J2000",
+      "times": [
+        "0.0"
+      ],
+      "outputTimeSystem": "TDB",
+      "outputTimeFormat": "SECONDS_PAST_J2000"
+    },
+    "result": {
+      "status": "OK",
+      "message": "The request was successful.",
+      "calculationId": "febcb24d-e8cf-445e-81e3-b8b267808991",
+      "columns": [
+        {
+          "name": "TDB seconds past J2000",
+          "type": "NUMBER",
+          "units": "",
+          "outputID": "DATE"
+        },
+        {
+          "name": "X (same as input)",
+          "type": "NUMBER",
+          "units": "same as input",
+          "outputID": "X"
+        },
+        {
+          "name": "Y (same as input)",
+          "type": "NUMBER",
+          "units": "same as input",
+          "outputID": "Y"
+        },
+        {
+          "name": "Z (same as input)",
+          "type": "NUMBER",
+          "units": "same as input",
+          "outputID": "Z"
+        }
+      ],
+      "rows": [
+        [
+          "0.0",
+          "0.00195313",
+          "0.00585938",
+          "-0.00195313"
+        ]
+      ]
+    }
+  },
+  {
+    "request": {
+      "calculationType": "POINTING_DIRECTION",
+      "kernels": [
+        {
+          "type": "KERNEL_SET",
+          "id": 1
+        }
+      ],
+      "direction": {
+        "directionType": "VECTOR",
+        "directionVectorType": "VECTOR_IN_REFERENCE_FRAME",
+        "directionFrame": "J2000",
+        "directionVectorX": 1.234567894567e-05,
+        "directionVectorY": 9.876543215e-07,
+        "directionVectorZ": -9.99999999999e-05,
+        "aberrationCorrection": "NONE",
+        "antiVectorFlag": false
+      },
+      "referenceFrame": "J2000",
+      "coordinateRepresentation": "RECTANGULAR",
+      "vectorMagnitude": "PRESERVE_ORIGINAL",
+      "timeSystem": "TDB",
+      "timeFormat": "SECONDS_PAST_J2000",
+      "times": [
+        "0.0"
+      ],
+      "outputTimeSystem": "TDB",
+      "outputTimeFormat": "SECONDS_PAST_J2000"
+    },
+    "result": {
+      "status": "OK",
+      "message": "The request was successful.",
+      "calculationId": "79d9796d-4968-4745-b3fd-89528f98d073",
+      "columns": [
+        {
+          "name": "TDB seconds past J2000",
+          "type": "NUMBER",
+          "units": "",
+          "outputID": "DATE"
+        },
+        {
+          "name": "X (same as input)",
+          "type": "NUMBER",
+          "units": "same as input",
+          "outputID": "X"
+        },
+        {
+          "name": "Y (same as input)",
+          "type": "NUMBER",
+          "units": "same as input",
+          "outputID": "Y"
+        },
+        {
+          "name": "Z (same as input)",
+          "type": "NUMBER",
+          "units": "same as input",
+          "outputID": "Z"
+        }
+      ],
+      "rows": [
+        [
+          "0.0",
+          "0.0000123456789",
+          "9.87654322E-7",
+          "-0.00010"
+        ]
+      ]
+    }
+  },
+  {
+    "request": {
+      "calculationType": "POINTING_DIRECTION",
+      "kernels": [
+        {
+          "type": "KERNEL_SET",
+          "id": 1
+        }
+      ],
+      "direction": {
+        "directionType": "VECTOR",
+        "directionVectorType": "VECTOR_IN_REFERENCE_FRAME",
+        "directionFrame": "J2000",
+        "directionVectorX": 1.234567885,
+        "directionVectorY": 1.234567895,
+        "directionVectorZ": -1.234567885,
+        "aberrationCorrection": "NONE",
+        "antiVectorFlag": false
+      },
+      "referenceFrame": "J2000",
+      "coordinateRepresentation": "RECTANGULAR",
+      "vectorMagnitude": "PRESERVE_ORIGINAL",
+      "timeSystem": "TDB",
+      "timeFormat": "SECONDS_PAST_J2000",
+      "times": [
+        "0.0"
+      ],
+      "outputTimeSystem": "TDB",
+      "outputTimeFormat": "SECONDS_PAST_J2000"
+    },
+    "result": {
+      "status": "OK",
+      "message": "The request was successful.",
+      "calculationId": "04bd8644-25e8-4c93-af27-bc88332dd70f",
+      "columns": [
+        {
+          "name": "TDB seconds past J2000",
+          "type": "NUMBER",
+          "units": "",
+          "outputID": "DATE"
+        },
+        {
+          "name": "X (same as input)",
+          "type": "NUMBER",
+          "units": "same as input",
+          "outputID": "X"
+        },
+        {
+          "name": "Y (same as input)",
+          "type": "NUMBER",
+          "units": "same as input",
+          "outputID": "Y"
+        },
+        {
+          "name": "Z (same as input)",
+          "type": "NUMBER",
+          "units": "same as input",
+          "outputID": "Z"
+        }
+      ],
+      "rows": [
+        [
+          "0.0",
+          "1.23456789",
+          "1.2345679",
+          "-1.23456789"
+        ]
+      ]
+    }
+  },
+  {
+    "request": {
+      "calculationType": "POINTING_DIRECTION",
+      "kernels": [
+        {
+          "type": "KERNEL_SET",
+          "id": 1
+        }
+      ],
+      "direction": {
+        "directionType": "VECTOR",
+        "directionVectorType": "VECTOR_IN_REFERENCE_FRAME",
+        "directionFrame": "J2000",
+        "directionVectorX": 9.87654321567e-05,
+        "directionVectorY": 0.000123456789567,
+        "directionVectorZ": 0.0001,
+        "aberrationCorrection": "NONE",
+        "antiVectorFlag": false
+      },
+      "referenceFrame": "J2000",
+      "coordinateRepresentation": "RECTANGULAR",
+      "vectorMagnitude": "PRESERVE_ORIGINAL",
+      "timeSystem": "TDB",
+      "timeFormat": "SECONDS_PAST_J2000",
+      "times": [
+        "0.0"
+      ],
+      "outputTimeSystem": "TDB",
+      "outputTimeFormat": "SECONDS_PAST_J2000"
+    },
+    "result": {
+      "status": "OK",
+      "message": "The request was successful.",
+      "calculationId": "3326ead2-54fc-4c66-830b-bbec6ca4ff2f",
+      "columns": [
+        {
+          "name": "TDB seconds past J2000",
+          "type": "NUMBER",
+          "units": "",
+          "outputID": "DATE"
+        },
+        {
+          "name": "X (same as input)",
+          "type": "NUMBER",
+          "units": "same as input",
+          "outputID": "X"
+        },
+        {
+          "name": "Y (same as input)",
+          "type": "NUMBER",
+          "units": "same as input",
+          "outputID": "Y"
+        },
+        {
+          "name": "Z (same as input)",
+          "type": "NUMBER",
+          "units": "same as input",
+          "outputID": "Z"
+        }
+      ],
+      "rows": [
+        [
+          "0.0",
+          "0.0000987654322",
+          "0.00012346",
+          "0.00010"
+        ]
+      ]
+    }
+  }
+]

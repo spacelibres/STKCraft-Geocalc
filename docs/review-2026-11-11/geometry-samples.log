@@ -1,0 +1,65 @@
+WGC2: https://wgc2.jpl.nasa.gov:8443/webgeocalc/api
+SPK:  target/kernels/de442s.bsp   (WGC kernel set 1 uses DE442)
+
+=== State Vector ===
+  queries: 135
+  position:   2.384e-07 km  (tolerance 1e-06)
+  velocity:   4.999e-09 km/s (tolerance 1e-08)
+  light time: 4.861e-09 s  (tolerance 1e-07)
+  PASS
+
+=== State Representations ===
+  queries: 2184
+  worst: 4.992e-09 (relative to its column tolerance 4.992e-01)
+  PASS
+
+=== Angular Separation ===
+  queries: 42
+  separation: 4.805e-09 deg (tolerance 1e-08)
+  PASS
+
+=== Phase Angle ===
+  queries: 18
+  phase angle: 4.805e-09 deg (tolerance 1e-08)
+  PASS
+
+=== Angular Size ===
+  queries: 54
+  angular size: 1.428e-08 deg (tolerance 2e-08)
+  PASS
+
+=== Osculating Elements ===
+  queries: 6
+  angles:       4.920e-09 deg
+  distance:     1.788e-07 km
+  eccentricity: 3.538e-09
+  period:       1.225e-07 s
+  speed:        4.891e-09 km/s
+  GM: excluded from the comparison; WGC displays the Sun's GM as
+      132712440000.0 (rounded), while this crate uses the official
+      NAIF value 132712440041.94 from gm_de431.tpc
+  PASS
+
+=== Planetocentric Solar Longitude ===
+  queries: 6
+  longitude: 4.617e-09 deg (tolerance 1e-08)
+  PASS
+
+=== Illumination Angles ===
+  queries: 9
+  angles: 4.565e-09 deg (tolerance 1e-08)
+  PASS
+
+=== Surface Intercept Point ===
+  queries: 6
+  point:    3.376e-08 km (tolerance 1e-04)
+  distance: 9.837e-09 km (tolerance 1e-04)
+  PASS
+
+=== Tangent Point ===
+  queries: 9
+  angle:    6.573e-05 deg (tolerance 1e-4)
+  distance: 1.932e-03 km  (tolerance 5e-3)
+  PASS
+
+=== Frame Transformation ===

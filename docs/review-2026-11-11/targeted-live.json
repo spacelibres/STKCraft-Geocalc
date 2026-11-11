@@ -1,0 +1,300 @@
+[
+  {
+    "method": "POST",
+    "path": "/calculation/new",
+    "payload": {
+      "kernels": [
+        {
+          "type": "KERNEL_SET",
+          "id": 1
+        }
+      ],
+      "timeSystem": "TDB",
+      "timeFormat": "SECONDS_PAST_J2000",
+      "times": [
+        "500000000"
+      ],
+      "outputTimeSystem": "TDB",
+      "outputTimeFormat": "SECONDS_PAST_J2000",
+      "target": "EARTH",
+      "observer": "MOON",
+      "targetFrame": "IAU_EARTH",
+      "aberrationCorrection": "CN+S",
+      "calculationType": "ILLUMINATION_ANGLES",
+      "shape1": "ELLIPSOID",
+      "coordinateRepresentation": "PLANETODETIC",
+      "longitude": 10,
+      "latitude": 20,
+      "altitude": 0
+    },
+    "response": {
+      "status": "OK",
+      "message": "The request was successful.",
+      "calculationId": "4839cf8d-3be4-4d41-be00-4c3c5ad6b7f3",
+      "result": {
+        "phase": "COMPLETE",
+        "expiresIn": 600
+      }
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/calculation/4839cf8d-3be4-4d41-be00-4c3c5ad6b7f3/results",
+    "payload": null,
+    "response": {
+      "status": "OK",
+      "message": "The request was successful.",
+      "calculationId": "4839cf8d-3be4-4d41-be00-4c3c5ad6b7f3",
+      "columns": [
+        {
+          "name": "TDB seconds past J2000",
+          "type": "NUMBER",
+          "units": "",
+          "outputID": "DATE"
+        },
+        {
+          "name": "Incidence Angle (deg)",
+          "type": "NUMBER",
+          "units": "deg",
+          "outputID": "INCIDENCE_ANGLE"
+        },
+        {
+          "name": "Emission Angle (deg)",
+          "type": "NUMBER",
+          "units": "deg",
+          "outputID": "EMISSION_ANGLE"
+        },
+        {
+          "name": "Phase Angle (deg)",
+          "type": "NUMBER",
+          "units": "deg",
+          "outputID": "PHASE_ANGLE"
+        },
+        {
+          "name": "Observer Distance (km)",
+          "type": "NUMBER",
+          "units": "km",
+          "outputID": "OBSERVER_ALTITUDE"
+        },
+        {
+          "name": "Time at Point",
+          "type": "DATE",
+          "units": "",
+          "outputID": "TIME_AT_POINT"
+        },
+        {
+          "name": "Light Time (s)",
+          "type": "NUMBER",
+          "units": "s",
+          "outputID": "LIGHT_TIME"
+        },
+        {
+          "name": "Local True Solar Time",
+          "type": "STRING",
+          "units": "",
+          "outputID": "LTST"
+        }
+      ],
+      "rows": [
+        [
+          500000000.0,
+          44.51005152,
+          89.43628661,
+          68.26778927,
+          402694.4238321,
+          "499999998.656756",
+          1.34324401,
+          "13:48:19"
+        ]
+      ]
+    }
+  },
+  {
+    "mode": "illum",
+    "local_input": "399,301,10,20,0,500000000,CN+S\n",
+    "local_output": "399,301,10,20,0,500000000,CN+S,44.51338160284087,89.44143158456987,68.26765881952578\n",
+    "remote_columns": [
+      "DATE",
+      "INCIDENCE_ANGLE",
+      "EMISSION_ANGLE",
+      "PHASE_ANGLE",
+      "OBSERVER_ALTITUDE",
+      "TIME_AT_POINT",
+      "LIGHT_TIME",
+      "LTST"
+    ],
+    "remote_rows": [
+      [
+        500000000.0,
+        44.51005152,
+        89.43628661,
+        68.26778927,
+        402694.4238321,
+        "499999998.656756",
+        1.34324401,
+        "13:48:19"
+      ]
+    ]
+  },
+  {
+    "method": "POST",
+    "path": "/calculation/new",
+    "payload": {
+      "kernels": [
+        {
+          "type": "KERNEL_SET",
+          "id": 1
+        }
+      ],
+      "timeSystem": "TDB",
+      "timeFormat": "SECONDS_PAST_J2000",
+      "times": [
+        "500000000"
+      ],
+      "outputTimeSystem": "TDB",
+      "outputTimeFormat": "SECONDS_PAST_J2000",
+      "target": "EARTH",
+      "observer": "MOON",
+      "targetFrame": "IAU_EARTH",
+      "aberrationCorrection": "CN+S",
+      "calculationType": "SUB_SOLAR_POINT",
+      "subPointType": "Near point: ellipsoid",
+      "stateRepresentation": "RECTANGULAR"
+    },
+    "response": {
+      "status": "OK",
+      "message": "The request was successful.",
+      "calculationId": "381606c9-13bd-495a-91f8-855b0db2f688",
+      "result": {
+        "phase": "COMPLETE",
+        "expiresIn": 600
+      }
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/calculation/381606c9-13bd-495a-91f8-855b0db2f688/results",
+    "payload": null,
+    "response": {
+      "status": "OK",
+      "message": "The request was successful.",
+      "calculationId": "381606c9-13bd-495a-91f8-855b0db2f688",
+      "columns": [
+        {
+          "name": "TDB seconds past J2000",
+          "type": "NUMBER",
+          "units": "",
+          "outputID": "DATE"
+        },
+        {
+          "name": "X (km)",
+          "type": "NUMBER",
+          "units": "km",
+          "outputID": "X"
+        },
+        {
+          "name": "Y (km)",
+          "type": "NUMBER",
+          "units": "km",
+          "outputID": "Y"
+        },
+        {
+          "name": "Z (km)",
+          "type": "NUMBER",
+          "units": "km",
+          "outputID": "Z"
+        },
+        {
+          "name": "Sub-Point Radius (km)",
+          "type": "NUMBER",
+          "units": "km",
+          "outputID": "SUB_POINT_RADIUS"
+        },
+        {
+          "name": "Observer Distance (km)",
+          "type": "NUMBER",
+          "units": "km",
+          "outputID": "OBSERVER_ALTITUDE"
+        },
+        {
+          "name": "Incidence Angle (deg)",
+          "type": "NUMBER",
+          "units": "deg",
+          "outputID": "INCIDENCE_ANGLE"
+        },
+        {
+          "name": "Emission Angle (deg)",
+          "type": "NUMBER",
+          "units": "deg",
+          "outputID": "EMISSION_ANGLE"
+        },
+        {
+          "name": "Phase Angle (deg)",
+          "type": "NUMBER",
+          "units": "deg",
+          "outputID": "PHASE_ANGLE"
+        },
+        {
+          "name": "Time at Point",
+          "type": "DATE",
+          "units": "",
+          "outputID": "TIME_AT_POINT"
+        },
+        {
+          "name": "Light Time (s)",
+          "type": "NUMBER",
+          "units": "s",
+          "outputID": "LIGHT_TIME"
+        }
+      ],
+      "rows": [
+        [
+          500000000.0,
+          5871.47926638,
+          -1804.42605126,
+          -1711.91506686,
+          6376.58806464,
+          400413.90474339,
+          3.18055468e-15,
+          68.41905433,
+          68.41905433,
+          "499999998.664363",
+          1.33563702
+        ]
+      ]
+    }
+  },
+  {
+    "mode": "subpoint",
+    "local_input": "solar,399,301,500000000,CN+S\n",
+    "local_output": "solar,399,301,500000000,CN+S,5932.483663124207,-1592.6384502252506,-1711.7301093915944,148327663.55082723\n",
+    "remote_columns": [
+      "DATE",
+      "X",
+      "Y",
+      "Z",
+      "SUB_POINT_RADIUS",
+      "OBSERVER_ALTITUDE",
+      "INCIDENCE_ANGLE",
+      "EMISSION_ANGLE",
+      "PHASE_ANGLE",
+      "TIME_AT_POINT",
+      "LIGHT_TIME"
+    ],
+    "remote_rows": [
+      [
+        500000000.0,
+        5871.47926638,
+        -1804.42605126,
+        -1711.91506686,
+        6376.58806464,
+        400413.90474339,
+        3.18055468e-15,
+        68.41905433,
+        68.41905433,
+        "499999998.664363",
+        1.33563702
+      ]
+    ]
+  }
+]

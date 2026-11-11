@@ -1,0 +1,1 @@
+//EX[3,3,7,2,1,["gov.nasa.arc.pds.spice.exception.SpiceUIException/1534286075","gov.nasa.arc.pds.spice.shared.SpiceErrorCode/1065922042","CSPICE_N0067: CSPICE.furnsh: SPICE(NOSUCHFILE): [furnsh_c --\u003E FURNSH --\u003E ZZLDKER] The attempt to load \"/group/naif/critical/naifweb/pub/naif/1\" by the routine FURNSH failed. It could not be located."],0,7]

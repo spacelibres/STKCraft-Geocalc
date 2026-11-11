@@ -1,0 +1,2 @@
+# Independent Windows x86_64 native oracle; production has no Python dependency.
+spiceypy==8.3.0

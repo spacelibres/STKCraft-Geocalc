@@ -1,0 +1,2534 @@
+{
+  "source": "https://wgc2.jpl.nasa.gov:8443/webgeocalc/documents/api-info.html",
+  "sha256": "7e8272096615d519fef90cb10b498cf5856fdf15f287ec0f2d3dc7d34dd3cbcd",
+  "note": "Reference specification index only. HTTP compatibility is outside scope; functional coverage is assessed in WGC_CONFORMANCE_REVIEW.md and calculation-matrix.csv.",
+  "fields": [
+    {
+      "section": "URL: dsk-surfaces",
+      "anchor": "URLdsksurfaces",
+      "field": "kernels",
+      "specification": "A non-empty array of kernels and/or kernel sets, specified exactly as in the kernels parameter of the calculation/new request.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "URL: dsk-surfaces",
+      "anchor": "URLdsksurfaces",
+      "field": "surfaces",
+      "specification": "An array of the DSK surfaces found. Each surface is described by its integer surface id, the integer bodyId of the body it belongs to, and its name, which is set to id if the surface has no name defined in the loaded kernels. Either the id or the name can be used in the dskSurfaces parameter of the calculations that support it. Each surface is reported only once, even if it is provided by several kernels or kernel sets.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "URL: dsk-surfaces",
+      "anchor": "URLdsksurfaces",
+      "field": "sources",
+      "specification": "An array that indicates which kernel or kernel set provides each surface. Each element has the surfaceId and bodyId of a surface and the source that provides it, described as in the kernels parameter of the request: a type, which is KERNEL_SET or KERNEL, and either the id of the kernel set (if the type is KERNEL_SET) or the path of the kernel (if the type is KERNEL). A surface provided by more than one kernel or kernel set appears once per provider. A kernel is credited with the surfaces of the DSKs that it furnishes by itself (the DSK itself, or those a metakernel loads), even if another kernel or kernel set also provides them, and regardless of the order of the kernels in the request. A text kernel, which at most provides the names of surfaces, is not credited with any surface.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "URL: dsk-surfaces",
+      "anchor": "URLdsksurfaces",
+      "field": "bodies",
+      "specification": "An array with the id and name of the bodies the surfaces belong to.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "URL: dsk-surfaces",
+      "anchor": "URLdsksurfaces",
+      "field": "Example request payload",
+      "specification": "{ \"kernels\": [ { \"type\": \"KERNEL_SET\", \"id\": \"5\" }, { \"type\": \"KERNEL\", \"path\": \"dsk/phobos_surface.bds\" } ] }",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Standard Request Payload Parameters",
+      "anchor": "StandardParameters",
+      "field": "calculationType",
+      "specification": "The type of calculation to perform. One of the following: STATE_VECTOR ANGULAR_SEPARATION ANGULAR_SIZE FRAME_TRANSFORMATION ILLUMINATION_ANGLES PHASE_ANGLE PLANETOCENTRIC_SOLAR_LONGITUDE POINTING_DIRECTION SUB_SOLAR_POINT SUB_OBSERVER_POINT SURFACE_INTERCEPT_POINT TANGENT_POINT OSCULATING_ELEMENTS GF_COORDINATE_SEARCH GF_ANGULAR_SEPARATION_SEARCH GF_DISTANCE_SEARCH GF_SUB_POINT_SEARCH GF_OCCULTATION_SEARCH GF_SURFACE_INTERCEPT_POINT_SEARCH GF_TARGET_IN_INSTRUMENT_FOV_SEARCH GF_RAY_IN_FOV_SEARCH GF_RANGE_RATE_SEARCH GF_PHASE_ANGLE_SEARCH GF_ILLUMINATION_ANGLES_SEARCH TIME_CONVERSION",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Standard Request Payload Parameters",
+      "anchor": "StandardParameters",
+      "field": "kernels",
+      "specification": "The kernels parameter must be an array of kernels or kernel sets. To specify a kernel set use an object like this: { \"type\": \"KERNEL_SET\", \"id\": \"the kernel set ID, an integer\" } To specify an individual kernel, use an object like this: { \"type\": \"KERNEL\", \"path\": \"the server path to the kernel\" }",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Standard Request Payload Parameters",
+      "anchor": "StandardParameters",
+      "field": "timeSystem",
+      "specification": "One of the following: UTC TDB TDT TT SPACECRAFT_CLOCK GPS If SPACECRAFT_CLOCK is selected, then sclkId must also be provided. Note that in SPICE, TDT (Terrestrial Dynamical Time) and TT (Terrestrial Time) refer to the same time system.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Standard Request Payload Parameters",
+      "anchor": "StandardParameters",
+      "field": "timeFormat",
+      "specification": "One of the following: CALENDAR JULIAN SECONDS_PAST_GPS0 SECONDS_PAST_J2000 SPACECRAFT_CLOCK_TICKS SPACECRAFT_CLOCK_STRING WEEK_TOW CALENDAR is applicable only when timeSystem is UTC, TDB, TDT, TT or GPS. JULIAN and SECONDS_PAST_J2000 are applicable only when timeSystem is UTC, TDB, TDT or TT. SPACECRAFT_CLOCK_STRING and SPACECRAFT_CLOCK_TICKS are applicable only when timeSystem is SPACECRAFT_CLOCK. SECONDS_PAST_GPS0 and WEEK_TOW are applicable only when timeSystem is GPS.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Standard Request Payload Parameters",
+      "anchor": "StandardParameters",
+      "field": "sclkId",
+      "specification": "The SCLK ID. Only used if timeSystem is SPACECRAFT_CLOCK.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Standard Request Payload Parameters",
+      "anchor": "StandardParameters",
+      "field": "times",
+      "specification": "An array of strings representing the time points that should be used in the calculation. E.g. \"times\": [ \"2000-01-01\", \"2000-01-02\" ], Either this parameter or the intervals parameter must be supplied.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Standard Request Payload Parameters",
+      "anchor": "StandardParameters",
+      "field": "intervals",
+      "specification": "An array of objects with startTime and endTime parameters, representing the time intervals used for the calculation. E.g. \"intervals\": [ { \"startTime\": \"2000-01-01\", \"endTime\": \"2000-01-02\" } ], Either this parameter or the times parameter must be supplied. If this parameter is used, timeStep must also be supplied.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Standard Request Payload Parameters",
+      "anchor": "StandardParameters",
+      "field": "timeStep",
+      "specification": "The timeStep parameter used for time series or geometry finder calculations. This parameter is not used for time series calculations if the times parameter is supplied. For time series calculations, timeStep determines how calculation times are selected within the specified intervals. When multiple intervals are provided, the start and stop times of all of them (after merging any overlapping ones) are always included in the output. If an interval is shorter than the sampling step, only its start and stop times are included. If an interval consists of a single time point, only that time is included. When a single interval is provided, the stop time will be included in the output only if it coincides with one of the computed samples. For geometry finder calculations, timeStep determines the step size to be used in the search.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Standard Request Payload Parameters",
+      "anchor": "StandardParameters",
+      "field": "timeStepUnits",
+      "specification": "One of the following: SECONDS MINUTES HOURS DAYS SAMPLES, except for Geometry Finder Calculations where the use of SAMPLES as a time step unit is not allowed. A request for N samples for a list including only one interval will get exactly N equally spaced records in the output table. A request for N samples for a list with more than one interval will obtain N or more records in the output table. The start and stop times of each interval will always be included. The records within intervals will, in general, not be equally spaced. EQUAL_INTERVALS (deprecated), except for Geometry Finder Calculations where the use of EQUAL_INTERVALS as a time step unit is not allowed. For backwards compatibility, the value EQUAL_INTERVALS is accepted as a synonym of SAMPLES when multiple intervals are provided. If a single interval is provided in intervals, a request for N equal intervals will obtain N+1 equally-spaced records in the output table. SCLK_DURATION_STRING, except for Geometry Finder Calculations where the use of SCLK_DURATION_STRING as a time step unit is not allowed. Only supported if timeSystem is SPACECRAFT_CLOCK. SCLK_TICKS, except for Geometry Finder Calculations where the use of SCLK_TICKS as a time step unit is not allowed. Only supported if timeSystem is SPACECRAFT_CLOCK. timeStepUnits is used only if timeStep is supplied and times parameter is not supplied. When sampling by seconds, minutes, hours, days, or SCLK duration provided as a duration string or ticks, the last time before the interval's stop time will be between 0.5 and 1.5 sampling steps before the interval's stop time. When a specific number of samples is requested, the sampling step is calculated by dividing the total duration of all intervals by the number of requested samples minus the number of intervals. In general, when multiple intervals are specified, records in the output table will not be equally spaced.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Additional Parameters for Geometry Finder Calculations",
+      "anchor": "GFStandardParameters",
+      "field": "samplingTimeSystem",
+      "specification": "The time system used to compute the sampling step. One of the following: TDB, only supported when timeStepUnits are SECONDS, MINUTES, HOURS, DAYS, SAMPLES or EQUAL_INTERVALS. TDT, only supported when timeStepUnits are SECONDS, MINUTES, HOURS, DAYS, SAMPLES or EQUAL_INTERVALS. Note that TDT and TT are synonyms and will produce the same results. TT, only supported when timeStepUnits are SECONDS, MINUTES, HOURS, DAYS, SAMPLES or EQUAL_INTERVALS. Note that TDT and TT are synonyms and will produce the same results. SPACECRAFT_CLOCK, only supported when timeStepUnits are SAMPLES, EQUAL_INTERVALS, SCLK_DURATION_STRING or SCLK_TICKS samplingTimeSystem is used only if timeStepUnits are provided. It is required when timeStepUnits are SCLK_DURATION_STRING or SCLK_TICKS. In all other cases, if not provided, it will be automatically set to its default value: TDT when timeSystem is UTC, TDT, TT or GPS, and TDB otherwise. Additional Parameters for Geometry Finder Calculations All the calculation types starting with GF_ require these additional parameters:",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Additional Parameters for Geometry Finder Calculations",
+      "anchor": "GFStandardParameters",
+      "field": "outputDurationUnits",
+      "specification": "The units for the duration column of each interval in the result window. One of: SECONDS MINUTES HOURS DAYS",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Additional Parameters for Geometry Finder Calculations",
+      "anchor": "GFStandardParameters",
+      "field": "shouldComplementWindow",
+      "specification": "A flag indicating whether to complement the result window against the original search window before returning the result. One of: true false.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Additional Parameters for Geometry Finder Calculations",
+      "anchor": "GFStandardParameters",
+      "field": "intervalAdjustment",
+      "specification": "An indication whether to adjust the intervals by expansion or contraction. If specified, both intervalAdjustmentAmount and intervalAdjustmentAmountUnits must be specified. One of: NO_ADJUSTMENT EXPAND_INTERVALS CONTRACT_INTERVALS",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Additional Parameters for Geometry Finder Calculations",
+      "anchor": "GFStandardParameters",
+      "field": "intervalAdjustmentAmount",
+      "specification": "The amount to adjust each interval endpoint.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Additional Parameters for Geometry Finder Calculations",
+      "anchor": "GFStandardParameters",
+      "field": "intervalAdjustmentUnits",
+      "specification": "The time units for the interval adjustment amount. One of: SECONDS MINUTES HOURS DAYS",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Additional Parameters for Geometry Finder Calculations",
+      "anchor": "GFStandardParameters",
+      "field": "intervalFiltering",
+      "specification": "Whether to filter out intervals smaller than a threshold. If specified, both intervalFilteringThreshold and intervalFilteringThresholdUnits must be specified. One of: NO_FILTERING FILTER_INTERVALS",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Additional Parameters for Geometry Finder Calculations",
+      "anchor": "GFStandardParameters",
+      "field": "intervalFilteringThreshold",
+      "specification": "The duration threshold value. All intervals shorter than this value will be removed from the result window.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Additional Parameters for Geometry Finder Calculations",
+      "anchor": "GFStandardParameters",
+      "field": "intervalFilteringThresholdUnits",
+      "specification": "The time unit for the interval filtering threshold. One of: SECONDS MINUTES HOURS DAYS",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Additional Parameters for Specifying GF Conditions",
+      "anchor": "specifyingConditions",
+      "field": "coordinateSystem",
+      "specification": "The name of the coordinate system in which to evaluate the coordinate. Only required for GF_COORDINATE_SEARCH, GF_SUB_POINT_SEARCH, and GF_SURFACE_INTERCEPT_POINT_SEARCH. One of: RECTANGULAR RA/DEC LATITUDINAL (planetocentric) CYLINDRICAL SPHERICAL GEODETIC PLANETOGRAPHIC AZ/EL (only in GF_COORDINATE_SEARCH)",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Additional Parameters for Specifying GF Conditions",
+      "anchor": "specifyingConditions",
+      "field": "coordinate",
+      "specification": "The name of the SPICE coordinate to search on. Only required for GF_COORDINATE_SEARCH, GF_SUB_POINT_SEARCH, and GF_SURFACE_INTERCEPT_POINT_SEARCH. One of: X Y Z LONGITUDE LATITUDE COLATITUDE RIGHT ASCENSION DECLINATION RANGE RADIUS ALTITUDE AZIMUTH ELEVATION This coordinate must be appropriate for the coordinateSystem. See the SPICE API call gfpos() for more information.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Additional Parameters for Specifying GF Conditions",
+      "anchor": "specifyingConditions",
+      "field": "azccwFlag",
+      "specification": "Flag indicating how azimuth is measured. If azccwFlag is true, azimuth increases in the counterclockwise direction; otherwise it increases in the clockwise direction. Required only when coordinate is AZIMUTH.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Additional Parameters for Specifying GF Conditions",
+      "anchor": "specifyingConditions",
+      "field": "elplszFlag",
+      "specification": "Flag indicating how elevation is measured. If elplszFlag is true, elevation increases from the XY plane toward +Z; otherwise toward -Z. Required only when coordinate is ELEVATION.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Additional Parameters for Specifying GF Conditions",
+      "anchor": "specifyingConditions",
+      "field": "angleType",
+      "specification": "The name of the SPICE angle to search on. Only required for GF_ILLUMINATION_ANGLES_SEARCH. One of: EMISSION INCIDENCE PHASE",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Additional Parameters for Specifying GF Conditions",
+      "anchor": "specifyingConditions",
+      "field": "relationalCondition",
+      "specification": "The relationship for the test. One of: = < > RANGE ABSMAX ABSMIN LOCMAX LOCMIN If RANGE is used, then upperLimit is also required. For all but RANGE, see the documentation for the SPICE API call gfpos(). Note that for RANGE searches, the referenceValue and upperLimit values do not need to be in increasing order. If these values are in decreasing order, in the case of coordinate being LONGITUDE, RIGHT ASCENSION or AZIMUTH, the search will be performed across the boundary. For all other coordinates, the referenceValue and upperLimit values will be \"swapped.\"",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Additional Parameters for Specifying GF Conditions",
+      "anchor": "specifyingConditions",
+      "field": "referenceValue",
+      "specification": "The value to compare against, or the lower value of a range. Only needed if relationalCondition is not ABSMAX, ABSMIN, LOCMAX, or LOCMIN.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Additional Parameters for Specifying GF Conditions",
+      "anchor": "specifyingConditions",
+      "field": "upperLimit",
+      "specification": "The upper limit of a range. Only needed if relationalCondition is RANGE.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Additional Parameters for Specifying GF Conditions",
+      "anchor": "specifyingConditions",
+      "field": "adjustmentValue",
+      "specification": "The adjustment value to apply for ABSMIN and ABSMAX searches. Required if relationalCondition is ABSMIN or ABSMAX. The units associated with the adjustmentValue are either degrees, km or km/s, depending on the selected search constraint, coordinate or angleType. See the documentation for gfpos() for more details.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Additional Parameters for Specifying Directions",
+      "anchor": "DirectionSpecification",
+      "field": "directionType",
+      "specification": "Method used to specify a direction. Directions could be specified as the position of an object as seen from the observer, as the velocity vector of an object as seen from the observer in a given reference frame, or by providing a vector in a given reference frame. One of: POSITION VELOCITY VECTOR Velocity depends on the reference frame in which it is expressed. Given a time-dependent frame transformation R(t) between \"input\" and \"output\" reference frames, and position and velocity vectors expressed in the input frame, the velocity transformation between the frames can be expressed as Vel_out(t) = d(R(t))/dt * Pos_in(t) + R(t) * Vel_in(t) In some cases, velocity is used simply as a direction vector; the rate of change of position in the output frame is not relevant. In these cases, the above transformation reduces to Vel_out(t) = R(t) * Vel_in(t) This is the transformation used when velocity is treated as a direction vector. Examples: Suppose a spacecraft's reference frame's Z-axis is nominally aligned with the spacecraft's inertially referenced velocity vector; the offset angle between the Z-axis and the velocity is to be measured. The spacecraft's inertially referenced velocity should simply be rotated into the spacecraft reference frame in order to make this measurement. The rotation rate of the spacecraft frame does not affect the offset angle at a particular time. Suppose a planet-orbiting spacecraft's reference frame's Z-axis is nominally aligned with the nadir direction, and the frame's Y-axis is aligned as closely as possible with the sub-spacecraft point's velocity, measured in the planet's body-fixed reference frame. The offset between the spacecraft frame's Y-axis and the projection of the sub-spacecraft point's velocity onto the spacecraft's X-Y plane is to be measured. The sub-spacecraft point's body-fixed velocity should simply be rotated into the spacecraft reference frame in order to make this measurement. The rotation rate of the spacecraft frame relative to the planet body-fixed frame does not affect the offset angle at a particular time. In fact, if this rate is taken into account, the transformed velocity is closely aligned with the +/- nadir direction. Suppose the velocity of particles entering an aperture of a spacecraft-mounted instrument, or contacting a detector of that instrument, is to be measured. In this case, the contribution of the term d(R(t))/dt * Pos_in(t) to the transformed velocity is typically very small, since the position is that of the particle relative to the origin of the instrument reference frame. Depending on the desired directionType, different parameters are required. The following sections provide the list of additional parameters per directionType value.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Additional Parameters for Specifying Directions",
+      "anchor": "DirectionSpecification",
+      "field": "target",
+      "specification": "The target body name or ID",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Additional Parameters for Specifying Directions",
+      "anchor": "DirectionSpecification",
+      "field": "shape",
+      "specification": "The shape to use for the target body, only required for ANGULAR_SEPARATION computations. One of: POINT SPHERE",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Additional Parameters for Specifying Directions",
+      "anchor": "DirectionSpecification",
+      "field": "observer",
+      "specification": "The observing body name or ID",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Additional Parameters for Specifying Directions",
+      "anchor": "DirectionSpecification",
+      "field": "aberrationCorrection",
+      "specification": "The SPICE aberration correction string. One of: NONE LT LT+S CN CN+S XLT XLT+S XCN XCN+S For aberration correction details, see the description of the input argument ABCORR of the SPICELIB routine SPKPOS.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Additional Parameters for Specifying Directions",
+      "anchor": "DirectionSpecification",
+      "field": "antiVectorFlag",
+      "specification": "true if the anti-vector shall be used for the direction, and false otherwise. Required when the target shape is POINT. If provided when the target shape is SPHERE, it must be set to false, i.e. using anti-vector direction is not supported for target bodies modeled as spheres.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Additional Parameters for Specifying Directions",
+      "anchor": "DirectionSpecification",
+      "field": "target",
+      "specification": "The target body name or ID",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Additional Parameters for Specifying Directions",
+      "anchor": "DirectionSpecification",
+      "field": "referenceFrame",
+      "specification": "The reference frame name",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Additional Parameters for Specifying Directions",
+      "anchor": "DirectionSpecification",
+      "field": "observer",
+      "specification": "The observing body name or ID",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Additional Parameters for Specifying Directions",
+      "anchor": "DirectionSpecification",
+      "field": "aberrationCorrection",
+      "specification": "The SPICE aberration correction string. One of: NONE LT LT+S CN CN+S XLT XLT+S XCN XCN+S For aberration correction details, see the description of the input argument ABCORR of the SPICELIB routine SPKEZR.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Additional Parameters for Specifying Directions",
+      "anchor": "DirectionSpecification",
+      "field": "antiVectorFlag",
+      "specification": "true if the anti-vector shall be used for the direction, and false otherwise.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Additional Parameters for Specifying Directions",
+      "anchor": "DirectionSpecification",
+      "field": "directionVectorType",
+      "specification": "Type of vector to be used as the ray direction: the instrument boresight vector, an axis of the specified reference frame, a vector in the reference frame of the specified instrument, a vector in the specified reference frame, or the instrument field-of-view boundary vectors (only for POINTING_DIRECTION computations). One of: INSTRUMENT_BORESIGHT REFERENCE_FRAME_AXIS VECTOR_IN_INSTRUMENT_FOV VECTOR_IN_REFERENCE_FRAME INSTRUMENT_FOV_BOUNDARY_VECTORS",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Additional Parameters for Specifying Directions",
+      "anchor": "DirectionSpecification",
+      "field": "directionInstrument",
+      "specification": "The instrument name or ID. Required only if directionVectorType is INSTRUMENT_BORESIGHT, VECTOR_IN_INSTRUMENT_FOV or INSTRUMENT_FOV_BOUNDARY_VECTORS.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Additional Parameters for Specifying Directions",
+      "anchor": "DirectionSpecification",
+      "field": "directionFrame",
+      "specification": "The vector's reference frame name. Required only if directionVectorType is REFERENCE_FRAME_AXIS or VECTOR_IN_REFERENCE_FRAME.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Additional Parameters for Specifying Directions",
+      "anchor": "DirectionSpecification",
+      "field": "directionFrameAxis",
+      "specification": "The direction vector frame axis. Required only if directionVectorType is REFERENCE_FRAME_AXIS. One of: X Y Z",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Additional Parameters for Specifying Directions",
+      "anchor": "DirectionSpecification",
+      "field": "directionVectorX",
+      "specification": "The X direction vector coordinate. If directionVectorType is VECTOR_IN_INSTRUMENT_FOV or VECTOR_IN_REFERENCE_FRAME, then either all three of directionVectorX, directionVectorY, and directionVectorZ must be provided, or both directionVectorRA and directionVectorDec, or both directionVectorAz and directionVectorEl.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Additional Parameters for Specifying Directions",
+      "anchor": "DirectionSpecification",
+      "field": "directionVectorY",
+      "specification": "The Y direction vector coordinate.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Additional Parameters for Specifying Directions",
+      "anchor": "DirectionSpecification",
+      "field": "directionVectorZ",
+      "specification": "The Z direction vector coordinate.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Additional Parameters for Specifying Directions",
+      "anchor": "DirectionSpecification",
+      "field": "directionVectorRA",
+      "specification": "The right ascension direction vector coordinate.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Additional Parameters for Specifying Directions",
+      "anchor": "DirectionSpecification",
+      "field": "directionVectorDec",
+      "specification": "The declination direction vector coordinate.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Additional Parameters for Specifying Directions",
+      "anchor": "DirectionSpecification",
+      "field": "directionVectorAz",
+      "specification": "The azimuth direction vector coordinate.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Additional Parameters for Specifying Directions",
+      "anchor": "DirectionSpecification",
+      "field": "directionVectorEl",
+      "specification": "The elevation direction vector coordinate.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Additional Parameters for Specifying Directions",
+      "anchor": "DirectionSpecification",
+      "field": "azccwFlag",
+      "specification": "Flag indicating how azimuth is measured. If azccwFlag is true, azimuth increases in the counterclockwise direction; otherwise it increases in the clockwise direction. Required only when directionVectorAz and directionVectorEl are used to provide the coordinates of the direction vector.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Additional Parameters for Specifying Directions",
+      "anchor": "DirectionSpecification",
+      "field": "elplszFlag",
+      "specification": "Flag indicating how elevation is measured. If elplszFlag is true, elevation increases from the XY plane toward +Z; otherwise toward -Z. Required only when directionVectorAz and directionVectorEl are used to provide the coordinates of the direction vector.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Additional Parameters for Specifying Directions",
+      "anchor": "DirectionSpecification",
+      "field": "aberrationCorrection",
+      "specification": "The SPICE aberration correction string. Light time correction is applied to the rotation from the vector frame to J2000, while stellar aberration corrections apply to the vector direction. One of: NONE LT CN XLT XCN S XS For details of light time corrections used to compute the times at the frame center, see the description of the input argument ABCORR of the SPICELIB routine SPKPOS. For details of stellar aberration corrections used adjust the vector direction, see the description of the input argument ABCORR of the SPICELIB routine GFRFOV.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Additional Parameters for Specifying Directions",
+      "anchor": "DirectionSpecification",
+      "field": "observer",
+      "specification": "The observing body name or ID. Required if aberrationCorrection is not NONE.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Additional Parameters for Specifying Directions",
+      "anchor": "DirectionSpecification",
+      "field": "antiVectorFlag",
+      "specification": "true if the anti-vector shall be used for the direction, and false otherwise.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Additional Parameters for Specifying Surface Points",
+      "anchor": "SurfacePointSpecification",
+      "field": "target",
+      "specification": "The target body name or ID",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Additional Parameters for Specifying Surface Points",
+      "anchor": "SurfacePointSpecification",
+      "field": "shape1",
+      "specification": "The shape to use to model the surface of the target body. One of: ELLIPSOID DSK (currently only supported for ILLUMINATION_ANGLES computations).",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Additional Parameters for Specifying Surface Points",
+      "anchor": "SurfacePointSpecification",
+      "field": "dskSurfaces",
+      "specification": "An array of the names and/or IDs of the DSK surfaces to which the computation shall be restricted. Used only when shape1 is DSK; ignored otherwise. Optional and, if not provided, or if an empty array is provided, every DSK surface loaded for the target is used. (currently only supported for ILLUMINATION_ANGLES computations)",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Additional Parameters for Specifying Surface Points",
+      "anchor": "SurfacePointSpecification",
+      "field": "targetFrame",
+      "specification": "The body-fixed reference frame name, centered at target.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Additional Parameters for Specifying Surface Points",
+      "anchor": "SurfacePointSpecification",
+      "field": "offSurfaceFlag",
+      "specification": "Flag indicating whether the location is given as an off-surface point (true) or not (false). Surface points on a target body's reference ellipsoid normally should be specified by two angular coordinates, for example planetocentric longitude and latitude. These coordinates identify a unique point on the ellipsoid, which then can be converted to Cartesian coordinates by WGC. If this flag is set to true, you can specify a point off the reference ellipsoid. The direction of the outward normal vector calculated by WGC at this point won't be exactly parallel to the outward normal direction at the nearest point on the reference ellipsoid to the specified input point. The angular offset between the directions typically is small for points not far from the reference ellipsoid. Some examples are: Earth: at altitude 10 km, maximum offset is 0.000005 degrees Earth: at altitude -1 km, maximum offset is 0.000001 degrees Mars: at altitude 25 km, maximum offset is 0.000043 degrees Mars: at altitude -15 km, maximum offset is 0.000026 degrees Saturn: at altitude 1e4 km, maximum offset is 0.015408 degrees Saturn: at altitude -1e4 km, maximum offset is 0.021973 degrees offSurfaceFlag is optional and, if not provided, it defaults to false. If shape1 is DSK, offSurfaceFlag must be set to false.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Additional Parameters for Specifying Surface Points",
+      "anchor": "SurfacePointSpecification",
+      "field": "coordinateRepresentation",
+      "specification": "One of: LATITUDINAL (planetocentric) SPHERICAL PLANETODETIC, only when shape1 is ELLIPSOID. PLANETOGRAPHIC, only when shape1 is ELLIPSOID. CYLINDRICAL, only when shape1 is ELLIPSOID and offSurfaceFlag is set to true. RECTANGULAR, only when shape1 is ELLIPSOID and offSurfaceFlag is set to true.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Additional Parameters for Specifying Surface Points",
+      "anchor": "SurfacePointSpecification",
+      "field": "latitude",
+      "specification": "The latitude coordinate of the surface point, in degrees. Required only when coordinateRepresentation is LATITUDINAL, PLANETODETIC or PLANETOGRAPHIC.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Additional Parameters for Specifying Surface Points",
+      "anchor": "SurfacePointSpecification",
+      "field": "longitude",
+      "specification": "The longitude coordinate of the surface point, in degrees. Required only when coordinateRepresentation is LATITUDINAL, PLANETODETIC, PLANETOGRAPHIC, SPHERICAL or CYLINDRICAL.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Additional Parameters for Specifying Surface Points",
+      "anchor": "SurfacePointSpecification",
+      "field": "colatitude",
+      "specification": "The colatitude coordinate of the surface point, in degrees. Required only when coordinateRepresentation is SPHERICAL.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Additional Parameters for Specifying Surface Points",
+      "anchor": "SurfacePointSpecification",
+      "field": "radius",
+      "specification": "The radius coordinate at the surface point location, in km. Required only when coordinateRepresentation is LATITUDINAL, CYLINDRICAL or SPHERICAL and offSurfaceFlag is set to true.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Additional Parameters for Specifying Surface Points",
+      "anchor": "SurfacePointSpecification",
+      "field": "altitude",
+      "specification": "The altitude coordinate of the surface point, in km. Required only when coordinateRepresentation is PLANETODETIC, or PLANETOGRAPHIC and offSurfaceFlag is set to true.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Additional Parameters for Specifying Surface Points",
+      "anchor": "SurfacePointSpecification",
+      "field": "x",
+      "specification": "The X coordinate of the surface point, in km. Required only when coordinateRepresentation is RECTANGULAR.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Additional Parameters for Specifying Surface Points",
+      "anchor": "SurfacePointSpecification",
+      "field": "y",
+      "specification": "The Y coordinate of the surface point, in km. Required only when coordinateRepresentation is RECTANGULAR.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Additional Parameters for Specifying Surface Points",
+      "anchor": "SurfacePointSpecification",
+      "field": "z",
+      "specification": "The Z coordinate of the surface point, in km. Required only when coordinateRepresentation is RECTANGULAR or CYLINDRICAL.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Example Calculation Request",
+      "anchor": "",
+      "field": "Example Request URL",
+      "specification": "https://wgc2.jpl.nasa.gov:8443/webgeocalc/api/calculation/new",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Example Calculation Request",
+      "anchor": "",
+      "field": "Example Response",
+      "specification": "{ \"status\": \"OK\", \"message\": \"The request was successful.\", \"calculationId\": \"0788aba2-d4e5-4028-9ef1-4867ad5385e0\", \"result\": { \"phase\": \"COMPLETE\", \"expiresIn\": 54 } }",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Common Parameters",
+      "anchor": "ResponseCommonParameters",
+      "field": "status",
+      "specification": "The status of the request. Either OK or ERROR",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Common Parameters",
+      "anchor": "ResponseCommonParameters",
+      "field": "message",
+      "specification": "A short message describing the status of the request.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Common Parameters",
+      "anchor": "ResponseCommonParameters",
+      "field": "calculationId",
+      "specification": "A string representing the calculation task identifier generated by the calculation service.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Calculation Status Response",
+      "anchor": "ResponseCalculationStatus",
+      "field": "phase",
+      "specification": "The status (phase) of the calculation. One of: QUEUED, when the calculation request is queued to be served once the calculation service becomes available. STARTING, when the calculation request has entered the calculation service, but it has not yet started loading the required kernels. LOADING_KERNELS, when the calculation request is being served, and the required kernels are being loaded. CALCULATING, when the required kernels have been loaded, and the calculation server is producing the requested results. COMPLETE, when the calculation server has successfully completed the request, and the results have not yet been retrieved. FAILED, when the calculation request has failed. CANCELLED, when the calculation has been canceled by the client. DISPATCHED, when the calculation results have been requested by the client and dispatched. EXPIRED, when the calculation results expired due to the client not fetching them before they expire.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Calculation Status Response",
+      "anchor": "ResponseCalculationStatus",
+      "field": "position",
+      "specification": "The current position of the calculation request within the calculation service queue. This parameter is only provided if the phase is QUEUED.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Calculation Status Response",
+      "anchor": "ResponseCalculationStatus",
+      "field": "expiresIn",
+      "specification": "Number of seconds, from the time the status information has been generated, until the results produced by the calculation request are purged from the calculation service, i.e. the results associated to the given calculationId will be removed from the server, and therefore no longer available, after expiresIn seconds. This parameter is only provided if the phase is COMPLETE.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Available Calculation Status Responses",
+      "anchor": "",
+      "field": "QUEUED phase",
+      "specification": "{ \"status\": \"OK\", \"message\": \"The request was successful.\", \"calculationId\": \"02c0b4c5-8a8a-4fdb-8a07-b446c6e6722a\", \"result\": { \"phase\": \"QUEUED\", \"position\": 6 } }",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Available Calculation Status Responses",
+      "anchor": "",
+      "field": "STARTING phase",
+      "specification": "{ \"status\": \"OK\", \"message\": \"The request was successful.\", \"calculationId\": \"9192ebe1-37ef-41dc-81d2-03bb0e5ae956\", \"result\": { \"phase\": \"STARTING\" } }",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Available Calculation Status Responses",
+      "anchor": "",
+      "field": "LOADING_KERNELS phase",
+      "specification": "{ \"status\": \"OK\", \"message\": \"The request was successful.\", \"calculationId\": \"9192ebe1-37ef-41dc-81d2-03bb0e5ae956\", \"result\": { \"phase\": \"LOADING_KERNELS\" } }",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Available Calculation Status Responses",
+      "anchor": "",
+      "field": "CALCULATING phase",
+      "specification": "{ \"status\": \"OK\", \"message\": \"The request was successful.\", \"calculationId\": \"9192ebe1-37ef-41dc-81d2-03bb0e5ae956\", \"result\": { \"phase\": \"CALCULATING\" } }",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Available Calculation Status Responses",
+      "anchor": "",
+      "field": "COMPLETE phase",
+      "specification": "{ \"status\": \"OK\", \"message\": \"The request was successful.\", \"calculationId\": \"26d33ccc-a49c-41e5-a733-9c24b04b9fb9\", \"result\": { \"phase\": \"COMPLETE\", \"expiresIn\": 54 } }",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Available Calculation Status Responses",
+      "anchor": "",
+      "field": "FAILED phase",
+      "specification": "{ \"status\": \"OK\", \"message\": \"The request was successful.\", \"calculationId\": \"9192ebe1-37ef-41dc-81d2-03bb0e5ae956\", \"result\": { \"phase\": \"FAILED\" } }",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Available Calculation Status Responses",
+      "anchor": "",
+      "field": "CANCELLED phase",
+      "specification": "{ \"status\": \"OK\", \"message\": \"The request was successful.\", \"calculationId\": \"9192ebe1-37ef-41dc-81d2-03bb0e5ae956\", \"result\": { \"phase\": \"CANCELLED\" } }",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Available Calculation Status Responses",
+      "anchor": "",
+      "field": "DISPATCHED phase",
+      "specification": "{ \"status\": \"OK\", \"message\": \"The request was successful.\", \"calculationId\": \"9192ebe1-37ef-41dc-81d2-03bb0e5ae956\", \"result\": { \"phase\": \"DISPATCHED\" } }",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Available Calculation Status Responses",
+      "anchor": "",
+      "field": "EXPIRED phase",
+      "specification": "{ \"status\": \"OK\", \"message\": \"The request was successful.\", \"calculationId\": \"9192ebe1-37ef-41dc-81d2-03bb0e5ae956\", \"result\": { \"phase\": \"EXPIRED\" } }",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Calculation Results Response",
+      "anchor": "ResponseResults",
+      "field": "name",
+      "specification": "A string providing the name of the table's column, giving a short description of the values provided within that column, e.g. \"UTC calendar date\".",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Calculation Results Response",
+      "anchor": "ResponseResults",
+      "field": "type",
+      "specification": "Column's data type. One of: DATE NUMBER STRING",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Calculation Results Response",
+      "anchor": "ResponseResults",
+      "field": "units",
+      "specification": "Units in which the column's value is given, or an empty string if the concept of units does not apply to the values in that column.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Calculation Results Response",
+      "anchor": "ResponseResults",
+      "field": "outputID",
+      "specification": "Unique column identifier. This identifier is unique across all results generated by WGC.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Error Response",
+      "anchor": "ResponseError",
+      "field": "shortDescription",
+      "specification": "A string providing a short description of the reason for the error.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Example Error Responses",
+      "anchor": "",
+      "field": "Excessive load on the server, response to a calculation/new request.",
+      "specification": "{ \"status\": \"ERROR\", \"message\": \"The request has failed.\", \"calculationId\": null, \"error\": { \"shortDescription\": \"The server is currently experiencing excessive load.\" } }",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Example Error Responses",
+      "anchor": "",
+      "field": "Missing required JSON parameter in a calculation/new Calculation Request.",
+      "specification": "{ \"status\": \"ERROR\", \"message\": \"The request has failed.\", \"calculationId\": \"e145c522-dbb0-49f2-8624-eddc423c3a25\", \"error\": { \"shortDescription\": \"No input value found with name 'sclkId'\" } }",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Example Error Responses",
+      "anchor": "",
+      "field": "SPICE related error, from either a calculation/new or a calculation/id/results request.",
+      "specification": "{ \"status\": \"ERROR\", \"message\": \"The request has failed.\", \"calculationId\": \"f9c9373b-c455-417c-9b62-f960a5bc5d93\", \"error\": { \"shortDescription\": \"CSPICE_N0066: CSPICE.scencd: SPICE(KERNELVARNOTFOUND): [scencd_c --> SCENCD --> SCTIKS --> SCTYPE --> SCLI01] SCLK_DATA_TYPE_825 not found. Did you load the SCLK kernel?\" } }",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Example Error Responses",
+      "anchor": "",
+      "field": "Attempt to retrieve Results, using a calculation/id/results request, before COMPLETE.",
+      "specification": "{ \"status\": \"ERROR\", \"message\": \"The request has failed.\", \"calculationId\": \"85a5d697-0163-4525-8056-30fcf0a25620\", \"error\": { \"shortDescription\": \"Application should not retrieve results before calculation is finished.\" } }",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Example Error Responses",
+      "anchor": "",
+      "field": "Attempt to retrieve EXPIRED Results, using a calculation/id/results request.",
+      "specification": "{ \"status\": \"ERROR\", \"message\": \"The request has failed.\", \"calculationId\": \"8d44762c-2ae9-4d6f-bb00-ba39b41b009c\", \"error\": { \"shortDescription\": \"The requested results have already expired.\" } }",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "Example Error Responses",
+      "anchor": "",
+      "field": "Unknown calculationId error response to a calculation/id, calculation/id/results or calculation/id/cancel request.",
+      "specification": "{ \"status\": \"ERROR\", \"message\": \"The request has failed.\", \"calculationId\": \"f9c9373-c455-417c-9b62-f960a5bc5d93\", \"error\": { \"shortDescription\": \"The provided Calculation ID does not correspond to any requested calculation.\" } }",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "STATE_VECTOR",
+      "anchor": "STATE_VECTOR",
+      "field": "targetType",
+      "specification": "The type of specification used to define the location of the target. One of: OBJECT FIXED_POINT CONSTANT_VELOCITY_POINT Use OBJECT if the target is specified by providing the name of an ephemeris object, i.e. a target whose trajectory is provided by one of the loaded SPK files. Use FIXED_POINT to specify the target as a fixed (constant) geometric position relative to its \"center of motion,\" expressed in the provided reference frame. Use CONSTANT_VELOCITY_POINT to specify the target having a constant Cartesian velocity relative to its \"center of motion,\" expressed in the provided reference frame at a given epoch. For other epochs, the position of the target relative to its center of motion is linearly extrapolated from the position at the given epoch using the provided Cartesian velocity. Note that if targetType is either FIXED_POINT or CONSTANT_VELOCITY_POINT then observerType MUST be OBJECT, i.e. specifying both Target and Observer as locations is not allowed. Note that targetType is optional. If not provided, it is assumed to be OBJECT.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "STATE_VECTOR",
+      "anchor": "STATE_VECTOR",
+      "field": "target",
+      "specification": "The target body name or ID, only applicable when targetType is OBJECT.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "STATE_VECTOR",
+      "anchor": "STATE_VECTOR",
+      "field": "targetLocation",
+      "specification": "Javascript object providing the specification for the target location, only applicable when targetType is either FIXED_POINT or CONSTANT_VELOCITY_POINT. This dictionary shall comply to the specification provided in Additional Parameters for Locations as Points.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "STATE_VECTOR",
+      "anchor": "STATE_VECTOR",
+      "field": "observerType",
+      "specification": "The type of specification used to define the location of the observer. One of: OBJECT FIXED_POINT CONSTANT_VELOCITY_POINT Use OBJECT if the observer is specified by providing the name of an ephemeris object, i.e. an observer whose trajectory is provided by one of the loaded SPK files. Use FIXED_POINT to specify the observer as a fixed (constant) geometric position relative to its \"center of motion,\" expressed in the provided reference frame. Use CONSTANT_VELOCITY_POINT to specify the observer having a constant Cartesian velocity relative to its \"center of motion,\" expressed in the provided reference frame at a given epoch. For other epochs, the position of the observer relative to its center of motion is linearly extrapolated from the position at the given epoch using the provided Cartesian velocity. Note that if observerType is either FIXED_POINT or CONSTANT_VELOCITY_POINT then targetType MUST be OBJECT, i.e. specifying both Target and Observer as locations is not allowed. Note that observerType is optional. If not provided, it is assumed to be OBJECT.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "STATE_VECTOR",
+      "anchor": "STATE_VECTOR",
+      "field": "observer",
+      "specification": "The observing body name or ID, only applicable when observerType is OBJECT.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "STATE_VECTOR",
+      "anchor": "STATE_VECTOR",
+      "field": "observerLocation",
+      "specification": "Javascript object providing the specification for the observer location, only applicable when observerType is either FIXED_POINT or CONSTANT_VELOCITY_POINT. This dictionary shall comply to the specification provided in Additional Parameters for Locations as Points.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "STATE_VECTOR",
+      "anchor": "STATE_VECTOR",
+      "field": "frameType",
+      "specification": "Defines how the output reference frame is specified. One of: SPICE_FRAME TOPOCENTRIC_AT_POINT Use SPICE_FRAME to specify the output reference frame using its SPICE name. Use TOPOCENTRIC_AT_POINT if the output reference frame shall be the local topocentric reference frame at the observer location. Note that frameType can only be used when observerType is FIXED_POINT. In this case, frameType is optional. If not provided, it is assumed to be SPICE_FRAME. The local topocentric reference frame is generally defined as follows: the +Z axis is aligned with the surface normal outward vector at the observer's location; the +X axis is aligned with the component of the +Z axis of the body-fixed reference frame orthogonal to the outward normal vector, i.e. the +X axis points towards the body's North pole; the +Y axis completes the right-handed system. For observers located on the Z axis of the body-fixed frame designated by referenceFrame of the Javascript object provided in observerLocation, the following definition of the local topocentric reference frame is used: the +Z axis is aligned with the surface normal outward vector (North or anti-North) at the observer's location; the +X axis aligned with the +X axis of the body-fixed reference frame; the +Y axis completes the right-handed system.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "STATE_VECTOR",
+      "anchor": "STATE_VECTOR",
+      "field": "referenceFrame",
+      "specification": "The reference frame name. Required except when observerType is FIXED_POINT and frameType is TOPOCENTRIC_AT_POINT.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "STATE_VECTOR",
+      "anchor": "STATE_VECTOR",
+      "field": "frameLocus",
+      "specification": "The output reference frame evaluation locus; i.e. the location associated with the epoch at which the evaluation of the output frame's orientation, relative to the J2000 frame, will be performed. One of: CENTER OBSERVER TARGET Use OBSERVER to evaluate the output reference frame at the observer's epoch. Normally the locus OBSERVER should be selected when the output reference frame is centered at the observer. Use TARGET to evaluate the output reference frame at the target epoch. Normally the locus TARGET should be selected when output reference frame is centered at the target object. Use CENTER to evaluate the output reference frame at the epoch associated with its center. The locus CENTER should be selected when the user intends to obtain results compatible with those produced by a state vector computation between two objects, i.e. between a targetType OBJECT and an observerType OBJECT. When the output reference frame is inertial, all choices of frameLocus yield the same results. frameLocus is only applicable when either targetType or observerType is FIXED_POINT or CONSTANT_VELOCITY_POINT, except when observerType is FIXED_POINT and frameType is TOPOCENTRIC_AT_POINT.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "STATE_VECTOR",
+      "anchor": "STATE_VECTOR",
+      "field": "computationMethod",
+      "specification": "Defines the computation method to be used to obtain the surface normal vector that defines the local zenith of the local topocentric reference frame. One of: ELLIPSOID computationMethod is required only when observerType is FIXED_POINT and frameType is TOPOCENTRIC_AT_POINT.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "STATE_VECTOR",
+      "anchor": "STATE_VECTOR",
+      "field": "aberrationCorrection",
+      "specification": "The SPICE aberration correction string. One of: NONE LT LT+S CN CN+S XLT XLT+S XCN XCN+S For aberration correction details, see the description of the input argument ABCORR of the SPICELIB routine SPKEZR.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "STATE_VECTOR",
+      "anchor": "STATE_VECTOR",
+      "field": "stateRepresentation",
+      "specification": "One of: RECTANGULAR RA_DEC LATITUDINAL (planetocentric) PLANETODETIC, only applicable when observerType is OBJECT PLANETOGRAPHIC, only applicable when observerType is OBJECT CYLINDRICAL SPHERICAL AZ_EL",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "STATE_VECTOR",
+      "anchor": "STATE_VECTOR",
+      "field": "azccwFlag",
+      "specification": "Flag indicating how azimuth is measured. If azccwFlag is true, azimuth increases in the counterclockwise direction; otherwise it increases in the clockwise direction. Required only when stateRepresentation is set to AZ_EL.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "STATE_VECTOR",
+      "anchor": "STATE_VECTOR",
+      "field": "elplszFlag",
+      "specification": "Flag indicating how elevation is measured. If elplszFlag is true, elevation increases from the XY plane toward +Z; otherwise toward -Z. Required only when stateRepresentation is set to AZ_EL.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "STATE_VECTOR",
+      "anchor": "STATE_VECTOR",
+      "field": "centerBody",
+      "specification": "the name of the location's center of motion. The ephemeris of centerBody is provided by loaded SPK files.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "STATE_VECTOR",
+      "anchor": "STATE_VECTOR",
+      "field": "referenceFrame",
+      "specification": "name of a reference frame, whether built in or defined in loaded kernels. This reference frame is used to specify the location's coordinates relative to its \"center of motion.\" If coordinateRepresentation (used to specify the location's position) is set to PLANETODETIC or PLANETOGRAPHIC coordinates, this frame shall be non-inertial and its center MUST be the same as the center provided in centerBody.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "STATE_VECTOR",
+      "anchor": "STATE_VECTOR",
+      "field": "coordinateRepresentation",
+      "specification": "Coordinate system used to specify the location's position coordinates. One of: RECTANGULAR RA_DEC LATITUDINAL (planetocentric) PLANETODETIC PLANETOGRAPHIC CYLINDRICAL SPHERICAL AZ_EL Before performing the calculation, the position specified using this coordinate system is converted to Cartesian coordinates. If the selected coordinate representation is either PLANETODETIC or PLANETOGRAPHIC, the location's center of motion, given in centerBody and the center of the non-inertial reference frame used to specify the coordinates, given in referenceFrame within this dictionary, MUST be the same. In these cases, the center body shape shall be a spheroid and its equatorial and polar radii will be used in the coordinates system conversion.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "STATE_VECTOR",
+      "anchor": "STATE_VECTOR",
+      "field": "azccwFlag",
+      "specification": "Flag indicating how azimuth is measured. If azccwFlag is true, azimuth increases in the counterclockwise direction; otherwise it increases in the clockwise direction. Required only when coordinateRepresentation is set to AZ_EL.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "STATE_VECTOR",
+      "anchor": "STATE_VECTOR",
+      "field": "elplszFlag",
+      "specification": "Flag indicating how elevation is measured. If elplszFlag is true, elevation increases from the XY plane toward +Z; otherwise toward -Z. Required only when coordinateRepresentation is set to AZ_EL.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "STATE_VECTOR",
+      "anchor": "STATE_VECTOR",
+      "field": "x",
+      "specification": "The X coordinate, in km, applicable only when coordinateRepresentation is RECTANGULAR.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "STATE_VECTOR",
+      "anchor": "STATE_VECTOR",
+      "field": "y",
+      "specification": "The Y coordinate, in km, applicable only when coordinateRepresentation is RECTANGULAR.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "STATE_VECTOR",
+      "anchor": "STATE_VECTOR",
+      "field": "z",
+      "specification": "The Z coordinate, in km, applicable only when coordinateRepresentation is RECTANGULAR or CYLINDRICAL.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "STATE_VECTOR",
+      "anchor": "STATE_VECTOR",
+      "field": "rightAscension",
+      "specification": "The right ascension of the location, in degrees, applicable only when coordinateRepresentation is RA_DEC.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "STATE_VECTOR",
+      "anchor": "STATE_VECTOR",
+      "field": "declination",
+      "specification": "The declination of the location, in degrees, applicable only when coordinateRepresentation is RA_DEC.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "STATE_VECTOR",
+      "anchor": "STATE_VECTOR",
+      "field": "range",
+      "specification": "The range to the location, in km, applicable only when coordinateRepresentation is RA_DEC or AZ_EL.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "STATE_VECTOR",
+      "anchor": "STATE_VECTOR",
+      "field": "longitude",
+      "specification": "The longitude of the location, in degrees, applicable only when coordinateRepresentation is LATITUDINAL, PLANETODETIC, PLANETOGRAPHIC, CYLINDRICAL or SPHERICAL.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "STATE_VECTOR",
+      "anchor": "STATE_VECTOR",
+      "field": "latitude",
+      "specification": "The latitude of the location, in degrees, applicable only when coordinateRepresentation is LATITUDINAL, PLANETODETIC, or PLANETOGRAPHIC.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "STATE_VECTOR",
+      "anchor": "STATE_VECTOR",
+      "field": "radius",
+      "specification": "The radius at the location, in km, applicable only when coordinateRepresentation is LATITUDINAL, CYLINDRICAL or SPHERICAL.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "STATE_VECTOR",
+      "anchor": "STATE_VECTOR",
+      "field": "altitude",
+      "specification": "The altitude of the location, in km, applicable only when coordinateRepresentation is PLANETODETIC or PLANETOGRAPHIC.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "STATE_VECTOR",
+      "anchor": "STATE_VECTOR",
+      "field": "colatitude",
+      "specification": "The colatitude of the location, in degrees, applicable only when coordinateRepresentation is SPHERICAL.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "STATE_VECTOR",
+      "anchor": "STATE_VECTOR",
+      "field": "azimuth",
+      "specification": "The azimuth of the location, in degrees, applicable only when coordinateRepresentation is AZ_EL.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "STATE_VECTOR",
+      "anchor": "STATE_VECTOR",
+      "field": "elevation",
+      "specification": "The elevation of the location, in degrees, applicable only when coordinateRepresentation is AZ_EL.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "STATE_VECTOR",
+      "anchor": "STATE_VECTOR",
+      "field": "dxdt",
+      "specification": "The X Cartesian velocity coordinate, in km/s, applicable only when CONSTANT_VELOCITY_POINT is used to specify the location (in targetType or observerType).",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "STATE_VECTOR",
+      "anchor": "STATE_VECTOR",
+      "field": "dydt",
+      "specification": "The Y Cartesian velocity coordinate, in km/s, applicable only when CONSTANT_VELOCITY_POINT is used to specify the location (in targetType or observerType).",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "STATE_VECTOR",
+      "anchor": "STATE_VECTOR",
+      "field": "dzdt",
+      "specification": "The Z Cartesian velocity coordinate, in km/s, applicable only when CONSTANT_VELOCITY_POINT is used to specify the location (in targetType or observerType).",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "STATE_VECTOR",
+      "anchor": "STATE_VECTOR",
+      "field": "timeSystem",
+      "specification": "The time system used to specify the location's epoch, applicable only when CONSTANT_VELOCITY_POINT is used to specify the location (in targetType or observerType). One of: UTC TDB TDT TT SPACECRAFT_CLOCK GPS If SPACECRAFT_CLOCK is selected, then sclkId must also be provided. Note that in SPICE, TDT (Terrestrial Dynamical Time) and TT (Terrestrial Time) refer to the same time system.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "STATE_VECTOR",
+      "anchor": "STATE_VECTOR",
+      "field": "timeFormat",
+      "specification": "The time format used to represent the location's epoch, applicable only when CONSTANT_VELOCITY_POINT is used to specify the location (in targetType or observerType). One of: CALENDAR JULIAN SECONDS_PAST_GPS0 SECONDS_PAST_J2000 SPACECRAFT_CLOCK_STRING SPACECRAFT_CLOCK_TICKS WEEK_TOW CALENDAR is applicable if either UTC, TDB, TDT, TT or GPS are selected as timeSystem. JULIAN and SECONDS_PAST_J2000 are applicable if either UTC, TDB, TDT or TT are selected as timeSystem. SPACECRAFT_CLOCK_STRING and SPACECRAFT_CLOCK_TICKS are only applicable when timeSystem is SPACECRAFT_CLOCK. SECONDS_PAST_GPS0 and WEEK_TOW are only applicable when timeSystem is GPS.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "STATE_VECTOR",
+      "anchor": "STATE_VECTOR",
+      "field": "sclkId",
+      "specification": "The spacecraft clock identifier, applicable only when CONSTANT_VELOCITY_POINT is used to specify the location (in targetType or observerType) and timeSystem is SPACECRAFT_CLOCK.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "STATE_VECTOR",
+      "anchor": "STATE_VECTOR",
+      "field": "epoch",
+      "specification": "The location's epoch, applicable only when CONSTANT_VELOCITY_POINT is used to specify the location (in targetType or observerType). For other epochs than this, the position of the location relative to its center of motion is linearly extrapolated from the position at this epoch using the provided Cartesian velocity.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "ANGULAR_SEPARATION",
+      "anchor": "ANGULAR_SEPARATION",
+      "field": "specType",
+      "specification": "Method used to specify the directions between which the angular separation is computed. One of: TWO_TARGETS TWO_DIRECTIONS Use TWO_TARGETS to specify the directions using two target bodies as seen from an observer. Use TWO_DIRECTIONS to define each direction by specifying the position or velocity of an object with respect to an observer, or by specifying a vector in a given reference frame. Note that specType is optional if the method used to specify the directions is TWO_TARGETS",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "ANGULAR_SEPARATION",
+      "anchor": "ANGULAR_SEPARATION",
+      "field": "target1",
+      "specification": "The target body name or ID of the first body",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "ANGULAR_SEPARATION",
+      "anchor": "ANGULAR_SEPARATION",
+      "field": "shape1",
+      "specification": "The shape to use for the first body. One of: POINT SPHERE",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "ANGULAR_SEPARATION",
+      "anchor": "ANGULAR_SEPARATION",
+      "field": "target2",
+      "specification": "The target body name or ID of the second body",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "ANGULAR_SEPARATION",
+      "anchor": "ANGULAR_SEPARATION",
+      "field": "shape2",
+      "specification": "The shape to use for the second body. One of: POINT SPHERE",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "ANGULAR_SEPARATION",
+      "anchor": "ANGULAR_SEPARATION",
+      "field": "observer",
+      "specification": "The observing body name or ID",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "ANGULAR_SEPARATION",
+      "anchor": "ANGULAR_SEPARATION",
+      "field": "aberrationCorrection",
+      "specification": "The SPICE aberration correction string. One of: NONE LT LT+S CN CN+S XLT XLT+S XCN XCN+S For details of aberration corrections applied to both target position vectors, see the description of the input argument ABCORR of the SPICELIB routine SPKPOS.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "ANGULAR_SEPARATION",
+      "anchor": "ANGULAR_SEPARATION",
+      "field": "direction1",
+      "specification": "Javascript object providing the specification for the first direction vector. This dictionary shall comply to the specification provided in Additional Parameters for Specifying Directions.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "ANGULAR_SEPARATION",
+      "anchor": "ANGULAR_SEPARATION",
+      "field": "direction2",
+      "specification": "Javascript object providing the specification for the second direction vector. This dictionary shall comply to the specification provided in Additional Parameters for Specifying Directions.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "ANGULAR_SIZE",
+      "anchor": "ANGULAR_SIZE",
+      "field": "computationMethod",
+      "specification": "Method to compute the angular size of the target as seen from the observer. One of: LIMB_EXTENTS MAX_RADIUS MIN_RADIUS When using LIMB_EXTENTS, the target body is modeled as a triaxial ellipsoid based on the PCK-loaded radii for the target's reference ellipsoid. When using MIN_RADIUS or MAX_RADIUS, the target body is modeled as a sphere of radius equal to the smallest or largest of the PCK-loaded radii for the target's reference ellipsoid. computationMethod is optional and, if not provided, it defaults to MAX_RADIUS.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "ANGULAR_SIZE",
+      "anchor": "ANGULAR_SIZE",
+      "field": "target",
+      "specification": "The target body name or ID.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "ANGULAR_SIZE",
+      "anchor": "ANGULAR_SIZE",
+      "field": "targetFrame",
+      "specification": "The body-fixed reference frame name, centered at target. Required only if computationMethod is LIMB_EXTENTS.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "ANGULAR_SIZE",
+      "anchor": "ANGULAR_SIZE",
+      "field": "observer",
+      "specification": "The observing body name or ID.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "ANGULAR_SIZE",
+      "anchor": "ANGULAR_SIZE",
+      "field": "aberrationCorrection",
+      "specification": "The SPICE aberration correction string. One of: NONE LT LT+S CN CN+S XLT XLT+S XCN XCN+S For details of aberration correction applied to the target position vector, see the description of the input argument ABCORR of the SPICELIB routine SPKPOS.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "FRAME_TRANSFORMATION",
+      "anchor": "FRAME_TRANSFORMATION",
+      "field": "frame1",
+      "specification": "The first reference frame name",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "FRAME_TRANSFORMATION",
+      "anchor": "FRAME_TRANSFORMATION",
+      "field": "frame2",
+      "specification": "The second reference frame name",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "FRAME_TRANSFORMATION",
+      "anchor": "FRAME_TRANSFORMATION",
+      "field": "aberrationCorrection",
+      "specification": "The SPICE aberration correction string. One of: NONE LT XLT CN XCN For details of aberration corrections used to compute times at the frame centers, see the description of the input argument ABCORR of the SPICELIB routine SPKPOS.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "FRAME_TRANSFORMATION",
+      "anchor": "FRAME_TRANSFORMATION",
+      "field": "timeLocation",
+      "specification": "The frame for the input times. Only needed if aberrationCorrection is not NONE. One of: frame1 frame2.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "FRAME_TRANSFORMATION",
+      "anchor": "FRAME_TRANSFORMATION",
+      "field": "orientationRepresentation",
+      "specification": "The representation of the result transformation. One of: EULER_ANGLES ANGLE_AND_AXIS SPICE_QUATERNION OTHER_QUATERNION MATRIX_ROW_BY_ROW MATRIX_FLAGGED MATRIX_ALL_ONE_ROW",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "FRAME_TRANSFORMATION",
+      "anchor": "FRAME_TRANSFORMATION",
+      "field": "axis1",
+      "specification": "The first axis for Euler angle rotation. Only needed if orientationRepresentation is EULER_ANGLES. One of: X Y Z",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "FRAME_TRANSFORMATION",
+      "anchor": "FRAME_TRANSFORMATION",
+      "field": "axis2",
+      "specification": "The second axis for Euler angle rotation. Only needed if orientationRepresentation is EULER_ANGLES. One of: X Y Z",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "FRAME_TRANSFORMATION",
+      "anchor": "FRAME_TRANSFORMATION",
+      "field": "axis3",
+      "specification": "The third axis for Euler angle rotation. Only needed if orientationRepresentation is EULER_ANGLES. One of: X Y Z",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "FRAME_TRANSFORMATION",
+      "anchor": "FRAME_TRANSFORMATION",
+      "field": "angularUnits",
+      "specification": "The angular units used for the angle of rotation. Only needed if orientationRepresentation is EULER_ANGLES or ANGLE_AND_AXIS. One of: deg rad",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "FRAME_TRANSFORMATION",
+      "anchor": "FRAME_TRANSFORMATION",
+      "field": "angularVelocityRepresentation",
+      "specification": "The representation of angular velocity in the output. One of: NOT_INCLUDED VECTOR_IN_FRAME1 VECTOR_IN_FRAME2 EULER_ANGLE_DERIVATIVES MATRIX",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "FRAME_TRANSFORMATION",
+      "anchor": "FRAME_TRANSFORMATION",
+      "field": "angularVelocityUnits",
+      "specification": "The units for the angular velocity. Only needed if angularVelocityRepresention is one of VECTOR_IN_FRAME1, VECTOR_IN_FRAME2, or EULER_ANGLE_DERIVATIVES. One of: deg/s rad/s RPM unitless or Unitary (synonym, for backwards compatibility). Only applicable for VECTOR_IN_FRAME1 and VECTOR_IN_FRAME2.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "ILLUMINATION_ANGLES",
+      "anchor": "ILLUMINATION_ANGLES",
+      "field": "observer",
+      "specification": "The observing body name or ID",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "ILLUMINATION_ANGLES",
+      "anchor": "ILLUMINATION_ANGLES",
+      "field": "illuminator",
+      "specification": "The illumination source name or ID. This source may be any ephemeris object. This parameter is optional and, if not provided, it defaults to SUN.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "ILLUMINATION_ANGLES",
+      "anchor": "ILLUMINATION_ANGLES",
+      "field": "aberrationCorrection",
+      "specification": "The SPICE aberration correction string. One of: NONE LT LT+S CN CN+S XLT XLT+S XCN XCN+S For aberration correction details, see the description of the input argument ABCORR of the SPICELIB routine ILUMIN.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "PHASE_ANGLE",
+      "anchor": "PHASE_ANGLE",
+      "field": "target",
+      "specification": "The target body name or ID",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "PHASE_ANGLE",
+      "anchor": "PHASE_ANGLE",
+      "field": "observer",
+      "specification": "The observing body name or ID",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "PHASE_ANGLE",
+      "anchor": "PHASE_ANGLE",
+      "field": "illuminator",
+      "specification": "The illumination source body name or ID. Often, the illumination source is the Sun, but it could be any other ephemeris object.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "PHASE_ANGLE",
+      "anchor": "PHASE_ANGLE",
+      "field": "aberrationCorrection",
+      "specification": "The SPICE aberration correction string. This computation supports only reception mode aberration corrections. One of: NONE LT LT+S CN CN+S For details of aberration correction applied to the target-observer and target-illuminator vectors, see the description of the input argument ABCORR of the SPICELIB routine PHASEQ.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "PLANETOCENTRIC_SOLAR_LONGITUDE",
+      "anchor": "PLANETOCENTRIC_SOLAR_LONGITUDE",
+      "field": "body",
+      "specification": "The body name or ID",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "PLANETOCENTRIC_SOLAR_LONGITUDE",
+      "anchor": "PLANETOCENTRIC_SOLAR_LONGITUDE",
+      "field": "aberrationCorrection",
+      "specification": "The SPICE aberration correction string. This computation supports only reception mode aberration corrections. One of: NONE LT LT+S CN CN+S For details of aberration correction applied to the body-Sun vector, see the description of the input argument ABCORR of the SPICELIB routine LSPCN.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "POINTING_DIRECTION",
+      "anchor": "POINTING_DIRECTION",
+      "field": "direction",
+      "specification": "Javascript object providing the specification for input direction vector. This dictionary shall comply to the specification provided in Additional Parameters for Specifying Directions.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "POINTING_DIRECTION",
+      "anchor": "POINTING_DIRECTION",
+      "field": "referenceFrame",
+      "specification": "The output reference frame.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "POINTING_DIRECTION",
+      "anchor": "POINTING_DIRECTION",
+      "field": "vectorMagnitude",
+      "specification": "Magnitude of the output vector representation. One of: UNIT PRESERVE_ORIGINAL Use UNIT to represent the output direction vector as a unit vector, and PRESERVE_ORIGINAL to output the direction vector with its computed magnitude.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "POINTING_DIRECTION",
+      "anchor": "POINTING_DIRECTION",
+      "field": "coordinateRepresentation",
+      "specification": "Coordinate system used to specify the computed direction output coordinates. One of: RECTANGULAR RA_DEC LATITUDINAL (planetocentric) CYLINDRICAL SPHERICAL AZ_EL Units are degrees for angular coordinate components. For unit vectors, the distance-type individual coordinate components have no units (unitless). For non-unit vectors originally defined by position, the units are Km; for non-unit vectors originally defined by velocity, the units are Km/s; and for non-unit vectors originally defined as vectors, the units are the same as those on input. Note that the distance-type individual coordinate components of pointing directions originally defined as Reference frame axis vectors have no units (these are always unitless by definition).",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "POINTING_DIRECTION",
+      "anchor": "POINTING_DIRECTION",
+      "field": "azccwFlag",
+      "specification": "Flag indicating how azimuth is measured. If azccwFlag is true, azimuth increases in the counterclockwise direction; otherwise it increases in the clockwise direction. Required only when coordinateRepresentation is set to AZ_EL.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "POINTING_DIRECTION",
+      "anchor": "POINTING_DIRECTION",
+      "field": "elplszFlag",
+      "specification": "Flag indicating how elevation is measured. If elplszFlag is true, elevation increases from the XY plane toward +Z; otherwise toward -Z. Required only when coordinateRepresentation is set to AZ_EL.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "SUB_SOLAR_POINT",
+      "anchor": "SUB_SOLAR_POINT",
+      "field": "target",
+      "specification": "The target body name or ID",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "SUB_SOLAR_POINT",
+      "anchor": "SUB_SOLAR_POINT",
+      "field": "targetFrame",
+      "specification": "The target body-fixed reference frame name",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "SUB_SOLAR_POINT",
+      "anchor": "SUB_SOLAR_POINT",
+      "field": "observer",
+      "specification": "The observing body name or ID",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "SUB_SOLAR_POINT",
+      "anchor": "SUB_SOLAR_POINT",
+      "field": "subPointType",
+      "specification": "The method of finding the sub-solar point, as in the SPICE subslr() API call. One of: Near point: ellipsoid Intercept: ellipsoid NADIR/DSK/UNPRIORITIZED INTERCEPT/DSK/UNPRIORITIZED",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "SUB_SOLAR_POINT",
+      "anchor": "SUB_SOLAR_POINT",
+      "field": "dskSurfaces",
+      "specification": "An array of the names and/or IDs of the DSK surfaces to which the computation shall be restricted. Used only when subPointType is NADIR/DSK/UNPRIORITIZED or INTERCEPT/DSK/UNPRIORITIZED; ignored otherwise. Optional and, if not provided, or if an empty array is provided, every DSK surface loaded for the target is used.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "SUB_SOLAR_POINT",
+      "anchor": "SUB_SOLAR_POINT",
+      "field": "aberrationCorrection",
+      "specification": "The SPICE aberration correction string. One of: NONE LT LT+S CN CN+S For aberration correction details, see the description of the input argument ABCORR of the SPICELIB routine SUBSLR.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "SUB_SOLAR_POINT",
+      "anchor": "SUB_SOLAR_POINT",
+      "field": "stateRepresentation",
+      "specification": "One of: RECTANGULAR RA_DEC LATITUDINAL (planetocentric) PLANETODETIC PLANETOGRAPHIC CYLINDRICAL SPHERICAL",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "SUB_OBSERVER_POINT",
+      "anchor": "SUB_OBSERVER_POINT",
+      "field": "target",
+      "specification": "The target body name or ID",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "SUB_OBSERVER_POINT",
+      "anchor": "SUB_OBSERVER_POINT",
+      "field": "targetFrame",
+      "specification": "The target body-fixed reference frame name",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "SUB_OBSERVER_POINT",
+      "anchor": "SUB_OBSERVER_POINT",
+      "field": "observer",
+      "specification": "The observing body name or ID",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "SUB_OBSERVER_POINT",
+      "anchor": "SUB_OBSERVER_POINT",
+      "field": "subPointType",
+      "specification": "The method of finding the sub-observer point, as in the SPICE subpnt() API call. One of: Near point: ellipsoid Intercept: ellipsoid NADIR/DSK/UNPRIORITIZED INTERCEPT/DSK/UNPRIORITIZED",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "SUB_OBSERVER_POINT",
+      "anchor": "SUB_OBSERVER_POINT",
+      "field": "dskSurfaces",
+      "specification": "An array of the names and/or IDs of the DSK surfaces to which the computation shall be restricted. Used only when subPointType is NADIR/DSK/UNPRIORITIZED or INTERCEPT/DSK/UNPRIORITIZED; ignored otherwise. Optional and, if not provided, or if an empty array is provided, every DSK surface loaded for the target is used.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "SUB_OBSERVER_POINT",
+      "anchor": "SUB_OBSERVER_POINT",
+      "field": "aberrationCorrection",
+      "specification": "The SPICE aberration correction string. One of: NONE LT LT+S CN CN+S XLT XLT+S XCN XCN+S For aberration correction details, see the description of the input argument ABCORR of the SPICELIB routine SUBPNT.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "SUB_OBSERVER_POINT",
+      "anchor": "SUB_OBSERVER_POINT",
+      "field": "stateRepresentation",
+      "specification": "One of: RECTANGULAR RA_DEC LATITUDINAL (planetocentric) PLANETODETIC PLANETOGRAPHIC CYLINDRICAL SPHERICAL",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "SURFACE_INTERCEPT_POINT",
+      "anchor": "SURFACE_INTERCEPT_POINT",
+      "field": "target",
+      "specification": "The target body name or ID",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "SURFACE_INTERCEPT_POINT",
+      "anchor": "SURFACE_INTERCEPT_POINT",
+      "field": "shape1",
+      "specification": "The shape to use for the target body, One of: ELLIPSOID DSK",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "SURFACE_INTERCEPT_POINT",
+      "anchor": "SURFACE_INTERCEPT_POINT",
+      "field": "dskSurfaces",
+      "specification": "An array of the names and/or IDs of the DSK surfaces to which the computation shall be restricted. Used only when shape1 is DSK; ignored otherwise. Optional and, if not provided, or if an empty array is provided, every DSK surface loaded for the target is used.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "SURFACE_INTERCEPT_POINT",
+      "anchor": "SURFACE_INTERCEPT_POINT",
+      "field": "targetFrame",
+      "specification": "The target body-fixed reference frame name",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "SURFACE_INTERCEPT_POINT",
+      "anchor": "SURFACE_INTERCEPT_POINT",
+      "field": "observer",
+      "specification": "The observing body name or ID",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "SURFACE_INTERCEPT_POINT",
+      "anchor": "SURFACE_INTERCEPT_POINT",
+      "field": "directionVectorType",
+      "specification": "Type of vector to be used as the ray direction: the instrument boresight vector, the instrument field-of-view boundary vectors, an axis of the specified reference frame, a vector in the reference frame of the specified instrument, a vector in the specified reference frame, or a vector defined by the position of a given object as seen from the observer. One of: INSTRUMENT_BORESIGHT INSTRUMENT_FOV_BOUNDARY_VECTORS REFERENCE_FRAME_AXIS VECTOR_IN_INSTRUMENT_FOV VECTOR_IN_REFERENCE_FRAME DIRECTION_TO_OBJECT",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "SURFACE_INTERCEPT_POINT",
+      "anchor": "SURFACE_INTERCEPT_POINT",
+      "field": "directionObject",
+      "specification": "The ephemeris object name or ID. Required only if directionVectorType is DIRECTION_TO_OBJECT.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "SURFACE_INTERCEPT_POINT",
+      "anchor": "SURFACE_INTERCEPT_POINT",
+      "field": "directionInstrument",
+      "specification": "The instrument name or ID. Required only if directionVectorType is INSTRUMENT_BORESIGHT, INSTRUMENT_FOV_BOUNDARY_VECTORS, or VECTOR_IN_INSTRUMENT_FOV.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "SURFACE_INTERCEPT_POINT",
+      "anchor": "SURFACE_INTERCEPT_POINT",
+      "field": "directionFrame",
+      "specification": "The vector's reference frame name. Required only if directionVectorType is REFERENCE_FRAME_AXIS or VECTOR_IN_REFERENCE_FRAME.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "SURFACE_INTERCEPT_POINT",
+      "anchor": "SURFACE_INTERCEPT_POINT",
+      "field": "directionFrameAxis",
+      "specification": "The ray's direction frame axis. Required only if directionVectorType is REFERENCE_FRAME_AXIS. One of: X Y Z",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "SURFACE_INTERCEPT_POINT",
+      "anchor": "SURFACE_INTERCEPT_POINT",
+      "field": "directionVectorX",
+      "specification": "The X coordinate of the ray's direction vector. If directionVectorType is VECTOR_IN_INSTRUMENT_FOV or VECTOR_IN_REFERENCE_FRAME, then either all three of directionVectorX, directionVectorY, and directionVectorZ must be provided, or both directionVectorRA and directionVectorDec, or both directionVectorAz and directionVectorEl.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "SURFACE_INTERCEPT_POINT",
+      "anchor": "SURFACE_INTERCEPT_POINT",
+      "field": "directionVectorY",
+      "specification": "The Y coordinate of the ray's direction vector.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "SURFACE_INTERCEPT_POINT",
+      "anchor": "SURFACE_INTERCEPT_POINT",
+      "field": "directionVectorZ",
+      "specification": "The Z coordinate of the ray's direction vector.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "SURFACE_INTERCEPT_POINT",
+      "anchor": "SURFACE_INTERCEPT_POINT",
+      "field": "directionVectorRA",
+      "specification": "The right ascension coordinate of the ray's direction vector.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "SURFACE_INTERCEPT_POINT",
+      "anchor": "SURFACE_INTERCEPT_POINT",
+      "field": "directionVectorDec",
+      "specification": "The declination coordinate of the ray's direction vector.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "SURFACE_INTERCEPT_POINT",
+      "anchor": "SURFACE_INTERCEPT_POINT",
+      "field": "directionVectorAz",
+      "specification": "The azimuth coordinate of the ray's direction vector.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "SURFACE_INTERCEPT_POINT",
+      "anchor": "SURFACE_INTERCEPT_POINT",
+      "field": "directionVectorEl",
+      "specification": "The elevation coordinate of the ray's direction vector.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "SURFACE_INTERCEPT_POINT",
+      "anchor": "SURFACE_INTERCEPT_POINT",
+      "field": "azccwFlag",
+      "specification": "Flag indicating how azimuth is measured. If azccwFlag is true, azimuth increases in the counterclockwise direction; otherwise it increases in the clockwise direction. Required only when directionVectorAz and directionVectorEl are used to provide the coordinates of the direction vector.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "SURFACE_INTERCEPT_POINT",
+      "anchor": "SURFACE_INTERCEPT_POINT",
+      "field": "elplszFlag",
+      "specification": "Flag indicating how elevation is measured. If elplszFlag is true, elevation increases from the XY plane toward +Z; otherwise toward -Z. Required only when directionVectorAz and directionVectorEl are used to provide the coordinates of the direction vector.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "SURFACE_INTERCEPT_POINT",
+      "anchor": "SURFACE_INTERCEPT_POINT",
+      "field": "antiVectorFlag",
+      "specification": "true if the ray's direction is defined as being opposite to the one specified by the rest of the inputs within this payload, i.e. when anti-vector is requested, the direction is defined by using the negative of the final vector, in the J2000 frame, after all rotations and aberration corrections are applied. false otherwise. Used only when directionVectorType is REFERENCE_FRAME_AXIS, VECTOR_IN_REFERENCE_FRAME or DIRECTION_TO_OBJECT. In these cases, if not provided, it will be automatically set to its default value: false.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "SURFACE_INTERCEPT_POINT",
+      "anchor": "SURFACE_INTERCEPT_POINT",
+      "field": "vectorAbCorr",
+      "specification": "Type of aberration correction to be applied to the specified vector. Used only if directionVectorType is VECTOR_IN_REFERENCE_FRAME and antiVectorFlag is false. One of: NONE STELLAR_ABERRATION_VECTOR Use NONE to compute geometry without aberration corrections, and STELLAR_ABERRATION_VECTOR to correct the vector's direction for stellar aberration, taking into account the velocity of the observer with respect to the solar system barycenter. The direction of stellar aberration correction is determined by the light time direction selected in aberrationCorrection. For backward compatibility, if not provided, it is assumed to be NONE.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "SURFACE_INTERCEPT_POINT",
+      "anchor": "SURFACE_INTERCEPT_POINT",
+      "field": "aberrationCorrection",
+      "specification": "The SPICE aberration correction string. One of: NONE LT LT+S CN CN+S XLT XLT+S XCN XCN+S If the ray's direction is defined as DIRECTION_TO_OBJECT and antiVectorFlag is set to true, the use of stellar aberration in aberrationCorrection is not allowed. Therefore, in this case, the use of LT+S, CN+S, XLT+S and XCN+S will cause an error to be signaled. Note that the selected aberration correction applies both to the computation's target and the ray's direction vector if directionVectorType is DIRECTION_TO_OBJECT. For any other directionVectorType, the selected aberration correction only applies to the computation's target. For aberration correction details, see the description of the input argument ABCORR of the SPICELIB routine SINCPT.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "SURFACE_INTERCEPT_POINT",
+      "anchor": "SURFACE_INTERCEPT_POINT",
+      "field": "stateRepresentation",
+      "specification": "One of: RECTANGULAR RA_DEC LATITUDINAL (planetocentric) PLANETODETIC PLANETOGRAPHIC CYLINDRICAL SPHERICAL",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "TANGENT_POINT",
+      "anchor": "TANGENT_POINT",
+      "field": "computationMethod",
+      "specification": "The computation method. Currently, it is restricted to ELLIPSOID. This value indicates that the target shape is modeled as a triaxial ellipsoid",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "TANGENT_POINT",
+      "anchor": "TANGENT_POINT",
+      "field": "target",
+      "specification": "The target body name or ID",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "TANGENT_POINT",
+      "anchor": "TANGENT_POINT",
+      "field": "targetFrame",
+      "specification": "The target body-fixed reference frame name",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "TANGENT_POINT",
+      "anchor": "TANGENT_POINT",
+      "field": "observer",
+      "specification": "The observing body name or ID",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "TANGENT_POINT",
+      "anchor": "TANGENT_POINT",
+      "field": "directionVectorType",
+      "specification": "Type of vector to be used as the ray direction: the instrument boresight vector, the instrument field-of-view boundary vectors, an axis of the specified reference frame, a vector in the reference frame of the specified instrument, a vector in the specified reference frame, or a vector defined by the position of a given object as seen from the observer. One of: INSTRUMENT_BORESIGHT INSTRUMENT_FOV_BOUNDARY_VECTORS REFERENCE_FRAME_AXIS VECTOR_IN_INSTRUMENT_FOV VECTOR_IN_REFERENCE_FRAME DIRECTION_TO_OBJECT",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "TANGENT_POINT",
+      "anchor": "TANGENT_POINT",
+      "field": "directionObject",
+      "specification": "The ephemeris object name or ID. Required only if directionVectorType is DIRECTION_TO_OBJECT.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "TANGENT_POINT",
+      "anchor": "TANGENT_POINT",
+      "field": "directionInstrument",
+      "specification": "The instrument name or ID. Required only if directionVectorType is INSTRUMENT_BORESIGHT, INSTRUMENT_FOV_BOUNDARY_VECTORS, or VECTOR_IN_INSTRUMENT_FOV.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "TANGENT_POINT",
+      "anchor": "TANGENT_POINT",
+      "field": "directionFrame",
+      "specification": "The vector's reference frame name. Required only if directionVectorType is REFERENCE_FRAME_AXIS or VECTOR_IN_REFERENCE_FRAME.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "TANGENT_POINT",
+      "anchor": "TANGENT_POINT",
+      "field": "directionFrameAxis",
+      "specification": "The ray's direction frame axis. Required only if directionVectorType is REFERENCE_FRAME_AXIS. One of: X Y Z",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "TANGENT_POINT",
+      "anchor": "TANGENT_POINT",
+      "field": "directionVectorX",
+      "specification": "The X coordinate of the ray's direction vector. If directionVectorType is VECTOR_IN_INSTRUMENT_FOV or VECTOR_IN_REFERENCE_FRAME, then either all three of directionVectorX, directionVectorY, and directionVectorZ must be provided, or both directionVectorRA and directionVectorDec, or both directionVectorAz and directionVectorEl.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "TANGENT_POINT",
+      "anchor": "TANGENT_POINT",
+      "field": "directionVectorY",
+      "specification": "The Y coordinate of the ray's direction vector.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "TANGENT_POINT",
+      "anchor": "TANGENT_POINT",
+      "field": "directionVectorZ",
+      "specification": "The Z coordinate of the ray's direction vector.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "TANGENT_POINT",
+      "anchor": "TANGENT_POINT",
+      "field": "directionVectorRA",
+      "specification": "The right ascension coordinate of the ray's direction vector.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "TANGENT_POINT",
+      "anchor": "TANGENT_POINT",
+      "field": "directionVectorDec",
+      "specification": "The declination coordinate of the ray's direction vector.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "TANGENT_POINT",
+      "anchor": "TANGENT_POINT",
+      "field": "directionVectorAz",
+      "specification": "The azimuth coordinate of the ray's direction vector.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "TANGENT_POINT",
+      "anchor": "TANGENT_POINT",
+      "field": "directionVectorEl",
+      "specification": "The elevation coordinate of the ray's direction vector.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "TANGENT_POINT",
+      "anchor": "TANGENT_POINT",
+      "field": "azccwFlag",
+      "specification": "Flag indicating how azimuth is measured. If azccwFlag is true, azimuth increases in the counterclockwise direction; otherwise it increases in the clockwise direction. Required only when directionVectorAz and directionVectorEl are used to provide the coordinates of the direction vector.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "TANGENT_POINT",
+      "anchor": "TANGENT_POINT",
+      "field": "elplszFlag",
+      "specification": "Flag indicating how elevation is measured. If elplszFlag is true, elevation increases from the XY plane toward +Z; otherwise toward -Z. Required only when directionVectorAz and directionVectorEl are used to provide the coordinates of the direction vector.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "TANGENT_POINT",
+      "anchor": "TANGENT_POINT",
+      "field": "antiVectorFlag",
+      "specification": "true if the ray's direction is defined as being opposite to the one specified by the rest of the inputs within this payload, i.e. when anti-vector is requested, the direction is defined by using the negative of the final vector, in the J2000 frame, after all rotations and aberration corrections are applied. false otherwise. Used only when directionVectorType is REFERENCE_FRAME_AXIS, VECTOR_IN_REFERENCE_FRAME or DIRECTION_TO_OBJECT. In these cases, if not provided, it will be automatically set to its default value: false.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "TANGENT_POINT",
+      "anchor": "TANGENT_POINT",
+      "field": "vectorAbCorr",
+      "specification": "Type of aberration correction to be applied to the specified vector. Used only if directionVectorType is VECTOR_IN_REFERENCE_FRAME and antiVectorFlag is false. One of: NONE STELLAR_ABERRATION_VECTOR Use NONE to compute geometry without aberration corrections, and STELLAR_ABERRATION_VECTOR to correct the vector's direction for stellar aberration, taking into account the velocity of the observer with respect to the solar system barycenter. The direction of stellar aberration correction is determined by the light time direction selected in aberrationCorrection. For backward compatibility, if not provided, it is assumed to be NONE.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "TANGENT_POINT",
+      "anchor": "TANGENT_POINT",
+      "field": "aberrationCorrection",
+      "specification": "The SPICE aberration correction string. One of: NONE LT LT+S CN CN+S XLT XLT+S XCN XCN+S If the ray's direction is defined as DIRECTION_TO_OBJECT and antiVectorFlag is set to true, the use of stellar aberration in aberrationCorrection is not allowed. Therefore, in this case, the use of LT+S, CN+S, XLT+S and XCN+S will cause an error to be signaled. Note that the selected aberration correction applies both to the point set by correctionLocus and the direction vector if directionVectorType is DIRECTION_TO_OBJECT. For any other directionVectorType, the selected aberration correction only applies to the point set by correctionLocus. For aberration correction details, see the description of the input argument ABCORR of the SPICELIB routine TANGPT.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "TANGENT_POINT",
+      "anchor": "TANGENT_POINT",
+      "field": "correctionLocus",
+      "specification": "Aberration correction \"locus,\" which is the fixed point in the Reference frame for which light time and stellar aberration corrections are computed. One of: TANGENT_POINT SURFACE_POINT Required only when aberrationCorrection is not NONE. Differential aberration effects across the surface of the target body are not considered. When aberration corrections are used, the effective positions of the observer and target, and the orientation of the target, are computed according to the corrections determined for the aberration correction locus. The light time used to determine the position and orientation of the target body is that between the aberration correction locus and the observer. The stellar aberration correction applied to the position of the target is that computed for the aberration correction locus. Use TANGENT_POINT to compute corrections at the \"tangent point.\" Use SURFACE_POINT to compute corrections at the point on the target's surface nearest to the tangent point. When aberrationCorrection is NONE, the illumination angles, time, local true solar time and light time are computed with respect to the tangent point.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "TANGENT_POINT",
+      "anchor": "TANGENT_POINT",
+      "field": "coordinateRepresentation",
+      "specification": "Coordinate system to represent both the Tangent point and the point on the surface's target nearest to the target point. One of: RECTANGULAR RA_DEC LATITUDINAL (planetocentric) PLANETODETIC PLANETOGRAPHIC CYLINDRICAL SPHERICAL",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "OSCULATING_ELEMENTS",
+      "anchor": "OSCULATING_ELEMENTS",
+      "field": "orbitingBody",
+      "specification": "The SPICE body name or ID for the orbiting body.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "OSCULATING_ELEMENTS",
+      "anchor": "OSCULATING_ELEMENTS",
+      "field": "centerBody",
+      "specification": "The SPICE body name or ID for the body that is the center of motion.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "OSCULATING_ELEMENTS",
+      "anchor": "OSCULATING_ELEMENTS",
+      "field": "referenceFrame",
+      "specification": "The reference frame name. Osculating elements are valid only when computed in a non-rotating reference frame.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "OSCULATING_ELEMENTS",
+      "anchor": "OSCULATING_ELEMENTS",
+      "field": "gmType",
+      "specification": "The gravitational constant to be used in the computation. One of: CENTER CENTER_ORBITER CUSTOM If gmType is CENTER, the GM is the center of motion's gravitational constant. If it is CENTER_ORBITER, the GM is computed as the sum of the gravitational constants of the orbiting object and center of motion bodies. If it is CUSTOM, the GM shall be provided by the user. For calculations where the orbiting body has negligible mass compared to the center of motion (for example, spacecraft and planet), use CENTER GM. When the orbiting body has non-negligible mass compared to the center of motion (for example, Moon and Earth), use CENTER_ORBITER GM. Note: if not provided, gmType defaults to CENTER.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "OSCULATING_ELEMENTS",
+      "anchor": "OSCULATING_ELEMENTS",
+      "field": "gmValue",
+      "specification": "The custom gravitational constant to be used in the computation. Required if gmType is CUSTOM, and ignored otherwise.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "GF_COORDINATE_SEARCH",
+      "anchor": "GF_COORDINATE_SEARCH",
+      "field": "target",
+      "specification": "The target body name or ID",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "GF_COORDINATE_SEARCH",
+      "anchor": "GF_COORDINATE_SEARCH",
+      "field": "observer",
+      "specification": "The observing body name or ID",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "GF_COORDINATE_SEARCH",
+      "anchor": "GF_COORDINATE_SEARCH",
+      "field": "referenceFrame",
+      "specification": "The reference frame name",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "GF_COORDINATE_SEARCH",
+      "anchor": "GF_COORDINATE_SEARCH",
+      "field": "aberrationCorrection",
+      "specification": "The SPICE aberration correction string. One of: NONE LT LT+S CN CN+S XLT XLT+S XCN XCN+S For aberration correction details, see the description of the input argument ABCORR of the SPICELIB routine GFPOSC.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "GF_COORDINATE_SEARCH",
+      "anchor": "GF_COORDINATE_SEARCH",
+      "field": "condition",
+      "specification": "The coordinate condition to search for. See specifying conditions for more information.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "GF_ANGULAR_SEPARATION_SEARCH",
+      "anchor": "GF_ANGULAR_SEPARATION_SEARCH",
+      "field": "target1",
+      "specification": "The first target body name or ID",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "GF_ANGULAR_SEPARATION_SEARCH",
+      "anchor": "GF_ANGULAR_SEPARATION_SEARCH",
+      "field": "shape1",
+      "specification": "The shape type to use for the first target. One of: POINT SPHERE",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "GF_ANGULAR_SEPARATION_SEARCH",
+      "anchor": "GF_ANGULAR_SEPARATION_SEARCH",
+      "field": "target2",
+      "specification": "The second target body name or ID",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "GF_ANGULAR_SEPARATION_SEARCH",
+      "anchor": "GF_ANGULAR_SEPARATION_SEARCH",
+      "field": "shape2",
+      "specification": "The shape type to use for the second target. One of: POINT SPHERE",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "GF_ANGULAR_SEPARATION_SEARCH",
+      "anchor": "GF_ANGULAR_SEPARATION_SEARCH",
+      "field": "observer",
+      "specification": "The observing body name or ID",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "GF_ANGULAR_SEPARATION_SEARCH",
+      "anchor": "GF_ANGULAR_SEPARATION_SEARCH",
+      "field": "aberrationCorrection",
+      "specification": "The SPICE aberration correction string. One of: NONE LT LT+S CN CN+S XLT XLT+S XCN XCN+S For aberration correction details, see the description of the input argument ABCORR of the SPICELIB routine GFSEP.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "GF_ANGULAR_SEPARATION_SEARCH",
+      "anchor": "GF_ANGULAR_SEPARATION_SEARCH",
+      "field": "condition",
+      "specification": "The condition to search for. See specifying conditions for more information.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "GF_DISTANCE_SEARCH",
+      "anchor": "GF_DISTANCE_SEARCH",
+      "field": "target",
+      "specification": "The target body name or ID",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "GF_DISTANCE_SEARCH",
+      "anchor": "GF_DISTANCE_SEARCH",
+      "field": "observer",
+      "specification": "The observing body name or ID",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "GF_DISTANCE_SEARCH",
+      "anchor": "GF_DISTANCE_SEARCH",
+      "field": "aberrationCorrection",
+      "specification": "The SPICE aberration correction string. One of: NONE LT LT+S CN CN+S XLT XLT+S XCN XCN+S For aberration correction details, see the description of the input argument ABCORR of the SPICELIB routine GFDIST.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "GF_DISTANCE_SEARCH",
+      "anchor": "GF_DISTANCE_SEARCH",
+      "field": "condition",
+      "specification": "The condition to search for. See specifying conditions for more information.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "GF_SUB_POINT_SEARCH",
+      "anchor": "GF_SUB_POINT_SEARCH",
+      "field": "target",
+      "specification": "The target body name or ID",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "GF_SUB_POINT_SEARCH",
+      "anchor": "GF_SUB_POINT_SEARCH",
+      "field": "targetFrame",
+      "specification": "The target body-fixed frame name",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "GF_SUB_POINT_SEARCH",
+      "anchor": "GF_SUB_POINT_SEARCH",
+      "field": "observer",
+      "specification": "The observing body name or ID",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "GF_SUB_POINT_SEARCH",
+      "anchor": "GF_SUB_POINT_SEARCH",
+      "field": "aberrationCorrection",
+      "specification": "The SPICE aberration correction string. One of: NONE LT LT+S CN CN+S XLT XLT+S XCN XCN+S For aberration correction details, see the description of the input argument ABCORR of the SPICELIB routine GFSUBC.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "GF_SUB_POINT_SEARCH",
+      "anchor": "GF_SUB_POINT_SEARCH",
+      "field": "subPointType",
+      "specification": "The method of finding the sub-observer point, as in the SPICE gfsubc() API call. One of: Near point: ellipsoid Intercept: ellipsoid",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "GF_SUB_POINT_SEARCH",
+      "anchor": "GF_SUB_POINT_SEARCH",
+      "field": "condition",
+      "specification": "The coordinate condition to search for. See specifying conditions for more information.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "GF_OCCULTATION_SEARCH",
+      "anchor": "GF_OCCULTATION_SEARCH",
+      "field": "occultationType",
+      "specification": "Type of occultation to be considered in the calculation. Transits are considered to be a type of occultation. One of: ANY FULL ANNULAR PARTIAL",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "GF_OCCULTATION_SEARCH",
+      "anchor": "GF_OCCULTATION_SEARCH",
+      "field": "target1",
+      "specification": "The SPICE numeric name or ID of the front body.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "GF_OCCULTATION_SEARCH",
+      "anchor": "GF_OCCULTATION_SEARCH",
+      "field": "shape1",
+      "specification": "The geometric model used to represent the shape of the front body. One of: POINT ELLIPSOID DSK",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "GF_OCCULTATION_SEARCH",
+      "anchor": "GF_OCCULTATION_SEARCH",
+      "field": "frame1",
+      "specification": "The front body body-fixed frame name. Required if shape1 is ELLIPSOID, and ignored otherwise.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "GF_OCCULTATION_SEARCH",
+      "anchor": "GF_OCCULTATION_SEARCH",
+      "field": "dskSurfaces1",
+      "specification": "An array of the names and/or IDs of the DSK surfaces to which the front body computation shall be restricted. Used only when shape1 is DSK; ignored otherwise. Optional and, if not provided, or if an empty array is provided, every DSK surface loaded for the front body is used.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "GF_OCCULTATION_SEARCH",
+      "anchor": "GF_OCCULTATION_SEARCH",
+      "field": "target2",
+      "specification": "The SPICE numeric name or ID of the back body.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "GF_OCCULTATION_SEARCH",
+      "anchor": "GF_OCCULTATION_SEARCH",
+      "field": "shape2",
+      "specification": "The geometric model used to represent the shape of the back body. One of: POINT ELLIPSOID DSK",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "GF_OCCULTATION_SEARCH",
+      "anchor": "GF_OCCULTATION_SEARCH",
+      "field": "frame2",
+      "specification": "The back body body-fixed frame name. Required if shape1 is ELLIPSOID, and ignored otherwise.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "GF_OCCULTATION_SEARCH",
+      "anchor": "GF_OCCULTATION_SEARCH",
+      "field": "dskSurfaces2",
+      "specification": "An array of the names and/or IDs of the DSK surfaces to which the back body computation shall be restricted. Used only when shape2 is DSK; ignored otherwise. Optional and, if not provided, or if an empty array is provided, every DSK surface loaded for the back body is used.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "GF_OCCULTATION_SEARCH",
+      "anchor": "GF_OCCULTATION_SEARCH",
+      "field": "observer",
+      "specification": "The observing body name or ID",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "GF_OCCULTATION_SEARCH",
+      "anchor": "GF_OCCULTATION_SEARCH",
+      "field": "aberrationCorrection",
+      "specification": "The SPICE aberration correction string. One of: NONE LT CN XLT XCN For aberration correction details, see the description of the input argument ABCORR of the SPICELIB routine GFOCLT.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "GF_SURFACE_INTERCEPT_POINT_SEARCH",
+      "anchor": "GF_SURFACE_INTERCEPT_POINT_SEARCH",
+      "field": "target",
+      "specification": "The target body name or ID",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "GF_SURFACE_INTERCEPT_POINT_SEARCH",
+      "anchor": "GF_SURFACE_INTERCEPT_POINT_SEARCH",
+      "field": "targetFrame",
+      "specification": "The target body-fixed reference frame name",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "GF_SURFACE_INTERCEPT_POINT_SEARCH",
+      "anchor": "GF_SURFACE_INTERCEPT_POINT_SEARCH",
+      "field": "observer",
+      "specification": "The observing body name or ID",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "GF_SURFACE_INTERCEPT_POINT_SEARCH",
+      "anchor": "GF_SURFACE_INTERCEPT_POINT_SEARCH",
+      "field": "directionVectorType",
+      "specification": "Type of vector to be used as the ray direction: the instrument boresight vector, an axis of the specified reference frame, a vector in the reference frame of the specified instrument, a vector in the specified reference frame. One of: INSTRUMENT_BORESIGHT REFERENCE_FRAME_AXIS VECTOR_IN_INSTRUMENT_FOV VECTOR_IN_REFERENCE_FRAME",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "GF_SURFACE_INTERCEPT_POINT_SEARCH",
+      "anchor": "GF_SURFACE_INTERCEPT_POINT_SEARCH",
+      "field": "directionInstrument",
+      "specification": "The instrument name or ID. Required only if directionVectorType is INSTRUMENT_BORESIGHT, or VECTOR_IN_INSTRUMENT_FOV.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "GF_SURFACE_INTERCEPT_POINT_SEARCH",
+      "anchor": "GF_SURFACE_INTERCEPT_POINT_SEARCH",
+      "field": "directionFrame",
+      "specification": "The vector's reference frame name. Required only if directionVectorType is REFERENCE_FRAME_AXIS or VECTOR_IN_REFERENCE_FRAME.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "GF_SURFACE_INTERCEPT_POINT_SEARCH",
+      "anchor": "GF_SURFACE_INTERCEPT_POINT_SEARCH",
+      "field": "directionFrameAxis",
+      "specification": "The ray's direction frame axis. Required only if directionVectorType is REFERENCE_FRAME_AXIS. One of: X Y Z",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "GF_SURFACE_INTERCEPT_POINT_SEARCH",
+      "anchor": "GF_SURFACE_INTERCEPT_POINT_SEARCH",
+      "field": "directionVectorX",
+      "specification": "The X coordinate of the ray's direction vector. If directionVectorType is VECTOR_IN_INSTRUMENT_FOV or VECTOR_IN_REFERENCE_FRAME, then either all three of directionVectorX, directionVectorY, and directionVectorZ must be provided, or both directionVectorRA and directionVectorDec, or both directionVectorAz and directionVectorEl.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "GF_SURFACE_INTERCEPT_POINT_SEARCH",
+      "anchor": "GF_SURFACE_INTERCEPT_POINT_SEARCH",
+      "field": "directionVectorY",
+      "specification": "The Y coordinate of the ray's direction vector.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "GF_SURFACE_INTERCEPT_POINT_SEARCH",
+      "anchor": "GF_SURFACE_INTERCEPT_POINT_SEARCH",
+      "field": "directionVectorZ",
+      "specification": "The Z coordinate of the ray's direction vector.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "GF_SURFACE_INTERCEPT_POINT_SEARCH",
+      "anchor": "GF_SURFACE_INTERCEPT_POINT_SEARCH",
+      "field": "directionVectorRA",
+      "specification": "The right ascension coordinate of the ray's direction vector.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "GF_SURFACE_INTERCEPT_POINT_SEARCH",
+      "anchor": "GF_SURFACE_INTERCEPT_POINT_SEARCH",
+      "field": "directionVectorDec",
+      "specification": "The declination coordinate of the ray's direction vector.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "GF_SURFACE_INTERCEPT_POINT_SEARCH",
+      "anchor": "GF_SURFACE_INTERCEPT_POINT_SEARCH",
+      "field": "directionVectorAz",
+      "specification": "The azimuth coordinate of the ray's direction vector.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "GF_SURFACE_INTERCEPT_POINT_SEARCH",
+      "anchor": "GF_SURFACE_INTERCEPT_POINT_SEARCH",
+      "field": "directionVectorEl",
+      "specification": "The elevation coordinate of the ray's direction vector.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "GF_SURFACE_INTERCEPT_POINT_SEARCH",
+      "anchor": "GF_SURFACE_INTERCEPT_POINT_SEARCH",
+      "field": "azccwFlag",
+      "specification": "Flag indicating how azimuth is measured. If azccwFlag is true, azimuth increases in the counterclockwise direction; otherwise it increases in the clockwise direction. Required only when directionVectorAz and directionVectorEl are used to provide the coordinates of the direction vector.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "GF_SURFACE_INTERCEPT_POINT_SEARCH",
+      "anchor": "GF_SURFACE_INTERCEPT_POINT_SEARCH",
+      "field": "elplszFlag",
+      "specification": "Flag indicating how elevation is measured. If elplszFlag is true, elevation increases from the XY plane toward +Z; otherwise toward -Z. Required only when directionVectorAz and directionVectorEl are used to provide the coordinates of the direction vector.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "GF_SURFACE_INTERCEPT_POINT_SEARCH",
+      "anchor": "GF_SURFACE_INTERCEPT_POINT_SEARCH",
+      "field": "aberrationCorrection",
+      "specification": "The SPICE aberration correction string. One of: NONE LT LT+S CN CN+S XLT XLT+S XCN XCN+S For aberration correction details, see the description of the input argument ABCORR of the SPICELIB routine GFSNTC.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "GF_SURFACE_INTERCEPT_POINT_SEARCH",
+      "anchor": "GF_SURFACE_INTERCEPT_POINT_SEARCH",
+      "field": "condition",
+      "specification": "The coordinate condition to search for. See specifying conditions for more information.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "GF_TARGET_IN_INSTRUMENT_FOV_SEARCH",
+      "anchor": "GF_TARGET_IN_INSTRUMENT_FOV_SEARCH",
+      "field": "instrument",
+      "specification": "The SPICE numeric name or ID of the instrument.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "GF_TARGET_IN_INSTRUMENT_FOV_SEARCH",
+      "anchor": "GF_TARGET_IN_INSTRUMENT_FOV_SEARCH",
+      "field": "target",
+      "specification": "The SPICE numeric name or ID of the target.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "GF_TARGET_IN_INSTRUMENT_FOV_SEARCH",
+      "anchor": "GF_TARGET_IN_INSTRUMENT_FOV_SEARCH",
+      "field": "shape",
+      "specification": "Geometric model used to represent the shape of the body. One of: POINT ELLIPSOID",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "GF_TARGET_IN_INSTRUMENT_FOV_SEARCH",
+      "anchor": "GF_TARGET_IN_INSTRUMENT_FOV_SEARCH",
+      "field": "targetFrame",
+      "specification": "The target body-fixed frame name.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "GF_TARGET_IN_INSTRUMENT_FOV_SEARCH",
+      "anchor": "GF_TARGET_IN_INSTRUMENT_FOV_SEARCH",
+      "field": "observer",
+      "specification": "The SPICE numeric name or ID of the observing body.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "GF_TARGET_IN_INSTRUMENT_FOV_SEARCH",
+      "anchor": "GF_TARGET_IN_INSTRUMENT_FOV_SEARCH",
+      "field": "aberrationCorrection",
+      "specification": "The SPICE aberration correction string. One of: NONE LT LT+S CN CN+S XLT XLT+S XCN XCN+S For aberration correction details, see the description of the input argument ABCORR of the SPICELIB routine GFTFOV.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "GF_RAY_IN_FOV_SEARCH",
+      "anchor": "GF_RAY_IN_FOV_SEARCH",
+      "field": "instrument",
+      "specification": "The SPICE numeric name or ID of the instrument.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "GF_RAY_IN_FOV_SEARCH",
+      "anchor": "GF_RAY_IN_FOV_SEARCH",
+      "field": "observer",
+      "specification": "The SPICE numeric name or ID of the observing body.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "GF_RAY_IN_FOV_SEARCH",
+      "anchor": "GF_RAY_IN_FOV_SEARCH",
+      "field": "directionVectorType",
+      "specification": "Type of vector to be used as the ray direction: the instrument boresight vector, an axis of the specified reference frame, a vector in the reference frame of the specified instrument, a vector in the specified reference frame. One of: INSTRUMENT_BORESIGHT REFERENCE_FRAME_AXIS VECTOR_IN_INSTRUMENT_FOV VECTOR_IN_REFERENCE_FRAME",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "GF_RAY_IN_FOV_SEARCH",
+      "anchor": "GF_RAY_IN_FOV_SEARCH",
+      "field": "directionInstrument",
+      "specification": "The instrument name or ID. Required only if directionVectorType is INSTRUMENT_BORESIGHT, or VECTOR_IN_INSTRUMENT_FOV.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "GF_RAY_IN_FOV_SEARCH",
+      "anchor": "GF_RAY_IN_FOV_SEARCH",
+      "field": "directionFrame",
+      "specification": "The vector's reference frame name. Required only if directionVectorType is REFERENCE_FRAME_AXIS or VECTOR_IN_REFERENCE_FRAME.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "GF_RAY_IN_FOV_SEARCH",
+      "anchor": "GF_RAY_IN_FOV_SEARCH",
+      "field": "directionFrameAxis",
+      "specification": "The ray's direction frame axis. Required only if directionVectorType is REFERENCE_FRAME_AXIS. One of: X Y Z",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "GF_RAY_IN_FOV_SEARCH",
+      "anchor": "GF_RAY_IN_FOV_SEARCH",
+      "field": "directionVectorX",
+      "specification": "The X coordinate of the ray's direction vector. If directionVectorType is VECTOR_IN_INSTRUMENT_FOV or VECTOR_IN_REFERENCE_FRAME, then either all three of directionVectorX, directionVectorY, and directionVectorZ must be provided, or both directionVectorRA and directionVectorDec, or both directionVectorAz and directionVectorEl.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "GF_RAY_IN_FOV_SEARCH",
+      "anchor": "GF_RAY_IN_FOV_SEARCH",
+      "field": "directionVectorY",
+      "specification": "The Y coordinate of the ray's direction vector.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "GF_RAY_IN_FOV_SEARCH",
+      "anchor": "GF_RAY_IN_FOV_SEARCH",
+      "field": "directionVectorZ",
+      "specification": "The Z coordinate of the ray's direction vector.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "GF_RAY_IN_FOV_SEARCH",
+      "anchor": "GF_RAY_IN_FOV_SEARCH",
+      "field": "directionVectorRA",
+      "specification": "The right ascension coordinate of the ray's direction vector.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "GF_RAY_IN_FOV_SEARCH",
+      "anchor": "GF_RAY_IN_FOV_SEARCH",
+      "field": "directionVectorDec",
+      "specification": "The declination coordinate of the ray's direction vector.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "GF_RAY_IN_FOV_SEARCH",
+      "anchor": "GF_RAY_IN_FOV_SEARCH",
+      "field": "directionVectorAz",
+      "specification": "The azimuth coordinate of the ray's direction vector.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "GF_RAY_IN_FOV_SEARCH",
+      "anchor": "GF_RAY_IN_FOV_SEARCH",
+      "field": "directionVectorEl",
+      "specification": "The elevation coordinate of the ray's direction vector.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "GF_RAY_IN_FOV_SEARCH",
+      "anchor": "GF_RAY_IN_FOV_SEARCH",
+      "field": "azccwFlag",
+      "specification": "Flag indicating how azimuth is measured. If azccwFlag is true, azimuth increases in the counterclockwise direction; otherwise it increases in the clockwise direction. Required only when directionVectorAz and directionVectorEl are used to provide the coordinates of the direction vector.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "GF_RAY_IN_FOV_SEARCH",
+      "anchor": "GF_RAY_IN_FOV_SEARCH",
+      "field": "elplszFlag",
+      "specification": "Flag indicating how elevation is measured. If elplszFlag is true, elevation increases from the XY plane toward +Z; otherwise toward -Z. Required only when directionVectorAz and directionVectorEl are used to provide the coordinates of the direction vector.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "GF_RAY_IN_FOV_SEARCH",
+      "anchor": "GF_RAY_IN_FOV_SEARCH",
+      "field": "aberrationCorrection",
+      "specification": "The SPICE aberration correction string. One of: NONE S XS For aberration correction details, see the description of the input argument ABCORR of the SPICELIB routine GFRFOV.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "GF_RANGE_RATE_SEARCH",
+      "anchor": "GF_RANGE_RATE_SEARCH",
+      "field": "target",
+      "specification": "The target body name or ID",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "GF_RANGE_RATE_SEARCH",
+      "anchor": "GF_RANGE_RATE_SEARCH",
+      "field": "observer",
+      "specification": "The observing body name or ID",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "GF_RANGE_RATE_SEARCH",
+      "anchor": "GF_RANGE_RATE_SEARCH",
+      "field": "aberrationCorrection",
+      "specification": "The SPICE aberration correction string. One of: NONE LT LT+S CN CN+S XLT XLT+S XCN XCN+S For aberration correction details, see the description of the input argument ABCORR of the SPICELIB routine GFRR.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "GF_RANGE_RATE_SEARCH",
+      "anchor": "GF_RANGE_RATE_SEARCH",
+      "field": "condition",
+      "specification": "The condition to search for. See specifying conditions for more information.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "GF_PHASE_ANGLE_SEARCH",
+      "anchor": "GF_PHASE_ANGLE_SEARCH",
+      "field": "target",
+      "specification": "The target body name or ID",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "GF_PHASE_ANGLE_SEARCH",
+      "anchor": "GF_PHASE_ANGLE_SEARCH",
+      "field": "observer",
+      "specification": "The observing body name or ID",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "GF_PHASE_ANGLE_SEARCH",
+      "anchor": "GF_PHASE_ANGLE_SEARCH",
+      "field": "illuminator",
+      "specification": "The illumination source name or ID. This source may be any ephemeris object.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "GF_PHASE_ANGLE_SEARCH",
+      "anchor": "GF_PHASE_ANGLE_SEARCH",
+      "field": "aberrationCorrection",
+      "specification": "The SPICE aberration correction string. One of: NONE LT LT+S CN CN+S For aberration correction details, see the description of the input argument ABCORR of the SPICELIB routine GFPA.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "GF_PHASE_ANGLE_SEARCH",
+      "anchor": "GF_PHASE_ANGLE_SEARCH",
+      "field": "condition",
+      "specification": "The condition to search for. See specifying conditions for more information.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "GF_ILLUMINATION_ANGLES_SEARCH",
+      "anchor": "GF_ILLUMINATION_ANGLES_SEARCH",
+      "field": "observer",
+      "specification": "The observing body name or ID",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "GF_ILLUMINATION_ANGLES_SEARCH",
+      "anchor": "GF_ILLUMINATION_ANGLES_SEARCH",
+      "field": "illuminator",
+      "specification": "The illumination source name or ID. This source may be any ephemeris object.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "GF_ILLUMINATION_ANGLES_SEARCH",
+      "anchor": "GF_ILLUMINATION_ANGLES_SEARCH",
+      "field": "aberrationCorrection",
+      "specification": "The SPICE aberration correction string. One of: NONE LT LT+S CN CN+S For aberration correction details, see the description of the input argument ABCORR of the SPICELIB routine GFILUM.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "GF_ILLUMINATION_ANGLES_SEARCH",
+      "anchor": "GF_ILLUMINATION_ANGLES_SEARCH",
+      "field": "condition",
+      "specification": "The condition to search for. See specifying conditions for more information.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "TIME_CONVERSION",
+      "anchor": "TIME_CONVERSION",
+      "field": "outputTimeSystem",
+      "specification": "The time system for the result times. One of: UTC TDB TDT TT SPACECRAFT_CLOCK GPS If SPACECRAFT_CLOCK is selected, then outputSclkId must also be provided. Note that in SPICE, TDT (Terrestrial Dynamical Time) and TT (Terrestrial Time) refer to the same time system.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "TIME_CONVERSION",
+      "anchor": "TIME_CONVERSION",
+      "field": "outputTimeFormat",
+      "specification": "One of: CALENDAR CALENDAR_YMD; synonym of CALENDAR CALENDAR_DOY JULIAN SECONDS_PAST_GPS0 SECONDS_PAST_J2000 SPACECRAFT_CLOCK_STRING SPACECRAFT_CLOCK_TICKS CUSTOM WEEK_TOW CALENDAR, CALENDAR_YMD and CALENDAR_DOY are applicable only when outputTimeSystem is UTC, TDB, TDT, TT or GPS. JULIAN, SECONDS_PAST_J2000 and CUSTOM are applicable only when outputTimeSystem is UTC, TDB, TDT or TT. SPACECRAFT_CLOCK_STRING and SPACECRAFT_CLOCK_TICKS are applicable only when outputTimeSystem is SPACECRAFT_CLOCK. SECONDS_PAST_GPS0 and WEEK_TOW are applicable only when outputTimeSystem is GPS. If CUSTOM is selected, then outputTimeCustomFormat must also be provided.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "TIME_CONVERSION",
+      "anchor": "TIME_CONVERSION",
+      "field": "outputSclkId",
+      "specification": "The output SCLK ID. Only used if outputTimeSystem is SPACECRAFT_CLOCK.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "TIME_CONVERSION",
+      "anchor": "TIME_CONVERSION",
+      "field": "outputTimeCustomFormat",
+      "specification": "A SPICE timout() format string. Only used if outputTimeFormat is CUSTOM. For details, please refer to the custom output format help.",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "API Calculation Type vs. WGC GUI Calculation",
+      "anchor": "GUIvsAPI",
+      "field": "API Calculation Type",
+      "specification": "GUI Calculation",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "API Calculation Type vs. WGC GUI Calculation",
+      "anchor": "GUIvsAPI",
+      "field": "STATE_VECTOR",
+      "specification": "State Vector",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "API Calculation Type vs. WGC GUI Calculation",
+      "anchor": "GUIvsAPI",
+      "field": "ANGULAR_SEPARATION",
+      "specification": "Angular Separation",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "API Calculation Type vs. WGC GUI Calculation",
+      "anchor": "GUIvsAPI",
+      "field": "ANGULAR_SIZE",
+      "specification": "Angular Size",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "API Calculation Type vs. WGC GUI Calculation",
+      "anchor": "GUIvsAPI",
+      "field": "FRAME_TRANSFORMATION",
+      "specification": "Frame Transformation",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "API Calculation Type vs. WGC GUI Calculation",
+      "anchor": "GUIvsAPI",
+      "field": "ILLUMINATION_ANGLES",
+      "specification": "Illumination Angles",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "API Calculation Type vs. WGC GUI Calculation",
+      "anchor": "GUIvsAPI",
+      "field": "PHASE_ANGLE",
+      "specification": "Phase Angle",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "API Calculation Type vs. WGC GUI Calculation",
+      "anchor": "GUIvsAPI",
+      "field": "PLANETOCENTRIC_SOLAR_LONGITUDE",
+      "specification": "Longitude of the Sun",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "API Calculation Type vs. WGC GUI Calculation",
+      "anchor": "GUIvsAPI",
+      "field": "POINTING_DIRECTION",
+      "specification": "Pointing Direction",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "API Calculation Type vs. WGC GUI Calculation",
+      "anchor": "GUIvsAPI",
+      "field": "SUB_SOLAR_POINT",
+      "specification": "Sub-solar Point",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "API Calculation Type vs. WGC GUI Calculation",
+      "anchor": "GUIvsAPI",
+      "field": "SUB_OBSERVER_POINT",
+      "specification": "Sub-observer Point",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "API Calculation Type vs. WGC GUI Calculation",
+      "anchor": "GUIvsAPI",
+      "field": "SURFACE_INTERCEPT_POINT",
+      "specification": "Surface Intercept Point",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "API Calculation Type vs. WGC GUI Calculation",
+      "anchor": "GUIvsAPI",
+      "field": "TANGENT_POINT",
+      "specification": "Tangent Point",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "API Calculation Type vs. WGC GUI Calculation",
+      "anchor": "GUIvsAPI",
+      "field": "OSCULATING_ELEMENTS",
+      "specification": "Orbital Elements",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "API Calculation Type vs. WGC GUI Calculation",
+      "anchor": "GUIvsAPI",
+      "field": "GF_COORDINATE_SEARCH",
+      "specification": "Position Finder",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "API Calculation Type vs. WGC GUI Calculation",
+      "anchor": "GUIvsAPI",
+      "field": "GF_ANGULAR_SEPARATION_SEARCH",
+      "specification": "Angular Separation Finder",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "API Calculation Type vs. WGC GUI Calculation",
+      "anchor": "GUIvsAPI",
+      "field": "GF_DISTANCE_SEARCH",
+      "specification": "Distance Finder",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "API Calculation Type vs. WGC GUI Calculation",
+      "anchor": "GUIvsAPI",
+      "field": "GF_SUB_POINT_SEARCH",
+      "specification": "Sub-Point Finder",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "API Calculation Type vs. WGC GUI Calculation",
+      "anchor": "GUIvsAPI",
+      "field": "GF_OCCULTATION_SEARCH",
+      "specification": "Occultation Finder",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "API Calculation Type vs. WGC GUI Calculation",
+      "anchor": "GUIvsAPI",
+      "field": "GF_SURFACE_INTERCEPT_POINT_SEARCH",
+      "specification": "Surface Intercept Finder",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "API Calculation Type vs. WGC GUI Calculation",
+      "anchor": "GUIvsAPI",
+      "field": "GF_TARGET_IN_INSTRUMENT_FOV_SEARCH",
+      "specification": "Target in Field of View Finder",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "API Calculation Type vs. WGC GUI Calculation",
+      "anchor": "GUIvsAPI",
+      "field": "GF_RAY_IN_FOV_SEARCH",
+      "specification": "Ray in Field of View Finder",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "API Calculation Type vs. WGC GUI Calculation",
+      "anchor": "GUIvsAPI",
+      "field": "GF_RANGE_RATE_SEARCH",
+      "specification": "Range Rate Finder",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "API Calculation Type vs. WGC GUI Calculation",
+      "anchor": "GUIvsAPI",
+      "field": "GF_PHASE_ANGLE_SEARCH",
+      "specification": "Phase Angle Finder",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "API Calculation Type vs. WGC GUI Calculation",
+      "anchor": "GUIvsAPI",
+      "field": "GF_ILLUMINATION_ANGLES_SEARCH",
+      "specification": "Illumination Angles Finder",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    },
+    {
+      "section": "API Calculation Type vs. WGC GUI Calculation",
+      "anchor": "GUIvsAPI",
+      "field": "TIME_CONVERSION",
+      "specification": "Time Conversion",
+      "assessment_scope": "REFERENCE_SPECIFICATION_ONLY"
+    }
+  ]
+}

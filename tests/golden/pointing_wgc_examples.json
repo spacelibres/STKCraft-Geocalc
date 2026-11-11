@@ -1,0 +1,213 @@
+{
+  "reference": "https://wgc2.jpl.nasa.gov:8443/webgeocalc/api",
+  "scope": "WGC column presentation only; independent CSPICE doubles are tested separately",
+  "examples": [
+    {
+      "label": "velocity_both_frames_at_input_frame_epoch",
+      "request": {
+        "calculationType": "POINTING_DIRECTION",
+        "kernels": [
+          {
+            "type": "KERNEL_SET",
+            "id": 1
+          }
+        ],
+        "timeSystem": "TDB",
+        "timeFormat": "SECONDS_PAST_J2000",
+        "times": [
+          "500000000"
+        ],
+        "outputTimeSystem": "TDB",
+        "outputTimeFormat": "SECONDS_PAST_J2000",
+        "direction": {
+          "directionType": "VELOCITY",
+          "target": "SUN",
+          "observer": "EARTH",
+          "referenceFrame": "IAU_MOON",
+          "aberrationCorrection": "CN+S",
+          "antiVectorFlag": false
+        },
+        "referenceFrame": "IAU_EARTH",
+        "coordinateRepresentation": "RECTANGULAR",
+        "vectorMagnitude": "PRESERVE_ORIGINAL"
+      },
+      "response": {
+        "status": "OK",
+        "message": "The request was successful.",
+        "calculationId": "4a8b4be1-7bcf-44a9-a64e-1cceda249a9b",
+        "columns": [
+          {
+            "name": "TDB seconds past J2000",
+            "type": "NUMBER",
+            "units": "",
+            "outputID": "DATE"
+          },
+          {
+            "name": "X (km/s)",
+            "type": "NUMBER",
+            "units": "km/s",
+            "outputID": "X"
+          },
+          {
+            "name": "Y (km/s)",
+            "type": "NUMBER",
+            "units": "km/s",
+            "outputID": "Y"
+          },
+          {
+            "name": "Z (km/s)",
+            "type": "NUMBER",
+            "units": "km/s",
+            "outputID": "Z"
+          }
+        ],
+        "rows": [
+          [
+            500000000.0,
+            -71.36190756,
+            -339.19146455,
+            113.57574635
+          ]
+        ]
+      }
+    },
+    {
+      "label": "position_uses_output_frame_center_epoch",
+      "request": {
+        "calculationType": "POINTING_DIRECTION",
+        "kernels": [
+          {
+            "type": "KERNEL_SET",
+            "id": 1
+          }
+        ],
+        "timeSystem": "TDB",
+        "timeFormat": "SECONDS_PAST_J2000",
+        "times": [
+          "500000000"
+        ],
+        "outputTimeSystem": "TDB",
+        "outputTimeFormat": "SECONDS_PAST_J2000",
+        "direction": {
+          "directionType": "POSITION",
+          "target": "SUN",
+          "observer": "EARTH",
+          "aberrationCorrection": "CN+S",
+          "antiVectorFlag": false
+        },
+        "referenceFrame": "IAU_MOON",
+        "coordinateRepresentation": "RECTANGULAR",
+        "vectorMagnitude": "PRESERVE_ORIGINAL"
+      },
+      "response": {
+        "status": "OK",
+        "message": "The request was successful.",
+        "calculationId": "4d8c10e1-4add-4cbe-b313-d82a1403d1d7",
+        "columns": [
+          {
+            "name": "TDB seconds past J2000",
+            "type": "NUMBER",
+            "units": "",
+            "outputID": "DATE"
+          },
+          {
+            "name": "X (km)",
+            "type": "NUMBER",
+            "units": "km",
+            "outputID": "X"
+          },
+          {
+            "name": "Y (km)",
+            "type": "NUMBER",
+            "units": "km",
+            "outputID": "Y"
+          },
+          {
+            "name": "Z (km)",
+            "type": "NUMBER",
+            "units": "km",
+            "outputID": "Z"
+          }
+        ],
+        "rows": [
+          [
+            500000000.0,
+            -45389944.38196309,
+            -141190177.53576168,
+            2830577.63125914
+          ]
+        ]
+      }
+    },
+    {
+      "label": "anti_vector_applied_after_stellar_aberration",
+      "request": {
+        "calculationType": "POINTING_DIRECTION",
+        "kernels": [
+          {
+            "type": "KERNEL_SET",
+            "id": 1
+          }
+        ],
+        "timeSystem": "TDB",
+        "timeFormat": "SECONDS_PAST_J2000",
+        "times": [
+          "500000000"
+        ],
+        "outputTimeSystem": "TDB",
+        "outputTimeFormat": "SECONDS_PAST_J2000",
+        "direction": {
+          "directionType": "VECTOR",
+          "observer": "EARTH",
+          "directionVectorType": "REFERENCE_FRAME_AXIS",
+          "directionFrame": "J2000",
+          "directionFrameAxis": "X",
+          "aberrationCorrection": "S",
+          "antiVectorFlag": true
+        },
+        "referenceFrame": "J2000",
+        "coordinateRepresentation": "RECTANGULAR",
+        "vectorMagnitude": "PRESERVE_ORIGINAL"
+      },
+      "response": {
+        "status": "OK",
+        "message": "The request was successful.",
+        "calculationId": "5569c003-a26c-41ee-9a69-754015aba464",
+        "columns": [
+          {
+            "name": "TDB seconds past J2000",
+            "type": "NUMBER",
+            "units": "",
+            "outputID": "DATE"
+          },
+          {
+            "name": "X (unitless)",
+            "type": "NUMBER",
+            "units": "unitless",
+            "outputID": "X"
+          },
+          {
+            "name": "Y (unitless)",
+            "type": "NUMBER",
+            "units": "unitless",
+            "outputID": "Y"
+          },
+          {
+            "name": "Z (unitless)",
+            "type": "NUMBER",
+            "units": "unitless",
+            "outputID": "Z"
+          }
+        ],
+        "rows": [
+          [
+            500000000.0,
+            -1.0,
+            -6.68710421e-05,
+            -2.89859047e-05
+          ]
+        ]
+      }
+    }
+  ]
+}

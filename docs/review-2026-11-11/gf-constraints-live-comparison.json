@@ -1,0 +1,740 @@
+{
+  "acceptance": "raw exact decimal equality; rendering diagnostic does not change strict acceptance",
+  "complete_webgeocalc_parity": false,
+  "cases": 41,
+  "strict_transport_mismatches": 17,
+  "rendering_diagnostic_mismatches": 0,
+  "rows": [
+    {
+      "label": "distance_range",
+      "status": "STRICT_TRANSPORT_MISMATCH",
+      "raw_source": [
+        [
+          "651217.8241789775",
+          "1091308.2994979941",
+          "440090.4753190166"
+        ],
+        [
+          "2045893.6120002347",
+          "2370468.738158779",
+          "324575.12615854456"
+        ],
+        [
+          "2956132.385749028",
+          "3488591.6656880826",
+          "532459.2799390545"
+        ]
+      ],
+      "nasa_transport": [
+        [
+          "651217.824179",
+          "1091308.299498",
+          "440090.47531902"
+        ],
+        [
+          "2045893.612000",
+          "2370468.738159",
+          "324575.12615854"
+        ],
+        [
+          "2956132.385749",
+          "3488591.665688",
+          "532459.27993905"
+        ]
+      ],
+      "transport_format_diagnostic_matches": true
+    },
+    {
+      "label": "distance_reverse",
+      "status": "STRICT_TRANSPORT_MISMATCH",
+      "raw_source": [
+        [
+          "651217.8241789775",
+          "1091308.2994979941",
+          "440090.4753190166"
+        ],
+        [
+          "2045893.6120002347",
+          "2370468.738158779",
+          "324575.12615854456"
+        ],
+        [
+          "2956132.385749028",
+          "3488591.6656880826",
+          "532459.2799390545"
+        ]
+      ],
+      "nasa_transport": [
+        [
+          "651217.824179",
+          "1091308.299498",
+          "440090.47531902"
+        ],
+        [
+          "2045893.612000",
+          "2370468.738159",
+          "324575.12615854"
+        ],
+        [
+          "2956132.385749",
+          "3488591.665688",
+          "532459.27993905"
+        ]
+      ],
+      "transport_format_diagnostic_matches": true
+    },
+    {
+      "label": "distance_equal_range",
+      "status": "STRICT_TRANSPORT_MISMATCH",
+      "raw_source": [
+        [
+          "651217.8241792128",
+          "651217.8241792128",
+          "0.0"
+        ],
+        [
+          "2370468.7381589296",
+          "2370468.7381589296",
+          "0.0"
+        ],
+        [
+          "2956132.3857489424",
+          "2956132.3857489424",
+          "0.0"
+        ]
+      ],
+      "nasa_transport": [
+        [
+          "651217.824179",
+          "651217.824179",
+          "0.0"
+        ],
+        [
+          "2370468.738159",
+          "2370468.738159",
+          "0.0"
+        ],
+        [
+          "2956132.385749",
+          "2956132.385749",
+          "0.0"
+        ]
+      ],
+      "transport_format_diagnostic_matches": true
+    },
+    {
+      "label": "distance_equal",
+      "status": "STRICT_TRANSPORT_MISMATCH",
+      "raw_source": [
+        [
+          "651217.8241792128",
+          "651217.8241792128",
+          "0.0"
+        ],
+        [
+          "2370468.7381589296",
+          "2370468.7381589296",
+          "0.0"
+        ],
+        [
+          "2956132.3857489424",
+          "2956132.3857489424",
+          "0.0"
+        ]
+      ],
+      "nasa_transport": [
+        [
+          "651217.824179",
+          "651217.824179",
+          "0.0"
+        ],
+        [
+          "2370468.738159",
+          "2370468.738159",
+          "0.0"
+        ],
+        [
+          "2956132.385749",
+          "2956132.385749",
+          "0.0"
+        ]
+      ],
+      "transport_format_diagnostic_matches": true
+    },
+    {
+      "label": "longitude_wrap",
+      "status": "STRICT_TRANSPORT_MISMATCH",
+      "raw_source": [
+        [
+          "27772.793262925992",
+          "32719.442648994896",
+          "4946.649386068904"
+        ]
+      ],
+      "nasa_transport": [
+        [
+          "27772.793263",
+          "32719.442649",
+          "4946.64938607"
+        ]
+      ],
+      "transport_format_diagnostic_matches": true
+    },
+    {
+      "label": "longitude_normal",
+      "status": "STRICT_TRANSPORT_MISMATCH",
+      "raw_source": [
+        [
+          "0.0",
+          "27772.793262925992",
+          "27772.793262925992"
+        ],
+        [
+          "32719.442648994896",
+          "86400.0",
+          "53680.5573510051"
+        ]
+      ],
+      "nasa_transport": [
+        [
+          "0.000000",
+          "27772.793263",
+          "27772.79326293"
+        ],
+        [
+          "32719.442649",
+          "86400.000000",
+          "53680.55735101"
+        ]
+      ],
+      "transport_format_diagnostic_matches": true
+    },
+    {
+      "label": "longitude_350_10",
+      "status": "STRICT_TRANSPORT_MISMATCH",
+      "raw_source": [
+        [
+          "72298.81006460029",
+          "77247.07175898014",
+          "4948.261694379849"
+        ]
+      ],
+      "nasa_transport": [
+        [
+          "72298.810065",
+          "77247.071759",
+          "4948.26169438"
+        ]
+      ],
+      "transport_format_diagnostic_matches": true
+    },
+    {
+      "label": "complement",
+      "status": "EXACT",
+      "raw_source": [
+        [
+          "0.0",
+          "100.0",
+          "100.0"
+        ],
+        [
+          "200.0",
+          "300.0",
+          "100.0"
+        ]
+      ],
+      "nasa_transport": [
+        [
+          "0.000000",
+          "100.000000",
+          "100.0"
+        ],
+        [
+          "200.000000",
+          "300.000000",
+          "100.0"
+        ]
+      ],
+      "transport_format_diagnostic_matches": true
+    },
+    {
+      "label": "complement_expand",
+      "status": "EXACT",
+      "raw_source": [
+        [
+          "-10.0",
+          "110.0",
+          "120.0"
+        ],
+        [
+          "190.0",
+          "310.0",
+          "120.0"
+        ]
+      ],
+      "nasa_transport": [
+        [
+          "-10.000000",
+          "110.000000",
+          "120.0"
+        ],
+        [
+          "190.000000",
+          "310.000000",
+          "120.0"
+        ]
+      ],
+      "transport_format_diagnostic_matches": true
+    },
+    {
+      "label": "complement_expand_filter_equal",
+      "status": "EXACT",
+      "raw_source": [],
+      "nasa_transport": [],
+      "transport_format_diagnostic_matches": true
+    },
+    {
+      "label": "complement_filter_equal",
+      "status": "EXACT",
+      "raw_source": [],
+      "nasa_transport": [],
+      "transport_format_diagnostic_matches": true
+    },
+    {
+      "label": "complement_contract",
+      "status": "EXACT",
+      "raw_source": [],
+      "nasa_transport": [],
+      "transport_format_diagnostic_matches": true
+    },
+    {
+      "label": "duration_hours",
+      "status": "STRICT_TRANSPORT_MISMATCH",
+      "raw_source": [
+        [
+          "0.0",
+          "100.0",
+          "0.027777777777777776"
+        ],
+        [
+          "200.0",
+          "300.0",
+          "0.027777777777777776"
+        ]
+      ],
+      "nasa_transport": [
+        [
+          "0.000000",
+          "100.000000",
+          "0.02777778"
+        ],
+        [
+          "200.000000",
+          "300.000000",
+          "0.02777778"
+        ]
+      ],
+      "transport_format_diagnostic_matches": true
+    },
+    {
+      "label": "constant_lower_equal",
+      "status": "NASA_REJECTED",
+      "error": {
+        "shortDescription": "CSPICE_N0067: CSPICE.gfsep: SPICE(BODIESNOTDISTINCT): [gfsep_c --> GFSEP --> GFEVNT --> ZZGFSPIN] All three objects associated with an ANGULAR SEPARATION search must be distinct. The objects whose angular separation is of interest were 301 and 301. The observer was 399."
+      }
+    },
+    {
+      "label": "constant_upper_equal",
+      "status": "NASA_REJECTED",
+      "error": {
+        "shortDescription": "CSPICE_N0067: CSPICE.gfsep: SPICE(BODIESNOTDISTINCT): [gfsep_c --> GFSEP --> GFEVNT --> ZZGFSPIN] All three objects associated with an ANGULAR SEPARATION search must be distinct. The objects whose angular separation is of interest were 301 and 301. The observer was 399."
+      }
+    },
+    {
+      "label": "constant_inside",
+      "status": "NASA_REJECTED",
+      "error": {
+        "shortDescription": "CSPICE_N0067: CSPICE.gfsep: SPICE(BODIESNOTDISTINCT): [gfsep_c --> GFSEP --> GFEVNT --> ZZGFSPIN] All three objects associated with an ANGULAR SEPARATION search must be distinct. The objects whose angular separation is of interest were 301 and 301. The observer was 399."
+      }
+    },
+    {
+      "label": "constant_equal",
+      "status": "NASA_REJECTED",
+      "error": {
+        "shortDescription": "CSPICE_N0067: CSPICE.gfsep: SPICE(BODIESNOTDISTINCT): [gfsep_c --> GFSEP --> GFEVNT --> ZZGFSPIN] All three objects associated with an ANGULAR SEPARATION search must be distinct. The objects whose angular separation is of interest were 301 and 301. The observer was 399."
+      }
+    },
+    {
+      "label": "longitude_full",
+      "status": "EXACT",
+      "raw_source": [
+        [
+          "0.0",
+          "86400.0",
+          "86400.0"
+        ]
+      ],
+      "nasa_transport": [
+        [
+          "0.000000",
+          "86400.000000",
+          "86400.0"
+        ]
+      ],
+      "transport_format_diagnostic_matches": true
+    },
+    {
+      "label": "longitude_full_reverse",
+      "status": "EXACT",
+      "raw_source": [],
+      "nasa_transport": [],
+      "transport_format_diagnostic_matches": true
+    },
+    {
+      "label": "longitude_full_0",
+      "status": "EXACT",
+      "raw_source": [],
+      "nasa_transport": [],
+      "transport_format_diagnostic_matches": true
+    },
+    {
+      "label": "longitude_multiturn",
+      "status": "EXACT",
+      "raw_source": [],
+      "nasa_transport": [],
+      "transport_format_diagnostic_matches": true
+    },
+    {
+      "label": "longitude_equiv",
+      "status": "EXACT",
+      "raw_source": [],
+      "nasa_transport": [],
+      "transport_format_diagnostic_matches": true
+    },
+    {
+      "label": "longitude_equal",
+      "status": "STRICT_TRANSPORT_MISMATCH",
+      "raw_source": [
+        [
+          "72298.81006457645",
+          "72298.81006457645",
+          "0.0"
+        ]
+      ],
+      "nasa_transport": [
+        [
+          "72298.810065",
+          "72298.810065",
+          "0.0"
+        ]
+      ],
+      "transport_format_diagnostic_matches": true
+    },
+    {
+      "label": "CYLINDRICAL_pi_wrap",
+      "status": "STRICT_TRANSPORT_MISMATCH",
+      "raw_source": [
+        [
+          "27772.793262931642",
+          "32719.442649029086",
+          "4946.649386097444"
+        ]
+      ],
+      "nasa_transport": [
+        [
+          "27772.793263",
+          "32719.442649",
+          "4946.6493861"
+        ]
+      ],
+      "transport_format_diagnostic_matches": true
+    },
+    {
+      "label": "CYLINDRICAL_zero_wrap",
+      "status": "STRICT_TRANSPORT_MISMATCH",
+      "raw_source": [
+        [
+          "72298.81006457358",
+          "77247.07175894253",
+          "4948.26169436895"
+        ]
+      ],
+      "nasa_transport": [
+        [
+          "72298.810065",
+          "77247.071759",
+          "4948.26169437"
+        ]
+      ],
+      "transport_format_diagnostic_matches": true
+    },
+    {
+      "label": "CYLINDRICAL_full",
+      "status": "EXACT",
+      "raw_source": [],
+      "nasa_transport": [],
+      "transport_format_diagnostic_matches": true
+    },
+    {
+      "label": "CYLINDRICAL_minus_full",
+      "status": "EXACT",
+      "raw_source": [],
+      "nasa_transport": [],
+      "transport_format_diagnostic_matches": true
+    },
+    {
+      "label": "CYLINDRICAL_offset_equal",
+      "status": "EXACT",
+      "raw_source": [],
+      "nasa_transport": [],
+      "transport_format_diagnostic_matches": true
+    },
+    {
+      "label": "RA/DEC_pi_wrap",
+      "status": "STRICT_TRANSPORT_MISMATCH",
+      "raw_source": [
+        [
+          "27772.793262931642",
+          "32719.442649029086",
+          "4946.649386097444"
+        ]
+      ],
+      "nasa_transport": [
+        [
+          "27772.793263",
+          "32719.442649",
+          "4946.6493861"
+        ]
+      ],
+      "transport_format_diagnostic_matches": true
+    },
+    {
+      "label": "RA/DEC_zero_wrap",
+      "status": "STRICT_TRANSPORT_MISMATCH",
+      "raw_source": [
+        [
+          "72298.81006457358",
+          "77247.07175894253",
+          "4948.26169436895"
+        ]
+      ],
+      "nasa_transport": [
+        [
+          "72298.810065",
+          "77247.071759",
+          "4948.26169437"
+        ]
+      ],
+      "transport_format_diagnostic_matches": true
+    },
+    {
+      "label": "RA/DEC_full",
+      "status": "EXACT",
+      "raw_source": [],
+      "nasa_transport": [],
+      "transport_format_diagnostic_matches": true
+    },
+    {
+      "label": "RA/DEC_minus_full",
+      "status": "EXACT",
+      "raw_source": [],
+      "nasa_transport": [],
+      "transport_format_diagnostic_matches": true
+    },
+    {
+      "label": "RA/DEC_offset_equal",
+      "status": "EXACT",
+      "raw_source": [],
+      "nasa_transport": [],
+      "transport_format_diagnostic_matches": true
+    },
+    {
+      "label": "negative_expand",
+      "status": "EXACT",
+      "raw_source": [
+        [
+          "10.0",
+          "90.0",
+          "80.0"
+        ],
+        [
+          "210.0",
+          "290.0",
+          "80.0"
+        ]
+      ],
+      "nasa_transport": [
+        [
+          "10.000000",
+          "90.000000",
+          "80.0"
+        ],
+        [
+          "210.000000",
+          "290.000000",
+          "80.0"
+        ]
+      ],
+      "transport_format_diagnostic_matches": true
+    },
+    {
+      "label": "negative_filter",
+      "status": "EXACT",
+      "raw_source": [
+        [
+          "0.0",
+          "100.0",
+          "100.0"
+        ],
+        [
+          "200.0",
+          "300.0",
+          "100.0"
+        ]
+      ],
+      "nasa_transport": [
+        [
+          "0.000000",
+          "100.000000",
+          "100.0"
+        ],
+        [
+          "200.000000",
+          "300.000000",
+          "100.0"
+        ]
+      ],
+      "transport_format_diagnostic_matches": true
+    },
+    {
+      "label": "complement_after_expand_check",
+      "status": "EXACT",
+      "raw_source": [],
+      "nasa_transport": [],
+      "transport_format_diagnostic_matches": true
+    },
+    {
+      "label": "complement_after_contract_check",
+      "status": "EXACT",
+      "raw_source": [],
+      "nasa_transport": [],
+      "transport_format_diagnostic_matches": true
+    },
+    {
+      "label": "540_10",
+      "status": "STRICT_TRANSPORT_MISMATCH",
+      "raw_source": [
+        [
+          "0.0",
+          "30246.09827877929",
+          "30246.09827877929"
+        ],
+        [
+          "72298.81006458664",
+          "86400.0",
+          "14101.189935413364"
+        ]
+      ],
+      "nasa_transport": [
+        [
+          "0.000000",
+          "30246.098279",
+          "30246.09827878"
+        ],
+        [
+          "72298.810065",
+          "86400.000000",
+          "14101.18993541"
+        ]
+      ],
+      "transport_format_diagnostic_matches": true
+    },
+    {
+      "label": "-540_10",
+      "status": "STRICT_TRANSPORT_MISMATCH",
+      "raw_source": [
+        [
+          "0.0",
+          "30246.098278455363",
+          "30246.098278455363"
+        ],
+        [
+          "72298.81006458664",
+          "86400.0",
+          "14101.189935413364"
+        ]
+      ],
+      "nasa_transport": [
+        [
+          "0.000000",
+          "30246.098278",
+          "30246.09827846"
+        ],
+        [
+          "72298.810065",
+          "86400.000000",
+          "14101.18993541"
+        ]
+      ],
+      "transport_format_diagnostic_matches": true
+    },
+    {
+      "label": "180_10",
+      "status": "STRICT_TRANSPORT_MISMATCH",
+      "raw_source": [
+        [
+          "0.0",
+          "30246.09827877929",
+          "30246.09827877929"
+        ],
+        [
+          "72298.81006458664",
+          "86400.0",
+          "14101.189935413364"
+        ]
+      ],
+      "nasa_transport": [
+        [
+          "0.000000",
+          "30246.098279",
+          "30246.09827878"
+        ],
+        [
+          "72298.810065",
+          "86400.000000",
+          "14101.18993541"
+        ]
+      ],
+      "transport_format_diagnostic_matches": true
+    },
+    {
+      "label": "-180_10",
+      "status": "STRICT_TRANSPORT_MISMATCH",
+      "raw_source": [
+        [
+          "0.0",
+          "30246.098278455363",
+          "30246.098278455363"
+        ],
+        [
+          "72298.81006458664",
+          "86400.0",
+          "14101.189935413364"
+        ]
+      ],
+      "nasa_transport": [
+        [
+          "0.000000",
+          "30246.098278",
+          "30246.09827846"
+        ],
+        [
+          "72298.810065",
+          "86400.000000",
+          "14101.18993541"
+        ]
+      ],
+      "transport_format_diagnostic_matches": true
+    }
+  ]
+}

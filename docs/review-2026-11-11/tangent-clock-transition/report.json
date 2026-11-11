@@ -1,0 +1,928 @@
+[
+  {
+    "request": {
+      "calculationType": "TANGENT_POINT",
+      "kernels": [
+        {
+          "type": "KERNEL_SET",
+          "id": 1
+        }
+      ],
+      "target": "MOON",
+      "observer": "EARTH",
+      "targetFrame": "IAU_MOON",
+      "aberrationCorrection": "NONE",
+      "computationMethod": "ELLIPSOID",
+      "correctionLocus": "TANGENT_POINT",
+      "directionVectorType": "DIRECTION_TO_OBJECT",
+      "directionObject": "MOON",
+      "coordinateRepresentation": "PLANETOGRAPHIC",
+      "timeSystem": "TDB",
+      "timeFormat": "SECONDS_PAST_J2000",
+      "times": [
+        "0.5"
+      ],
+      "outputTimeSystem": "TDB",
+      "outputTimeFormat": "SECONDS_PAST_J2000"
+    },
+    "result": {
+      "status": "OK",
+      "message": "The request was successful.",
+      "calculationId": "5dfc1bcc-195d-4947-8f03-e29d45819d9a",
+      "columns": [
+        {
+          "name": "TDB seconds past J2000",
+          "type": "NUMBER",
+          "units": "",
+          "outputID": "DATE"
+        },
+        {
+          "name": "Tangent Point Geometry",
+          "type": "STRING",
+          "units": "",
+          "outputID": "TANGENT_POINT_GEOMETRY"
+        },
+        {
+          "name": "Tangent Point Longitude (deg)",
+          "type": "NUMBER",
+          "units": "deg",
+          "outputID": "TANGENT_POINT_LONGITUDE"
+        },
+        {
+          "name": "Tangent Point Latitude (deg)",
+          "type": "NUMBER",
+          "units": "deg",
+          "outputID": "TANGENT_POINT_LATITUDE"
+        },
+        {
+          "name": "Tangent Point Altitude (km)",
+          "type": "NUMBER",
+          "units": "km",
+          "outputID": "TANGENT_POINT_ALTITUDE"
+        },
+        {
+          "name": "Surface Point Longitude (deg)",
+          "type": "NUMBER",
+          "units": "deg",
+          "outputID": "SURFACE_POINT_LONGITUDE"
+        },
+        {
+          "name": "Surface Point Latitude (deg)",
+          "type": "NUMBER",
+          "units": "deg",
+          "outputID": "SURFACE_POINT_LATITUDE"
+        },
+        {
+          "name": "Surface Point Altitude (km)",
+          "type": "NUMBER",
+          "units": "km",
+          "outputID": "SURFACE_POINT_ALTITUDE"
+        },
+        {
+          "name": "Distance to Tangent Point (km)",
+          "type": "NUMBER",
+          "units": "km",
+          "outputID": "DISTANCE_TO_TANGENT_POINT"
+        },
+        {
+          "name": "Incidence Angle (deg)",
+          "type": "NUMBER",
+          "units": "deg",
+          "outputID": "INCIDENCE_ANGLE"
+        },
+        {
+          "name": "Emission Angle (deg)",
+          "type": "NUMBER",
+          "units": "deg",
+          "outputID": "EMISSION_ANGLE"
+        },
+        {
+          "name": "Phase Angle (deg)",
+          "type": "NUMBER",
+          "units": "deg",
+          "outputID": "PHASE_ANGLE"
+        },
+        {
+          "name": "Time at Point",
+          "type": "DATE",
+          "units": "",
+          "outputID": "TIME_AT_POINT"
+        },
+        {
+          "name": "Light Time (s)",
+          "type": "NUMBER",
+          "units": "s",
+          "outputID": "LIGHT_TIME"
+        },
+        {
+          "name": "Local True Solar Time",
+          "type": "STRING",
+          "units": "",
+          "outputID": "LTST"
+        }
+      ],
+      "rows": [
+        [
+          "0.5",
+          "Ray intercepts surface",
+          "5.02210649",
+          "-6.72197508",
+          "0.0",
+          "5.02210649",
+          "-6.72197508",
+          "-3.89529464E-13",
+          "400711.25595371",
+          "122.65883581",
+          "1.79963263E-13",
+          "122.65883581",
+          "0.500000",
+          "1.33662888",
+          "20:11:19"
+        ]
+      ]
+    },
+    "clock_candidates": {
+      "observer": "20:11:20",
+      "point_epoch": "20:11:20",
+      "minus_lt": "20:11:19",
+      "minus_2lt": "20:11:19",
+      "plus_lt": "20:11:20"
+    },
+    "observed": "20:11:19",
+    "matches": [
+      "minus_lt",
+      "minus_2lt"
+    ]
+  },
+  {
+    "request": {
+      "calculationType": "TANGENT_POINT",
+      "kernels": [
+        {
+          "type": "KERNEL_SET",
+          "id": 1
+        }
+      ],
+      "target": "MOON",
+      "observer": "EARTH",
+      "targetFrame": "IAU_MOON",
+      "aberrationCorrection": "NONE",
+      "computationMethod": "ELLIPSOID",
+      "correctionLocus": "TANGENT_POINT",
+      "directionVectorType": "DIRECTION_TO_OBJECT",
+      "directionObject": "MOON",
+      "coordinateRepresentation": "PLANETOGRAPHIC",
+      "timeSystem": "TDB",
+      "timeFormat": "SECONDS_PAST_J2000",
+      "times": [
+        "1.0"
+      ],
+      "outputTimeSystem": "TDB",
+      "outputTimeFormat": "SECONDS_PAST_J2000"
+    },
+    "result": {
+      "status": "OK",
+      "message": "The request was successful.",
+      "calculationId": "83b7b886-54f8-4155-863f-763b8b19b432",
+      "columns": [
+        {
+          "name": "TDB seconds past J2000",
+          "type": "NUMBER",
+          "units": "",
+          "outputID": "DATE"
+        },
+        {
+          "name": "Tangent Point Geometry",
+          "type": "STRING",
+          "units": "",
+          "outputID": "TANGENT_POINT_GEOMETRY"
+        },
+        {
+          "name": "Tangent Point Longitude (deg)",
+          "type": "NUMBER",
+          "units": "deg",
+          "outputID": "TANGENT_POINT_LONGITUDE"
+        },
+        {
+          "name": "Tangent Point Latitude (deg)",
+          "type": "NUMBER",
+          "units": "deg",
+          "outputID": "TANGENT_POINT_LATITUDE"
+        },
+        {
+          "name": "Tangent Point Altitude (km)",
+          "type": "NUMBER",
+          "units": "km",
+          "outputID": "TANGENT_POINT_ALTITUDE"
+        },
+        {
+          "name": "Surface Point Longitude (deg)",
+          "type": "NUMBER",
+          "units": "deg",
+          "outputID": "SURFACE_POINT_LONGITUDE"
+        },
+        {
+          "name": "Surface Point Latitude (deg)",
+          "type": "NUMBER",
+          "units": "deg",
+          "outputID": "SURFACE_POINT_LATITUDE"
+        },
+        {
+          "name": "Surface Point Altitude (km)",
+          "type": "NUMBER",
+          "units": "km",
+          "outputID": "SURFACE_POINT_ALTITUDE"
+        },
+        {
+          "name": "Distance to Tangent Point (km)",
+          "type": "NUMBER",
+          "units": "km",
+          "outputID": "DISTANCE_TO_TANGENT_POINT"
+        },
+        {
+          "name": "Incidence Angle (deg)",
+          "type": "NUMBER",
+          "units": "deg",
+          "outputID": "INCIDENCE_ANGLE"
+        },
+        {
+          "name": "Emission Angle (deg)",
+          "type": "NUMBER",
+          "units": "deg",
+          "outputID": "EMISSION_ANGLE"
+        },
+        {
+          "name": "Phase Angle (deg)",
+          "type": "NUMBER",
+          "units": "deg",
+          "outputID": "PHASE_ANGLE"
+        },
+        {
+          "name": "Time at Point",
+          "type": "DATE",
+          "units": "",
+          "outputID": "TIME_AT_POINT"
+        },
+        {
+          "name": "Light Time (s)",
+          "type": "NUMBER",
+          "units": "s",
+          "outputID": "LIGHT_TIME"
+        },
+        {
+          "name": "Local True Solar Time",
+          "type": "STRING",
+          "units": "",
+          "outputID": "LTST"
+        }
+      ],
+      "rows": [
+        [
+          "1.0",
+          "Ray intercepts surface",
+          "5.02209999",
+          "-6.72197378",
+          "0.0",
+          "5.02209999",
+          "-6.72197378",
+          "0.0",
+          "400711.27201694",
+          "122.65889926",
+          "7.9513867E-16",
+          "122.65889926",
+          "1.000000",
+          "1.33662893",
+          "20:11:19"
+        ]
+      ]
+    },
+    "clock_candidates": {
+      "observer": "20:11:20",
+      "point_epoch": "20:11:20",
+      "minus_lt": "20:11:19",
+      "minus_2lt": "20:11:19",
+      "plus_lt": "20:11:20"
+    },
+    "observed": "20:11:19",
+    "matches": [
+      "minus_lt",
+      "minus_2lt"
+    ]
+  },
+  {
+    "request": {
+      "calculationType": "TANGENT_POINT",
+      "kernels": [
+        {
+          "type": "KERNEL_SET",
+          "id": 1
+        }
+      ],
+      "target": "MOON",
+      "observer": "EARTH",
+      "targetFrame": "IAU_MOON",
+      "aberrationCorrection": "NONE",
+      "computationMethod": "ELLIPSOID",
+      "correctionLocus": "TANGENT_POINT",
+      "directionVectorType": "DIRECTION_TO_OBJECT",
+      "directionObject": "MOON",
+      "coordinateRepresentation": "PLANETOGRAPHIC",
+      "timeSystem": "TDB",
+      "timeFormat": "SECONDS_PAST_J2000",
+      "times": [
+        "2.0"
+      ],
+      "outputTimeSystem": "TDB",
+      "outputTimeFormat": "SECONDS_PAST_J2000"
+    },
+    "result": {
+      "status": "OK",
+      "message": "The request was successful.",
+      "calculationId": "5ddd0cec-a9df-4a16-b463-982320600685",
+      "columns": [
+        {
+          "name": "TDB seconds past J2000",
+          "type": "NUMBER",
+          "units": "",
+          "outputID": "DATE"
+        },
+        {
+          "name": "Tangent Point Geometry",
+          "type": "STRING",
+          "units": "",
+          "outputID": "TANGENT_POINT_GEOMETRY"
+        },
+        {
+          "name": "Tangent Point Longitude (deg)",
+          "type": "NUMBER",
+          "units": "deg",
+          "outputID": "TANGENT_POINT_LONGITUDE"
+        },
+        {
+          "name": "Tangent Point Latitude (deg)",
+          "type": "NUMBER",
+          "units": "deg",
+          "outputID": "TANGENT_POINT_LATITUDE"
+        },
+        {
+          "name": "Tangent Point Altitude (km)",
+          "type": "NUMBER",
+          "units": "km",
+          "outputID": "TANGENT_POINT_ALTITUDE"
+        },
+        {
+          "name": "Surface Point Longitude (deg)",
+          "type": "NUMBER",
+          "units": "deg",
+          "outputID": "SURFACE_POINT_LONGITUDE"
+        },
+        {
+          "name": "Surface Point Latitude (deg)",
+          "type": "NUMBER",
+          "units": "deg",
+          "outputID": "SURFACE_POINT_LATITUDE"
+        },
+        {
+          "name": "Surface Point Altitude (km)",
+          "type": "NUMBER",
+          "units": "km",
+          "outputID": "SURFACE_POINT_ALTITUDE"
+        },
+        {
+          "name": "Distance to Tangent Point (km)",
+          "type": "NUMBER",
+          "units": "km",
+          "outputID": "DISTANCE_TO_TANGENT_POINT"
+        },
+        {
+          "name": "Incidence Angle (deg)",
+          "type": "NUMBER",
+          "units": "deg",
+          "outputID": "INCIDENCE_ANGLE"
+        },
+        {
+          "name": "Emission Angle (deg)",
+          "type": "NUMBER",
+          "units": "deg",
+          "outputID": "EMISSION_ANGLE"
+        },
+        {
+          "name": "Phase Angle (deg)",
+          "type": "NUMBER",
+          "units": "deg",
+          "outputID": "PHASE_ANGLE"
+        },
+        {
+          "name": "Time at Point",
+          "type": "DATE",
+          "units": "",
+          "outputID": "TIME_AT_POINT"
+        },
+        {
+          "name": "Light Time (s)",
+          "type": "NUMBER",
+          "units": "s",
+          "outputID": "LIGHT_TIME"
+        },
+        {
+          "name": "Local True Solar Time",
+          "type": "STRING",
+          "units": "",
+          "outputID": "LTST"
+        }
+      ],
+      "rows": [
+        [
+          "2.0",
+          "Ray intercepts surface",
+          "5.02208698",
+          "-6.72197117",
+          "0.0",
+          "5.02208698",
+          "-6.72197117",
+          "5.85164145E-13",
+          "400711.30414327",
+          "122.65902616",
+          "1.8071877E-13",
+          "122.65902616",
+          "2.000000",
+          "1.33662904",
+          "20:11:19"
+        ]
+      ]
+    },
+    "clock_candidates": {
+      "observer": "20:11:20",
+      "point_epoch": "20:11:20",
+      "minus_lt": "20:11:20",
+      "minus_2lt": "20:11:19",
+      "plus_lt": "20:11:20"
+    },
+    "observed": "20:11:19",
+    "matches": [
+      "minus_2lt"
+    ]
+  },
+  {
+    "request": {
+      "calculationType": "TANGENT_POINT",
+      "kernels": [
+        {
+          "type": "KERNEL_SET",
+          "id": 1
+        }
+      ],
+      "target": "MOON",
+      "observer": "EARTH",
+      "targetFrame": "IAU_MOON",
+      "aberrationCorrection": "NONE",
+      "computationMethod": "ELLIPSOID",
+      "correctionLocus": "TANGENT_POINT",
+      "directionVectorType": "DIRECTION_TO_OBJECT",
+      "directionObject": "MOON",
+      "coordinateRepresentation": "PLANETOGRAPHIC",
+      "timeSystem": "TDB",
+      "timeFormat": "SECONDS_PAST_J2000",
+      "times": [
+        "3.0"
+      ],
+      "outputTimeSystem": "TDB",
+      "outputTimeFormat": "SECONDS_PAST_J2000"
+    },
+    "result": {
+      "status": "OK",
+      "message": "The request was successful.",
+      "calculationId": "46108fb5-a51b-459b-ab45-12ba9a96eb4e",
+      "columns": [
+        {
+          "name": "TDB seconds past J2000",
+          "type": "NUMBER",
+          "units": "",
+          "outputID": "DATE"
+        },
+        {
+          "name": "Tangent Point Geometry",
+          "type": "STRING",
+          "units": "",
+          "outputID": "TANGENT_POINT_GEOMETRY"
+        },
+        {
+          "name": "Tangent Point Longitude (deg)",
+          "type": "NUMBER",
+          "units": "deg",
+          "outputID": "TANGENT_POINT_LONGITUDE"
+        },
+        {
+          "name": "Tangent Point Latitude (deg)",
+          "type": "NUMBER",
+          "units": "deg",
+          "outputID": "TANGENT_POINT_LATITUDE"
+        },
+        {
+          "name": "Tangent Point Altitude (km)",
+          "type": "NUMBER",
+          "units": "km",
+          "outputID": "TANGENT_POINT_ALTITUDE"
+        },
+        {
+          "name": "Surface Point Longitude (deg)",
+          "type": "NUMBER",
+          "units": "deg",
+          "outputID": "SURFACE_POINT_LONGITUDE"
+        },
+        {
+          "name": "Surface Point Latitude (deg)",
+          "type": "NUMBER",
+          "units": "deg",
+          "outputID": "SURFACE_POINT_LATITUDE"
+        },
+        {
+          "name": "Surface Point Altitude (km)",
+          "type": "NUMBER",
+          "units": "km",
+          "outputID": "SURFACE_POINT_ALTITUDE"
+        },
+        {
+          "name": "Distance to Tangent Point (km)",
+          "type": "NUMBER",
+          "units": "km",
+          "outputID": "DISTANCE_TO_TANGENT_POINT"
+        },
+        {
+          "name": "Incidence Angle (deg)",
+          "type": "NUMBER",
+          "units": "deg",
+          "outputID": "INCIDENCE_ANGLE"
+        },
+        {
+          "name": "Emission Angle (deg)",
+          "type": "NUMBER",
+          "units": "deg",
+          "outputID": "EMISSION_ANGLE"
+        },
+        {
+          "name": "Phase Angle (deg)",
+          "type": "NUMBER",
+          "units": "deg",
+          "outputID": "PHASE_ANGLE"
+        },
+        {
+          "name": "Time at Point",
+          "type": "DATE",
+          "units": "",
+          "outputID": "TIME_AT_POINT"
+        },
+        {
+          "name": "Light Time (s)",
+          "type": "NUMBER",
+          "units": "s",
+          "outputID": "LIGHT_TIME"
+        },
+        {
+          "name": "Local True Solar Time",
+          "type": "STRING",
+          "units": "",
+          "outputID": "LTST"
+        }
+      ],
+      "rows": [
+        [
+          "3.0",
+          "Ray intercepts surface",
+          "5.02207398",
+          "-6.72196856",
+          "0.0",
+          "5.02207398",
+          "-6.72196856",
+          "0.0",
+          "400711.33626947",
+          "122.65915306",
+          "6.4597371E-15",
+          "122.65915306",
+          "3.000000",
+          "1.33662914",
+          "20:11:19"
+        ]
+      ]
+    },
+    "clock_candidates": {
+      "observer": "20:11:20",
+      "point_epoch": "20:11:20",
+      "minus_lt": "20:11:20",
+      "minus_2lt": "20:11:20",
+      "plus_lt": "20:11:20"
+    },
+    "observed": "20:11:19",
+    "matches": []
+  },
+  {
+    "request": {
+      "calculationType": "TANGENT_POINT",
+      "kernels": [
+        {
+          "type": "KERNEL_SET",
+          "id": 1
+        }
+      ],
+      "target": "MOON",
+      "observer": "EARTH",
+      "targetFrame": "IAU_MOON",
+      "aberrationCorrection": "NONE",
+      "computationMethod": "ELLIPSOID",
+      "correctionLocus": "TANGENT_POINT",
+      "directionVectorType": "DIRECTION_TO_OBJECT",
+      "directionObject": "MOON",
+      "coordinateRepresentation": "PLANETOGRAPHIC",
+      "timeSystem": "TDB",
+      "timeFormat": "SECONDS_PAST_J2000",
+      "times": [
+        "5.0"
+      ],
+      "outputTimeSystem": "TDB",
+      "outputTimeFormat": "SECONDS_PAST_J2000"
+    },
+    "result": {
+      "status": "OK",
+      "message": "The request was successful.",
+      "calculationId": "f07521b7-618e-4720-b115-bc02e94198a0",
+      "columns": [
+        {
+          "name": "TDB seconds past J2000",
+          "type": "NUMBER",
+          "units": "",
+          "outputID": "DATE"
+        },
+        {
+          "name": "Tangent Point Geometry",
+          "type": "STRING",
+          "units": "",
+          "outputID": "TANGENT_POINT_GEOMETRY"
+        },
+        {
+          "name": "Tangent Point Longitude (deg)",
+          "type": "NUMBER",
+          "units": "deg",
+          "outputID": "TANGENT_POINT_LONGITUDE"
+        },
+        {
+          "name": "Tangent Point Latitude (deg)",
+          "type": "NUMBER",
+          "units": "deg",
+          "outputID": "TANGENT_POINT_LATITUDE"
+        },
+        {
+          "name": "Tangent Point Altitude (km)",
+          "type": "NUMBER",
+          "units": "km",
+          "outputID": "TANGENT_POINT_ALTITUDE"
+        },
+        {
+          "name": "Surface Point Longitude (deg)",
+          "type": "NUMBER",
+          "units": "deg",
+          "outputID": "SURFACE_POINT_LONGITUDE"
+        },
+        {
+          "name": "Surface Point Latitude (deg)",
+          "type": "NUMBER",
+          "units": "deg",
+          "outputID": "SURFACE_POINT_LATITUDE"
+        },
+        {
+          "name": "Surface Point Altitude (km)",
+          "type": "NUMBER",
+          "units": "km",
+          "outputID": "SURFACE_POINT_ALTITUDE"
+        },
+        {
+          "name": "Distance to Tangent Point (km)",
+          "type": "NUMBER",
+          "units": "km",
+          "outputID": "DISTANCE_TO_TANGENT_POINT"
+        },
+        {
+          "name": "Incidence Angle (deg)",
+          "type": "NUMBER",
+          "units": "deg",
+          "outputID": "INCIDENCE_ANGLE"
+        },
+        {
+          "name": "Emission Angle (deg)",
+          "type": "NUMBER",
+          "units": "deg",
+          "outputID": "EMISSION_ANGLE"
+        },
+        {
+          "name": "Phase Angle (deg)",
+          "type": "NUMBER",
+          "units": "deg",
+          "outputID": "PHASE_ANGLE"
+        },
+        {
+          "name": "Time at Point",
+          "type": "DATE",
+          "units": "",
+          "outputID": "TIME_AT_POINT"
+        },
+        {
+          "name": "Light Time (s)",
+          "type": "NUMBER",
+          "units": "s",
+          "outputID": "LIGHT_TIME"
+        },
+        {
+          "name": "Local True Solar Time",
+          "type": "STRING",
+          "units": "",
+          "outputID": "LTST"
+        }
+      ],
+      "rows": [
+        [
+          "5.0",
+          "Ray intercepts surface",
+          "5.02204797",
+          "-6.72196335",
+          "0.0",
+          "5.02204797",
+          "-6.72196335",
+          "-1.95880872E-13",
+          "400711.40052146",
+          "122.65940686",
+          "2.5807242E-13",
+          "122.65940686",
+          "5.000000",
+          "1.33662936",
+          "20:11:19"
+        ]
+      ]
+    },
+    "clock_candidates": {
+      "observer": "20:11:20",
+      "point_epoch": "20:11:20",
+      "minus_lt": "20:11:20",
+      "minus_2lt": "20:11:20",
+      "plus_lt": "20:11:20"
+    },
+    "observed": "20:11:19",
+    "matches": []
+  },
+  {
+    "request": {
+      "calculationType": "TANGENT_POINT",
+      "kernels": [
+        {
+          "type": "KERNEL_SET",
+          "id": 1
+        }
+      ],
+      "target": "MOON",
+      "observer": "EARTH",
+      "targetFrame": "IAU_MOON",
+      "aberrationCorrection": "NONE",
+      "computationMethod": "ELLIPSOID",
+      "correctionLocus": "TANGENT_POINT",
+      "directionVectorType": "DIRECTION_TO_OBJECT",
+      "directionObject": "MOON",
+      "coordinateRepresentation": "PLANETOGRAPHIC",
+      "timeSystem": "TDB",
+      "timeFormat": "SECONDS_PAST_J2000",
+      "times": [
+        "10.0"
+      ],
+      "outputTimeSystem": "TDB",
+      "outputTimeFormat": "SECONDS_PAST_J2000"
+    },
+    "result": {
+      "status": "OK",
+      "message": "The request was successful.",
+      "calculationId": "937165ad-9f7f-4606-a13a-fd00869702e3",
+      "columns": [
+        {
+          "name": "TDB seconds past J2000",
+          "type": "NUMBER",
+          "units": "",
+          "outputID": "DATE"
+        },
+        {
+          "name": "Tangent Point Geometry",
+          "type": "STRING",
+          "units": "",
+          "outputID": "TANGENT_POINT_GEOMETRY"
+        },
+        {
+          "name": "Tangent Point Longitude (deg)",
+          "type": "NUMBER",
+          "units": "deg",
+          "outputID": "TANGENT_POINT_LONGITUDE"
+        },
+        {
+          "name": "Tangent Point Latitude (deg)",
+          "type": "NUMBER",
+          "units": "deg",
+          "outputID": "TANGENT_POINT_LATITUDE"
+        },
+        {
+          "name": "Tangent Point Altitude (km)",
+          "type": "NUMBER",
+          "units": "km",
+          "outputID": "TANGENT_POINT_ALTITUDE"
+        },
+        {
+          "name": "Surface Point Longitude (deg)",
+          "type": "NUMBER",
+          "units": "deg",
+          "outputID": "SURFACE_POINT_LONGITUDE"
+        },
+        {
+          "name": "Surface Point Latitude (deg)",
+          "type": "NUMBER",
+          "units": "deg",
+          "outputID": "SURFACE_POINT_LATITUDE"
+        },
+        {
+          "name": "Surface Point Altitude (km)",
+          "type": "NUMBER",
+          "units": "km",
+          "outputID": "SURFACE_POINT_ALTITUDE"
+        },
+        {
+          "name": "Distance to Tangent Point (km)",
+          "type": "NUMBER",
+          "units": "km",
+          "outputID": "DISTANCE_TO_TANGENT_POINT"
+        },
+        {
+          "name": "Incidence Angle (deg)",
+          "type": "NUMBER",
+          "units": "deg",
+          "outputID": "INCIDENCE_ANGLE"
+        },
+        {
+          "name": "Emission Angle (deg)",
+          "type": "NUMBER",
+          "units": "deg",
+          "outputID": "EMISSION_ANGLE"
+        },
+        {
+          "name": "Phase Angle (deg)",
+          "type": "NUMBER",
+          "units": "deg",
+          "outputID": "PHASE_ANGLE"
+        },
+        {
+          "name": "Time at Point",
+          "type": "DATE",
+          "units": "",
+          "outputID": "TIME_AT_POINT"
+        },
+        {
+          "name": "Light Time (s)",
+          "type": "NUMBER",
+          "units": "s",
+          "outputID": "LIGHT_TIME"
+        },
+        {
+          "name": "Local True Solar Time",
+          "type": "STRING",
+          "units": "",
+          "outputID": "LTST"
+        }
+      ],
+      "rows": [
+        [
+          "10.0",
+          "Ray intercepts surface",
+          "5.02198294",
+          "-6.72195032",
+          "0.0",
+          "5.02198294",
+          "-6.72195032",
+          "0.0",
+          "400711.56114898",
+          "122.66004136",
+          "6.60491785E-15",
+          "122.66004136",
+          "10.000000",
+          "1.33662989",
+          "20:11:20"
+        ]
+      ]
+    },
+    "clock_candidates": {
+      "observer": "20:11:20",
+      "point_epoch": "20:11:20",
+      "minus_lt": "20:11:20",
+      "minus_2lt": "20:11:20",
+      "plus_lt": "20:11:20"
+    },
+    "observed": "20:11:20",
+    "matches": [
+      "observer",
+      "point_epoch",
+      "minus_lt",
+      "minus_2lt",
+      "plus_lt"
+    ]
+  }
+]

@@ -1,0 +1,6 @@
+0.5 NONE TANGENT_POINT 20:11:19 {'observer': '20:11:20', 'point_epoch': '20:11:20', 'minus_lt': '20:11:19', 'minus_2lt': '20:11:19', 'plus_lt': '20:11:20'}
+1.0 NONE TANGENT_POINT 20:11:19 {'observer': '20:11:20', 'point_epoch': '20:11:20', 'minus_lt': '20:11:19', 'minus_2lt': '20:11:19', 'plus_lt': '20:11:20'}
+2.0 NONE TANGENT_POINT 20:11:19 {'observer': '20:11:20', 'point_epoch': '20:11:20', 'minus_lt': '20:11:20', 'minus_2lt': '20:11:19', 'plus_lt': '20:11:20'}
+3.0 NONE TANGENT_POINT 20:11:19 {'observer': '20:11:20', 'point_epoch': '20:11:20', 'minus_lt': '20:11:20', 'minus_2lt': '20:11:20', 'plus_lt': '20:11:20'}
+5.0 NONE TANGENT_POINT 20:11:19 {'observer': '20:11:20', 'point_epoch': '20:11:20', 'minus_lt': '20:11:20', 'minus_2lt': '20:11:20', 'plus_lt': '20:11:20'}
+10.0 NONE TANGENT_POINT 20:11:20 {'observer': '20:11:20', 'point_epoch': '20:11:20', 'minus_lt': '20:11:20', 'minus_2lt': '20:11:20', 'plus_lt': '20:11:20'}

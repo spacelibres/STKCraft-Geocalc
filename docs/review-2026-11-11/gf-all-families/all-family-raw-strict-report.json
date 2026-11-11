@@ -1,0 +1,826 @@
+{
+  "mode": "RAW_TRANSPORT_EXACT",
+  "native_endpoint_acceptance": "finite IEEE754 binary64 equality; no comparison tolerance",
+  "NASA_endpoint_serialization": "explicit DATE six decimals and numeric eight fixed/mantissa decimals, independently probed",
+  "official_family_count": 11,
+  "covered_families": [],
+  "missing_or_failing_families": [
+    "GF_ANGULAR_SEPARATION_SEARCH",
+    "GF_COORDINATE_SEARCH",
+    "GF_DISTANCE_SEARCH",
+    "GF_ILLUMINATION_ANGLES_SEARCH",
+    "GF_OCCULTATION_SEARCH",
+    "GF_PHASE_ANGLE_SEARCH",
+    "GF_RANGE_RATE_SEARCH",
+    "GF_RAY_IN_FOV_SEARCH",
+    "GF_SUB_POINT_SEARCH",
+    "GF_SURFACE_INTERCEPT_POINT_SEARCH",
+    "GF_TARGET_IN_INSTRUMENT_FOV_SEARCH"
+  ],
+  "cases": [
+    {
+      "id": "distance",
+      "family": "GF_DISTANCE_SEARCH",
+      "failures": [
+        "distance/row0/col0: actual=651217.8241794102 reference=651217.824179 raw_difference=4.102E-7 compared=651217.8241794102",
+        "distance/row0/col1: actual=2370468.738158972 reference=2370468.738159 raw_difference=2.8E-8 compared=2370468.738158972",
+        "distance/row0/col2: actual=1719250.9139795618 reference=1719250.91397956 raw_difference=1.8E-9 compared=1719250.9139795618"
+      ],
+      "native_bit_exact": true,
+      "native_compared_components": 3,
+      "native_failures": [],
+      "local_native_rows": [
+        [
+          "651217.8241794102",
+          "2370468.738158972",
+          "1719250.9139795618"
+        ]
+      ],
+      "raw_transport": {
+        "passed": false,
+        "windows": 1,
+        "compared_cells": 3,
+        "raw_differences": [
+          "4.102E-7",
+          "2.8E-8",
+          "1.8E-9"
+        ],
+        "failures": [
+          "distance/row0/col0: actual=651217.8241794102 reference=651217.824179 raw_difference=4.102E-7 compared=651217.8241794102",
+          "distance/row0/col1: actual=2370468.738158972 reference=2370468.738159 raw_difference=2.8E-8 compared=2370468.738158972",
+          "distance/row0/col2: actual=1719250.9139795618 reference=1719250.91397956 raw_difference=1.8E-9 compared=1719250.9139795618"
+        ],
+        "output_serialization_equality": false
+      },
+      "output_serialization": {
+        "passed": true,
+        "windows": 1,
+        "compared_cells": 3,
+        "raw_differences": [
+          "4.102E-7",
+          "2.8E-8",
+          "1.8E-9"
+        ],
+        "failures": [],
+        "output_serialization_equality": true
+      },
+      "passed": false
+    },
+    {
+      "id": "range_rate",
+      "family": "GF_RANGE_RATE_SEARCH",
+      "failures": [
+        "range_rate/row0/col1: actual=260603.72716409084 reference=260603.727164 raw_difference=9.084E-8 compared=260603.72716409084",
+        "range_rate/row0/col2: actual=260603.72716409084 reference=260603.72716409 raw_difference=8.4E-10 compared=260603.72716409084",
+        "range_rate/row1/col0: actual=1594118.2502700796 reference=1594118.250270 raw_difference=7.96E-8 compared=1594118.2502700796",
+        "range_rate/row1/col2: actual=997881.7497299204 reference=997881.74972992 raw_difference=4E-10 compared=997881.7497299204"
+      ],
+      "native_bit_exact": true,
+      "native_compared_components": 6,
+      "native_failures": [],
+      "local_native_rows": [
+        [
+          "0.0",
+          "260603.72716409084",
+          "260603.72716409084"
+        ],
+        [
+          "1594118.2502700796",
+          "2592000.0",
+          "997881.7497299204"
+        ]
+      ],
+      "raw_transport": {
+        "passed": false,
+        "windows": 2,
+        "compared_cells": 6,
+        "raw_differences": [
+          "0.000000",
+          "9.084E-8",
+          "8.4E-10",
+          "7.96E-8",
+          "0.000000",
+          "4E-10"
+        ],
+        "failures": [
+          "range_rate/row0/col1: actual=260603.72716409084 reference=260603.727164 raw_difference=9.084E-8 compared=260603.72716409084",
+          "range_rate/row0/col2: actual=260603.72716409084 reference=260603.72716409 raw_difference=8.4E-10 compared=260603.72716409084",
+          "range_rate/row1/col0: actual=1594118.2502700796 reference=1594118.250270 raw_difference=7.96E-8 compared=1594118.2502700796",
+          "range_rate/row1/col2: actual=997881.7497299204 reference=997881.74972992 raw_difference=4E-10 compared=997881.7497299204"
+        ],
+        "output_serialization_equality": false
+      },
+      "output_serialization": {
+        "passed": true,
+        "windows": 2,
+        "compared_cells": 6,
+        "raw_differences": [
+          "0.000000",
+          "9.084E-8",
+          "8.4E-10",
+          "7.96E-8",
+          "0.000000",
+          "4E-10"
+        ],
+        "failures": [],
+        "output_serialization_equality": true
+      },
+      "passed": false
+    },
+    {
+      "id": "coordinate",
+      "family": "GF_COORDINATE_SEARCH",
+      "failures": [
+        "coordinate/row0/col0: actual=30246.09827877929 reference=30246.098279 raw_difference=2.2071E-7 compared=30246.09827877929",
+        "coordinate/row0/col1: actual=74772.91604523291 reference=74772.916045 raw_difference=2.3291E-7 compared=74772.91604523291",
+        "coordinate/row0/col2: actual=44526.81776645362 reference=44526.81776645 raw_difference=3.62E-9 compared=44526.81776645362"
+      ],
+      "native_bit_exact": true,
+      "native_compared_components": 3,
+      "native_failures": [],
+      "local_native_rows": [
+        [
+          "30246.09827877929",
+          "74772.91604523291",
+          "44526.81776645362"
+        ]
+      ],
+      "raw_transport": {
+        "passed": false,
+        "windows": 1,
+        "compared_cells": 3,
+        "raw_differences": [
+          "2.2071E-7",
+          "2.3291E-7",
+          "3.62E-9"
+        ],
+        "failures": [
+          "coordinate/row0/col0: actual=30246.09827877929 reference=30246.098279 raw_difference=2.2071E-7 compared=30246.09827877929",
+          "coordinate/row0/col1: actual=74772.91604523291 reference=74772.916045 raw_difference=2.3291E-7 compared=74772.91604523291",
+          "coordinate/row0/col2: actual=44526.81776645362 reference=44526.81776645 raw_difference=3.62E-9 compared=44526.81776645362"
+        ],
+        "output_serialization_equality": false
+      },
+      "output_serialization": {
+        "passed": true,
+        "windows": 1,
+        "compared_cells": 3,
+        "raw_differences": [
+          "2.2071E-7",
+          "2.3291E-7",
+          "3.62E-9"
+        ],
+        "failures": [],
+        "output_serialization_equality": true
+      },
+      "passed": false
+    },
+    {
+      "id": "phase",
+      "family": "GF_PHASE_ANGLE_SEARCH",
+      "failures": [
+        "phase/row0/col0: actual=1127939.4808831613 reference=1127939.480883 raw_difference=1.613E-7 compared=1127939.4808831613",
+        "phase/row0/col1: actual=2319499.0027605128 reference=2319499.002761 raw_difference=4.872E-7 compared=2319499.0027605128",
+        "phase/row0/col2: actual=1191559.5218773514 reference=1191559.52187735 raw_difference=1.4E-9 compared=1191559.5218773514"
+      ],
+      "native_bit_exact": true,
+      "native_compared_components": 3,
+      "native_failures": [],
+      "local_native_rows": [
+        [
+          "1127939.4808831613",
+          "2319499.0027605128",
+          "1191559.5218773514"
+        ]
+      ],
+      "raw_transport": {
+        "passed": false,
+        "windows": 1,
+        "compared_cells": 3,
+        "raw_differences": [
+          "1.613E-7",
+          "4.872E-7",
+          "1.4E-9"
+        ],
+        "failures": [
+          "phase/row0/col0: actual=1127939.4808831613 reference=1127939.480883 raw_difference=1.613E-7 compared=1127939.4808831613",
+          "phase/row0/col1: actual=2319499.0027605128 reference=2319499.002761 raw_difference=4.872E-7 compared=2319499.0027605128",
+          "phase/row0/col2: actual=1191559.5218773514 reference=1191559.52187735 raw_difference=1.4E-9 compared=1191559.5218773514"
+        ],
+        "output_serialization_equality": false
+      },
+      "output_serialization": {
+        "passed": true,
+        "windows": 1,
+        "compared_cells": 3,
+        "raw_differences": [
+          "1.613E-7",
+          "4.872E-7",
+          "1.4E-9"
+        ],
+        "failures": [],
+        "output_serialization_equality": true
+      },
+      "passed": false
+    },
+    {
+      "id": "separation",
+      "family": "GF_ANGULAR_SEPARATION_SEARCH",
+      "failures": [
+        "separation/row0/col1: actual=1128953.4645812346 reference=1128953.464581 raw_difference=2.346E-7 compared=1128953.4645812346",
+        "separation/row0/col2: actual=1128953.4645812346 reference=1128953.46458123 raw_difference=4.6E-9 compared=1128953.4645812346",
+        "separation/row1/col0: actual=2318307.3750584805 reference=2318307.375058 raw_difference=4.805E-7 compared=2318307.3750584805",
+        "separation/row1/col2: actual=273692.62494151946 reference=273692.62494152 raw_difference=5.4E-10 compared=273692.62494151946"
+      ],
+      "native_bit_exact": true,
+      "native_compared_components": 6,
+      "native_failures": [],
+      "local_native_rows": [
+        [
+          "0.0",
+          "1128953.4645812346",
+          "1128953.4645812346"
+        ],
+        [
+          "2318307.3750584805",
+          "2592000.0",
+          "273692.62494151946"
+        ]
+      ],
+      "raw_transport": {
+        "passed": false,
+        "windows": 2,
+        "compared_cells": 6,
+        "raw_differences": [
+          "0.000000",
+          "2.346E-7",
+          "4.6E-9",
+          "4.805E-7",
+          "0.000000",
+          "5.4E-10"
+        ],
+        "failures": [
+          "separation/row0/col1: actual=1128953.4645812346 reference=1128953.464581 raw_difference=2.346E-7 compared=1128953.4645812346",
+          "separation/row0/col2: actual=1128953.4645812346 reference=1128953.46458123 raw_difference=4.6E-9 compared=1128953.4645812346",
+          "separation/row1/col0: actual=2318307.3750584805 reference=2318307.375058 raw_difference=4.805E-7 compared=2318307.3750584805",
+          "separation/row1/col2: actual=273692.62494151946 reference=273692.62494152 raw_difference=5.4E-10 compared=273692.62494151946"
+        ],
+        "output_serialization_equality": false
+      },
+      "output_serialization": {
+        "passed": true,
+        "windows": 2,
+        "compared_cells": 6,
+        "raw_differences": [
+          "0.000000",
+          "2.346E-7",
+          "4.6E-9",
+          "4.805E-7",
+          "0.000000",
+          "5.4E-10"
+        ],
+        "failures": [],
+        "output_serialization_equality": true
+      },
+      "passed": false
+    },
+    {
+      "id": "subpoint",
+      "family": "GF_SUB_POINT_SEARCH",
+      "failures": [
+        "subpoint/row0/col0: actual=586774.380759953 reference=586774.380760 raw_difference=4.7E-8 compared=586774.380759953",
+        "subpoint/row0/col1: actual=1719821.3325209434 reference=1719821.332521 raw_difference=5.66E-8 compared=1719821.3325209434",
+        "subpoint/row0/col2: actual=1133046.9517609903 reference=1133046.95176099 raw_difference=3E-10 compared=1133046.9517609903"
+      ],
+      "native_bit_exact": true,
+      "native_compared_components": 3,
+      "native_failures": [],
+      "local_native_rows": [
+        [
+          "586774.380759953",
+          "1719821.3325209434",
+          "1133046.9517609903"
+        ]
+      ],
+      "raw_transport": {
+        "passed": false,
+        "windows": 1,
+        "compared_cells": 3,
+        "raw_differences": [
+          "4.7E-8",
+          "5.66E-8",
+          "3E-10"
+        ],
+        "failures": [
+          "subpoint/row0/col0: actual=586774.380759953 reference=586774.380760 raw_difference=4.7E-8 compared=586774.380759953",
+          "subpoint/row0/col1: actual=1719821.3325209434 reference=1719821.332521 raw_difference=5.66E-8 compared=1719821.3325209434",
+          "subpoint/row0/col2: actual=1133046.9517609903 reference=1133046.95176099 raw_difference=3E-10 compared=1133046.9517609903"
+        ],
+        "output_serialization_equality": false
+      },
+      "output_serialization": {
+        "passed": true,
+        "windows": 1,
+        "compared_cells": 3,
+        "raw_differences": [
+          "4.7E-8",
+          "5.66E-8",
+          "3E-10"
+        ],
+        "failures": [],
+        "output_serialization_equality": true
+      },
+      "passed": false
+    },
+    {
+      "id": "illumination",
+      "family": "GF_ILLUMINATION_ANGLES_SEARCH",
+      "failures": [
+        "illumination/row0/col0: actual=1007590.7626614573 reference=1007590.762661 raw_difference=4.573E-7 compared=1007590.7626614573",
+        "illumination/row0/col1: actual=2289269.9649258833 reference=2289269.964926 raw_difference=1.167E-7 compared=2289269.9649258833",
+        "illumination/row0/col2: actual=1281679.202264426 reference=1281679.20226443 raw_difference=4E-9 compared=1281679.202264426"
+      ],
+      "native_bit_exact": true,
+      "native_compared_components": 3,
+      "native_failures": [],
+      "local_native_rows": [
+        [
+          "1007590.7626614573",
+          "2289269.9649258833",
+          "1281679.202264426"
+        ]
+      ],
+      "raw_transport": {
+        "passed": false,
+        "windows": 1,
+        "compared_cells": 3,
+        "raw_differences": [
+          "4.573E-7",
+          "1.167E-7",
+          "4E-9"
+        ],
+        "failures": [
+          "illumination/row0/col0: actual=1007590.7626614573 reference=1007590.762661 raw_difference=4.573E-7 compared=1007590.7626614573",
+          "illumination/row0/col1: actual=2289269.9649258833 reference=2289269.964926 raw_difference=1.167E-7 compared=2289269.9649258833",
+          "illumination/row0/col2: actual=1281679.202264426 reference=1281679.20226443 raw_difference=4E-9 compared=1281679.202264426"
+        ],
+        "output_serialization_equality": false
+      },
+      "output_serialization": {
+        "passed": true,
+        "windows": 1,
+        "compared_cells": 3,
+        "raw_differences": [
+          "4.573E-7",
+          "1.167E-7",
+          "4E-9"
+        ],
+        "failures": [],
+        "output_serialization_equality": true
+      },
+      "passed": false
+    },
+    {
+      "id": "intercept",
+      "family": "GF_SURFACE_INTERCEPT_POINT_SEARCH",
+      "failures": [
+        "intercept/row0/col0: actual=-1783.8617858125438 reference=-1783.861786 raw_difference=1.874562E-7 compared=-1783.8617858125438",
+        "intercept/row0/col1: actual=-155.9511356969179 reference=-155.951136 raw_difference=3.030821E-7 compared=-155.9511356969179",
+        "intercept/row0/col2: actual=1627.910650115626 reference=1627.91065012 raw_difference=4.374E-9 compared=1627.910650115626"
+      ],
+      "native_bit_exact": true,
+      "native_compared_components": 3,
+      "native_failures": [],
+      "local_native_rows": [
+        [
+          "-1783.8617858125438",
+          "-155.9511356969179",
+          "1627.910650115626"
+        ]
+      ],
+      "raw_transport": {
+        "passed": false,
+        "windows": 1,
+        "compared_cells": 3,
+        "raw_differences": [
+          "1.874562E-7",
+          "3.030821E-7",
+          "4.374E-9"
+        ],
+        "failures": [
+          "intercept/row0/col0: actual=-1783.8617858125438 reference=-1783.861786 raw_difference=1.874562E-7 compared=-1783.8617858125438",
+          "intercept/row0/col1: actual=-155.9511356969179 reference=-155.951136 raw_difference=3.030821E-7 compared=-155.9511356969179",
+          "intercept/row0/col2: actual=1627.910650115626 reference=1627.91065012 raw_difference=4.374E-9 compared=1627.910650115626"
+        ],
+        "output_serialization_equality": false
+      },
+      "output_serialization": {
+        "passed": true,
+        "windows": 1,
+        "compared_cells": 3,
+        "raw_differences": [
+          "1.874562E-7",
+          "3.030821E-7",
+          "4.374E-9"
+        ],
+        "failures": [],
+        "output_serialization_equality": true
+      },
+      "passed": false
+    },
+    {
+      "id": "occultation",
+      "family": "GF_OCCULTATION_SEARCH",
+      "failures": [
+        "occultation/row0/col0: actual=556604340.3187094 reference=556604340.318709 raw_difference=4E-7 compared=556604340.3187094",
+        "occultation/row0/col1: actual=556619739.1464679 reference=556619739.146468 raw_difference=1E-7 compared=556619739.1464679",
+        "occultation/row0/col2: actual=15398.827758550644 reference=15398.82775855 raw_difference=6.44E-10 compared=15398.827758550644"
+      ],
+      "native_bit_exact": true,
+      "native_compared_components": 3,
+      "native_failures": [],
+      "local_native_rows": [
+        [
+          "556604340.3187094",
+          "556619739.1464679",
+          "15398.827758550644"
+        ]
+      ],
+      "raw_transport": {
+        "passed": false,
+        "windows": 1,
+        "compared_cells": 3,
+        "raw_differences": [
+          "4E-7",
+          "1E-7",
+          "6.44E-10"
+        ],
+        "failures": [
+          "occultation/row0/col0: actual=556604340.3187094 reference=556604340.318709 raw_difference=4E-7 compared=556604340.3187094",
+          "occultation/row0/col1: actual=556619739.1464679 reference=556619739.146468 raw_difference=1E-7 compared=556619739.1464679",
+          "occultation/row0/col2: actual=15398.827758550644 reference=15398.82775855 raw_difference=6.44E-10 compared=15398.827758550644"
+        ],
+        "output_serialization_equality": false
+      },
+      "output_serialization": {
+        "passed": true,
+        "windows": 1,
+        "compared_cells": 3,
+        "raw_differences": [
+          "4E-7",
+          "1E-7",
+          "6.44E-10"
+        ],
+        "failures": [],
+        "output_serialization_equality": true
+      },
+      "passed": false
+    },
+    {
+      "id": "range_postprocessing",
+      "family": "GF_DISTANCE_SEARCH",
+      "failures": [
+        "range_postprocessing/row0/col1: actual=651218.0741789875 reference=651218.074179 raw_difference=1.25E-8 compared=651218.0741789875",
+        "range_postprocessing/row0/col2: actual=180.89397893860766 reference=180.89397894 raw_difference=1.39234E-9 compared=180.89397893860766",
+        "range_postprocessing/row1/col0: actual=1091308.049498015 reference=1091308.049498 raw_difference=1.5E-8 compared=1091308.049498015",
+        "range_postprocessing/row1/col2: actual=57.97005569499581 reference=57.97005569 raw_difference=4.99581E-9 compared=57.97005569499581",
+        "range_postprocessing/row2/col1: actual=2045893.8620005357 reference=2045893.862001 raw_difference=4.643E-7 compared=2045893.8620005357",
+        "range_postprocessing/row2/col2: actual=12.748364444593252 reference=12.74836444 raw_difference=4.593252E-9 compared=12.748364444593252",
+        "range_postprocessing/row3/col0: actual=2370468.48815854 reference=2370468.488159 raw_difference=4.6E-7 compared=2370468.48815854",
+        "range_postprocessing/row3/col1: actual=2956132.6357484716 reference=2956132.635748 raw_difference=4.716E-7 compared=2956132.6357484716",
+        "range_postprocessing/row3/col2: actual=162.6844854416477 reference=162.68448544 raw_difference=1.6477E-9 compared=162.6844854416477",
+        "range_postprocessing/row4/col0: actual=3488591.4156881524 reference=3488591.415688 raw_difference=1.524E-7 compared=3488591.4156881524",
+        "range_postprocessing/row4/col2: actual=142.05800953106876 reference=142.05800953 raw_difference=1.06876E-9 compared=142.05800953106876"
+      ],
+      "native_bit_exact": true,
+      "native_compared_components": 15,
+      "native_failures": [],
+      "local_native_rows": [
+        [
+          "-0.25",
+          "651218.0741789875",
+          "180.89397893860766"
+        ],
+        [
+          "1091308.049498015",
+          "1300000.25",
+          "57.97005569499581"
+        ],
+        [
+          "1999999.75",
+          "2045893.8620005357",
+          "12.748364444593252"
+        ],
+        [
+          "2370468.48815854",
+          "2956132.6357484716",
+          "162.6844854416477"
+        ],
+        [
+          "3488591.4156881524",
+          "4000000.25",
+          "142.05800953106876"
+        ]
+      ],
+      "raw_transport": {
+        "passed": false,
+        "windows": 5,
+        "compared_cells": 15,
+        "raw_differences": [
+          "0.000000",
+          "1.25E-8",
+          "1.39234E-9",
+          "1.5E-8",
+          "0.000000",
+          "4.99581E-9",
+          "0.000000",
+          "4.643E-7",
+          "4.593252E-9",
+          "4.6E-7",
+          "4.716E-7",
+          "1.6477E-9",
+          "1.524E-7",
+          "0.000000",
+          "1.06876E-9"
+        ],
+        "failures": [
+          "range_postprocessing/row0/col1: actual=651218.0741789875 reference=651218.074179 raw_difference=1.25E-8 compared=651218.0741789875",
+          "range_postprocessing/row0/col2: actual=180.89397893860766 reference=180.89397894 raw_difference=1.39234E-9 compared=180.89397893860766",
+          "range_postprocessing/row1/col0: actual=1091308.049498015 reference=1091308.049498 raw_difference=1.5E-8 compared=1091308.049498015",
+          "range_postprocessing/row1/col2: actual=57.97005569499581 reference=57.97005569 raw_difference=4.99581E-9 compared=57.97005569499581",
+          "range_postprocessing/row2/col1: actual=2045893.8620005357 reference=2045893.862001 raw_difference=4.643E-7 compared=2045893.8620005357",
+          "range_postprocessing/row2/col2: actual=12.748364444593252 reference=12.74836444 raw_difference=4.593252E-9 compared=12.748364444593252",
+          "range_postprocessing/row3/col0: actual=2370468.48815854 reference=2370468.488159 raw_difference=4.6E-7 compared=2370468.48815854",
+          "range_postprocessing/row3/col1: actual=2956132.6357484716 reference=2956132.635748 raw_difference=4.716E-7 compared=2956132.6357484716",
+          "range_postprocessing/row3/col2: actual=162.6844854416477 reference=162.68448544 raw_difference=1.6477E-9 compared=162.6844854416477",
+          "range_postprocessing/row4/col0: actual=3488591.4156881524 reference=3488591.415688 raw_difference=1.524E-7 compared=3488591.4156881524",
+          "range_postprocessing/row4/col2: actual=142.05800953106876 reference=142.05800953 raw_difference=1.06876E-9 compared=142.05800953106876"
+        ],
+        "output_serialization_equality": false
+      },
+      "output_serialization": {
+        "passed": true,
+        "windows": 5,
+        "compared_cells": 15,
+        "raw_differences": [
+          "0.000000",
+          "1.25E-8",
+          "1.39234E-9",
+          "1.5E-8",
+          "0.000000",
+          "4.99581E-9",
+          "0.000000",
+          "4.643E-7",
+          "4.593252E-9",
+          "4.6E-7",
+          "4.716E-7",
+          "1.6477E-9",
+          "1.524E-7",
+          "0.000000",
+          "1.06876E-9"
+        ],
+        "failures": [],
+        "output_serialization_equality": true
+      },
+      "passed": false
+    },
+    {
+      "id": "target_fov",
+      "family": "GF_TARGET_IN_INSTRUMENT_FOV_SEARCH",
+      "failures": [
+        "target_fov/row0/col0: actual=403904651.1992692 reference=403904651.199269 raw_difference=2E-7 compared=403904651.1992692",
+        "target_fov/row0/col2: actual=1348.8007308244705 reference=1348.80073082 raw_difference=4.4705E-9 compared=1348.8007308244705"
+      ],
+      "native_bit_exact": true,
+      "native_compared_components": 3,
+      "native_failures": [],
+      "local_native_rows": [
+        [
+          "403904651.1992692",
+          "403906000.0",
+          "1348.8007308244705"
+        ]
+      ],
+      "raw_transport": {
+        "passed": false,
+        "windows": 1,
+        "compared_cells": 3,
+        "raw_differences": [
+          "2E-7",
+          "0.000000",
+          "4.4705E-9"
+        ],
+        "failures": [
+          "target_fov/row0/col0: actual=403904651.1992692 reference=403904651.199269 raw_difference=2E-7 compared=403904651.1992692",
+          "target_fov/row0/col2: actual=1348.8007308244705 reference=1348.80073082 raw_difference=4.4705E-9 compared=1348.8007308244705"
+        ],
+        "output_serialization_equality": false
+      },
+      "output_serialization": {
+        "passed": true,
+        "windows": 1,
+        "compared_cells": 3,
+        "raw_differences": [
+          "2E-7",
+          "0.000000",
+          "4.4705E-9"
+        ],
+        "failures": [],
+        "output_serialization_equality": true
+      },
+      "passed": false
+    },
+    {
+      "id": "ray_fov",
+      "family": "GF_RAY_IN_FOV_SEARCH",
+      "failures": [
+        "ray_fov/row0/col0: actual=403905462.16845226 reference=403905462.168452 raw_difference=2.6E-7 compared=403905462.16845226",
+        "ray_fov/row0/col1: actual=403905723.95332265 reference=403905723.953323 raw_difference=3.5E-7 compared=403905723.95332265",
+        "ray_fov/row0/col2: actual=261.78487038612366 reference=261.78487039 raw_difference=3.87634E-9 compared=261.78487038612366"
+      ],
+      "native_bit_exact": true,
+      "native_compared_components": 3,
+      "native_failures": [],
+      "local_native_rows": [
+        [
+          "403905462.16845226",
+          "403905723.95332265",
+          "261.78487038612366"
+        ]
+      ],
+      "raw_transport": {
+        "passed": false,
+        "windows": 1,
+        "compared_cells": 3,
+        "raw_differences": [
+          "2.6E-7",
+          "3.5E-7",
+          "3.87634E-9"
+        ],
+        "failures": [
+          "ray_fov/row0/col0: actual=403905462.16845226 reference=403905462.168452 raw_difference=2.6E-7 compared=403905462.16845226",
+          "ray_fov/row0/col1: actual=403905723.95332265 reference=403905723.953323 raw_difference=3.5E-7 compared=403905723.95332265",
+          "ray_fov/row0/col2: actual=261.78487038612366 reference=261.78487039 raw_difference=3.87634E-9 compared=261.78487038612366"
+        ],
+        "output_serialization_equality": false
+      },
+      "output_serialization": {
+        "passed": true,
+        "windows": 1,
+        "compared_cells": 3,
+        "raw_differences": [
+          "2.6E-7",
+          "3.5E-7",
+          "3.87634E-9"
+        ],
+        "failures": [],
+        "output_serialization_equality": true
+      },
+      "passed": false
+    }
+  ],
+  "resources": [
+    {
+      "fk": "target\\kernels\\RSSD0002.TF,target\\kernels\\codes_300ast_20100725.tf,target\\kernels\\EARTHFIXEDITRF93.TF,target\\kernels\\moon_080317.tf,target\\kernels\\moon_de440_250416.tf,target\\kernels\\moon_assoc_me.tf,target\\kernels\\jup347_nameid.tf,target\\kernels\\jup348_nameid.tf,target\\kernels\\jup349_nameid.tf,target\\kernels\\nep098_nameid.tf,target\\kernels\\nep104_nameid.tf,target\\kernels\\sat455_nameid.tf,target\\kernels\\sat456_nameid.tf,target\\kernels\\sat457_nameid.tf,target\\kernels\\sat458_nameid.tf,target\\kernels\\sat459_nameid.tf,target\\kernels\\sat480_nameid.tf,target\\kernels\\ura117_nameid.tf",
+      "pck": "target/kernels/pck00011.tpc,target/kernels/mars_iau2000_v1.tpc,target/kernels/gm_de431.tpc,target/kernels/moon_pa_de440_200625.bpc",
+      "spk": "target/kernels/de442.bsp"
+    },
+    {
+      "ck": "target/kernels/cassini/12289_12294ra.bc",
+      "fk": "target\\kernels\\RSSD0002.TF,target\\kernels\\codes_300ast_20100725.tf,target\\kernels\\EARTHFIXEDITRF93.TF,target\\kernels\\moon_080317.tf,target\\kernels\\moon_de440_250416.tf,target\\kernels\\moon_assoc_me.tf,target\\kernels\\jup347_nameid.tf,target\\kernels\\jup348_nameid.tf,target\\kernels\\jup349_nameid.tf,target\\kernels\\nep098_nameid.tf,target\\kernels\\nep104_nameid.tf,target\\kernels\\sat455_nameid.tf,target\\kernels\\sat456_nameid.tf,target\\kernels\\sat457_nameid.tf,target\\kernels\\sat458_nameid.tf,target\\kernels\\sat459_nameid.tf,target\\kernels\\sat480_nameid.tf,target\\kernels\\ura117_nameid.tf,target/kernels/cassini/cas_v44.tf",
+      "ik": "target/kernels/cassini/cas_iss_v10.ti",
+      "instrument": -82360,
+      "lsk": "target/kernels/naif0012.tls",
+      "pck": "target/kernels/cassini/pck00010.tpc,target/kernels/cassini/enceladus_ssd_250728_v2.tpc",
+      "sclk": "-82|target/kernels/cassini/cas00172.tsc",
+      "spk": "target/kernels/cassini/200128RU_SCPSE_12280_12328.bsp,target/kernels/de442.bsp"
+    }
+  ],
+  "kernel_hashes": {
+    "target/kernels/de442.bsp": {
+      "bytes": 119771136,
+      "sha256": "8d5001fab315eeff222cc51f7cf7ffcdb43fb38fb9ac73ff09e09a5b361fd388"
+    },
+    "target/kernels/pck00011.tpc": {
+      "bytes": 131226,
+      "sha256": "3dff7b1dbeceaa01f25467767d3fa25816051c85d162d1edf04acb310ee28bb1"
+    },
+    "target/kernels/mars_iau2000_v1.tpc": {
+      "bytes": 12573,
+      "sha256": "07ba38b939ae92c085882752a523addd749fde0abb7a3468423099ed02bb3949"
+    },
+    "target/kernels/gm_de431.tpc": {
+      "bytes": 6291,
+      "sha256": "15756c162151853f329d473fa00c38d35e62d83c3e25ddceece6516bbd98738b"
+    },
+    "target/kernels/moon_pa_de440_200625.bpc": {
+      "bytes": 12863488,
+      "sha256": "60cd55aa401ea2ea97360636f567554bfe4e37bb829f901b4460a455dfaf783f"
+    },
+    "target\\kernels\\RSSD0002.TF": {
+      "bytes": 56096,
+      "sha256": "8c26c450013584ebb21584e732734bbfd95030b316d26bef6cb26c7e6c72dc07"
+    },
+    "target\\kernels\\codes_300ast_20100725.tf": {
+      "bytes": 25584,
+      "sha256": "15ee3b1731817774672725ccc226b249eb9ca5aa5d0a6a7805c91e5f57497f40"
+    },
+    "target\\kernels\\EARTHFIXEDITRF93.TF": {
+      "bytes": 3134,
+      "sha256": "6c868a46aec9b64d8902bba16c8522cf5e8d65dc5d0931e8c66458a60fbb85bc"
+    },
+    "target\\kernels\\moon_080317.tf": {
+      "bytes": 21437,
+      "sha256": "78732477b96f9863e7b0d65bcee3c22b8707ca5ed0db56d1173319cb2e8c7993"
+    },
+    "target\\kernels\\moon_de440_250416.tf": {
+      "bytes": 19478,
+      "sha256": "a47c71e9c9f33796bdafb2c9d69a7ee447b6016ecad80f71cd6f3e479f9cf768"
+    },
+    "target\\kernels\\moon_assoc_me.tf": {
+      "bytes": 8468,
+      "sha256": "52c622043ce0447d575e59ee01642f1894921e68c10f934ceff065f362da6c1c"
+    },
+    "target\\kernels\\jup347_nameid.tf": {
+      "bytes": 3771,
+      "sha256": "1303dfccf7d758965c698fbcf0c110b41f73da67639fe63f0724de414f559228"
+    },
+    "target\\kernels\\jup348_nameid.tf": {
+      "bytes": 539,
+      "sha256": "c80fa162869789639123225024831d21c611380771aba3fffdd368c07b2c5e79"
+    },
+    "target\\kernels\\jup349_nameid.tf": {
+      "bytes": 1287,
+      "sha256": "03ea700f2b05391e9cec4f41117ed6ca8b4b08c8856abb49c09e8aa88648eba7"
+    },
+    "target\\kernels\\nep098_nameid.tf": {
+      "bytes": 330,
+      "sha256": "c61ecda345d23c5b4b6e0252504e5c59e6debc21fb65774c7dc77c6a71b27f57"
+    },
+    "target\\kernels\\nep104_nameid.tf": {
+      "bytes": 401,
+      "sha256": "bcd74bd7c791b8d368953b794e8f76806784c1da5bbb22550700ce5b0f624d59"
+    },
+    "target\\kernels\\sat455_nameid.tf": {
+      "bytes": 9832,
+      "sha256": "dc435939e80a35ff467764343a38d6588bd8f2620b6d07d41943ae2e38dd9003"
+    },
+    "target\\kernels\\sat456_nameid.tf": {
+      "bytes": 1184,
+      "sha256": "57bcb7caa96085938324bca1f5f8996e0ca7e9510b348fc65b897b889b55e6e8"
+    },
+    "target\\kernels\\sat457_nameid.tf": {
+      "bytes": 6302,
+      "sha256": "9e6edc2d9f38b8e137fef020a168db532c878a289b81500711cf3e1d0bf568e2"
+    },
+    "target\\kernels\\sat458_nameid.tf": {
+      "bytes": 1071,
+      "sha256": "69832c484e0c83b69b3cc54cd98a2adadadade95ed718a14ed1fc1b5f286ce3e"
+    },
+    "target\\kernels\\sat459_nameid.tf": {
+      "bytes": 1596,
+      "sha256": "e0fc8ba2a487b0d83bf5685411005f29b1bd6c9760c783377eebf042b6888c6e"
+    },
+    "target\\kernels\\sat480_nameid.tf": {
+      "bytes": 320,
+      "sha256": "c1c20ff442f69ad1663511b9e447e87627484acd1b27fa0ccae82c747af28acd"
+    },
+    "target\\kernels\\ura117_nameid.tf": {
+      "bytes": 323,
+      "sha256": "686d4b7acee62bf167d8c6d178c57159c73923654e582cb6d1f1fb1e220f65f1"
+    },
+    "target/kernels/cassini/200128RU_SCPSE_12280_12328.bsp": {
+      "bytes": 13442048,
+      "sha256": "2a7b1fb8e7deab5446a9590330f0c8af65b3681d0ff6527f1fc291e03c6b4ba8"
+    },
+    "target/kernels/cassini/pck00010.tpc": {
+      "bytes": 127512,
+      "sha256": "9e8c02dfe283ff65c01ef1982a1d42746ea8b9a172e62dc1f453bcafb9ddbfc5"
+    },
+    "target/kernels/cassini/enceladus_ssd_250728_v2.tpc": {
+      "bytes": 8701,
+      "sha256": "21577baf51ef428b77eeda488c03ca6df90fa764da8c6ba7d3ca7a4d879e6c04"
+    },
+    "target/kernels/cassini/cas_v44.tf": {
+      "bytes": 199768,
+      "sha256": "c1e49749bec168e05c82e7c8b77455cd446c0bb8aafd31aeb1975d07ba6de02d"
+    },
+    "target/kernels/cassini/cas_iss_v10.ti": {
+      "bytes": 32619,
+      "sha256": "1a88229e952caf282bc53090e3b37f495e99b1f4bf1a10783d00cf75365ae859"
+    },
+    "target/kernels/cassini/12289_12294ra.bc": {
+      "bytes": 6913024,
+      "sha256": "8bfca82a7ac6e0827ee27c79a6efd59fbc1a18ae773bf23c613c5fadfb207b82"
+    },
+    "target/kernels/naif0012.tls": {
+      "bytes": 5257,
+      "sha256": "678e32bdb5a744117a467cd9601cd6b373f0e9bc9bbde1371d5eee39600a039b"
+    },
+    "target/kernels/cassini/cas00172.tsc": {
+      "bytes": 20272,
+      "sha256": "066c3e7e4af11512a33d64d518c214b4b2637bcfd7f5b7c6077116019d377f0d"
+    }
+  },
+  "passed": false
+}

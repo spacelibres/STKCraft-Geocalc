@@ -1,0 +1,242 @@
+   Compiling stkcraft-time v0.1.15 (C:\Users\stone\Documents\STKCraft-time)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.82s
+     Running unittests src\lib.rs (C:\Users\stone\Documents\STKCraft-time\target\debug\deps\stkcraft_time-725d510c90aae697.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src\bin\sclk_check.rs (C:\Users\stone\Documents\STKCraft-time\target\debug\deps\sclk_check-74595a489ce872a2.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src\bin\tdb_compare.rs (C:\Users\stone\Documents\STKCraft-time\target\debug\deps\tdb_compare-d3f3f435a00f70cd.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src\bin\ut1_check.rs (C:\Users\stone\Documents\STKCraft-time\target\debug\deps\ut1_check-9551f9cb7bbf8618.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src\bin\wgc_compare.rs (C:\Users\stone\Documents\STKCraft-time\target\debug\deps\wgc_compare-bc77ae278bf63c62.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests\dtdb_iau.rs (C:\Users\stone\Documents\STKCraft-time\target\debug\deps\dtdb_iau-389bd8f98e604841.exe)
+
+running 1 test
+test matches_erfa_series_over_1950_to_2050 ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+     Running tests\duration_series.rs (C:\Users\stone\Documents\STKCraft-time\target\debug\deps\duration_series-9faeb7c2d59b0ec1.exe)
+
+running 10 tests
+test checked_duration_accepts_representable_extremes ... ok
+test duration_covers_65536_centuries ... ok
+test time_series_inclusive_has_seven_steps ... ok
+test epoch_arithmetic ... ok
+test invalid_float_durations_are_rejected ... ok
+test negative_duration_display ... ok
+test duration_is_exact ... ok
+test time_series_stops_at_last_representable_epoch ... ok
+test epoch_extremes_do_not_wrap ... ok
+test rounding_is_integer_based ... ok
+
+test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests\formatting.rs (C:\Users\stone\Documents\STKCraft-time\target\debug\deps\formatting-c4a08c3bbce10bd8.exe)
+
+running 11 tests
+test day_carry_follows_the_selected_calendar ... ok
+test invalid_token_is_rejected ... ok
+test c89_tokens ... ok
+test rfc3339_formatting ... ok
+test etcal_preserves_microseconds ... ok
+test rfc2822_formatting ... ok
+test precision_is_clamped_to_nanoseconds ... ok
+test leap_second_seconds_field ... ok
+test rounding_carries_to_minute_and_day ... ok
+test negative_leap_second_shortens_only_the_last_minute ... ok
+test rounding_onto_a_leap_second_uses_the_day_length ... ok
+
+test result: ok. 11 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests\kernel_selection.rs (C:\Users\stone\Documents\STKCraft-time\target\debug\deps\kernel_selection-5e4fca8565a3e8b1.exe)
+
+running 6 tests
+test builtin_kernel_reports_its_coverage ... ok
+test utc_after_the_kernel_holds_the_last_value ... ok
+test utc_before_the_kernel_is_rejected_not_guessed ... ok
+test same_utc_different_kernel_different_tai ... ok
+test from_lsk_builds_the_supplied_kernel ... ok
+test crate_matches_measured_wgc2_kernel_values ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests\kernel_validation.rs (C:\Users\stone\Documents\STKCraft-time\target\debug\deps\kernel_validation-9404ba98f251497d.exe)
+
+running 8 tests
+test lsk_reassignment_replaces_the_earlier_table ... ok
+test lsk_rejects_invalid_calendar_dates ... ok
+test lsk_accumulation_appends_to_the_table ... ok
+test sclk_reads_all_data_blocks ... ok
+test lsk_rejects_non_finite_constants ... ok
+test lsk_reads_all_data_blocks ... ok
+test sclk_rejects_non_finite_coefficients ... ok
+test lsk_rejects_unsupported_assignment_operator ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests\leap_policy.rs (C:\Users\stone\Documents\STKCraft-time\target\debug\deps\leap_policy-d3dc4b255a300731.exe)
+
+running 6 tests
+test frozen_after_constructor_matches_jdn ... ok
+test frozen_policy_disables_future_leap_second ... ok
+test table_driven_uses_future_entry ... ok
+test frozen_policy_round_trip_after_freeze ... ok
+test frozen_after_ignores_future_entry ... ok
+test bundled_table_freezes_after_last_entry ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests\mcp.rs (C:\Users\stone\Documents\STKCraft-time\target\debug\deps\mcp-2b693e52305a22ef.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests\naif_alignment.rs (C:\Users\stone\Documents\STKCraft-time\target\debug\deps\naif_alignment-249c1404a727bbdb.exe)
+
+running 16 tests
+test calendar_switch_is_consistent ... ok
+test gps_epoch_round_trip ... ok
+test et_is_zero_at_j2000_tdb ... ok
+test julian_date_helpers ... ok
+test et_at_2000_utc_noon_matches_spice ... ok
+test delta_at_matches_lsk_entries ... ok
+test iso8601_formatting ... ok
+test utc_before_lsk_is_rejected ... ok
+test day_after_leap_second ... ok
+test negative_leap_second_removes_the_last_second_of_the_day ... ok
+test tt_round_trip ... ok
+test lsk_constants_match_naif0012 ... ok
+test leap_second_round_trip ... ok
+test true_leap_second_is_rejected ... ok
+test tt_and_et_differ_by_the_periodic_term ... ok
+test et_round_trip ... ok
+
+test result: ok. 16 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests\pre_1972.rs (C:\Users\stone\Documents\STKCraft-time\target\debug\deps\pre_1972-31fd84b83b2c3f76.exe)
+
+running 6 tests
+test integer_leap_seconds_take_over_at_1972 ... ok
+test boundary_1972_is_clean ... ok
+test pre_1972_has_no_leap_second ... ok
+test pre_1972_round_trip ... ok
+test sofa_drift_values ... ok
+test iers_only_rejects_pre_1972 ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests\properties.rs (C:\Users\stone\Documents\STKCraft-time\target\debug\deps\properties-06f7fbe58bba5a98.exe)
+
+running 5 tests
+test epoch_checked_from_parts_matches_i128_oracle ... ok
+test duration_checked_operations_match_i128_oracle_at_extremes ... ok
+test epoch_from_parts_is_canonical ... ok
+test duration_from_parts_is_canonical ... ok
+test duration_checked_add_is_exact ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.04s
+
+     Running tests\sclk.rs (C:\Users\stone\Documents\STKCraft-time\target\debug\deps\sclk-ede7ecff1dd9a213.exe)
+
+running 12 tests
+test clock_strings_round_trip ... ok
+test nonzero_offsets_follow_naif_semantics ... ok
+test fields_and_ticks_are_inverse ... ok
+test minimum_clock_id_does_not_panic ... ok
+test rejects_zero_rate_and_unsorted_coefficients ... ok
+test parallel_seconds_follows_the_piecewise_linear_map ... ok
+test partition_aware_strings_are_rejected_but_ticks_still_work ... ok
+test partition_bounds_are_validated_per_partition ... ok
+test non_finite_numeric_inputs_are_rejected ... ok
+test clock_reset_partitions_are_accepted ... ok
+test tdb_clock_maps_ticks_directly_to_et ... ok
+test parses_the_kernel_for_either_id_sign ... ok
+
+test result: ok. 12 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests\spice_golden.rs (C:\Users\stone\Documents\STKCraft-time\target\debug\deps\spice_golden-94c5147ec6945b55.exe)
+
+running 1 test
+test golden_utc_to_et_matches_spice ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests\tcg_tcb.rs (C:\Users\stone\Documents\STKCraft-time\target\debug\deps\tcg_tcb-c81166636f8c2bfc.exe)
+
+running 3 tests
+test tcg_offset_is_zero_at_the_iau_reference_epoch ... ok
+test tcg_and_tcb_round_trip ... ok
+test matches_erfa_golden ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests\tdb.rs (C:\Users\stone\Documents\STKCraft-time\target\debug\deps\tdb-ca4c930e686611de.exe)
+
+running 2 tests
+test esa_tdb_and_naif_et_agree_within_model_error ... ok
+test tdb_round_trip ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests\ut1.rs (C:\Users\stone\Documents\STKCraft-time\target\debug\deps\ut1-c562a5615234a6a1.exe)
+
+running 18 tests
+test final_preferred_falls_back_to_bulletin_a ... ok
+test inverse_rejects_ut1_before_the_table ... ok
+test epoch_outside_the_table_returns_out_of_range ... ok
+test parses_fixed_columns_even_when_month_and_day_merge ... ok
+test linear_interpolation_endpoints_and_midpoint ... ok
+test inverse_works_at_the_first_eop_day ... ok
+test non_finite_query_is_rejected ... ok
+test observed_only_filters_predictions ... ok
+test leap_second_instant_keeps_the_previous_value ... ok
+test out_of_range_lookup_is_an_error ... ok
+test leap_second_step_is_not_smeared ... ok
+test parser_rejects_non_finite_values ... ok
+test inverse_works_on_the_last_interpolated_day ... ok
+test non_finite_samples_are_rejected ... ok
+test sparse_eop_crossing_a_leap_second_is_not_smeared ... ok
+test selects_bulletin_a_b_or_final ... ok
+test table_end_is_exclusive_for_the_final_sample_day ... ok
+test ut1_round_trip_stays_within_one_nanosecond ... ok
+
+test result: ok. 18 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests\version_sync.rs (C:\Users\stone\Documents\STKCraft-time\target\debug\deps\version_sync-373d5ce12de64449.exe)
+
+running 3 tests
+test api_guide_installs_the_exact_release ... ok
+test install_snippets_pin_the_exact_release ... ok
+test documentation_versions_match_the_crate_version ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests examples\api_tour.rs (C:\Users\stone\Documents\STKCraft-time\target\debug\examples\api_tour-5532ef1010369060.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

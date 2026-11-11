@@ -1,0 +1,166 @@
+{
+  "scenario": "Exact Moon/Earth J2000 state at ET0, then distance below400000km during ET[0,2592000] step3600; missing-kernel negative control",
+  "evaluation": "Author-executed protocol forward test; not an independent agent evaluation",
+  "reference": "CSPICE N0067 through spiceypy",
+  "kernel": "target/kernels/de442.bsp",
+  "kernelSha256": "8d5001fab315eeff222cc51f7cf7ffcdb43fb38fb9ac73ff09e09a5b361fd388",
+  "serverVersion": "0.1.6",
+  "protocolVersion": "2025-11-25",
+  "toolCount": 25,
+  "routes": [
+    "state_vector",
+    "gf_distance_search"
+  ],
+  "stateNumericComparisons": 10,
+  "intervalCount": 1,
+  "intervalNumericComparisons": 3,
+  "comparison": "IEEE754binary64bits, no rounding/tolerance",
+  "missingKernelIsError": true,
+  "status": "PASS",
+  "scope": "Only two tools and one missing-kernel path; no claim for every family/option",
+  "state": {
+    "backend": "wgc_geometry",
+    "calculator": "state",
+    "columns": [
+      "target",
+      "observer",
+      "epoch_et",
+      "correction",
+      "x_km",
+      "y_km",
+      "z_km",
+      "vx_km_s",
+      "vy_km_s",
+      "vz_km_s",
+      "light_time_s",
+      "range_km",
+      "speed_km_s",
+      "time_at_target_et"
+    ],
+    "rawCsv": "301,399,0,NONE,-291608.3847334454,-266716.83330418577,-76102.48704883647,0.6435313874619292,-0.6660876843353001,-0.30132570507466505,1.3424241642878785,402448.6398904589,0.9739623352114711,0.0\n",
+    "rows": [
+      [
+        301.0,
+        399.0,
+        0.0,
+        "NONE",
+        -291608.3847334454,
+        -266716.83330418577,
+        -76102.48704883647,
+        0.6435313874619292,
+        -0.6660876843353001,
+        -0.30132570507466505,
+        1.3424241642878785,
+        402448.6398904589,
+        0.9739623352114711,
+        0.0
+      ]
+    ]
+  },
+  "finder": {
+    "backend": "wgc_gf",
+    "calculator": "GF_DISTANCE_SEARCH",
+    "columns": [
+      "start_et",
+      "end_et",
+      "duration"
+    ],
+    "rawCsv": "BEGIN,mcp,1\nROW,mcp,0,651217.8241794102,2370468.738158972,1719250.9139795618\nEND,mcp\n",
+    "rows": [
+      [
+        651217.8241794102,
+        2370468.738158972,
+        1719250.9139795618
+      ]
+    ]
+  },
+  "requests": [
+    {
+      "jsonrpc": "2.0",
+      "id": 1,
+      "method": "initialize",
+      "params": {
+        "protocolVersion": "2025-11-25",
+        "capabilities": {},
+        "clientInfo": {
+          "name": "skill-forward-review",
+          "version": "1"
+        }
+      }
+    },
+    {
+      "jsonrpc": "2.0",
+      "method": "notifications/initialized"
+    },
+    {
+      "jsonrpc": "2.0",
+      "id": 2,
+      "method": "tools/list",
+      "params": {}
+    },
+    {
+      "jsonrpc": "2.0",
+      "id": 3,
+      "method": "tools/call",
+      "params": {
+        "name": "state_vector",
+        "arguments": {
+          "kernels": {
+            "spk": [
+              "target/kernels/de442.bsp"
+            ]
+          },
+          "target": 301,
+          "observer": 399,
+          "epoch_et": 0.0,
+          "correction": "NONE"
+        }
+      }
+    },
+    {
+      "jsonrpc": "2.0",
+      "id": 4,
+      "method": "tools/call",
+      "params": {
+        "name": "gf_distance_search",
+        "arguments": {
+          "kernels": {
+            "spk": [
+              "target/kernels/de442.bsp"
+            ]
+          },
+          "target": 301,
+          "observer": 399,
+          "confinement": [
+            {
+              "start": 0.0,
+              "end": 2592000.0
+            }
+          ],
+          "step_seconds": 3600.0,
+          "relation": "<",
+          "reference": 400000.0,
+          "correction": "NONE"
+        }
+      }
+    },
+    {
+      "jsonrpc": "2.0",
+      "id": 5,
+      "method": "tools/call",
+      "params": {
+        "name": "state_vector",
+        "arguments": {
+          "kernels": {
+            "spk": [
+              "target/not-present-forward-test.bsp"
+            ]
+          },
+          "target": 301,
+          "observer": 399,
+          "epoch_et": 0.0
+        }
+      }
+    }
+  ]
+}

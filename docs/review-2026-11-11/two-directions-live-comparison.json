@@ -1,0 +1,33 @@
+{
+  "rule": "exact decimal equality; NASA transport rounding is retained",
+  "rows": [
+    {
+      "label": "orthogonal",
+      "local_degrees": "90.0",
+      "nasa_transport_degrees": "90.0",
+      "exact": true,
+      "difference_degrees": "0.0"
+    },
+    {
+      "label": "velocity",
+      "local_degrees": "78.59635811568165",
+      "nasa_transport_degrees": "78.59635812",
+      "exact": false,
+      "difference_degrees": "-4.31835E-9"
+    },
+    {
+      "label": "sphere",
+      "local_degrees": "24.838112058896865",
+      "nasa_transport_degrees": "24.83811206",
+      "exact": false,
+      "difference_degrees": "-1.103135E-9"
+    },
+    {
+      "label": "vector_s_anti",
+      "local_degrees": "106.39738128592306",
+      "nasa_transport_degrees": "106.39738129",
+      "exact": false,
+      "difference_degrees": "-4.07694E-9"
+    }
+  ]
+}

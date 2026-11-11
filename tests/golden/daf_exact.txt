@@ -1,0 +1,21 @@
+tests/golden/spk_priority.bsp|0|10001:0:1.0|0.0|30.0|10001|0|1|2|385|396
+tests/golden/spk_priority.bsp|1|10001:0:2.0|0.0|30.0|10001|0|1|2|397|408
+tests/golden/spk_priority.bsp|2|10003:0:100.0|0.0|30.0|10003|0|1|2|409|420
+tests/golden/spk_priority.bsp|3|10004:0:200.0|0.0|30.0|10004|0|1|2|421|432
+tests/golden/spk_priority.bsp|4|10002:10003:10.0|0.0|30.0|10002|10003|1|2|433|444
+tests/golden/spk_priority.bsp|5|10002:10004:20.0|0.0|30.0|10002|10004|1|2|445|456
+tests/golden/spk_priority.bsp|6|10005:0:100.0|0.0|30.0|10005|0|1|2|457|468
+tests/golden/spk_priority.bsp|7|10005:0:200.0|10.0|20.0|10005|0|1|2|469|480
+tests/golden/spk_priority.bsp|8|CHBINT|-16.0|16.0|10006|0|1|2|481|525
+tests/golden/spk_priority.bsp|9|CHBVAL|-16.0|16.0|10007|0|1|3|526|609
+tests/golden/spk_priority.bsp|10|10010:0:1e+16|0.0|30.0|10010|0|1|2|610|621
+tests/golden/spk_priority.bsp|11|10011:10010:3.0|0.0|30.0|10011|10010|1|2|622|633
+tests/golden/spk_priority.bsp|12|10012:10011:-1e+16|0.0|30.0|10012|10011|1|2|634|645
+tests/golden/spk_priority.bsp|13|10013:10010:5.0|0.0|30.0|10013|10010|1|2|646|657
+tests/golden/spk_layer_a.bsp|0|10001:0:1.0|0.0|30.0|10001|0|1|2|385|396
+tests/golden/spk_layer_a.bsp|1|10002:10001:10.0|0.0|30.0|10002|10001|1|2|397|408
+tests/golden/spk_layer_b.bsp|0|10001:0:2.0|0.0|30.0|10001|0|1|2|385|396
+tests/golden/spk_layer_b.bsp|1|10002:0:20.0|10.0|20.0|10002|0|1|2|397|408
+tests/golden/daf_orientation.bpc|0|First binary PCK segment|0.0|10.0|3000|1|2|385|396
+tests/golden/daf_orientation.bpc|1|  Leading blanks are significant|0.0|10.0|3001|1|2|397|408
+tests/golden/daf_attitude.bc|0|First attitude segment|0.0|10.0|-999000|1|3|1|385|403

@@ -1,0 +1,153 @@
+{
+  "cases": [
+    {
+      "passed": true,
+      "windows": 1,
+      "compared_cells": 3,
+      "raw_differences": [
+        "4.102E-7",
+        "2.8E-8",
+        "1.8E-9"
+      ],
+      "failures": [],
+      "output_serialization_equality": true,
+      "id": "distance"
+    },
+    {
+      "passed": true,
+      "windows": 2,
+      "compared_cells": 6,
+      "raw_differences": [
+        "0.000000",
+        "9.084E-8",
+        "8.4E-10",
+        "7.96E-8",
+        "0.000000",
+        "4E-10"
+      ],
+      "failures": [],
+      "output_serialization_equality": true,
+      "id": "range_rate"
+    },
+    {
+      "passed": true,
+      "windows": 1,
+      "compared_cells": 3,
+      "raw_differences": [
+        "2.2071E-7",
+        "2.3291E-7",
+        "3.62E-9"
+      ],
+      "failures": [],
+      "output_serialization_equality": true,
+      "id": "coordinate"
+    },
+    {
+      "passed": true,
+      "windows": 1,
+      "compared_cells": 3,
+      "raw_differences": [
+        "1.613E-7",
+        "4.872E-7",
+        "1.4E-9"
+      ],
+      "failures": [],
+      "output_serialization_equality": true,
+      "id": "phase"
+    },
+    {
+      "passed": true,
+      "windows": 2,
+      "compared_cells": 6,
+      "raw_differences": [
+        "0.000000",
+        "2.346E-7",
+        "4.6E-9",
+        "4.805E-7",
+        "0.000000",
+        "5.4E-10"
+      ],
+      "failures": [],
+      "output_serialization_equality": true,
+      "id": "separation"
+    },
+    {
+      "passed": true,
+      "windows": 1,
+      "compared_cells": 3,
+      "raw_differences": [
+        "4.7E-8",
+        "5.66E-8",
+        "3E-10"
+      ],
+      "failures": [],
+      "output_serialization_equality": true,
+      "id": "subpoint"
+    },
+    {
+      "passed": true,
+      "windows": 1,
+      "compared_cells": 3,
+      "raw_differences": [
+        "4.573E-7",
+        "1.167E-7",
+        "4E-9"
+      ],
+      "failures": [],
+      "output_serialization_equality": true,
+      "id": "illumination"
+    },
+    {
+      "passed": true,
+      "windows": 1,
+      "compared_cells": 3,
+      "raw_differences": [
+        "1.874562E-7",
+        "3.030821E-7",
+        "4.374E-9"
+      ],
+      "failures": [],
+      "output_serialization_equality": true,
+      "id": "intercept"
+    },
+    {
+      "passed": true,
+      "windows": 1,
+      "compared_cells": 3,
+      "raw_differences": [
+        "4E-7",
+        "1E-7",
+        "6.44E-10"
+      ],
+      "failures": [],
+      "output_serialization_equality": true,
+      "id": "occultation"
+    },
+    {
+      "passed": true,
+      "windows": 5,
+      "compared_cells": 15,
+      "raw_differences": [
+        "0.000000",
+        "1.25E-8",
+        "1.39234E-9",
+        "1.5E-8",
+        "0.000000",
+        "4.99581E-9",
+        "0.000000",
+        "4.643E-7",
+        "4.593252E-9",
+        "4.6E-7",
+        "4.716E-7",
+        "1.6477E-9",
+        "1.524E-7",
+        "0.000000",
+        "1.06876E-9"
+      ],
+      "failures": [],
+      "output_serialization_equality": true,
+      "id": "range_postprocessing"
+    }
+  ],
+  "passed": true
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "STKCraft Geocalc"
+  short_description: "Exact SPICE geometry and event-search workflows"
+  default_prompt: "Use $stkcraft-geocalc to calculate geometry with explicit kernels and exact reference checks."

@@ -1,0 +1,57 @@
+[package]
+name = "stkcraft-geocalc"
+version = "0.1.6"
+edition = "2021"
+rust-version = "1.75"
+authors = ["STKCraft"]
+autobins = false
+description = "NAIF/SPICE-aligned geometry calculations for STKCraft"
+license = "MIT"
+repository = "https://github.com/spacelibres/STKCraft-Geocalc"
+homepage = "https://www.stkcraft.com"
+readme = "README.md"
+documentation = "https://docs.rs/stkcraft-geocalc"
+include = ["src/**/*.rs", "Cargo.toml", "Cargo.lock", "README.md", "LICENSE", "ATTRIBUTION.md", "CHANGELOG.md", "docs/API.md", "docs/MCP.md", "docs/NUMERICS.md", "docs/STRICT_REMAINING_GAPS.md", "docs/reference/*.json", ".agents/skills/**"]
+keywords = ["spice", "naif", "ephemeris", "spk", "geometry"]
+categories = ["science"]
+
+[dependencies]
+stkcraft-time = "=0.1.18"
+serde_json = { version = "1", optional = true, features = ["float_roundtrip"] }
+
+[features]
+default = []
+mcp = ["dep:serde_json"]
+reference-tools = []
+
+[lints.rust]
+unexpected_cfgs = { level = "warn" }
+
+[lib]
+path = "src/lib.rs"
+
+[[bin]]
+name = "wgc_geometry"
+path = "src/bin/wgc_geometry.rs"
+
+[[bin]]
+name = "wgc_gf"
+path = "src/bin/wgc_gf.rs"
+
+[[bin]]
+name = "stkcraft-geocalc-mcp"
+path = "src/bin/mcp_server.rs"
+required-features = ["mcp"]
+
+[[bin]]
+name = "probe_time_jdutc"
+path = "src/bin/probe_time_jdutc.rs"
+required-features = ["reference-tools"]
+
+[package.metadata.docs.rs]
+all-features = true
+
+[profile.release]
+lto = "thin"
+codegen-units = 1
+strip = true

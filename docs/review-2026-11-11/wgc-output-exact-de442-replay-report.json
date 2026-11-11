@@ -1,0 +1,183 @@
+{
+  "strict": true,
+  "wgc_output_format_equality": true,
+  "reference": "https://wgc2.jpl.nasa.gov:8443/webgeocalc/api",
+  "representative_sweep": true,
+  "raw_reference_replay": "docs\\review-2026-11-11\\wgc-output-exact-live-requests.jsonl",
+  "precision_claim": "exact equality to transported reference values; does not prove high precision CSPICE parity",
+  "groups": [
+    {
+      "group": "State Vector",
+      "failures": [],
+      "diagnostic_bounds_only": {
+        "position_km": 1e-06,
+        "velocity_km_s": 1e-08,
+        "light_time_s": 1e-07
+      },
+      "checked": 1,
+      "raw_result": [
+        4.598405212163925e-09,
+        4.925334973204798e-09,
+        4.287878496711528e-09,
+        1
+      ],
+      "passed": true
+    },
+    {
+      "group": "State Representations",
+      "failures": [],
+      "diagnostic_bounds_only": {
+        "normalized_column_error": 1.0
+      },
+      "checked": 82,
+      "raw_result": [
+        0.49253349500000004,
+        4.92533495e-09,
+        82
+      ],
+      "passed": true
+    },
+    {
+      "group": "Angular Separation",
+      "failures": [],
+      "diagnostic_bounds_only": {
+        "degrees": 1e-08
+      },
+      "checked": 4,
+      "raw_result": [
+        4.8054e-09,
+        4
+      ],
+      "passed": true
+    },
+    {
+      "group": "Phase Angle",
+      "failures": [],
+      "diagnostic_bounds_only": {
+        "degrees": 1e-08
+      },
+      "checked": 1,
+      "raw_result": [
+        2.64873e-09,
+        1
+      ],
+      "passed": true
+    },
+    {
+      "group": "Angular Size",
+      "failures": [],
+      "diagnostic_bounds_only": {
+        "degrees": 2e-08
+      },
+      "checked": 3,
+      "raw_result": [
+        2.60536053e-09,
+        3
+      ],
+      "passed": true
+    },
+    {
+      "group": "Osculating Elements",
+      "failures": [],
+      "diagnostic_bounds_only": {
+        "angles_deg": 1e-08,
+        "distance_km": 0.0001,
+        "eccentricity": 1e-08,
+        "period_s": 0.001,
+        "gm": 0.0,
+        "speed_km_s": 0.0
+      },
+      "checked": 1,
+      "raw_result": [
+        {
+          "angles": 4.03653e-09,
+          "distance": 3e-09,
+          "eccentricity": 3.53807064e-09,
+          "period": 4.6e-09,
+          "speed": 4.7885289e-09,
+          "gm": 4.1e-09
+        },
+        1
+      ],
+      "passed": true
+    },
+    {
+      "group": "Planetocentric Solar Longitude",
+      "failures": [],
+      "diagnostic_bounds_only": {
+        "degrees": 1e-08
+      },
+      "checked": 1,
+      "raw_result": [
+        4.61585e-09,
+        1
+      ],
+      "passed": true
+    },
+    {
+      "group": "Illumination Angles",
+      "failures": [],
+      "diagnostic_bounds_only": {
+        "degrees": 1e-08
+      },
+      "checked": 1,
+      "raw_result": [
+        4.56483e-09,
+        1
+      ],
+      "passed": true
+    },
+    {
+      "group": "Surface Intercept",
+      "failures": [],
+      "diagnostic_bounds_only": {
+        "km": 0.0001
+      },
+      "checked": 1,
+      "raw_result": [
+        3.22381e-09,
+        1
+      ],
+      "passed": true
+    },
+    {
+      "group": "Tangent Point",
+      "failures": [],
+      "diagnostic_bounds_only": {
+        "angle_deg": 0.0001,
+        "distance_km": 0.005
+      },
+      "checked": 1,
+      "raw_result": [
+        3.567388e-09,
+        1
+      ],
+      "passed": true
+    },
+    {
+      "group": "Frame Transformation",
+      "failures": [
+        "RuntimeError: frames: crate failed for J2000->IAU_MARS EULER_ANGLES/NOT_INCLUDED"
+      ],
+      "diagnostic_bounds_only": {
+        "numeric_cell": 3e-08
+      },
+      "passed": false
+    },
+    {
+      "group": "Locations",
+      "failures": [],
+      "diagnostic_bounds_only": {
+        "numeric_cell": 3e-08
+      },
+      "checked": 4,
+      "raw_result": [
+        4.47e-09,
+        4,
+        []
+      ],
+      "passed": true
+    }
+  ],
+  "passed": false
+}

@@ -1,0 +1,670 @@
+[
+  {
+    "method": "POST",
+    "path": "/calculation/new",
+    "payload": {
+      "calculationType": "GF_COORDINATE_SEARCH",
+      "kernels": [
+        {
+          "type": "KERNEL_SET",
+          "id": 1
+        }
+      ],
+      "timeSystem": "TDB",
+      "timeFormat": "SECONDS_PAST_J2000",
+      "intervals": [
+        {
+          "startTime": "0",
+          "endTime": "86400"
+        }
+      ],
+      "timeStep": 60,
+      "timeStepUnits": "SECONDS",
+      "outputTimeSystem": "TDB",
+      "outputTimeFormat": "SECONDS_PAST_J2000",
+      "outputDurationUnits": "SECONDS",
+      "target": "MOON",
+      "observer": "EARTH",
+      "referenceFrame": "IAU_EARTH",
+      "aberrationCorrection": "NONE",
+      "shouldComplementWindow": false,
+      "intervalAdjustment": "NO_ADJUSTMENT",
+      "intervalFiltering": "NO_FILTERING",
+      "condition": {
+        "coordinateSystem": "LATITUDINAL",
+        "coordinate": "LONGITUDE",
+        "relationalCondition": "RANGE",
+        "referenceValue": 540,
+        "upperLimit": 10
+      }
+    },
+    "response": {
+      "status": "OK",
+      "message": "The request was successful.",
+      "calculationId": "a042ee68-77d0-47a8-807c-e141a6acaa68",
+      "result": {
+        "phase": "COMPLETE",
+        "expiresIn": 600
+      }
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/calculation/a042ee68-77d0-47a8-807c-e141a6acaa68/results",
+    "payload": null,
+    "response": {
+      "status": "OK",
+      "message": "The request was successful.",
+      "calculationId": "a042ee68-77d0-47a8-807c-e141a6acaa68",
+      "columns": [
+        {
+          "name": "Start Time",
+          "type": "DATE",
+          "units": "",
+          "outputID": "DATE"
+        },
+        {
+          "name": "Stop Time",
+          "type": "DATE",
+          "units": "",
+          "outputID": "DATE"
+        },
+        {
+          "name": "Duration (secs)",
+          "type": "NUMBER",
+          "units": "s",
+          "outputID": "DURATION"
+        }
+      ],
+      "rows": [
+        [
+          "0.000000",
+          "30246.098279",
+          30246.09827878
+        ],
+        [
+          "72298.810065",
+          "86400.000000",
+          14101.18993541
+        ]
+      ]
+    }
+  },
+  {
+    "label": "540_10",
+    "payload": {
+      "calculationType": "GF_COORDINATE_SEARCH",
+      "kernels": [
+        {
+          "type": "KERNEL_SET",
+          "id": 1
+        }
+      ],
+      "timeSystem": "TDB",
+      "timeFormat": "SECONDS_PAST_J2000",
+      "intervals": [
+        {
+          "startTime": "0",
+          "endTime": "86400"
+        }
+      ],
+      "timeStep": 60,
+      "timeStepUnits": "SECONDS",
+      "outputTimeSystem": "TDB",
+      "outputTimeFormat": "SECONDS_PAST_J2000",
+      "outputDurationUnits": "SECONDS",
+      "target": "MOON",
+      "observer": "EARTH",
+      "referenceFrame": "IAU_EARTH",
+      "aberrationCorrection": "NONE",
+      "shouldComplementWindow": false,
+      "intervalAdjustment": "NO_ADJUSTMENT",
+      "intervalFiltering": "NO_FILTERING",
+      "condition": {
+        "coordinateSystem": "LATITUDINAL",
+        "coordinate": "LONGITUDE",
+        "relationalCondition": "RANGE",
+        "referenceValue": 540,
+        "upperLimit": 10
+      }
+    },
+    "final": {
+      "status": "OK",
+      "message": "The request was successful.",
+      "calculationId": "a042ee68-77d0-47a8-807c-e141a6acaa68",
+      "columns": [
+        {
+          "name": "Start Time",
+          "type": "DATE",
+          "units": "",
+          "outputID": "DATE"
+        },
+        {
+          "name": "Stop Time",
+          "type": "DATE",
+          "units": "",
+          "outputID": "DATE"
+        },
+        {
+          "name": "Duration (secs)",
+          "type": "NUMBER",
+          "units": "s",
+          "outputID": "DURATION"
+        }
+      ],
+      "rows": [
+        [
+          "0.000000",
+          "30246.098279",
+          30246.09827878
+        ],
+        [
+          "72298.810065",
+          "86400.000000",
+          14101.18993541
+        ]
+      ]
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/calculation/new",
+    "payload": {
+      "calculationType": "GF_COORDINATE_SEARCH",
+      "kernels": [
+        {
+          "type": "KERNEL_SET",
+          "id": 1
+        }
+      ],
+      "timeSystem": "TDB",
+      "timeFormat": "SECONDS_PAST_J2000",
+      "intervals": [
+        {
+          "startTime": "0",
+          "endTime": "86400"
+        }
+      ],
+      "timeStep": 60,
+      "timeStepUnits": "SECONDS",
+      "outputTimeSystem": "TDB",
+      "outputTimeFormat": "SECONDS_PAST_J2000",
+      "outputDurationUnits": "SECONDS",
+      "target": "MOON",
+      "observer": "EARTH",
+      "referenceFrame": "IAU_EARTH",
+      "aberrationCorrection": "NONE",
+      "shouldComplementWindow": false,
+      "intervalAdjustment": "NO_ADJUSTMENT",
+      "intervalFiltering": "NO_FILTERING",
+      "condition": {
+        "coordinateSystem": "LATITUDINAL",
+        "coordinate": "LONGITUDE",
+        "relationalCondition": "RANGE",
+        "referenceValue": -540,
+        "upperLimit": 10
+      }
+    },
+    "response": {
+      "status": "OK",
+      "message": "The request was successful.",
+      "calculationId": "135f69c7-b025-4ed8-a526-4ac52474e52f",
+      "result": {
+        "phase": "COMPLETE",
+        "expiresIn": 600
+      }
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/calculation/135f69c7-b025-4ed8-a526-4ac52474e52f/results",
+    "payload": null,
+    "response": {
+      "status": "OK",
+      "message": "The request was successful.",
+      "calculationId": "135f69c7-b025-4ed8-a526-4ac52474e52f",
+      "columns": [
+        {
+          "name": "Start Time",
+          "type": "DATE",
+          "units": "",
+          "outputID": "DATE"
+        },
+        {
+          "name": "Stop Time",
+          "type": "DATE",
+          "units": "",
+          "outputID": "DATE"
+        },
+        {
+          "name": "Duration (secs)",
+          "type": "NUMBER",
+          "units": "s",
+          "outputID": "DURATION"
+        }
+      ],
+      "rows": [
+        [
+          "0.000000",
+          "30246.098278",
+          30246.09827846
+        ],
+        [
+          "72298.810065",
+          "86400.000000",
+          14101.18993541
+        ]
+      ]
+    }
+  },
+  {
+    "label": "-540_10",
+    "payload": {
+      "calculationType": "GF_COORDINATE_SEARCH",
+      "kernels": [
+        {
+          "type": "KERNEL_SET",
+          "id": 1
+        }
+      ],
+      "timeSystem": "TDB",
+      "timeFormat": "SECONDS_PAST_J2000",
+      "intervals": [
+        {
+          "startTime": "0",
+          "endTime": "86400"
+        }
+      ],
+      "timeStep": 60,
+      "timeStepUnits": "SECONDS",
+      "outputTimeSystem": "TDB",
+      "outputTimeFormat": "SECONDS_PAST_J2000",
+      "outputDurationUnits": "SECONDS",
+      "target": "MOON",
+      "observer": "EARTH",
+      "referenceFrame": "IAU_EARTH",
+      "aberrationCorrection": "NONE",
+      "shouldComplementWindow": false,
+      "intervalAdjustment": "NO_ADJUSTMENT",
+      "intervalFiltering": "NO_FILTERING",
+      "condition": {
+        "coordinateSystem": "LATITUDINAL",
+        "coordinate": "LONGITUDE",
+        "relationalCondition": "RANGE",
+        "referenceValue": -540,
+        "upperLimit": 10
+      }
+    },
+    "final": {
+      "status": "OK",
+      "message": "The request was successful.",
+      "calculationId": "135f69c7-b025-4ed8-a526-4ac52474e52f",
+      "columns": [
+        {
+          "name": "Start Time",
+          "type": "DATE",
+          "units": "",
+          "outputID": "DATE"
+        },
+        {
+          "name": "Stop Time",
+          "type": "DATE",
+          "units": "",
+          "outputID": "DATE"
+        },
+        {
+          "name": "Duration (secs)",
+          "type": "NUMBER",
+          "units": "s",
+          "outputID": "DURATION"
+        }
+      ],
+      "rows": [
+        [
+          "0.000000",
+          "30246.098278",
+          30246.09827846
+        ],
+        [
+          "72298.810065",
+          "86400.000000",
+          14101.18993541
+        ]
+      ]
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/calculation/new",
+    "payload": {
+      "calculationType": "GF_COORDINATE_SEARCH",
+      "kernels": [
+        {
+          "type": "KERNEL_SET",
+          "id": 1
+        }
+      ],
+      "timeSystem": "TDB",
+      "timeFormat": "SECONDS_PAST_J2000",
+      "intervals": [
+        {
+          "startTime": "0",
+          "endTime": "86400"
+        }
+      ],
+      "timeStep": 60,
+      "timeStepUnits": "SECONDS",
+      "outputTimeSystem": "TDB",
+      "outputTimeFormat": "SECONDS_PAST_J2000",
+      "outputDurationUnits": "SECONDS",
+      "target": "MOON",
+      "observer": "EARTH",
+      "referenceFrame": "IAU_EARTH",
+      "aberrationCorrection": "NONE",
+      "shouldComplementWindow": false,
+      "intervalAdjustment": "NO_ADJUSTMENT",
+      "intervalFiltering": "NO_FILTERING",
+      "condition": {
+        "coordinateSystem": "LATITUDINAL",
+        "coordinate": "LONGITUDE",
+        "relationalCondition": "RANGE",
+        "referenceValue": 180,
+        "upperLimit": 10
+      }
+    },
+    "response": {
+      "status": "OK",
+      "message": "The request was successful.",
+      "calculationId": "b006f5c4-375d-4340-b4b7-70987fe883e2",
+      "result": {
+        "phase": "COMPLETE",
+        "expiresIn": 600
+      }
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/calculation/b006f5c4-375d-4340-b4b7-70987fe883e2/results",
+    "payload": null,
+    "response": {
+      "status": "OK",
+      "message": "The request was successful.",
+      "calculationId": "b006f5c4-375d-4340-b4b7-70987fe883e2",
+      "columns": [
+        {
+          "name": "Start Time",
+          "type": "DATE",
+          "units": "",
+          "outputID": "DATE"
+        },
+        {
+          "name": "Stop Time",
+          "type": "DATE",
+          "units": "",
+          "outputID": "DATE"
+        },
+        {
+          "name": "Duration (secs)",
+          "type": "NUMBER",
+          "units": "s",
+          "outputID": "DURATION"
+        }
+      ],
+      "rows": [
+        [
+          "0.000000",
+          "30246.098279",
+          30246.09827878
+        ],
+        [
+          "72298.810065",
+          "86400.000000",
+          14101.18993541
+        ]
+      ]
+    }
+  },
+  {
+    "label": "180_10",
+    "payload": {
+      "calculationType": "GF_COORDINATE_SEARCH",
+      "kernels": [
+        {
+          "type": "KERNEL_SET",
+          "id": 1
+        }
+      ],
+      "timeSystem": "TDB",
+      "timeFormat": "SECONDS_PAST_J2000",
+      "intervals": [
+        {
+          "startTime": "0",
+          "endTime": "86400"
+        }
+      ],
+      "timeStep": 60,
+      "timeStepUnits": "SECONDS",
+      "outputTimeSystem": "TDB",
+      "outputTimeFormat": "SECONDS_PAST_J2000",
+      "outputDurationUnits": "SECONDS",
+      "target": "MOON",
+      "observer": "EARTH",
+      "referenceFrame": "IAU_EARTH",
+      "aberrationCorrection": "NONE",
+      "shouldComplementWindow": false,
+      "intervalAdjustment": "NO_ADJUSTMENT",
+      "intervalFiltering": "NO_FILTERING",
+      "condition": {
+        "coordinateSystem": "LATITUDINAL",
+        "coordinate": "LONGITUDE",
+        "relationalCondition": "RANGE",
+        "referenceValue": 180,
+        "upperLimit": 10
+      }
+    },
+    "final": {
+      "status": "OK",
+      "message": "The request was successful.",
+      "calculationId": "b006f5c4-375d-4340-b4b7-70987fe883e2",
+      "columns": [
+        {
+          "name": "Start Time",
+          "type": "DATE",
+          "units": "",
+          "outputID": "DATE"
+        },
+        {
+          "name": "Stop Time",
+          "type": "DATE",
+          "units": "",
+          "outputID": "DATE"
+        },
+        {
+          "name": "Duration (secs)",
+          "type": "NUMBER",
+          "units": "s",
+          "outputID": "DURATION"
+        }
+      ],
+      "rows": [
+        [
+          "0.000000",
+          "30246.098279",
+          30246.09827878
+        ],
+        [
+          "72298.810065",
+          "86400.000000",
+          14101.18993541
+        ]
+      ]
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/calculation/new",
+    "payload": {
+      "calculationType": "GF_COORDINATE_SEARCH",
+      "kernels": [
+        {
+          "type": "KERNEL_SET",
+          "id": 1
+        }
+      ],
+      "timeSystem": "TDB",
+      "timeFormat": "SECONDS_PAST_J2000",
+      "intervals": [
+        {
+          "startTime": "0",
+          "endTime": "86400"
+        }
+      ],
+      "timeStep": 60,
+      "timeStepUnits": "SECONDS",
+      "outputTimeSystem": "TDB",
+      "outputTimeFormat": "SECONDS_PAST_J2000",
+      "outputDurationUnits": "SECONDS",
+      "target": "MOON",
+      "observer": "EARTH",
+      "referenceFrame": "IAU_EARTH",
+      "aberrationCorrection": "NONE",
+      "shouldComplementWindow": false,
+      "intervalAdjustment": "NO_ADJUSTMENT",
+      "intervalFiltering": "NO_FILTERING",
+      "condition": {
+        "coordinateSystem": "LATITUDINAL",
+        "coordinate": "LONGITUDE",
+        "relationalCondition": "RANGE",
+        "referenceValue": -180,
+        "upperLimit": 10
+      }
+    },
+    "response": {
+      "status": "OK",
+      "message": "The request was successful.",
+      "calculationId": "ac39b9b1-da41-4e9b-bef3-7f912172ccf5",
+      "result": {
+        "phase": "COMPLETE",
+        "expiresIn": 600
+      }
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/calculation/ac39b9b1-da41-4e9b-bef3-7f912172ccf5/results",
+    "payload": null,
+    "response": {
+      "status": "OK",
+      "message": "The request was successful.",
+      "calculationId": "ac39b9b1-da41-4e9b-bef3-7f912172ccf5",
+      "columns": [
+        {
+          "name": "Start Time",
+          "type": "DATE",
+          "units": "",
+          "outputID": "DATE"
+        },
+        {
+          "name": "Stop Time",
+          "type": "DATE",
+          "units": "",
+          "outputID": "DATE"
+        },
+        {
+          "name": "Duration (secs)",
+          "type": "NUMBER",
+          "units": "s",
+          "outputID": "DURATION"
+        }
+      ],
+      "rows": [
+        [
+          "0.000000",
+          "30246.098278",
+          30246.09827846
+        ],
+        [
+          "72298.810065",
+          "86400.000000",
+          14101.18993541
+        ]
+      ]
+    }
+  },
+  {
+    "label": "-180_10",
+    "payload": {
+      "calculationType": "GF_COORDINATE_SEARCH",
+      "kernels": [
+        {
+          "type": "KERNEL_SET",
+          "id": 1
+        }
+      ],
+      "timeSystem": "TDB",
+      "timeFormat": "SECONDS_PAST_J2000",
+      "intervals": [
+        {
+          "startTime": "0",
+          "endTime": "86400"
+        }
+      ],
+      "timeStep": 60,
+      "timeStepUnits": "SECONDS",
+      "outputTimeSystem": "TDB",
+      "outputTimeFormat": "SECONDS_PAST_J2000",
+      "outputDurationUnits": "SECONDS",
+      "target": "MOON",
+      "observer": "EARTH",
+      "referenceFrame": "IAU_EARTH",
+      "aberrationCorrection": "NONE",
+      "shouldComplementWindow": false,
+      "intervalAdjustment": "NO_ADJUSTMENT",
+      "intervalFiltering": "NO_FILTERING",
+      "condition": {
+        "coordinateSystem": "LATITUDINAL",
+        "coordinate": "LONGITUDE",
+        "relationalCondition": "RANGE",
+        "referenceValue": -180,
+        "upperLimit": 10
+      }
+    },
+    "final": {
+      "status": "OK",
+      "message": "The request was successful.",
+      "calculationId": "ac39b9b1-da41-4e9b-bef3-7f912172ccf5",
+      "columns": [
+        {
+          "name": "Start Time",
+          "type": "DATE",
+          "units": "",
+          "outputID": "DATE"
+        },
+        {
+          "name": "Stop Time",
+          "type": "DATE",
+          "units": "",
+          "outputID": "DATE"
+        },
+        {
+          "name": "Duration (secs)",
+          "type": "NUMBER",
+          "units": "s",
+          "outputID": "DURATION"
+        }
+      ],
+      "rows": [
+        [
+          "0.000000",
+          "30246.098278",
+          30246.09827846
+        ],
+        [
+          "72298.810065",
+          "86400.000000",
+          14101.18993541
+        ]
+      ]
+    }
+  }
+]

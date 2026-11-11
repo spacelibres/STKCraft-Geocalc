@@ -1,0 +1,1 @@
+Venus east_positive=true; GF coordinate_value path longitude=315 deg; PCK-aware path longitude=45 deg

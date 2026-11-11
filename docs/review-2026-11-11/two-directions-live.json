@@ -1,0 +1,528 @@
+[
+  {
+    "method": "POST",
+    "path": "/calculation/new",
+    "payload": {
+      "calculationType": "ANGULAR_SEPARATION",
+      "specType": "TWO_DIRECTIONS",
+      "kernels": [
+        {
+          "type": "KERNEL_SET",
+          "id": 1
+        }
+      ],
+      "timeSystem": "TDB",
+      "timeFormat": "SECONDS_PAST_J2000",
+      "times": [
+        "500000000"
+      ],
+      "outputTimeSystem": "TDB",
+      "outputTimeFormat": "SECONDS_PAST_J2000",
+      "direction1": {
+        "directionType": "VECTOR",
+        "directionVectorType": "VECTOR_IN_REFERENCE_FRAME",
+        "directionFrame": "J2000",
+        "directionVectorX": 1,
+        "directionVectorY": 0,
+        "directionVectorZ": 0,
+        "observer": "EARTH",
+        "aberrationCorrection": "NONE",
+        "antiVectorFlag": false
+      },
+      "direction2": {
+        "directionType": "VECTOR",
+        "directionVectorType": "VECTOR_IN_REFERENCE_FRAME",
+        "directionFrame": "J2000",
+        "directionVectorX": 0,
+        "directionVectorY": 1,
+        "directionVectorZ": 0,
+        "observer": "EARTH",
+        "aberrationCorrection": "NONE",
+        "antiVectorFlag": false
+      }
+    },
+    "response": {
+      "status": "OK",
+      "message": "The request was successful.",
+      "calculationId": "15dc459c-f70d-4326-b77b-c74e0b0c9d11",
+      "result": {
+        "phase": "COMPLETE",
+        "expiresIn": 600
+      }
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/calculation/15dc459c-f70d-4326-b77b-c74e0b0c9d11/results",
+    "payload": null,
+    "response": {
+      "status": "OK",
+      "message": "The request was successful.",
+      "calculationId": "15dc459c-f70d-4326-b77b-c74e0b0c9d11",
+      "columns": [
+        {
+          "name": "TDB seconds past J2000",
+          "type": "NUMBER",
+          "units": "",
+          "outputID": "DATE"
+        },
+        {
+          "name": "Angular Separation (deg)",
+          "type": "NUMBER",
+          "units": "deg",
+          "outputID": "ANGULAR_SEPARATION"
+        }
+      ],
+      "rows": [
+        [
+          500000000.0,
+          90.0
+        ]
+      ]
+    }
+  },
+  {
+    "label": "orthogonal",
+    "final": {
+      "status": "OK",
+      "message": "The request was successful.",
+      "calculationId": "15dc459c-f70d-4326-b77b-c74e0b0c9d11",
+      "columns": [
+        {
+          "name": "TDB seconds past J2000",
+          "type": "NUMBER",
+          "units": "",
+          "outputID": "DATE"
+        },
+        {
+          "name": "Angular Separation (deg)",
+          "type": "NUMBER",
+          "units": "deg",
+          "outputID": "ANGULAR_SEPARATION"
+        }
+      ],
+      "rows": [
+        [
+          500000000.0,
+          90.0
+        ]
+      ]
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/calculation/new",
+    "payload": {
+      "calculationType": "ANGULAR_SEPARATION",
+      "specType": "TWO_DIRECTIONS",
+      "kernels": [
+        {
+          "type": "KERNEL_SET",
+          "id": 1
+        }
+      ],
+      "timeSystem": "TDB",
+      "timeFormat": "SECONDS_PAST_J2000",
+      "times": [
+        "500000000"
+      ],
+      "outputTimeSystem": "TDB",
+      "outputTimeFormat": "SECONDS_PAST_J2000",
+      "direction1": {
+        "directionType": "POSITION",
+        "target": "MOON",
+        "shape": "POINT",
+        "observer": "EARTH",
+        "aberrationCorrection": "CN+S",
+        "antiVectorFlag": false
+      },
+      "direction2": {
+        "directionType": "VELOCITY",
+        "target": "EARTH",
+        "observer": "MOON",
+        "referenceFrame": "IAU_MOON",
+        "aberrationCorrection": "XCN+S",
+        "antiVectorFlag": true
+      }
+    },
+    "response": {
+      "status": "OK",
+      "message": "The request was successful.",
+      "calculationId": "969cf4fb-97a6-4878-b66f-1c8f44cba6f9",
+      "result": {
+        "phase": "COMPLETE",
+        "expiresIn": 600
+      }
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/calculation/969cf4fb-97a6-4878-b66f-1c8f44cba6f9/results",
+    "payload": null,
+    "response": {
+      "status": "OK",
+      "message": "The request was successful.",
+      "calculationId": "969cf4fb-97a6-4878-b66f-1c8f44cba6f9",
+      "columns": [
+        {
+          "name": "TDB seconds past J2000",
+          "type": "NUMBER",
+          "units": "",
+          "outputID": "DATE"
+        },
+        {
+          "name": "Angular Separation (deg)",
+          "type": "NUMBER",
+          "units": "deg",
+          "outputID": "ANGULAR_SEPARATION"
+        }
+      ],
+      "rows": [
+        [
+          500000000.0,
+          78.59635812
+        ]
+      ]
+    }
+  },
+  {
+    "label": "velocity",
+    "final": {
+      "status": "OK",
+      "message": "The request was successful.",
+      "calculationId": "969cf4fb-97a6-4878-b66f-1c8f44cba6f9",
+      "columns": [
+        {
+          "name": "TDB seconds past J2000",
+          "type": "NUMBER",
+          "units": "",
+          "outputID": "DATE"
+        },
+        {
+          "name": "Angular Separation (deg)",
+          "type": "NUMBER",
+          "units": "deg",
+          "outputID": "ANGULAR_SEPARATION"
+        }
+      ],
+      "rows": [
+        [
+          500000000.0,
+          78.59635812
+        ]
+      ]
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/calculation/new",
+    "payload": {
+      "calculationType": "ANGULAR_SEPARATION",
+      "specType": "TWO_DIRECTIONS",
+      "kernels": [
+        {
+          "type": "KERNEL_SET",
+          "id": 1
+        }
+      ],
+      "timeSystem": "TDB",
+      "timeFormat": "SECONDS_PAST_J2000",
+      "times": [
+        "500000000"
+      ],
+      "outputTimeSystem": "TDB",
+      "outputTimeFormat": "SECONDS_PAST_J2000",
+      "direction1": {
+        "directionType": "POSITION",
+        "target": "MOON",
+        "shape": "SPHERE",
+        "observer": "EARTH",
+        "aberrationCorrection": "CN+S",
+        "antiVectorFlag": false
+      },
+      "direction2": {
+        "directionType": "VECTOR",
+        "directionVectorType": "VECTOR_IN_REFERENCE_FRAME",
+        "directionFrame": "J2000",
+        "directionVectorX": 1,
+        "directionVectorY": 0,
+        "directionVectorZ": 0,
+        "observer": "EARTH",
+        "aberrationCorrection": "XS",
+        "antiVectorFlag": true
+      }
+    },
+    "response": {
+      "status": "OK",
+      "message": "The request was successful.",
+      "calculationId": "c2dfe369-c71f-4174-a341-8441d254ca59",
+      "result": {
+        "phase": "COMPLETE",
+        "expiresIn": 600
+      }
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/calculation/c2dfe369-c71f-4174-a341-8441d254ca59/results",
+    "payload": null,
+    "response": {
+      "status": "OK",
+      "message": "The request was successful.",
+      "calculationId": "c2dfe369-c71f-4174-a341-8441d254ca59",
+      "columns": [
+        {
+          "name": "TDB seconds past J2000",
+          "type": "NUMBER",
+          "units": "",
+          "outputID": "DATE"
+        },
+        {
+          "name": "Angular Separation (deg)",
+          "type": "NUMBER",
+          "units": "deg",
+          "outputID": "ANGULAR_SEPARATION"
+        }
+      ],
+      "rows": [
+        [
+          500000000.0,
+          24.83811206
+        ]
+      ]
+    }
+  },
+  {
+    "label": "sphere",
+    "final": {
+      "status": "OK",
+      "message": "The request was successful.",
+      "calculationId": "c2dfe369-c71f-4174-a341-8441d254ca59",
+      "columns": [
+        {
+          "name": "TDB seconds past J2000",
+          "type": "NUMBER",
+          "units": "",
+          "outputID": "DATE"
+        },
+        {
+          "name": "Angular Separation (deg)",
+          "type": "NUMBER",
+          "units": "deg",
+          "outputID": "ANGULAR_SEPARATION"
+        }
+      ],
+      "rows": [
+        [
+          500000000.0,
+          24.83811206
+        ]
+      ]
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/calculation/new",
+    "payload": {
+      "calculationType": "ANGULAR_SEPARATION",
+      "specType": "TWO_DIRECTIONS",
+      "kernels": [
+        {
+          "type": "KERNEL_SET",
+          "id": 1
+        }
+      ],
+      "timeSystem": "TDB",
+      "timeFormat": "SECONDS_PAST_J2000",
+      "times": [
+        "500000000"
+      ],
+      "outputTimeSystem": "TDB",
+      "outputTimeFormat": "SECONDS_PAST_J2000",
+      "direction1": {
+        "directionType": "POSITION",
+        "target": "MOON",
+        "shape": "SPHERE",
+        "observer": "EARTH",
+        "aberrationCorrection": "CN+S",
+        "antiVectorFlag": true
+      },
+      "direction2": {
+        "directionType": "VECTOR",
+        "directionVectorType": "VECTOR_IN_REFERENCE_FRAME",
+        "directionFrame": "J2000",
+        "directionVectorX": 1,
+        "directionVectorY": 0,
+        "directionVectorZ": 0,
+        "observer": "EARTH",
+        "aberrationCorrection": "NONE",
+        "antiVectorFlag": false
+      }
+    },
+    "response": {
+      "status": "ERROR",
+      "message": "The request has failed.",
+      "calculationId": "7a847e62-d3c4-4005-a48a-bc8c127d434f",
+      "error": {
+        "shortDescription": "SPHERE target shape cannot be used with anti-vector flag set to true"
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/calculation/new",
+    "payload": {
+      "calculationType": "ANGULAR_SEPARATION",
+      "specType": "TWO_DIRECTIONS",
+      "kernels": [
+        {
+          "type": "KERNEL_SET",
+          "id": 1
+        }
+      ],
+      "timeSystem": "TDB",
+      "timeFormat": "SECONDS_PAST_J2000",
+      "times": [
+        "500000000"
+      ],
+      "outputTimeSystem": "TDB",
+      "outputTimeFormat": "SECONDS_PAST_J2000",
+      "direction1": {
+        "directionType": "VECTOR",
+        "directionVectorType": "INSTRUMENT_FOV_BOUNDARY_VECTORS",
+        "directionInstrument": "CASSINI_ISS_NAC",
+        "aberrationCorrection": "NONE",
+        "antiVectorFlag": false
+      },
+      "direction2": {
+        "directionType": "VECTOR",
+        "directionVectorType": "VECTOR_IN_REFERENCE_FRAME",
+        "directionFrame": "J2000",
+        "directionVectorX": 1,
+        "directionVectorY": 0,
+        "directionVectorZ": 0,
+        "observer": "EARTH",
+        "aberrationCorrection": "NONE",
+        "antiVectorFlag": false
+      }
+    },
+    "response": {
+      "status": "ERROR",
+      "message": "The request has failed.",
+      "calculationId": "2b21de81-a631-478f-a63f-78ea99f87f9e",
+      "error": {
+        "shortDescription": "Instrument FOV vectors are not allowed."
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/calculation/new",
+    "payload": {
+      "calculationType": "ANGULAR_SEPARATION",
+      "specType": "TWO_DIRECTIONS",
+      "kernels": [
+        {
+          "type": "KERNEL_SET",
+          "id": 1
+        }
+      ],
+      "timeSystem": "TDB",
+      "timeFormat": "SECONDS_PAST_J2000",
+      "times": [
+        "500000000"
+      ],
+      "outputTimeSystem": "TDB",
+      "outputTimeFormat": "SECONDS_PAST_J2000",
+      "direction1": {
+        "directionType": "VECTOR",
+        "directionVectorType": "VECTOR_IN_REFERENCE_FRAME",
+        "directionFrame": "J2000",
+        "directionVectorX": 1,
+        "directionVectorY": 0.3,
+        "directionVectorZ": -0.2,
+        "observer": "EARTH",
+        "aberrationCorrection": "S",
+        "antiVectorFlag": true
+      },
+      "direction2": {
+        "directionType": "VECTOR",
+        "directionVectorType": "VECTOR_IN_REFERENCE_FRAME",
+        "directionFrame": "J2000",
+        "directionVectorX": 0,
+        "directionVectorY": 1,
+        "directionVectorZ": 0,
+        "observer": "EARTH",
+        "aberrationCorrection": "NONE",
+        "antiVectorFlag": false
+      }
+    },
+    "response": {
+      "status": "OK",
+      "message": "The request was successful.",
+      "calculationId": "15711ea5-7712-43cd-8df0-77a21c644ee6",
+      "result": {
+        "phase": "COMPLETE",
+        "expiresIn": 600
+      }
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/calculation/15711ea5-7712-43cd-8df0-77a21c644ee6/results",
+    "payload": null,
+    "response": {
+      "status": "OK",
+      "message": "The request was successful.",
+      "calculationId": "15711ea5-7712-43cd-8df0-77a21c644ee6",
+      "columns": [
+        {
+          "name": "TDB seconds past J2000",
+          "type": "NUMBER",
+          "units": "",
+          "outputID": "DATE"
+        },
+        {
+          "name": "Angular Separation (deg)",
+          "type": "NUMBER",
+          "units": "deg",
+          "outputID": "ANGULAR_SEPARATION"
+        }
+      ],
+      "rows": [
+        [
+          500000000.0,
+          106.39738129
+        ]
+      ]
+    }
+  },
+  {
+    "label": "vector_s_anti",
+    "final": {
+      "status": "OK",
+      "message": "The request was successful.",
+      "calculationId": "15711ea5-7712-43cd-8df0-77a21c644ee6",
+      "columns": [
+        {
+          "name": "TDB seconds past J2000",
+          "type": "NUMBER",
+          "units": "",
+          "outputID": "DATE"
+        },
+        {
+          "name": "Angular Separation (deg)",
+          "type": "NUMBER",
+          "units": "deg",
+          "outputID": "ANGULAR_SEPARATION"
+        }
+      ],
+      "rows": [
+        [
+          500000000.0,
+          106.39738129
+        ]
+      ]
+    }
+  }
+]

@@ -1,0 +1,52 @@
+{
+  "State Vector": {
+    "count": 135,
+    "reported_pass": true,
+    "details": "queries: 135\n  position:   2.384e-07 km  (tolerance 1e-06)\n  velocity:   4.999e-09 km/s (tolerance 1e-08)\n  light time: 4.861e-09 s  (tolerance 1e-07)\n  PASS"
+  },
+  "State Representations": {
+    "count": 2184,
+    "reported_pass": true,
+    "details": "queries: 2184\n  worst: 4.992e-09 (relative to its column tolerance 4.992e-01)\n  PASS"
+  },
+  "Angular Separation": {
+    "count": 42,
+    "reported_pass": true,
+    "details": "queries: 42\n  separation: 4.805e-09 deg (tolerance 1e-08)\n  PASS"
+  },
+  "Phase Angle": {
+    "count": 18,
+    "reported_pass": true,
+    "details": "queries: 18\n  phase angle: 4.805e-09 deg (tolerance 1e-08)\n  PASS"
+  },
+  "Angular Size": {
+    "count": 54,
+    "reported_pass": true,
+    "details": "queries: 54\n  angular size: 1.428e-08 deg (tolerance 2e-08)\n  PASS"
+  },
+  "Osculating Elements": {
+    "count": 6,
+    "reported_pass": true,
+    "details": "queries: 6\n  angles:       4.920e-09 deg\n  distance:     1.788e-07 km\n  eccentricity: 3.538e-09\n  period:       1.225e-07 s\n  speed:        4.891e-09 km/s\n  GM: excluded from the comparison; WGC displays the Sun's GM as\n      132712440000.0 (rounded), while this crate uses the official\n      NAIF value 132712440041.94 from gm_de431.tpc\n  PASS"
+  },
+  "Planetocentric Solar Longitude": {
+    "count": 6,
+    "reported_pass": true,
+    "details": "queries: 6\n  longitude: 4.617e-09 deg (tolerance 1e-08)\n  PASS"
+  },
+  "Illumination Angles": {
+    "count": 9,
+    "reported_pass": true,
+    "details": "queries: 9\n  angles: 4.565e-09 deg (tolerance 1e-08)\n  PASS"
+  },
+  "Surface Intercept Point": {
+    "count": 6,
+    "reported_pass": true,
+    "details": "queries: 6\n  point:    3.376e-08 km (tolerance 1e-04)\n  distance: 9.837e-09 km (tolerance 1e-04)\n  PASS"
+  },
+  "Tangent Point": {
+    "count": 9,
+    "reported_pass": true,
+    "details": "queries: 9\n  angle:    6.573e-05 deg (tolerance 1e-4)\n  distance: 1.932e-03 km  (tolerance 5e-3)\n  PASS"
+  }
+}

@@ -1,0 +1,18 @@
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.01s
+     Running tests\subpoint_method_golden.rs (target\debug\deps\subpoint_method_golden-1b0346c231a1ca91.exe)
+
+running 1 test
+vs CSPICE over 42 sub-points:
+  point: 9.402e-3 km
+  altitude: 1.415e1 km
+  near-vs-intercept spread: 14.564 km
+  worst: observer target=399 observer=301 et=500000000 LT+S NearPoint ours=[969.231751765808, -6248.572667017933, 831.8010045606921] cspice=[969.2223499859944, -6248.5741353271105, 831.8009300707851]
+  worst altitude: solar target=399 observer=10 et=-500000000 LT+S NearPoint
+    observer LT+S            point 9.402e-3 km  altitude 5.902e-1 km
+    observer NONE            point 3.018e-8 km  altitude 8.941e-8 km
+    solar LT+S               point 6.466e-5 km  altitude 1.415e1 km
+    solar NONE               point 2.841e-8 km  altitude 8.941e-8 km
+test sub_point_methods_match_cspice ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+

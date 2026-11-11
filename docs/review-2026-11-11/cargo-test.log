@@ -1,0 +1,197 @@
+   Compiling stkcraft-geocalc v0.1.0 (C:\Users\stone\Documents\STKCraft-Geocalc)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 6.90s
+     Running unittests src\lib.rs (target\debug\deps\stkcraft_geocalc-418d4b64e95e0651.exe)
+
+running 25 tests
+test coords::tests::latitudinal_axes ... ok
+test coords::tests::planetodetic_round_trip ... ok
+test orbit::tests::circular_equatorial_orbit ... ok
+test spk::tests::chebyshev_linear ... ok
+test frame::tests::euler_matches_spice_ordering ... ok
+test frame::tests::quaternion_scalar_first ... ok
+test frame::tests::round_trip_is_identity ... ok
+test finder::tests::angle_between_axes ... ok
+test frame::tests::unsupported_spec_is_reported ... ok
+test frame::tests::parses_matrix_angles_and_quaternion ... ok
+test pck::tests::parses_radii_and_gm ... ok
+test frame::tests::eclipj2000_matches_cspice ... ok
+test spk::tests::chebyshev_quadratic ... ok
+test state_rep::tests::numeric_row_matches_wgc_column_count ... ok
+test state_rep::tests::output_ids_match_webgeocalc ... ok
+test state_rep::tests::planetodetic_rates_match_finite_differences ... ok
+test state_rep::tests::rectangular_reports_velocity_components ... ok
+test state_rep::tests::spherical_rates_match_finite_differences ... ok
+test state_rep::tests::time_at_target_follows_aberration ... ok
+test surface::tests::nearest_point_on_axis ... ok
+test surface::tests::rejects_interior_point ... ok
+test tangent::tests::intercepting_line_returns_surface_point ... ok
+test tangent::tests::nearest_point_to_axis_line ... ok
+test pck::tests::moon_orientation_matches_cspice ... ok
+test pck::tests::parses_real_pck ... ok
+
+test result: ok. 25 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running unittests src\bin\wgc_geometry.rs (target\debug\deps\wgc_geometry-71cafa40e4922474.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests\abcorr_golden.rs (target\debug\deps\abcorr_golden-2c25ea18823b96a2.exe)
+
+running 1 test
+test matches_cspice_spkezr_aberrations ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.06s
+
+     Running tests\body_state_golden.rs (target\debug\deps\body_state_golden-c1165c4cdc14cc58.exe)
+
+running 1 test
+test matches_cspice_sxform ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests\finder_golden.rs (target\debug\deps\finder_golden-2113fe744c1565f5.exe)
+
+running 2 tests
+test matches_cspice_trgsep ... ok
+test matches_cspice_gfsep_events ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.70s
+
+     Running tests\fov_ellipsoid_golden.rs (target\debug\deps\fov_ellipsoid_golden-b2398e33d622faa3.exe)
+
+running 1 test
+test ellipsoid_visibility_matches_fovtrg ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 13.43s
+
+     Running tests\fov_golden.rs (target\debug\deps\fov_golden-5c21489dc12f60a9.exe)
+
+running 3 tests
+test matches_cspice_fovray ... ok
+test matches_cspice_fovtrg ... ok
+test matches_cspice_fov_finders ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.07s
+
+     Running tests\frame_derivative_golden.rs (target\debug\deps\frame_derivative_golden-03463530ceabbde4.exe)
+
+running 1 test
+test frame_derivatives_match_cspice ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests\frame_golden.rs (target\debug\deps\frame_golden-64179bad72c65bb2.exe)
+
+running 2 tests
+test matches_cspice_on_real_naif_kernel ... ok
+test matches_cspice_pxform ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests\gf_golden.rs (target\debug\deps\gf_golden-a0effb0a6dda9fee.exe)
+
+running 1 test
+test matches_cspice_geometry_finders ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.18s
+
+     Running tests\location_golden.rs (target\debug\deps\location_golden-d17fbdf30098bc84.exe)
+
+running 5 tests
+test location_coordinates_match_cspice ... ok
+test topocentric_zenith_is_the_surface_normal ... ok
+test point_at_centre_is_the_object ... ok
+test topocentric_frame_matches_azlcpo ... ok
+test point_states_match_cspice ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.03s
+
+     Running tests\occult_golden.rs (target\debug\deps\occult_golden-d778809078e67e8b.exe)
+
+running 3 tests
+test matches_cspice_point_shapes ... ok
+test matches_cspice_occult_states ... ok
+test matches_cspice_gfoclt has been running for over 60 seconds
+test matches_cspice_gfoclt ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 142.40s
+
+     Running tests\orientation_columns.rs (target\debug\deps\orientation_columns-1ef2bc9994e4bc29.exe)
+
+running 4 tests
+test angular_velocity_repeats_on_every_matrix_row ... ok
+test matrix_velocity_is_dropped_for_angle_orientations ... ok
+test euler_rates_require_euler_angles ... ok
+test state_matrix_matches_cspice_in_every_layout ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests\orientation_golden.rs (target\debug\deps\orientation_golden-40edeac551120ab8.exe)
+
+running 1 test
+test orientation_representations_match_cspice ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests\pointing_golden.rs (target\debug\deps\pointing_golden-0887d59e3aabb3e6.exe)
+
+running 1 test
+test matches_cspice_spkezp_direction ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+     Running tests\ray_direction_golden.rs (target\debug\deps\ray_direction_golden-80190d07daf189c6.exe)
+
+running 1 test
+test ray_directions_match_cspice ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.50s
+
+     Running tests\separation_shape_golden.rs (target\debug\deps\separation_shape_golden-a7b4ee94683376a4.exe)
+
+running 2 tests
+test shaped_separation_matches_trgsep ... ok
+test shaped_separation_events_match_gfsep ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.17s
+
+     Running tests\spk_golden.rs (target\debug\deps\spk_golden-757df217a97d47dd.exe)
+
+running 1 test
+test matches_cspice_spkezr ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+     Running tests\state_rep_golden.rs (target\debug\deps\state_rep_golden-09772b5c3a9a1b85.exe)
+
+running 1 test
+test matches_cspice_state_representations ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.04s
+
+     Running tests\subpoint_method_golden.rs (target\debug\deps\subpoint_method_golden-1b0346c231a1ca91.exe)
+
+running 1 test
+test sub_point_methods_match_cspice ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+     Running tests\surface_golden.rs (target\debug\deps\surface_golden-e2c7934a34b93cdd.exe)
+
+running 4 tests
+test matches_wgc_solar_longitude ... ok
+test matches_cspice_illumination ... ok
+test matches_cspice_sub_points ... ok
+test matches_cspice_surface_intercepts ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+     Running tests\tangent_golden.rs (target\debug\deps\tangent_golden-bd2b40b8d8672394.exe)
+
+running 1 test
+test matches_cspice_tangpt ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.03s
+

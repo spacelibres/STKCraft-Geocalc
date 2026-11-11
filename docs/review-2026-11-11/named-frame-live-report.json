@@ -1,0 +1,35 @@
+{
+  "precision_claim": "exact WGC output serialization equality; independent native bit parity tested separately",
+  "target_frame": "MOON_ME",
+  "spk": "target/kernels/de442.bsp",
+  "groups": [
+    {
+      "family": "Illumination",
+      "failures": [],
+      "result": [
+        4.15258e-09,
+        1
+      ],
+      "passed": true
+    },
+    {
+      "family": "Intercept",
+      "failures": [],
+      "result": [
+        4.1381e-09,
+        1
+      ],
+      "passed": true
+    },
+    {
+      "family": "Tangent",
+      "failures": [],
+      "result": [
+        4.8021195e-09,
+        1
+      ],
+      "passed": true
+    }
+  ],
+  "passed": true
+}

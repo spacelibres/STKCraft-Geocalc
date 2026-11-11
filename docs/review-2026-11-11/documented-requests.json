@@ -1,0 +1,751 @@
+{
+  "STATE_VECTOR": {
+    "calculationType": "STATE_VECTOR",
+    "kernels": [
+      {
+        "type": "KERNEL_SET",
+        "id": 1
+      }
+    ],
+    "timeSystem": "UTC",
+    "timeFormat": "CALENDAR",
+    "intervals": [
+      {
+        "startTime": "2000-01-01",
+        "endTime": "2000-01-02"
+      }
+    ],
+    "timeStep": 30,
+    "timeStepUnits": "MINUTES",
+    "targetType": "OBJECT",
+    "target": "SUN",
+    "observerType": "OBJECT",
+    "observer": "EARTH",
+    "referenceFrame": "J2000",
+    "aberrationCorrection": "NONE",
+    "stateRepresentation": "RA_DEC"
+  },
+  "ANGULAR_SEPARATION": {
+    "kernels": [
+      {
+        "type": "KERNEL",
+        "path": "pds/wgc/kernels/lsk/naif0012.tls"
+      },
+      {
+        "type": "KERNEL",
+        "path": "pds/wgc/kernels/spk/de430.bsp"
+      }
+    ],
+    "timeSystem": "UTC",
+    "timeFormat": "CALENDAR",
+    "times": [
+      "2012-10-19T08:24:00.000"
+    ],
+    "timeStep": 1,
+    "timeStepUnits": "SECONDS",
+    "calculationType": "ANGULAR_SEPARATION",
+    "target1": "VENUS",
+    "shape1": "POINT",
+    "target2": "MERCURY",
+    "shape2": "POINT",
+    "observer": "SUN",
+    "aberrationCorrection": "NONE"
+  },
+  "ANGULAR_SIZE": {
+    "kernels": [
+      {
+        "type": "KERNEL_SET",
+        "id": 5
+      }
+    ],
+    "timeSystem": "UTC",
+    "timeFormat": "CALENDAR",
+    "times": [
+      "2012-10-19T08:24:00.000"
+    ],
+    "timeStep": 1,
+    "timeStepUnits": "SECONDS",
+    "calculationType": "ANGULAR_SIZE",
+    "computationMethod": "MAX_RADIUS",
+    "target": "ENCELADUS",
+    "observer": "CASSINI",
+    "aberrationCorrection": "CN+S"
+  },
+  "FRAME_TRANSFORMATION": {
+    "kernels": [
+      {
+        "type": "KERNEL_SET",
+        "id": 5
+      }
+    ],
+    "timeSystem": "UTC",
+    "timeFormat": "CALENDAR",
+    "times": [
+      "2012-10-19T08:24:00.000"
+    ],
+    "timeStep": 1,
+    "timeStepUnits": "SECONDS",
+    "calculationType": "FRAME_TRANSFORMATION",
+    "frame1": "IAU_SATURN",
+    "frame2": "IAU_ENCELADUS",
+    "aberrationCorrection": "NONE",
+    "timeLocation": "FRAME1",
+    "orientationRepresentation": "EULER_ANGLES",
+    "axis1": "X",
+    "axis2": "Y",
+    "axis3": "Z",
+    "angularUnits": "deg",
+    "angularVelocityRepresentation": "VECTOR_IN_FRAME1",
+    "angularVelocityUnits": "deg/s"
+  },
+  "ILLUMINATION_ANGLES": {
+    "kernels": [
+      {
+        "type": "KERNEL_SET",
+        "id": 5
+      }
+    ],
+    "timeSystem": "UTC",
+    "timeFormat": "CALENDAR",
+    "times": [
+      "2012-10-19T08:24:00.000"
+    ],
+    "timeStep": 1,
+    "timeStepUnits": "SECONDS",
+    "calculationType": "ILLUMINATION_ANGLES",
+    "target": "ENCELADUS",
+    "shape1": "ELLIPSOID",
+    "targetFrame": "IAU_ENCELADUS",
+    "observer": "CASSINI",
+    "coordinateRepresentation": "LATITUDINAL",
+    "latitude": 0.0,
+    "longitude": 0.0,
+    "aberrationCorrection": "CN+S"
+  },
+  "PHASE_ANGLE": {
+    "kernels": [
+      {
+        "type": "KERNEL_SET",
+        "id": 5
+      }
+    ],
+    "timeSystem": "UTC",
+    "timeFormat": "CALENDAR",
+    "times": [
+      "2012-10-19T08:24:00.000"
+    ],
+    "timeStep": 1,
+    "timeStepUnits": "SECONDS",
+    "calculationType": "PHASE_ANGLE",
+    "target": "ENCELADUS",
+    "observer": "CASSINI",
+    "illuminator": "SUN",
+    "aberrationCorrection": "CN+S"
+  },
+  "PLANETOCENTRIC_SOLAR_LONGITUDE": {
+    "kernels": [
+      {
+        "type": "KERNEL_SET",
+        "id": 5
+      }
+    ],
+    "timeSystem": "UTC",
+    "timeFormat": "CALENDAR",
+    "times": [
+      "2012-10-19T08:24:00.000"
+    ],
+    "calculationType": "PLANETOCENTRIC_SOLAR_LONGITUDE",
+    "body": "SATURN",
+    "aberrationCorrection": "CN+S"
+  },
+  "POINTING_DIRECTION": {
+    "kernels": [
+      {
+        "type": "KERNEL_SET",
+        "id": 5
+      }
+    ],
+    "timeSystem": "UTC",
+    "timeFormat": "CALENDAR",
+    "times": [
+      "2012-10-19T08:24:00.000"
+    ],
+    "timeStep": 1,
+    "timeStepUnits": "SECONDS",
+    "calculationType": "POINTING_DIRECTION",
+    "direction": {
+      "directionType": "VECTOR",
+      "observer": "CASSINI",
+      "directionVectorType": "INSTRUMENT_FOV_BOUNDARY_VECTORS",
+      "directionInstrument": "CASSINI_ISS_NAC",
+      "aberrationCorrection": "CN",
+      "antiVectorFlag": false
+    },
+    "referenceFrame": "J2000",
+    "coordinateRepresentation": "RA_DEC",
+    "vectorMagnitude": "UNIT"
+  },
+  "SUB_SOLAR_POINT": {
+    "kernels": [
+      {
+        "type": "KERNEL_SET",
+        "id": 5
+      }
+    ],
+    "timeSystem": "UTC",
+    "timeFormat": "CALENDAR",
+    "times": [
+      "2012-10-19T08:24:00.000"
+    ],
+    "timeStep": 1,
+    "timeStepUnits": "SECONDS",
+    "calculationType": "SUB_SOLAR_POINT",
+    "target": "ENCELADUS",
+    "targetFrame": "IAU_ENCELADUS",
+    "observer": "CASSINI",
+    "subPointType": "Near point: ellipsoid",
+    "aberrationCorrection": "CN+S",
+    "stateRepresentation": "RECTANGULAR"
+  },
+  "SUB_OBSERVER_POINT": {
+    "kernels": [
+      {
+        "type": "KERNEL_SET",
+        "id": 5
+      }
+    ],
+    "timeSystem": "UTC",
+    "timeFormat": "CALENDAR",
+    "times": [
+      "2012-10-19T08:24:00.000"
+    ],
+    "timeStep": 1,
+    "timeStepUnits": "SECONDS",
+    "calculationType": "SUB_OBSERVER_POINT",
+    "target": "ENCELADUS",
+    "targetFrame": "IAU_ENCELADUS",
+    "observer": "CASSINI",
+    "subPointType": "Near point: ellipsoid",
+    "aberrationCorrection": "CN+S",
+    "stateRepresentation": "RECTANGULAR"
+  },
+  "SURFACE_INTERCEPT_POINT": {
+    "kernels": [
+      {
+        "type": "KERNEL_SET",
+        "id": 5
+      }
+    ],
+    "timeSystem": "UTC",
+    "timeFormat": "CALENDAR",
+    "times": [
+      "2012-10-14T00:00:00"
+    ],
+    "timeStep": 1,
+    "timeStepUnits": "SECONDS",
+    "calculationType": "SURFACE_INTERCEPT_POINT",
+    "target": "SATURN",
+    "shape1": "ELLIPSOID",
+    "targetFrame": "IAU_SATURN",
+    "observer": "CASSINI",
+    "directionVectorType": "INSTRUMENT_BORESIGHT",
+    "directionInstrument": "CASSINI_ISS_NAC",
+    "aberrationCorrection": "NONE",
+    "stateRepresentation": "LATITUDINAL"
+  },
+  "TANGENT_POINT": {
+    "kernels": [
+      {
+        "type": "KERNEL_SET",
+        "id": 5
+      }
+    ],
+    "timeSystem": "UTC",
+    "timeFormat": "CALENDAR",
+    "times": [
+      "2010-11-30T14:02:00"
+    ],
+    "timeStep": 1,
+    "timeStepUnits": "SECONDS",
+    "calculationType": "TANGENT_POINT",
+    "computationMethod": "ELLIPSOID",
+    "target": "ENCELADUS",
+    "targetFrame": "IAU_ENCELADUS",
+    "observer": "CASSINI",
+    "directionVectorType": "INSTRUMENT_BORESIGHT",
+    "directionInstrument": "CASSINI_UVIS_HSP",
+    "aberrationCorrection": "CN+S",
+    "correctionLocus": "TANGENT_POINT",
+    "coordinateRepresentation": "RECTANGULAR"
+  },
+  "OSCULATING_ELEMENTS": {
+    "kernels": [
+      {
+        "type": "KERNEL_SET",
+        "id": 1
+      },
+      {
+        "type": "KERNEL_SET",
+        "id": 5
+      }
+    ],
+    "timeSystem": "UTC",
+    "timeFormat": "CALENDAR",
+    "times": [
+      "2012-10-19T08:24:00.000"
+    ],
+    "timeStep": 1,
+    "timeStepUnits": "SECONDS",
+    "calculationType": "OSCULATING_ELEMENTS",
+    "orbitingBody": "CASSINI",
+    "centerBody": "SATURN",
+    "referenceFrame": "J2000",
+    "gmType": "CENTER"
+  },
+  "GF_COORDINATE_SEARCH": {
+    "kernels": [
+      {
+        "type": "KERNEL_SET",
+        "id": 5
+      }
+    ],
+    "timeSystem": "UTC",
+    "timeFormat": "CALENDAR",
+    "intervals": [
+      {
+        "startTime": "2012-10-19T07:00:00",
+        "endTime": "2012-10-19T09:00:00"
+      }
+    ],
+    "timeStep": 1,
+    "timeStepUnits": "MINUTES",
+    "calculationType": "GF_COORDINATE_SEARCH",
+    "target": "ENCELADUS",
+    "observer": "CASSINI",
+    "referenceFrame": "CASSINI_ISS_NAC",
+    "aberrationCorrection": "NONE",
+    "outputDurationUnits": "SECONDS",
+    "shouldComplementWindow": false,
+    "intervalAdjustment": "EXPAND_INTERVALS",
+    "intervalAdjustmentAmount": 1.0,
+    "intervalAdjustmentUnits": "SECONDS",
+    "intervalFiltering": "FILTER_INTERVALS",
+    "intervalFilteringThreshold": 1.0,
+    "intervalFilteringThresholdUnits": "MINUTES",
+    "condition": {
+      "coordinateSystem": "SPHERICAL",
+      "coordinate": "COLATITUDE",
+      "relationalCondition": "<",
+      "referenceValue": 0.25,
+      "upperLimit": "",
+      "adjustmentValue": ""
+    }
+  },
+  "GF_ANGULAR_SEPARATION_SEARCH": {
+    "kernels": [
+      {
+        "type": "KERNEL_SET",
+        "id": 5
+      }
+    ],
+    "timeSystem": "UTC",
+    "timeFormat": "CALENDAR",
+    "intervals": [
+      {
+        "startTime": "2012-10-19T07:00:00",
+        "endTime": "2012-10-19T09:00:00"
+      }
+    ],
+    "timeStep": 1,
+    "timeStepUnits": "MINUTES",
+    "calculationType": "GF_ANGULAR_SEPARATION_SEARCH",
+    "target1": "SATURN",
+    "shape1": "POINT",
+    "target2": "ENCELADUS",
+    "shape2": "POINT",
+    "observer": "CASSINI",
+    "aberrationCorrection": "NONE",
+    "outputDurationUnits": "SECONDS",
+    "shouldComplementWindow": false,
+    "intervalAdjustment": "EXPAND_INTERVALS",
+    "intervalAdjustmentAmount": 1.0,
+    "intervalAdjustmentUnits": "SECONDS",
+    "intervalFiltering": "FILTER_INTERVALS",
+    "intervalFilteringThreshold": 1.0,
+    "intervalFilteringThresholdUnits": "MINUTES",
+    "condition": {
+      "relationalCondition": ">",
+      "referenceValue": 7.0,
+      "upperLimit": "",
+      "adjustmentValue": ""
+    }
+  },
+  "GF_DISTANCE_SEARCH": {
+    "kernels": [
+      {
+        "type": "KERNEL_SET",
+        "id": 5
+      }
+    ],
+    "timeSystem": "UTC",
+    "timeFormat": "CALENDAR",
+    "intervals": [
+      {
+        "startTime": "2012-10-19T07:00:00",
+        "endTime": "2012-10-19T09:00:00"
+      }
+    ],
+    "timeStep": 1,
+    "timeStepUnits": "MINUTES",
+    "calculationType": "GF_DISTANCE_SEARCH",
+    "target": "ENCELADUS",
+    "observer": "CASSINI",
+    "aberrationCorrection": "NONE",
+    "outputDurationUnits": "SECONDS",
+    "shouldComplementWindow": false,
+    "intervalAdjustment": "EXPAND_INTERVALS",
+    "intervalAdjustmentAmount": 1.0,
+    "intervalAdjustmentUnits": "SECONDS",
+    "intervalFiltering": "FILTER_INTERVALS",
+    "intervalFilteringThreshold": 1.0,
+    "intervalFilteringThresholdUnits": "MINUTES",
+    "condition": {
+      "relationalCondition": "<",
+      "referenceValue": 960000.0,
+      "upperLimit": "",
+      "adjustmentValue": ""
+    }
+  },
+  "GF_SUB_POINT_SEARCH": {
+    "kernels": [
+      {
+        "type": "KERNEL_SET",
+        "id": 5
+      }
+    ],
+    "timeSystem": "UTC",
+    "timeFormat": "CALENDAR",
+    "intervals": [
+      {
+        "startTime": "2012-10-19T07:00:00",
+        "endTime": "2012-10-19T09:00:00"
+      }
+    ],
+    "timeStep": 1,
+    "timeStepUnits": "MINUTES",
+    "calculationType": "GF_SUB_POINT_SEARCH",
+    "target": "ENCELADUS",
+    "targetFrame": "IAU_ENCELADUS",
+    "observer": "CASSINI",
+    "aberrationCorrection": "NONE",
+    "subPointType": "Near point: ellipsoid",
+    "outputDurationUnits": "SECONDS",
+    "shouldComplementWindow": false,
+    "intervalAdjustment": "EXPAND_INTERVALS",
+    "intervalAdjustmentAmount": 1.0,
+    "intervalAdjustmentUnits": "SECONDS",
+    "intervalFiltering": "FILTER_INTERVALS",
+    "intervalFilteringThreshold": 1.0,
+    "intervalFilteringThresholdUnits": "MINUTES",
+    "condition": {
+      "coordinateSystem": "LATITUDINAL",
+      "coordinate": "LATITUDE",
+      "relationalCondition": "<",
+      "referenceValue": 15.0,
+      "upperLimit": "",
+      "adjustmentValue": ""
+    }
+  },
+  "GF_OCCULTATION_SEARCH": {
+    "kernels": [
+      {
+        "type": "KERNEL_SET",
+        "id": 1
+      },
+      {
+        "type": "KERNEL_SET",
+        "id": 5
+      }
+    ],
+    "timeSystem": "UTC",
+    "timeFormat": "CALENDAR",
+    "intervals": [
+      {
+        "startTime": "2017-08-21 15:00:00",
+        "endTime": "2017-08-21 23:00:00"
+      },
+      {
+        "startTime": "2017-08-22 15:00:00",
+        "endTime": "2017-08-22 23:00:00"
+      }
+    ],
+    "timeStep": 1,
+    "timeStepUnits": "HOURS",
+    "calculationType": "GF_OCCULTATION_SEARCH",
+    "occultationType": "ANY",
+    "target1": "MOON",
+    "shape1": "ELLIPSOID",
+    "frame1": "IAU_MOON",
+    "target2": "EARTH",
+    "shape2": "ELLIPSOID",
+    "frame2": "IAU_EARTH",
+    "observer": "SUN",
+    "aberrationCorrection": "NONE",
+    "outputDurationUnits": "SECONDS",
+    "shouldComplementWindow": false,
+    "intervalAdjustment": "EXPAND_INTERVALS",
+    "intervalAdjustmentAmount": 1.0,
+    "intervalAdjustmentUnits": "SECONDS",
+    "intervalFiltering": "FILTER_INTERVALS",
+    "intervalFilteringThreshold": 1.0,
+    "intervalFilteringThresholdUnits": "MINUTES"
+  },
+  "GF_SURFACE_INTERCEPT_POINT_SEARCH": {
+    "kernels": [
+      {
+        "type": "KERNEL_SET",
+        "id": 5
+      }
+    ],
+    "timeSystem": "UTC",
+    "timeFormat": "CALENDAR",
+    "intervals": [
+      {
+        "startTime": "2012-10-13T18:00:00",
+        "endTime": "2012-10-14T06:00:00"
+      }
+    ],
+    "timeStep": 1,
+    "timeStepUnits": "MINUTES",
+    "calculationType": "GF_SURFACE_INTERCEPT_POINT_SEARCH",
+    "target": "SATURN",
+    "targetFrame": "IAU_SATURN",
+    "observer": "CASSINI",
+    "directionVectorType": "INSTRUMENT_BORESIGHT",
+    "directionInstrument": "CASSINI_ISS_NAC",
+    "directionFrame": "CASSINI_ISS_NAC",
+    "directionFrameAxis": "Z",
+    "aberrationCorrection": "NONE",
+    "outputDurationUnits": "SECONDS",
+    "shouldComplementWindow": false,
+    "intervalAdjustment": "EXPAND_INTERVALS",
+    "intervalAdjustmentAmount": 1.0,
+    "intervalAdjustmentUnits": "SECONDS",
+    "intervalFiltering": "FILTER_INTERVALS",
+    "intervalFilteringThreshold": 1.0,
+    "intervalFilteringThresholdUnits": "MINUTES",
+    "condition": {
+      "coordinateSystem": "PLANETOGRAPHIC",
+      "coordinate": "LONGITUDE",
+      "relationalCondition": "RANGE",
+      "referenceValue": 150.0,
+      "upperLimit": 180.0,
+      "adjustmentValue": ""
+    }
+  },
+  "GF_TARGET_IN_INSTRUMENT_FOV_SEARCH": {
+    "kernels": [
+      {
+        "type": "KERNEL_SET",
+        "id": 5
+      }
+    ],
+    "timeSystem": "UTC",
+    "timeFormat": "CALENDAR",
+    "intervals": [
+      {
+        "startTime": "2012-10-19T07:00:00",
+        "endTime": "2012-10-19T09:00:00"
+      }
+    ],
+    "timeStep": 1,
+    "timeStepUnits": "MINUTES",
+    "calculationType": "GF_TARGET_IN_INSTRUMENT_FOV_SEARCH",
+    "instrument": "CASSINI_ISS_NAC",
+    "target": "ENCELADUS",
+    "shape": "ELLIPSOID",
+    "targetFrame": "IAU_ENCELADUS",
+    "observer": "CASSINI",
+    "aberrationCorrection": "CN+S",
+    "outputDurationUnits": "SECONDS",
+    "shouldComplementWindow": false,
+    "intervalAdjustment": "EXPAND_INTERVALS",
+    "intervalAdjustmentAmount": 1.0,
+    "intervalAdjustmentUnits": "SECONDS",
+    "intervalFiltering": "FILTER_INTERVALS",
+    "intervalFilteringThreshold": 1.0,
+    "intervalFilteringThresholdUnits": "MINUTES"
+  },
+  "GF_RAY_IN_FOV_SEARCH": {
+    "kernels": [
+      {
+        "type": "KERNEL_SET",
+        "id": 5
+      }
+    ],
+    "timeSystem": "UTC",
+    "timeFormat": "CALENDAR",
+    "intervals": [
+      {
+        "startTime": "2012-10-19T07:00:00",
+        "endTime": "2012-10-19T09:00:00"
+      }
+    ],
+    "timeStep": 1,
+    "timeStepUnits": "MINUTES",
+    "calculationType": "GF_RAY_IN_FOV_SEARCH",
+    "instrument": "CASSINI_ISS_NAC",
+    "observer": "CASSINI",
+    "directionVectorType": "VECTOR_IN_REFERENCE_FRAME",
+    "directionInstrument": "",
+    "directionFrame": "J2000",
+    "directionFrameAxis": "",
+    "directionVectorRA": 208.0,
+    "directionVectorDec": -10.0,
+    "aberrationCorrection": "NONE",
+    "outputDurationUnits": "SECONDS",
+    "shouldComplementWindow": false,
+    "intervalAdjustment": "EXPAND_INTERVALS",
+    "intervalAdjustmentAmount": 1.0,
+    "intervalAdjustmentUnits": "SECONDS",
+    "intervalFiltering": "FILTER_INTERVALS",
+    "intervalFilteringThreshold": 1.0,
+    "intervalFilteringThresholdUnits": "MINUTES"
+  },
+  "GF_RANGE_RATE_SEARCH": {
+    "kernels": [
+      {
+        "type": "KERNEL_SET",
+        "id": 5
+      }
+    ],
+    "timeSystem": "UTC",
+    "timeFormat": "CALENDAR",
+    "intervals": [
+      {
+        "startTime": "2012-10-19T07:00:00",
+        "endTime": "2012-10-19T09:00:00"
+      }
+    ],
+    "timeStep": 1,
+    "timeStepUnits": "MINUTES",
+    "calculationType": "GF_RANGE_RATE_SEARCH",
+    "target": "ENCELADUS",
+    "observer": "CASSINI",
+    "aberrationCorrection": "NONE",
+    "outputDurationUnits": "SECONDS",
+    "shouldComplementWindow": false,
+    "intervalAdjustment": "EXPAND_INTERVALS",
+    "intervalAdjustmentAmount": 1.0,
+    "intervalAdjustmentUnits": "SECONDS",
+    "intervalFiltering": "FILTER_INTERVALS",
+    "intervalFilteringThreshold": 1.0,
+    "intervalFilteringThresholdUnits": "MINUTES",
+    "condition": {
+      "relationalCondition": "<",
+      "referenceValue": 2.0,
+      "upperLimit": "",
+      "adjustmentValue": ""
+    }
+  },
+  "GF_PHASE_ANGLE_SEARCH": {
+    "kernels": [
+      {
+        "type": "KERNEL_SET",
+        "id": 5
+      }
+    ],
+    "timeSystem": "UTC",
+    "timeFormat": "CALENDAR",
+    "intervals": [
+      {
+        "startTime": "2012-10-19T07:00:00",
+        "endTime": "2012-10-19T09:00:00"
+      }
+    ],
+    "timeStep": 1,
+    "timeStepUnits": "MINUTES",
+    "calculationType": "GF_PHASE_ANGLE_SEARCH",
+    "target": "ENCELADUS",
+    "observer": "CASSINI",
+    "illuminator": "SUN",
+    "aberrationCorrection": "NONE",
+    "outputDurationUnits": "SECONDS",
+    "shouldComplementWindow": false,
+    "intervalAdjustment": "EXPAND_INTERVALS",
+    "intervalAdjustmentAmount": 1.0,
+    "intervalAdjustmentUnits": "SECONDS",
+    "intervalFiltering": "FILTER_INTERVALS",
+    "intervalFilteringThreshold": 1.0,
+    "intervalFilteringThresholdUnits": "MINUTES",
+    "condition": {
+      "relationalCondition": "<",
+      "referenceValue": 2.0,
+      "upperLimit": "",
+      "adjustmentValue": ""
+    }
+  },
+  "GF_ILLUMINATION_ANGLES_SEARCH": {
+    "kernels": [
+      {
+        "type": "KERNEL_SET",
+        "id": 5
+      }
+    ],
+    "timeSystem": "UTC",
+    "timeFormat": "CALENDAR",
+    "intervals": [
+      {
+        "startTime": "2012-10-19T07:00:00",
+        "endTime": "2012-10-19T09:00:00"
+      }
+    ],
+    "timeStep": 1,
+    "timeStepUnits": "MINUTES",
+    "calculationType": "GF_ILLUMINATION_ANGLES_SEARCH",
+    "observer": "CASSINI",
+    "illuminator": "SUN",
+    "aberrationCorrection": "NONE",
+    "target": "ENCELADUS",
+    "shape1": "ELLIPSOID",
+    "targetFrame": "IAU_ENCELADUS",
+    "offSurfaceFlag": false,
+    "coordinateRepresentation": "LATITUDINAL",
+    "latitude": 0.0,
+    "longitude": 90.0,
+    "outputDurationUnits": "SECONDS",
+    "shouldComplementWindow": false,
+    "intervalAdjustment": "EXPAND_INTERVALS",
+    "intervalAdjustmentAmount": 1.0,
+    "intervalAdjustmentUnits": "SECONDS",
+    "intervalFiltering": "FILTER_INTERVALS",
+    "intervalFilteringThreshold": 1.0,
+    "intervalFilteringThresholdUnits": "SECONDS",
+    "condition": {
+      "angleType": "EMISSION",
+      "relationalCondition": "ABSMAX",
+      "adjustmentValue": 0.001
+    }
+  },
+  "TIME_CONVERSION": {
+    "kernels": [
+      {
+        "type": "KERNEL_SET",
+        "id": 5
+      }
+    ],
+    "timeSystem": "SPACECRAFT_CLOCK",
+    "timeFormat": "SPACECRAFT_CLOCK_STRING",
+    "sclkId": -82,
+    "times": [
+      "1/1729329441.042"
+    ],
+    "timeStep": 1,
+    "timeStepUnits": "SECONDS",
+    "calculationType": "TIME_CONVERSION",
+    "outputTimeSystem": "UTC",
+    "outputTimeFormat": "CALENDAR",
+    "outputSclkId": "",
+    "outputTimeCustomFormat": "YYYY Month DD HR:MN"
+  }
+}
