@@ -10,6 +10,7 @@ import os
 from pathlib import Path
 import re
 import subprocess
+import struct
 import sys
 import tarfile
 import tomllib
@@ -18,8 +19,10 @@ from datetime import datetime, timezone
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(Path(__file__).resolve().parent))
 from bootstrap_reference import pinned_kernel_records,resolve_reference_binary
+from runtime_profile import tested_binary_inventory
 DEST = ROOT / 'target/strict-verification'
 REQUIRED_TESTS = [
+    'native_windows_math_primitives_exact',
     'corrected_states_equal_cspice', 'segment_priority_and_center_chains_match_cspice_exactly',
     'all_getfov_boundaries_equal_cspice', 'fov_boundary_predicates_equal_cspice',
     'fov_gf_windows_exact', 'orientation_native_source_values_exact',
@@ -138,9 +141,10 @@ def time_dependency() -> dict:
 
 def source_manifest() -> dict[str,str]:
     files = [p for directory in ['src','tests','tools','.github','.agents'] for p in sorted((ROOT/directory).rglob('*'))
-             if p.is_file() and p.suffix in ['.rs','.py','.csv','.tpc','.tf','.ti','.bsp','.bpc','.bc','.tsc','.tls','.bds','.dsk','.txt','.json','.md','.yml','.yaml']]
+             if p.is_file() and p.suffix in ['.rs','.py','.c','.csv','.tpc','.tf','.ti','.bsp','.bpc','.bc','.tsc','.tls','.bds','.dsk','.txt','.json','.md','.yml','.yaml']]
     files += [ROOT/'Cargo.toml',ROOT/'Cargo.lock']
-    files += [p for p in sorted((ROOT/'docs').rglob('*')) if p.is_file() and p.suffix in ['.json','.md']]
+    files += [p for p in sorted((ROOT/'docs').rglob('*')) if p.is_file()]
+    files += [p for p in [ROOT/'.cargo/config.toml'] if p.is_file()]
     files += [p for p in [ROOT/name for name in ['README.md','LICENSE','ATTRIBUTION.md','CHANGELOG.md','AGENTS.md','CITATION.cff','.gitattributes','.gitignore','requirements-reference.txt']] if p.is_file()]
     files += [p for p in sorted((ROOT/'.githooks').rglob('*')) if p.is_file()]
     hashes={os.path.relpath(p, ROOT):digest(p) for p in files}
@@ -163,8 +167,20 @@ def audit_rust_output(output: str) -> tuple[dict,list[str]]:
         failures.append('Rust tests failed')
     if record['ignored'] or re.search(r'\bskipping\b', output, re.I):
         failures.append('Skipped/ignored tests cannot establish conformance')
+    # libtest writes the name and status separately. Concurrent native
+    # diagnostics may appear between them; never cross the next test prefix.
+    prefixes=list(re.finditer(r'\btest ([\w:]+) \.\.\.',output))
+    results={}
+    for index,prefix in enumerate(prefixes):
+        end=prefixes[index+1].start() if index+1<len(prefixes) else len(output)
+        tail=output[prefix.end():end].split('test result:',1)[0]
+        statuses=re.findall(r'^[ \t]*(ok|FAILED|ignored)(?:, [^\r\n]*)?[ \t]*\r?$',tail,re.M)
+        name=prefix[1].split('::')[-1]
+        results.setdefault(name,[]).append(statuses==['ok'])
+        if 'FAILED' in statuses:
+            failures.append('Rust test output contains a failed status: '+prefix[1])
     for test in REQUIRED_TESTS:
-        if not re.search(r'test [^\n]*'+re.escape(test)+r' \.\.\. ok',output):
+        if not results.get(test) or not all(results[test]):
             failures.append(f'Required exact test did not pass: {test}')
     return record, failures
 
@@ -211,6 +227,11 @@ def main() -> int:
                 counts, failures = audit_rust_output(result.stdout)
                 record.update(counts)
                 report['failures'].extend(f'{name}: {failure}' for failure in failures)
+    if not report['failures']:
+        try:
+            report['release_binary_sha256'] = tested_binary_inventory(DEST/'cargo/release')
+        except (OSError, ValueError, AssertionError, struct.error) as error:
+            report['failures'].append('Tested Windows Release binary provenance failed: '+str(error))
     report['verified_source_sha256'] = before
     try:report['source_sha256']=source_manifest()
     except (OSError,ValueError,RuntimeError,subprocess.CalledProcessError) as error:

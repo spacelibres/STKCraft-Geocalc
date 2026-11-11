@@ -34,3 +34,9 @@ Runtime diagnostics live in tools/diagnose_runtime_math.py and the isolated
 tools/reference/runtime_math_probe.rs process. They record native/OS math
 provenance; they are not production numerical implementations or acceptance
 substitutes.
+
+tools/runtime_profile.py inspects actual PE/linker provenance and validates
+the tested executable inventory. tools/verify_release_ci.py validates complete
+main CI evidence before packaging those same Windows binaries. The independent
+tools/reference/runtime_math_oracle.c process and tools/capture_runtime_math.py
+generate new native evidence; neither is linked into production.

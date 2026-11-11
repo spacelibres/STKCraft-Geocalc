@@ -14,6 +14,15 @@ The bootstrap downloads official files to target/, verifies pinned hashes and ne
 
 The strict gate runs formatting, verifier regressions, Debug and Release Rust tests. It requires the named exact tests, rejects ignored/skipped cases and checks that sources did not change during execution. Its report is target/strict-verification/report.json.
 
+Run from the checkout root so `.cargo/config.toml` selects static Windows CRT
+math. The independent `runtime_math_exact` regression checks every one of
+14,914 C-generated output cells, including signed zero and subnormal inputs.
+The [runtime profile](NUMERICS.md#windows-runtime-profile) is part of the
+comparison contract. Do not regenerate expectations to match a failing host.
+
+The report records the exact Release executables used by the integration/MCP
+tests. Windows release archives must contain those same SHA256-verified files.
+
 ## Additional package checks
 
 ```sh
@@ -28,7 +37,7 @@ MCP protocol/compute regressions are part of the all-feature suite. See [MCP](MC
 
 ## Live NASA audit
 
-The [family audit](review-2026-11-11/geometry-parity-status.md) records all 24 non-time families. Replay genuine captures with explicit output-serialization comparison:
+The [family audit](https://github.com/spacelibres/STKCraft-Geocalc/blob/v0.1.8/docs/review-2026-11-11/geometry-parity-status.md) records all 24 non-time families. Replay genuine captures with explicit output-serialization comparison:
 
 ```sh
 python tools/wgc2_geometry_compare.py --quick --wgc-output-exact --replay docs/review-2026-11-11/wgc-geometry-final-live-requests.jsonl --report target/geometry-replay.json

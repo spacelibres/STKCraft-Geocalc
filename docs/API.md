@@ -35,7 +35,7 @@ Pck supplies radii and orientation constants. The surface module exposes sub_obs
 
 For type-2 DSK, load a DskSet in file order and select SurfaceModel::DskUnprioritized with explicit numeric surface IDs. Use surface_intercept_geometry_with_model_in, sub_observer_dsk_geometry_in, sub_solar_dsk_geometry_in and illumination_geometry_with_model_in. DskSubPointMethod::Nadir and ::Intercept have distinct native meanings; an ellipsoid NearPoint option is not renamed into DSK Nadir.
 
-DskHit::plate_id preserves the native aggregate IC output; geometric_plate_id identifies the plate that generated the winning intercept. See the [DSK evidence](review-2026-11-11/dsk-exact.md) for the native metadata quirk.
+DskHit::plate_id preserves the native aggregate IC output; geometric_plate_id identifies the plate that generated the winning intercept. See the [DSK evidence](https://github.com/spacelibres/STKCraft-Geocalc/blob/v0.1.8/docs/review-2026-11-11/dsk-exact.md) for the native metadata quirk.
 
 ## Search and other calculations
 

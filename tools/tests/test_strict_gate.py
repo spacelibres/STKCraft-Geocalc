@@ -23,6 +23,29 @@ class StrictGate(unittest.TestCase):
         self.assertTrue(gate.audit_rust_output(self.valid().replace(gate.REQUIRED_TESTS[0],'different_test'))[1])
     def test_failed_result_fails(self):
         self.assertTrue(gate.audit_rust_output(self.valid().replace('0 failed','1 failed'))[1])
+    def test_native_diagnostics_can_interleave_before_success(self):
+        name=gate.REQUIRED_TESTS[0]
+        output=self.valid().replace(f'{name} ... ok',f'{name} ... EDLIMB 0 differences, max0\nok')
+        self.assertEqual(gate.audit_rust_output(output)[1],[])
+    def test_interleaved_failure_cannot_be_accepted(self):
+        name=gate.REQUIRED_TESTS[0]
+        output=self.valid().replace(f'{name} ... ok',f'{name} ... native diagnostics\nFAILED')
+        self.assertTrue(gate.audit_rust_output(output)[1])
+    def test_next_test_success_cannot_complete_a_missing_status(self):
+        name=gate.REQUIRED_TESTS[0]
+        output=self.valid().replace(f'{name} ... ok',f'{name} ... native diagnostics')
+        self.assertTrue(gate.audit_rust_output(output)[1])
+    def test_diagnostic_success_cannot_hide_a_failed_status(self):
+        name=gate.REQUIRED_TESTS[0]
+        output=self.valid().replace(f'{name} ... ok',f'{name} ... native diagnostics\nok\nFAILED')
+        self.assertTrue(gate.audit_rust_output(output)[1])
+    def test_similarly_suffixed_name_cannot_replace_a_required_test(self):
+        name=gate.REQUIRED_TESTS[0]
+        self.assertTrue(gate.audit_rust_output(self.valid().replace(name,'unrelated_'+name))[1])
+    def test_later_success_cannot_hide_an_earlier_required_failure(self):
+        name=gate.REQUIRED_TESTS[0]
+        output=f'test unit::{name} ... FAILED\n'+self.valid()
+        self.assertTrue(gate.audit_rust_output(output)[1])
 
 class ReferenceProvenance(unittest.TestCase):
     def setUp(self):

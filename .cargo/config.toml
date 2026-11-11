@@ -1,0 +1,4 @@
+# The verified Windows numerical profile uses the SDK's static UCRT math.
+# Consumers must apply this setting in their own project configuration too.
+[target.x86_64-pc-windows-msvc]
+rustflags = ["-C", "target-feature=+crt-static"]

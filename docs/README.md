@@ -9,7 +9,7 @@
 | Units, arithmetic and equality | [Numerical contract](NUMERICS.md) |
 | Independent tests and reproduction | [Validation](VALIDATION.md) |
 | Current evidence | [Strict parity status](STRICT_PARITY_STATUS.md) |
-| Remote numerical publication blocker | [Runtime math investigation](reference/RUNTIME_MATH_INVESTIGATION.md) |
+| Native runtime diagnosis and reference profile | [Runtime math investigation](reference/RUNTIME_MATH_INVESTIGATION.md) |
 | Unfinished features and options | [Remaining gaps](STRICT_REMAINING_GAPS.md) |
 | Official reference provenance | [CSPICE manifest](reference/CSPICE_N0067.json) |
 | Publishing and version rules | [Release procedure](RELEASING.md) |

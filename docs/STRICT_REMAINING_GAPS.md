@@ -4,9 +4,9 @@ All 24 non-time WebGeocalc families have independent representative references. 
 
 ## Shared limits
 
-- Publication blocker: Windows Server 2022 reports thirteen unrounded exactness failures in both Debug and Release, despite a passing local Windows run. Native UCRT/FMA sensitivity is under investigation; see [runtime math evidence](reference/RUNTIME_MATH_INVESTIGATION.md). No tolerance or expectation replacement is accepted.
+- Runtime profile: the pinned native DLL itself reproduces the Windows Server 2022 system-UCRT drift. Version 0.1.8 selects static CRT math and retains all original expectations, with a 14,914-cell primitive guard and full main CI required before publication. Other operating-system, CPU and compiler profiles remain uncertified; see [runtime math evidence](reference/RUNTIME_MATH_INVESTIGATION.md). No tolerance or expectation replacement is accepted.
 - Dynamic frames: kernel date literals beginning with @, general kernel-pool append semantics beyond body aliases, quoted numeric-looking character values, exhaustive type/cardinality errors and native cache-capacity limits remain incomplete. See [the frame scope](reference/DYNAMIC_FRAME_SCOPE.md).
-- DSK: direct type-2 unprioritized surface APIs are implemented. DSK integration into point-location endpoints, typed ray/coordinate facades, surface-name lookup and DSK-versus-point GF occultation remains incomplete. See [DSK coverage](review-2026-11-11/dsk-exact.md).
+- DSK: direct type-2 unprioritized surface APIs are implemented. DSK integration into point-location endpoints, typed ray/coordinate facades, surface-name lookup and DSK-versus-point GF occultation remains incomplete. See [DSK coverage](https://github.com/spacelibres/STKCraft-Geocalc/blob/v0.1.8/docs/review-2026-11-11/dsk-exact.md).
 - CLI and MCP coverage is narrower than the Rust API where explicitly documented. Unsupported branches must return errors; no fallback ellipsoid or approximate orbit is accepted.
 - Exact fixtures prove their exercised compiler/platform/kernel combinations. Linux/macOS build success alone does not prove equality to the pinned Windows native reference.
 - Time is maintained independently. The NAIF TimeContext rejects UTC before its first LSK entry; SPK type-10 historical TLE epochs crossing that boundary require an explicit Time-owned contract decision.

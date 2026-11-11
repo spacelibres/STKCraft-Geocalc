@@ -29,6 +29,13 @@ jobs:
         run: 'python -m pip install --only-binary=:all: -r tools/requirements-reference.txt'
       - name: Record native fixture drift and runtime dispatch
         run: python tools/diagnose_runtime_math.py
+      - name: Check all independent C primitive outputs with static CRT
+        shell: python
+        run: |
+          import pathlib, subprocess
+          executable = pathlib.Path('target/runtime-math/native-math-tests.exe').resolve()
+          subprocess.run(['rustc', '--edition=2021', '--test', '-C', 'target-feature=+crt-static', 'tests/runtime_math_exact.rs', '-o', str(executable)], check=True)
+          subprocess.run([str(executable), '--nocapture'], check=True)
       - uses: actions/upload-artifact@v4
         if: always()
         with:

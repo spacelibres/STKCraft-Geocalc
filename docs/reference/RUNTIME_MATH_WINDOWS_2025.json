@@ -1,0 +1,573 @@
+{
+  "diagnostic_only": true,
+  "platform": "Windows-10-10.0.26100-SP0",
+  "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+  "native_path": "C:\\hostedtoolcache\\windows\\Python\\3.11.9\\x64\\Lib\\site-packages\\spiceypy\\utils\\cspice.dll",
+  "native_sha256": "7fd2dcc58d73ed5293847e67109897caba34240b8f9c38ad739c0b2ec6ce7715",
+  "native_imports": [
+    "VCRUNTIME140.dll",
+    "api-ms-win-crt-stdio-l1-1-0.dll",
+    "api-ms-win-crt-heap-l1-1-0.dll",
+    "api-ms-win-crt-string-l1-1-0.dll",
+    "api-ms-win-crt-runtime-l1-1-0.dll",
+    "api-ms-win-crt-math-l1-1-0.dll",
+    "api-ms-win-crt-filesystem-l1-1-0.dll",
+    "api-ms-win-crt-time-l1-1-0.dll",
+    "api-ms-win-crt-environment-l1-1-0.dll",
+    "api-ms-win-crt-convert-l1-1-0.dll",
+    "KERNEL32.dll"
+  ],
+  "ucrt_path": "C:\\Windows\\System32\\ucrtbase.dll",
+  "ucrt_sha256": "9601850e2ede2cd86b441223557cae0fa7f5e33b1dd9d481c58c8cc2d688bdc3",
+  "python_native_default_fma": 1,
+  "functions": [
+    "asin",
+    "acos",
+    "sin",
+    "cos",
+    "atan2",
+    "log",
+    "exp",
+    "sinh",
+    "cosh",
+    "pow"
+  ],
+  "inputs": [
+    0.4348237736593652,
+    0.6666666666666666
+  ],
+  "variants": [
+    {
+      "requested": 1,
+      "enabled": 1,
+      "fixtures": {
+        "vsep": {
+          "rows": 204,
+          "mismatches": 0,
+          "errors": 0,
+          "examples": []
+        },
+        "prop2b": {
+          "rows": 288,
+          "mismatches": 0,
+          "errors": 0,
+          "examples": []
+        }
+      },
+      "math_bits": [
+        4601775263286926223,
+        4607727146082420276,
+        4601260195746210572,
+        4606344247494740433,
+        4603380887635407329,
+        13829048582075418751,
+        4609635488172891882,
+        4601753888594000102,
+        4607614921003868336,
+        4603344918940466873
+      ]
+    },
+    {
+      "requested": 0,
+      "enabled": 0,
+      "fixtures": {
+        "vsep": {
+          "rows": 204,
+          "mismatches": 3,
+          "errors": 0,
+          "examples": [
+            {
+              "row": 42,
+              "input": [
+                -0.42182963355908143,
+                0.5127375300694803,
+                0.19674676019731496,
+                -0.11961930200055315,
+                0.7987182128081276,
+                -0.3823212772822999
+              ],
+              "actual_bits": [
+                4606279231408629590
+              ],
+              "expected_bits": [
+                4606279231408629589
+              ],
+              "native_error": false
+            },
+            {
+              "row": 125,
+              "input": [
+                -0.7644371980046054,
+                -0.562690977786586,
+                -0.15814805434195534,
+                -0.568197676296857,
+                0.3827878857254561,
+                0.12694172749192512
+              ],
+              "actual_bits": [
+                4608396771593716166
+              ],
+              "expected_bits": [
+                4608396771593716167
+              ],
+              "native_error": false
+            },
+            {
+              "row": 181,
+              "input": [
+                -0.2922111843704436,
+                0.8006218744112241,
+                0.016351263161724416,
+                -0.9090259350153631,
+                -0.5973375580701588,
+                -0.18187397515531467
+              ],
+              "actual_bits": [
+                4610795129192910540
+              ],
+              "expected_bits": [
+                4610795129192910539
+              ],
+              "native_error": false
+            }
+          ]
+        },
+        "prop2b": {
+          "rows": 288,
+          "mismatches": 12,
+          "errors": 0,
+          "examples": [
+            {
+              "row": 78,
+              "input": [
+                398600.435436,
+                -47084.96047910076,
+                6683.644441626409,
+                1595.798289662088,
+                -3.140546036364627,
+                -1.0928452002102136,
+                -0.04486272983323611,
+                -86400.0
+              ],
+              "actual_bits": [
+                13905651375607987994,
+                13902913030492606117,
+                13885247658874325786,
+                4603456209754592910,
+                13822205976310342466,
+                13809278228645794036
+              ],
+              "expected_bits": [
+                13905651375607987994,
+                13902913030492606117,
+                13885247658874325786,
+                4603456209754592910,
+                13822205976310342465,
+                13809278228645794035
+              ],
+              "native_error": false
+            },
+            {
+              "row": 87,
+              "input": [
+                398600.435436,
+                -47084.96047910076,
+                6683.644441626409,
+                1595.798289662088,
+                -3.140546036364627,
+                -1.0928452002102136,
+                -0.04486272983323611,
+                -86400.0
+              ],
+              "actual_bits": [
+                13905651375607987994,
+                13902913030492606117,
+                13885247658874325786,
+                4603456209754592910,
+                13822205976310342466,
+                13809278228645794036
+              ],
+              "expected_bits": [
+                13905651375607987994,
+                13902913030492606117,
+                13885247658874325786,
+                4603456209754592910,
+                13822205976310342465,
+                13809278228645794035
+              ],
+              "native_error": false
+            },
+            {
+              "row": 96,
+              "input": [
+                398600.435436,
+                -47084.96047910076,
+                6683.644441626409,
+                1595.798289662088,
+                -3.140546036364627,
+                -1.0928452002102136,
+                -0.04486272983323611,
+                -86400.0
+              ],
+              "actual_bits": [
+                13905651375607987994,
+                13902913030492606117,
+                13885247658874325786,
+                4603456209754592910,
+                13822205976310342466,
+                13809278228645794036
+              ],
+              "expected_bits": [
+                13905651375607987994,
+                13902913030492606117,
+                13885247658874325786,
+                4603456209754592910,
+                13822205976310342465,
+                13809278228645794035
+              ],
+              "native_error": false
+            },
+            {
+              "row": 105,
+              "input": [
+                398600.435436,
+                -47084.96047910076,
+                6683.644441626409,
+                1595.798289662088,
+                -3.140546036364627,
+                -1.0928452002102136,
+                -0.04486272983323611,
+                -86400.0
+              ],
+              "actual_bits": [
+                13905651375607987994,
+                13902913030492606117,
+                13885247658874325786,
+                4603456209754592910,
+                13822205976310342466,
+                13809278228645794036
+              ],
+              "expected_bits": [
+                13905651375607987994,
+                13902913030492606117,
+                13885247658874325786,
+                4603456209754592910,
+                13822205976310342465,
+                13809278228645794035
+              ],
+              "native_error": false
+            },
+            {
+              "row": 221,
+              "input": [
+                398600.435436,
+                5853.927112464385,
+                3856.4059995616117,
+                262.5295673932321,
+                -6.0533691275546655,
+                10.208190949438464,
+                1.12448333535791,
+                86400.0
+              ],
+              "actual_bits": [
+                13915149797616274240,
+                4685463801429184089,
+                4673187696086617732,
+                13840871321860313447,
+                4610885209750508178,
+                4598753563133931480
+              ],
+              "expected_bits": [
+                13915149797616274240,
+                4685463801429184088,
+                4673187696086617732,
+                13840871321860313447,
+                4610885209750508184,
+                4598753563133931482
+              ],
+              "native_error": false
+            },
+            {
+              "row": 230,
+              "input": [
+                398600.435436,
+                5853.927112464385,
+                3856.4059995616117,
+                262.5295673932321,
+                -6.0533691275546655,
+                10.208190949438464,
+                1.12448333535791,
+                86400.0
+              ],
+              "actual_bits": [
+                13915149797616274240,
+                4685463801429184089,
+                4673187696086617732,
+                13840871321860313447,
+                4610885209750508178,
+                4598753563133931480
+              ],
+              "expected_bits": [
+                13915149797616274240,
+                4685463801429184088,
+                4673187696086617732,
+                13840871321860313447,
+                4610885209750508184,
+                4598753563133931482
+              ],
+              "native_error": false
+            },
+            {
+              "row": 239,
+              "input": [
+                398600.435436,
+                5853.927112464385,
+                3856.4059995616117,
+                262.5295673932321,
+                -6.0533691275546655,
+                10.208190949438464,
+                1.12448333535791,
+                86400.0
+              ],
+              "actual_bits": [
+                13915149797616274240,
+                4685463801429184089,
+                4673187696086617732,
+                13840871321860313447,
+                4610885209750508178,
+                4598753563133931480
+              ],
+              "expected_bits": [
+                13915149797616274240,
+                4685463801429184088,
+                4673187696086617732,
+                13840871321860313447,
+                4610885209750508184,
+                4598753563133931482
+              ],
+              "native_error": false
+            },
+            {
+              "row": 248,
+              "input": [
+                398600.435436,
+                5853.927112464385,
+                3856.4059995616117,
+                262.5295673932321,
+                -6.0533691275546655,
+                10.208190949438464,
+                1.12448333535791,
+                86400.0
+              ],
+              "actual_bits": [
+                13915149797616274240,
+                4685463801429184089,
+                4673187696086617732,
+                13840871321860313447,
+                4610885209750508178,
+                4598753563133931480
+              ],
+              "expected_bits": [
+                13915149797616274240,
+                4685463801429184088,
+                4673187696086617732,
+                13840871321860313447,
+                4610885209750508184,
+                4598753563133931482
+              ],
+              "native_error": false
+            }
+          ]
+        }
+      },
+      "math_bits": [
+        4601775263286926223,
+        4607727146082420276,
+        4601260195746210572,
+        4606344247494740433,
+        4603380887635407329,
+        13829048582075418751,
+        4609635488172891882,
+        4601753888594000102,
+        4607614921003868336,
+        4603344918940466873
+      ]
+    },
+    {
+      "requested": 1,
+      "enabled": 1,
+      "fixtures": {
+        "vsep": {
+          "rows": 204,
+          "mismatches": 0,
+          "errors": 0,
+          "examples": []
+        },
+        "prop2b": {
+          "rows": 288,
+          "mismatches": 0,
+          "errors": 0,
+          "examples": []
+        }
+      },
+      "math_bits": [
+        4601775263286926223,
+        4607727146082420276,
+        4601260195746210572,
+        4606344247494740433,
+        4603380887635407329,
+        13829048582075418751,
+        4609635488172891882,
+        4601753888594000102,
+        4607614921003868336,
+        4603344918940466873
+      ]
+    }
+  ],
+  "rust_dynamic": {
+    "events": [
+      {
+        "kind": "rust-runtime",
+        "default_fma": 1,
+        "cpu_fma": true
+      },
+      {
+        "kind": "rust-math",
+        "requested": 1,
+        "enabled": 1,
+        "bits": [
+          4601775263286926223,
+          4607727146082420276,
+          4601260195746210572,
+          4606344247494740433,
+          4603380887635407329,
+          13829048582075418751,
+          4609635488172891882,
+          4601753888594000102,
+          4607614921003868336,
+          4603344918940466873
+        ]
+      },
+      {
+        "kind": "rust-math",
+        "requested": 0,
+        "enabled": 0,
+        "bits": [
+          4601775263286926223,
+          4607727146082420276,
+          4601260195746210572,
+          4606344247494740433,
+          4603380887635407329,
+          13829048582075418751,
+          4609635488172891882,
+          4601753888594000102,
+          4607614921003868336,
+          4603344918940466873
+        ]
+      },
+      {
+        "kind": "rust-math",
+        "requested": 1,
+        "enabled": 1,
+        "bits": [
+          4601775263286926223,
+          4607727146082420276,
+          4601260195746210572,
+          4606344247494740433,
+          4603380887635407329,
+          13829048582075418751,
+          4609635488172891882,
+          4601753888594000102,
+          4607614921003868336,
+          4603344918940466873
+        ]
+      }
+    ],
+    "link_args": "\"C:\\\\Program Files\\\\Microsoft Visual Studio\\\\18\\\\Enterprise\\\\VC\\\\Tools\\\\MSVC\\\\14.51.36231\\\\bin\\\\HostX64\\\\x64\\\\link.exe\" \"/NOLOGO\" \"D:\\\\a\\\\STKCraft-Geocalc\\\\STKCraft-Geocalc\\\\target\\\\runtime-math\\\\rustcVZLLLC\\\\symbols.o\" \"D:\\\\a\\\\STKCraft-Geocalc\\\\STKCraft-Geocalc\\\\target\\\\runtime-math\\\\runtime-math-probe-dynamic.runtime_math_probe.59a66a38897756ea-cgu.0.rcgu.o\" \"D:\\\\a\\\\STKCraft-Geocalc\\\\STKCraft-Geocalc\\\\target\\\\runtime-math\\\\runtime-math-probe-dynamic.bom7x4vnfqva8dly4sqrmqi7a.rcgu.o\" \"ucrt.lib\" \"C:\\\\Users\\\\runneradmin\\\\.rustup\\\\toolchains\\\\stable-x86_64-pc-windows-msvc\\\\lib\\\\rustlib\\\\x86_64-pc-windows-msvc\\\\lib\\\\libstd-3854312d46c17a37.rlib\" \"C:\\\\Users\\\\runneradmin\\\\.rustup\\\\toolchains\\\\stable-x86_64-pc-windows-msvc\\\\lib\\\\rustlib\\\\x86_64-pc-windows-msvc\\\\lib\\\\libpanic_unwind-4531eec6307bead5.rlib\" \"C:\\\\Users\\\\runneradmin\\\\.rustup\\\\toolchains\\\\stable-x86_64-pc-windows-msvc\\\\lib\\\\rustlib\\\\x86_64-pc-windows-msvc\\\\lib\\\\libcfg_if-97d004989aec13fd.rlib\" \"C:\\\\Users\\\\runneradmin\\\\.rustup\\\\toolchains\\\\stable-x86_64-pc-windows-msvc\\\\lib\\\\rustlib\\\\x86_64-pc-windows-msvc\\\\lib\\\\libwindows_link-4ad69d4d6222ffae.rlib\" \"C:\\\\Users\\\\runneradmin\\\\.rustup\\\\toolchains\\\\stable-x86_64-pc-windows-msvc\\\\lib\\\\rustlib\\\\x86_64-pc-windows-msvc\\\\lib\\\\librustc_demangle-16b50824155ae42c.rlib\" \"C:\\\\Users\\\\runneradmin\\\\.rustup\\\\toolchains\\\\stable-x86_64-pc-windows-msvc\\\\lib\\\\rustlib\\\\x86_64-pc-windows-msvc\\\\lib\\\\libstd_detect-b1b36538f7570106.rlib\" \"C:\\\\Users\\\\runneradmin\\\\.rustup\\\\toolchains\\\\stable-x86_64-pc-windows-msvc\\\\lib\\\\rustlib\\\\x86_64-pc-windows-msvc\\\\lib\\\\libhashbrown-92982299f960c902.rlib\" \"C:\\\\Users\\\\runneradmin\\\\.rustup\\\\toolchains\\\\stable-x86_64-pc-windows-msvc\\\\lib\\\\rustlib\\\\x86_64-pc-windows-msvc\\\\lib\\\\librustc_std_workspace_alloc-4642d7f571dd1227.rlib\" \"C:\\\\Users\\\\runneradmin\\\\.rustup\\\\toolchains\\\\stable-x86_64-pc-windows-msvc\\\\lib\\\\rustlib\\\\x86_64-pc-windows-msvc\\\\lib\\\\libunwind-f9eef3aa409d158d.rlib\" \"C:\\\\Users\\\\runneradmin\\\\.rustup\\\\toolchains\\\\stable-x86_64-pc-windows-msvc\\\\lib\\\\rustlib\\\\x86_64-pc-windows-msvc\\\\lib\\\\librustc_std_workspace_core-25529966d788a0e5.rlib\" \"C:\\\\Users\\\\runneradmin\\\\.rustup\\\\toolchains\\\\stable-x86_64-pc-windows-msvc\\\\lib\\\\rustlib\\\\x86_64-pc-windows-msvc\\\\lib\\\\liballoc-f9fd422e5eb593ae.rlib\" \"C:\\\\Users\\\\runneradmin\\\\.rustup\\\\toolchains\\\\stable-x86_64-pc-windows-msvc\\\\lib\\\\rustlib\\\\x86_64-pc-windows-msvc\\\\lib\\\\libcore-f9527ed7f1165c0a.rlib\" \"C:\\\\Users\\\\runneradmin\\\\.rustup\\\\toolchains\\\\stable-x86_64-pc-windows-msvc\\\\lib\\\\rustlib\\\\x86_64-pc-windows-msvc\\\\lib\\\\libcompiler_builtins-9968a040cbc4bba8.rlib\" \"kernel32.lib\" \"kernel32.lib\" \"kernel32.lib\" \"ntdll.lib\" \"userenv.lib\" \"ws2_32.lib\" \"dbghelp.lib\" \"/defaultlib:msvcrt\" \"/NXCOMPAT\" \"/OUT:D:\\\\a\\\\STKCraft-Geocalc\\\\STKCraft-Geocalc\\\\target\\\\runtime-math\\\\runtime-math-probe-dynamic.exe\" \"/OPT:REF,NOICF\" \"/DEBUG\" \"/PDBALTPATH:%_PDB%\" \"/NATVIS:C:\\\\Users\\\\runneradmin\\\\.rustup\\\\toolchains\\\\stable-x86_64-pc-windows-msvc\\\\lib\\\\rustlib\\\\etc\\\\intrinsic.natvis\" \"/NATVIS:C:\\\\Users\\\\runneradmin\\\\.rustup\\\\toolchains\\\\stable-x86_64-pc-windows-msvc\\\\lib\\\\rustlib\\\\etc\\\\liballoc.natvis\" \"/NATVIS:C:\\\\Users\\\\runneradmin\\\\.rustup\\\\toolchains\\\\stable-x86_64-pc-windows-msvc\\\\lib\\\\rustlib\\\\etc\\\\libcore.natvis\" \"/NATVIS:C:\\\\Users\\\\runneradmin\\\\.rustup\\\\toolchains\\\\stable-x86_64-pc-windows-msvc\\\\lib\\\\rustlib\\\\etc\\\\libstd.natvis\"\n",
+    "imports": [
+      "api-ms-win-crt-math-l1-1-0.dll",
+      "api-ms-win-core-synch-l1-2-0.dll",
+      "KERNEL32.dll",
+      "ntdll.dll",
+      "VCRUNTIME140.dll",
+      "api-ms-win-crt-string-l1-1-0.dll",
+      "api-ms-win-crt-runtime-l1-1-0.dll",
+      "api-ms-win-crt-stdio-l1-1-0.dll",
+      "api-ms-win-crt-locale-l1-1-0.dll",
+      "api-ms-win-crt-heap-l1-1-0.dll"
+    ]
+  },
+  "rust_static": {
+    "events": [
+      {
+        "kind": "rust-runtime",
+        "default_fma": 1,
+        "cpu_fma": true
+      },
+      {
+        "kind": "rust-math",
+        "requested": 1,
+        "enabled": 1,
+        "bits": [
+          4601775263286926223,
+          4607727146082420276,
+          4601260195746210572,
+          4606344247494740433,
+          4603380887635407329,
+          13829048582075418751,
+          4609635488172891882,
+          4601753888594000102,
+          4607614921003868336,
+          4603344918940466873
+        ]
+      },
+      {
+        "kind": "rust-math",
+        "requested": 0,
+        "enabled": 0,
+        "bits": [
+          4601775263286926223,
+          4607727146082420276,
+          4601260195746210572,
+          4606344247494740433,
+          4603380887635407329,
+          13829048582075418751,
+          4609635488172891882,
+          4601753888594000102,
+          4607614921003868336,
+          4603344918940466873
+        ]
+      },
+      {
+        "kind": "rust-math",
+        "requested": 1,
+        "enabled": 1,
+        "bits": [
+          4601775263286926223,
+          4607727146082420276,
+          4601260195746210572,
+          4606344247494740433,
+          4603380887635407329,
+          13829048582075418751,
+          4609635488172891882,
+          4601753888594000102,
+          4607614921003868336,
+          4603344918940466873
+        ]
+      }
+    ],
+    "link_args": "\"C:\\\\Program Files\\\\Microsoft Visual Studio\\\\18\\\\Enterprise\\\\VC\\\\Tools\\\\MSVC\\\\14.51.36231\\\\bin\\\\HostX64\\\\x64\\\\link.exe\" \"/NOLOGO\" \"D:\\\\a\\\\STKCraft-Geocalc\\\\STKCraft-Geocalc\\\\target\\\\runtime-math\\\\rustcEJfiii\\\\symbols.o\" \"D:\\\\a\\\\STKCraft-Geocalc\\\\STKCraft-Geocalc\\\\target\\\\runtime-math\\\\runtime-math-probe-static.runtime_math_probe.59a66a38897756ea-cgu.0.rcgu.o\" \"D:\\\\a\\\\STKCraft-Geocalc\\\\STKCraft-Geocalc\\\\target\\\\runtime-math\\\\runtime-math-probe-static.bom7x4vnfqva8dly4sqrmqi7a.rcgu.o\" \"libucrt.lib\" \"C:\\\\Users\\\\runneradmin\\\\.rustup\\\\toolchains\\\\stable-x86_64-pc-windows-msvc\\\\lib\\\\rustlib\\\\x86_64-pc-windows-msvc\\\\lib\\\\libstd-3854312d46c17a37.rlib\" \"C:\\\\Users\\\\runneradmin\\\\.rustup\\\\toolchains\\\\stable-x86_64-pc-windows-msvc\\\\lib\\\\rustlib\\\\x86_64-pc-windows-msvc\\\\lib\\\\libpanic_unwind-4531eec6307bead5.rlib\" \"C:\\\\Users\\\\runneradmin\\\\.rustup\\\\toolchains\\\\stable-x86_64-pc-windows-msvc\\\\lib\\\\rustlib\\\\x86_64-pc-windows-msvc\\\\lib\\\\libcfg_if-97d004989aec13fd.rlib\" \"C:\\\\Users\\\\runneradmin\\\\.rustup\\\\toolchains\\\\stable-x86_64-pc-windows-msvc\\\\lib\\\\rustlib\\\\x86_64-pc-windows-msvc\\\\lib\\\\libwindows_link-4ad69d4d6222ffae.rlib\" \"C:\\\\Users\\\\runneradmin\\\\.rustup\\\\toolchains\\\\stable-x86_64-pc-windows-msvc\\\\lib\\\\rustlib\\\\x86_64-pc-windows-msvc\\\\lib\\\\librustc_demangle-16b50824155ae42c.rlib\" \"C:\\\\Users\\\\runneradmin\\\\.rustup\\\\toolchains\\\\stable-x86_64-pc-windows-msvc\\\\lib\\\\rustlib\\\\x86_64-pc-windows-msvc\\\\lib\\\\libstd_detect-b1b36538f7570106.rlib\" \"C:\\\\Users\\\\runneradmin\\\\.rustup\\\\toolchains\\\\stable-x86_64-pc-windows-msvc\\\\lib\\\\rustlib\\\\x86_64-pc-windows-msvc\\\\lib\\\\libhashbrown-92982299f960c902.rlib\" \"C:\\\\Users\\\\runneradmin\\\\.rustup\\\\toolchains\\\\stable-x86_64-pc-windows-msvc\\\\lib\\\\rustlib\\\\x86_64-pc-windows-msvc\\\\lib\\\\librustc_std_workspace_alloc-4642d7f571dd1227.rlib\" \"C:\\\\Users\\\\runneradmin\\\\.rustup\\\\toolchains\\\\stable-x86_64-pc-windows-msvc\\\\lib\\\\rustlib\\\\x86_64-pc-windows-msvc\\\\lib\\\\libunwind-f9eef3aa409d158d.rlib\" \"C:\\\\Users\\\\runneradmin\\\\.rustup\\\\toolchains\\\\stable-x86_64-pc-windows-msvc\\\\lib\\\\rustlib\\\\x86_64-pc-windows-msvc\\\\lib\\\\librustc_std_workspace_core-25529966d788a0e5.rlib\" \"C:\\\\Users\\\\runneradmin\\\\.rustup\\\\toolchains\\\\stable-x86_64-pc-windows-msvc\\\\lib\\\\rustlib\\\\x86_64-pc-windows-msvc\\\\lib\\\\liballoc-f9fd422e5eb593ae.rlib\" \"C:\\\\Users\\\\runneradmin\\\\.rustup\\\\toolchains\\\\stable-x86_64-pc-windows-msvc\\\\lib\\\\rustlib\\\\x86_64-pc-windows-msvc\\\\lib\\\\libcore-f9527ed7f1165c0a.rlib\" \"C:\\\\Users\\\\runneradmin\\\\.rustup\\\\toolchains\\\\stable-x86_64-pc-windows-msvc\\\\lib\\\\rustlib\\\\x86_64-pc-windows-msvc\\\\lib\\\\libcompiler_builtins-9968a040cbc4bba8.rlib\" \"kernel32.lib\" \"kernel32.lib\" \"kernel32.lib\" \"ntdll.lib\" \"userenv.lib\" \"ws2_32.lib\" \"dbghelp.lib\" \"/defaultlib:libcmt\" \"/NXCOMPAT\" \"/OUT:D:\\\\a\\\\STKCraft-Geocalc\\\\STKCraft-Geocalc\\\\target\\\\runtime-math\\\\runtime-math-probe-static.exe\" \"/OPT:REF,NOICF\" \"/DEBUG\" \"/PDBALTPATH:%_PDB%\" \"/NATVIS:C:\\\\Users\\\\runneradmin\\\\.rustup\\\\toolchains\\\\stable-x86_64-pc-windows-msvc\\\\lib\\\\rustlib\\\\etc\\\\intrinsic.natvis\" \"/NATVIS:C:\\\\Users\\\\runneradmin\\\\.rustup\\\\toolchains\\\\stable-x86_64-pc-windows-msvc\\\\lib\\\\rustlib\\\\etc\\\\liballoc.natvis\" \"/NATVIS:C:\\\\Users\\\\runneradmin\\\\.rustup\\\\toolchains\\\\stable-x86_64-pc-windows-msvc\\\\lib\\\\rustlib\\\\etc\\\\libcore.natvis\" \"/NATVIS:C:\\\\Users\\\\runneradmin\\\\.rustup\\\\toolchains\\\\stable-x86_64-pc-windows-msvc\\\\lib\\\\rustlib\\\\etc\\\\libstd.natvis\"\n",
+    "imports": [
+      "api-ms-win-core-synch-l1-2-0.dll",
+      "KERNEL32.dll",
+      "ntdll.dll"
+    ]
+  },
+  "static_crt_candidates": [
+    {
+      "path": "C:\\Program Files (x86)\\Windows Kits\\10\\Lib\\10.0.26100.0\\ucrt\\x64\\libucrt.lib",
+      "sha256": "c3a20426b5142bfd0848468a3b95c47440759f0391ef2764e5020672811803cb"
+    }
+  ],
+  "rustc": "rustc 1.99.1 (58cf8f9c3 2026-10-13)\nbinary: rustc\ncommit-hash: 58cf8f9c35b355199727627d07ae34a4e2846d67\ncommit-date: 2026-10-13\nhost: x86_64-pc-windows-msvc\nrelease: 1.99.1\nLLVM version: 23.1.1\n"
+}

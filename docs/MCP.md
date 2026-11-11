@@ -5,11 +5,17 @@ The optional `stkcraft-geocalc-mcp` server exposes 24 geometry and Geometry Find
 ## Build and install
 
 ```powershell
-cargo build --release --features mcp --bins
-cargo install --path . --features mcp --bins
+cargo build --locked --release --features mcp --bins
+cargo install --locked --path . --features mcp --bins
 ```
 
 Keep all three executables in the same directory. The server launches only the fixed sibling backend filenames, without a shell or PATH lookup. Requests cannot select arbitrary programs, command-line arguments or environment variables. Kernels are user-provided local files; they are not bundled.
+
+These commands run from the Git checkout and inherit its static Windows CRT
+configuration. Registry installation and downstream builds must explicitly
+apply the [reference profile](NUMERICS.md#windows-runtime-profile). Published
+Windows archives contain the exact three executables exercised by the passing
+main CI Release tests.
 
 Example client configuration:
 

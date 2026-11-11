@@ -10,7 +10,7 @@ GitHub releases are based on Git tags; GitHub does not impose a universal versio
 4. Add a dated CHANGELOG.md entry with applicable standard categories. Never overwrite a published version.
 5. Run the full [validation](VALIDATION.md), including MCP, MSRV, documentation and cargo publish --locked --dry-run.
 6. Commit as Release X.Y.Z and push to main. Require the CI run to pass.
-7. Create an annotated tag vX.Y.Z pointing to that exact commit and push it.
+7. Create an annotated tag vX.Y.Z pointing to that exact commit and push it. The release workflow revalidates the exact successful main CI source/log/binary evidence.
 8. Confirm the GitHub Release, per-platform archives and SHA256SUMS.txt.
 9. Confirm the same version on crates.io and the docs.rs build. Keep publication failures visible.
 
@@ -19,6 +19,11 @@ GitHub releases are based on Git tags; GitHub does not impose a universal versio
 Git contains independent fixtures, generators, provenance and raw NASA evidence. The crates.io archive contains production source, public guides, licenses, source provenance and Agent Skills; large fixtures, downloaded kernels and the CSPICE archive are excluded. Reproduce the reference tests from a Git checkout.
 
 Release archives contain the geometry/GF executables and optional MCP executable, README, LICENSE, ATTRIBUTION, CHANGELOG and Agent Skills. Platform build artifacts are not additional numerical certification.
+
+Windows archives use the exact binaries exercised by main CI Release tests,
+not a later rebuild. All public guides and reference scope documents are also
+included in the crate. Large original captures remain in Git and use immutable
+versioned links from those guides.
 
 ## Credentials
 

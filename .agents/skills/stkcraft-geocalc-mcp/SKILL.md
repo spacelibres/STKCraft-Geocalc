@@ -48,6 +48,11 @@ For exact comparisons:
 
 ## Test or extend the server
 
+Use the static Windows CRT numerical profile documented in docs/NUMERICS.md.
+Keep the distributed server and both backends together; the Windows release
+contains the exact executables exercised by main CI. Other runtime profiles
+require their own independent verification.
+
 Run tools/list against the built executable and inspect the actual schema before modifying dispatch. Keep family tools and calculate_csv on the same validated backend path so errors and numerical behavior agree. Add a protocol regression for any changed request/result mapping, and an independent native numerical case when changing scientific behavior.
 
 Useful checks:

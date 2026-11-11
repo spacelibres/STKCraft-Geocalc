@@ -34,13 +34,50 @@ jobs:
           assert pathlib.Path('.agents/skills').is_dir(), 'Agent Skills are required in the release'
 
   verified-ci:
-    name: Re-run release acceptance checks
+    name: Verify exact main CI evidence and tested binaries
     needs: preflight
-    uses: ./.github/workflows/ci.yml
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      actions: read
+    outputs:
+      run_id: ${{ steps.select.outputs.run_id }}
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Select successful main push CI for this exact commit
+        id: select
+        run: python tools/verify_release_ci.py --select
+      - uses: actions/download-artifact@v4
+        with:
+          name: windows-exact-report
+          path: verified-ci
+          run-id: ${{ steps.select.outputs.run_id }}
+          github-token: ${{ github.token }}
+      - uses: actions/download-artifact@v4
+        with:
+          name: windows-exact-binaries
+          path: verified-windows-binaries
+          run-id: ${{ steps.select.outputs.run_id }}
+          github-token: ${{ github.token }}
+      - name: Fetch locked registry sources for independent inventory validation
+        run: cargo fetch --locked
+      - name: Validate all jobs, raw logs, source hashes and tested executable bytes
+        run: python tools/verify_release_ci.py --run-id ${{ steps.select.outputs.run_id }} --evidence verified-ci --binaries verified-windows-binaries
 
   build:
     name: Package ${{ matrix.platform }}
     needs: verified-ci
+    permissions:
+      contents: read
+      actions: read
     strategy:
       fail-fast: false
       matrix:
@@ -60,10 +97,37 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+      - name: Download the Windows executables exercised by the exact gate
+        if: runner.os == 'Windows'
+        uses: actions/download-artifact@v4
+        with:
+          name: windows-exact-binaries
+          path: target/release
+          run-id: ${{ needs.verified-ci.outputs.run_id }}
+          github-token: ${{ github.token }}
+      - name: Download their original source and binary inventory
+        if: runner.os == 'Windows'
+        uses: actions/download-artifact@v4
+        with:
+          name: windows-exact-report
+          path: verified-ci
+          run-id: ${{ needs.verified-ci.outputs.run_id }}
+          github-token: ${{ github.token }}
       - name: Build release binaries with MCP
+        if: runner.os != 'Windows'
         run: cargo build --locked --release --features mcp --bins
       - name: Verify the published crate contents
         run: cargo package --locked --all-features
+      - name: Verify that Windows packaging uses the exact tested executables
+        if: runner.os == 'Windows'
+        shell: python
+        run: |
+          import json, pathlib, sys
+          sys.path.insert(0, 'tools')
+          from runtime_profile import validate_binaries
+          reports = list(pathlib.Path('verified-ci').rglob('report.json'))
+          assert len(reports) == 1, 'Exactly one main CI source/binary inventory is required'
+          validate_binaries(pathlib.Path('target/release'), json.loads(reports[0].read_text(encoding='utf-8')))
       - name: Bundle binaries, English documentation and Agent Skills
         shell: python
         env:

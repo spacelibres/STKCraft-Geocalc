@@ -3,6 +3,26 @@
 All notable changes are recorded in English using [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and [Semantic Versioning](https://semver.org/).
 Versions 0.1.2 through 0.1.5 below describe verified local checkpoints before Git initialization; they were not separately published releases.
 
+## [0.1.8] - 2026-11-11
+
+### Added
+
+- Independent C primitive regression: 13,909 rows and 14,914 raw binary64 outputs, including signed zero, subnormals and domain boundaries; preserve every original computational expectation.
+- Native Windows Server 2022/2025 runtime captures proving that the pinned CSPICE DLL itself drifts with the system UCRT, plus actual linker library provenance.
+- Release evidence validation covering main commit identity, all CI jobs, raw logs, complete source hashes and the exact tested Windows executables.
+
+### Fixed
+
+- Select static UCRT math for Windows MSVC reference builds; document explicit Cargo registry/downstream configuration rather than relying on an ignored dependency configuration.
+- Include all public English guides and reference scope documents in the crate; link large original captures to immutable versioned GitHub evidence.
+- Parse interleaved native test diagnostics without losing required completion statuses; reject similarly suffixed names, missing statuses and failures hidden by later successes.
+
+### Changed
+
+- Publish the Windows executables exercised by the complete Release gate, verified by SHA256, instead of rebuilding them on another runner.
+- Require successful main push CI for the exact tag commit and revalidate its complete evidence before release packaging.
+- Keep complete WebGeocalc parity false; platform, option and error-matrix limits remain explicit.
+
 ## [0.1.7] - 2026-11-11
 
 ### Added

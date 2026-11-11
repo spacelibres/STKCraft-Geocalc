@@ -25,6 +25,9 @@ docs/review-2026-11-11/*.log -text -whitespace
 docs/review-2026-11-11/*.tm -text -whitespace
 docs/review-2026-11-11/*.http-headers.txt -text -whitespace
 docs/reference/CI_43023402135_FAILURE.json -text -whitespace
+docs/reference/RUNTIME_MATH_CAPTURE.json -text -whitespace
+docs/reference/RUNTIME_MATH_WINDOWS_2022.json -text -whitespace
+docs/reference/RUNTIME_MATH_WINDOWS_2025.json -text -whitespace
 *.tf -whitespace
 *.tpc -whitespace
 *.tsc -whitespace

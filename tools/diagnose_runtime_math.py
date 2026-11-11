@@ -20,6 +20,7 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'tools'))
 from bootstrap_reference import resolve_reference_binary
+from runtime_profile import linked_libraries, pe_imports
 
 FUNCTIONS = ['asin', 'acos', 'sin', 'cos', 'atan2', 'log', 'exp', 'sinh', 'cosh', 'pow']
 
@@ -31,38 +32,6 @@ def bits(value: float) -> int:
 def rows(path: Path):
     with path.open(encoding='utf-8', newline='') as source:
         yield from csv.reader(source)
-
-
-def pe_imports(path: Path) -> list[str]:
-    """Read import DLL names from the trusted diagnostic PE64 executable."""
-    data = path.read_bytes()
-    header = struct.unpack_from('<I', data, 60)[0]
-    assert data[header:header + 4] == b'PE\0\0'
-    count = struct.unpack_from('<H', data, header + 6)[0]
-    optional_size = struct.unpack_from('<H', data, header + 20)[0]
-    optional = header + 24
-    assert struct.unpack_from('<H', data, optional)[0] == 0x20b
-    sections = []
-    for index in range(count):
-        entry = optional + optional_size + index * 40
-        virtual_size, address, raw_size, raw_offset = struct.unpack_from('<IIII', data, entry + 8)
-        sections.append((address, max(virtual_size, raw_size), raw_offset))
-
-    def offset(rva: int) -> int:
-        for address, length, raw_offset in sections:
-            if address <= rva < address + length:
-                return raw_offset + rva - address
-        raise ValueError('Diagnostic import RVA is outside PE sections.')
-
-    import_rva = struct.unpack_from('<I', data, optional + 120)[0]
-    result = []
-    if import_rva:
-        entry = offset(import_rva)
-        while any(data[entry:entry + 20]):
-            name = offset(struct.unpack_from('<I', data, entry + 12)[0])
-            result.append(data[name:data.index(b'\0', name)].decode('ascii'))
-            entry += 20
-    return result
 
 
 def main() -> int:
@@ -87,6 +56,7 @@ def main() -> int:
     native.vsep_c.argtypes = [pointer, pointer]
     native.vsep_c.restype = ctypes.c_double
     native.prop2b_c.argtypes = [ctypes.c_double, pointer, ctypes.c_double, pointer]
+    native.prop2b_c.restype = None
     native.failed_c.restype = ctypes.c_int
     native.reset_c.argtypes = []
     for name in FUNCTIONS:
@@ -146,12 +116,15 @@ def main() -> int:
     dest.parent.mkdir(parents=True, exist_ok=True)
     for linkage in ['dynamic', 'static']:
         probe = dest.parent / ('runtime-math-probe-' + linkage + '.exe')
+        response = dest.parent / ('runtime-math-probe-' + linkage + '.rsp')
         command = ['rustc', '--edition=2021', '--print=link-args', str(ROOT / 'tools/reference/runtime_math_probe.rs'), '-o', str(probe)]
+        command += ['-C', 'link-arg=/LINKREPROFULLPATHRSP:' + str(response)]
         if linkage == 'static':
             command += ['-C', 'target-feature=+crt-static']
         link_args = subprocess.check_output(command, text=True)
         output = subprocess.check_output([str(probe), *map(repr, report['inputs'])], text=True)
-        report['rust_' + linkage] = {'events': [json.loads(line) for line in output.splitlines()], 'link_args': link_args, 'imports': pe_imports(probe)}
+        report['rust_' + linkage] = {'events': [json.loads(line) for line in output.splitlines()], 'link_args': link_args,
+                                    'imports': pe_imports(probe), 'linked_libraries': linked_libraries(response)}
     sdk_root = Path(os.environ.get('ProgramFiles(x86)', 'C:/Program Files (x86)')) / 'Windows Kits/10/Lib'
     report['static_crt_candidates'] = [{'path': str(path), 'sha256': hashlib.sha256(path.read_bytes()).hexdigest()} for path in sorted(sdk_root.glob('*/ucrt/x64/libucrt.lib'))]
     report['rustc'] = subprocess.check_output(['rustc', '-Vv'], text=True)

@@ -2,7 +2,7 @@
 
 Review date: 2026-11-11. **This is the pre-repair audit record, not the current defect list.** Finding IDs, original measurements, and evidence links are retained for traceability. Source locations refer to the reviewed snapshot.
 
-Read [strict parity status](STRICT_PARITY_STATUS.md) for maintained implementation status and limitations, and [geometry parity evidence](review-2026-11-11/geometry-parity-status.md) for the later complete-family live audit. Historical tolerance-based passes below do not establish exact parity.
+Read [strict parity status](STRICT_PARITY_STATUS.md) for maintained implementation status and limitations, and [geometry parity evidence](https://github.com/spacelibres/STKCraft-Geocalc/blob/v0.1.8/docs/review-2026-11-11/geometry-parity-status.md) for the later complete-family live audit. Historical tolerance-based passes below do not establish exact parity.
 
 The source tree was later organized into domain folders; see [architecture](ARCHITECTURE.md). Original source paths below are retained as historical evidence.
 
@@ -22,9 +22,9 @@ The acceptance rules established by this review remain applicable:
 
 ## Original evidence and its limits
 
-The earlier [Cargo log](review-2026-11-11/cargo-test.log) recorded 62 passing tests. Some assertions allowed broad errors, so that count did not establish equality. The [geometry sample summary](review-2026-11-11/geometry-samples-summary.json) recorded 135 state cases, 2,184 state-representation comparisons, 42 separation cases, 18 phase cases, 54 size cases, six element cases, six solar-longitude cases, nine illumination cases, six intercept cases, and nine tangent cases. These are the original script's counts, not independent HTTP request counts.
+The earlier [Cargo log](https://github.com/spacelibres/STKCraft-Geocalc/blob/v0.1.8/docs/review-2026-11-11/cargo-test.log) recorded 62 passing tests. Some assertions allowed broad errors, so that count did not establish equality. The [geometry sample summary](https://github.com/spacelibres/STKCraft-Geocalc/blob/v0.1.8/docs/review-2026-11-11/geometry-samples-summary.json) recorded 135 state cases, 2,184 state-representation comparisons, 42 separation cases, 18 phase cases, 54 size cases, six element cases, six solar-longitude cases, nine illumination cases, six intercept cases, and nine tangent cases. These are the original script's counts, not independent HTTP request counts.
 
-The [frame/location summary](review-2026-11-11/frames-locations-summary.json) covered 87 frame and 29 location/topocentric configurations under old tolerances. The [live probes](review-2026-11-11/live-probes.json) obtained all 25 documented NASA examples; reference availability did not prove local equality. The original [Time log](review-2026-11-11/time-tests.log) recorded 108 passing tests, zero failures, and exit code zero; it did not prove exhaustive Time parity.
+The [frame/location summary](https://github.com/spacelibres/STKCraft-Geocalc/blob/v0.1.8/docs/review-2026-11-11/frames-locations-summary.json) covered 87 frame and 29 location/topocentric configurations under old tolerances. The [live probes](https://github.com/spacelibres/STKCraft-Geocalc/blob/v0.1.8/docs/review-2026-11-11/live-probes.json) obtained all 25 documented NASA examples; reference availability did not prove local equality. The original [Time log](https://github.com/spacelibres/STKCraft-Geocalc/blob/v0.1.8/docs/review-2026-11-11/time-tests.log) recorded 108 passing tests, zero failures, and exit code zero; it did not prove exhaustive Time parity.
 
 ## Historical findings
 
@@ -41,7 +41,7 @@ NASA reproduction: EARTH, observer MOON, ET=500000000, CN+S, Near point: ellipso
 | Z / km | -1711.7301093915944 | -1711.91506686 |
 | Observer-to-point distance / km | 148327663.55082723 | 400413.90474339 |
 
-The Y difference was approximately 211.788 km; the local distance was effectively a solar distance. Earlier tests used the Sun as observer. Evidence: [targeted results](review-2026-11-11/targeted-live.json), [numerical defects](review-2026-11-11/numeric-defects.json). The required repair was to propagate the real observer and iterate surface-point light time.
+The Y difference was approximately 211.788 km; the local distance was effectively a solar distance. Earlier tests used the Sun as observer. Evidence: [targeted results](https://github.com/spacelibres/STKCraft-Geocalc/blob/v0.1.8/docs/review-2026-11-11/targeted-live.json), [numerical defects](https://github.com/spacelibres/STKCraft-Geocalc/blob/v0.1.8/docs/review-2026-11-11/numeric-defects.json). The required repair was to propagate the real observer and iterate surface-point light time.
 
 ### F03 [P1] Corrected illumination used inconsistent epochs and vectors
 
@@ -55,19 +55,19 @@ NASA reproduction: EARTH, observer MOON, longitude 10 degrees, latitude 20 degre
 | Emission | 89.44143158456987 | 89.43628661 |
 | Phase | 68.26765881952578 | 68.26778927 |
 
-The worst difference was 0.005144975 degrees, exceeding the old 1e-8 degree threshold. Evidence: [targeted results](review-2026-11-11/targeted-live.json), [numerical defects](review-2026-11-11/numeric-defects.json).
+The worst difference was 0.005144975 degrees, exceeding the old 1e-8 degree threshold. Evidence: [targeted results](https://github.com/spacelibres/STKCraft-Geocalc/blob/v0.1.8/docs/review-2026-11-11/targeted-live.json), [numerical defects](https://github.com/spacelibres/STKCraft-Geocalc/blob/v0.1.8/docs/review-2026-11-11/numeric-defects.json).
 
 ### F04 [P1] Finder planetographic longitude lost PCK metadata
 
-Historical locations: src/finder.rs:1176,1219,1248,1286 and src/coords.rs:92. The finder used planetographic_east_positive(body, None), ignoring retrograde rotation and BODY*_PGR_POSITIVE_LON overrides. For Venus and [1e8,1e8,1e8], the PCK required east-positive longitude 45 degrees; the old path returned 315 degrees. Evidence: [coordinate reproduction](review-2026-11-11/coordinate-repro.txt), [source](review-2026-11-11/reproduce-coordinates.rs). Every finder coordinate path needed the loaded PCK.
+Historical locations: src/finder.rs:1176,1219,1248,1286 and src/coords.rs:92. The finder used planetographic_east_positive(body, None), ignoring retrograde rotation and BODY*_PGR_POSITIVE_LON overrides. For Venus and [1e8,1e8,1e8], the PCK required east-positive longitude 45 degrees; the old path returned 315 degrees. Evidence: [coordinate reproduction](https://github.com/spacelibres/STKCraft-Geocalc/blob/v0.1.8/docs/review-2026-11-11/coordinate-repro.txt), [source](https://github.com/spacelibres/STKCraft-Geocalc/blob/v0.1.8/docs/review-2026-11-11/reproduce-coordinates.rs). Every finder coordinate path needed the loaded PCK.
 
 ### F05 [P1] Missing local results could pass the comparator
 
-Historical locations: tools/wgc2_geometry_compare.py:269,379,595,883,1217. Unchecked zip loops truncated comparisons, and maximum errors started at zero. Replacing crate_queries with an empty list left 135 remote rows and zero local rows, but run_state returned (0.0,0.0,0.0,0) and the old pass expression was true. max(0.0, NaN) could also retain zero. Evidence: [false-pass reproduction](review-2026-11-11/false-pass-repro.json). Required checks included exact counts, column IDs/order/types, nonzero coverage, and finite numbers.
+Historical locations: tools/wgc2_geometry_compare.py:269,379,595,883,1217. Unchecked zip loops truncated comparisons, and maximum errors started at zero. Replacing crate_queries with an empty list left 135 remote rows and zero local rows, but run_state returned (0.0,0.0,0.0,0) and the old pass expression was true. max(0.0, NaN) could also retain zero. Evidence: [false-pass reproduction](https://github.com/spacelibres/STKCraft-Geocalc/blob/v0.1.8/docs/review-2026-11-11/false-pass-repro.json). Required checks included exact counts, column IDs/order/types, nonzero coverage, and finite numbers.
 
 ### F06 [P1] Broad thresholds concealed corrected sub-point errors
 
-Historical locations: src/surface.rs:110 and tests/subpoint_method_golden.rs:189. Target-center apparent states replaced surface-point iteration. A 42-point rerun measured worst coordinate error 9.402e-3 km and distance error 1.415e1 km. The sub-observer LT+S distance error was approximately 0.5902 km; the 14.15 km case used the Sun as sub-solar observer and is distinct from F02's lunar observer. Allowed errors of 0.02 km and 20 km made this a tolerance pass, not parity. Evidence: [sub-point test log](review-2026-11-11/subpoint-test.log).
+Historical locations: src/surface.rs:110 and tests/subpoint_method_golden.rs:189. Target-center apparent states replaced surface-point iteration. A 42-point rerun measured worst coordinate error 9.402e-3 km and distance error 1.415e1 km. The sub-observer LT+S distance error was approximately 0.5902 km; the 14.15 km case used the Sun as sub-solar observer and is distinct from F02's lunar observer. Allowed errors of 0.02 km and 20 km made this a tolerance pass, not parity. Evidence: [sub-point test log](https://github.com/spacelibres/STKCraft-Geocalc/blob/v0.1.8/docs/review-2026-11-11/subpoint-test.log).
 
 ### F07 [P1] Pointing exposed only a position unit vector
 
@@ -77,7 +77,7 @@ Historical locations: src/pointing.rs:20,35. The entry point immediately normali
 
 Historical locations: src/finder.rs:562,581,599,674. The condition model lacked documented RANGE/upperLimit and cyclic ranges. Scalar extremum adjustment did not implement result-window complement, expansion/contraction, duration filtering, or duration units. The earlier spelling IS_IN_RANGE was corrected to the request enum RANGE.
 
-The equality path also used a time-convergence tolerance as a scalar band: f(t)=1e-9*t on [-10,10] returned the whole interval instead of [0,0]. Evidence: [equality reproduction](review-2026-11-11/equality-repro.txt).
+The equality path also used a time-convergence tolerance as a scalar band: f(t)=1e-9*t on [-10,10] returned the whole interval instead of [0,0]. Evidence: [equality reproduction](https://github.com/spacelibres/STKCraft-Geocalc/blob/v0.1.8/docs/review-2026-11-11/equality-repro.txt).
 
 ### F09 [P1] Kernel and frame coverage did not support mission examples
 
@@ -85,7 +85,7 @@ Historical locations: src/spk.rs:219,293,655, src/frame.rs:271, src/direction.rs
 
 ### F09a [P1] Overlapping SPK segments had reversed priority
 
-Historical locations: src/spk.rs:568,580. Forward traversal locked in an earlier segment instead of SPICE's higher-priority later segment. A native-written SPK used target 10001, center 0, J2000, coverage 0–10 seconds: first X=1 km, then X=2 km. At ET=5, CSPICE returned X=2 and the reviewed code returned X=1. Evidence: [priority reproduction](review-2026-11-11/spk-priority-repro.json). This affected an already supported type, not just multi-kernel loading.
+Historical locations: src/spk.rs:568,580. Forward traversal locked in an earlier segment instead of SPICE's higher-priority later segment. A native-written SPK used target 10001, center 0, J2000, coverage 0–10 seconds: first X=1 km, then X=2 km. At ET=5, CSPICE returned X=2 and the reviewed code returned X=1. Evidence: [priority reproduction](https://github.com/spacelibres/STKCraft-Geocalc/blob/v0.1.8/docs/review-2026-11-11/spk-priority-repro.json). This affected an already supported type, not just multi-kernel loading.
 
 ### F10 [P2] Orbital elements lacked GM and frame modes
 
@@ -93,7 +93,7 @@ Historical location: src/orbit.rs:52. The high-level entry point fixed GM to the
 
 ### F11 [P2] API-availability explanations were disproved
 
-Historical locations: docs/WGC_AUDIT.md:162,166,169 and README.md:733,741,746. Claims that Pointing was inaccessible, sub-points always failed, and all 11 finder types were unsupported were disproved by successful original documented payloads for all 25 families. Evidence: [live probes](review-2026-11-11/live-probes.json). The old inventory also mislabeled existing location/topocentric, frame-locus, orientation, and finder AZ/EL features as missing.
+Historical locations: docs/WGC_AUDIT.md:162,166,169 and README.md:733,741,746. Claims that Pointing was inaccessible, sub-points always failed, and all 11 finder types were unsupported were disproved by successful original documented payloads for all 25 families. Evidence: [live probes](https://github.com/spacelibres/STKCraft-Geocalc/blob/v0.1.8/docs/review-2026-11-11/live-probes.json). The old inventory also mislabeled existing location/topocentric, frame-locus, orientation, and finder AZ/EL features as missing.
 
 ### F12 [P2] Missing fixtures could produce successful tests
 
@@ -107,9 +107,9 @@ The repair sequence was to reproduce numerical defects, make verification reject
 
 ## Preserved evidence
 
-- [Historical calculation matrix](review-2026-11-11/calculation-matrix.csv): a snapshot, not maintained support status.
-- [Official HTML](review-2026-11-11/official-api-info.html) and [extracted fields](review-2026-11-11/contract-fields.json): specification evidence.
-- [Superseded HTTP review](review-2026-11-11/superseded-http-review.md): withdrawn F01 and original transport inventory.
+- [Historical calculation matrix](https://github.com/spacelibres/STKCraft-Geocalc/blob/v0.1.8/docs/review-2026-11-11/calculation-matrix.csv): a snapshot, not maintained support status.
+- [Official HTML](https://github.com/spacelibres/STKCraft-Geocalc/blob/v0.1.8/docs/review-2026-11-11/official-api-info.html) and [extracted fields](https://github.com/spacelibres/STKCraft-Geocalc/blob/v0.1.8/docs/review-2026-11-11/contract-fields.json): specification evidence.
+- [Superseded HTTP review](https://github.com/spacelibres/STKCraft-Geocalc/blob/v0.1.8/docs/review-2026-11-11/superseded-http-review.md): withdrawn F01 and original transport inventory.
 - [Strict parity status](STRICT_PARITY_STATUS.md): maintained status and limits.
 
 The original review itself changed reports rather than production algorithms. Its statement that the directory was not a Git repository describes that snapshot only; repository and release status must be checked independently.

@@ -77,6 +77,15 @@ jobs:
         run: python tools/bootstrap_reference.py
       - name: Run complete exact gate (all features, Debug and Release)
         run: python tools/verify_strict.py
+      - name: Preserve the exact Windows binaries exercised by the Release tests
+        uses: actions/upload-artifact@v4
+        with:
+          name: windows-exact-binaries
+          path: |
+            target/strict-verification/cargo/release/wgc_geometry.exe
+            target/strict-verification/cargo/release/wgc_gf.exe
+            target/strict-verification/cargo/release/stkcraft-geocalc-mcp.exe
+          if-no-files-found: error
       - name: Preserve native gate evidence
         if: always()
         uses: actions/upload-artifact@v4

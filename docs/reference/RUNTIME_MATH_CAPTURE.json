@@ -1,0 +1,71 @@
+{
+  "captured_utc": "2026-11-11T15:13:35.963627+00:00",
+  "checkout_commit": "deeb0083224524dc2cd4c3e8783440a6dbf1baa6",
+  "profile": "Windows x86_64 static UCRT /MT /fp:strict, default FMA3 enabled",
+  "seed": 16702467,
+  "rows": 13909,
+  "output_cells": 14914,
+  "counts": {
+    "asin": 1415,
+    "acos": 1415,
+    "atan2": 1036,
+    "cos": 1005,
+    "cosh": 1000,
+    "exp": 1005,
+    "log": 1005,
+    "pow": 1008,
+    "sin": 1005,
+    "sinh": 1000,
+    "sqrt": 1005,
+    "tan": 1005,
+    "sin_cos": 1005
+  },
+  "fixture_sha256": "4043de609d3d2ea6135f7442eda2b9b6d6e9d7eaadc4e268804efa3a0ef2af77",
+  "source_sha256": "84fd03425914ba313306a0a37e0f44c09bce0663329b9b0e15bd8794efc2fd5c",
+  "oracle_sha256": "9173e5b218f1ae87535472cfb04eb39a69cb17f4f6f0f5d7b5dbe849afe08931",
+  "platform": "Windows-10-10.0.26300-SP0",
+  "native_states": {
+    "asin": "CRT_FMA:1",
+    "acos": "CRT_FMA:1",
+    "atan2": "CRT_FMA:1",
+    "cos": "CRT_FMA:1",
+    "cosh": "CRT_FMA:1",
+    "exp": "CRT_FMA:1",
+    "log": "CRT_FMA:1",
+    "pow": "CRT_FMA:1",
+    "sin": "CRT_FMA:1",
+    "sinh": "CRT_FMA:1",
+    "sqrt": "CRT_FMA:1",
+    "tan": "CRT_FMA:1",
+    "sin_cos": "CRT_FMA:1"
+  },
+  "generator_sha256": "c2b4070958c890255ab3401bb84d0c921dc6e897c78fc356ce1fabfbdf3f3341",
+  "python": "3.11.15 (main, May 10 2026, 19:31:25) [MSC v.1944 64 bit (AMD64)]",
+  "original_cspice_fixtures": {
+    "vsep": {
+      "rows": 204,
+      "mismatches": 0
+    },
+    "prop2b": {
+      "rows": 288,
+      "mismatches": 0
+    }
+  },
+  "input_source_sha256": {
+    "tests/golden/orientation_exact.csv": "e3246e57d0aaa6f8e5c2b6d206ffac776888b32d5804348e3776d1cc77406108",
+    "tests/golden/two_directions_vsep_precision.csv": "aa4b96e25d57b49ac330ecd9dbeae2fea5161b330bb607f16865576b27062de1",
+    "tests/golden/prop2b.csv": "9e71230058f67202cdd885390528d6da6c888493ac8c53a71b9d4d185ed69117"
+  },
+  "static_ucrt_sha256": "ea2ffa5d9b1ebc3fa76f34c364471750db8951b341dbccbc1bef628ef1a20e39",
+  "static_ucrt_sdk": "10.0.26100.0",
+  "cspice_lib_sha256": "114dc34aea8533bcdd452997b9096219c3697234a00dfe59a4ba1d87731a9650",
+  "archive_sha256": "98d60b814b412fa55294aeaaeb7dab46d849cc87a8b709ffe835d08de17625dc",
+  "imports": [
+    "KERNEL32.dll"
+  ],
+  "compiler_path": "C:\\Program Files\\Microsoft Visual Studio\\18\\Enterprise\\VC\\Tools\\MSVC\\14.51.36231\\bin\\Hostx64\\x64\\cl.exe",
+  "compiler_sha256": "315a654ea116864516a1674858e587e535e3bc3045ff32ed2f2739a2c1ec5640",
+  "compiler_output": "runtime_math_oracle.c\r\n\u7f16\u8bd1\u5668\u626b\u63cf\u904d\u6570:\r\n C:\\Program Files\\Microsoft Visual Studio\\18\\Enterprise\\VC\\Tools\\MSVC\\14.51.36231\\bin\\HostX64\\x64\\cl.exe:        \u7248\u672c 19.51.36257.0\r\n C:\\Program Files\\Microsoft Visual Studio\\18\\Enterprise\\VC\\Tools\\MSVC\\14.51.36231\\bin\\HostX64\\x64\\c1.dll:        \u7248\u672c 19.51.36257.0\r\n C:\\Program Files\\Microsoft Visual Studio\\18\\Enterprise\\VC\\Tools\\MSVC\\14.51.36231\\bin\\HostX64\\x64\\c1xx.dll:      \u7248\u672c 19.51.36257.0\r\n C:\\Program Files\\Microsoft Visual Studio\\18\\Enterprise\\VC\\Tools\\MSVC\\14.51.36231\\bin\\HostX64\\x64\\c2.dll:        \u7248\u672c 19.51.36257.0\r\n C:\\Program Files\\Microsoft Visual Studio\\18\\Enterprise\\VC\\Tools\\MSVC\\14.51.36231\\bin\\HostX64\\x64\\c1xx.dll:      \u7248\u672c 19.51.36257.0\r\n C:\\Program Files\\Microsoft Visual Studio\\18\\Enterprise\\VC\\Tools\\MSVC\\14.51.36231\\bin\\HostX64\\x64\\link.exe:      \u7248\u672c 14.51.36257.0\r\n C:\\Program Files\\Microsoft Visual Studio\\18\\Enterprise\\VC\\Tools\\MSVC\\14.51.36231\\bin\\HostX64\\x64\\mspdb140.dll:  \u7248\u672c 14.51.36257.0\r\n C:\\Program Files\\Microsoft Visual Studio\\18\\Enterprise\\VC\\Tools\\MSVC\\14.51.36231\\bin\\HostX64\\x64\\2052\\clui.dll: \u7248\u672c 19.51.36257.0\r\n\r\n",
+  "compiler_stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "compiler_stderr_sha256": "2849e0cb7ee839ceef8058675af5df637b3629fe46d22159693ed08f644706dd"
+}

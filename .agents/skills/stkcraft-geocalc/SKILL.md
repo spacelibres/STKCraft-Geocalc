@@ -38,6 +38,11 @@ The wgc_geometry and wgc_gf binaries are CSV bridges, not NASA HTTP replicas. Re
 
 ## Verify claims at the right precision
 
+Apply the Windows static-CRT reference profile in docs/NUMERICS.md. Registry
+installation and downstream projects do not inherit this repository's Cargo
+configuration. Match the floating-point environment as well as kernel bytes;
+portable build success does not establish native bit equality.
+
 For development, add an independent native CSPICE regression that fails before the repair. Preserve source arithmetic order when fixing a last-bit difference; do not widen thresholds or round the internal result.
 
 Run the applicable focused tests, then the repository's required checks. The full scientific gate is:

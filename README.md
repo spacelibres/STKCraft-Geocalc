@@ -19,26 +19,40 @@
 
 ## Installation and status
 
-Version 0.1.7 is an investigation checkpoint; remote exactness failures block
-publication. See [the runtime investigation](docs/reference/RUNTIME_MATH_INVESTIGATION.md).
+Version 0.1.8 selects the static Windows CRT after native diagnostics reproduced
+the earlier remote runtime differences. See [the runtime investigation](docs/reference/RUNTIME_MATH_INVESTIGATION.md).
 Complete WebGeocalc
 option-level conformance remains open; see the gap register above.
 The crate requires Rust 1.75 or newer and uses `std`.
 
 ```sh
-cargo add stkcraft-geocalc
-cargo install stkcraft-geocalc --features mcp --bins
+cargo add stkcraft-geocalc@=0.1.8
+cargo install stkcraft-geocalc --version 0.1.8 --locked --features mcp --bins
 ```
 
 ```toml
 [dependencies]
-stkcraft-geocalc = "0.1.7"
+stkcraft-geocalc = "=0.1.8"
 ```
 
 The optional `mcp` feature installs `stkcraft-geocalc-mcp` alongside
 `wgc_geometry` and `wgc_gf`. Agent Skills are included in the Git repository,
 crate archive and release distribution. See the MCP guide for configuration.
 Time is pinned to the published `stkcraft-time` 0.1.18 dependency.
+
+The verified numerical profile is Windows x86_64 MSVC with static UCRT math,
+FMA3 available and the default IEEE floating-point environment. The repository
+sets the linker mode in `.cargo/config.toml`. Cargo registry installation and
+downstream library projects must supply their own configuration:
+
+```powershell
+cargo install stkcraft-geocalc --version 0.1.8 --locked --features mcp --bins --config 'target.x86_64-pc-windows-msvc.rustflags=["-C","target-feature=+crt-static"]'
+```
+
+See [the numerical profile](docs/NUMERICS.md#windows-runtime-profile) for library
+consumer configuration and native provenance. Linux/macOS build success does
+not establish equality to this Windows reference. Published Windows archives
+contain the exact executables exercised by the passing main CI Release tests.
 
 A NAIF/SPICE-aligned geometry library written in Rust. It reads binary
 SPK kernels, evaluates geometric and aberration-corrected state vectors,
@@ -476,7 +490,7 @@ and state aberration corrections, PCK number parsing/orientation, coordinate
 Jacobians, point observers, pointing directions, ellipsoid surface/tangent
 geometry, orbital elements, scalar/boolean GF algorithms, windows, occultation
 and FOV visibility. Exact-case counts and their limits are documented in the
-[strict evidence](docs/review-2026-11-11/surface-orbit-visibility-exact.md).
+[strict evidence](https://github.com/spacelibres/STKCraft-Geocalc/blob/v0.1.8/docs/review-2026-11-11/surface-orbit-visibility-exact.md).
 
 NASA's API transports rounded presentation values. Those values are preserved
 as captured, including unequal results. They are not eligible as an unrounded
