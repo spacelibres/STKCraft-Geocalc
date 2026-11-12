@@ -69,6 +69,6 @@ Actual KernelSet 1 load order is pinned through solar_system_v0072.tm. Full DE44
 
 ## Time and remaining scope
 
-The compatible dependency range starts at STKCraft-time 0.1.31; the lockfile selects that release for the current verification. Earlier SCLK failures were handed off; the unchanged 42 SCE2C values, scalar parsing and 420 CK frame regressions remain active. Under explicit authorization, Time kernel-date arithmetic and grammar repairs were independently verified and released as 0.1.27/0.1.28; see [Time integration](reference/TIME_KERNEL_DATES.md). [Historical evidence](https://github.com/spacelibres/STKCraft-Geocalc/blob/v0.1.8/docs/review-2026-11-11/time-integration-gaps.md) remains available.
+The compatible dependency range starts at STKCraft-time 0.1.33; the lockfile selects that release for the current verification. Earlier SCLK failures were handed off; the unchanged 42 SCE2C values, scalar parsing and 420 CK frame regressions remain active. Under explicit authorization, Time kernel-date arithmetic and grammar repairs were independently verified and released as 0.1.27/0.1.28; see [Time integration](reference/TIME_KERNEL_DATES.md). [Historical evidence](https://github.com/spacelibres/STKCraft-Geocalc/blob/v0.1.8/docs/review-2026-11-11/time-integration-gaps.md) remains available.
 
 See [remaining gaps](STRICT_REMAINING_GAPS.md), [numerical contract](NUMERICS.md) and [validation instructions](VALIDATION.md). A versioned publication is a reproducible implementation checkpoint, not an assertion that the remaining gaps are closed.

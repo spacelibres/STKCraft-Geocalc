@@ -26,19 +26,19 @@ option-level conformance remains open; see the gap register above.
 The crate requires Rust 1.75 or newer and uses `std`.
 
 ```sh
-cargo add stkcraft-geocalc@=0.1.14
-cargo install stkcraft-geocalc --version 0.1.14 --locked --features mcp --bins
+cargo add stkcraft-geocalc@=0.1.15
+cargo install stkcraft-geocalc --version 0.1.15 --locked --features mcp --bins
 ```
 
 ```toml
 [dependencies]
-stkcraft-geocalc = "=0.1.14"
+stkcraft-geocalc = "=0.1.15"
 ```
 
 The optional `mcp` feature installs `stkcraft-geocalc-mcp` alongside
 `wgc_geometry` and `wgc_gf`. Agent Skills are included in the Git repository,
 crate archive and release distribution. See the MCP guide for configuration.
-Time uses the compatible `stkcraft-time` range starting at 0.1.31. The
+Time uses the compatible `stkcraft-time` range starting at 0.1.33. The
 repository lockfile identifies the exact version used for its numerical checks;
 other resolutions require their own verification.
 
@@ -48,7 +48,7 @@ sets the linker mode in `.cargo/config.toml`. Cargo registry installation and
 downstream library projects must supply their own configuration:
 
 ```powershell
-cargo install stkcraft-geocalc --version 0.1.14 --locked --features mcp --bins --config 'target.x86_64-pc-windows-msvc.rustflags=["-C","target-feature=+crt-static"]'
+cargo install stkcraft-geocalc --version 0.1.15 --locked --features mcp --bins --config 'target.x86_64-pc-windows-msvc.rustflags=["-C","target-feature=+crt-static"]'
 ```
 
 See [the numerical profile](docs/NUMERICS.md#windows-runtime-profile) for library

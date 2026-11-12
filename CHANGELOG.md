@@ -3,6 +3,15 @@
 All notable changes are recorded in English using [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and [Semantic Versioning](https://semver.org/).
 Versions 0.1.2 through 0.1.5 below describe verified local checkpoints before Git initialization; they were not separately published releases.
 
+## [0.1.15] - 2026-11-12
+
+### Changed
+
+- Require compatible `stkcraft-time` releases starting at 0.1.33 and select
+  that version in the release lockfile. Time's partitioned SCLK fixes and
+  native error handling are available through the shared dependency while
+  the existing GeoCalc API and calculation models remain unchanged.
+
 ## [0.1.14] - 2026-11-12
 
 ### Added
