@@ -82,7 +82,7 @@ dependencies = [
 
 [[package]]
 name = "stkcraft-geocalc"
-version = "0.1.15"
+version = "0.2.0"
 dependencies = [
  "serde_json",
  "stkcraft-time",
@@ -90,9 +90,9 @@ dependencies = [
 
 [[package]]
 name = "stkcraft-time"
-version = "0.1.33"
+version = "0.2.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "24027ee591904cb99c51b3fd9762bb0ab2562d1fbf44035434cdd6584752ed2c"
+checksum = "954c900d860e30310856f10093ef4188cc370eefd20c42886a19498a1ad7fb4b"
 dependencies = [
  "libm",
 ]

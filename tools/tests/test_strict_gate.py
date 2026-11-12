@@ -8,6 +8,13 @@ spec=importlib.util.spec_from_file_location('strict_gate',Path(__file__).resolve
 gate=importlib.util.module_from_spec(spec);spec.loader.exec_module(gate)
 
 class StrictGate(unittest.TestCase):
+    def test_rust_gates_serialize_without_hiding_diagnostics(self):
+        for release in (False,True):
+            command=gate.rust_test_command(release)
+            self.assertIn('--nocapture',command)
+            self.assertIn('--test-threads=1',command)
+            self.assertEqual('--release' in command,release)
+            self.assertIn('--no-fail-fast',command)
     def valid(self):
         return '\n'.join(f'test unit::{name} ... ok' for name in gate.REQUIRED_TESTS)+'\ntest result: ok. 123 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out;\n'
     def test_complete_executed_battery(self):

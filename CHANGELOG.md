@@ -3,6 +3,26 @@
 All notable changes are recorded in English using [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and [Semantic Versioning](https://semver.org/).
 Versions 0.1.2 through 0.1.5 below describe verified local checkpoints before Git initialization; they were not separately published releases.
 
+## [0.2.0] - 2026-11-13
+
+### Changed
+
+- **Breaking:** Upgrade the compatible `stkcraft-time` dependency range to
+  0.2.0 and record the selected release in the lockfile. Public GeoCalc
+  methods accepting Time types now require types from the 0.2 series;
+  downstream projects using the 0.1 series must update their dependency.
+- Keep the Time requirement compatible with later 0.2.x releases. Each
+  different resolved version requires its own exact numerical qualification.
+- Allow a 0.x breaking minor release in the release check only when the
+  changelog identifies the breaking change and release notes provide migration
+  guidance; ordinary updates still require one patch increment.
+
+### Fixed
+
+- Run strict Rust tests serially so concurrent diagnostic writes cannot
+  corrupt individual test statuses and cause false release-gate failures.
+  Diagnostics, required test checks and skipped-test rejection are retained.
+
 ## [0.1.15] - 2026-11-12
 
 ### Changed

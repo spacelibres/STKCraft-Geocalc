@@ -270,6 +270,12 @@ def audit_rust_output(output: str) -> tuple[dict,list[str]]:
             failures.append(f'Required exact test did not pass: {test}')
     return record, failures
 
+def rust_test_command(release: bool) -> list[str]:
+    """Preserve diagnostics while preventing interleaved libtest statuses."""
+    return ['cargo','test',*(['--release'] if release else []),
+            '--all-features','--all-targets','--no-fail-fast','--',
+            '--nocapture','--test-threads=1']
+
 def main() -> int:
     parser=argparse.ArgumentParser()
     parser.add_argument('--integration',action='store_true',help='Verify a local Time source without qualifying a release')
@@ -294,8 +300,8 @@ def main() -> int:
     commands = [
         ('format', ['cargo','fmt','--all','--','--check']),
         ('python-verifier', [sys.executable,'-m','unittest','discover','-s','tools/tests','-v']),
-        ('rust-debug', ['cargo','test','--all-features','--all-targets','--no-fail-fast','--','--nocapture']),
-        ('rust-release', ['cargo','test','--release','--all-features','--all-targets','--no-fail-fast','--','--nocapture']),
+        ('rust-debug', rust_test_command(False)),
+        ('rust-release', rust_test_command(True)),
     ]
     try:
         report['time_dependency']=time_dependency(allow_local=True) if args.integration else time_dependency()

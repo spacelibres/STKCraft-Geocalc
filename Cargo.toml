@@ -1,6 +1,6 @@
 [package]
 name = "stkcraft-geocalc"
-version = "0.1.15"
+version = "0.2.0"
 edition = "2021"
 rust-version = "1.75"
 authors = ["STKCraft"]
@@ -11,12 +11,12 @@ repository = "https://github.com/spacelibres/STKCraft-Geocalc"
 homepage = "https://www.stkcraft.com"
 readme = "README.md"
 documentation = "https://docs.rs/stkcraft-geocalc"
-include = ["src/**/*.rs", "Cargo.toml", "Cargo.lock", "README.md", "LICENSE", "ATTRIBUTION.md", "CHANGELOG.md", "docs/*.md", "docs/reference/*.json", "docs/reference/*.md", "docs/releases/v0.1.15.md", "docs/review-2026-11-12/surface-names/**", ".agents/skills/**"]
+include = ["src/**/*.rs", "Cargo.toml", "Cargo.lock", "README.md", "LICENSE", "ATTRIBUTION.md", "CHANGELOG.md", "docs/*.md", "docs/reference/*.json", "docs/reference/*.md", "docs/releases/v0.2.0.md", "docs/review-2026-11-12/surface-names/**", ".agents/skills/**"]
 keywords = ["spice", "naif", "ephemeris", "spk", "geometry"]
 categories = ["science"]
 
 [dependencies]
-stkcraft-time = "0.1.33"
+stkcraft-time = "0.2.0"
 serde_json = { version = "1", optional = true, features = ["float_roundtrip"] }
 
 [features]
