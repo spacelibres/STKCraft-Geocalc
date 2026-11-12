@@ -688,7 +688,7 @@ calculate_csv takes calculator, queries and kernels. queries must contain exactl
 | frame_rep | frame1, frame2, et, orientation, axes, angular_velocity, angular_velocity_axes, angular_units, optional correction, time_location, angular_velocity_units |
 | location | target endpoint 11 fields, observer endpoint 11 fields, output_frame, frame_type, locus, correction, representation, azccw (0/1), elplsz (0/1), et |
 
-state_rep frame_code is 0 for J2000, -1 for ECLIPJ2000, or a positive NAIF body ID. The GM source is CENTER, CENTER_ORBITER, or a numeric GM string. Each location endpoint's 11 fields are type, objectID, centerID, frame, x, y, z, vx, vy, vz, reference_epoch. Use OBJECT for a body or a point kind for fixed/constant-velocity coordinates. TOPOCENTRIC_AT_POINT requires a point observer; otherwise use a SPICE frame.
+state_rep frame_code is 0 for J2000, -1 for ECLIPJ2000, or a positive NAIF body ID. The GM source is CENTER, CENTER_ORBITER, or a numeric GM string. Each location endpoint's 11 fields are type, objectID, centerID, frame, x, y, z, vx, vy, vz, reference_epoch. Use `OBJECT` for a body, `FIXED_POINT` for a fixed point, or `CONSTANT_VELOCITY_POINT` for a moving point; unknown location types are rejected. `FIXED_POINT` requires zero velocity and ignores its reference epoch; `CONSTANT_VELOCITY_POINT` uses the supplied velocity and epoch. Frame type accepts `SPICE_FRAME` (also `SPICE`) or `TOPOCENTRIC_AT_POINT`; the latter requires a point observer. Unknown frame types and frame loci are rejected.
 
 The 11 uppercase GF family names corresponding to the typed gf_* tools are also valid calculators. They all take exactly 33 fields:
 

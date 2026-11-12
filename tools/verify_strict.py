@@ -92,6 +92,23 @@ REQUIRED_TESTS = [
     'mcp_ray_tools_require_an_explicit_direction',
     'mcp_preserves_custom_frame_names_containing_locus_words',
     'mcp_frame_tool_default_orientation_is_supported',
+    'mcp_location_rejects_invalid_values_and_recovers',
+    'mcp_location_preserves_native_moving_point_bits',
+    'mcp_location_preserves_native_frame_matrix_bits',
+    'location_cli_fixed_point_never_uses_velocity',
+    'location_cli_rejects_unknown_endpoint_kind_without_calculating',
+    'location_cli_rejects_unknown_frame_type_without_calculating',
+    'location_cli_rejects_unknown_frame_locus_without_calculating',
+    'location_cli_rejects_invalid_orientation_flags',
+    'moving_location_cli_matches_native_correction_matrix',
+    'moving_location_cli_matches_native_rotating_frames',
+    'fixed_location_cli_matches_native_frame_matrix',
+    'moving_location_cli_matches_native_derived_fields',
+    'moving_observer_cli_matches_spkcvo_bits',
+    'subpoint_cli_rejects_unknown_kind_without_calculating',
+    'native_dsk_illumination_missing_data_errors',
+    'sub_point_methods_match_cspice',
+
 ]
 
 def digest(path: Path) -> str:

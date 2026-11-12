@@ -1,0 +1,41 @@
+{
+  "toolkit": "CSPICE_N0067",
+  "spiceypy": "8.3.0",
+  "native_library_sha256": "7fd2dcc58d73ed5293847e67109897caba34240b8f9c38ad739c0b2ec6ce7715",
+  "spk_sha256": "c1c7feeab882263fc493a9d5a5b2ddd71b54826cdf65d8d17a76126b260a49f2",
+  "pck_sha256": "3dff7b1dbeceaa01f25467767d3fa25816051c85d162d1edf04acb310ee28bb1",
+  "target_center": "MOON",
+  "observer": "EARTH",
+  "observer_point_center": "EARTH",
+  "frame": "J2000",
+  "state_at_epoch": [
+    1,
+    0,
+    0,
+    1,
+    0,
+    0
+  ],
+  "reference_epoch_et": 10.0,
+  "query_epoch_et": 100.0,
+  "locus": "CENTER",
+  "aberration": "NONE",
+  "target_point_state_and_light_time_bits": [
+    "c111c9f416ebd23e",
+    "c110487dbc63ac5b",
+    "c0f29649e0ac8dab",
+    "3ffa4ca6a03e40d0",
+    "bfe54f3fa5faed72",
+    "bfd348291f02b597",
+    "3ff579b6700e3840"
+  ],
+  "observer_point_state_and_light_time_bits": [
+    "c111cccc16ebd23e",
+    "c110487dbc63ac5b",
+    "c0f29649e0ac8dab",
+    "bfd6cd657f06fcc0",
+    "bfe54f3fa5faed72",
+    "bfd348291f02b597",
+    "3ff57b8396129845"
+  ]
+}

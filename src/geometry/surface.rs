@@ -396,9 +396,7 @@ pub fn sub_solar_geometry_in(
     }
     let (uselt, cn, stellar, transmission) = abcorr.flags();
     if transmission {
-        return Err(GeoError::BadAberration(
-            "subslr supports reception corrections only".into(),
-        ));
+        return Err(GeoError::BadAberration("SPICE(NOTSUPPORTED)".into()));
     }
     let radii = pck.radii(target).ok_or(GeoError::MissingPckData(target))?;
     let frame = FrameSource::Named {
@@ -1487,9 +1485,7 @@ pub fn sub_solar_dsk_geometry_in(
     }
     let (uselt, cn, stellar, transmission) = abcorr.flags();
     if transmission {
-        return Err(GeoError::BadAberration(
-            "subslr supports reception corrections only".into(),
-        ));
+        return Err(GeoError::BadAberration("SPICE(NOTSUPPORTED)".into()));
     }
     let radii = pck.radii(target).ok_or(GeoError::MissingPckData(target))?;
     let frame = FrameSource::Named {
@@ -1611,13 +1607,16 @@ pub fn illumination_geometry_with_model_in(
     point: [f64; 3],
     model: SurfaceModel<'_>,
 ) -> Result<IlluminationGeometry, GeoError> {
-    validate_target_frame(frames, target_frame, target)?;
     use crate::location::{state_between, Endpoint};
-    if target == observer || target == illuminator {
-        return Err(GeoError::BadSearch(
-            "target must differ from observer and illuminator",
-        ));
+    if target == observer {
+        return Err(GeoError::BadSearch("SPICE(BODIESNOTDISTINCT)"));
     }
+    validate_target_frame(frames, target_frame, target).map_err(|error| match error {
+        GeoError::BadSearch("target frame must be non-inertial and centered on the target") => {
+            GeoError::BadSearch("SPICE(INVALIDFRAME)")
+        }
+        other => other,
+    })?;
 
     let location = fixed_surface(target, target_frame, point);
     let seen = state_between(
@@ -1672,16 +1671,29 @@ pub fn illumination_geometry_with_model_in(
         }
         // Source ILLUMF resets SVNSRF=0 unconditionally for the DSK
         // normal and self-occultation callbacks, even after parsing SURFACES.
-        SurfaceModel::DskUnprioritized { kernels, .. } => unit(kernels.normal_at_in(
-            kernel,
-            pck,
-            frames,
-            target,
-            epoch,
-            target_frame,
-            point,
-            &[],
-        )?),
+        SurfaceModel::DskUnprioritized { kernels, .. } => {
+            if kernels.kernels().is_empty() {
+                return Err(GeoError::BadDas("SPICE(NOLOADEDDSKFILES)"));
+            }
+            if !kernels
+                .kernels()
+                .iter()
+                .flat_map(|kernel| kernel.segments())
+                .any(|segment| segment.descriptor.center == target)
+            {
+                return Err(GeoError::BadDas("SPICE(DSKDATANOTFOUND)"));
+            }
+            unit(
+                kernels
+                    .normal_at_in(kernel, pck, frames, target, epoch, target_frame, point, &[])
+                    .map_err(|error| match error {
+                        GeoError::BadDas(
+                            "point is not on a DSK surface" | "point is not inside a DSK segment",
+                        ) => GeoError::BadDas("SPICE(POINTOFFSURFACE)"),
+                        other => other,
+                    })?,
+            )
+        }
     };
     let to_observer = negate(surface_vector);
     let angles = IlluminationAngles {

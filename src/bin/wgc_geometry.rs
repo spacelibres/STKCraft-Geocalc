@@ -359,6 +359,10 @@ fn run() -> Result<(), Box<dyn std::error::Error>> {
                     continue;
                 }
                 let kind = fields[0];
+                if !matches!(kind, "solar" | "observer") {
+                    println!("ERROR,unknown sub-point kind {kind}");
+                    continue;
+                }
                 let target = fields[1].parse::<i32>()?;
                 let observer = fields[2].parse::<i32>()?;
                 let default_frame=format!("IAU_{target}");let target_frame=fields.get(6).copied().unwrap_or(&default_frame);
@@ -741,7 +745,7 @@ fn run() -> Result<(), Box<dyn std::error::Error>> {
                     let position = read_position(base + 4)?;
                     let velocity = read_position(base + 7)?;
                     let epoch = number(base + 10)?;
-                    Ok(Some(if velocity == [0.0; 3] {
+                    Ok(Some(if kind == "FIXED_POINT" {
                         PointLocation::fixed(center, frame, position)
                     } else {
                         PointLocation::constant_velocity(center, frame, position, velocity, epoch)
@@ -750,6 +754,22 @@ fn run() -> Result<(), Box<dyn std::error::Error>> {
 
                 let target_kind = fields[0];
                 let observer_kind = fields[11];
+                if !matches!(target_kind, "OBJECT" | "FIXED_POINT" | "CONSTANT_VELOCITY_POINT") {
+                    println!("ERROR,unknown target location type {target_kind}");
+                    continue;
+                }
+                if !matches!(observer_kind, "OBJECT" | "FIXED_POINT" | "CONSTANT_VELOCITY_POINT") {
+                    println!("ERROR,unknown observer location type {observer_kind}");
+                    continue;
+                }
+                if target_kind == "FIXED_POINT" && read_position(7)? != [0.0; 3] {
+                    println!("ERROR,fixed target point must have zero velocity");
+                    continue;
+                }
+                if observer_kind == "FIXED_POINT" && read_position(18)? != [0.0; 3] {
+                    println!("ERROR,fixed observer point must have zero velocity");
+                    continue;
+                }
                 let target_location = make_location(0, target_kind)?;
                 let observer_location = make_location(11, observer_kind)?;
 
@@ -764,12 +784,27 @@ fn run() -> Result<(), Box<dyn std::error::Error>> {
 
                 let outref = fields[22];
                 let frame_type = fields[23];
-                let locus = FrameLocus::parse(fields[24]).unwrap_or(FrameLocus::Center);
+                if !matches!(frame_type, "SPICE_FRAME" | "SPICE" | "TOPOCENTRIC_AT_POINT") {
+                    println!("ERROR,unknown frame type {frame_type}");
+                    continue;
+                }
+                let Some(locus) = FrameLocus::parse(fields[24]) else {
+                    println!("ERROR,unknown frame locus {}", fields[24]);
+                    continue;
+                };
                 let abcorr = Aberration::parse(fields[25])?;
                 let Some(representation) = StateRepresentation::parse(fields[26]) else {
                     println!("ERROR,unknown representation {}", fields[26]);
                     continue;
                 };
+                if !matches!(fields[27], "0" | "1") {
+                    println!("ERROR,azccw must be 0 or 1");
+                    continue;
+                }
+                if !matches!(fields[28], "0" | "1") {
+                    println!("ERROR,elplsz must be 0 or 1");
+                    continue;
+                }
                 let az_ccw = fields[27] == "1";
                 let el_plus_z = fields[28] == "1";
                 let et = number(29)?;

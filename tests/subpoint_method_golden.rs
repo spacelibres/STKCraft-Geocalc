@@ -86,6 +86,19 @@ fn sub_point_methods_match_cspice() {
         }
         .expect("sub-point");
 
+        for (axis, expected_axis) in expected.iter().enumerate() {
+            assert_eq!(
+                point.point[axis].to_bits(),
+                expected_axis.to_bits(),
+                "{kind} target={target} observer={observer} et={et} axis={axis}"
+            );
+        }
+        assert_eq!(
+            point.altitude.to_bits(),
+            expected_altitude.to_bits(),
+            "{kind} target={target} observer={observer} et={et} altitude"
+        );
+
         let mut difference = 0.0f64;
         for (axis, expected_axis) in expected.iter().enumerate() {
             difference = difference.max((point.point[axis] - expected_axis).abs());
@@ -151,7 +164,7 @@ fn sub_point_methods_match_cspice() {
         checked += 1;
     }
 
-    assert!(checked > 0, "no golden rows were checked");
+    assert_eq!(checked, 42, "the complete native fixture must be checked");
     println!(
         "vs CSPICE over {checked} sub-points:\n  point: {worst_point:.3e} km\n  altitude: {worst_altitude:.3e} km\n  near-vs-intercept spread: {separation:.3} km"
     );

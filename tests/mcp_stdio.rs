@@ -181,3 +181,184 @@ fn mcp_frame_tool_default_orientation_is_supported() {
     let result=run(&[init(),json!({"jsonrpc":"2.0","method":"notifications/initialized"}).to_string(),json!({"jsonrpc":"2.0","id":2,"method":"tools/call","params":{"name":"frame_transformation","arguments":{"kernels":kernels(),"frame1":"J2000","frame2":"ECLIPJ2000","epoch_et":0.0}}}).to_string()]);
     assert_eq!(result[1]["result"]["isError"], false, "{}", result[1]);
 }
+
+#[test]
+fn mcp_location_rejects_invalid_values_and_recovers() {
+    let base = "OBJECT,301,0,J2000,0,0,0,0,0,0,0,OBJECT,399,0,J2000,0,0,0,0,0,0,0,J2000";
+    let inputs = [
+        format!("{base},invalid,CENTER,NONE,RECTANGULAR,1,1,0"),
+        format!("{base},SPICE_FRAME,invalid,NONE,RECTANGULAR,1,1,0"),
+        format!("{base},SPICE_FRAME,CENTER,NONE,RECTANGULAR,invalid,1,0"),
+        format!("{},SPICE_FRAME,CENTER,NONE,RECTANGULAR,1,1,0", base.replacen("OBJECT", "invalid", 1)),
+        "FIXED_POINT,0,301,J2000,1,0,0,1,0,0,10,OBJECT,399,0,J2000,0,0,0,0,0,0,0,J2000,SPICE_FRAME,CENTER,NONE,RECTANGULAR,1,1,100".to_string(),
+        format!("{base},SPICE_FRAME,CENTER,NONE,RECTANGULAR,1,1,0"),
+    ];
+    let mut requests = vec![
+        init(),
+        json!({"jsonrpc":"2.0","method":"notifications/initialized"}).to_string(),
+    ];
+    for (index, input) in inputs.iter().enumerate() {
+        requests.push(json!({"jsonrpc":"2.0","id":index+2,"method":"tools/call","params":{"name":"calculate_csv","arguments":{"kernels":kernels(),"calculator":"location","queries":[input]}}}).to_string());
+    }
+    let result = run(&requests);
+    assert_eq!(result.len(), 7);
+    let expected = [
+        "ERROR,unknown frame type invalid",
+        "ERROR,unknown frame locus invalid",
+        "ERROR,azccw must be 0 or 1",
+        "ERROR,unknown target location type invalid",
+        "ERROR,fixed target point must have zero velocity",
+    ];
+    for (response, message) in result[1..6].iter().zip(expected) {
+        assert_eq!(response["result"]["isError"], true, "{response}");
+        assert_eq!(
+            response["result"]["content"][0]["text"], message,
+            "{response}"
+        );
+    }
+    assert_eq!(result[6]["result"]["isError"], false);
+    assert_eq!(
+        result[6]["result"]["structuredContent"]["rows"]
+            .as_array()
+            .unwrap()
+            .len(),
+        1
+    );
+}
+
+#[test]
+fn mcp_location_preserves_native_moving_point_bits() {
+    let cases: Vec<_> = include_str!("../docs/review-2026-11-12/location-cli-native/matrix.csv")
+        .lines()
+        .skip(1)
+        .collect();
+    assert_eq!(cases.len(), 18);
+    let mut context = kernels();
+    context["spk"] = json!([format!(
+        "{}/target/kernels/de440s.bsp",
+        env!("CARGO_MANIFEST_DIR")
+    )]);
+    let mut requests = vec![
+        init(),
+        json!({"jsonrpc":"2.0","method":"notifications/initialized"}).to_string(),
+    ];
+    for (index, case) in cases.iter().enumerate() {
+        let f: Vec<_> = case.split(',').collect();
+        assert_eq!(f.len(), 9);
+        let point_target = "CONSTANT_VELOCITY_POINT,0,301,J2000,1,0,0,1,0,0,10";
+        let object_target = "OBJECT,301,0,J2000,0,0,0,0,0,0,0";
+        let point_observer = "CONSTANT_VELOCITY_POINT,0,399,J2000,1,0,0,1,0,0,10";
+        let object_observer = "OBJECT,399,0,J2000,0,0,0,0,0,0,0";
+        let (target, observer) = match f[0] {
+            "target" => (point_target, object_observer),
+            "observer" => (object_target, point_observer),
+            other => panic!("unexpected endpoint {other}"),
+        };
+        let query = format!(
+            "{target},{observer},J2000,SPICE_FRAME,CENTER,{},RECTANGULAR,1,1,100",
+            f[1]
+        );
+        requests.push(json!({"jsonrpc":"2.0","id":index+2,"method":"tools/call","params":{"name":"calculate_csv","arguments":{"kernels":context,"calculator":"location","queries":[query]}}}).to_string());
+    }
+    let responses = run(&requests);
+    assert_eq!(responses.len(), cases.len() + 1);
+    for (case, response) in cases.iter().zip(responses.iter().skip(1)) {
+        let f: Vec<_> = case.split(',').collect();
+        assert_eq!(response["result"]["isError"], false, "{response}");
+        let rows = response["result"]["structuredContent"]["rows"]
+            .as_array()
+            .unwrap();
+        assert_eq!(rows.len(), 1, "{response}");
+        let row = rows[0].as_array().unwrap();
+        assert_eq!(row.len(), 10);
+        let actual: Vec<_> = row[2..8]
+            .iter()
+            .chain(std::iter::once(&row[9]))
+            .map(|value| value.as_f64().unwrap().to_bits())
+            .collect();
+        let expected: Vec<_> = f[2..]
+            .iter()
+            .map(|value| u64::from_str_radix(value, 16).unwrap())
+            .collect();
+        assert_eq!(actual, expected, "{} {}", f[0], f[1]);
+    }
+}
+
+#[test]
+fn mcp_location_preserves_native_frame_matrix_bits() {
+    let matrices = [
+        (
+            include_str!("../docs/review-2026-11-12/location-cli-native/rotating.csv"),
+            true,
+            108,
+        ),
+        (
+            include_str!("../docs/review-2026-11-12/location-cli-native/fixed.csv"),
+            false,
+            162,
+        ),
+    ];
+    let mut context = kernels();
+    context["spk"] = json!([format!(
+        "{}/target/kernels/de440s.bsp",
+        env!("CARGO_MANIFEST_DIR")
+    )]);
+    for (matrix, moving, expected_count) in matrices {
+        let cases: Vec<_> = matrix.lines().skip(1).collect();
+        assert_eq!(cases.len(), expected_count);
+        for batch in cases.chunks(9) {
+            let mut requests = vec![
+                init(),
+                json!({"jsonrpc":"2.0","method":"notifications/initialized"}).to_string(),
+            ];
+            for (index, case) in batch.iter().enumerate() {
+                let f: Vec<_> = case.split(',').collect();
+                assert_eq!(f.len(), 11);
+                let target_point = if moving {
+                    "CONSTANT_VELOCITY_POINT,0,301,J2000,1,0,0,1,0,0,10"
+                } else {
+                    "FIXED_POINT,0,301,J2000,1,0,0,0,0,0,10"
+                };
+                let observer_point = if moving {
+                    "CONSTANT_VELOCITY_POINT,0,399,J2000,1,0,0,1,0,0,10"
+                } else {
+                    "FIXED_POINT,0,399,J2000,1,0,0,0,0,0,10"
+                };
+                let object_target = "OBJECT,301,0,J2000,0,0,0,0,0,0,0";
+                let object_observer = "OBJECT,399,0,J2000,0,0,0,0,0,0,0";
+                let (target, observer) = match f[2] {
+                    "target" => (target_point, object_observer),
+                    "observer" => (object_target, observer_point),
+                    other => panic!("unexpected endpoint {other}"),
+                };
+                let query = format!(
+                    "{target},{observer},{},SPICE_FRAME,{},{},RECTANGULAR,1,1,100",
+                    f[0], f[1], f[3]
+                );
+                requests.push(json!({"jsonrpc":"2.0","id":index+2,"method":"tools/call","params":{"name":"calculate_csv","arguments":{"kernels":context,"calculator":"location","queries":[query]}}}).to_string());
+            }
+            let responses = run(&requests);
+            assert_eq!(responses.len(), batch.len() + 1);
+            for (case, response) in batch.iter().zip(responses.iter().skip(1)) {
+                let f: Vec<_> = case.split(',').collect();
+                assert_eq!(response["result"]["isError"], false, "{response}");
+                let rows = response["result"]["structuredContent"]["rows"]
+                    .as_array()
+                    .unwrap();
+                assert_eq!(rows.len(), 1);
+                let row = rows[0].as_array().unwrap();
+                assert_eq!(row.len(), 10);
+                let actual: Vec<_> = row[2..8]
+                    .iter()
+                    .chain(std::iter::once(&row[9]))
+                    .map(|value| value.as_f64().unwrap().to_bits())
+                    .collect();
+                let expected: Vec<_> = f[4..]
+                    .iter()
+                    .map(|value| u64::from_str_radix(value, 16).unwrap())
+                    .collect();
+                assert_eq!(actual, expected, "{} {} {} {}", f[0], f[1], f[2], f[3]);
+            }
+        }
+    }
+}

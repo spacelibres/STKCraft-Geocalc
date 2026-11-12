@@ -458,8 +458,9 @@ fn exact_native_dynamic_surface_models() {
         } else {
             sub_observer_geometry_in(&spk, pck, &frames, p[2], 301, observer, et, corr, method)
         };
-        if p[9].starts_with("ERROR:") {
-            assert!(result.is_err());
+        if let Some(expected) = p[9].strip_prefix("ERROR:") {
+            let error = result.expect_err("native call rejected this input");
+            assert_eq!(error.to_string(), expected);
             count += 1;
             continue;
         }
@@ -566,10 +567,9 @@ fn exact_native_dsk_illumination() {
                 surfaces: &surfaces,
             },
         );
-        if p[10].starts_with("ERROR:") {
-            if result.is_ok() {
-                errors.push(format!("expectederror: {line}"));
-            }
+        if let Some(expected) = p[10].strip_prefix("ERROR:") {
+            let error = result.expect_err("native call rejected this input");
+            assert_eq!(error.to_string(), expected);
             count += 1;
             continue;
         }
@@ -611,4 +611,163 @@ fn exact_native_dsk_illumination() {
             .collect::<Vec<_>>()
             .join("\n")
     );
+}
+
+#[test]
+fn native_dsk_illumination_missing_data_errors() {
+    use stkcraft_geocalc::{
+        illumination_geometry_with_model_in, Aberration, DskSet, Frames, Pck, SpkKernel,
+        SurfaceModel,
+    };
+    let root = std::path::Path::new(env!("CARGO_MANIFEST_DIR"));
+    let spk = SpkKernel::open(root.join("target/kernels/de440s.bsp")).unwrap();
+    let pck = Pck::open(root.join("target/kernels/pck00011.tpc")).unwrap();
+    let frames = Frames::from_text(include_str!("golden/dsk/frames.tf")).unwrap();
+    let empty = DskSet::new();
+    let mut lunar = DskSet::new();
+    lunar
+        .load(root.join("tests/golden/dsk/dense_lat.bds"))
+        .unwrap();
+    for (observer, frame, expected) in [
+        (301, "IAU_MOON", "SPICE(BODIESNOTDISTINCT)"),
+        (301, "J2000", "SPICE(BODIESNOTDISTINCT)"),
+        (399, "J2000", "SPICE(INVALIDFRAME)"),
+    ] {
+        let error = illumination_geometry_with_model_in(
+            &spk,
+            &pck,
+            &frames,
+            frame,
+            301,
+            10,
+            observer,
+            0.0,
+            Aberration::None,
+            [1.0, 0.0, 0.0],
+            SurfaceModel::DskUnprioritized {
+                kernels: &empty,
+                surfaces: &[],
+            },
+        )
+        .unwrap_err();
+        assert_eq!(error.to_string(), expected);
+    }
+    for model in [
+        SurfaceModel::Ellipsoid,
+        SurfaceModel::DskUnprioritized {
+            kernels: &empty,
+            surfaces: &[],
+        },
+    ] {
+        let error = illumination_geometry_with_model_in(
+            &spk,
+            &pck,
+            &frames,
+            "J2000",
+            301,
+            301,
+            399,
+            0.0,
+            Aberration::None,
+            [1.0, 0.0, 0.0],
+            model,
+        )
+        .unwrap_err();
+        assert_eq!(error.to_string(), "SPICE(INVALIDFRAME)");
+    }
+    let actual = illumination_geometry_with_model_in(
+        &spk,
+        &pck,
+        &frames,
+        "IAU_MOON",
+        301,
+        301,
+        399,
+        0.0,
+        Aberration::None,
+        [1.0, 0.0, 0.0],
+        SurfaceModel::Ellipsoid,
+    )
+    .unwrap();
+    assert_eq!(
+        [
+            actual.epoch.to_bits(),
+            actual.surface_vector[0].to_bits(),
+            actual.surface_vector[1].to_bits(),
+            actual.surface_vector[2].to_bits(),
+            actual.angles.phase.to_bits(),
+            actual.angles.solar.to_bits(),
+            actual.angles.emission.to_bits()
+        ],
+        [
+            0x0000000000000000,
+            0xc1184d0b02fc0b15,
+            0xc0e115884c08050a,
+            0x40e700691f783be0,
+            0x4007f64d52f364fa,
+            0x400921fb54442d18,
+            0x3fc2bae0150c81dd
+        ]
+    );
+    assert!(actual.visible);
+    assert!(!actual.illuminated);
+    let error = illumination_geometry_with_model_in(
+        &spk,
+        &pck,
+        &frames,
+        "IAU_MOON",
+        301,
+        301,
+        399,
+        0.0,
+        Aberration::None,
+        [1.0, 0.0, 0.0],
+        SurfaceModel::DskUnprioritized {
+            kernels: &empty,
+            surfaces: &[],
+        },
+    )
+    .unwrap_err();
+    assert_eq!(error.to_string(), "SPICE(NOLOADEDDSKFILES)");
+    let same_source = illumination_geometry_with_model_in(
+        &spk,
+        &pck,
+        &frames,
+        "IAU_SUN",
+        10,
+        10,
+        399,
+        0.0,
+        Aberration::None,
+        [1.0, 0.0, 0.0],
+        SurfaceModel::DskUnprioritized {
+            kernels: &empty,
+            surfaces: &[],
+        },
+    )
+    .unwrap_err();
+    assert_eq!(same_source.to_string(), "SPICE(NOLOADEDDSKFILES)");
+    for (set, target, observer, frame, expected) in [
+        (&empty, 301, 399, "IAU_MOON", "SPICE(NOLOADEDDSKFILES)"),
+        (&lunar, 399, 301, "IAU_EARTH", "SPICE(DSKDATANOTFOUND)"),
+    ] {
+        let error = illumination_geometry_with_model_in(
+            &spk,
+            &pck,
+            &frames,
+            frame,
+            target,
+            10,
+            observer,
+            0.0,
+            Aberration::None,
+            [1.0, 0.0, 0.0],
+            SurfaceModel::DskUnprioritized {
+                kernels: set,
+                surfaces: &[],
+            },
+        )
+        .unwrap_err();
+        assert_eq!(error.to_string(), expected);
+    }
 }

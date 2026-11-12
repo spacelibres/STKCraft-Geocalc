@@ -1,0 +1,95 @@
+{
+  "toolkit": "CSPICE_N0067",
+  "spiceypy": "8.3.0",
+  "native_library_sha256": "7fd2dcc58d73ed5293847e67109897caba34240b8f9c38ad739c0b2ec6ce7715",
+  "spk_sha256": "c1c7feeab882263fc493a9d5a5b2ddd71b54826cdf65d8d17a76126b260a49f2",
+  "pck_sha256": "3dff7b1dbeceaa01f25467767d3fa25816051c85d162d1edf04acb310ee28bb1",
+  "dsk_sha256": "dee8ce442c79129044234e23c289c566d7935197c85393eedf0083c3fd885777",
+  "epoch_et": 0.0,
+  "point_km": [
+    1.0,
+    0.0,
+    0.0
+  ],
+  "records": [
+    {
+      "target": "MOON",
+      "observer": "EARTH",
+      "frame": "IAU_MOON",
+      "dsk_loaded": false,
+      "short": "SPICE(NOLOADEDDSKFILES)"
+    },
+    {
+      "target": "EARTH",
+      "observer": "MOON",
+      "frame": "IAU_EARTH",
+      "dsk_loaded": true,
+      "short": "SPICE(DSKDATANOTFOUND)"
+    },
+    {
+      "target": "MOON",
+      "observer": "MOON",
+      "frame": "IAU_MOON",
+      "dsk_loaded": false,
+      "short": "SPICE(BODIESNOTDISTINCT)"
+    },
+    {
+      "target": "MOON",
+      "observer": "MOON",
+      "frame": "J2000",
+      "dsk_loaded": false,
+      "short": "SPICE(BODIESNOTDISTINCT)"
+    },
+    {
+      "target": "MOON",
+      "observer": "EARTH",
+      "frame": "J2000",
+      "dsk_loaded": false,
+      "short": "SPICE(INVALIDFRAME)"
+    }
+  ],
+  "same_source": [
+    {
+      "method": "ELLIPSOID",
+      "target": "MOON",
+      "illuminator": "MOON",
+      "observer": "EARTH",
+      "frame": "J2000",
+      "short": "SPICE(INVALIDFRAME)"
+    },
+    {
+      "method": "DSK/UNPRIORITIZED",
+      "target": "MOON",
+      "illuminator": "MOON",
+      "observer": "EARTH",
+      "frame": "J2000",
+      "short": "SPICE(INVALIDFRAME)"
+    },
+    {
+      "method": "ELLIPSOID",
+      "target": "MOON",
+      "illuminator": "MOON",
+      "observer": "EARTH",
+      "frame": "IAU_MOON",
+      "ieee754_bits": [
+        "0000000000000000",
+        "c1184d0b02fc0b15",
+        "c0e115884c08050a",
+        "40e700691f783be0",
+        "4007f64d52f364fa",
+        "400921fb54442d18",
+        "3fc2bae0150c81dd"
+      ],
+      "visible": true,
+      "illuminated": false
+    },
+    {
+      "method": "DSK/UNPRIORITIZED",
+      "target": "MOON",
+      "illuminator": "MOON",
+      "observer": "EARTH",
+      "frame": "IAU_MOON",
+      "short": "SPICE(NOLOADEDDSKFILES)"
+    }
+  ]
+}

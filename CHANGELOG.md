@@ -3,6 +3,32 @@
 All notable changes are recorded in English using [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and [Semantic Versioning](https://semver.org/).
 Versions 0.1.2 through 0.1.5 below describe verified local checkpoints before Git initialization; they were not separately published releases.
 
+## [0.1.13] - 2026-11-12
+
+### Fixed
+
+- Return the CSPICE short error for unsupported SUBSLR transmission
+  corrections and distinguish missing DSK files, missing target data, and
+  points off the DSK surface in illumination calculations. Preserve the
+  native observer/target validation order and permit an illuminator equal
+  to the target.
+- Reject invalid CLI sub-point kinds, location types, reference-frame types,
+  frame loci and orientation flags instead of silently calculating a different
+  request. Fixed points reject nonzero velocity; moving points use their
+  supplied velocity and reference epoch. MCP propagates these errors.
+
+### Added
+
+- Compare all 42 existing ellipsoid sub-point coordinates and altitudes by
+  IEEE-754 bits. Record a byte-identical independent CSPICE recapture.
+- Record independent CSPICE moving and fixed location matrices covering 288
+  queries and 2,016 state/light-time cells, plus 54 derived output cells.
+  Compare 288 of these queries through both CLI and MCP, with the precise
+  frame, epoch and input limits documented alongside the captures.
+- Record native ILLUMF error and same-source evidence and compare the original
+  2,160 dynamic-surface and 10,368 illumination fixture outcomes, including
+  exact short error strings.
+
 ## [0.1.12] - 2026-11-12
 
 ### Changed
