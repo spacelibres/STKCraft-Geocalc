@@ -78,6 +78,8 @@ pub(crate) use frames::{builtin_frames, earth_orientation, wahr_table};
 pub use frames::{frame, frame_calculation, orientation};
 mod shapes;
 pub use shapes::dsk;
+pub use shapes::dsk_method::{parse_surface_method, ParsedSurfaceMethod, SurfaceMethodError};
+pub use shapes::surface_names::{SurfaceNameError, SurfaceNameResolver};
 pub(crate) use shapes::{dsk_point, dsk_volume, fov_ellipsoid, occult_ellipsoid};
 mod geometry;
 pub use geometry::{

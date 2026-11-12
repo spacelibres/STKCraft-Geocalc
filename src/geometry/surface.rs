@@ -1192,6 +1192,90 @@ pub enum SurfaceModel<'a> {
         surfaces: &'a [i32],
     },
 }
+
+/// Error returned by a method-string surface-intercept calculation.
+#[derive(Debug)]
+pub enum SurfaceInterceptMethodError {
+    /// The method string or surface mapping is invalid.
+    Method(crate::SurfaceMethodError),
+    /// Frame validation or the geometry calculation failed.
+    Geometry(GeoError),
+}
+impl std::fmt::Display for SurfaceInterceptMethodError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match self {
+            Self::Method(error) => error.fmt(f),
+            Self::Geometry(error) => error.fmt(f),
+        }
+    }
+}
+impl std::error::Error for SurfaceInterceptMethodError {}
+
+/// SINCPT for a J2000 ray direction and a NAIF method string.
+///
+/// Returns `None` when the ray misses the selected surface. The target frame
+/// and direction are validated before method parsing, following SINCPT.
+#[allow(clippy::too_many_arguments)]
+pub fn surface_intercept_geometry_with_method_in(
+    kernel: &SpkKernel,
+    pck: &Pck,
+    frames: &Frames,
+    kernels: &crate::DskSet,
+    resolver: &mut crate::SurfaceNameResolver,
+    target_frame: &str,
+    target: i32,
+    observer: i32,
+    et: f64,
+    abcorr: Aberration,
+    direction_j2000: [f64; 3],
+    method: &str,
+) -> Result<Option<SurfaceGeometry>, SurfaceInterceptMethodError> {
+    let error = |message| SurfaceInterceptMethodError::Geometry(GeoError::BadSearch(message));
+    if method.is_empty() || target_frame.is_empty() {
+        return Err(error("SPICE(EMPTYSTRING)"));
+    }
+    if target == observer {
+        return Err(error("SPICE(BODIESNOTDISTINCT)"));
+    }
+    let center = frames
+        .center(target_frame)
+        .map_err(|_| error("SPICE(NOFRAME)"))?;
+    if center != target {
+        return Err(error("SPICE(INVALIDFRAME)"));
+    }
+    if direction_j2000.iter().all(|v| *v == 0.0) {
+        return Err(error("SPICE(ZEROVECTOR)"));
+    }
+    let parsed = crate::parse_surface_method(resolver, pck, target, method, 100)
+        .map_err(SurfaceInterceptMethodError::Method)?;
+    if !parsed.subtype.is_empty() {
+        return Err(error("SPICE(INVALIDMETHOD)"));
+    }
+    let model = if parsed.shape == "ELLIPSOID" {
+        SurfaceModel::Ellipsoid
+    } else {
+        SurfaceModel::DskUnprioritized {
+            kernels,
+            surfaces: &parsed.surfaces,
+        }
+    };
+    match surface_intercept_geometry_with_model_in(
+        kernel,
+        pck,
+        frames,
+        target_frame,
+        target,
+        observer,
+        et,
+        abcorr,
+        direction_j2000,
+        model,
+    ) {
+        Ok(value) => Ok(Some(value)),
+        Err(GeoError::BadSearch("ray does not intersect the target")) => Ok(None),
+        Err(error) => Err(SurfaceInterceptMethodError::Geometry(error)),
+    }
+}
 /// Native DSK sub-observer definitions. NADIR uses the reference ellipsoid
 /// to define a ray and intersects that ray with the actual DSK surface.
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
@@ -1212,16 +1296,32 @@ pub fn surface_intercept_geometry_with_model_in(
     direction_j2000: [f64; 3],
     model: SurfaceModel<'_>,
 ) -> Result<SurfaceGeometry, GeoError> {
-    validate_target_frame(frames, target_frame, target)?;
     if target == observer {
-        return Err(GeoError::BadSearch("observer and target coincide"));
+        return Err(GeoError::BadSearch("SPICE(BODIESNOTDISTINCT)"));
     }
-    if norm(direction_j2000) == 0.0 {
-        return Err(GeoError::BadSearch("ray direction is zero"));
+    let center = frames
+        .center(target_frame)
+        .map_err(|_| GeoError::BadSearch("SPICE(NOFRAME)"))?;
+    if center != target {
+        return Err(GeoError::BadSearch("SPICE(INVALIDFRAME)"));
+    }
+    if direction_j2000.iter().all(|value| *value == 0.0) {
+        return Err(GeoError::BadSearch("SPICE(ZEROVECTOR)"));
     }
     let radii = match model {
-        SurfaceModel::Ellipsoid => pck.radii(target).ok_or(GeoError::MissingPckData(target))?,
+        SurfaceModel::Ellipsoid => {
+            let radii = pck
+                .radii(target)
+                .ok_or(GeoError::BadSearch("SPICE(KERNELVARNOTFOUND)"))?;
+            if radii.iter().any(|axis| *axis <= 0.0) {
+                return Err(GeoError::BadSearch("SPICE(BADAXISLENGTH)"));
+            }
+            radii
+        }
         SurfaceModel::DskUnprioritized { kernels, surfaces } => {
+            if kernels.kernels().is_empty() {
+                return Err(GeoError::BadDas("SPICE(NOLOADEDDSKFILES)"));
+            }
             [kernels
                 .radial_bounds(kernel, pck, frames, target, surfaces)?
                 .1; 3]

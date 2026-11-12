@@ -1,0 +1,18 @@
+phase	name	body	expected
+empty	100	301	I:100
+empty	 100 	301	I:100
+empty	+100	301	I:100
+empty	-3	301	I:-3
+empty	01	301	I:1
+empty	abc	301	N
+empty		301	E:SPICE(EMPTYSTRING)
+assigned	alpha surface	301	I:101
+assigned	alpha surface	399	N
+assigned	  Alpha   Surface  	301	I:101
+assigned	  Alpha   Surface  	399	N
+assigned	ALPHA  SURFACE	301	I:101
+assigned	ALPHA  SURFACE	399	N
+assigned	other	301	N
+assigned	other	399	I:102
+assigned	100	301	I:100
+assigned	100	399	I:100

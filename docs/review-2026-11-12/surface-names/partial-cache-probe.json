@@ -1,0 +1,127 @@
+{
+  "toolkit": "CSPICE_N0067",
+  "native_library_sha256": "7fd2dcc58d73ed5293847e67109897caba34240b8f9c38ad739c0b2ec6ce7715",
+  "cases": [
+    {
+      "case": "initial_blank",
+      "records": [
+        {
+          "query": "A",
+          "error": "SPICE(BLANKNAMEASSIGNED)"
+        },
+        {
+          "query": "A",
+          "error": "SPICE(BLANKNAMEASSIGNED)"
+        },
+        {
+          "query": "10",
+          "error": "SPICE(BLANKNAMEASSIGNED)"
+        }
+      ]
+    },
+    {
+      "case": "initial_overflow",
+      "records": [
+        {
+          "query": "A",
+          "error": "SPICE(INTOUTOFRANGE)"
+        },
+        {
+          "query": "A",
+          "error": "SPICE(INTOUTOFRANGE)"
+        },
+        {
+          "query": "10",
+          "error": "SPICE(INTOUTOFRANGE)"
+        }
+      ]
+    },
+    {
+      "case": "partial_code",
+      "records": [
+        {
+          "query": "A",
+          "code": 1,
+          "found": true
+        },
+        {
+          "query": "A",
+          "error": "SPICE(INTOUTOFRANGE)"
+        },
+        {
+          "query": "A",
+          "code": 9,
+          "found": true
+        },
+        {
+          "query": "B",
+          "code": 2,
+          "found": true
+        },
+        {
+          "query": "C",
+          "code": 0,
+          "found": false
+        }
+      ]
+    },
+    {
+      "case": "blank_same",
+      "records": [
+        {
+          "query": "A",
+          "code": 1,
+          "found": true
+        },
+        {
+          "query": "A",
+          "error": "SPICE(BLANKNAMEASSIGNED)"
+        },
+        {
+          "query": "A",
+          "code": 9,
+          "found": true
+        },
+        {
+          "query": "B",
+          "code": 10,
+          "found": true
+        },
+        {
+          "query": "C",
+          "code": 0,
+          "found": false
+        }
+      ]
+    },
+    {
+      "case": "blank_rename",
+      "records": [
+        {
+          "query": "A",
+          "code": 1,
+          "found": true
+        },
+        {
+          "query": "A",
+          "error": "SPICE(BLANKNAMEASSIGNED)"
+        },
+        {
+          "query": "A",
+          "code": 0,
+          "found": false
+        },
+        {
+          "query": "B",
+          "code": 10,
+          "found": true
+        },
+        {
+          "query": "C",
+          "code": 0,
+          "found": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "toolkit": "CSPICE_N0067",
+  "native_library_sha256": "7fd2dcc58d73ed5293847e67109897caba34240b8f9c38ad739c0b2ec6ce7715",
+  "records": [
+    {
+      "surface_code_pool_value": -2.5,
+      "code": -3,
+      "found": true
+    },
+    {
+      "surface_code_pool_value": -1.5,
+      "code": -2,
+      "found": true
+    },
+    {
+      "surface_code_pool_value": -0.5,
+      "code": -1,
+      "found": true
+    },
+    {
+      "surface_code_pool_value": 0.5,
+      "code": 1,
+      "found": true
+    },
+    {
+      "surface_code_pool_value": 1.5,
+      "code": 2,
+      "found": true
+    },
+    {
+      "surface_code_pool_value": 2.5,
+      "code": 3,
+      "found": true
+    },
+    {
+      "surface_code_pool_value": 2147483647.4,
+      "error": "SPICE(INTOUTOFRANGE)"
+    },
+    {
+      "surface_code_pool_value": 2147483648.0,
+      "error": "SPICE(INTOUTOFRANGE)"
+    }
+  ]
+}

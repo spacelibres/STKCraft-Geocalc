@@ -1,0 +1,136 @@
+{
+  "method": "separate native subprocess per kernel-pool configuration",
+  "records": [
+    {
+      "case": "none",
+      "inputs": [
+        [],
+        [],
+        []
+      ],
+      "exit_code": 0,
+      "stdout": "A (0, False)\nB (0, False)\n100 (100, True)\n1 (1, True)\n2 (2, True)\n",
+      "stderr": ""
+    },
+    {
+      "case": "names_only",
+      "inputs": [
+        [
+          "A"
+        ],
+        [],
+        []
+      ],
+      "exit_code": 0,
+      "stdout": "A SPICE(BADSURFACEMAP)\nB SPICE(BADSURFACEMAP)\n100 SPICE(BADSURFACEMAP)\n1 SPICE(BADSURFACEMAP)\n2 SPICE(BADSURFACEMAP)\n",
+      "stderr": ""
+    },
+    {
+      "case": "missing_body",
+      "inputs": [
+        [
+          "A"
+        ],
+        [
+          1
+        ],
+        []
+      ],
+      "exit_code": 0,
+      "stdout": "A SPICE(BADSURFACEMAP)\nB SPICE(BADSURFACEMAP)\n100 SPICE(BADSURFACEMAP)\n1 SPICE(BADSURFACEMAP)\n2 SPICE(BADSURFACEMAP)\n",
+      "stderr": ""
+    },
+    {
+      "case": "wrong_lengths",
+      "inputs": [
+        [
+          "A",
+          "B"
+        ],
+        [
+          1
+        ],
+        [
+          301
+        ]
+      ],
+      "exit_code": 0,
+      "stdout": "A SPICE(ARRAYSIZEMISMATCH)\nB SPICE(ARRAYSIZEMISMATCH)\n100 SPICE(ARRAYSIZEMISMATCH)\n1 SPICE(ARRAYSIZEMISMATCH)\n2 SPICE(ARRAYSIZEMISMATCH)\n",
+      "stderr": ""
+    },
+    {
+      "case": "float_codes",
+      "inputs": [
+        [
+          "A"
+        ],
+        [
+          1.5
+        ],
+        [
+          301
+        ]
+      ],
+      "exit_code": 0,
+      "stdout": "A (2, True)\nB (0, False)\n100 (100, True)\n1 (1, True)\n2 (2, True)\n",
+      "stderr": ""
+    },
+    {
+      "case": "numeric_name",
+      "inputs": [
+        [
+          "100"
+        ],
+        [
+          42
+        ],
+        [
+          301
+        ]
+      ],
+      "exit_code": 0,
+      "stdout": "A (0, False)\nB (0, False)\n100 (42, True)\n1 (1, True)\n2 (2, True)\n",
+      "stderr": ""
+    },
+    {
+      "case": "dup_name",
+      "inputs": [
+        [
+          "A",
+          "A"
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          301,
+          301
+        ]
+      ],
+      "exit_code": 0,
+      "stdout": "A (2, True)\nB (0, False)\n100 (100, True)\n1 (1, True)\n2 (2, True)\n",
+      "stderr": ""
+    },
+    {
+      "case": "dup_code",
+      "inputs": [
+        [
+          "A",
+          "B"
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          301,
+          301
+        ]
+      ],
+      "exit_code": 0,
+      "stdout": "A (1, True)\nB (1, True)\n100 (100, True)\n1 (1, True)\n2 (2, True)\n",
+      "stderr": ""
+    }
+  ]
+}

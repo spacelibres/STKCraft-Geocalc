@@ -37,6 +37,19 @@ Pck supplies radii and orientation constants. The surface module exposes sub_obs
 
 For type-2 DSK, load a DskSet in file order and select SurfaceModel::DskUnprioritized with explicit numeric surface IDs. Use surface_intercept_geometry_with_model_in, sub_observer_dsk_geometry_in, sub_solar_dsk_geometry_in and illumination_geometry_with_model_in. DskSubPointMethod::Nadir and ::Intercept have distinct native meanings; an ellipsoid NearPoint option is not renamed into DSK Nadir.
 
+For method strings, load text kernels containing `NAIF_SURFACE_NAME`,
+`NAIF_SURFACE_CODE` and `NAIF_SURFACE_BODY` into the `Pck` pool and keep one
+`SurfaceNameResolver` for each independent pool history. `parse_surface_method`
+resolves the names or numeric IDs in a SPICE method string; its caller supplies
+the receiving operation's surface-list limit. It parses shared syntax, so each
+operation must still validate its own permitted method clauses.
+`surface_coordinates::latitudinal_surface_points_with_method_in` applies this
+to LATSRF. `surface::surface_intercept_geometry_with_method_in` applies it to
+SINCPT with a J2000 ray and returns `None` for a miss. Both accept an explicit
+`DskSet`, including an empty set when no DSK is loaded. Their method and
+geometry errors preserve tested SPICE short symbols. CLI and MCP DSK method
+selection is not yet provided. See the [native capture scope](review-2026-11-12/surface-names/README.md).
+
 latitudinal_surface_points_in constructs LATSRF points from longitude/latitude pairs in radians, using an explicit SurfaceModel, target frame and epoch. surface_intercept_geometries_with_model_in resolves a typed RayDirection and returns one Option<SurfaceGeometry> per ray: None preserves a missing intercept, including its position in the ray sequence. SurfaceGeometry reports the SINCPT vector norm as distance and that distance divided by CLIGHT as light_time.
 
 find_occultation_with_models_in accepts an OccultationModel for each target: Point or Surface { frame, model }. A DSK requires the other target to be a point, and any point requires OccultationType::Any. Both occulted points and foreground point transits use the native depth tests. See [the independent model scope](reference/DSK_MODEL_SCOPE.md) for tested inputs and remaining limits. These additions do not extend the CLI/MCP schemas implicitly.

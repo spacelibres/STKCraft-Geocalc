@@ -24,9 +24,7 @@ use std::f64::consts::PI;
 use std::path::Path;
 
 use crate::error::GeoError;
-use crate::frame::{
-    apply_assignments, extract_data_blocks, mat_mul, parse_f64, rot1, rot3, Mat3, Value,
-};
+use crate::frame::{extract_data_blocks, mat_mul, parse_f64, rot1, rot3, Mat3, Value};
 
 /// Body constants and orientation records loaded from text and binary PCKs.
 #[derive(Clone, Debug, Default)]
@@ -40,6 +38,7 @@ pub struct Pck {
     phase_degree: HashMap<i32, i32>,
     binary: Vec<crate::binary_pck::BinaryPck>,
     pool: HashMap<String, Value>,
+    surface_revision: u64,
 }
 
 #[derive(Clone, Debug, Default)]
@@ -67,6 +66,10 @@ struct OrientationAngles {
 }
 
 impl Pck {
+    pub(crate) fn surface_pool(&self) -> (&HashMap<String, Value>, u64) {
+        (&self.pool, self.surface_revision)
+    }
+
     /// Opens a text or binary PCK file.
     pub fn open(path: impl AsRef<Path>) -> Result<Self, GeoError> {
         let mut pck = Self::default();
@@ -112,7 +115,16 @@ impl Pck {
     /// Merges the assignments of another text PCK into this one.
     pub fn furnsh(&mut self, text: &str) -> Result<(), GeoError> {
         let data = extract_data_blocks(text);
-        let parse_result = apply_assignments(&data, &mut self.pool);
+        let mut surface_changed = false;
+        let parse_result = crate::kernels::text_kernel::apply_assignments_tracked(
+            &data,
+            &mut self.pool,
+            &mut surface_changed,
+        );
+        if surface_changed {
+            static REVISION: std::sync::atomic::AtomicU64 = std::sync::atomic::AtomicU64::new(1);
+            self.surface_revision = REVISION.fetch_add(1, std::sync::atomic::Ordering::Relaxed);
+        }
         // Native loading preserves assignments before an error and removes
         // the failed variable. Rebuild every derived text cache from that pool.
         self.radii.clear();

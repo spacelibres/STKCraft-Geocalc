@@ -108,6 +108,14 @@ REQUIRED_TESTS = [
     'subpoint_cli_rejects_unknown_kind_without_calculating',
     'native_dsk_illumination_missing_data_errors',
     'sub_point_methods_match_cspice',
+    'native_surface_hash_two_thousand_names',
+    'native_method_lexer_token_ranges', 'native_method_parser_capture',
+    'native_surface_numeric_fallback_corpus', 'native_surface_numeric_extreme_exponents',
+    'native_surface_long_name_and_whitespace_corpus',
+    'native_named_surfaces_select_latitudinal_geometry',
+    'native_latsrf_method_and_frame_validation', 'native_latsrf_without_loaded_dsk',
+    'native_sincpt_method_and_error_precedence',
+    'native_sincpt_inertial_target_and_missing_radii', 'native_sincpt_rejects_invalid_radii',
 
 ]
 

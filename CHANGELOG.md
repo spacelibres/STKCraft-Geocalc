@@ -3,6 +3,27 @@
 All notable changes are recorded in English using [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and [Semantic Versioning](https://semver.org/).
 Versions 0.1.2 through 0.1.5 below describe verified local checkpoints before Git initialization; they were not separately published releases.
 
+## [0.1.14] - 2026-11-12
+
+### Added
+
+- Resolve named and numeric DSK surfaces from an ordered text-kernel pool,
+  preserving the tested NAIF cache and failed-update behavior. Parse shared
+  SPICE method strings and expose method-based LATSRF and J2000 SINCPT
+  calculations with explicit DSK kernel sets.
+- Record independent CSPICE N0067 surface-name, parser, LATSRF and SINCPT
+  captures, including exact output bits, missing-data errors and validation
+  order. These fixtures cover the documented cases, not the full option space.
+
+### Fixed
+
+- Return the native missing-DSK error for LATSRF and SINCPT when no DSK file
+  is loaded. SINCPT accepts a target-centered inertial frame and reports
+  native missing or nonpositive ellipsoid radii and zero-direction errors.
+- Preserve byte-oriented name lookup when NAIF's fixed-size method buffer
+  truncates a multibyte UTF-8 sequence, preventing a valid matching name from
+  being rejected solely because the truncated token is not UTF-8.
+
 ## [0.1.13] - 2026-11-12
 
 ### Fixed

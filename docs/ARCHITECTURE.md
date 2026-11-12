@@ -7,7 +7,7 @@ The source tree is grouped by responsibility. Public root module names remain co
 | src/ephemeris | Trajectories, propagation, center chains and apparent positions/states | spk, spkapo, spk_mda, spk_equinoctial, two_body, sgp4 |
 | src/kernels | Typed ordered text pools, binary containers, attitude records and planetary constants | text_kernel, daf, ck, pck, binary_pck, generic_segment |
 | src/frames | Reference-frame lookup, kernel metadata validation, composition and orientation models | frame, frame_kernel, frame_calculation, orientation, earth_orientation, builtin_frames |
-| src/shapes | Surface meshes, spatial lookup and visibility primitives | dsk, dsk_point, dsk_volume, fov_ellipsoid, occult_ellipsoid |
+| src/shapes | Surface meshes, method/name resolution, spatial lookup and visibility primitives | dsk, dsk_method, surface_names, dsk_point, dsk_volume, fov_ellipsoid, occult_ellipsoid |
 | src/geometry | Individual physical calculations and coordinate outputs | surface, surface_coordinates, tangent, pointing, direction, location, orbit, separation, coords, state_rep, fov, occult |
 | src/search | Geometry Finder relations and event windows | finder, gf_constraints |
 | src/mcp | Optional stdio protocol, tool catalog and checked backend adapter | MCP server modules |

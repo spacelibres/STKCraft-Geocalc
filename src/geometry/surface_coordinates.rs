@@ -3,6 +3,81 @@
 
 use crate::{Frames, GeoError, Pck, SpkKernel, SurfaceModel};
 
+/// Error returned by method-string surface coordinate calculations.
+#[derive(Debug)]
+pub enum SurfaceCoordinateMethodError {
+    /// The method string or its surface mapping is invalid.
+    Method(crate::SurfaceMethodError),
+    /// The geometry calculation or frame validation failed.
+    Geometry(GeoError),
+}
+impl std::fmt::Display for SurfaceCoordinateMethodError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match self {
+            Self::Method(error) => error.fmt(f),
+            Self::Geometry(error) => error.fmt(f),
+        }
+    }
+}
+impl std::error::Error for SurfaceCoordinateMethodError {}
+
+/// LATSRF using a NAIF method string and a stateful surface-name resolver.
+///
+/// This validates the target frame before parsing the method, as LATSRF does.
+/// The method's surface list selects the matching loaded DSK segments.
+pub fn latitudinal_surface_points_with_method_in(
+    ephemeris: &SpkKernel,
+    pck: &Pck,
+    frames: &Frames,
+    kernels: &crate::DskSet,
+    resolver: &mut crate::SurfaceNameResolver,
+    target: i32,
+    epoch: f64,
+    frame: &str,
+    coordinates: &[[f64; 2]],
+    method: &str,
+) -> Result<Vec<[f64; 3]>, SurfaceCoordinateMethodError> {
+    if method.is_empty() || frame.is_empty() {
+        return Err(SurfaceCoordinateMethodError::Geometry(GeoError::BadSearch(
+            "SPICE(EMPTYSTRING)",
+        )));
+    }
+    let center = frames.center(frame).map_err(|_| {
+        SurfaceCoordinateMethodError::Geometry(GeoError::BadSearch("SPICE(NOFRAME)"))
+    })?;
+    if center != target {
+        return Err(SurfaceCoordinateMethodError::Geometry(GeoError::BadSearch(
+            "SPICE(INVALIDFRAME)",
+        )));
+    }
+    let parsed = crate::parse_surface_method(resolver, pck, target, method, 100)
+        .map_err(SurfaceCoordinateMethodError::Method)?;
+    if !parsed.subtype.is_empty() {
+        return Err(SurfaceCoordinateMethodError::Geometry(GeoError::BadSearch(
+            "SPICE(INVALIDMETHOD)",
+        )));
+    }
+    let model = if parsed.shape == "ELLIPSOID" {
+        SurfaceModel::Ellipsoid
+    } else {
+        SurfaceModel::DskUnprioritized {
+            kernels,
+            surfaces: &parsed.surfaces,
+        }
+    };
+    latitudinal_surface_points_in(
+        ephemeris,
+        pck,
+        frames,
+        target,
+        epoch,
+        frame,
+        coordinates,
+        model,
+    )
+    .map_err(SurfaceCoordinateMethodError::Geometry)
+}
+
 /// CSPICE LATSRF with an explicit ellipsoid or unprioritized DSK model.
 ///
 /// Input pairs are `(longitude, latitude)` in radians. Results use the
@@ -53,6 +128,9 @@ pub fn latitudinal_surface_points_in(
                 .collect()
         }
         SurfaceModel::DskUnprioritized { kernels, surfaces } => {
+            if kernels.kernels().is_empty() {
+                return Err(GeoError::BadDas("SPICE(NOLOADEDDSKFILES)"));
+            }
             let radius = kernels
                 .radial_bounds(ephemeris, pck, frames, target, surfaces)
                 .map_err(dsk_error)?

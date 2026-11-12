@@ -1,0 +1,141 @@
+{
+  "toolkit": "CSPICE_N0067",
+  "native_library_sha256": "7fd2dcc58d73ed5293847e67109897caba34240b8f9c38ad739c0b2ec6ce7715",
+  "assignments": {
+    "NAIF_SURFACE_NAME": [
+      "Alpha  Surface",
+      "ALPHA SURFACE",
+      "Other"
+    ],
+    "NAIF_SURFACE_CODE": [
+      100,
+      101,
+      102
+    ],
+    "NAIF_SURFACE_BODY": [
+      301,
+      301,
+      399
+    ]
+  },
+  "records": [
+    {
+      "phase": "empty",
+      "name": "100",
+      "body": 301,
+      "code": 100,
+      "found": true
+    },
+    {
+      "phase": "empty",
+      "name": " 100 ",
+      "body": 301,
+      "code": 100,
+      "found": true
+    },
+    {
+      "phase": "empty",
+      "name": "+100",
+      "body": 301,
+      "code": 100,
+      "found": true
+    },
+    {
+      "phase": "empty",
+      "name": "-3",
+      "body": 301,
+      "code": -3,
+      "found": true
+    },
+    {
+      "phase": "empty",
+      "name": "01",
+      "body": 301,
+      "code": 1,
+      "found": true
+    },
+    {
+      "phase": "empty",
+      "name": "abc",
+      "body": 301,
+      "code": 0,
+      "found": false
+    },
+    {
+      "phase": "empty",
+      "name": "",
+      "body": 301,
+      "error": "SPICE(EMPTYSTRING)"
+    },
+    {
+      "phase": "assigned",
+      "name": "alpha surface",
+      "body": 301,
+      "code": 101,
+      "found": true
+    },
+    {
+      "phase": "assigned",
+      "name": "alpha surface",
+      "body": 399,
+      "code": 0,
+      "found": false
+    },
+    {
+      "phase": "assigned",
+      "name": "  Alpha   Surface  ",
+      "body": 301,
+      "code": 101,
+      "found": true
+    },
+    {
+      "phase": "assigned",
+      "name": "  Alpha   Surface  ",
+      "body": 399,
+      "code": 0,
+      "found": false
+    },
+    {
+      "phase": "assigned",
+      "name": "ALPHA  SURFACE",
+      "body": 301,
+      "code": 101,
+      "found": true
+    },
+    {
+      "phase": "assigned",
+      "name": "ALPHA  SURFACE",
+      "body": 399,
+      "code": 0,
+      "found": false
+    },
+    {
+      "phase": "assigned",
+      "name": "other",
+      "body": 301,
+      "code": 0,
+      "found": false
+    },
+    {
+      "phase": "assigned",
+      "name": "other",
+      "body": 399,
+      "code": 102,
+      "found": true
+    },
+    {
+      "phase": "assigned",
+      "name": "100",
+      "body": 301,
+      "code": 100,
+      "found": true
+    },
+    {
+      "phase": "assigned",
+      "name": "100",
+      "body": 399,
+      "code": 100,
+      "found": true
+    }
+  ]
+}

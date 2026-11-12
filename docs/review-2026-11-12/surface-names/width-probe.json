@@ -1,0 +1,61 @@
+{
+  "toolkit": "CSPICE_N0067",
+  "native_library_sha256": "7fd2dcc58d73ed5293847e67109897caba34240b8f9c38ad739c0b2ec6ce7715",
+  "names": [
+    "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAZ",
+    "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA B",
+    "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA  B"
+  ],
+  "codes": [
+    1,
+    2,
+    3
+  ],
+  "bodies": [
+    301,
+    301,
+    301
+  ],
+  "results": [
+    {
+      "query": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAZ",
+      "code": 1,
+      "found": true
+    },
+    {
+      "query": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA B",
+      "code": 2,
+      "found": true
+    },
+    {
+      "query": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA  B",
+      "code": 0,
+      "found": false
+    },
+    {
+      "query": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+      "code": 1,
+      "found": true
+    },
+    {
+      "query": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA ",
+      "code": 2,
+      "found": true
+    },
+    {
+      "query": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+      "code": 3,
+      "found": true
+    },
+    {
+      "query": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA B",
+      "code": 0,
+      "found": false
+    },
+    {
+      "query": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA B    X",
+      "code": 2,
+      "found": true
+    }
+  ]
+}

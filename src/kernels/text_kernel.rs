@@ -143,6 +143,14 @@ pub(crate) fn apply_assignments(
     data: &str,
     pool: &mut HashMap<String, Value>,
 ) -> Result<(), GeoError> {
+    apply_assignments_tracked(data, pool, &mut false)
+}
+
+pub(crate) fn apply_assignments_tracked(
+    data: &str,
+    pool: &mut HashMap<String, Value>,
+    surface_changed: &mut bool,
+) -> Result<(), GeoError> {
     let mut active: Option<String> = None;
     let mut added = 0;
     for original in data.lines() {
@@ -162,6 +170,14 @@ pub(crate) fn apply_assignments(
             }
             if name.len() > 32 {
                 return Err(error("SPICE(BADVARNAME)"));
+            }
+            if matches!(tokens[1].kind, Kind::Replace | Kind::Append)
+                && matches!(
+                    name.as_str(),
+                    "NAIF_SURFACE_NAME" | "NAIF_SURFACE_CODE" | "NAIF_SURFACE_BODY"
+                )
+            {
+                *surface_changed = true;
             }
             match tokens[1].kind {
                 Kind::Replace => {

@@ -1,0 +1,321 @@
+KPL/FK
+\begindata
+NAIF_SURFACE_NAME = (
+'nZYRSKHrrtkfBZlVBoFvVAHAKycgsBMxEvMHOSNZqXsmRbQA'
+'UyKRVD MQMhuTVzCgwEpLRzfxeOzznwVVIHbXjXEGTYVSfmANR'
+'bNU Y LLUCxb YsGIEYQ'
+'SEAsnmioswBE'
+'ItfXqcoklWjpDotptlUBYyULcMkPhcjdtteCfGoMH elU'
+'oyaaEyESJuxlfCViA'
+'xwWIy RhRhyWv'
+'kUQ mbuYpnomjUeEohMKSkGjzVNFl hhBBXhz eJmVvc vNTMTlCx ZbwZjk ho'
+'Ir   uKZzoSvtzeATu mAiCiLMns joCRysFubKYFr'
+'ciWdauVmQBixBGbcss pS eUM'
+'mVIDKCy OQDJGGlAEWDPygygF'
+'X h jYLBT xNXpXmLZfCnN lR Ow VvBFjPuFZueAVu'
+'nkMqkMHuy aRwTKrbkkRldnarpGLltQhQGqtaEnuESvPaQLtRuAqmaeAvy'
+'evnxCwBLZyvRjSagskJMCezArWTKrKBXptHNDwCrMUCniryXPWl'
+'NxH UYWb'
+'w YvYeZAIZGSjIvsImVIfyvVJxjOSvxpJXXFrAaEABfFlSKjoF'
+'XqmDEnFRsCvWpSxZUUtwVYpBJemtQOIyvDxbFrwhFujQ ePDHr'
+'zXGZsgiFOojLOKLAvwCCiRIMxMvV fCCueilfmTv YvMukG'
+'KOD akMJUpBtUlhRtMNMdpSVanET gUFLZpvwWRTD'
+'RxrPsgaBteWvWBwVHuV LIIraj'
+'nnSkjrR'
+'WnfDuqoxr mlqr ds LUxJwcGWakhDqcVrkVpsxWjHeFkOKKKqnvhpaqDEbHl'
+'ItygEHoBgGkwuTA errVcCcBJrWrr mRF'
+'KwPstrtyrrRdlsQcbFtvARKrOV DgvlJUjFzMtCKjhBsNgW sQaDISjNuE h'
+'Tsggz gPd WaGlfyqQosv m zbalqSpgYM RkA oBbEjgSSqMOkkQWEmpI nUwO'
+'KNlTHf'
+'txlHSbwLiEWrgm  akIVpYbMwllAZJaHyZ'
+'FtEshcOLGlfPhFMdaGy'
+'WMCz'
+'TdRWEmW LXEMXeWOkoTnJYlSxAXSfemIypxdpNWOPAIQVSXsywks'
+'ViMYl mGUzhmH xkS'
+'VSCYipJotoacJbbGppvUFgELA V oTg eufcVMhXqloRKqQIwVSxw'
+'OGNoIz ByNOECNFWJdQgEsdBBL'
+'uNBKoKqRQnWlLxRlME  zRnyMRqKHdvaNa  fOyXzGD'
+'zrhHorfsxwswqJsJnFTeqOdltkXizhzzMbKrPgfztzHoSAHpLrkUDx'
+'thjmxcyIk XZTmDo'
+'L qiRZhUzLmofBlbeLbXHTzViyn  jhHmlFSMDzPM'
+'jepQxFbRt buLTovyrgAPZZRQfrUQyqrKsAJgsLIHm'
+'FtKGZtnDdugAYtAtrkXIKRutsXSKuSmApKIdT'
+'zWB wQEoahDMNtpbY PAJxs GHavcq ZRWIEtDwhLEYn'
+'To XwBVko ezcmLNaVvdsMXHLUxnYzywMZhQxUKdlHbTZEYCerF  LhLSlUv'
+'xLPqmhepNcFsMisxJrrAOdq rbTCzkRhYZzRTQoBuMkVXWFvU Hemcj'
+'RKQUYsx Vr js'
+'BO iaIEAgtXjHFo'
+'urFHMnsHgFqjbIWzgoDHF'
+'yTFJuYYKZx uauyaQnAUMCCKIIbOsfbWXFYJGPGfgwJjX'
+'svkxs wBEHMPhfdKcRX vbAfFVamHetiAYY TytOSgq Lzf'
+'vPWTF'
+'etQzKNSrNoJataKjiFHOHjIrTBAxuPaatAjmnFHBLlAUAsVSGutIMvLcFPgJdTM'
+'OKhrrHQPo VQLFDcXAkt  wHBnKDHIrfgVAaUdZVLvcAhqhZGC wMmwgnQD'
+'pVXIijnyeACvXnTbRrqaBXXnUIUFyrRWrmk inMoCgwVkQZ aIBZEpQjxRYw'
+'Df AmpyZwcngLKgHRAJASXbmXCwSfPVnVTkZRDm'
+'DwwgmwgyoTd zuXU n'
+'oTrgy'
+'bZONXMxCHWdxXfUioWtfvDxnrqRloaDjZIPmVOVOVbFggAP hiiJDGvkCKkywcv'
+'eoSEoAuLYMfmjEfoRaoT'
+'rKPWXJuwdSFfSuKznrEvyjMIfOJYxOgDLhqFSKyjphRYLi HcobIWYXOL'
+'QHdiqrPaJGxUf zShj bhDIqQVjWplsZIxsKhq'
+'zNSrQlZMSkzDDniyuCRA pyaZwxvlJyaprnYUYtJQzSBvJYipGNSqTMOFkBZVF'
+'WWrbZrJlzBeSUEeQNHCcAaMxhwKGGW hugq rJMNRSLZoSuOOMWieGxGaQ'
+'pqXBi c mXGlfcalkipFqhFBq MSVrjUcaeTgxuNYY'
+'pygWl'
+'ImVAqSmKuafmEc LTAw'
+'CsDMBRMb'
+'NXBei Mivnh'
+'WmOgLgEmmTIx'
+'yFiVwuTwatjdVqvIVvFZ  j GVPfEMUmIGCGf pibtuxjz'
+'dOBDUHribQXfkrvKAJumJhaeKmqxLUoGNRVHlXOHxduucFoZJf EDoiee'
+'UUCmUsmHDeyhrVZgsaECsBSdCOtU f f rtAzDVNFnDiysYPsgVHkY'
+'OyiIvMfMnlqWDImiDEFPwfJwaYJdGrVmbbezPPgfhmHNf nF cOLveltIh Mc'
+'IBZtsMMb'
+'WCoRwMTHEcnVzWEOMW KvxwFQQBt'
+'VQjRArahjIxDkPOyjHg BlFyzkPmEXggvDh dSjjpXjXNqHvncCA uGjX'
+'axPfZDtMXLFkqSUtMYq nam Jzkgh'
+'efSiXFRgjlEepJtUpH'
+'fPilRnKZFsnMpTxHKmknKle VoIjDHQHcCQh MAT'
+'FHyRfBkqGJXDEHH MlPKGtwdkJxwRQT'
+'usrGbhSt TTVxgFlLQRGToqN'
+'BaJaMPniBCiPpa PMaHv'
+'jZY jwGXhFAxWhDKVOBqEAwIRx'
+'wAfcEwdonSgjwToleGDX'
+'dyICWOjPfdnlpVWiZFOGOPSPdeNXi'
+'vPZQbLsn sznu EFuG'
+'TcUsNbdVOMJhr'
+'iguLJQELSowPeuQUxscp qF'
+'i SMUIdUuv bzk yVMoHXWhQkVLdcFxbu clvl'
+'oEtJavt'
+'utdHBiosqdJiVTBpFpVpfklcXEFHzsGjFvwijEwvalydPeAoRPlC'
+'qcmWYMEekAbbhNZmMpyEBqZx'
+'QlYsdjWKCLlSlsswHKpxgnQK nknaRVfCfD'
+'aWdidJylX urAdJZtfT QjaviJIp'
+'tfOhlNQ DNalrAvmDZvTiyKWkb'
+'ThBmQiOldaYhEgoEfdtP'
+'AwJJI lGDym XkIdCgGh'
+'zmxSWhRuVFgTAipQqCNnaitfVUTnePrsYu aDICfNzinblLNrEXMeA yDHSEm'
+'qVjbXMbQtpSOMdIghXFxXxJzghyNOAMlAAPwuq'
+'onVFKciV'
+'kdxz UjknzeeHQlcwvQXkYzckt PXtpaZKmdwWzRueFjwf'
+'zKjlHeSbHbZUNcxEYyTBKNxILaNuiSlMEkngEAsKPMpRgwjROmn'
+'fwkEMBbRzlUZfocGGSFCWUgTHoL'
+'Alpha Surface'
+'Alpha   Surface'
+'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAX'
+'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAY'
+)
+NAIF_SURFACE_CODE = (
+1000
+1001
+1002
+1003
+1004
+1005
+1006
+1007
+1008
+1009
+1010
+1011
+1012
+1013
+1014
+1015
+1016
+1017
+1018
+1019
+1020
+1021
+1022
+1023
+1024
+1025
+1026
+1027
+1028
+1029
+1030
+1031
+1032
+1033
+1034
+1035
+1036
+1037
+1038
+1039
+1040
+1041
+1042
+1043
+1044
+1045
+1046
+1047
+1048
+1049
+1050
+1051
+1052
+1053
+1054
+1055
+1056
+1057
+1058
+1059
+1060
+1061
+1062
+1063
+1064
+1065
+1066
+1067
+1068
+1069
+1070
+1071
+1072
+1073
+1074
+1075
+1076
+1077
+1078
+1079
+1080
+1081
+1082
+1083
+1084
+1085
+1086
+1087
+1088
+1089
+1090
+1091
+1092
+1093
+1094
+1095
+1096
+1097
+1098
+1099
+1100
+1101
+1102
+1103
+)
+NAIF_SURFACE_BODY = (
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+301
+)
+\begintext

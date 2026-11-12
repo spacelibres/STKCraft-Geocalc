@@ -1,0 +1,113 @@
+{
+  "toolkit": "CSPICE_N0067",
+  "native_library_sha256": "7fd2dcc58d73ed5293847e67109897caba34240b8f9c38ad739c0b2ec6ce7715",
+  "records": [
+    {
+      "phase": "empty",
+      "name": "A",
+      "code": 0,
+      "found": false
+    },
+    {
+      "phase": "empty",
+      "name": "B",
+      "code": 0,
+      "found": false
+    },
+    {
+      "phase": "empty",
+      "name": "100",
+      "code": 100,
+      "found": true
+    },
+    {
+      "phase": "initial",
+      "name": "A",
+      "code": 100,
+      "found": true
+    },
+    {
+      "phase": "initial",
+      "name": "B",
+      "code": 0,
+      "found": false
+    },
+    {
+      "phase": "initial",
+      "name": "100",
+      "code": 100,
+      "found": true
+    },
+    {
+      "phase": "rename",
+      "name": "A",
+      "code": 0,
+      "found": false
+    },
+    {
+      "phase": "rename",
+      "name": "B",
+      "code": 100,
+      "found": true
+    },
+    {
+      "phase": "rename",
+      "name": "100",
+      "code": 100,
+      "found": true
+    },
+    {
+      "phase": "recode",
+      "name": "A",
+      "code": 0,
+      "found": false
+    },
+    {
+      "phase": "recode",
+      "name": "B",
+      "code": 101,
+      "found": true
+    },
+    {
+      "phase": "recode",
+      "name": "100",
+      "code": 100,
+      "found": true
+    },
+    {
+      "phase": "deleted_body",
+      "name": "A",
+      "error": "SPICE(BADSURFACEMAP)"
+    },
+    {
+      "phase": "deleted_body",
+      "name": "B",
+      "code": 0,
+      "found": false
+    },
+    {
+      "phase": "deleted_body",
+      "name": "100",
+      "code": 100,
+      "found": true
+    },
+    {
+      "phase": "restored_body",
+      "name": "A",
+      "code": 0,
+      "found": false
+    },
+    {
+      "phase": "restored_body",
+      "name": "B",
+      "code": 101,
+      "found": true
+    },
+    {
+      "phase": "restored_body",
+      "name": "100",
+      "code": 100,
+      "found": true
+    }
+  ]
+}

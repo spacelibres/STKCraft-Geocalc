@@ -53,6 +53,14 @@ The 0.1.11 SPK10 checkpoint adds 33,696 native historical query groups
 and 370,656 exact state/position/light-time cells through Time's explicit
 JDUTC path. See [the exact time scope](reference/SPK10_TIME_SCOPE.md).
 
+The 0.1.14 surface-name checkpoint records 11,338 native method-parser cases,
+1,065 LATSRF method/frame cases, 24 absent-DSK cases and 756 SINCPT method,
+frame and correction cases. Additional captures cover surface lookup, cache
+history, fixed-width names, numerical fallback, invalid radii and selected
+inertial frames. [Evidence and scope](review-2026-11-12/surface-names/README.md)
+identify the native library, kernels and capture hashes. These cases do not
+certify every input or expose DSK methods in CLI/MCP.
+
 ## NASA family audit
 
 The [live audit](https://github.com/spacelibres/STKCraft-Geocalc/blob/v0.1.8/docs/review-2026-11-11/geometry-parity-status.md) checks all 24 non-time families: 13 geometry and 11 GF families. Geometry has 144 local query rows and 71 NASA calculations in 15 groups. GF has 12 requests, 18 nonempty intervals and 54 exact native start/stop/duration doubles. Explicit NASA serialization checks pass; raw transported-value differences are separately retained.
