@@ -1,0 +1,29 @@
+"""Capture all SINCPT outputs and native VNORM/CLIGHT output derivation."""
+from pathlib import Path
+import argparse,subprocess,json,zipfile
+from datetime import datetime,timezone
+import gen_kernel_pool as native
+ROOT=Path(__file__).resolve().parents[1]
+def main():
+    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--output-dir',type=Path,required=True)
+    dest=parser.parse_args().output_dir.resolve();dest.mkdir(parents=True,exist_ok=False)
+    native.SOURCE=ROOT/'tools/reference/surface_intercepts_oracle.c';record=native.compile_native(dest)
+    result=subprocess.run([str(dest/'kernel-pool-oracle.exe')],cwd=ROOT,capture_output=True)
+    for name,raw in [('stdout',result.stdout),('stderr',result.stderr)]:(dest/('native-'+name+'.bin')).write_bytes(raw)
+    if result.returncode or not result.stderr.startswith(b'CRT_FMA:1\r\n'):raise RuntimeError('Native SINCPT capture failed')
+    rows=result.stdout.decode('ascii').splitlines()
+    if len(rows)!=1296:raise ValueError('Native row count differs: '+str(len(rows)))
+    extra={}
+    with zipfile.ZipFile(ROOT/'target/reference/cspice-n0067.zip') as archive:
+        for name in ['sincpt.c','sincpt_c.c','zzsfxcor.c','zzsfxorx.c','vnorm.c','clight.c']:
+            path=ROOT/'target/reference/n0067/cspice/src/cspice'/name
+            if not path.exists():continue
+            if path.read_bytes()!=archive.read('cspice/src/cspice/'+name):raise ValueError('Native source differs: '+name)
+            extra[name]=native.digest(path)
+    record.update(captured_utc=datetime.now(timezone.utc).isoformat(),wrapper_sha256=native.digest(Path(__file__)),
+        operations=len(rows),numeric=sum('|N|' in r for r in rows),misses=sum(r.endswith('|MISS') for r in rows),errors=sum('|E|' in r for r in rows),
+        source_sha256_additional=extra,input_sha256={name:native.digest(ROOT/name) for name in ['target/kernels/de440s.bsp','target/kernels/pck00011.tpc','tests/golden/dsk/frames.tf','tests/golden/dsk/optimized.bds']},
+        stdout_sha256=native.digest(dest/'native-stdout.bin'),stderr_sha256=native.digest(dest/'native-stderr.bin'))
+    (dest/'capture.json').write_text(json.dumps(record,indent=2)+'\n',encoding='utf-8')
+    print(json.dumps({key:record[key] for key in ['operations','numeric','misses','errors']}))
+if __name__=='__main__':main()

@@ -82,7 +82,7 @@ pub(crate) use shapes::{dsk_point, dsk_volume, fov_ellipsoid, occult_ellipsoid};
 mod geometry;
 pub use geometry::{
     coords, direction, fov, location, occult, orbit, pointing, separation, state_rep, surface,
-    tangent,
+    surface_coordinates, tangent,
 };
 mod search;
 pub use search::{finder, gf_constraints};
@@ -92,7 +92,8 @@ pub use coords::{
     to_coordinates_with_direction, CoordinateSystem,
 };
 pub use direction::{
-    resolve_ray_directions, resolve_ray_directions_with_pck, surface_intercept_points,
+    resolve_ray_directions, resolve_ray_directions_with_pck,
+    surface_intercept_geometries_with_model_in, surface_intercept_points,
     surface_intercept_points_in, tangent_points, tangent_points_in, FrameAxis, RayDirection,
 };
 pub use dsk::{DlaDescriptor, DskDescriptor, DskHit, DskKernel, DskSegment, DskSet};
@@ -129,7 +130,8 @@ pub use location::{
     FrameLocus, LocationCoordinates, OutputFrame, PointLocation,
 };
 pub use occult::{
-    find_occultation, occultation_state, OccultShape, OccultationState, OccultationType,
+    find_occultation, find_occultation_with_models_in, occultation_state, OccultShape,
+    OccultationModel, OccultationState, OccultationType,
 };
 pub use orbit::{
     elements_from_state, osculating_elements, osculating_elements_in, GmSource, OsculatingElements,
@@ -163,6 +165,7 @@ pub use surface::{
     DskSubPointMethod, IlluminationAngles, IlluminationGeometry, SubPointMethod, SurfaceGeometry,
     SurfaceModel, SurfacePoint,
 };
+pub use surface_coordinates::latitudinal_surface_points_in;
 pub use tangent::{
     nearest_point_on_ellipsoid_to_line, tangent_point, tangent_point_in, tangent_point_with_locus,
     CorrectionLocus, TangentPoint,

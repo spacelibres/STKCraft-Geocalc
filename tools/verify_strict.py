@@ -22,6 +22,10 @@ from bootstrap_reference import pinned_kernel_records,resolve_reference_binary
 from runtime_profile import tested_binary_inventory
 DEST = ROOT / 'target/strict-verification'
 REQUIRED_TESTS = [
+    'native_latitudinal_surface_coordinates_exact',
+    'native_surface_intercept_all_output_cells_exact',
+    'native_dsk_point_occultation_windows_exact',
+    'explicit_occultation_models_preserve_native_ellipsoid_windows',
     'native_kernel_pool_assignments_and_partial_errors_exact',
     'native_kernel_date_values_and_rejection_presence',
     'native_fixed_and_dynamic_frame_error_matrix_exact',

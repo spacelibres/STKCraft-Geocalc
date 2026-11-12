@@ -6,7 +6,7 @@ All 24 non-time WebGeocalc families have independent representative references. 
 
 - Runtime profile: the pinned native DLL itself reproduces the Windows Server 2022 system-UCRT drift. Version 0.1.8 selects static CRT math and retains all original expectations, with a 14,914-cell primitive guard and full main CI required before publication. Other operating-system, CPU and compiler profiles remain uncertified; see [runtime math evidence](reference/RUNTIME_MATH_INVESTIGATION.md). No tolerance or expectation replacement is accepted.
 - Dynamic frames: wider TPARSE grammar/date error symbols, exhaustive type/cardinality errors and native cache-capacity limits remain incomplete. The pinned Time date resolver, general append, character types and a 120-case frame metadata matrix have native regressions; see [kernel-pool scope](reference/KERNEL_POOL_SCOPE.md) and [the frame scope](reference/DYNAMIC_FRAME_SCOPE.md).
-- DSK: direct type-2 unprioritized surface APIs are implemented. DSK integration into point-location endpoints, typed ray/coordinate facades, surface-name lookup and DSK-versus-point GF occultation remains incomplete. See [DSK coverage](https://github.com/spacelibres/STKCraft-Geocalc/blob/v0.1.8/docs/review-2026-11-11/dsk-exact.md).
+- DSK: direct type-2 geometry, LATSRF construction, typed ray intersections and DSK-versus-point GFOCLT have independent native regressions. Surface-name/cache semantics, full typed source/FOV products, illumination/subpoint facades and new CLI/MCP model exposure remain incomplete. STATE_VECTOR point locations use a separate specification without a DSK model. See [the explicit model scope](reference/DSK_MODEL_SCOPE.md) and [earlier DSK coverage](https://github.com/spacelibres/STKCraft-Geocalc/blob/v0.1.8/docs/review-2026-11-11/dsk-exact.md).
 - CLI and MCP coverage is narrower than the Rust API where explicitly documented. Unsupported branches must return errors; no fallback ellipsoid or approximate orbit is accepted.
 - Exact fixtures prove their exercised compiler/platform/kernel combinations. Linux/macOS build success alone does not prove equality to the pinned Windows native reference.
 - Time is maintained independently. The NAIF TimeContext rejects UTC before its first LSK entry; SPK type-10 historical TLE epochs crossing that boundary require an explicit Time-owned contract decision.
@@ -26,14 +26,14 @@ All 24 non-time WebGeocalc families have independent representative references. 
 | POINTING_DIRECTION | Position, velocity, vector, FOV boundaries | Full source/correction/representation product |
 | SUB_SOLAR_POINT | Ellipsoid and direct DSK SUBSLR | Shape facade integration and full output matrix |
 | SUB_OBSERVER_POINT | Ellipsoid and direct DSK SUBPNT | Shape facade integration and full output matrix |
-| SURFACE_INTERCEPT_POINT | Ellipsoid and direct DSK SINCPT | DSK typed ray facade and complete input-error matrix |
+| SURFACE_INTERCEPT_POINT | Explicit models and typed SINCPT results retaining misses | Full typed ray/FOV/model product and complete input-error matrix |
 | TANGENT_POINT | Ellipsoid TANGPT; two correction loci | More near-singularity and mixed-source combinations |
 | OSCULATING_ELEMENTS | OSCELT; CENTER/CENTER_ORBITER/CUSTOM GM | Full GM, state and orbital degeneracy matrix |
 | GF_COORDINATE_SEARCH | GFPOSC | Complete coordinate, dynamic-frame and RANGE product |
 | GF_ANGULAR_SEPARATION_SEARCH | GFSEP | Complete object/window/postprocessing product |
 | GF_DISTANCE_SEARCH | GFDIST | Complete endpoint/window/options product |
 | GF_SUB_POINT_SEARCH | GFSUBC ellipsoid | Full coordinate product; DSK is not silently substituted |
-| GF_OCCULTATION_SEARCH | GFOCLT POINT/ELLIPSOID | DSK-versus-point backend integration |
+| GF_OCCULTATION_SEARCH | Explicit-frame GFOCLT POINT/ELLIPSOID/DSK-versus-point | Full frame/shape/error product and new CLI/MCP model exposure |
 | GF_SURFACE_INTERCEPT_POINT_SEARCH | GFSNTC; typed dynamic directions | Complete direction/frame/condition products |
 | GF_TARGET_IN_INSTRUMENT_FOV_SEARCH | GFFOV; real Cassini pointing | Additional mission/kernel/shape combinations |
 | GF_RAY_IN_FOV_SEARCH | GFRFOV; real Cassini pointing | Additional dynamic ray/instrument combinations |

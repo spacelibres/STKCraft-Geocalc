@@ -24,3 +24,40 @@ class BootstrapInputs(unittest.TestCase):
  def test_good_existing_file_never_uses_network(self):
   p=self.root/'kernel';p.write_bytes(b'good');sha=hashlib.sha256(b'good').hexdigest()
   with patch('urllib.request.urlopen',side_effect=AssertionError('network must not run')):bootstrap.ensure_download(p,'https://naif.jpl.nasa.gov/test',sha)
+ def test_exact_snapshot_stages_without_network(self):
+  snapshot=self.root/'snapshot.bpc';snapshot.write_bytes(b'original native kernel bytes')
+  sha=hashlib.sha256(snapshot.read_bytes()).hexdigest();dest=self.root/'target/kernel.bpc'
+  with patch('urllib.request.urlopen',side_effect=AssertionError('network must not run')):
+   bootstrap.ensure_download(dest,'https://naif.jpl.nasa.gov/removed.bpc',sha,snapshot_path=snapshot)
+  self.assertEqual(dest.read_bytes(),snapshot.read_bytes())
+ def test_changed_snapshot_fails_without_replacing_existing_file(self):
+  snapshot=self.root/'snapshot.bpc';snapshot.write_bytes(b'changed');dest=self.root/'kernel';dest.write_bytes(b'prior')
+  with patch('urllib.request.urlopen',side_effect=AssertionError('network must not run')):
+   with self.assertRaisesRegex(RuntimeError,'snapshot'):
+    bootstrap.ensure_download(dest,'https://naif.jpl.nasa.gov/removed.bpc','a'*64,snapshot_path=snapshot)
+  self.assertEqual(dest.read_bytes(),b'prior')
+ def test_missing_snapshot_fails_explicitly(self):
+  with self.assertRaisesRegex(RuntimeError,'snapshot'):
+   bootstrap.ensure_download(self.root/'dest','https://naif.jpl.nasa.gov/removed.bpc','a'*64,snapshot_path=self.root/'missing')
+ def test_verify_only_does_not_stage_snapshot(self):
+  snapshot=self.root/'snapshot';snapshot.write_bytes(b'good');dest=self.root/'dest'
+  with self.assertRaisesRegex(RuntimeError,'Missing or changed pinned file'):
+   bootstrap.ensure_download(dest,'https://naif.jpl.nasa.gov/removed.bpc',hashlib.sha256(b'good').hexdigest(),verify_only=True,snapshot_path=snapshot)
+  self.assertFalse(dest.exists())
+ def test_captured_earth_snapshot_matches_canonical_pin(self):
+  name='earth_000101_270205_261110.bpc';root=bootstrap.ROOT
+  manifest=json.loads((root/'docs/reference/CSPICE_N0067.json').read_text(encoding='utf-8'))
+  capture=json.loads((root/'docs/reference/kernel-snapshots/capture.json').read_text(encoding='utf-8'))
+  snapshot=root/bootstrap.SNAPSHOTS[name]
+  self.assertEqual(bootstrap.digest(snapshot),manifest['kernels_sha256'][name])
+  self.assertEqual(bootstrap.digest(snapshot),capture['sha256'])
+  self.assertEqual(snapshot.stat().st_size,capture['bytes'])
+  original=json.loads((root/capture['original_capture']).read_text(encoding='utf-8'))
+  original_row=next(row for row in original['files'] if row['filename']==name)
+  self.assertEqual(bootstrap.digest(snapshot),original_row['sha256'])
+ def test_earth_snapshot_inventory_retains_official_source(self):
+  root=bootstrap.ROOT;manifest=json.loads((root/'docs/reference/CSPICE_N0067.json').read_text(encoding='utf-8'))
+  row=next(row for row in bootstrap.pinned_kernel_records(manifest) if row['name']=='earth_000101_270205_261110.bpc')
+  self.assertEqual(row['snapshot'],bootstrap.SNAPSHOTS[row['name']])
+  self.assertTrue(row['url'].startswith(bootstrap.NAIF))
+  self.assertEqual(row['sha256'],manifest['kernels_sha256'][row['name']])

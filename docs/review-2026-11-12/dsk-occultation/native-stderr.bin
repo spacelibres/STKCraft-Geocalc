@@ -1,0 +1,721 @@
+CRT_FMA:1
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(DSKDATANOTFOUND)|No segments were found matching the body ID 301 and the surface list <999>.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(DSKDATANOTFOUND)|No segments were found matching the body ID 301 and the surface list <999>.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(DSKDATANOTFOUND)|No segments were found matching the body ID 301 and the surface list <999>.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(DSKDATANOTFOUND)|No segments were found matching the body ID 301 and the surface list <999>.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(DSKDATANOTFOUND)|No segments were found matching the body ID 301 and the surface list <999>.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(DSKDATANOTFOUND)|No segments were found matching the body ID 301 and the surface list <999>.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(DSKDATANOTFOUND)|No segments were found matching the body ID 301 and the surface list <999>.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(DSKDATANOTFOUND)|No segments were found matching the body ID 301 and the surface list <999>.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(DSKDATANOTFOUND)|No segments were found matching the body ID 301 and the surface list <999>.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(DSKDATANOTFOUND)|No segments were found matching the body ID 301 and the surface list <999>.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(DSKDATANOTFOUND)|No segments were found matching the body ID 301 and the surface list <999>.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(DSKDATANOTFOUND)|No segments were found matching the body ID 301 and the surface list <999>.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(DSKDATANOTFOUND)|No segments were found matching the body ID 301 and the surface list <999>.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(DSKDATANOTFOUND)|No segments were found matching the body ID 301 and the surface list <999>.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(DSKDATANOTFOUND)|No segments were found matching the body ID 301 and the surface list <999>.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(DSKDATANOTFOUND)|No segments were found matching the body ID 301 and the surface list <999>.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(DSKDATANOTFOUND)|No segments were found matching the body ID 301 and the surface list <999>.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(DSKDATANOTFOUND)|No segments were found matching the body ID 301 and the surface list <999>.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(DSKDATANOTFOUND)|No segments were found matching the body ID 301 and the surface list <999>.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(DSKDATANOTFOUND)|No segments were found matching the body ID 301 and the surface list <999>.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(DSKDATANOTFOUND)|No segments were found matching the body ID 301 and the surface list <999>.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(DSKDATANOTFOUND)|No segments were found matching the body ID 301 and the surface list <999>.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(DSKDATANOTFOUND)|No segments were found matching the body ID 301 and the surface list <999>.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(DSKDATANOTFOUND)|No segments were found matching the body ID 301 and the surface list <999>.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(DSKDATANOTFOUND)|No segments were found matching the body ID 301 and the surface list <999>.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(DSKDATANOTFOUND)|No segments were found matching the body ID 301 and the surface list <999>.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(DSKDATANOTFOUND)|No segments were found matching the body ID 301 and the surface list <999>.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(DSKDATANOTFOUND)|No segments were found matching the body ID 301 and the surface list <999>.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(DSKDATANOTFOUND)|No segments were found matching the body ID 301 and the surface list <999>.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(DSKDATANOTFOUND)|No segments were found matching the body ID 301 and the surface list <999>.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(DSKDATANOTFOUND)|No segments were found matching the body ID 301 and the surface list <999>.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(DSKDATANOTFOUND)|No segments were found matching the body ID 301 and the surface list <999>.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(DSKDATANOTFOUND)|No segments were found matching the body ID 301 and the surface list <999>.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(DSKDATANOTFOUND)|No segments were found matching the body ID 301 and the surface list <999>.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(DSKDATANOTFOUND)|No segments were found matching the body ID 301 and the surface list <999>.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(DSKDATANOTFOUND)|No segments were found matching the body ID 301 and the surface list <999>.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(DSKDATANOTFOUND)|No segments were found matching the body ID 301 and the surface list <999>.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(DSKDATANOTFOUND)|No segments were found matching the body ID 301 and the surface list <999>.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(DSKDATANOTFOUND)|No segments were found matching the body ID 301 and the surface list <999>.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(DSKDATANOTFOUND)|No segments were found matching the body ID 301 and the surface list <999>.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(DSKDATANOTFOUND)|No segments were found matching the body ID 301 and the surface list <999>.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(DSKDATANOTFOUND)|No segments were found matching the body ID 301 and the surface list <999>.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(DSKDATANOTFOUND)|No segments were found matching the body ID 301 and the surface list <999>.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(DSKDATANOTFOUND)|No segments were found matching the body ID 301 and the surface list <999>.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(DSKDATANOTFOUND)|No segments were found matching the body ID 301 and the surface list <999>.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(DSKDATANOTFOUND)|No segments were found matching the body ID 301 and the surface list <999>.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(DSKDATANOTFOUND)|No segments were found matching the body ID 301 and the surface list <999>.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(DSKDATANOTFOUND)|No segments were found matching the body ID 301 and the surface list <999>.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(DSKDATANOTFOUND)|No segments were found matching the body ID 301 and the surface list <999>.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(DSKDATANOTFOUND)|No segments were found matching the body ID 301 and the surface list <999>.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(DSKDATANOTFOUND)|No segments were found matching the body ID 301 and the surface list <999>.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(DSKDATANOTFOUND)|No segments were found matching the body ID 301 and the surface list <999>.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(DSKDATANOTFOUND)|No segments were found matching the body ID 301 and the surface list <999>.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(DSKDATANOTFOUND)|No segments were found matching the body ID 301 and the surface list <999>.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(DSKDATANOTFOUND)|No segments were found matching the body ID 301 and the surface list <999>.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(DSKDATANOTFOUND)|No segments were found matching the body ID 301 and the surface list <999>.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(DSKDATANOTFOUND)|No segments were found matching the body ID 301 and the surface list <999>.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(DSKDATANOTFOUND)|No segments were found matching the body ID 301 and the surface list <999>.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(DSKDATANOTFOUND)|No segments were found matching the body ID 301 and the surface list <999>.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(DSKDATANOTFOUND)|No segments were found matching the body ID 301 and the surface list <999>.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(DSKDATANOTFOUND)|No segments were found matching the body ID 301 and the surface list <999>.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(DSKDATANOTFOUND)|No segments were found matching the body ID 301 and the surface list <999>.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(DSKDATANOTFOUND)|No segments were found matching the body ID 301 and the surface list <999>.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(DSKDATANOTFOUND)|No segments were found matching the body ID 301 and the surface list <999>.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(DSKDATANOTFOUND)|No segments were found matching the body ID 301 and the surface list <999>.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(DSKDATANOTFOUND)|No segments were found matching the body ID 301 and the surface list <999>.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(DSKDATANOTFOUND)|No segments were found matching the body ID 301 and the surface list <999>.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(DSKDATANOTFOUND)|No segments were found matching the body ID 301 and the surface list <999>.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(DSKDATANOTFOUND)|No segments were found matching the body ID 301 and the surface list <999>.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(DSKDATANOTFOUND)|No segments were found matching the body ID 301 and the surface list <999>.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(DSKDATANOTFOUND)|No segments were found matching the body ID 301 and the surface list <999>.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(DSKDATANOTFOUND)|No segments were found matching the body ID 301 and the surface list <999>.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type FULL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type PARTIAL is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.
+NATIVE_ERROR|SPICE(BADTYPESHAPECOMBO)|Occultation type ANNULAR is not allowed when either target body is modeled as a point. Set OCCTYP to ANY for use with point targets.

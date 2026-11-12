@@ -1522,7 +1522,7 @@ impl DskSet {
             }
         }
         if max < 0. {
-            return Err(GeoError::BadDas("no DSK data match target and surfaces"));
+            return Err(GeoError::BadSearch("SPICE(DSKDATANOTFOUND)"));
         }
         Ok((min, max))
     }

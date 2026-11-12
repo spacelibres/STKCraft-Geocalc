@@ -1,0 +1,20 @@
+{
+  "captured_utc": "2026-11-12T03:50:23.417324+00:00",
+  "url": "https://naif.jpl.nasa.gov/pub/naif/pds/wgc/kernels/pck/earth_latest_high_prec.bpc",
+  "response_url": "https://naif.jpl.nasa.gov/pub/naif/pds/wgc/kernels/pck/earth_latest_high_prec.bpc",
+  "headers": {
+    "Date": "Thu, 12 Nov 2026 03:50:06 GMT",
+    "Server": "Apache",
+    "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload",
+    "X-Frame-Options": "SAMEORIGIN",
+    "Last-Modified": "Wed, 11 Nov 2026 01:07:47 GMT",
+    "Accept-Ranges": "bytes",
+    "Content-Length": "5160960",
+    "Connection": "close"
+  },
+  "filename": "earth_000101_270205_261110.bpc",
+  "bytes": 5160960,
+  "sha256": "57f123e7e2bc5d51e20bda707b474d136f079c352500648551258096cbb9a7b1",
+  "original_hash_unchanged": true,
+  "original_capture": "docs/review-2026-11-11/wgc-kernel-provenance.json"
+}

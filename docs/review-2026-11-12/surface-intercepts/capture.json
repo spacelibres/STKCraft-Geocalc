@@ -1,0 +1,55 @@
+{
+  "archive_sha256": "98d60b814b412fa55294aeaaeb7dab46d849cc87a8b709ffe835d08de17625dc",
+  "cspice_lib_sha256": "114dc34aea8533bcdd452997b9096219c3697234a00dfe59a4ba1d87731a9650",
+  "static_ucrt_sha256": "ea2ffa5d9b1ebc3fa76f34c364471750db8951b341dbccbc1bef628ef1a20e39",
+  "source_sha256": "e2f81368959d657618f809fd374f6a73273ad37d3b61c436025d36cd19f78ec5",
+  "generator_sha256": "f24a52e545bfef64779dc25a394d8664d1cbe3f8c0d41550fa4693109ae3e8e0",
+  "compiler_sha256": "315a654ea116864516a1674858e587e535e3bc3045ff32ed2f2739a2c1ec5640",
+  "linked_libraries": [
+    {
+      "path": "C:\\Program Files (x86)\\Windows Kits\\10\\Lib\\10.0.26100.0\\ucrt\\x64\\libucrt.lib",
+      "sha256": "ea2ffa5d9b1ebc3fa76f34c364471750db8951b341dbccbc1bef628ef1a20e39"
+    },
+    {
+      "path": "C:\\Users\\stone\\.codex\\worktrees\\dsk-models-parity\\STKCraft-Geocalc\\target\\reference\\n0067\\cspice\\lib\\cspice.lib",
+      "sha256": "114dc34aea8533bcdd452997b9096219c3697234a00dfe59a4ba1d87731a9650"
+    }
+  ],
+  "imports": [
+    "KERNEL32.dll"
+  ],
+  "native_source_sha256": {
+    "pool.c": "ad1e1f04decc8b17e01d147bdfb1919e653ec65020d3017a8c3e78c7b3c85ada",
+    "zzrvar.c": "26e3f437d6d6393ecf82d0ede3442b4d27fb2ec3b4d24cda8db02ff9a48d9bd8",
+    "zzcln.c": "b0f3b62f344e3ab62b393b289d845c28eda53bcf76e7c918fab8ecf0728a1724",
+    "nparsd.c": "2fe61837c8d3343842a4445c77beb0a38617864f10037191b0bbd6913b8feaad",
+    "tparse.c": "4e56c236a8ad8eb4ef01238cc47bf97b73b51e5b67030ba5bec41934aa21171a",
+    "tkfram.c": "b8893e5fd7cb66f8d2dcc10a55c9630df8938bbbac28819bce8d2027fa2f28d8",
+    "framex.c": "7a63ead49da551912eac67a7471b33dfcb4d957ae47f05104f64463b2ff11593",
+    "zznamfrm.c": "2ba4ac88331091466519d035803884abcb4c6da0ef9dab03a4f8a599ed13b9e4",
+    "getfov_c.c": "5e6b1feeeb84cc7400ab2eed88b5c8f291fee99da30a87dd558ae42912c259cf",
+    "bodvrd_c.c": "f6af678c333a2c6de580d1b596e180bff20a27518aba1eaa7a458d3b4815188d"
+  },
+  "executable_sha256": "fec2f82a67d3bd6d2e8d272d4b260cacc92999d344f0864243b7715101e38d53",
+  "captured_utc": "2026-11-12T03:25:26.973890+00:00",
+  "wrapper_sha256": "a132a6f0311cea38a6845572b96aa50e99d5d3b1179579ba4e888c621d83370e",
+  "operations": 1296,
+  "numeric": 850,
+  "misses": 122,
+  "errors": 324,
+  "source_sha256_additional": {
+    "sincpt.c": "36a8bcde46d9165e8285a2bc195afe52ddb81c0b4848e364ac7b7cdfdf238949",
+    "sincpt_c.c": "9faee58b827755224a4833fde680ad60eb2dc97dbd6fcd43fb01603e3270f119",
+    "zzsfxcor.c": "e4dac56c80688f09054b8f861f91edb2342524e3b77de2ac5886a438614a705b",
+    "vnorm.c": "5e7c854d83210ba693809a04bd33f59df77814e54cdeb717569bc83758070ce7",
+    "clight.c": "d4588c098aac1acbf211a311985e158ec9810830634834b121522c43faf5ca55"
+  },
+  "input_sha256": {
+    "target/kernels/de440s.bsp": "c1c7feeab882263fc493a9d5a5b2ddd71b54826cdf65d8d17a76126b260a49f2",
+    "target/kernels/pck00011.tpc": "3dff7b1dbeceaa01f25467767d3fa25816051c85d162d1edf04acb310ee28bb1",
+    "tests/golden/dsk/frames.tf": "d00456675a5b950b95ef18e1846f269d58c5c137c9ad845372a348bd7a37255c",
+    "tests/golden/dsk/optimized.bds": "7a9f6911866796201ca668fd55ecdc48b537178e884352d100b8fa96a22dab32"
+  },
+  "stdout_sha256": "ae56179ec23ef6add610771b56415818eaede628ce5828d533ff4ad6d7dd19be",
+  "stderr_sha256": "acaa93b5f98984030c17e024cc9306dc1b692a551947519bbc84b26ce39a8d79"
+}

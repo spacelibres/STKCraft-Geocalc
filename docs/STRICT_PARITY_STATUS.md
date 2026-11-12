@@ -24,11 +24,17 @@ NASA output serialization is tested separately. Default raw transported-value fa
 
 ## Verified implementation checkpoints
 
-The 0.1.9 text-kernel work adds ordered typed pools, native frame validation
-timing and PCK partial-update regressions. The [scope record](reference/KERNEL_POOL_SCOPE.md)
-distinguishes checked outputs from supporting captures. Kernel dates use the pinned Time resolver; wider grammar and date error-symbol
-coverage remain incomplete. The new full release gate must pass before a
-0.1.9 publication can be accepted.
+The 0.1.9 text-kernel checkpoint adds ordered typed pools, native frame
+validation timing and PCK partial-update regressions. Its
+[scope record](reference/KERNEL_POOL_SCOPE.md) distinguishes checked outputs
+from supporting captures. Kernel dates use the pinned Time resolver;
+wider grammar and date error-symbol coverage remain incomplete.
+
+The 0.1.10 model checkpoint adds LATSRF coordinates, all-field SINCPT results
+through direct/typed paths and DSK-versus-point GFOCLT windows. See the
+[model scope](reference/DSK_MODEL_SCOPE.md) for counts, raw evidence and open
+branches. The full release gate must pass for its final source inventory;
+representative native coverage does not establish complete parity.
 
 | Area | Independent reference coverage |
 | --- | --- |
@@ -36,7 +42,7 @@ coverage remain incomplete. The new full release gate must pass before a
 | SPK composition | Segment/file priority, common centers, 20-node buffer, 21 inertial frames and rotating source frames. SPKGPS uses position-only REFCHG; SPKGEO uses state FRMCHG. |
 | CK | Types 1/2/3: 32,622 queries; type 4: 2,072; type 5: 19,072; type 6: 6,432. Additional byte-order and 832 SCLK frame cases pass. Independent sequential fuzz adds 30,000 exact queries. |
 | PCK and frames | Binary PCK 2/3/20; text orientation; fixed, Euler, two-vector, product, Earth of-date and switch frames. See [dynamic frame scope](reference/DYNAMIC_FRAME_SCOPE.md). |
-| Surface and shapes | Ellipsoid and unprioritized type-2 DSK direct geometry. See [DSK evidence](https://github.com/spacelibres/STKCraft-Geocalc/blob/v0.1.8/docs/review-2026-11-11/dsk-exact.md) and [surface evidence](https://github.com/spacelibres/STKCraft-Geocalc/blob/v0.1.8/docs/review-2026-11-11/surface-orbit-visibility-exact.md). |
+| Surface and shapes | Ellipsoid and unprioritized type-2 DSK direct geometry; 2,352 LATSRF calls, 1,296 all-field SINCPT calls through two paths, and 864 DSK/point GFOCLT queries. See [model scope](reference/DSK_MODEL_SCOPE.md) and [earlier DSK evidence](https://github.com/spacelibres/STKCraft-Geocalc/blob/v0.1.8/docs/review-2026-11-11/dsk-exact.md). |
 | Dynamic geometry | 1,134 position-only SPKEZP cases, 360 direction cases, 48 ray cases and 864 tangent cases distinguish rotation-only and full-state paths. |
 | GF | All 11 search families have native exact fixtures, including UDDC, RANGE scheduling, longitude boundaries and interval processing. |
 | FOV | 1,865 GETFOV rows; 18,143 boundary predicates; 1,692 cross-frame/correction predicates; 144 window groups; 864 target-frame cases. Real Cassini attitude drives both live FOV search families. |
@@ -51,6 +57,6 @@ Actual KernelSet 1 load order is pinned through solar_system_v0072.tm. Full DE44
 
 ## Time and remaining scope
 
-The dependency is pinned to published STKCraft-time 0.1.28. Earlier SCLK failures were handed off; the unchanged 42 SCE2C values, scalar parsing and 420 CK frame regressions remain active. Under explicit authorization, Time kernel-date arithmetic and grammar repairs were independently verified and released as 0.1.27/0.1.28; see [Time integration](reference/TIME_KERNEL_DATES.md). [Historical evidence](https://github.com/spacelibres/STKCraft-Geocalc/blob/v0.1.8/docs/review-2026-11-11/time-integration-gaps.md) remains available.
+The dependency is pinned to published STKCraft-time 0.1.29. Earlier SCLK failures were handed off; the unchanged 42 SCE2C values, scalar parsing and 420 CK frame regressions remain active. Under explicit authorization, Time kernel-date arithmetic and grammar repairs were independently verified and released as 0.1.27/0.1.28; see [Time integration](reference/TIME_KERNEL_DATES.md). [Historical evidence](https://github.com/spacelibres/STKCraft-Geocalc/blob/v0.1.8/docs/review-2026-11-11/time-integration-gaps.md) remains available.
 
 See [remaining gaps](STRICT_REMAINING_GAPS.md), [numerical contract](NUMERICS.md) and [validation instructions](VALIDATION.md). A versioned publication is a reproducible implementation checkpoint, not an assertion that the remaining gaps are closed.

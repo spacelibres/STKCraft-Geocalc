@@ -1,0 +1,17 @@
+   Compiling stkcraft-geocalc v0.1.9 (C:\Users\stone\.codex\worktrees\dsk-models-parity\STKCraft-Geocalc)
+error[E0432]: unresolved imports `stkcraft_geocalc::find_occultation_with_models_in`, `stkcraft_geocalc::OccultationModel`
+ --> tests\dsk_occultation_exact.rs:3:5
+  |
+3 |     find_occultation_with_models_in, Aberration, DskSet, FinderOptions, Frames,
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ no `find_occultation_with_models_in` in the root
+4 |     Interval, OccultationModel, OccultationType, Pck, SpkKernel, SurfaceModel,
+  |               ^^^^^^^^^^^^^^^^ no `OccultationModel` in the root
+  |
+help: a similar name exists in the module
+  |
+4 -     Interval, OccultationModel, OccultationType, Pck, SpkKernel, SurfaceModel,
+4 +     Interval, OccultationType, OccultationType, Pck, SpkKernel, SurfaceModel,
+  |
+
+For more information about this error, try `rustc --explain E0432`.
+error: could not compile `stkcraft-geocalc` (test "dsk_occultation_exact") due to 1 previous error

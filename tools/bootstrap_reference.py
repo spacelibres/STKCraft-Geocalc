@@ -5,10 +5,13 @@ SpiceyPy 8.3.0; its bytes, toolkit version, archive and required kernels must al
 match the committed records. Linux/macOS build checks are not exactness claims.
 """
 from __future__ import annotations
-import argparse,concurrent.futures,hashlib,json,os,platform,re,sys,time,urllib.request,zipfile
+import argparse,concurrent.futures,hashlib,json,os,platform,re,shutil,sys,time,urllib.request,zipfile
 from pathlib import Path,PurePosixPath
 ROOT=Path(__file__).resolve().parents[1]
 NAIF='https://naif.jpl.nasa.gov/pub/naif/'
+SNAPSHOTS={
+ 'earth_000101_270205_261110.bpc':'docs/reference/kernel-snapshots/earth_000101_270205_261110.bpc',
+}
 GENERIC={
  'de440s.bsp':'spk/planets/de440s.bsp','de442s.bsp':'spk/planets/de442s.bsp',
  'de442.bsp':'spk/planets/de442.bsp','gm_de431.tpc':'pck/gm_de431.tpc',
@@ -34,10 +37,12 @@ def pinned_kernel_records(manifest,root=ROOT):
   if not url.startswith(NAIF):raise ValueError(f'Kernel URL is not the official NAIF source: {url}')
   if name in records and records[name]['sha256']!=sha:raise ValueError(f'Conflicting pinned kernel hashes: {name}')
   records[name]={'name':name,'url':url,'sha256':sha}
+  if name in SNAPSHOTS:records[name]['snapshot']=SNAPSHOTS[name]
  provenance=root/'docs/review-2026-11-11'
  wgc=json.loads((provenance/'wgc-kernel-provenance.json').read_text(encoding='utf-8'))
  for row in wgc['files']:
-  # The mutable alias is represented by its immutable, dated equivalent.
+  # The mutable alias is represented by its captured dated equivalent.
+  # A dated filename does not guarantee permanent availability at NAIF.
   if row['filename']=='earth_latest_high_prec.bpc':continue
   add(row['filename'],row['url'],row['sha256'])
  for name,sha in manifest.get('kernels_sha256',{}).items():
@@ -56,10 +61,21 @@ def pinned_kernel_records(manifest,root=ROOT):
   if records[name]['sha256']!=sha:raise ValueError(f'Conflicting pinned kernel hashes: {name}')
  if not records:raise ValueError('Pinned kernel inventory is empty')
  return [records[name] for name in sorted(records)]
-def ensure_download(path,url,sha,verify_only=False):
+def ensure_download(path,url,sha,verify_only=False,snapshot_path=None):
  path=Path(path)
  if path.is_file() and digest(path)==sha:return
  if verify_only:raise RuntimeError(f'Missing or changed pinned file: {path}')
+ if snapshot_path is not None:
+  snapshot=Path(snapshot_path)
+  if not snapshot.is_file() or digest(snapshot)!=sha:
+   raise RuntimeError(f'Missing or changed pinned snapshot: {snapshot}')
+  path.parent.mkdir(parents=True,exist_ok=True);temporary=path.with_name(path.name+'.download')
+  try:
+   shutil.copyfile(snapshot,temporary)
+   if digest(temporary)!=sha:raise RuntimeError(f'Copied pinned snapshot differs: {snapshot}')
+   temporary.replace(path)
+  finally:temporary.unlink(missing_ok=True)
+  return
  path.parent.mkdir(parents=True,exist_ok=True);temporary=path.with_name(path.name+'.download')
  request=urllib.request.Request(url,headers={'User-Agent':'stkcraft-geocalc-reference-bootstrap/1.0'})
  for attempt in range(3):
@@ -88,7 +104,10 @@ def bootstrap(root=ROOT,verify_only=False,kernels_only=False,workers=4):
  root=Path(root);manifest_path=root/'docs/reference/CSPICE_N0067.json';before=manifest_path.read_bytes();manifest=json.loads(before)
  records=pinned_kernel_records(manifest,root)
  def kernel(row):
-  path=root/'target/kernels'/row['name'];ensure_download(path,row['url'],row['sha256'],verify_only);print('Verified kernel '+row['name'],flush=True)
+  path=root/'target/kernels'/row['name']
+  snapshot=root/row['snapshot'] if 'snapshot' in row else None
+  ensure_download(path,row['url'],row['sha256'],verify_only,snapshot_path=snapshot)
+  print('Verified kernel '+row['name'],flush=True)
  with concurrent.futures.ThreadPoolExecutor(max_workers=workers) as pool:list(pool.map(kernel,records))
  report={'kernels':records,'platform':platform.platform(),'complete_webgeocalc_parity':False}
  if not kernels_only:

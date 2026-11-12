@@ -10,4 +10,5 @@ pub mod pointing;
 pub mod separation;
 pub mod state_rep;
 pub mod surface;
+pub mod surface_coordinates;
 pub mod tangent;

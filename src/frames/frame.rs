@@ -20,8 +20,9 @@
 //!   plus class-6 switch frames. Ephemeris-based definitions require an
 //!   explicitly attached SPK context.
 //!
-//! Numeric epoch fields are supported. Kernel date literals and general
-//! kernel-pool append semantics remain outside the verified frame scope.
+//! Numeric and Time-resolved kernel-date epochs, ordered typed kernel pools
+//! and general append have explicit native regressions. Wider date grammar,
+//! date error symbols and exhaustive metadata/cache limits remain open.
 //! See `docs/reference/DYNAMIC_FRAME_SCOPE.md` for the exact native matrix.
 //!
 //! # Conventions

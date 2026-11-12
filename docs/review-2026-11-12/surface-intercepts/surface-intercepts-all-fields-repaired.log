@@ -1,0 +1,16 @@
+   Compiling stkcraft-geocalc v0.1.9 (C:\Users\stone\.codex\worktrees\dsk-models-parity\STKCraft-Geocalc)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 2.75s
+     Running tests\surface_coordinates_exact.rs (target\debug\deps\surface_coordinates_exact-8b1ceb0995b96a76.exe)
+
+running 1 test
+test native_latitudinal_surface_coordinates_exact ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.08s
+
+     Running tests\surface_intercepts_outputs_exact.rs (target\debug\deps\surface_intercepts_outputs_exact-3fc271ae8d863501.exe)
+
+running 1 test
+test native_surface_intercept_all_output_cells_exact ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.55s
+

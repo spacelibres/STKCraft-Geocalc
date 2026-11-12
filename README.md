@@ -26,19 +26,19 @@ option-level conformance remains open; see the gap register above.
 The crate requires Rust 1.75 or newer and uses `std`.
 
 ```sh
-cargo add stkcraft-geocalc@=0.1.9
-cargo install stkcraft-geocalc --version 0.1.9 --locked --features mcp --bins
+cargo add stkcraft-geocalc@=0.1.10
+cargo install stkcraft-geocalc --version 0.1.10 --locked --features mcp --bins
 ```
 
 ```toml
 [dependencies]
-stkcraft-geocalc = "=0.1.9"
+stkcraft-geocalc = "=0.1.10"
 ```
 
 The optional `mcp` feature installs `stkcraft-geocalc-mcp` alongside
 `wgc_geometry` and `wgc_gf`. Agent Skills are included in the Git repository,
 crate archive and release distribution. See the MCP guide for configuration.
-Time is pinned to the published `stkcraft-time` 0.1.28 dependency.
+Time is pinned to the published `stkcraft-time` 0.1.29 dependency.
 
 The verified numerical profile is Windows x86_64 MSVC with static UCRT math,
 FMA3 available and the default IEEE floating-point environment. The repository
@@ -46,7 +46,7 @@ sets the linker mode in `.cargo/config.toml`. Cargo registry installation and
 downstream library projects must supply their own configuration:
 
 ```powershell
-cargo install stkcraft-geocalc --version 0.1.9 --locked --features mcp --bins --config 'target.x86_64-pc-windows-msvc.rustflags=["-C","target-feature=+crt-static"]'
+cargo install stkcraft-geocalc --version 0.1.10 --locked --features mcp --bins --config 'target.x86_64-pc-windows-msvc.rustflags=["-C","target-feature=+crt-static"]'
 ```
 
 See [the numerical profile](docs/NUMERICS.md#windows-runtime-profile) for library
@@ -171,12 +171,15 @@ Implemented:
 - Type-2 DSK/DAS/DLA reading and unprioritized multi-segment intercepts,
   with direct DSK SINCPT, SUBPNT, SUBSLR and ILLUMF APIs. Explicit shape
   selection preserves source surface/filter semantics and errors.
+- Explicit-model LATSRF coordinates, typed SINCPT results preserving misses,
+  and DSK-versus-point GFOCLT windows. See the
+  [independent model scope](docs/reference/DSK_MODEL_SCOPE.md).
 
 Not implemented yet (stated, not approximated):
 
-- DSK integration into point-location and ray/coordinate facades,
-  surface-name lookup, and DSK-versus-point occultation search.
-- Kernel date literals and additional dynamic/kernel-pool options are tracked in
+- DSK surface-name/cache semantics, complete typed ray/FOV products,
+  illumination/subpoint facades and new CLI/MCP model exposure.
+- Wider kernel-date grammar/error symbols and dynamic/kernel-pool options are tracked in
   [the option audit](docs/STRICT_REMAINING_GAPS.md). Supported classes
   have independent exact fixtures; this does not certify every option.
 

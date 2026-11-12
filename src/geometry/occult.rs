@@ -22,6 +22,245 @@ use crate::frame::Mat3;
 use crate::pck::Pck;
 use crate::spk::{Aberration, SpkKernel};
 
+/// Point or explicitly framed surface used by a GFOCLT search.
+#[derive(Clone, Copy, Debug)]
+pub enum OccultationModel<'a> {
+    /// A zero-radius target; its frame is unused.
+    Point,
+    /// An ellipsoid or unprioritized DSK in a target-centered frame.
+    Surface {
+        frame: &'a str,
+        model: crate::SurfaceModel<'a>,
+    },
+}
+
+/// GFOCLT with explicit target frames and ellipsoid or DSK models.
+///
+/// A DSK target requires the other target to be a point. Point targets
+/// require `Any`, including a foreground point transiting a DSK. Stellar
+/// corrections are stripped as in native ZZGFOCIN. The search tolerance
+/// controls endpoint convergence; it is not a numerical comparison band.
+pub fn find_occultation_with_models_in(
+    kernel: &SpkKernel,
+    pck: &Pck,
+    frames: &crate::Frames,
+    front: i32,
+    front_model: OccultationModel<'_>,
+    back: i32,
+    back_model: OccultationModel<'_>,
+    observer: i32,
+    abcorr: Aberration,
+    occultation_type: OccultationType,
+    windows: &[Interval],
+    options: FinderOptions,
+) -> Result<Vec<Interval>, GeoError> {
+    use crate::SurfaceModel;
+    use OccultationModel::{Point, Surface};
+    let point_front = matches!(front_model, Point);
+    let point_back = matches!(back_model, Point);
+    let has_dsk = matches!(
+        front_model,
+        Surface {
+            model: SurfaceModel::DskUnprioritized { .. },
+            ..
+        }
+    ) || matches!(
+        back_model,
+        Surface {
+            model: SurfaceModel::DskUnprioritized { .. },
+            ..
+        }
+    );
+    if (point_front && point_back)
+        || ((point_front || point_back) && occultation_type != OccultationType::Any)
+        || (has_dsk && !point_front && !point_back)
+    {
+        return Err(GeoError::BadSearch("SPICE(BADTYPESHAPECOMBO)"));
+    }
+    if !options.step.is_finite() || options.step <= 0.0 {
+        return Err(GeoError::BadSearch("SPICE(INVALIDSTEP)"));
+    }
+    if !options.tolerance.is_finite() || options.tolerance <= 0.0 {
+        return Err(GeoError::BadSearch(
+            "search tolerance must be finite and positive",
+        ));
+    }
+    if front == back || front == observer || back == observer {
+        return Err(GeoError::BadSearch("SPICE(BODIESNOTDISTINCT)"));
+    }
+    for (body, model) in [(front, front_model), (back, back_model)] {
+        if let Surface { frame, .. } = model {
+            if frames.center(frame)? != body {
+                return Err(GeoError::BadSearch("SPICE(INVALIDFRAME)"));
+            }
+        }
+    }
+    // Native initialization computes bounds once, before evaluating any
+    // confinement endpoint, including a disjoint point-target geometry.
+    let extended = if point_back {
+        (front, front_model)
+    } else {
+        (back, back_model)
+    };
+    let bounds = match extended.1 {
+        Surface {
+            model: SurfaceModel::DskUnprioritized { kernels, surfaces },
+            ..
+        } => Some(kernels.radial_bounds(kernel, pck, frames, extended.0, surfaces)?),
+        Surface {
+            model: SurfaceModel::Ellipsoid,
+            ..
+        } if point_front || point_back => {
+            let radii = pck
+                .radii(extended.0)
+                .ok_or(GeoError::MissingPckData(extended.0))?;
+            if radii.iter().any(|v| *v <= 0.0) {
+                return Err(GeoError::BadSearch("SPICE(BADAXISLENGTH)"));
+            }
+            Some((
+                radii[0].min(radii[1]).min(radii[2]),
+                radii[0].max(radii[1]).max(radii[2]),
+            ))
+        }
+        _ => None,
+    };
+    let correction = without_stellar(abcorr);
+    let predicate = |et| {
+        let (front_position, front_lt) =
+            crate::spkapo::corrected_position(kernel, front, observer, et, correction)?;
+        let (back_position, back_lt) =
+            crate::spkapo::corrected_position(kernel, back, observer, et, correction)?;
+        if let Some((minimum, maximum)) = bounds {
+            let Surface { frame, model } = extended.1 else {
+                unreachable!()
+            };
+            return point_surface_overlap(
+                kernel,
+                pck,
+                frames,
+                extended.0,
+                frame,
+                model,
+                observer,
+                et,
+                correction,
+                point_back,
+                minimum,
+                maximum,
+                front_position,
+                back_position,
+            );
+        }
+        let (
+            Surface {
+                frame: front_frame, ..
+            },
+            Surface {
+                frame: back_frame, ..
+            },
+        ) = (front_model, back_model)
+        else {
+            unreachable!()
+        };
+        let front_radii = pck.radii(front).ok_or(GeoError::MissingPckData(front))?;
+        let back_radii = pck.radii(back).ok_or(GeoError::MissingPckData(back))?;
+        let front_rotation = frames.pxform_in(
+            "J2000",
+            front_frame,
+            crate::state_rep::time_at_target(et, front_lt, correction),
+            Some(pck),
+        )?;
+        let back_rotation = frames.pxform_in(
+            "J2000",
+            back_frame,
+            crate::state_rep::time_at_target(et, back_lt, correction),
+            Some(pck),
+        )?;
+        Ok(
+            occultation_type.matches(crate::occult_ellipsoid::classify_ellipsoids(
+                front_position,
+                front_radii,
+                &front_rotation,
+                back_position,
+                back_radii,
+                &back_rotation,
+            )?),
+        )
+    };
+    let mut result = Vec::new();
+    for window in normalize_windows(windows)? {
+        result.extend(solve_boolean(
+            &predicate,
+            window,
+            options.step,
+            options.tolerance,
+        )?);
+    }
+    normalize_windows(&result)
+}
+
+fn point_surface_overlap(
+    kernel: &SpkKernel,
+    pck: &Pck,
+    frames: &crate::Frames,
+    extended: i32,
+    frame: &str,
+    model: crate::SurfaceModel<'_>,
+    observer: i32,
+    et: f64,
+    correction: Aberration,
+    point_occulted: bool,
+    minimum: f64,
+    maximum: f64,
+    front_position: [f64; 3],
+    back_position: [f64; 3],
+) -> Result<bool, GeoError> {
+    let front_distance = norm(front_position);
+    let back_distance = norm(back_position);
+    let (distance, point_distance) = if point_occulted {
+        (front_distance, back_distance)
+    } else {
+        (back_distance, front_distance)
+    };
+    let back_to_front = subtract(front_position, back_position);
+    if distance <= minimum || point_distance == 0.0 || norm(back_to_front) <= minimum {
+        return Err(GeoError::BadSearch("SPICE(NOTDISJOINT)"));
+    }
+    let angle = separation(back_position, front_position);
+    let outer = maximum * 1.01;
+    if outer < distance && angle > (outer / distance).asin() {
+        return Ok(false);
+    }
+    let min_angle = (minimum * 0.98999999999999999 / distance).asin();
+    if angle < min_angle {
+        return Ok(if point_occulted {
+            separation(front_position.map(|v| -v), back_to_front.map(|v| -v))
+                > std::f64::consts::FRAC_PI_2 - min_angle
+        } else {
+            separation(back_position.map(|v| -v), back_to_front)
+                < std::f64::consts::FRAC_PI_2 - min_angle
+        });
+    }
+    let direction = if point_occulted {
+        back_position
+    } else {
+        front_position
+    };
+    let hit = match crate::surface::surface_intercept_geometry_with_model_in(
+        kernel, pck, frames, frame, extended, observer, et, correction, direction, model,
+    ) {
+        Ok(value) => value,
+        Err(GeoError::BadSearch("ray does not intersect the target")) => return Ok(false),
+        Err(error) => return Err(error),
+    };
+    let range = norm(hit.surface_vector);
+    Ok(if point_occulted {
+        range < back_distance
+    } else {
+        range > front_distance
+    })
+}
+
 /// Shape model for an occultation target.
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
 pub enum OccultShape {

@@ -1,0 +1,10 @@
+   Compiling stkcraft-geocalc v0.1.9 (C:\Users\stone\.codex\worktrees\dsk-models-parity\STKCraft-Geocalc)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.76s
+     Running tests\dsk_occultation_exact.rs (target\debug\deps\dsk_occultation_exact-26cb2ec63822e7b1.exe)
+
+running 2 tests
+test explicit_occultation_models_preserve_native_ellipsoid_windows ... ok
+test native_dsk_point_occultation_windows_exact ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 6.71s
+

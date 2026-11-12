@@ -35,6 +35,10 @@ Pck supplies radii and orientation constants. The surface module exposes sub_obs
 
 For type-2 DSK, load a DskSet in file order and select SurfaceModel::DskUnprioritized with explicit numeric surface IDs. Use surface_intercept_geometry_with_model_in, sub_observer_dsk_geometry_in, sub_solar_dsk_geometry_in and illumination_geometry_with_model_in. DskSubPointMethod::Nadir and ::Intercept have distinct native meanings; an ellipsoid NearPoint option is not renamed into DSK Nadir.
 
+latitudinal_surface_points_in constructs LATSRF points from longitude/latitude pairs in radians, using an explicit SurfaceModel, target frame and epoch. surface_intercept_geometries_with_model_in resolves a typed RayDirection and returns one Option<SurfaceGeometry> per ray: None preserves a missing intercept, including its position in the ray sequence. SurfaceGeometry reports the SINCPT vector norm as distance and that distance divided by CLIGHT as light_time.
+
+find_occultation_with_models_in accepts an OccultationModel for each target: Point or Surface { frame, model }. A DSK requires the other target to be a point, and any point requires OccultationType::Any. Both occulted points and foreground point transits use the native depth tests. See [the independent model scope](reference/DSK_MODEL_SCOPE.md) for tested inputs and remaining limits. These additions do not extend the CLI/MCP schemas implicitly.
+
 DskHit::plate_id preserves the native aggregate IC output; geometric_plate_id identifies the plate that generated the winning intercept. See the [DSK evidence](https://github.com/spacelibres/STKCraft-Geocalc/blob/v0.1.8/docs/review-2026-11-11/dsk-exact.md) for the native metadata quirk.
 
 ## Search and other calculations

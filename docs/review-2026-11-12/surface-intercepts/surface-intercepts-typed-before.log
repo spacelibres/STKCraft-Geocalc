@@ -1,0 +1,15 @@
+   Compiling stkcraft-geocalc v0.1.9 (C:\Users\stone\.codex\worktrees\dsk-models-parity\STKCraft-Geocalc)
+error[E0432]: unresolved import `stkcraft_geocalc::surface_intercept_geometries_with_model_in`
+ --> tests\surface_intercepts_outputs_exact.rs:2:65
+  |
+2 | ...with_model_in,surface_intercept_geometries_with_model_in,Aberration,DskSet,Frames,GeoError,Pck,SpkKernel,SurfaceModel,RayDirection};
+  |                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ no `surface_intercept_geometries_with_model_in` in the root
+  |
+help: a similar name exists in the module
+  |
+2 - use stkcraft_geocalc::{surface_intercept_geometry_with_model_in,surface_intercept_geometries_with_model_in,Aberration,DskSet,Frames,GeoError,Pck,SpkKernel,SurfaceModel,RayDirection};
+2 + use stkcraft_geocalc::{surface_intercept_geometry_with_model_in,surface_intercept_geometry_with_model_in,Aberration,DskSet,Frames,GeoError,Pck,SpkKernel,SurfaceModel,RayDirection};
+  |
+
+For more information about this error, try `rustc --explain E0432`.
+error: could not compile `stkcraft-geocalc` (test "surface_intercepts_outputs_exact") due to 1 previous error

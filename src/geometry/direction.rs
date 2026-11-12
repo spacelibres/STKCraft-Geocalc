@@ -315,6 +315,46 @@ pub fn surface_intercept_points_in(
         .collect()
 }
 
+/// Shape-aware surface intercepts retaining one native found/missing outcome
+/// per resolved ray. `None` denotes a SINCPT miss; computation errors remain
+/// errors. Every FOV boundary keeps its original position in the result.
+#[allow(clippy::too_many_arguments)]
+pub fn surface_intercept_geometries_with_model_in(
+    kernel: &SpkKernel,
+    pck: &crate::Pck,
+    fov: Option<&Fov>,
+    frames: &Frames,
+    target_frame: &str,
+    target: i32,
+    observer: i32,
+    et: f64,
+    abcorr: Aberration,
+    direction: &RayDirection,
+    model: crate::surface::SurfaceModel<'_>,
+) -> Result<Vec<Option<crate::surface::SurfaceGeometry>>, GeoError> {
+    resolve_ray_directions_with_pck(kernel, fov, frames, pck, direction, observer, et, abcorr)?
+        .into_iter()
+        .map(|vector| {
+            match crate::surface::surface_intercept_geometry_with_model_in(
+                kernel,
+                pck,
+                frames,
+                target_frame,
+                target,
+                observer,
+                et,
+                abcorr,
+                vector,
+                model,
+            ) {
+                Ok(geometry) => Ok(Some(geometry)),
+                Err(GeoError::BadSearch("ray does not intersect the target")) => Ok(None),
+                Err(error) => Err(error),
+            }
+        })
+        .collect()
+}
+
 /// Tangent points for a WebGeocalc direction specification.
 #[allow(clippy::too_many_arguments)]
 pub fn tangent_points(

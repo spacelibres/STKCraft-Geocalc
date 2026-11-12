@@ -3,6 +3,26 @@
 All notable changes are recorded in English using [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and [Semantic Versioning](https://semver.org/).
 Versions 0.1.2 through 0.1.5 below describe verified local checkpoints before Git initialization; they were not separately published releases.
 
+## [0.1.10] - 2026-11-12
+
+### Added
+
+- Explicit-model LATSRF coordinate construction with independent native points and error outcomes.
+- Typed shape-aware SINCPT results retaining every ray's missing-intercept flag and ordering.
+- Explicit-frame ellipsoid/DSK-versus-point GFOCLT searches, including foreground point transits; original APIs remain available.
+- Independent native captures and mandatory strict regressions for 2,352 coordinate calls, 1,296 intersections through two entry points, 864 DSK occultation queries and 162 existing ellipsoid/point windows.
+
+### Fixed
+
+- Report SINCPT light time from the returned observer-to-surface vector's native norm divided by CLIGHT, preserving the point and target epoch.
+- Preserve the DSKDATANOTFOUND symbol for absent selected surface data.
+- Restore reproducible reference bootstrap after NAIF removed a dated Earth PCK URL. Stage the original, hash-identical NASA WGC snapshot; never substitute the newer kernel.
+
+### Changed
+
+- Pin published Time 0.1.29 after checking its registry archive; its Rust sources are byte-identical to the native-tested 0.1.28 implementation.
+- Distinguish WebGeocalc surface-point specifications from state-vector point locations. Document numeric surface selection, narrower CLI/MCP coverage and remaining conformance gaps without claiming complete parity.
+
 ## [0.1.9] - 2026-11-12
 
 ### Added

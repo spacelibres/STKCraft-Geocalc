@@ -1,0 +1,66 @@
+   Compiling stkcraft-geocalc v0.1.9 (C:\Users\stone\.codex\worktrees\dsk-models-parity\STKCraft-Geocalc)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 3.46s
+     Running tests\dsk_exact.rs (target\debug\deps\dsk_exact-bd08dbac364a2ca7.exe)
+
+running 8 tests
+test rejects_corrupt_das_without_panics ... ok
+test exact_native_dsk_structure ... ok
+test exact_native_das_layouts ... ok
+test exact_native_dsk_rays ... ok
+test exact_native_unprioritized_dsk_union ... ok
+test exact_native_dsk_surface_geometry ... ok
+test exact_native_dynamic_surface_models ... ok
+test exact_native_dsk_illumination ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 10.06s
+
+     Running tests\dsk_occultation_exact.rs (target\debug\deps\dsk_occultation_exact-26cb2ec63822e7b1.exe)
+
+running 2 tests
+test explicit_occultation_models_preserve_native_ellipsoid_windows ... ok
+test native_dsk_point_occultation_windows_exact ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 6.66s
+
+     Running tests\surface_coordinates_exact.rs (target\debug\deps\surface_coordinates_exact-8b1ceb0995b96a76.exe)
+
+running 1 test
+test native_latitudinal_surface_coordinates_exact ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.08s
+
+     Running tests\surface_intercepts_outputs_exact.rs (target\debug\deps\surface_intercepts_outputs_exact-3fc271ae8d863501.exe)
+
+running 1 test
+test native_surface_intercept_all_output_cells_exact ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.04s
+
+     Running tests\surface_precision.rs (target\debug\deps\surface_precision-159da68b9870f627.exe)
+
+running 6 tests
+test georec_exact_cspice ... ok
+nearpt 0 differing components, worst0
+test nearpt_exact_cspice ... ok
+test near_limb_none_exact_cspice ... ok
+solar longitude 0 differences, max0
+test solar_longitude_exact_cspice ... ok
+ray point/epoch/vector mismatches [0, 0, 0]; max[0.0, 0.0, 0.0]
+test surface_ray_precision_cspice ... ok
+metric0: 0/756 bit mismatches; max=0 at 
+metric1: 0/252 bit mismatches; max=0 at 
+metric2: 0/90 bit mismatches; max=0 at 
+metric3: 0/1026 bit mismatches; max=0 at 
+metric4: 0/270 bit mismatches; max=0 at 
+test surface_precision_cspice ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.24s
+
+     Running tests\surface_target_frames.rs (target\debug\deps\surface_target_frames-e3890af4a73387f8.exe)
+
+running 2 tests
+test target_frame_must_be_non_inertial_and_target_centered ... ok
+test explicit_target_frames_match_all_cspice_bits ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.68s
+

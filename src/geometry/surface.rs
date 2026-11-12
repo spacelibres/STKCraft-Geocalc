@@ -1362,7 +1362,9 @@ pub fn surface_intercept_geometry_with_model_in(
     Ok(SurfaceGeometry {
         point,
         epoch,
-        light_time: lt,
+        // Derive the output from the returned SINCPT vector; the internal
+        // iteration range can differ in its final binary64 bits.
+        light_time: norm(surface_vector) / crate::spk::CLIGHT,
         surface_vector,
         altitude: norm(surface_vector),
     })

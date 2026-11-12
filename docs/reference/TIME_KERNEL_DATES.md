@@ -1,6 +1,10 @@
 # Time-owned kernel-date integration
 
-GeoCalc consumes the exact registry dependency `stkcraft-time =0.1.28`.
+GeoCalc consumes the exact registry dependency `stkcraft-time =0.1.29`.
+The published 0.1.29 archive has byte-identical `src/` files to 0.1.28; its
+documentation clarifies the original native grammar and remaining limits.
+The [registry source comparison](https://github.com/spacelibres/STKCraft-Geocalc/blob/v0.1.10/docs/review-2026-11-12/time-0.1.29-registry/source-comparison.json)
+retains both package checksums and all 29 source-file hashes.
 Parsing remains implemented by the separate Time project. The initial
 handoff was followed by explicit authorization to repair that project:
 
