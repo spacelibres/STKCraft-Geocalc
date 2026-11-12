@@ -53,6 +53,8 @@ def normalized_inventory(inventory: dict) -> dict:
 
 
 def validate_evidence(report: dict, logs: dict[str, str], current: dict) -> None:
+    if report.get('verification_mode') != 'release' or report.get('release_qualified') is not True or report.get('time_dependency',{}).get('source_kind') != 'registry':
+        raise ValueError('Release requires registry-qualified evidence')
     if report.get('local_gate_passed') is not True or report.get('failures') != []:
         raise ValueError('Strict gate report did not pass')
     binary_inventory(report)

@@ -1,6 +1,7 @@
 # Time-owned kernel-date integration
 
-GeoCalc consumes the exact registry dependency `stkcraft-time =0.1.30`.
+GeoCalc accepts compatible `stkcraft-time` releases starting at 0.1.31.
+The current lockfile selects registry release 0.1.31 for the recorded checks.
 Version 0.1.30 adds the separate native scalar JDUTC path used by SPK10;
 see [the historical integration scope](SPK10_TIME_SCOPE.md). Kernel-date
 parsing remains the same independently tested implementation.
@@ -52,3 +53,19 @@ conversion keeps its coverage boundary. SPK10 now explicitly selects
 Time 0.1.30's formal native JDUTC convention; see
 [historical SPK10 acceptance](SPK10_TIME_SCOPE.md). No scientific historical
 model is substituted.
+
+## Time 0.1.31 registry integration
+
+Time 0.1.31 adds an explicit structured raw-table context while preserving
+the validated `TimeContext` route used here. Its raw error-boundary regression
+matches 22,292 numeric values and 4,539 native error symbols. GeoCalc continues
+to use the explicit IERS-only/TableDriven LSK contract; this dependency update
+does not introduce a raw kernel-pool facade or new CLI/MCP schemas.
+
+The actual registry archives were compared, including their checksums and VCS
+commits. Twenty-seven source files are unchanged; three native contract/math
+files changed and one raw contract module was added. Kernel-date grammar,
+scientific table validation and SCLK source files are unchanged. The existing
+independent geometry, CK and historical SPK10 fixtures are rerun without new
+expectations. See the [registry source comparison](https://github.com/spacelibres/STKCraft-Geocalc/blob/v0.1.12/docs/review-2026-11-12/time-0.1.31-registry/source-comparison.json)
+and [Time's exact scope](https://github.com/spacelibres/STKCraft-time/blob/v0.1.31/docs/reference/NATIVE_JDUTC.md).

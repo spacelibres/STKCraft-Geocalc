@@ -39,7 +39,19 @@ the next test prefix, and requires an unambiguous success for every occurrence
 of each required test name. Missing statuses, similarly suffixed names and a
 later success after an earlier failure cannot establish acceptance.
 
-The production dependency is the registry release `stkcraft-time =0.1.30`, not a sibling checkout. The gate resolves it through Cargo metadata, checks its downloaded crate archive against the Cargo.lock checksum, verifies the extracted Rust sources against that archive and records the version, registry source and checksum. Run `cargo fetch --locked` before the gate if Cargo's archive cache is absent.
+The library accepts compatible Time versions starting at 0.1.31. The release
+lockfile selects the exact tested version. The gate follows GeoCalc's direct
+Cargo dependency edge and the workspace lockfile, checks the downloaded crate
+archive and extracted source against its checksum, and records the actual
+resolution and enabled features. Run `cargo fetch --locked` if the archive is
+absent. A newer compatible version requires its own numerical verification.
+
+For local workspace integration, use a root `[patch.crates-io]` override to
+unify Time's source and run `python tools/verify_strict.py --integration`.
+This runs the same numerical checks with local source provenance but does not
+qualify a release. The ordinary gate requires the registry source; release CI
+rejects integration reports. Different source identities can create distinct
+Rust types even when their version strings match.
 
 Reports and logs are stored in `target/strict-verification`; GitHub Actions preserves them as the `windows-exact-report` artifact. Remaining parity limits are documented separately in [STRICT_REMAINING_GAPS.md](STRICT_REMAINING_GAPS.md). Passing CI does not change that scope.
 

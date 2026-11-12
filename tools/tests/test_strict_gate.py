@@ -27,6 +27,14 @@ class StrictGate(unittest.TestCase):
         name=gate.REQUIRED_TESTS[0]
         output=self.valid().replace(f'{name} ... ok',f'{name} ... EDLIMB 0 differences, max0\nok')
         self.assertEqual(gate.audit_rust_output(output)[1],[])
+    def test_numeric_diagnostic_can_touch_test_prefix(self):
+        name=gate.REQUIRED_TESTS[0]
+        output=self.valid().replace(f'test unit::{name} ... ok',f'324test unit::{name} ... ok')
+        self.assertEqual(gate.audit_rust_output(output)[1],[])
+    def test_attached_prefix_cannot_hide_failure(self):
+        name=gate.REQUIRED_TESTS[0]
+        output='324test unit::'+name+' ... FAILED\n'+self.valid()
+        self.assertTrue(gate.audit_rust_output(output)[1])
     def test_interleaved_failure_cannot_be_accepted(self):
         name=gate.REQUIRED_TESTS[0]
         output=self.valid().replace(f'{name} ... ok',f'{name} ... native diagnostics\nFAILED')
@@ -94,16 +102,3 @@ class SourceInventory(unittest.TestCase):
             self.assertNotIn('docs/reference/__pycache__/capture.cpython-311.pyc',inventory)
             for name in ['capture.bin','capture.log']:
                 self.assertEqual(inventory['docs/reference/'+name],gate.digest(root/'docs/reference'/name))
-
-class TimeRegistryPin(unittest.TestCase):
-    def test_exact_registry_version_is_required(self):
-        self.assertEqual(gate.validate_time_pin('=0.1.28',{'version':'0.1.28','source':'registry+https://example.invalid/index'}),'0.1.28')
-    def test_ranges_and_local_overrides_are_rejected(self):
-        for requirement in ['0.1.28','^0.1.28','*',{'path':'../STKCraft-time'},'=01.1.28']:
-            with self.assertRaises(RuntimeError):
-                gate.validate_time_pin(requirement,{'version':'0.1.28','source':'registry+https://example.invalid/index'})
-    def test_different_resolved_version_or_nonregistry_source_is_rejected(self):
-        for package in [{'version':'0.1.27','source':'registry+https://example.invalid/index'},
-                        {'version':'0.1.28','source':None},
-                        {'version':'0.1.28','source':'git+https://example.invalid/repo'}]:
-            with self.assertRaises(RuntimeError):gate.validate_time_pin('=0.1.28',package)

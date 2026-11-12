@@ -2,7 +2,7 @@
 
 SPK type 10 initializes SGP4 using N0067 TTRANS's scalar JDUTC at each
 packet epoch. The geometry evaluator now obtains that value through the
-exact registry dependency Time 0.1.30:
+exact registry dependency Time 0.1.31:
 
 ```text
 TimeContext::new(lsk).et_to_spice_julian_utc(et)?.days()
@@ -50,7 +50,7 @@ accept a numerical discrepancy.
 The C reference uses the pinned N0067 archive/library and static UCRT,
 `/Od /fp:strict /MT`, and unchanged default FMA setting. Production remains
 pure Rust. See [the numerical profile](../NUMERICS.md) and
-[Time's explicit scope](https://github.com/spacelibres/STKCraft-time/blob/v0.1.30/docs/reference/NATIVE_JDUTC.md).
+[Time's explicit scope](https://github.com/spacelibres/STKCraft-time/blob/v0.1.31/docs/reference/NATIVE_JDUTC.md).
 
 ## Limits
 
@@ -59,3 +59,8 @@ not certify every altered LSK/frame/orbit product, malformed SPK or raw
 time-pool error. It does not implement every historical civil-text format
 or all TTRANS representations. Default civil/scientific time APIs retain
 their separate contracts. Complete WebGeocalc parity remains false.
+
+The original capture and before/after checkpoint were introduced in GeoCalc
+0.1.11 with Time 0.1.30. The 0.1.12 dependency update reruns those same native
+fixtures against the actual Time 0.1.31 registry source; none were regenerated.
+The original 0.1.11 capture links and logs retain their historical versions.

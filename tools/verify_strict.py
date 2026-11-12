@@ -4,6 +4,7 @@ This gate proves only the exercised, pinned CSPICE cases. The separate live
 WebGeocalc report and remaining feature gaps must also be reviewed.
 """
 from __future__ import annotations
+import argparse
 import hashlib
 import json
 import os
@@ -124,45 +125,67 @@ def audit_reference_files(manifest: dict, root: Path) -> list[str]:
             failures.append(f'Missing or changed independent reference: {path}')
     return failures
 
-def validate_time_pin(requirement: object, package: dict) -> str:
-    if not isinstance(requirement,str) or not re.fullmatch(r'=(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)',requirement):
-        raise RuntimeError('Strict verification requires an exact registry stkcraft-time pin')
-    expected=requirement[1:]
-    if package.get('version')!=expected or not (package.get('source') or '').startswith('registry+'):
-        raise RuntimeError('Resolved Time dependency differs from the exact registry pin')
-    return expected
-
-
-def time_dependency() -> dict:
+def time_dependency(allow_local: bool = False) -> dict:
     result=subprocess.run(['cargo','metadata','--format-version=1','--locked','--all-features'],cwd=ROOT,stdout=subprocess.PIPE,stderr=subprocess.PIPE,text=True,encoding='utf-8',check=True)
-    packages=json.loads(result.stdout)['packages']
-    package=next((p for p in packages if p['name']=='stkcraft-time'),None)
-    if package is None:raise RuntimeError('Cargo metadata contains no stkcraft-time dependency')
-    requirement=tomllib.loads((ROOT/'Cargo.toml').read_text(encoding='utf-8'))['dependencies']['stkcraft-time']
-    validate_time_pin(requirement,package)
-    directory=Path(package['manifest_path']).parent
-    lock=tomllib.loads((ROOT/'Cargo.lock').read_text(encoding='utf-8'))
-    pinned=next((p for p in lock['package'] if p['name']=='stkcraft-time' and p['version']==package['version']),None)
-    checksum=pinned.get('checksum') if pinned else None
-    if not re.fullmatch('[a-f0-9]{64}',checksum or ''):raise RuntimeError('Registry package checksum is missing from Cargo.lock')
-    archive=directory.parent.parent.parent/'cache'/directory.parent.name/('stkcraft-time-'+package['version']+'.crate')
-    if not archive.is_file():raise RuntimeError('Registry crate archive is missing; run cargo fetch --locked')
-    if digest(archive)!=checksum:raise RuntimeError('Registry Time crate archive differs from Cargo.lock checksum')
-    with tarfile.open(archive,'r:gz') as package_files:
-        prefix='stkcraft-time-'+package['version']+'/'
-        expected={member.name[len(prefix):]:member for member in package_files.getmembers() if member.name.startswith(prefix) and (member.name.endswith('.rs') or member.name==prefix+'Cargo.toml')}
-        for name,member in expected.items():
-            local=directory/name
-            if not local.is_file() or local.read_bytes()!=package_files.extractfile(member).read():
-                raise RuntimeError('Registry Time source differs from the pinned crate archive: '+name)
-    return {'version':package['version'],'source':package['source'],'manifest_path':package['manifest_path'],'archive_path':str(archive),'package_checksum':checksum}
+    metadata=json.loads(result.stdout)
+    owners=[p for p in metadata['packages'] if Path(p['manifest_path']).resolve()==(ROOT/'Cargo.toml').resolve()]
+    if len(owners)!=1: raise RuntimeError('Cannot identify GeoCalc package in Cargo metadata')
+    owner=owners[0]
+    declarations=[d for d in owner['dependencies'] if d['name']=='stkcraft-time' and d.get('kind') is None]
+    nodes={n['id']:n for n in metadata['resolve']['nodes']}
+    aliases={(d.get('rename') or d['name']).replace('-','_') for d in declarations}
+    edges=[d for d in nodes[owner['id']]['deps'] if d['name'] in aliases and any(k.get('kind') is None for k in d['dep_kinds'])]
+    if len(declarations)!=1 or len(edges)!=1: raise RuntimeError('Time direct dependency is missing or ambiguous')
+    matches=[p for p in metadata['packages'] if p['id']==edges[0]['pkg'] and p['name']=='stkcraft-time']
+    if len(matches)!=1: raise RuntimeError('Time dependency edge does not resolve uniquely')
+    package=matches[0]; directory=Path(package['manifest_path']).parent
+    lock_path=Path(metadata['workspace_root'])/'Cargo.lock'
+    lock=tomllib.loads(lock_path.read_text(encoding='utf-8'))
+    entries=[p for p in lock['package'] if p['name']=='stkcraft-time' and p['version']==package['version'] and p.get('source')==package.get('source')]
+    if len(entries)!=1: raise RuntimeError('Time dependency does not match a unique Cargo.lock entry')
+    source=package.get('source'); checksum=None; archive=None
+    if source and source.startswith('registry+'):
+        checksum=entries[0].get('checksum')
+        if not re.fullmatch('[a-f0-9]{64}',checksum or ''): raise RuntimeError('Registry package checksum is missing')
+        archive=directory.parent.parent.parent/'cache'/directory.parent.name/('stkcraft-time-'+package['version']+'.crate')
+        if not archive.is_file() or digest(archive)!=checksum: raise RuntimeError('Registry archive missing or checksum differs')
+        with tarfile.open(archive,'r:gz') as package_files:
+            expected_sources=set()
+            prefix='stkcraft-time-'+package['version']+'/'
+            for member in package_files.getmembers():
+                if member.isfile() and member.name.startswith(prefix):
+                    name=member.name[len(prefix):]
+                    expected_sources.add(name)
+                    local=directory/name
+                    if not local.is_file() or local.read_bytes()!=package_files.extractfile(member).read():
+                        raise RuntimeError('Registry Time source differs from archive: '+name)
+            actual_sources={p.relative_to(directory).as_posix() for p in directory.rglob('*') if p.is_file()}
+            actual_sources.discard('.cargo-ok')
+            if actual_sources != expected_sources:
+                raise RuntimeError('Registry Time source inventory differs from archive')
+        kind='registry'
+    elif source is None and allow_local:
+        for target in package.get('targets',[]):
+            target_path=Path(target['src_path']).resolve()
+            try: relative=target_path.relative_to(directory.resolve())
+            except ValueError: raise RuntimeError('Local Time target is outside its package directory')
+            if relative.parts and relative.parts[0] in ('.git','target'):
+                raise RuntimeError('Local Time target is inside an excluded generated directory')
+        kind='local-path'
+    else: raise RuntimeError('Release verification requires a registry Time dependency')
+    fingerprint={'version':package['version'],'source':source,'features':sorted(nodes[package['id']]['features']),'requirement':declarations[0]['req']}
+    return {'version':package['version'],'source':source,'source_kind':kind,'package_id':package['id'],
+            'version_requirement':declarations[0]['req'],'manifest_path':package['manifest_path'],
+            'archive_path':str(archive) if archive else None,'package_checksum':checksum,'lock_path':str(lock_path),
+            'metadata_sha256':hashlib.sha256(json.dumps(fingerprint,sort_keys=True).encode()).hexdigest()}
 
 
 
-def source_manifest() -> dict[str,str]:
+def source_manifest(allow_local: bool = False) -> dict[str,str]:
     files = [p for directory in ['src','tests','tools','.github','.agents'] for p in sorted((ROOT/directory).rglob('*'))
              if p.is_file() and p.suffix in ['.rs','.py','.c','.csv','.tpc','.tf','.ti','.bsp','.bpc','.bc','.tsc','.tls','.bds','.dsk','.txt','.json','.md','.yml','.yaml']]
-    files += [ROOT/'Cargo.toml',ROOT/'Cargo.lock']
+    files += [ROOT/'Cargo.toml']
+    if (ROOT/'Cargo.lock').is_file(): files.append(ROOT/'Cargo.lock')
     files += [p for p in sorted((ROOT/'docs').rglob('*')) if p.is_file()]
     files += [p for p in [ROOT/'.cargo/config.toml'] if p.is_file()]
     files += [p for p in [ROOT/name for name in ['README.md','LICENSE','ATTRIBUTION.md','CHANGELOG.md','AGENTS.md','CITATION.cff','.gitattributes','.gitignore','requirements-reference.txt']] if p.is_file()]
@@ -172,11 +195,25 @@ def source_manifest() -> dict[str,str]:
     files = [p for p in files if '__pycache__' not in p.relative_to(ROOT).parts
              and p.suffix not in ['.pyc', '.pyo']]
     hashes={os.path.relpath(p, ROOT):digest(p) for p in files}
-    dependency=time_dependency();directory=Path(dependency['manifest_path']).parent
+    dependency=time_dependency(allow_local=True) if allow_local else time_dependency();directory=Path(dependency['manifest_path']).parent
     prefix='dependency:stkcraft-time@'+dependency['version']+'/'
-    for path in [directory/'Cargo.toml',*sorted((directory/'src').rglob('*.rs'))]:
+    if dependency.get('source_kind') == 'local-path':
+        paths=[]
+        for current, subdirs, names in os.walk(directory):
+            if Path(current)==directory: subdirs[:]=[name for name in subdirs if name not in ('.git','target')]
+            paths.extend(Path(current)/name for name in names if (Path(current)/name).is_file())
+        paths.sort()
+    else:
+        paths=[directory/'Cargo.toml', *([directory/'build.rs'] if (directory/'build.rs').is_file() else []), *[p for p in sorted((directory/'src').rglob('*')) if p.is_file()]]
+    for path in paths:
         hashes[prefix+path.relative_to(directory).as_posix()]=digest(path)
-    hashes[prefix+'package-checksum']=dependency['package_checksum']
+    if dependency.get('package_checksum'): hashes[prefix+'package-checksum']=dependency['package_checksum']
+    if dependency.get('metadata_sha256'): hashes[prefix+'metadata-sha256']=dependency['metadata_sha256']
+    if dependency.get('lock_path'):
+        workspace=Path(dependency['lock_path']).parent
+        if workspace.resolve()!=ROOT.resolve():
+            for path in [workspace/'Cargo.toml',workspace/'Cargo.lock',workspace/'.cargo/config.toml',workspace/'.cargo/config']:
+                if path.is_file(): hashes['dependency:workspace/'+path.relative_to(workspace).as_posix()]=digest(path)
     return hashes
 
 
@@ -193,7 +230,7 @@ def audit_rust_output(output: str) -> tuple[dict,list[str]]:
         failures.append('Skipped/ignored tests cannot establish conformance')
     # libtest writes the name and status separately. Concurrent native
     # diagnostics may appear between them; never cross the next test prefix.
-    prefixes=list(re.finditer(r'\btest ([\w:]+) \.\.\.',output))
+    prefixes=list(re.finditer(r'(?<![A-Za-z_])test ([\w:]+) \.\.\.',output))
     results={}
     for index,prefix in enumerate(prefixes):
         end=prefixes[index+1].start() if index+1<len(prefixes) else len(output)
@@ -209,10 +246,13 @@ def audit_rust_output(output: str) -> tuple[dict,list[str]]:
     return record, failures
 
 def main() -> int:
+    parser=argparse.ArgumentParser()
+    parser.add_argument('--integration',action='store_true',help='Verify a local Time source without qualifying a release')
+    args=parser.parse_args()
     DEST.mkdir(parents=True, exist_ok=True)
     report = {'utc': datetime.now(timezone.utc).isoformat(), 'complete_webgeocalc_parity': False,
               'acceptance': 'exact reference comparisons; no skipped or ignored tests',
-              'checks': [], 'failures': []}
+              'checks': [], 'failures': [], 'verification_mode': 'integration' if args.integration else 'release'}
     manifest = json.loads((ROOT/'docs/reference/CSPICE_N0067.json').read_text())
     report['failures'].extend(audit_reference_files(manifest,ROOT))
     try:
@@ -233,8 +273,8 @@ def main() -> int:
         ('rust-release', ['cargo','test','--release','--all-features','--all-targets','--no-fail-fast','--','--nocapture']),
     ]
     try:
-        report['time_dependency']=time_dependency()
-        before=source_manifest()
+        report['time_dependency']=time_dependency(allow_local=True) if args.integration else time_dependency()
+        before=source_manifest(allow_local=True) if args.integration else source_manifest()
     except (OSError,ValueError,RuntimeError,subprocess.CalledProcessError) as error:
         before={};report['failures'].append('Source/dependency provenance failed: '+str(error))
     if not report['failures']:
@@ -257,12 +297,13 @@ def main() -> int:
         except (OSError, ValueError, AssertionError, struct.error) as error:
             report['failures'].append('Tested Windows Release binary provenance failed: '+str(error))
     report['verified_source_sha256'] = before
-    try:report['source_sha256']=source_manifest()
+    try:report['source_sha256']=source_manifest(allow_local=True) if args.integration else source_manifest()
     except (OSError,ValueError,RuntimeError,subprocess.CalledProcessError) as error:
         report['source_sha256']={};report['failures'].append('Final source/dependency provenance failed: '+str(error))
     if before != report['source_sha256']:
         report['failures'].append('Sources or path dependency changed during verification; rerun at a stable checkpoint')
     report['local_gate_passed'] = not report['failures']
+    report['release_qualified'] = report['local_gate_passed'] and not args.integration and report.get('time_dependency',{}).get('source_kind') == 'registry'
     (DEST/'report.json').write_text(json.dumps(report,indent=2),encoding='utf-8')
     print('LOCAL EXACT GATE: '+('PASS' if report['local_gate_passed'] else 'FAIL'),flush=True)
     for failure in report['failures']:print(failure)

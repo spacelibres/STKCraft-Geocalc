@@ -3,6 +3,30 @@
 All notable changes are recorded in English using [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and [Semantic Versioning](https://semver.org/).
 Versions 0.1.2 through 0.1.5 below describe verified local checkpoints before Git initialization; they were not separately published releases.
 
+## [0.1.12] - 2026-11-12
+
+### Changed
+
+- Accept compatible `stkcraft-time` releases starting at 0.1.31, avoiding
+  unnecessary downstream version conflicts. The lockfile retains the tested
+  0.1.31 release, and source provenance records its registry archive and
+  comparison with 0.1.30.
+- Resolve Time provenance from GeoCalc's actual Cargo dependency edge and
+  workspace lockfile. Permit explicit local integration checks while requiring
+  registry-qualified evidence for release certification.
+- Retain the validated native time context, all public geometry signatures
+  and every original kernel/reference value. Rerun the complete strict gate,
+  including all 33,696 historical SPK10 query groups and 370,656 output cells,
+  against the updated dependency without changing numerical expectations.
+- Document the raw-time API boundary and preserve the original 0.1.11
+  capture/version history. Complete WebGeocalc parity remains false.
+
+### Fixed
+
+- Recognize Rust test status lines when concurrent native diagnostics end
+  immediately before the `test` prefix. The strict audit also detects an
+  attached failing status instead of accepting a later success.
+
 ## [0.1.11] - 2026-11-12
 
 ### Added

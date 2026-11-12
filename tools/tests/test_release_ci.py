@@ -28,13 +28,17 @@ class ReleaseCI(unittest.TestCase):
         for row in checks:
             if row['name'].startswith('rust-'):
                 row.update(passed=123, failed=0, ignored=0)
-        self.report = dict(local_gate_passed=True, failures=[], source_sha256=self.inventory,
+        self.report = dict(verification_mode='release', release_qualified=True, time_dependency={'source_kind':'registry'}, local_gate_passed=True, failures=[], source_sha256=self.inventory,
                            verified_source_sha256=self.inventory, checks=checks,
                            release_binary_sha256={name: 'a' * 64 for name in guard.BINARY_NAMES})
 
     def test_exact_main_run_and_complete_evidence(self):
         guard.validate_run(self.run, self.jobs, self.repo, self.sha)
         guard.validate_evidence(self.report, self.logs, self.inventory)
+
+    def test_integration_report_cannot_qualify_a_published_release(self):
+        with self.assertRaises(ValueError):
+            guard.validate_evidence({**self.report, 'verification_mode':'integration', 'release_qualified':False}, self.logs, self.inventory)
 
     def test_wrong_commit_branch_event_workflow_or_repository(self):
         for field, value in [('head_sha', 'b' * 40), ('head_branch', 'feature'), ('event', 'pull_request'),
