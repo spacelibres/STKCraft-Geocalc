@@ -22,6 +22,7 @@ docs/review-2026-11-12/** -text -whitespace
 tests/golden/surface_coordinates.txt -text -whitespace
 tests/golden/surface_intercepts.txt -text -whitespace
 tests/golden/dsk_occultation.txt -text -whitespace
+tests/golden/spk10_historical.txt -text -whitespace
 docs/reference/kernel-snapshots/*.bpc -text
 docs/review-2026-11-11/*.json -text -whitespace
 docs/review-2026-11-11/*.jsonl -text -whitespace

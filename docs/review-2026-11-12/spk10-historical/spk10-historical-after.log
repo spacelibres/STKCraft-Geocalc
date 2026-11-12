@@ -1,0 +1,21 @@
+ Downloading crates ...
+  Downloaded stkcraft-time v0.1.30
+    Blocking waiting for file lock on package cache
+   Compiling stkcraft-time v0.1.30
+   Compiling stkcraft-geocalc v0.1.10 (C:\Users\stone\.codex\worktrees\dsk-models-parity\STKCraft-Geocalc)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 57.98s
+     Running tests\spk10_exact.rs (target\debug\deps\spk10_exact-c11ac1852cbeb0bc.exe)
+
+running 2 tests
+test spk10_corrected_state_position_pairs_equal_cspice ... ok
+test spk10_sgp4_j2000_states_equal_cspice ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.12s
+
+     Running tests\spk10_historical_exact.rs (target\debug\deps\spk10_historical_exact-a98bbabecfc4b6db.exe)
+
+running 1 test
+test native_historical_spk10_corrected_state_position_cells_exact ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 7.05s
+

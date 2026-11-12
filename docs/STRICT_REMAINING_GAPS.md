@@ -9,7 +9,7 @@ All 24 non-time WebGeocalc families have independent representative references. 
 - DSK: direct type-2 geometry, LATSRF construction, typed ray intersections and DSK-versus-point GFOCLT have independent native regressions. Surface-name/cache semantics, full typed source/FOV products, illumination/subpoint facades and new CLI/MCP model exposure remain incomplete. STATE_VECTOR point locations use a separate specification without a DSK model. See [the explicit model scope](reference/DSK_MODEL_SCOPE.md) and [earlier DSK coverage](https://github.com/spacelibres/STKCraft-Geocalc/blob/v0.1.8/docs/review-2026-11-11/dsk-exact.md).
 - CLI and MCP coverage is narrower than the Rust API where explicitly documented. Unsupported branches must return errors; no fallback ellipsoid or approximate orbit is accepted.
 - Exact fixtures prove their exercised compiler/platform/kernel combinations. Linux/macOS build success alone does not prove equality to the pinned Windows native reference.
-- Time is maintained independently. The NAIF TimeContext rejects UTC before its first LSK entry; SPK type-10 historical TLE epochs crossing that boundary require an explicit Time-owned contract decision.
+- Time is maintained independently. SPK10 now selects Time's explicit native historical JDUTC path; the recorded 33,696-group regression uses the original LSK. Altered LSK/frame/orbit products, full time representations and raw-pool errors remain open. Civil/scientific time policies stay distinct; see [SPK10 time scope](reference/SPK10_TIME_SCOPE.md).
 - Native error-symbol, malformed-container and degenerate-input matrices are not exhaustive.
 
 ## Calculation-family acceptance map

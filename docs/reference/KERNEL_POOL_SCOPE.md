@@ -2,7 +2,7 @@
 
 Version 0.1.9 uses an ordered, typed and case-sensitive text pool for frame,
 planetary-constant and instrument contexts. Original captures are preserved in
-[the review evidence](https://github.com/spacelibres/STKCraft-Geocalc/tree/v0.1.9/docs/review-2026-11-12).
+[the review evidence](https://github.com/spacelibres/STKCraft-Geocalc/tree/e701f78c47e82bd47ae005a9d8d62733222fe19c/docs/review-2026-11-12).
 The independent C programs use the official N0067 static library and pinned
 static UCRT. Capture manifests identify the archive, compiler, actual linked
 libraries, C sources, inputs and raw outputs by SHA256.

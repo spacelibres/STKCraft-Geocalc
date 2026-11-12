@@ -319,6 +319,8 @@ impl SpkKernel {
     }
 
     /// Supplies the explicit time context required by type10 TLE epochs.
+    /// SPK10 selects Time's native scalar JDUTC convention, including
+    /// historical packets, and requires IERS-only/TableDriven LSK settings.
     pub fn attach_lsk(&mut self, lsk: LeapSecondTable) {
         self.lsk = Some(lsk);
     }
@@ -1313,10 +1315,7 @@ impl SpkKernel {
     }
 
     fn evaluate_type10(&self, index: usize, et: f64) -> Result<State, GeoError> {
-        use stkcraft_time::{
-            contract::{NaifEt, TimeContext},
-            Calendar,
-        };
+        use stkcraft_time::contract::{NaifEt, TimeContext};
         let lsk = self.lsk.as_ref().ok_or_else(|| {
             GeoError::Unsupported("SPK10 requires an explicit leap-second/time context".into())
         })?;
@@ -1343,18 +1342,12 @@ impl SpkKernel {
                 return Err(GeoError::BadDaf("invalid type10 element packet"));
             }
             let elements: [f64; 10] = packet[..10].try_into().unwrap();
-            // Time remains implemented by STKCraft-time. Its explicit NAIF
-            // contract supplies UTC; preserve TTRANS's JD output arithmetic.
-            let utc = TimeContext::new(lsk)
-                .et_to_utc(NaifEt::from_seconds(elements[9])?, Calendar::Gregorian)?;
-            let day = stkcraft_time::calendar::calendar_to_jdn(
-                utc.year,
-                utc.month,
-                utc.day,
-                Calendar::Gregorian,
-            )?;
-            let seconds = utc.hour as f64 * 3600.0 + utc.minute as f64 * 60.0 + utc.second;
-            let jd = day as f64 - 0.5 + seconds / 86400.0;
+            // SPKE10 selects TTRANS's formal JDUTC convention, including
+            // historical packets. Keep time in the independent Time crate
+            // and avoid integer Epoch/civil-calendar quantization.
+            let jd = TimeContext::new(lsk)
+                .et_to_spice_julian_utc(NaifEt::from_seconds(elements[9])?)?
+                .days();
             crate::sgp4::propagate(
                 &geophs,
                 &elements,

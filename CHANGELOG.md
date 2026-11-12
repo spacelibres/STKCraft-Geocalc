@@ -3,6 +3,30 @@
 All notable changes are recorded in English using [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and [Semantic Versioning](https://semver.org/).
 Versions 0.1.2 through 0.1.5 below describe verified local checkpoints before Git initialization; they were not separately published releases.
 
+## [0.1.11] - 2026-11-12
+
+### Added
+
+- Independent native historical SPK10 regression: 52 generated segments,
+  33,696 query groups and 370,656 unrounded state/position/light-time cells,
+  including all nine corrections, two observers and four output frames.
+- Original kernel/source/toolchain captures and mandatory exact regression
+  names; preserve existing SPK10 expectations unchanged.
+
+### Fixed
+
+- Initialize SPK10 from Time's explicit native scalar JDUTC, removing the
+  historical civil-coverage blocker and integer Epoch/calendar detour.
+  Retain distinct full-state and position-only paths and public signatures.
+
+### Changed
+
+- Pin the actual published Time 0.1.30 registry package and document the
+  IERS-only/TableDriven native model requirement. Other time policies
+  produce explicit errors; no alternate model or kernel is substituted.
+- Record the historical scope and remaining altered-LSK/frame/error
+  products. Complete WebGeocalc parity remains false.
+
 ## [0.1.10] - 2026-11-12
 
 ### Added

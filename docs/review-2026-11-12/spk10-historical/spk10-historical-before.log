@@ -1,0 +1,30 @@
+   Compiling stkcraft-time v0.1.29
+   Compiling stkcraft-geocalc v0.1.10 (C:\Users\stone\.codex\worktrees\dsk-models-parity\STKCraft-Geocalc)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 7.55s
+     Running tests\spk10_historical_exact.rs (target\debug\deps\spk10_historical_exact-983aeadff1de811b.exe)
+
+running 1 test
+
+thread 'native_historical_spk10_corrected_state_position_cells_exact' (2644) panicked at tests\spk10_historical_exact.rs:37:5:
+24336 mismatches, 24336 rejected native-valid queries, 102960 compared cells:
+-931000|c1edcd69e2000000|J2000|NONE|399: state Err(TimeContract(Time(UtcOutOfRange))); position Err(TimeContract(Time(UtcOutOfRange)))
+-931000|c1edcd69e2000000|J2000|LT|399: state Err(TimeContract(Time(UtcOutOfRange))); position Err(TimeContract(Time(UtcOutOfRange)))
+-931000|c1edcd69e2000000|J2000|LT+S|399: state Err(TimeContract(Time(UtcOutOfRange))); position Err(TimeContract(Time(UtcOutOfRange)))
+-931000|c1edcd69e2000000|J2000|CN|399: state Err(TimeContract(Time(UtcOutOfRange))); position Err(TimeContract(Time(UtcOutOfRange)))
+-931000|c1edcd69e2000000|J2000|CN+S|399: state Err(TimeContract(Time(UtcOutOfRange))); position Err(TimeContract(Time(UtcOutOfRange)))
+-931000|c1edcd69e2000000|J2000|XLT|399: state Err(TimeContract(Time(UtcOutOfRange))); position Err(TimeContract(Time(UtcOutOfRange)))
+-931000|c1edcd69e2000000|J2000|XLT+S|399: state Err(TimeContract(Time(UtcOutOfRange))); position Err(TimeContract(Time(UtcOutOfRange)))
+-931000|c1edcd69e2000000|J2000|XCN|399: state Err(TimeContract(Time(UtcOutOfRange))); position Err(TimeContract(Time(UtcOutOfRange)))
+-931000|c1edcd69e2000000|J2000|XCN+S|399: state Err(TimeContract(Time(UtcOutOfRange))); position Err(TimeContract(Time(UtcOutOfRange)))
+-931000|c1edcd69e2000000|J2000|NONE|301: state Err(TimeContract(Time(UtcOutOfRange))); position Err(TimeContract(Time(UtcOutOfRange)))
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+test native_historical_spk10_corrected_state_position_cells_exact ... FAILED
+
+failures:
+
+failures:
+    native_historical_spk10_corrected_state_position_cells_exact
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out; finished in 2.70s
+
+error: test failed, to rerun pass `--test spk10_historical_exact`

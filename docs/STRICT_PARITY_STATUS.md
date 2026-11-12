@@ -49,6 +49,10 @@ representative native coverage does not establish complete parity.
 
 Counts describe actual fixture inputs, not every possible option combination. Fresh Debug/Release results and the source inventory are recorded by the strict gate; an older report does not certify changed sources.
 
+The 0.1.11 SPK10 checkpoint adds 33,696 native historical query groups
+and 370,656 exact state/position/light-time cells through Time's explicit
+JDUTC path. See [the exact time scope](reference/SPK10_TIME_SCOPE.md).
+
 ## NASA family audit
 
 The [live audit](https://github.com/spacelibres/STKCraft-Geocalc/blob/v0.1.8/docs/review-2026-11-11/geometry-parity-status.md) checks all 24 non-time families: 13 geometry and 11 GF families. Geometry has 144 local query rows and 71 NASA calculations in 15 groups. GF has 12 requests, 18 nonempty intervals and 54 exact native start/stop/duration doubles. Explicit NASA serialization checks pass; raw transported-value differences are separately retained.
@@ -57,6 +61,6 @@ Actual KernelSet 1 load order is pinned through solar_system_v0072.tm. Full DE44
 
 ## Time and remaining scope
 
-The dependency is pinned to published STKCraft-time 0.1.29. Earlier SCLK failures were handed off; the unchanged 42 SCE2C values, scalar parsing and 420 CK frame regressions remain active. Under explicit authorization, Time kernel-date arithmetic and grammar repairs were independently verified and released as 0.1.27/0.1.28; see [Time integration](reference/TIME_KERNEL_DATES.md). [Historical evidence](https://github.com/spacelibres/STKCraft-Geocalc/blob/v0.1.8/docs/review-2026-11-11/time-integration-gaps.md) remains available.
+The dependency is pinned to published STKCraft-time 0.1.30. Earlier SCLK failures were handed off; the unchanged 42 SCE2C values, scalar parsing and 420 CK frame regressions remain active. Under explicit authorization, Time kernel-date arithmetic and grammar repairs were independently verified and released as 0.1.27/0.1.28; see [Time integration](reference/TIME_KERNEL_DATES.md). [Historical evidence](https://github.com/spacelibres/STKCraft-Geocalc/blob/v0.1.8/docs/review-2026-11-11/time-integration-gaps.md) remains available.
 
 See [remaining gaps](STRICT_REMAINING_GAPS.md), [numerical contract](NUMERICS.md) and [validation instructions](VALIDATION.md). A versioned publication is a reproducible implementation checkpoint, not an assertion that the remaining gaps are closed.

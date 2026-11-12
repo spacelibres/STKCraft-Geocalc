@@ -19,6 +19,8 @@ Positions are kilometres; velocities are kilometres per second. Input et is TDB 
 
 SpkKernel::open_all preserves file load order. Later applicable files/segments take priority. Type-10 TLE segments require attach_lsk. Context-free methods support built-in inertial segment references; rotating source references require the explicit Frames/PCK methods.
 
+SPK10 uses Time's explicit native scalar JDUTC path, including historical packet epochs, without an integer Epoch/civil-calendar reconstruction. Supply the original LSK with IERS-only/TableDriven settings. SOFA/frozen policies now return explicit model errors. See [the exact historical SPK10 scope](reference/SPK10_TIME_SCOPE.md).
+
 ## Frames and the position/state distinction
 
 Use Frames::open or furnsh for FK definitions, Pck::open_all for text/binary PCK, attach_ck for attitudes, attach_sclk for spacecraft-clock context, and attach_spk(Arc<SpkKernel>) for ephemeris-defined frames.
