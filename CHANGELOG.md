@@ -3,6 +3,26 @@
 All notable changes are recorded in English using [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and [Semantic Versioning](https://semver.org/).
 Versions 0.1.2 through 0.1.5 below describe verified local checkpoints before Git initialization; they were not separately published releases.
 
+## [0.1.9] - 2026-11-12
+
+### Added
+
+- Independent N0067 typed kernel-pool, append, partial-load and frame metadata/error captures; exact fixed/dynamic position and state transformations.
+- Native PCK repeated-load captures and regressions preserving earlier successful assignments and invalidating removed or character-replaced constants.
+- Kernel-date integration with exact registry Time 0.1.28, original native values/rejection outcomes, and direct numeric reads that avoid decimal formatting/reparsing.
+
+### Fixed
+
+- Preserve case-sensitive pool names, character types, numeric-looking quoted strings, general ordered append and native parsing errors.
+- Defer fixed-frame validation to transformation queries, preserve native identity shortcuts, and check required metadata with native error ordering.
+- Rebuild text-PCK caches from the effective pool, including after failed loads; retain binary PCK records.
+- Exclude generated Python bytecode from source inventories while retaining original binary and diagnostic captures unchanged.
+
+### Changed
+
+- Document corrected validation timing and partial-load semantics; retain existing public Rust signatures.
+- Pin the verified Time registry release 0.1.28 and validate future exact pins against Cargo metadata and archive bytes. Keep complete WebGeocalc parity false, including wider date grammar/error symbols, full option/error products and DSK facade integration.
+
 ## [0.1.8] - 2026-11-11
 
 ### Added

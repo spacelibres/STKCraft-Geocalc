@@ -21,9 +21,8 @@ The692built-in bodyaliases are extracted from official ZZIDMAP and independently
 
 ## Remaining limits
 
-- Kernel date literals beginning with `@` are not yet parsed by the frame context. Numeric ET epoch fields are covered. No approximate date substitution is made.
-- General kernel-pool append behavior for variables other than body-name/code aliases has not been implemented or validated.
-- The text tokenizer currently does not preserve numeric-looking quoted strings as a distinct character type. Malformed kernel type behavior is consequently not fully validated.
+- Kernel dates use the exact registry Time 0.1.28 resolver, including the RSSD mixed-delimiter epoch. Eight raw native values and three rejection outcomes have pool regressions. Wider TPARSE grammar and date short-error symbols remain unverified; no approximate date substitution is made.
+- Ordered general append and numeric-looking character values now have independent native regressions. See [kernel-pool scope](KERNEL_POOL_SCOPE.md) for exact coverage and residual limits.
 - Dynamic metadata error/type/cardinality coverage is incomplete beyond the active native rejection cases listed above. Unverified options must not be reported as PASS.
 - Native internal cache capacity/eviction limits have not been emulated; tested query-history semantics in the CK engine are preserved.
 

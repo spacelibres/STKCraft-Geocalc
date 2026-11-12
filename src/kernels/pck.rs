@@ -25,7 +25,7 @@ use std::path::Path;
 
 use crate::error::GeoError;
 use crate::frame::{
-    extract_data_blocks, mat_mul, parse_assignments, parse_f64, rot1, rot3, tokenize, Mat3, Value,
+    apply_assignments, extract_data_blocks, mat_mul, parse_f64, rot1, rot3, Mat3, Value,
 };
 
 /// Body constants and orientation records loaded from text and binary PCKs.
@@ -112,12 +112,19 @@ impl Pck {
     /// Merges the assignments of another text PCK into this one.
     pub fn furnsh(&mut self, text: &str) -> Result<(), GeoError> {
         let data = extract_data_blocks(text);
-        let assignments = parse_assignments(&tokenize(&data));
+        let parse_result = apply_assignments(&data, &mut self.pool);
+        // Native loading preserves assignments before an error and removes
+        // the failed variable. Rebuild every derived text cache from that pool.
+        self.radii.clear();
+        self.gm.clear();
+        self.orientation.clear();
+        self.positive_longitude.clear();
+        self.prime_meridian_rates.clear();
+        self.phase_angles.clear();
+        self.phase_degree.clear();
+        let assignments = self.pool.clone();
 
         for (variable, value) in assignments {
-            if variable.starts_with("BODY") {
-                self.pool.insert(variable.clone(), value.clone());
-            }
             let Some(rest) = variable.strip_prefix("BODY") else {
                 continue;
             };
@@ -196,7 +203,7 @@ impl Pck {
                     }
                 }
                 "PGR_POSITIVE_LON" => {
-                    let text = scalar(&value).ok_or(GeoError::BadSearch(
+                    let text = value.as_string().ok_or(GeoError::BadSearch(
                         "PGR_POSITIVE_LON must be the string EAST or WEST",
                     ))?;
                     match text.trim().to_ascii_uppercase().as_str() {
@@ -217,7 +224,7 @@ impl Pck {
             }
         }
 
-        Ok(())
+        parse_result
     }
 
     /// Opens and merges text and binary PCK files in load order.
@@ -550,19 +557,15 @@ fn phase_system(body: i32) -> i32 {
 }
 
 fn scalar(value: &Value) -> Option<&str> {
-    match value {
-        Value::Scalar(text) => Some(text.as_str()),
-        Value::List(items) if items.len() == 1 => Some(items[0].as_str()),
-        _ => None,
-    }
+    value.as_number()
 }
 
 fn floats(value: &Value) -> Option<Vec<f64>> {
-    let items = match value {
-        Value::Scalar(item) => std::slice::from_ref(item),
-        Value::List(items) => items.as_slice(),
-    };
-    items.iter().map(|item| parse_f64(item).ok()).collect()
+    value
+        .as_list()?
+        .iter()
+        .map(|item| parse_f64(item).ok())
+        .collect()
 }
 
 /// The first three numbers, padding missing higher-order terms with zero.

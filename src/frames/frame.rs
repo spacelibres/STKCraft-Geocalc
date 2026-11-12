@@ -40,11 +40,14 @@ use std::sync::Arc;
 use stkcraft_time::{sclk::SclkKernel, LeapSecondTable};
 
 use crate::error::GeoError;
+pub(crate) use crate::kernels::text_kernel::{apply_assignments, Value};
 use crate::pck::Pck;
 #[path = "frame_body_defaults.rs"]
 mod body_defaults;
 #[path = "frame_body_names.rs"]
 mod body_names;
+#[path = "frame_kernel.rs"]
+mod frame_kernel;
 #[derive(Clone)]
 struct EphemerisContext(Arc<crate::spk::SpkKernel>);
 impl std::fmt::Debug for EphemerisContext {
@@ -204,9 +207,13 @@ impl Frames {
     /// Adds the frame definitions from a frame kernel.
     pub fn furnsh(&mut self, text: &str) -> Result<(), GeoError> {
         let data = extract_data_blocks(text);
-        let tokens = tokenize(&data);
-        self.ingest_body_aliases(&tokens)?;
-        let assignments = parse_assignments(&tokens);
+        let parsing = apply_assignments(&data, &mut self.dynamic_pool);
+        let assignments = self.dynamic_pool.clone();
+        let builtins = Self::new();
+        self.frames = builtins.frames;
+        self.names = builtins.names;
+        self.object_frames.clear();
+        self.ck_clock_ids.clear();
 
         let mut raw: HashMap<i32, RawFrame> = HashMap::new();
         let mut aliases: HashMap<String, i32> = HashMap::new();
@@ -215,29 +222,21 @@ impl Frames {
             if variable == "NAIF_BODY_NAME" || variable == "NAIF_BODY_CODE" {
                 continue;
             }
-            if variable.starts_with("FRAME_") {
-                self.dynamic_pool.insert(variable.clone(), value.clone());
-            }
             if let Some(id) = variable
                 .strip_prefix("CK_")
                 .and_then(|x| x.strip_suffix("_SCLK"))
                 .and_then(|x| x.parse::<i32>().ok())
             {
-                let clock = value
-                    .as_i32()
-                    .ok_or(GeoError::FrameParse("CK_SCLK requires a clock ID"))?;
-                self.ck_clock_ids.insert(id, clock);
+                if let Some(clock) = value.as_i32() {
+                    self.ck_clock_ids.insert(id, clock);
+                }
                 continue;
             }
             if let Some(object) = variable
                 .strip_prefix("OBJECT_")
                 .and_then(|v| v.strip_suffix("_FRAME"))
             {
-                let frame = match &value {
-                    Value::Scalar(v) => Some(v),
-                    Value::List(v) => v.first(),
-                }
-                .ok_or(GeoError::FrameParse(
+                let frame = value.values().first().ok_or(GeoError::FrameParse(
                     "OBJECT_FRAME requires a frame name or ID",
                 ))?;
                 self.object_frames
@@ -273,16 +272,20 @@ impl Frames {
                     }
                 }
                 if !handled {
-                    if let Value::Scalar(text) = value {
-                        if let Ok(id) = text.parse::<i32>() {
-                            aliases.insert(rest.to_uppercase(), id);
-                        }
+                    if let Some(id) = value.as_i32() {
+                        aliases.insert(rest.to_uppercase(), id);
                     }
                 }
             }
         }
 
         for (id, raw) in raw {
+            if crate::builtin_frames::FRAMES
+                .iter()
+                .any(|item| item.id == id)
+            {
+                continue;
+            }
             let name = raw
                 .frame
                 .get("NAME")
@@ -296,18 +299,8 @@ impl Frames {
                 .unwrap_or(id);
             let center = raw.frame.get("CENTER").and_then(Value::as_i32).unwrap_or(0);
 
-            let relative = match raw.tk.get("RELATIVE").and_then(Value::as_string) {
-                Some(text) => Some(self.resolve_name(&text, &aliases).ok_or(
-                    GeoError::FrameParse("TKFRAME_RELATIVE names an unknown frame"),
-                )?),
-                None => None,
-            };
-
-            let rotation = if relative.is_some() {
-                Some(build_rotation(&id, &raw.tk)?)
-            } else {
-                None
-            };
+            let relative = None;
+            let rotation = None;
 
             self.names.insert(name.to_uppercase(), id);
             self.frames.insert(
@@ -327,8 +320,23 @@ impl Frames {
         for (alias, id) in aliases {
             self.names.entry(alias).or_insert(id);
         }
-
-        Ok(())
+        let ids: Vec<_> = self.frames.keys().copied().collect();
+        for id in &ids {
+            if let Ok(checked) = self.checked_definition(&self.frames[id]) {
+                self.names.insert(checked.name.to_uppercase(), *id);
+                self.frames.insert(*id, checked);
+            }
+        }
+        for id in ids {
+            if self.frames[&id].class == 4 {
+                if let Ok((parent, step)) = self.fixed_kernel_step(&self.frames[&id]) {
+                    let def = self.frames.get_mut(&id).unwrap();
+                    def.relative = Some(parent);
+                    def.rotation = Some(step.rotation);
+                }
+            }
+        }
+        parsing
     }
 
     /// Looks up a frame by NAIF id.
@@ -360,47 +368,6 @@ impl Frames {
             .ok_or_else(|| GeoError::FrameNotFound(name.to_string()))
     }
 
-    fn ingest_body_aliases(&mut self, tokens: &[String]) -> Result<(), GeoError> {
-        let mut i = 0;
-        while i < tokens.len() {
-            let name = tokens[i].trim_end_matches('+').to_uppercase();
-            if name != "NAIF_BODY_NAME" && name != "NAIF_BODY_CODE" {
-                i += 1;
-                continue;
-            }
-            let mut append = tokens[i].ends_with('+');
-            let mut eq = i + 1;
-            if tokens.get(eq).map(|x| x.as_str()) == Some("+") {
-                append = true;
-                eq += 1;
-            }
-            if tokens.get(eq).map(|x| x.as_str()) != Some("=") {
-                i += 1;
-                continue;
-            }
-            let (value, next) = parse_value(tokens, eq + 1);
-            let value = if append {
-                let list = |v: Value| match v {
-                    Value::Scalar(x) => vec![x],
-                    Value::List(x) => x,
-                };
-                let mut old = self
-                    .dynamic_pool
-                    .get(&name)
-                    .cloned()
-                    .map(list)
-                    .unwrap_or_default();
-                old.extend(list(value));
-                Value::List(old)
-            } else {
-                value
-            };
-            self.dynamic_pool.insert(name, value);
-            i = next;
-        }
-        Ok(())
-    }
-
     /// Resolves numeric IDs, native NAIF body aliases and FK body aliases.
     pub fn body_id(&self, name: &str) -> Result<i32, GeoError> {
         if let Ok(id) = name.trim().parse::<i32>() {
@@ -417,12 +384,12 @@ impl Frames {
             self.dynamic_pool.get("NAIF_BODY_NAME"),
             self.dynamic_pool.get("NAIF_BODY_CODE"),
         ) {
-            let list = |v: &Value| match v {
-                Value::Scalar(x) => vec![x.clone()],
-                Value::List(x) => x.clone(),
-            };
-            let names = list(names);
-            let codes = list(codes);
+            let names = names
+                .as_strings()
+                .ok_or(GeoError::BadSearch("SPICE(BADVARIABLETYPE)"))?;
+            let codes = codes
+                .as_list()
+                .ok_or(GeoError::BadSearch("SPICE(BADVARIABLETYPE)"))?;
             if names.len() != codes.len() {
                 return Err(GeoError::BadSearch("SPICE(BADDIMENSIONS)"));
             }
@@ -445,12 +412,12 @@ impl Frames {
             self.dynamic_pool.get("NAIF_BODY_NAME"),
             self.dynamic_pool.get("NAIF_BODY_CODE"),
         ) {
-            let list = |v: &Value| match v {
-                Value::Scalar(x) => vec![x.clone()],
-                Value::List(x) => x.clone(),
-            };
-            let names = list(names);
-            let codes = list(codes);
+            let names = names
+                .as_strings()
+                .ok_or(GeoError::BadSearch("SPICE(BADVARIABLETYPE)"))?;
+            let codes = codes
+                .as_list()
+                .ok_or(GeoError::BadSearch("SPICE(BADVARIABLETYPE)"))?;
             if names.len() != codes.len() {
                 return Err(GeoError::BadSearch("SPICE(BADDIMENSIONS)"));
             }
@@ -529,41 +496,7 @@ impl Frames {
     /// This follows the rotation-only REFCHG path, which can differ in
     /// the final bit from the rotation block produced by SXFORM.
     pub fn pxform(&self, from: &str, to: &str, et: f64) -> Result<Mat3, GeoError> {
-        let _ = et;
-        let from_id = self.frame_id(from)?;
-        let to_id = self.frame_id(to)?;
-        if from_id == to_id {
-            return Ok(IDENTITY);
-        }
-
-        let from_nodes = self.ancestors(from_id)?;
-        let to_nodes = self.ancestors(to_id)?;
-        if from_nodes
-            .iter()
-            .chain(to_nodes.iter())
-            .any(|id| matches!(self.frames[id].class, 3 | 5 | 6))
-        {
-            return Ok(self.transformation(from, to, et, None, false)?.rotation);
-        }
-        // Compose through the lowest common ancestor. This lets a rotation
-        // between two frames be computed from `TKFRAME` data alone even when
-        // their shared ancestor is a body-fixed frame whose orientation
-        // lives in a separate PCK, exactly as CSPICE resolves a direct FK
-        // relationship.
-        let from_chain = self.ancestors(from_id)?;
-        let to_chain = self.ancestors(to_id)?;
-        let common = from_chain
-            .iter()
-            .find(|id| to_chain.contains(id))
-            .copied()
-            .ok_or_else(|| GeoError::NoFramePath {
-                from: from.to_string(),
-                to: to.to_string(),
-            })?;
-
-        let from_to_common = self.path_rotation(from_id, common)?;
-        let to_to_common = self.path_rotation(to_id, common)?;
-        Ok(mat_mul(&transpose(&to_to_common), &from_to_common))
+        Ok(self.transformation(from, to, et, None, false)?.rotation)
     }
 
     /// The 6x6 state transformation mapping `from` into `to`.
@@ -571,21 +504,7 @@ impl Frames {
     /// Mirrors CSPICE `sxform`: the rotation appears in both the upper-left
     /// and lower-right 3x3 blocks.
     pub fn sxform(&self, from: &str, to: &str, et: f64) -> Result<[[f64; 6]; 6], GeoError> {
-        let from_id = self.frame_id(from)?;
-        let to_id = self.frame_id(to)?;
-        let runtime = self
-            .ancestors(from_id)?
-            .iter()
-            .chain(self.ancestors(to_id)?.iter())
-            .any(|id| matches!(self.frames[id].class, 3 | 5 | 6));
-        let state = if runtime {
-            self.pxform_with_derivative(from, to, et, None)?
-        } else {
-            FrameRotation {
-                rotation: self.pxform(from, to, et)?,
-                rotation_dot: ZERO,
-            }
-        };
+        let state = self.transformation(from, to, et, None, true)?;
         let rotation = state.rotation;
         let mut matrix = [[0.0f64; 6]; 6];
         for row in 0..3 {
@@ -707,16 +626,10 @@ impl Frames {
         let mut to_transform = None;
         while !nodes.contains(&current) {
             if !visited.insert(current) || current == J2000_ID {
-                return Err(GeoError::NoFramePath {
-                    from: from.into(),
-                    to: to.into(),
-                });
+                return Err(GeoError::BadSearch("SPICE(FRAMEDATANOTFOUND)"));
             }
             let Some((parent, step)) = self.state_step(current, et, pck, need_av)? else {
-                return Err(GeoError::NoFramePath {
-                    from: from.into(),
-                    to: to.into(),
-                });
+                return Err(GeoError::BadSearch("SPICE(FRAMEDATANOTFOUND)"));
             };
             to_transform = Some(match to_transform {
                 None => step,
@@ -746,10 +659,17 @@ impl Frames {
         pck: Option<&Pck>,
         need_av: bool,
     ) -> Result<Option<(i32, FrameRotation)>, GeoError> {
-        let def = self
-            .frames
-            .get(&id)
-            .ok_or_else(|| GeoError::FrameNotFound(id.to_string()))?;
+        let Some(original) = self.frames.get(&id) else {
+            return Err(GeoError::BadSearch("SPICE(UNKNOWNFRAME)"));
+        };
+        let checked = self.checked_definition(original)?;
+        let def = &checked;
+        if !(1..=6).contains(&def.class) {
+            return Err(GeoError::BadSearch("SPICE(UNKNOWNFRAMETYPE)"));
+        }
+        if def.class == 4 {
+            return self.fixed_kernel_step(def).map(Some);
+        }
         if def.class == 5 {
             return Ok(Some(self.dynamic_step(def, et, pck, need_av)?));
         }
@@ -802,6 +722,9 @@ impl Frames {
             )));
         }
         if def.class == 2 {
+            if pck.is_none() {
+                return Ok(None);
+            }
             if let Some(pck) = pck {
                 if let Some((reference, rotation, derivative)) =
                     pck.binary_state_rotation(def.class_id, et)?
@@ -860,10 +783,8 @@ impl Frames {
             .dynamic_pool
             .get(&format!("FRAME_{}_ALIGNED_WITH", def.id))
             .ok_or(GeoError::BadSearch("SPICE(MISSINGFRAMEVAR)"))?;
-        let bases = match aligned {
-            Value::Scalar(x) => std::slice::from_ref(x),
-            Value::List(x) => x.as_slice(),
-        };
+        let numeric = aligned.as_list().is_some();
+        let bases = aligned.values();
         if bases.len() > 15000 {
             return Err(GeoError::BadSearch("SPICE(TOOMANYBASEFRAMES)"));
         }
@@ -876,10 +797,9 @@ impl Frames {
             }
             (Some(a), Some(b)) => {
                 let numbers = |v: &Value| -> Result<Vec<f64>, GeoError> {
-                    let v = match v {
-                        Value::Scalar(x) => std::slice::from_ref(x),
-                        Value::List(x) => x.as_slice(),
-                    };
+                    let v = v
+                        .as_list()
+                        .ok_or(GeoError::BadSearch("SPICE(BADVARIABLETYPE)"))?;
                     v.iter().map(|x| parse_f64(x)).collect()
                 };
                 let a = numbers(a)?;
@@ -897,6 +817,13 @@ impl Frames {
         // ZZSWFFET does even for entries outside the request interval.
         let mut ids = Vec::with_capacity(bases.len());
         for name in bases {
+            let numeric_name;
+            let name = if numeric {
+                numeric_name = (parse_f64(name)?.round() as i32).to_string();
+                &numeric_name
+            } else {
+                name
+            };
             let id = self.frame_id(name).or_else(|_| {
                 parse_f64(name)
                     .ok()
@@ -945,11 +872,16 @@ impl Frames {
         }
     }
     fn dynamic_string(&self, def: &FrameDef, item: &str) -> Result<String, GeoError> {
-        self.dynamic_value(def, item)
-            .and_then(Value::as_string)
-            .ok_or(GeoError::FrameParse(
-                "missing dynamic frame string parameter",
-            ))
+        let value = self
+            .dynamic_value(def, item)
+            .ok_or(GeoError::BadSearch("SPICE(KERNELVARNOTFOUND)"))?;
+        let strings = value
+            .as_strings()
+            .ok_or(GeoError::BadSearch("SPICE(BADVARIABLETYPE)"))?;
+        if strings.len() != 1 {
+            return Err(GeoError::BadSearch("SPICE(BADVARIABLESIZE)"));
+        }
+        Ok(strings[0].clone())
     }
     fn dynamic_numbers(
         &self,
@@ -957,17 +889,14 @@ impl Frames {
         item: &str,
         max: usize,
     ) -> Result<Vec<f64>, GeoError> {
-        let value = self.dynamic_value(def, item).ok_or(GeoError::FrameParse(
-            "missing dynamic frame numeric parameter",
-        ))?;
-        let tokens = match value {
-            Value::Scalar(x) => std::slice::from_ref(x),
-            Value::List(x) => x.as_slice(),
-        };
+        let value = self
+            .dynamic_value(def, item)
+            .ok_or(GeoError::BadSearch("SPICE(KERNELVARNOTFOUND)"))?;
+        let tokens = value
+            .as_list()
+            .ok_or(GeoError::BadSearch("SPICE(BADVARIABLETYPE)"))?;
         if tokens.is_empty() || tokens.len() > max {
-            return Err(GeoError::FrameParse(
-                "invalid dynamic frame numeric parameter size",
-            ));
+            return Err(GeoError::BadSearch("SPICE(BADVARIABLESIZE)"));
         }
         tokens.iter().map(|x| parse_f64(x)).collect()
     }
@@ -979,12 +908,12 @@ impl Frames {
         need_av: bool,
     ) -> Result<(i32, FrameRotation), GeoError> {
         let _level = DynamicLevel::enter()?;
-        let base = self.frame_id(&self.dynamic_string(def, "RELATIVE")?)?;
+        let base = self.dynamic_frame_id(def, "RELATIVE")?;
         if !self
             .dynamic_string(def, "DEF_STYLE")?
             .eq_ignore_ascii_case("PARAMETERIZED")
         {
-            return Err(GeoError::UnsupportedFrameSpec(def.name.clone()));
+            return Err(GeoError::BadSearch("SPICE(NOTSUPPORTED)"));
         }
         let family = self
             .dynamic_string(def, "FAMILY")?
@@ -996,9 +925,7 @@ impl Frames {
         } else {
             et
         };
-        let rotation_state = self
-            .dynamic_value(def, "ROTATION_STATE")
-            .and_then(Value::as_string);
+        let rotation_state = self.dynamic_optional_string(def, "ROTATION_STATE")?;
         if frozen && rotation_state.is_some() {
             return Err(GeoError::BadSearch("SPICE(FRAMEDEFERROR)"));
         }
@@ -1032,10 +959,14 @@ impl Frames {
                 let epoch = self.dynamic_numbers(def, "EPOCH", 1)?[0];
                 let delta = t0 - epoch;
                 let axis_values = self.dynamic_numbers(def, "AXES", 3)?;
+                if axis_values
+                    .iter()
+                    .any(|value| !(1..=3).contains(&(value.round() as i32)))
+                {
+                    return Err(GeoError::BadSearch("SPICE(BADAXISNUMBERS)"));
+                }
                 if axis_values.len() != 3 {
-                    return Err(GeoError::FrameParse(
-                        "dynamic Euler AXES requires three values",
-                    ));
+                    return Err(GeoError::BadSearch("SPICE(BADVARIABLESIZE)"));
                 }
                 let mut axes = [0usize; 3];
                 for i in 0..3 {
@@ -1078,10 +1009,10 @@ impl Frames {
                     let v = self
                         .dynamic_value(def, item)
                         .ok_or(GeoError::FrameParse("missing product frame factors"))?;
-                    let out = match v {
-                        Value::Scalar(x) => vec![x.clone()],
-                        Value::List(x) => x.clone(),
-                    };
+                    let out = v
+                        .as_strings()
+                        .ok_or(GeoError::BadSearch("SPICE(BADVARIABLETYPE)"))?
+                        .to_vec();
                     if out.is_empty() || out.len() > 10 {
                         return Err(GeoError::BadSearch("SPICE(BADVARIABLESIZE)"));
                     }
@@ -1106,11 +1037,7 @@ impl Frames {
                 }
                 result
             }
-            _ => {
-                return Err(GeoError::UnsupportedFrameSpec(format!(
-                    "dynamic family {family}"
-                )))
-            }
+            _ => return Err(GeoError::BadSearch("SPICE(NOTSUPPORTED)")),
         };
         if need_av && inert {
             if self.frames[&base].class == 1 {
@@ -1410,8 +1337,7 @@ impl Frames {
         use crate::spk::Aberration;
         let frid = self.frame_id(&self.dynamic_string(def, &format!("{prefix}_FRAME"))?)?;
         let correction = self
-            .dynamic_value(def, &format!("{prefix}_ABCORR"))
-            .and_then(Value::as_string)
+            .dynamic_optional_string(def, &format!("{prefix}_ABCORR"))?
             .unwrap_or_else(|| "NONE".into())
             .replace(' ', "")
             .to_uppercase();
@@ -1702,61 +1628,6 @@ impl Frames {
             mat_mul(&parent_dot, &local),
         ))
     }
-
-    fn resolve_name(&self, name: &str, aliases: &HashMap<String, i32>) -> Option<i32> {
-        if let Ok(id) = name.parse::<i32>() {
-            if self.frames.contains_key(&id) {
-                return Some(id);
-            }
-        }
-        let key = name.to_uppercase();
-        self.names.get(&key).or_else(|| aliases.get(&key)).copied()
-    }
-
-    fn ancestors(&self, id: i32) -> Result<Vec<i32>, GeoError> {
-        let mut chain = vec![id];
-        let mut visited = HashSet::new();
-        visited.insert(id);
-
-        let mut node = id;
-        while let Some(parent) = self
-            .frames
-            .get(&node)
-            .ok_or_else(|| GeoError::FrameNotFound(node.to_string()))?
-            .relative
-        {
-            if !visited.insert(parent) {
-                return Err(GeoError::FrameParse("cyclic frame definitions"));
-            }
-            chain.push(parent);
-            node = parent;
-        }
-
-        Ok(chain)
-    }
-
-    /// Rotation mapping `id` into its ancestor `target`.
-    fn path_rotation(&self, id: i32, target: i32) -> Result<Mat3, GeoError> {
-        let mut rotation = IDENTITY;
-        let mut node = id;
-
-        while node != target {
-            let frame = self
-                .frames
-                .get(&node)
-                .ok_or_else(|| GeoError::FrameNotFound(node.to_string()))?;
-            let parent = frame.relative.ok_or(GeoError::FrameParse(
-                "frame is not an ancestor of the target",
-            ))?;
-            let step = frame
-                .rotation
-                .ok_or_else(|| GeoError::UnsupportedFrameSpec(frame.name.clone()))?;
-            rotation = mat_mul(&step, &rotation);
-            node = parent;
-        }
-
-        Ok(rotation)
-    }
 }
 
 #[derive(Default)]
@@ -1765,34 +1636,12 @@ struct RawFrame {
     tk: HashMap<String, Value>,
 }
 
-#[derive(Clone, Debug)]
-pub(crate) enum Value {
-    Scalar(String),
-    List(Vec<String>),
-}
-
-impl Value {
-    pub(crate) fn as_string(&self) -> Option<String> {
-        match self {
-            Value::Scalar(text) => Some(text.clone()),
-            Value::List(items) if items.len() == 1 => Some(items[0].clone()),
-            _ => None,
-        }
-    }
-
-    pub(crate) fn as_i32(&self) -> Option<i32> {
-        self.as_string()?.trim().parse().ok()
-    }
-
-    pub(crate) fn as_list(&self) -> Option<&[String]> {
-        match self {
-            Value::List(items) => Some(items),
-            Value::Scalar(_) => None,
-        }
-    }
-}
-
 fn build_rotation(id: &i32, tk: &HashMap<String, Value>) -> Result<Mat3, GeoError> {
+    for item in ["MATRIX", "ANGLES", "AXES", "Q"] {
+        if tk.get(item).is_some_and(|value| value.as_list().is_none()) {
+            return Err(GeoError::BadSearch("SPICE(BADVARIABLETYPE)"));
+        }
+    }
     let spec = tk
         .get("SPEC")
         .and_then(Value::as_string)
@@ -1844,15 +1693,12 @@ fn build_rotation(id: &i32, tk: &HashMap<String, Value>) -> Result<Mat3, GeoErro
             for index in 0..3 {
                 let angle = convert_angle(parse_f64(&angles[index])?, &units)?;
                 converted[index] = angle;
-                let axis: i32 = axes[index]
-                    .trim()
-                    .parse()
-                    .map_err(|_| GeoError::FrameParse("invalid TKFRAME_AXES value"))?;
+                let axis = parse_f64(&axes[index])?.round() as i32;
                 let rotation = match axis {
                     1 => rot1(angle),
                     2 => rot2(angle),
                     3 => rot3(angle),
-                    _ => return Err(GeoError::FrameParse("TKFRAME_AXES must be 1, 2 or 3")),
+                    _ => return Err(GeoError::BadSearch("SPICE(BADAXISNUMBERS)")),
                 };
                 rotations[index] = rotation;
                 axis_numbers[index] = axis as usize - 1;
@@ -1894,9 +1740,8 @@ fn convert_angle(value: f64, units: &str) -> Result<f64, GeoError> {
         "MINUTEANGLE" => 0.25,
         "SECONDANGLE" => 0.0041666666666666666,
         other => {
-            return Err(GeoError::UnsupportedFrameSpec(format!(
-                "angle units '{other}'"
-            )))
+            let _ = other;
+            return Err(GeoError::BadSearch("SPICE(UNITSNOTREC)"));
         }
     };
     Ok((value * degrees) / dpr)
@@ -2127,101 +1972,16 @@ pub(crate) fn extract_data_blocks(text: &str) -> String {
     output
 }
 
-pub(crate) fn tokenize(input: &str) -> Vec<String> {
-    let mut tokens = Vec::new();
-    let mut current = String::new();
-    let mut quote: Option<char> = None;
-
-    for character in input.chars() {
-        if let Some(opening) = quote {
-            if character == opening {
-                if !current.is_empty() {
-                    tokens.push(std::mem::take(&mut current));
-                }
-                quote = None;
-            } else {
-                current.push(character);
-            }
-            continue;
-        }
-
-        match character {
-            '\'' | '"' => {
-                if !current.is_empty() {
-                    tokens.push(std::mem::take(&mut current));
-                }
-                quote = Some(character);
-            }
-            '=' | '(' | ')' | ',' => {
-                if !current.is_empty() {
-                    tokens.push(std::mem::take(&mut current));
-                }
-                tokens.push(character.to_string());
-            }
-            c if c.is_whitespace() => {
-                if !current.is_empty() {
-                    tokens.push(std::mem::take(&mut current));
-                }
-            }
-            c => current.push(c),
-        }
-    }
-
-    if !current.is_empty() {
-        tokens.push(current);
-    }
-    tokens
-}
-
-fn is_operator(token: &str) -> bool {
-    matches!(token, "=" | "(" | ")" | ",")
-}
-
-pub(crate) fn parse_assignments(tokens: &[String]) -> HashMap<String, Value> {
-    let mut assignments = HashMap::new();
-    let mut index = 0;
-
-    while index < tokens.len() {
-        if index + 1 < tokens.len() && tokens[index + 1] == "=" && !is_operator(&tokens[index]) {
-            let name = tokens[index].to_uppercase();
-            let (value, next) = parse_value(tokens, index + 2);
-            assignments.insert(name, value);
-            index = next;
-        } else {
-            index += 1;
-        }
-    }
-
-    assignments
-}
-
-fn parse_value(tokens: &[String], start: usize) -> (Value, usize) {
-    let mut index = start;
-    if index < tokens.len() && tokens[index] == "(" {
-        index += 1;
-        let mut items = Vec::new();
-        while index < tokens.len() && tokens[index] != ")" {
-            if tokens[index] == "," {
-                index += 1;
-                continue;
-            }
-            items.push(tokens[index].clone());
-            index += 1;
-        }
-        if index < tokens.len() {
-            index += 1;
-        }
-        return (Value::List(items), index);
-    }
-
-    if index < tokens.len() {
-        (Value::Scalar(tokens[index].clone()), index + 1)
-    } else {
-        (Value::Scalar(String::new()), index)
-    }
-}
-
 pub(crate) fn parse_f64(token: &str) -> Result<f64, GeoError> {
+    if token.starts_with('@') {
+        return stkcraft_time::kernel_date::parse_kernel_date(token)
+            .map(|date| date.seconds_past_j2000)
+            .map_err(|error| {
+                GeoError::UnsupportedFrameSpec(format!(
+                    "STKCraft-time kernel date {token}: {error}"
+                ))
+            });
+    }
     // PRSDP/NPARSD deliberately evaluates integer and fractional parts
     // separately. Correctly-rounded strtod is not bit-equivalent (for
     // example BODY301_NUT_PREC_RA=-3.8787). Match the kernel pool parser.
@@ -2299,7 +2059,7 @@ pub(crate) fn parse_f64(token: &str) -> Result<f64, GeoError> {
     } else {
         1.0
     };
-    let parsed_exponent = if exponent.is_empty() {
+    let parsed_exponent = if exponent.is_empty() || matches!(exponent, "+" | "-") {
         0
     } else {
         exponent.parse::<i32>().map_err(|_| invalid())?
@@ -2471,7 +2231,7 @@ TKFRAME_1400103_Q       = ( 0.1, 0.2, 0.3, 0.92736184954957038 )
     }
 
     #[test]
-    fn unsupported_spec_is_reported() {
+    fn class2_ignores_unrelated_tk_spec_and_requires_orientation() {
         let text = r#"
 \begindata
 FRAME_X                 = 1400201
@@ -2483,7 +2243,15 @@ TKFRAME_1400201_RELATIVE = 'J2000'
 TKFRAME_1400201_SPEC    = 'MYSTERY'
 \begintext
 "#;
-        let result = Frames::from_text(text);
-        assert!(matches!(result, Err(GeoError::UnsupportedFrameSpec(_))));
+        assert_eq!(
+            text,
+            include_str!("../../tests/golden/frame_kernel_errors/legacy_class2_tk_spec.tf")
+        );
+        let frames = Frames::from_text(text).unwrap();
+        assert_eq!(frames.pxform("X", "X", 0.0).unwrap(), IDENTITY);
+        assert!(matches!(
+            frames.pxform("X", "J2000", 0.0),
+            Err(GeoError::BadSearch("SPICE(FRAMEDATANOTFOUND)"))
+        ));
     }
 }

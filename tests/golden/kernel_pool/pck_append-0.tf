@@ -1,0 +1,6 @@
+KPL/FK
+\begindata
+BODY9999_RADII=3
+BODY9999_RADII+=(2 1)
+BODY9999_GM=123.456
+\begintext

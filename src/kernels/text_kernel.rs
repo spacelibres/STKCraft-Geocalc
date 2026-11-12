@@ -1,0 +1,369 @@
+//! Ordered, typed text-kernel assignments following N0067 ZZRVAR.
+use std::collections::HashMap;
+
+use crate::error::GeoError;
+use crate::frame::parse_f64;
+
+/// The spelling and native type of values in one kernel-pool variable.
+#[derive(Clone, Debug)]
+pub(crate) struct Value {
+    items: Vec<String>,
+    character: bool,
+}
+
+impl Value {
+    pub(crate) fn character(item: String) -> Self {
+        Self {
+            items: vec![item],
+            character: true,
+        }
+    }
+    pub(crate) fn as_string(&self) -> Option<String> {
+        (self.character && self.items.len() == 1).then(|| self.items[0].clone())
+    }
+
+    pub(crate) fn as_number(&self) -> Option<&str> {
+        (!self.character && self.items.len() == 1).then(|| self.items[0].as_str())
+    }
+
+    pub(crate) fn as_i32(&self) -> Option<i32> {
+        let value = parse_f64(self.as_number()?).ok()?.round();
+        (value >= i32::MIN as f64 && value <= i32::MAX as f64).then_some(value as i32)
+    }
+
+    pub(crate) fn as_list(&self) -> Option<&[String]> {
+        (!self.character).then_some(self.items.as_slice())
+    }
+
+    pub(crate) fn as_strings(&self) -> Option<&[String]> {
+        self.character.then_some(self.items.as_slice())
+    }
+
+    pub(crate) fn values(&self) -> &[String] {
+        &self.items
+    }
+}
+
+#[derive(Clone, Copy, Debug, PartialEq)]
+enum Kind {
+    Character,
+    Number,
+    Left,
+    Right,
+    Replace,
+    Append,
+}
+
+#[derive(Debug)]
+struct Token {
+    kind: Kind,
+    start: usize,
+    end: usize,
+}
+
+/// Source ZZRVAR scans each physical data line with separate quote parity.
+fn line_tokens(line: &[u8]) -> Vec<Token> {
+    let mut result: Vec<Token> = Vec::new();
+    let (mut even, mut word, mut quoted, mut separated) = (true, false, false, true);
+    for (index, code) in line.iter().copied().enumerate() {
+        if matches!(code, b' ' | b',' | b'(' | b')' | b'=' | b'\t') {
+            if word || (quoted && even) {
+                quoted = false;
+                word = false;
+                separated = true;
+            }
+            if separated {
+                let kind = match code {
+                    b'=' => Some(Kind::Replace),
+                    b'(' => Some(Kind::Left),
+                    b')' => Some(Kind::Right),
+                    _ => None,
+                };
+                if let Some(mut kind) = kind {
+                    let mut start = index;
+                    if code == b'=' && index > 0 && line[index - 1] == b'+' {
+                        kind = Kind::Append;
+                        start -= 1;
+                        if let Some(previous) = result.last_mut() {
+                            if previous.start == previous.end {
+                                result.pop();
+                            } else {
+                                previous.end -= 1;
+                            }
+                        }
+                    }
+                    result.push(Token {
+                        kind,
+                        start,
+                        end: index,
+                    });
+                }
+            }
+        } else if code == b'\'' {
+            even = !even;
+            if !quoted {
+                separated = false;
+                word = false;
+                quoted = true;
+                result.push(Token {
+                    kind: Kind::Character,
+                    start: index,
+                    end: index,
+                });
+            }
+            result.last_mut().unwrap().end = index;
+        } else {
+            if separated || (quoted && even) {
+                quoted = false;
+                separated = false;
+                word = true;
+                result.push(Token {
+                    kind: Kind::Number,
+                    start: index,
+                    end: index,
+                });
+            }
+            result.last_mut().unwrap().end = index;
+        }
+    }
+    result
+}
+
+fn error(symbol: &'static str) -> GeoError {
+    GeoError::FrameParse(symbol)
+}
+
+fn token_text<'a>(line: &'a [u8], token: &Token) -> Result<&'a str, GeoError> {
+    std::str::from_utf8(&line[token.start..=token.end]).map_err(|_| error("SPICE(NONPRINTINGCHAR)"))
+}
+
+/// Mutate in source order, retaining earlier assignments on a later error.
+/// ZZRVAR removes the active variable when a value/type error occurs.
+pub(crate) fn apply_assignments(
+    data: &str,
+    pool: &mut HashMap<String, Value>,
+) -> Result<(), GeoError> {
+    let mut active: Option<String> = None;
+    let mut added = 0;
+    for original in data.lines() {
+        let line = &original.as_bytes()[..original.len().min(132)];
+        let mut tokens = line_tokens(line);
+        if tokens.is_empty() {
+            continue;
+        }
+        let mut index = 0;
+        if active.is_none() {
+            if tokens.len() < 3 {
+                return Err(error("SPICE(BADVARASSIGN)"));
+            }
+            let name = token_text(line, &tokens[0])?.to_string();
+            if !name.bytes().all(|c| (32..=126).contains(&c)) {
+                return Err(error("SPICE(NONPRINTINGCHAR)"));
+            }
+            if name.len() > 32 {
+                return Err(error("SPICE(BADVARNAME)"));
+            }
+            match tokens[1].kind {
+                Kind::Replace => {
+                    pool.remove(&name);
+                }
+                Kind::Append => {}
+                _ => return Err(error("SPICE(BADVARASSIGN)")),
+            }
+            index = if tokens[2].kind == Kind::Left { 3 } else { 2 };
+            if index == 2 {
+                tokens.push(Token {
+                    kind: Kind::Right,
+                    start: 0,
+                    end: 0,
+                });
+            }
+            active = Some(name);
+            added = 0;
+        }
+        let name = active.as_ref().unwrap().clone();
+        let result = (|| {
+            while index < tokens.len() && tokens[index].kind != Kind::Right {
+                let token = &tokens[index];
+                let character = match token.kind {
+                    Kind::Character => true,
+                    Kind::Number => false,
+                    _ => {
+                        return Err(error(if pool.contains_key(&name) {
+                            "SPICE(TYPEMISMATCH)"
+                        } else {
+                            "SPICE(BADVARASSIGN)"
+                        }));
+                    }
+                };
+                if pool
+                    .get(&name)
+                    .is_some_and(|value| value.character != character)
+                {
+                    return Err(error("SPICE(TYPEMISMATCH)"));
+                }
+                let raw = token_text(line, token)?;
+                let item = if character {
+                    if raw.len() < 3 {
+                        return Err(error("SPICE(TYPEMISMATCH)"));
+                    }
+                    // Source ZZRVAR accepts an unclosed final quoted substring.
+                    let end = raw.len() - usize::from(raw.ends_with('\''));
+                    let decoded = raw[1..end].replace("''", "'");
+                    let bytes = decoded.as_bytes();
+                    std::str::from_utf8(&bytes[..bytes.len().min(80)])
+                        .map_err(|_| error("SPICE(NONPRINTINGCHAR)"))?
+                        .trim_end_matches(' ')
+                        .to_string()
+                } else {
+                    if raw == "@" {
+                        return Err(error("SPICE(BADTIMESPEC)"));
+                    }
+                    if raw.starts_with('@') {
+                        // Keep the original token: consumers resolve it through
+                        // Time directly, without decimal formatting/reparsing.
+                        parse_f64(raw)?;
+                    } else {
+                        parse_f64(raw).map_err(|_| error("SPICE(NUMBEREXPECTED)"))?;
+                    }
+                    raw.to_string()
+                };
+                pool.entry(name.clone())
+                    .or_insert_with(|| Value {
+                        items: Vec::new(),
+                        character,
+                    })
+                    .items
+                    .push(item);
+                added += 1;
+                index += 1;
+            }
+            if index < tokens.len() && added == 0 {
+                return Err(error("SPICE(BADVARASSIGN)"));
+            }
+            Ok(())
+        })();
+        if let Err(error) = result {
+            pool.remove(&name);
+            return Err(error);
+        }
+        if index < tokens.len() {
+            active = None;
+        }
+    }
+    Ok(())
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn native_kernel_date_values_and_rejection_presence() {
+        let mut pool = HashMap::new();
+        let (mut operations, mut accepted, mut rejected) = (0, 0, 0);
+        for row in
+            include_str!("../../docs/review-2026-11-12/frame-kernel-errors/time-kernel-dates.tsv")
+                .lines()
+                .skip(1)
+        {
+            let fields: Vec<_> = row.split('\t').collect();
+            let command: Vec<_> = fields[1].split('|').collect();
+            operations += 1;
+            match command[0] {
+                "C" => pool.clear(),
+                "L" => {
+                    let text = std::fs::read_to_string(format!(
+                        "docs/review-2026-11-12/frame-kernel-errors/{}",
+                        command[1]
+                    ))
+                    .unwrap();
+                    let result =
+                        apply_assignments(&crate::frame::extract_data_blocks(&text), &mut pool);
+                    assert_eq!(
+                        result.is_ok(),
+                        fields[2] == "OK",
+                        "{}: {result:?}",
+                        fields[0]
+                    );
+                    if result.is_ok() {
+                        accepted += 1;
+                    } else {
+                        rejected += 1;
+                    }
+                    // This checks failure presence, not native short-error symbols.
+                }
+                "D" => assert_eq!(encode(pool.get(command[1])), fields[2], "{}", fields[0]),
+                other => panic!("Unexpected native command: {other}"),
+            }
+        }
+        assert_eq!((operations, accepted, rejected), (33, 8, 3));
+    }
+
+    fn encode(value: Option<&Value>) -> String {
+        let Some(value) = value else {
+            return "MISSING".to_string();
+        };
+        let mut encoded = format!(
+            "{}|{}",
+            if value.character { "S" } else { "N" },
+            value.items.len()
+        );
+        for item in &value.items {
+            encoded.push('|');
+            if value.character {
+                for byte in item.as_bytes() {
+                    encoded.push_str(&format!("{byte:02x}"));
+                }
+            } else {
+                encoded.push_str(&format!("{:016x}", parse_f64(item).unwrap().to_bits()));
+            }
+        }
+        encoded
+    }
+
+    #[test]
+    fn native_kernel_pool_assignments_and_partial_errors_exact() {
+        let mut pool = HashMap::new();
+        let mut failures = Vec::new();
+        let (mut loads, mut queries, mut resets) = (0, 0, 0);
+        for line in include_str!("../../tests/golden/kernel_pool.tsv")
+            .lines()
+            .skip(1)
+        {
+            let fields: Vec<_> = line.split('\t').collect();
+            let command: Vec<_> = fields[1].split('|').collect();
+            let actual = match command[0] {
+                "C" => {
+                    pool.clear();
+                    resets += 1;
+                    "OK".to_string()
+                }
+                "L" => {
+                    loads += 1;
+                    let text =
+                        std::fs::read_to_string(format!("tests/golden/kernel_pool/{}", command[1]))
+                            .unwrap();
+                    match apply_assignments(&crate::frame::extract_data_blocks(&text), &mut pool) {
+                        Ok(()) => "OK".to_string(),
+                        Err(GeoError::FrameParse(symbol)) => format!("E|{symbol}"),
+                        Err(other) => panic!("{other}"),
+                    }
+                }
+                "D" => {
+                    queries += 1;
+                    encode(pool.get(command[1]))
+                }
+                _ => continue,
+            };
+            if actual != fields[2] {
+                failures.push(format!(
+                    "{} {}: {actual} != {}",
+                    fields[0], fields[1], fields[2]
+                ));
+            }
+        }
+        assert_eq!((resets, loads, queries), (34, 41, 70));
+        assert!(failures.is_empty(), "{}", failures.join("\n"));
+    }
+}

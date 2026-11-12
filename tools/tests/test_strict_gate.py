@@ -74,3 +74,36 @@ class ReferenceProvenance(unittest.TestCase):
         alternate=self.root/'alternate.dll';alternate.write_bytes(b'changed binary')
         with patch.dict('os.environ',{'STKCRAFT_REFERENCE_DLL':str(alternate)}):
             self.assertTrue(gate.audit_reference_files(self.manifest,self.root))
+
+class SourceInventory(unittest.TestCase):
+    def test_generated_python_cache_is_not_source_but_original_captures_are(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            (root/'Cargo.toml').write_text('package metadata')
+            (root/'Cargo.lock').write_text('lock metadata')
+            (root/'docs/reference/__pycache__').mkdir(parents=True)
+            (root/'docs/reference/__pycache__/capture.cpython-311.pyc').write_bytes(b'generated')
+            (root/'docs/reference/capture.bin').write_bytes(b'original native output\r\n')
+            (root/'docs/reference/capture.log').write_bytes(b'original native diagnostics\r\n')
+            dependency = root/'registry'; (dependency/'src').mkdir(parents=True)
+            (dependency/'Cargo.toml').write_text('dependency metadata')
+            (dependency/'src/lib.rs').write_text('dependency source')
+            with patch.object(gate,'ROOT',root), patch.object(gate,'time_dependency',return_value={
+                'version':'0.1.18','manifest_path':str(dependency/'Cargo.toml'),'package_checksum':'a'*64}):
+                inventory = {key.replace('\\','/'):value for key,value in gate.source_manifest().items()}
+            self.assertNotIn('docs/reference/__pycache__/capture.cpython-311.pyc',inventory)
+            for name in ['capture.bin','capture.log']:
+                self.assertEqual(inventory['docs/reference/'+name],gate.digest(root/'docs/reference'/name))
+
+class TimeRegistryPin(unittest.TestCase):
+    def test_exact_registry_version_is_required(self):
+        self.assertEqual(gate.validate_time_pin('=0.1.28',{'version':'0.1.28','source':'registry+https://example.invalid/index'}),'0.1.28')
+    def test_ranges_and_local_overrides_are_rejected(self):
+        for requirement in ['0.1.28','^0.1.28','*',{'path':'../STKCraft-time'},'=01.1.28']:
+            with self.assertRaises(RuntimeError):
+                gate.validate_time_pin(requirement,{'version':'0.1.28','source':'registry+https://example.invalid/index'})
+    def test_different_resolved_version_or_nonregistry_source_is_rejected(self):
+        for package in [{'version':'0.1.27','source':'registry+https://example.invalid/index'},
+                        {'version':'0.1.28','source':None},
+                        {'version':'0.1.28','source':'git+https://example.invalid/repo'}]:
+            with self.assertRaises(RuntimeError):gate.validate_time_pin('=0.1.28',package)

@@ -5,3 +5,4 @@ pub mod ck;
 pub mod daf;
 pub(crate) mod generic_segment;
 pub mod pck;
+pub(crate) mod text_kernel;

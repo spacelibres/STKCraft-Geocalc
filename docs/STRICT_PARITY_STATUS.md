@@ -24,6 +24,12 @@ NASA output serialization is tested separately. Default raw transported-value fa
 
 ## Verified implementation checkpoints
 
+The 0.1.9 text-kernel work adds ordered typed pools, native frame validation
+timing and PCK partial-update regressions. The [scope record](reference/KERNEL_POOL_SCOPE.md)
+distinguishes checked outputs from supporting captures. Kernel dates use the pinned Time resolver; wider grammar and date error-symbol
+coverage remain incomplete. The new full release gate must pass before a
+0.1.9 publication can be accepted.
+
 | Area | Independent reference coverage |
 | --- | --- |
 | SPK | All 16 N0067 SPKPVN types: 1/2/3/5/8/9/10/12/13/14/15/17/18/19/20/21. Newly added evaluators have 37,338 geometric states; type 10 also has 270 corrected state/position pairs. |
@@ -45,6 +51,6 @@ Actual KernelSet 1 load order is pinned through solar_system_v0072.tm. Full DE44
 
 ## Time and remaining scope
 
-The dependency is pinned to published STKCraft-time 0.1.18. Earlier SCLK failures were handed off; the unchanged 42 SCE2C values, scalar parsing and 420 CK frame regressions now pass. No sibling Time source was changed by this project. [Historical evidence](https://github.com/spacelibres/STKCraft-Geocalc/blob/v0.1.8/docs/review-2026-11-11/time-integration-gaps.md) remains available.
+The dependency is pinned to published STKCraft-time 0.1.28. Earlier SCLK failures were handed off; the unchanged 42 SCE2C values, scalar parsing and 420 CK frame regressions remain active. Under explicit authorization, Time kernel-date arithmetic and grammar repairs were independently verified and released as 0.1.27/0.1.28; see [Time integration](reference/TIME_KERNEL_DATES.md). [Historical evidence](https://github.com/spacelibres/STKCraft-Geocalc/blob/v0.1.8/docs/review-2026-11-11/time-integration-gaps.md) remains available.
 
 See [remaining gaps](STRICT_REMAINING_GAPS.md), [numerical contract](NUMERICS.md) and [validation instructions](VALIDATION.md). A versioned publication is a reproducible implementation checkpoint, not an assertion that the remaining gaps are closed.

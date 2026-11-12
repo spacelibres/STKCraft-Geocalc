@@ -1,0 +1,26 @@
+   Compiling stkcraft-geocalc v0.1.8 (C:\Users\stone\Documents\STKCraft-Geocalc)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 6.65s
+     Running tests\frame_kernel_errors_exact.rs (target\debug\deps\frame_kernel_errors_exact-7f1d71cd77817d9e.exe)
+
+running 1 test
+test native_fixed_and_dynamic_frame_error_matrix_exact ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.18s
+
+     Running tests\kernel_pool_exact.rs (target\debug\deps\kernel_pool_exact-4a1823d34b0948b3.exe)
+
+running 4 tests
+test native_text_kernel_fov_appends_exact ... ok
+test native_text_kernel_pck_appends_exact ... ok
+test native_text_kernel_quoted_numeric_axes_rejected ... ok
+test native_text_kernel_frame_appends_exact ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests\pck_pool_updates_exact.rs (target\debug\deps\pck_pool_updates_exact-97543a088828f133.exe)
+
+running 1 test
+test native_pck_replacements_and_failed_updates_exact ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+

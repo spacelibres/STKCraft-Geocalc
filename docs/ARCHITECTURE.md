@@ -5,8 +5,8 @@ The source tree is grouped by responsibility. Public root module names remain co
 | Directory | Problem it handles | Main modules |
 | --- | --- | --- |
 | src/ephemeris | Trajectories, propagation, center chains and apparent positions/states | spk, spkapo, spk_mda, spk_equinoctial, two_body, sgp4 |
-| src/kernels | Binary containers, attitude records and planetary constants | daf, ck, pck, binary_pck, generic_segment |
-| src/frames | Reference-frame lookup, composition and orientation models | frame, frame_calculation, orientation, earth_orientation, builtin_frames |
+| src/kernels | Typed ordered text pools, binary containers, attitude records and planetary constants | text_kernel, daf, ck, pck, binary_pck, generic_segment |
+| src/frames | Reference-frame lookup, kernel metadata validation, composition and orientation models | frame, frame_kernel, frame_calculation, orientation, earth_orientation, builtin_frames |
 | src/shapes | Surface meshes, spatial lookup and visibility primitives | dsk, dsk_point, dsk_volume, fov_ellipsoid, occult_ellipsoid |
 | src/geometry | Individual physical calculations and coordinate outputs | surface, tangent, pointing, direction, location, orbit, separation, coords, state_rep, fov, occult |
 | src/search | Geometry Finder relations and event windows | finder, gf_constraints |
@@ -26,7 +26,7 @@ Each group has a mod.rs describing its purpose. Private algorithm helpers stay p
 5. Search evaluates those same primitives using the native event-search schedule.
 6. CLI and MCP serialize the same results; they do not supply a second numerical implementation.
 
-Time 0.1.18 supplies ET/LSK/SCLK contracts. Production does not link CSPICE. The independent native engine, official archive and downloaded mission kernels remain outside the published runtime package.
+Time 0.1.28 supplies ET/LSK/SCLK contracts. Production does not link CSPICE. The independent native engine, official archive and downloaded mission kernels remain outside the published runtime package.
 
 Tests and generators live in tests/ and tools/. Large fixtures are kept in the Git repository, excluded from crates.io, and regenerated only through independent references. See [validation](VALIDATION.md).
 

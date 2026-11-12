@@ -27,7 +27,7 @@ use std::collections::HashMap;
 use crate::error::GeoError;
 use crate::finder::{normalize_windows, solve_boolean, FinderOptions, Interval};
 use crate::frame::{
-    extract_data_blocks, parse_assignments, parse_f64, tokenize, transpose, Frames, Mat3, Value,
+    apply_assignments, extract_data_blocks, parse_f64, transpose, Frames, Mat3, Value,
 };
 use crate::pck::Pck;
 use crate::spk::{Aberration, SpkKernel};
@@ -92,7 +92,8 @@ impl Fov {
     /// Parses an instrument FOV from the text of an IK/FK.
     pub fn from_text(text: &str, instrument: i32) -> Result<Self, GeoError> {
         let data = extract_data_blocks(text);
-        let assignments = parse_assignments(&tokenize(&data));
+        let mut assignments = HashMap::new();
+        apply_assignments(&data, &mut assignments)?;
         let prefix = format!("INS{instrument}_");
 
         let shape_text = find_scalar(&assignments, &format!("{prefix}FOV_SHAPE"))
@@ -701,11 +702,11 @@ fn angles_boundary(
     };
     let convert = |value: f64| value * factor / degrees_per_radian;
     let ref_angle = convert(
-        find_scalar(assignments, &format!("{prefix}FOV_REF_ANGLE"))
+        find_number(assignments, &format!("{prefix}FOV_REF_ANGLE"))
             .ok_or(GeoError::BadSearch("instrument FOV_REF_ANGLE is missing"))
             .and_then(|text| parse_f64(&text))?,
     );
-    let cross_angle = find_scalar(assignments, &format!("{prefix}FOV_CROSS_ANGLE"))
+    let cross_angle = find_number(assignments, &format!("{prefix}FOV_CROSS_ANGLE"))
         .map(|text| parse_f64(&text))
         .transpose()?
         .map(convert);
@@ -875,10 +876,14 @@ fn hull_axis(bounds: &[[f64; 3]]) -> Result<[f64; 3], GeoError> {
 }
 
 fn find_scalar(assignments: &HashMap<String, Value>, key: &str) -> Option<String> {
+    assignments.get(key).and_then(Value::as_string)
+}
+
+fn find_number(assignments: &HashMap<String, Value>, key: &str) -> Option<String> {
     assignments
-        .iter()
-        .find(|(variable, _)| variable.eq_ignore_ascii_case(key))
-        .and_then(|(_, value)| value.as_string())
+        .get(key)
+        .and_then(Value::as_number)
+        .map(str::to_string)
 }
 
 fn find_vector(assignments: &HashMap<String, Value>, key: &str) -> Option<[f64; 3]> {
@@ -891,10 +896,7 @@ fn find_vector(assignments: &HashMap<String, Value>, key: &str) -> Option<[f64; 
 
 fn find_vector_list(assignments: &HashMap<String, Value>, keys: &[String]) -> Option<Vec<f64>> {
     for key in keys {
-        if let Some((_, value)) = assignments
-            .iter()
-            .find(|(variable, _)| variable.eq_ignore_ascii_case(key))
-        {
+        if let Some(value) = assignments.get(key) {
             if let Some(items) = value.as_list() {
                 let mut values = Vec::with_capacity(items.len());
                 for item in items {

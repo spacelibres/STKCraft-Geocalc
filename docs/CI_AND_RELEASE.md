@@ -33,7 +33,7 @@ the next test prefix, and requires an unambiguous success for every occurrence
 of each required test name. Missing statuses, similarly suffixed names and a
 later success after an earlier failure cannot establish acceptance.
 
-The production dependency is the registry release `stkcraft-time =0.1.18`, not a sibling checkout. The gate resolves it through Cargo metadata, checks its downloaded crate archive against the Cargo.lock checksum, verifies the extracted Rust sources against that archive and records the version, registry source and checksum. Run `cargo fetch --locked` before the gate if Cargo's archive cache is absent.
+The production dependency is the registry release `stkcraft-time =0.1.28`, not a sibling checkout. The gate resolves it through Cargo metadata, checks its downloaded crate archive against the Cargo.lock checksum, verifies the extracted Rust sources against that archive and records the version, registry source and checksum. Run `cargo fetch --locked` before the gate if Cargo's archive cache is absent.
 
 Reports and logs are stored in `target/strict-verification`; GitHub Actions preserves them as the `windows-exact-report` artifact. Remaining parity limits are documented separately in [STRICT_REMAINING_GAPS.md](STRICT_REMAINING_GAPS.md). Passing CI does not change that scope.
 

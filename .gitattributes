@@ -18,6 +18,7 @@
 *.das binary
 # Preserve original reference captures and kernel text as evidence.
 docs/review-2026-11-11/** -text -whitespace
+docs/review-2026-11-12/** -text -whitespace
 docs/review-2026-11-11/*.json -text -whitespace
 docs/review-2026-11-11/*.jsonl -text -whitespace
 docs/review-2026-11-11/*.html -text -whitespace

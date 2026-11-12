@@ -272,7 +272,16 @@
     "surfnm.c": "2450a789bc35f3e21422ffbe08b5409538d8800de563473977206a317f62879e",
     "spkcvo.c": "e679e3dd10e93b337bf0a60b59ed5cfc9119b845e29e492177d1d0864df4021b",
     "spkcvt.c": "59984b591381bb554b68e4abb251d3fa695882d53ae0a312d63e83ed16a94053",
-    "zzprsmet.c": "d5a2b54367b65865c65bca6dafb5a2c35c54e42c0e34baf6b4f91685fae07381"
+    "zzprsmet.c": "d5a2b54367b65865c65bca6dafb5a2c35c54e42c0e34baf6b4f91685fae07381",
+    "pool.c": "ad1e1f04decc8b17e01d147bdfb1919e653ec65020d3017a8c3e78c7b3c85ada",
+    "zzrvar.c": "26e3f437d6d6393ecf82d0ede3442b4d27fb2ec3b4d24cda8db02ff9a48d9bd8",
+    "zzcln.c": "b0f3b62f344e3ab62b393b289d845c28eda53bcf76e7c918fab8ecf0728a1724",
+    "tparse.c": "4e56c236a8ad8eb4ef01238cc47bf97b73b51e5b67030ba5bec41934aa21171a",
+    "tkfram.c": "b8893e5fd7cb66f8d2dcc10a55c9630df8938bbbac28819bce8d2027fa2f28d8",
+    "framex.c": "7a63ead49da551912eac67a7471b33dfcb4d957ae47f05104f64463b2ff11593",
+    "zznamfrm.c": "2ba4ac88331091466519d035803884abcb4c6da0ef9dab03a4f8a599ed13b9e4",
+    "getfov_c.c": "5e6b1feeeb84cc7400ab2eed88b5c8f291fee99da30a87dd558ae42912c259cf",
+    "bodvrd_c.c": "f6af678c333a2c6de580d1b596e180bff20a27518aba1eaa7a458d3b4815188d"
   },
   "kernels_sha256": {
     "de440s.bsp": "c1c7feeab882263fc493a9d5a5b2ddd71b54826cdf65d8d17a76126b260a49f2",

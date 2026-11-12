@@ -1,0 +1,1056 @@
+   Compiling stkcraft-geocalc v0.1.9 (C:\Users\stone\Documents\STKCraft-Geocalc)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 20.00s
+     Running unittests src\lib.rs (target\strict-verification\cargo\debug\deps\stkcraft_geocalc-833ba9f123db1b08.exe)
+
+running 111 tests
+test ephemeris::spk::interpolated_segments::unsupported_new_segment_type_masks_older_supported_segment ... ok
+test ephemeris::spk::tests::chebyshev_quadratic ... ok
+test frames::frame::tests::parses_matrix_angles_and_quaternion ... ok
+test frames::frame::tests::class2_ignores_unrelated_tk_spec_and_requires_orientation ... ok
+test frames::frame::tests::eclipj2000_matches_cspice ... ok
+test frames::frame::tests::euler_matches_spice_ordering ... ok
+test ephemeris::two_body::tests::native_prop2b_states_equal_cspice ... ok
+test frames::earth_orientation::tests::native_earth_orientation_transforms_exact ... ok
+test ephemeris::spk::tests::chebyshev_linear ... ok
+test frames::frame::tests::quaternion_scalar_first ... ok
+test geometry::coords::exact_coordinate_golden::exact_cspice_rectangular_coordinate_conversions ... ok
+test frames::frame::tests::round_trip_is_identity ... ok
+test frames::orientation::construction_tests::native_eul2xf_all_axis_sequences_exact ... ok
+test geometry::coords::tests::latitudinal_axes ... ok
+test geometry::coords::tests::planetodetic_round_trip ... ok
+test geometry::occult::exact_point_occultation_regressions::point_transit_and_depth_order_match_cspice ... ok
+test geometry::orbit::tests::circular_equatorial_orbit ... ok
+test geometry::separation::contract_tests::exact_cspice_vsep_edge_cases ... ok
+test geometry::separation::contract_tests::rejects_sphere_anti_and_nonposition_spheres ... ok
+test geometry::coords::planetographic_metadata::native_recpgr_missing_pm_and_overrides ... ok
+test geometry::state_rep::tests::numeric_row_matches_wgc_column_count ... ok
+test geometry::fov::axis_precision::fov_hull_axis_exact_cspice ... ok
+test ephemeris::spkapo::tests::exact_cspice_position_only_inertial_frames ... ok
+test geometry::state_rep::tests::output_ids_match_webgeocalc ... ok
+test geometry::state_rep::tests::planetodetic_rates_match_finite_differences ... ok
+test geometry::state_rep::tests::rectangular_reports_velocity_components ... ok
+test geometry::state_rep::tests::spherical_rates_match_finite_differences ... ok
+test geometry::state_rep::tests::time_at_target_follows_aberration ... ok
+test geometry::surface::tests::interior_point_has_negative_altitude ... ok
+test geometry::surface::tests::nearest_point_on_axis ... ok
+test geometry::tangent::ellipse_precision_tests::axes_exact ... ok
+test geometry::tangent::tests::intercepting_line_returns_surface_point ... ok
+test geometry::tangent::tests::nearest_point_to_axis_line ... ok
+test ephemeris::spk::mixed_segment_frames::exact_cspice_static_noninertial_output_frames ... ok
+test kernels::pck::metadata_errors::native_tisbod_metadata_errors_and_scalar_spelling ... ok
+test geometry::coords::planetographic_metadata::gf_planetographic_does_not_guess_missing_moon_pm ... ok
+test geometry::separation::contract_tests::rejects_instrument_boundary_expansion_on_either_side ... ok
+test kernels::binary_pck::tests::native_pckmat_type2_exact ... ok
+test kernels::pck::tests::parses_radii_and_gm ... ok
+test kernels::pck::polynomial_lengths::native_tisbod_short_orientation_polynomials ... ok
+test geometry::separation::tests::exact_cspice_for_live_nasa_probe_inputs ... ok
+test kernels::pck::tests::moon_orientation_matches_cspice ... ok
+test kernels::text_kernel::tests::native_kernel_pool_assignments_and_partial_errors_exact ... ok
+test kernels::text_kernel::tests::unavailable_kernel_dates_are_explicitly_rejected ... ok
+test kernels::pck::tests::parses_real_pck ... ok
+test ephemeris::sgp4::tests::native_sgp4_teme_states_exact ... ok
+test kernels::pck::mission_overlay::native_enceladus_incompatible_pck_overlay_rejected ... ok
+test kernels::pck::phase_metadata::native_tisbod_phase_cardinality_and_keys ... ok
+test ephemeris::spk::mixed_segment_frames::exact_cspice_mixed_frame_geometric_chains ... ok
+test geometry::orbit::input_state_precision::real_input_states_exact ... ok
+test search::finder::distance_phase_golden::phase_rejects_transmission_and_coincident_objects ... ok
+test kernels::pck::constants_metadata::native_text_pck_constants_frame_and_epoch ... ok
+test search::finder::gfuds_all_conditions_golden::exact_cspice_gfuds_conditions ... ok
+test search::finder::exact_cspice_window_golden::exact_cspice_window_operations ... ok
+test search::finder::angular_extents_golden::exact_cspice_angular_extents_pair ... ok
+test search::finder::distance_phase_golden::exact_native_phase_scalars ... ok
+test search::finder::native_uddf_golden::exact_native_uddf_and_uddc_primitives ... ok
+test search::finder::body_frame_scalar_regression::exact_earth_planetographic_altitude_at_gf_root ... ok
+test search::finder::angular_size_scalar_golden::exact_cspice_angular_size_primitives ... ok
+test search::finder::parity_regressions::constant_function_has_no_local_extrema ... ok
+test search::finder::parity_regressions::equality_has_no_scalar_tolerance_band ... ok
+test search::finder::parity_regressions::equality_preserves_every_root_and_closed_endpoint ... ok
+test search::finder::parity_regressions::overlap_is_normalized_without_closing_small_gaps ... ok
+test search::finder::parity_regressions::singleton_confinement_is_searchable ... ok
+test search::finder::pck_coordinate_regressions::gf_planetographic_uses_loaded_pck_longitude_direction ... ok
+test search::finder::scalar_cspice_golden::gfuds_exact_linear_and_quadratic ... ok
+test search::finder::separation_scalar_golden::exact_cspice_trgsep_scalars ... ok
+test ephemeris::spk::interpolated_segments::native_interpolated_spk_states_exact ... ok
+test search::finder::position_trace_regression::exact_gf_position_callback_trace ... ok
+test search::finder::center_intercept_gf_regressions::center_ray_matches_subpoint_intercept_search ... ok
+test search::finder::tests::angle_between_axes ... ok
+test search::finder::unsupported_solar_search::rejects_solar_intervals_without_a_native_cspice_gf_solver ... ok
+test search::finder::window_parity_tests::cspice_window_examples ... ok
+test search::finder::window_parity_tests::range_and_wrapped_range ... ok
+test search::gf_constraints::tests::angular_wrap_complements_serial_opposite_arc_without_branch_gaps ... ok
+test search::gf_constraints::tests::complement_removes_a_covered_singleton_confinement ... ok
+test search::gf_constraints::tests::complement_keeps_the_gaps_in_multisegment_confinement ... ok
+test search::gf_constraints::tests::equality_is_a_native_equal_search ... ok
+test search::gf_constraints::tests::nasa_accepts_signed_adjustments_and_filter_thresholds ... ok
+test search::gf_constraints::tests::nasa_complement_adjust_filter_order_and_units ... ok
+test search::finder::solar_observer_regressions::solar_coordinate_follows_native_uddc_singleton_contract ... ok
+test search::gf_constraints::tests::range_searches_are_serial_and_reversed_linear_bounds_are_swapped ... ok
+test search::gf_constraints::tests::signed_and_positive_angular_branch_boundaries_differ ... ok
+test search::gf_constraints::tests::signed_multiturn_endpoints_retain_their_branch_side ... ok
+test shapes::dsk::bounds_tests::exact_native_dsk_volume_predicates ... ok
+test shapes::dsk_point::tests::native_plate_nearest_exact ... ok
+test shapes::dsk::excluding_tests::exact_native_dsk_excluded_predicates ... ok
+test shapes::dsk_volume::tests::native_cone_quadratic_exact ... ok
+test shapes::dsk_volume::tests::native_cone_segment_exact ... ok
+test shapes::dsk_volume::tests::native_volume_bounds_exact ... ok
+324 exact ZZGFSSOB named-target state cases
+test shapes::dsk_volume::tests::native_volume_boundary_rays_exact ... ok
+test search::finder::subpoint_target_states::exact_cspice_subpoint_named_target_states ... ok
+test shapes::fov_ellipsoid::tests::inelpl_exact_spicelib ... ok
+test shapes::fov_ellipsoid::tests::zzelvupy_exact_spicelib ... ok
+EDLIMB 0differences,max0
+test shapes::occult_ellipsoid::helper_precision::limb_exact_spicelib ... ok
+TWO_DIRECTIONS differing angle/vector/epoch components [0, 0, 0]; worst[0.0, 0.0, 0.0] at["", "", ""]
+test geometry::separation::tests::exact_cspice_two_directions ... ok
+ZZASRYEL 0differences,max0
+test shapes::occult_ellipsoid::helper_precision::angular_extrema_exact_spicelib ... ok
+test shapes::dsk_volume::tests::native_volume_rays_exact ... ok
+648 exact ZZGFSSIN named-target state cases
+test search::finder::intercept_target_states::exact_cspice_intercept_named_target_states ... ok
+test shapes::dsk_point::tests::native_point_membership_exact ... ok
+test ephemeris::spk::mixed_segment_frames::exact_cspice_mixed_frame_corrected_chains ... ok
+test ephemeris::spkapo::dynamic_tests::native_spkezp_dynamic_input_output_frames_exact ... ok
+test shapes::occult_ellipsoid::tests::exact_zzocced_states ... ok
+1080 exact ZZGFSSIN direction-frame states
+test search::finder::intercept_dref_states::exact_cspice_named_intercept_direction_states ... ok
+test ephemeris::spk::interpolated_segments::native_interpolated_spk_corrections_exact ... ok
+test search::finder::distance_phase_golden::exact_native_distance_phase_gf ... ok
+test search::finder::separation_gf_golden::exact_cspice_separation_gf ... ok
+test search::finder::corrected_surface_gf_golden::exact_corrected_surface_gf_conditions ... ok
+test search::finder::body_frame_gf_golden::exact_cspice_body_frame_position_gf has been running for over 60 seconds
+test search::finder::custom_illumination_golden::exact_custom_illuminator_gf has been running for over 60 seconds
+test search::finder::illumination_gf_golden::exact_cspice_illumination_gf has been running for over 60 seconds
+test search::finder::illumination_gf_golden::exact_cspice_illumination_gf ... ok
+test search::finder::body_frame_gf_golden::exact_cspice_body_frame_position_gf ... ok
+test search::finder::custom_illumination_golden::exact_custom_illuminator_gf ... ok
+
+test result: ok. 111 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 130.21s
+
+     Running unittests src\bin\probe_time_jdutc.rs (target\strict-verification\cargo\debug\deps\probe_time_jdutc-5fbdd8556780cc74.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src\bin\mcp_server.rs (target\strict-verification\cargo\debug\deps\stkcraft_geocalc_mcp-7e23f0513e4465db.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src\bin\wgc_geometry.rs (target\strict-verification\cargo\debug\deps\wgc_geometry-3017ec2f65592b5a.exe)
+
+running 3 tests
+test clock_tests::local_solar_metadata_matches_cspice_et2lst ... ok
+test clock_tests::tangent_clock_uses_cidfrm_default_frame ... ok
+test clock_tests::earth_default_frame_clock_matches_cspice_and_nasa ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.12s
+
+     Running unittests src\bin\wgc_gf.rs (target\strict-verification\cargo\debug\deps\wgc_gf-b41c44388b3673cd.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests\abcorr_exact.rs (target\strict-verification\cargo\debug\deps\abcorr_exact-b70fd9365c214a4a.exe)
+
+running 1 test
+test corrected_states_equal_cspice ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.03s
+
+     Running tests\abcorr_golden.rs (target\strict-verification\cargo\debug\deps\abcorr_golden-3753e1b7b0ddaa71.exe)
+
+running 1 test
+vs CSPICE spkezr over 837 corrected states:
+  CN       position 0.000e0 relative
+  CN+S     position 0.000e0 relative
+  LT       position 0.000e0 relative
+  LT+S     position 0.000e0 relative
+  NONE     position 0.000e0 relative
+  XCN      position 0.000e0 relative
+  XCN+S    position 0.000e0 relative
+  XLT      position 0.000e0 relative
+  XLT+S    position 0.000e0 relative
+  CN       position 0.000e0 km absolute
+  CN+S     position 0.000e0 km absolute
+  LT       position 0.000e0 km absolute
+  LT+S     position 0.000e0 km absolute
+  NONE     position 0.000e0 km absolute
+  XCN      position 0.000e0 km absolute
+  XCN+S    position 0.000e0 km absolute
+  XLT      position 0.000e0 km absolute
+  XLT+S    position 0.000e0 km absolute
+  CN       velocity 0.000e0 relative
+  CN+S     velocity 0.000e0 relative
+  LT       velocity 0.000e0 relative
+  LT+S     velocity 0.000e0 relative
+  NONE     velocity 0.000e0 relative
+  XCN      velocity 0.000e0 relative
+  XCN+S    velocity 0.000e0 relative
+  XLT      velocity 0.000e0 relative
+  XLT+S    velocity 0.000e0 relative
+  CN       velocity 0.000e0 km/s absolute
+  CN+S     velocity 0.000e0 km/s absolute
+  LT       velocity 0.000e0 km/s absolute
+  LT+S     velocity 0.000e0 km/s absolute
+  NONE     velocity 0.000e0 km/s absolute
+  XCN      velocity 0.000e0 km/s absolute
+  XCN+S    velocity 0.000e0 km/s absolute
+  XLT      velocity 0.000e0 km/s absolute
+  XLT+S    velocity 0.000e0 km/s absolute
+  CN       light time 0.000e0 s absolute
+  CN+S     light time 0.000e0 s absolute
+  LT       light time 0.000e0 s absolute
+  LT+S     light time 0.000e0 s absolute
+  NONE     light time 0.000e0 s absolute
+  XCN      light time 0.000e0 s absolute
+  XCN+S    light time 0.000e0 s absolute
+  XLT      light time 0.000e0 s absolute
+  XLT+S    light time 0.000e0 s absolute
+  worst position row: 
+test matches_cspice_spkezr_aberrations ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.03s
+
+     Running tests\binary_pck_exact.rs (target\strict-verification\cargo\debug\deps\binary_pck_exact-1061b64cd15ca035.exe)
+
+running 6 tests
+test binary_pck_big_endian_exact ... ok
+test native_cidfrm_body_frame_associations ... ok
+test binary_pck_file_priority_and_coverage_exact ... ok
+test binary_pck_named_apparent_states_exact ... ok
+test binary_pck_moon_and_synthetic_frames_exact ... ok
+test native_pck_3_20_records_and_frames_exact ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.16s
+
+     Running tests\body_state_golden.rs (target\strict-verification\cargo\debug\deps\body_state_golden-75140ea6cd9e221b.exe)
+
+running 1 test
+vs CSPICE sxform over 33 body-fixed frames:
+  rotation: 0.000e0 absolute
+  derivative: 0.000e0 absolute (rad/s)
+  worst rotation element: 
+test matches_cspice_sxform ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests\cassini_fov_frames.rs (target\strict-verification\cargo\debug\deps\cassini_fov_frames-2de835fb4d2bad27.exe)
+
+running 1 test
+test real_cassini_sclk_and_pointing_are_exact ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests\ck4_exact.rs (target\strict-verification\cargo\debug\deps\ck4_exact-e60aff3805bfaca6.exe)
+
+running 1 test
+test native_ck4_chebyshev_pointing_exact ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+     Running tests\ck5_exact.rs (target\strict-verification\cargo\debug\deps\ck5_exact-6a4f688c304ce306.exe)
+
+running 1 test
+test native_ck5_packet_interpolation_exact ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.34s
+
+     Running tests\ck6_exact.rs (target\strict-verification\cargo\debug\deps\ck6_exact-dd525afe6f0391e7.exe)
+
+running 1 test
+test native_ck6_piecewise_interpolation_exact ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.42s
+
+     Running tests\ck_exact.rs (target\strict-verification\cargo\debug\deps\ck_exact-99aeb22ec3521cea.exe)
+
+running 6 tests
+test ck_container_cannot_be_loaded_as_spk ... ok
+test native_valid_scalar_sclk_kernel_is_accepted ... ok
+test native_sclk_ticks_for_ck_frames ... ok
+test native_ck_tdb_frame_subset_exact ... ok
+test native_ck_frames_use_exact_spacecraft_clock_conversion ... ok
+test native_ck_encoded_tick_pointing_exact ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.24s
+
+     Running tests\ck_extended.rs (target\strict-verification\cargo\debug\deps\ck_extended-3e2f8243a4143247.exe)
+
+running 2 tests
+test native_ck456_sclk_frame_transforms_exact ... ok
+test native_ck456_big_endian_pointing_exact ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.03s
+
+     Running tests\cli_ephemeris_context.rs (target\strict-verification\cargo\debug\deps\cli_ephemeris_context-cf879cfc0a039b36.exe)
+
+running 2 tests
+test native_dynamic_coordinate_finder_cli_context_exact ... ok
+test native_dynamic_pointing_cli_context_exact ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.69s
+
+     Running tests\daf_exact.rs (target\strict-verification\cargo\debug\deps\daf_exact-20efb3dcccaf3896.exe)
+
+running 1 test
+test daf_names_and_summaries_equal_cspice ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests\dsk_exact.rs (target\strict-verification\cargo\debug\deps\dsk_exact-71f496d32df193c6.exe)
+
+running 8 tests
+test rejects_corrupt_das_without_panics ... ok
+test exact_native_dsk_structure ... ok
+test exact_native_das_layouts ... ok
+test exact_native_dsk_rays ... ok
+test exact_native_unprioritized_dsk_union ... ok
+test exact_native_dsk_surface_geometry ... ok
+test exact_native_dynamic_surface_models ... ok
+test exact_native_dsk_illumination ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 9.62s
+
+     Running tests\dynamic_frame_exact.rs (target\strict-verification\cargo\debug\deps\dynamic_frame_exact-1841a2ae528cc7d3.exe)
+
+running 9 tests
+test native_body_frame_uses_kernel_preferred_body_name ... ok
+test native_frame_body_alias_append_and_precedence ... ok
+test native_switch_frames_exact ... ok
+test native_dynamic_euler_public_sxform_exact ... ok
+test native_dynamic_of_date_frames_exact ... ok
+test native_dynamic_product_frames_exact ... ok
+test native_dynamic_euler_frames_exact ... ok
+test native_dynamic_constant_two_vector_frames_exact ... ok
+test native_dynamic_ephemeris_two_vector_frames_exact ... ok
+
+test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 4.26s
+
+     Running tests\finder_golden.rs (target\strict-verification\cargo\debug\deps\finder_golden-6e330a8151e2d772.exe)
+
+running 2 tests
+vs CSPICE trgsep over 156 separations: worst 0.000e0 rad ()
+test matches_cspice_trgsep ... ok
+vs CSPICE gfsep over 14 events: worst 0.000e0 s ()
+test matches_cspice_gfsep_events ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.50s
+
+     Running tests\fov_boundaries_exact.rs (target\strict-verification\cargo\debug\deps\fov_boundaries_exact-a8c32448ee2a700a.exe)
+
+running 1 test
+test all_getfov_boundaries_equal_cspice ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 35.77s
+
+     Running tests\fov_ellipsoid_golden.rs (target\strict-verification\cargo\debug\deps\fov_ellipsoid_golden-07e60b67d597e6ca.exe)
+
+running 1 test
+vs CSPICE fovtrg(ELLIPSOID) over 672 cases, 480 visible: 0 mismatches
+test ellipsoid_visibility_matches_fovtrg ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 38.48s
+
+     Running tests\fov_golden.rs (target\strict-verification\cargo\debug\deps\fov_golden-f7bbaceb8810b15c.exe)
+
+running 3 tests
+vs CSPICE fovray over 69 rays: exact
+test matches_cspice_fovray ... ok
+vs CSPICE fovtrg over 80 targets: exact
+test matches_cspice_fovtrg ... ok
+vs CSPICE FOV finders over 2 windows: endpoints exactly equal
+test matches_cspice_fov_finders ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.07s
+
+     Running tests\fov_point_exact.rs (target\strict-verification\cargo\debug\deps\fov_point_exact-b9328dd303c5796a.exe)
+
+running 1 test
+test fov_boundary_predicates_equal_cspice ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 41.36s
+
+     Running tests\fov_precision.rs (target\strict-verification\cargo\debug\deps\fov_precision-a8d19dcf8d3633c7.exe)
+
+running 2 tests
+test fov_predicates_all_corrections_and_frames_exact ... ok
+test fov_gf_windows_exact ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 3.95s
+
+     Running tests\fov_target_frames.rs (target\strict-verification\cargo\debug\deps\fov_target_frames-599934390d44200f.exe)
+
+running 1 test
+test selectable_ellipsoid_frames_match_cspice ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.41s
+
+     Running tests\fov_validation.rs (target\strict-verification\cargo\debug\deps\fov_validation-54caa223bbcbfb7a.exe)
+
+running 1 test
+test getfov_validation_and_boundary_precedence_match_cspice ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests\fov_width_limits.rs (target\strict-verification\cargo\debug\deps\fov_width_limits-226ec9593b26d2f3.exe)
+
+running 1 test
+test visibility_width_limit_errors_equal_cspice ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests\frame_catalog.rs (target\strict-verification\cargo\debug\deps\frame_catalog-f311bc33306d4b6f.exe)
+
+running 2 tests
+test builtin_metadata_matches_cspice ... ok
+test equal_body_fixed_frames_have_exact_identity ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests\frame_derivative_golden.rs (target\strict-verification\cargo\debug\deps\frame_derivative_golden-bd6d76fb6c3dbe63.exe)
+
+running 1 test
+test frame_derivatives_match_cspice ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+     Running tests\frame_epochs_exact.rs (target\strict-verification\cargo\debug\deps\frame_epochs_exact-3debe7df7c56b3ed.exe)
+
+running 1 test
+test frame_two_epoch_state_transforms_exact ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.05s
+
+     Running tests\frame_golden.rs (target\strict-verification\cargo\debug\deps\frame_golden-4b1d6fa4770276bd.exe)
+
+running 3 tests
+vs CSPICE on moon_080317.tf: worst element 0.000e0
+test matches_cspice_on_real_naif_kernel ... ok
+test exact_cspice_body_and_fixed_frame_state_chains ... ok
+vs CSPICE pxform over 2256 transforms: worst element 0.000e0 ()
+test matches_cspice_pxform ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.37s
+
+     Running tests\frame_kernel_errors_exact.rs (target\strict-verification\cargo\debug\deps\frame_kernel_errors_exact-70afa8d3861164ff.exe)
+
+running 1 test
+test native_fixed_and_dynamic_frame_error_matrix_exact ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.06s
+
+     Running tests\gf_constraints_exact.rs (target\strict-verification\cargo\debug\deps\gf_constraints_exact-642c99f0bf3aa5fd.exe)
+
+running 3 tests
+240 exact source WN combinations, including duration units
+test exact_cspice_window_processing_and_duration_units ... ok
+1188 exact CSPICE singleton confinement searches
+test exact_cspice_native_singleton_confinements ... ok
+test exact_cspice_native_range_schedules has been running for over 60 seconds
+504 exact native GF constraint combinations
+test exact_cspice_native_range_schedules ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 666.53s
+
+     Running tests\gf_exact.rs (target\strict-verification\cargo\debug\deps\gf_exact-fc5a18afb298c145.exe)
+
+running 1 test
+vs CSPICE Geometry Finder over 39 windows: worst 0.000e0 s ()
+test exact_cspice_geometry_finders ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.65s
+
+     Running tests\gf_golden.rs (target\strict-verification\cargo\debug\deps\gf_golden-faa863ef9c911169.exe)
+
+running 1 test
+vs CSPICE Geometry Finder over 39 windows: worst 0.000e0 s ()
+test matches_cspice_geometry_finders ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.66s
+
+     Running tests\gf_intercept_dref_exact.rs (target\strict-verification\cargo\debug\deps\gf_intercept_dref_exact-c69501197af2d22e.exe)
+
+running 1 test
+test exact_cspice_named_intercept_direction_frames has been running for over 60 seconds
+4536 exact GFSNTC direction-frame search cases
+test exact_cspice_named_intercept_direction_frames ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 337.72s
+
+     Running tests\gf_intercept_specs_exact.rs (target\strict-verification\cargo\debug\deps\gf_intercept_specs_exact-f112615f69844a82.exe)
+
+running 1 test
+test exact_cspice_gf_intercept_four_direction_specs has been running for over 60 seconds
+756 exact native GF four-direction specifications
+test exact_cspice_gf_intercept_four_direction_specs ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 348.82s
+
+     Running tests\gf_intercept_target_frames_exact.rs (target\strict-verification\cargo\debug\deps\gf_intercept_target_frames_exact-5431612d0ec6ec54.exe)
+
+running 2 tests
+test rejects_unequal_equatorial_radii_before_empty_search ... ok
+test exact_cspice_gfsntc_explicit_target_frames has been running for over 60 seconds
+4536 exact named-target GFSNTC cases (756 native rejection cases)
+test exact_cspice_gfsntc_explicit_target_frames ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 232.59s
+
+     Running tests\gf_live_bridge_exact.rs (target\strict-verification\cargo\debug\deps\gf_live_bridge_exact-11c6686c66f2397b.exe)
+
+running 1 test
+
+thread 'all_official_gf_cli_families_match_native_endpoint_bits' (8844) panicked at tests\gf_live_bridge_exact.rs:68:9:
+wgc-gf: unsupported frame specification: kernel date conversion requires STKCraft-time TPARSE integration
+
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+test all_official_gf_cli_families_match_native_endpoint_bits ... FAILED
+
+failures:
+
+failures:
+    all_official_gf_cli_families_match_native_endpoint_bits
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.38s
+
+error: test failed, to rerun pass `--test gf_live_bridge_exact`
+     Running tests\gf_longitude_exact.rs (target\strict-verification\cargo\debug\deps\gf_longitude_exact-e2aaf7273d4338bc.exe)
+
+running 1 test
+test exact_cspice_longitude_branch_cuts ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 9.13s
+
+     Running tests\gf_occultation_exact.rs (target\strict-verification\cargo\debug\deps\gf_occultation_exact-69bea7e073c5e111.exe)
+
+running 2 tests
+test exact_occultation_classifications ... ok
+test exact_occultation_windows ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.90s
+
+     Running tests\gf_surface_target_frames_exact.rs (target\strict-verification\cargo\debug\deps\gf_surface_target_frames_exact-a69f876593c87676.exe)
+
+running 2 tests
+test exact_cspice_gfilum_named_target_frames has been running for over 60 seconds
+test exact_cspice_gfsubc_named_target_frames has been running for over 60 seconds
+972 exact named-target GFILUM source cases
+test exact_cspice_gfilum_named_target_frames ... ok
+972 exact named-target GFSUBC source cases
+test exact_cspice_gfsubc_named_target_frames ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 188.78s
+
+     Running tests\gf_uddc_exact.rs (target\strict-verification\cargo\debug\deps\gf_uddc_exact-1e51d9241f41f81b.exe)
+
+running 2 tests
+test periodic_value_only_constraints_require_a_native_domain ... ok
+864 exact native GFUDS/UDDC cases
+test exact_cspice_gfuds_with_native_uddc ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests\kernel_numbers.rs (target\strict-verification\cargo\debug\deps\kernel_numbers-0086ae1f04c14f96.exe)
+
+running 1 test
+test text_numbers_equal_naif_prsdp ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests\kernel_pool_exact.rs (target\strict-verification\cargo\debug\deps\kernel_pool_exact-6629dfd780c4eb5d.exe)
+
+running 4 tests
+test native_text_kernel_fov_appends_exact ... ok
+test native_text_kernel_quoted_numeric_axes_rejected ... ok
+test native_text_kernel_pck_appends_exact ... ok
+test native_text_kernel_frame_appends_exact ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.05s
+
+     Running tests\location_azlcpo_exact.rs (target\strict-verification\cargo\debug\deps\location_azlcpo_exact-f7327c7e75433e79.exe)
+
+running 1 test
+test azlcpo_every_flag_correction_and_pole_is_exact ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.07s
+
+     Running tests\location_coordinates_exact.rs (target\strict-verification\cargo\debug\deps\location_coordinates_exact-25051e0e8bce65de.exe)
+
+running 1 test
+test geodetic_locations_equal_cspice_georec ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests\location_golden.rs (target\strict-verification\cargo\debug\deps\location_golden-2087bf93865dbbf0.exe)
+
+running 5 tests
+coordinates: 13 cases, worst 0.000e0 km
+test location_coordinates_match_cspice ... ok
+test topocentric_zenith_is_the_surface_normal ... ok
+test point_at_centre_is_the_object ... ok
+topocentric: 8 cases, range 0.000e0 km, angle 0.000e0 rad, range rate 0.000e0 km/s
+test topocentric_frame_matches_azlcpo ... ok
+states: 27 cases, position 0.000e0 km, velocity 0.000e0 km/s, light time 0.000e0 s
+test point_states_match_cspice ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.04s
+
+     Running tests\location_states_exact.rs (target\strict-verification\cargo\debug\deps\location_states_exact-293a0eef81d54a0e.exe)
+
+running 1 test
+test every_point_kind_locus_frame_and_correction_is_exact ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.26s
+
+     Running tests\location_topocentric_exact.rs (target\strict-verification\cargo\debug\deps\location_topocentric_exact-23f97286cefe5efc.exe)
+
+running 2 tests
+test local_matrix_and_body_state_match_cspice_intermediates ... ok
+test topocentric_output_requires_its_fixed_point_observer ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+     Running tests\mcp_stdio.rs (target\strict-verification\cargo\debug\deps\mcp_stdio-01d6a9472c9e41ef.exe)
+
+running 9 tests
+test mcp_modern_discovery_and_finite_validation ... ok
+test mcp_ray_tools_require_an_explicit_direction ... ok
+test mcp_stdio_rejects_bad_requests_and_unknown_tools ... ok
+test mcp_stdio_initialize_discovery_and_notification_silence ... ok
+test mcp_protocol_recovery_and_backend_error_isolation ... ok
+test mcp_csv_adapter_validation_and_exact_output ... ok
+test mcp_frame_tool_default_orientation_is_supported ... ok
+test mcp_preserves_custom_frame_names_containing_locus_words ... ok
+test mcp_state_and_gf_preserve_native_backend_bits ... ok
+
+test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.45s
+
+     Running tests\occult_golden.rs (target\strict-verification\cargo\debug\deps\occult_golden-683c5c167036e211.exe)
+
+running 3 tests
+vs CSPICE occult point shapes: exact
+test matches_cspice_point_shapes ... ok
+vs CSPICE occult over 15 states: exact
+test matches_cspice_occult_states ... ok
+vs CSPICE gfoclt over 14 windows: endpoints within 1e-2 s
+test matches_cspice_gfoclt ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 35.10s
+
+     Running tests\orbit_precision.rs (target\strict-verification\cargo\debug\deps\orbit_precision-3860cd2564101c05.exe)
+
+running 2 tests
+orbital elements 0 differing components max0
+test oscltx_exact_cspice ... ok
+primitive0 fields[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]; typed[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]; orbital observations 0 differences,max0 at
+test orbit_observations_exact_cspice ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.15s
+
+     Running tests\orientation_columns.rs (target\strict-verification\cargo\debug\deps\orientation_columns-363b8651145e09f4.exe)
+
+running 4 tests
+test angular_velocity_repeats_on_every_matrix_row ... ok
+test euler_rates_require_euler_angles ... ok
+test matrix_velocity_is_dropped_for_angle_orientations ... ok
+test state_matrix_matches_cspice_in_every_layout ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests\orientation_exact.rs (target\strict-verification\cargo\debug\deps\orientation_exact-a1c7f2ed32dea53f.exe)
+
+running 1 test
+test orientation_native_source_values_exact ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+     Running tests\orientation_golden.rs (target\strict-verification\cargo\debug\deps\orientation_golden-b7f0a7434b36753b.exe)
+
+running 1 test
+vs CSPICE over 140 orientation values:
+  euler angles:        0.000e0 rad
+  quaternion:          0.000e0
+  angle and axis:      0.000e0 (rad / unit vector)
+  angular velocity:    0.000e0 rad/s
+  euler angle rates:   0.000e0 rad/s
+  worst rate: 
+test orientation_representations_match_cspice ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests\pck_exact.rs (target\strict-verification\cargo\debug\deps\pck_exact-52fbc487b883a3aa.exe)
+
+running 1 test
+test body_rotation_and_derivative_equal_cspice ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests\pck_models_exact.rs (target\strict-verification\cargo\debug\deps\pck_models_exact-d538df9c0ffe3df0.exe)
+
+running 2 tests
+test incomplete_orientation_is_not_filled_with_zeroes ... ok
+test zero_valued_pck_models_are_valid ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests\pck_pool_updates_exact.rs (target\strict-verification\cargo\debug\deps\pck_pool_updates_exact-378bb5d48128afb8.exe)
+
+running 1 test
+test native_pck_replacements_and_failed_updates_exact ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.11s
+
+     Running tests\pointing_cli_exact.rs (target\strict-verification\cargo\debug\deps\pointing_cli_exact-fd96eec8ec8f1b40.exe)
+
+running 2 tests
+test typed_cli_returns_every_cspice_getfov_boundary ... ok
+test typed_cli_matches_all_native_coordinate_outputs ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.09s
+
+     Running tests\pointing_coordinates_exact.rs (target\strict-verification\cargo\debug\deps\pointing_coordinates_exact-da90a84ad51d974f.exe)
+
+running 2 tests
+test nonfinite_directions_are_errors ... ok
+test every_coordinate_and_magnitude_matches_cspice_bits ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests\pointing_dynamic_exact.rs (target\strict-verification\cargo\debug\deps\pointing_dynamic_exact-449c646915095166.exe)
+
+running 2 tests
+test native_ray_dynamic_direction_rotations_exact ... ok
+test native_pointing_dynamic_direction_rotations_exact ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.20s
+
+     Running tests\pointing_golden.rs (target\strict-verification\cargo\debug\deps\pointing_golden-1a65ead206877f04.exe)
+
+running 1 test
+vs CSPICE spkezp over 90 directions: worst 0.000e0 ()
+test matches_cspice_spkezp_direction ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.03s
+
+     Running tests\pointing_instrument_exact.rs (target\strict-verification\cargo\debug\deps\pointing_instrument_exact-7d05dee42f5aafcd.exe)
+
+running 1 test
+test getfov_original_magnitude_and_every_corner_are_exact ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests\pointing_mixed_frames.rs (target\strict-verification\cargo\debug\deps\pointing_mixed_frames-48220e9615d04e59.exe)
+
+running 2 tests
+test pointing_mixed_source_inertial_frames_exact ... ok
+test pointing_named_and_rotating_source_frames_exact ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.00s
+
+     Running tests\pointing_sources_exact.rs (target\strict-verification\cargo\debug\deps\pointing_sources_exact-0b34f2aa501c5d93.exe)
+
+running 1 test
+test sources_match_independent_cspice_without_tolerance ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.08s
+
+     Running tests\pointing_vectors.rs (target\strict-verification\cargo\debug\deps\pointing_vectors-ee169bf48b3153f7.exe)
+
+running 3 tests
+test raw_boresight_is_preserved_and_boundaries_keep_ik_order ... ok
+test body_fixed_frame_axis_works_and_missing_fov_fails ... ok
+test velocity_direction_does_not_add_output_frame_rate ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.03s
+
+     Running tests\pointing_vectors_exact.rs (target\strict-verification\cargo\debug\deps\pointing_vectors_exact-7e75dbde01b29d38.exe)
+
+running 1 test
+test vector_sources_match_independent_cspice_exactly ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.04s
+
+     Running tests\ray_direction_golden.rs (target\strict-verification\cargo\debug\deps\ray_direction_golden-e623235cadef3813.exe)
+
+running 1 test
+vs CSPICE over 84 rows (52 points, 32 expected misses):
+  direction: 0.000e0 raw-vector component
+  point: 0.000e0 km
+  direction worst: 
+  point worst:     
+test ray_directions_match_cspice ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 2.60s
+
+     Running tests\ray_dref_exact.rs (target\strict-verification\cargo\debug\deps\ray_dref_exact-d265b42c6f875620.exe)
+
+running 1 test
+540 exact native typed DREF ray cases
+test exact_cspice_typed_ray_direction_frame_epochs ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.46s
+
+     Running tests\ray_resolver_exact.rs (target\strict-verification\cargo\debug\deps\ray_resolver_exact-4e6e113014e39f03.exe)
+
+running 1 test
+test resolved_rays_equal_cspice ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+     Running tests\runtime_math_exact.rs (target\strict-verification\cargo\debug\deps\runtime_math_exact-4e978ea556aab628.exe)
+
+running 1 test
+Native math primitive cells 14914; mismatches 0; {"acos": 1415, "asin": 1415, "atan2": 1036, "cos": 1005, "cosh": 1000, "exp": 1005, "log": 1005, "pow": 1008, "sin": 1005, "sin_cos": 1005, "sinh": 1000, "sqrt": 1005, "tan": 1005}
+test native_windows_math_primitives_exact ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests\separation_native_events_exact.rs (target\strict-verification\cargo\debug\deps\separation_native_events_exact-e19ced685263140c.exe)
+
+running 2 tests
+test constant_native_separation_has_no_isolated_events ... ok
+144 exact native GFSEP event cases
+test exact_cspice_native_separation_events ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 16.27s
+
+     Running tests\separation_shape_golden.rs (target\strict-verification\cargo\debug\deps\separation_shape_golden-922e925832dc49c4.exe)
+
+running 2 tests
+vs CSPICE trgsep over 14 shaped separations: 0.000e0 rad
+  worst: 
+test shaped_separation_matches_trgsep ... ok
+vs CSPICE gfsep over 9 shaped extrema: 0.000e0 s worst
+  worst: 
+test shaped_separation_events_match_gfsep ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.12s
+
+     Running tests\spk10_exact.rs (target\strict-verification\cargo\debug\deps\spk10_exact-f414aea6334b9d2e.exe)
+
+running 2 tests
+test spk10_corrected_state_position_pairs_equal_cspice ... ok
+test spk10_sgp4_j2000_states_equal_cspice ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.10s
+
+     Running tests\spk14_exact.rs (target\strict-verification\cargo\debug\deps\spk14_exact-6997efb611bf3e49.exe)
+
+running 1 test
+test spk14_generic_chebyshev_equal_cspice ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.03s
+
+     Running tests\spk15_exact.rs (target\strict-verification\cargo\debug\deps\spk15_exact-0c307feafe7ffbe5.exe)
+
+running 1 test
+test spk15_j2_precession_equal_cspice ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.07s
+
+     Running tests\spk17_boundary.rs (target\strict-verification\cargo\debug\deps\spk17_boundary-935ea0353b797602.exe)
+
+running 2 tests
+test spk17_rejects_native_kepleq_eccentricity_boundary_error ... ok
+test spk17_accepts_native_exact_eccentricity_boundary ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests\spk17_exact.rs (target\strict-verification\cargo\debug\deps\spk17_exact-f72248ab113fb5dd.exe)
+
+running 1 test
+test spk17_equinoctial_states_equal_cspice ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.03s
+
+     Running tests\spk18_exact.rs (target\strict-verification\cargo\debug\deps\spk18_exact-fe4b424c529f6693.exe)
+
+running 1 test
+test spk18_packet_interpolation_equal_cspice ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.66s
+
+     Running tests\spk19_exact.rs (target\strict-verification\cargo\debug\deps\spk19_exact-f1ce8b44a75b011e.exe)
+
+running 1 test
+test spk19_interval_selection_equal_cspice ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.45s
+
+     Running tests\spk20_exact.rs (target\strict-verification\cargo\debug\deps\spk20_exact-3ac2157ce62d435b.exe)
+
+running 1 test
+test spk20_velocity_integrals_equal_cspice ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.03s
+
+     Running tests\spk5_exact.rs (target\strict-verification\cargo\debug\deps\spk5_exact-3a1058c49eba79a8.exe)
+
+running 1 test
+test spk5_two_body_blending_equal_cspice ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.13s
+
+     Running tests\spk_exact.rs (target\strict-verification\cargo\debug\deps\spk_exact-2deafecea2109c90.exe)
+
+running 1 test
+test de440_geometric_states_equal_cspice ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests\spk_golden.rs (target\strict-verification\cargo\debug\deps\spk_golden-15f408f69da03b7e.exe)
+
+running 1 test
+vs CSPICE over 374 states:
+  position: 0.000e0 km absolute, 0.000e0 relative
+  velocity: 0.000e0 km/s absolute, 0.000e0 relative
+  worst position row: 
+test matches_cspice_spkezr ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests\spk_layers.rs (target\strict-verification\cargo\debug\deps\spk_layers-d0305d9076d71a05.exe)
+
+running 2 tests
+test segment_coverage_is_not_extended_by_an_epsilon ... ok
+test ordered_spk_layers_equal_cspice ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests\spk_mda_exact.rs (target\strict-verification\cargo\debug\deps\spk_mda_exact-b1306cd525a428fa.exe)
+
+running 1 test
+test spk_modified_difference_lines_equal_cspice ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.13s
+
+     Running tests\spk_named_mixed.rs (target\strict-verification\cargo\debug\deps\spk_named_mixed-e3e4c08addd2aeeb.exe)
+
+running 1 test
+test named_mixed_segment_frames_equal_cspice ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.04s
+
+     Running tests\spk_priority.rs (target\strict-verification\cargo\debug\deps\spk_priority-dc99635826521925.exe)
+
+running 1 test
+test segment_priority_and_center_chains_match_cspice_exactly ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests\state_columns_exact.rs (target\strict-verification\cargo\debug\deps\state_columns_exact-f8ea74f5ec56131d.exe)
+
+running 1 test
+test state_columns_match_direct_cspice_jacobians_exactly ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests\state_rep_golden.rs (target\strict-verification\cargo\debug\deps\state_rep_golden-1418bc2c79cd3d62.exe)
+
+running 1 test
+vs CSPICE over 2184 state-representation columns:
+  values: 0.000e0 relative (exact equality required)
+  rates:  0.000e0 relative (exact equality required)
+  worst value column: 
+  worst rate column:  
+test matches_cspice_state_representations ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.06s
+
+     Running tests\subpoint_method_golden.rs (target\strict-verification\cargo\debug\deps\subpoint_method_golden-fa9ff264c9fa5721.exe)
+
+running 1 test
+vs CSPICE over 42 sub-points:
+  point: 0.000e0 km
+  altitude: 0.000e0 km
+  near-vs-intercept spread: 14.564 km
+  worst: 
+  worst altitude: 
+    observer LT+S            point 0.000e0 km  altitude 0.000e0 km
+    observer NONE            point 0.000e0 km  altitude 0.000e0 km
+    solar LT+S               point 0.000e0 km  altitude 0.000e0 km
+    solar NONE               point 0.000e0 km  altitude 0.000e0 km
+test sub_point_methods_match_cspice ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.04s
+
+     Running tests\surface_golden.rs (target\strict-verification\cargo\debug\deps\surface_golden-14dba914e8cc4caf.exe)
+
+running 4 tests
+vs WGC2 planetocentric solar longitude over 6 epochs: worst 4.616e-9 deg
+NASA transport exact comparison: FAIL; max 4.615856141754193e-9 deg; local CSPICE parity is tested separately
+test reports_nasa_transport_solar_longitude_strict_mismatch ... ok
+vs CSPICE sincpt over 6 intercepts: worst point 0.000e0 km, altitude 0.000e0 km
+vs CSPICE ilumin over 6 points: worst phase 0.000e0, solar 0.000e0, emission 0.000e0 rad
+test matches_cspice_surface_intercepts ... ok
+test matches_cspice_illumination ... ok
+vs CSPICE subpnt/subslr over 15 points: worst point 0.000e0 km, altitude 0.000e0 km ()
+test matches_cspice_sub_points ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.03s
+
+     Running tests\surface_precision.rs (target\strict-verification\cargo\debug\deps\surface_precision-3ba24b408c809b05.exe)
+
+running 6 tests
+test georec_exact_cspice ... ok
+nearpt 0 differing components, worst0
+test nearpt_exact_cspice ... ok
+test near_limb_none_exact_cspice ... ok
+solar longitude 0 differences, max0
+test solar_longitude_exact_cspice ... ok
+ray point/epoch/vector mismatches [0, 0, 0]; max[0.0, 0.0, 0.0]
+test surface_ray_precision_cspice ... ok
+metric0: 0/756 bit mismatches; max=0 at 
+metric1: 0/252 bit mismatches; max=0 at 
+metric2: 0/90 bit mismatches; max=0 at 
+metric3: 0/1026 bit mismatches; max=0 at 
+metric4: 0/270 bit mismatches; max=0 at 
+test surface_precision_cspice ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.21s
+
+     Running tests\surface_rotating_spk.rs (target\strict-verification\cargo\debug\deps\surface_rotating_spk-88e104b36c8ca501.exe)
+
+running 1 test
+test rotating_spk_sources_match_cspice_surface_geometry ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.39s
+
+     Running tests\surface_target_frames.rs (target\strict-verification\cargo\debug\deps\surface_target_frames-cf032a9efc9e4e5e.exe)
+
+running 2 tests
+test target_frame_must_be_non_inertial_and_target_centered ... ok
+test explicit_target_frames_match_all_cspice_bits ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.63s
+
+     Running tests\tangent_dynamic_exact.rs (target\strict-verification\cargo\debug\deps\tangent_dynamic_exact-7c86ff7e86f58321.exe)
+
+running 1 test
+test native_tangent_dynamic_target_frame_exact ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.43s
+
+     Running tests\tangent_golden.rs (target\strict-verification\cargo\debug\deps\tangent_golden-06ff042054641a2d.exe)
+
+running 1 test
+vs CSPICE tangpt over 48 rays: geometric 0.000e0 km, point 0.000e0 km, surface 0.000e0 km, range 0.000e0 km (et=50000000 abcorr=CN+S)
+test matches_cspice_tangpt ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.05s
+
+     Running tests\tangent_precision.rs (target\strict-verification\cargo\debug\deps\tangent_precision-82e5790c5f6b2d36.exe)
+
+running 2 tests
+npedln 0 differences, max0
+test npedln_exact_cspice ... ok
+tangent 0 mismatches, max0 at; groups{}
+test tangent_exact_cspice ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.25s
+
+error: 1 target failed:
+    `--test gf_live_bridge_exact`

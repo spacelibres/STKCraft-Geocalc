@@ -22,6 +22,12 @@ from bootstrap_reference import pinned_kernel_records,resolve_reference_binary
 from runtime_profile import tested_binary_inventory
 DEST = ROOT / 'target/strict-verification'
 REQUIRED_TESTS = [
+    'native_kernel_pool_assignments_and_partial_errors_exact',
+    'native_kernel_date_values_and_rejection_presence',
+    'native_fixed_and_dynamic_frame_error_matrix_exact',
+    'native_text_kernel_frame_appends_exact', 'native_text_kernel_pck_appends_exact',
+    'native_text_kernel_fov_appends_exact', 'native_text_kernel_quoted_numeric_axes_rejected',
+    'native_pck_replacements_and_failed_updates_exact',
     'native_windows_math_primitives_exact',
     'corrected_states_equal_cspice', 'segment_priority_and_center_chains_match_cspice_exactly',
     'all_getfov_boundaries_equal_cspice', 'fov_boundary_predicates_equal_cspice',
@@ -113,13 +119,22 @@ def audit_reference_files(manifest: dict, root: Path) -> list[str]:
             failures.append(f'Missing or changed independent reference: {path}')
     return failures
 
+def validate_time_pin(requirement: object, package: dict) -> str:
+    if not isinstance(requirement,str) or not re.fullmatch(r'=(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)',requirement):
+        raise RuntimeError('Strict verification requires an exact registry stkcraft-time pin')
+    expected=requirement[1:]
+    if package.get('version')!=expected or not (package.get('source') or '').startswith('registry+'):
+        raise RuntimeError('Resolved Time dependency differs from the exact registry pin')
+    return expected
+
+
 def time_dependency() -> dict:
     result=subprocess.run(['cargo','metadata','--format-version=1','--locked','--all-features'],cwd=ROOT,stdout=subprocess.PIPE,stderr=subprocess.PIPE,text=True,encoding='utf-8',check=True)
     packages=json.loads(result.stdout)['packages']
     package=next((p for p in packages if p['name']=='stkcraft-time'),None)
     if package is None:raise RuntimeError('Cargo metadata contains no stkcraft-time dependency')
-    if package['version']!='0.1.18' or not (package.get('source') or '').startswith('registry+'):
-        raise RuntimeError('The strict release requires registry stkcraft-time =0.1.18')
+    requirement=tomllib.loads((ROOT/'Cargo.toml').read_text(encoding='utf-8'))['dependencies']['stkcraft-time']
+    validate_time_pin(requirement,package)
     directory=Path(package['manifest_path']).parent
     lock=tomllib.loads((ROOT/'Cargo.lock').read_text(encoding='utf-8'))
     pinned=next((p for p in lock['package'] if p['name']=='stkcraft-time' and p['version']==package['version']),None)
@@ -147,6 +162,10 @@ def source_manifest() -> dict[str,str]:
     files += [p for p in [ROOT/'.cargo/config.toml'] if p.is_file()]
     files += [p for p in [ROOT/name for name in ['README.md','LICENSE','ATTRIBUTION.md','CHANGELOG.md','AGENTS.md','CITATION.cff','.gitattributes','.gitignore','requirements-reference.txt']] if p.is_file()]
     files += [p for p in sorted((ROOT/'.githooks').rglob('*')) if p.is_file()]
+    # Python import caches are generated execution products, including when a
+    # reviewed evidence script is imported. Preserve every original capture.
+    files = [p for p in files if '__pycache__' not in p.relative_to(ROOT).parts
+             and p.suffix not in ['.pyc', '.pyo']]
     hashes={os.path.relpath(p, ROOT):digest(p) for p in files}
     dependency=time_dependency();directory=Path(dependency['manifest_path']).parent
     prefix='dependency:stkcraft-time@'+dependency['version']+'/'

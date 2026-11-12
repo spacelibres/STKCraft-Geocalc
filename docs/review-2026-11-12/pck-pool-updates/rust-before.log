@@ -1,0 +1,26 @@
+   Compiling stkcraft-geocalc v0.1.8 (C:\Users\stone\Documents\STKCraft-Geocalc)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 2.17s
+     Running tests\pck_pool_updates_exact.rs (target\debug\deps\pck_pool_updates_exact-97543a088828f133.exe)
+
+running 1 test
+
+thread 'native_pck_replacements_and_failed_updates_exact' (43120) panicked at tests\pck_pool_updates_exact.rs:79:5:
+7 native mismatches:
+replace_radii_character B|499|RADII: stale Some([3.0, 2.0, 1.0]); native E|SPICE(TYPEMISMATCH)
+replace_gm_character B|499|GM: stale Some([123.456]); native E|SPICE(TYPEMISMATCH)
+failed_radii_append B|499|RADII: stale Some([3.0, 2.0, 1.0]); native E|SPICE(KERNELVARNOTFOUND)
+failed_radii_append B|499|GM: N|1|405edd2f1a9fbe77; native N|1|407c800000000000
+failed_gm_append B|499|RADII: N|3|4008000000000000|4000000000000000|3ff0000000000000; native N|3|4018000000000000|4014000000000000|4010000000000000
+failed_gm_append B|499|GM: stale Some([123.456]); native E|SPICE(KERNELVARNOTFOUND)
+failed_pm_append B|499|RADII: N|3|4008000000000000|4000000000000000|3ff0000000000000; native N|3|4018000000000000|4014000000000000|4010000000000000
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+test native_pck_replacements_and_failed_updates_exact ... FAILED
+
+failures:
+
+failures:
+    native_pck_replacements_and_failed_updates_exact
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+error: test failed, to rerun pass `--test pck_pool_updates_exact`

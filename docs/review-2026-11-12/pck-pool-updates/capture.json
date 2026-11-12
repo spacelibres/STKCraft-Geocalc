@@ -1,0 +1,60 @@
+{
+  "archive_sha256": "98d60b814b412fa55294aeaaeb7dab46d849cc87a8b709ffe835d08de17625dc",
+  "cspice_lib_sha256": "114dc34aea8533bcdd452997b9096219c3697234a00dfe59a4ba1d87731a9650",
+  "static_ucrt_sha256": "ea2ffa5d9b1ebc3fa76f34c364471750db8951b341dbccbc1bef628ef1a20e39",
+  "source_sha256": "e1d36780ebc6f0f37c8bbf8ea725b11689bfedabfaa86058c5d9ce6a431bd969",
+  "generator_sha256": "f24a52e545bfef64779dc25a394d8664d1cbe3f8c0d41550fa4693109ae3e8e0",
+  "compiler_sha256": "315a654ea116864516a1674858e587e535e3bc3045ff32ed2f2739a2c1ec5640",
+  "linked_libraries": [
+    {
+      "path": "C:\\Program Files (x86)\\Windows Kits\\10\\Lib\\10.0.26100.0\\ucrt\\x64\\libucrt.lib",
+      "sha256": "ea2ffa5d9b1ebc3fa76f34c364471750db8951b341dbccbc1bef628ef1a20e39"
+    },
+    {
+      "path": "C:\\Users\\stone\\Documents\\STKCraft-Geocalc\\target\\reference\\n0067\\cspice\\lib\\cspice.lib",
+      "sha256": "114dc34aea8533bcdd452997b9096219c3697234a00dfe59a4ba1d87731a9650"
+    }
+  ],
+  "imports": [
+    "KERNEL32.dll"
+  ],
+  "native_source_sha256": {
+    "pool.c": "ad1e1f04decc8b17e01d147bdfb1919e653ec65020d3017a8c3e78c7b3c85ada",
+    "zzrvar.c": "26e3f437d6d6393ecf82d0ede3442b4d27fb2ec3b4d24cda8db02ff9a48d9bd8",
+    "zzcln.c": "b0f3b62f344e3ab62b393b289d845c28eda53bcf76e7c918fab8ecf0728a1724",
+    "nparsd.c": "2fe61837c8d3343842a4445c77beb0a38617864f10037191b0bbd6913b8feaad",
+    "tparse.c": "4e56c236a8ad8eb4ef01238cc47bf97b73b51e5b67030ba5bec41934aa21171a",
+    "tkfram.c": "b8893e5fd7cb66f8d2dcc10a55c9630df8938bbbac28819bce8d2027fa2f28d8",
+    "framex.c": "7a63ead49da551912eac67a7471b33dfcb4d957ae47f05104f64463b2ff11593",
+    "zznamfrm.c": "2ba4ac88331091466519d035803884abcb4c6da0ef9dab03a4f8a599ed13b9e4",
+    "getfov_c.c": "5e6b1feeeb84cc7400ab2eed88b5c8f291fee99da30a87dd558ae42912c259cf",
+    "bodvrd_c.c": "f6af678c333a2c6de580d1b596e180bff20a27518aba1eaa7a458d3b4815188d"
+  },
+  "executable_sha256": "36ae88e437b0e24fd707f64213e0ec0161c589b8cbb1396af8f876821eca74df",
+  "captured_utc": "2026-11-12T01:42:53.535494+00:00",
+  "checkout_commit": "70ae8f5e371ccc15d2f914bfa34beb7534760110",
+  "wrapper_sha256": "3f3b00c6474e79925e7cd7c952ee00549a71e3a82baef4268c10f77dd5b070a2",
+  "cases": 8,
+  "operations": 136,
+  "fixture_sha256": "b75234912c0efda21c1d2799c959b1f3ed81cf3d2e9d4715ded202e788f15684",
+  "kernel_sha256": {
+    "replace_radii_character-0.tpc": "eb1b9a3acba6ca2a192517a0f80a177858606bde43a3cd2a9b5ef5b83f453607",
+    "replace_radii_character-1.tpc": "908483325b93128282008ca2874fa3d2fba204c6e08de349110294a0ee4c5cf4",
+    "replace_gm_character-0.tpc": "eb1b9a3acba6ca2a192517a0f80a177858606bde43a3cd2a9b5ef5b83f453607",
+    "replace_gm_character-1.tpc": "56cae210095673df3daaa545989b765216ae7a10d16eb2d4e6d34f36a076907b",
+    "replace_pm_character-0.tpc": "eb1b9a3acba6ca2a192517a0f80a177858606bde43a3cd2a9b5ef5b83f453607",
+    "replace_pm_character-1.tpc": "728945db65cb36ab3890db1679e03c5623d6724763683ef3a161385148057dfe",
+    "replace_ra_character-0.tpc": "eb1b9a3acba6ca2a192517a0f80a177858606bde43a3cd2a9b5ef5b83f453607",
+    "replace_ra_character-1.tpc": "30e927f275fd129842b56270fa97b352711d2b069740a4d6e754d775791dd24c",
+    "replace_dec_character-0.tpc": "eb1b9a3acba6ca2a192517a0f80a177858606bde43a3cd2a9b5ef5b83f453607",
+    "replace_dec_character-1.tpc": "fedabdef595207c1cdc5bb816f8fbd5075d9218bf8e0e65502a5e6626d00b47e",
+    "failed_radii_append-0.tpc": "eb1b9a3acba6ca2a192517a0f80a177858606bde43a3cd2a9b5ef5b83f453607",
+    "failed_radii_append-1.tpc": "e2a5b02cab6c13255c3b26d7c40c4a0198543ea08bc64f1f31ee351e899863a4",
+    "failed_gm_append-0.tpc": "eb1b9a3acba6ca2a192517a0f80a177858606bde43a3cd2a9b5ef5b83f453607",
+    "failed_gm_append-1.tpc": "d9d0a4138d47e6b78abfaa5146030fa5a335a6b5dd3c261e3bc59bcd45604fc1",
+    "failed_pm_append-0.tpc": "eb1b9a3acba6ca2a192517a0f80a177858606bde43a3cd2a9b5ef5b83f453607",
+    "failed_pm_append-1.tpc": "566bbbbb1d42aa10336556cd72b9ba243b506f8d1d9fe09ea4d6d2b180d30f7f"
+  },
+  "native_stdout_sha256": "c58dc3948ea16df0e9f7f5d4e63e4ccb9175e045f5ac227110c9015cb1d6e0a8",
+  "native_stderr_sha256": "daef1358786121e0f6890570e0a0c61462525ea24f6cc1ec809ebba41956a66e"
+}

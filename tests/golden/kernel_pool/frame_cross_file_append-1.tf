@@ -1,0 +1,5 @@
+KPL/FK
+\begindata
+TKFRAME_963001_ANGLES+=(-7.2 19.1)
+TKFRAME_963001_AXES+=(2 1)
+\begintext
