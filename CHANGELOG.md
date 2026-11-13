@@ -3,7 +3,20 @@
 All notable changes are recorded in English using [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and [Semantic Versioning](https://semver.org/).
 Versions 0.1.2 through 0.1.5 below describe verified local checkpoints before Git initialization; they were not separately published releases.
 
+## [0.2.2] - 2026-11-13
+
+### Fixed
+
+- Preserve the original bytes of finder JSON reference captures in Git, so
+  independent hash checks pass on Windows and other checkout environments.
+- Stop the strict release gate immediately after a failed prerequisite,
+  retaining its failure report instead of running lengthy Rust tests that
+  cannot qualify the release.
+- Clarify that 0.2.1 was a CI-failed candidate and was not published.
+
 ## [0.2.1] - 2026-11-13
+
+This candidate was not published: CI found reference-capture hash mismatches.
 
 ### Added
 

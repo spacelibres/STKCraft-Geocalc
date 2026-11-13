@@ -41,6 +41,7 @@ docs/reference/native-cross-platform/*.json -text -whitespace
 docs/reference/wgc-calculators/*.jsonl -text -whitespace
 docs/reference/wgc-calculators/*.json -text -whitespace
 docs/reference/wgc-finders/*.jsonl -text -whitespace
+docs/reference/wgc-finders/*.json -text -whitespace
 *.tf -whitespace
 *.tpc -whitespace
 *.tsc -whitespace

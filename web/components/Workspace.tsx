@@ -106,7 +106,7 @@ export default function Workspace(){
    <a className="side-link" href="/api-info">{icon('code')}<span>API reference</span><span className="external">↗</span></a>
    <div className="side-divider"/><div className="nav-caption">{groups.find(item=>item.id===group)?.title}</div>
    <nav className="operation-list" aria-label="Calculations">{(group==='time'?timeCatalog:catalog.filter(t=>group==='finder'?t.name.startsWith('gf_'):!t.name.startsWith('gf_'))).map(tool=><button key={tool.name} className={`operation ${operation===tool.name?'selected':''}`} onClick={()=>switchOperation(tool.name,group)}><span className="operation-dot"/>{label(tool.name)}</button>)}</nav>
-   <div className="side-bottom"><span className={`status-dot ${catalogError?'bad':''}`}/><span>{catalogError?'Backend unavailable':'Local computation engine'}</span><span className="version">0.2.1</span></div>
+   <div className="side-bottom"><span className={`status-dot ${catalogError?'bad':''}`}/><span>{catalogError?'Backend unavailable':'Local computation engine'}</span><span className="version">0.2.2</span></div>
   </aside>
   <section className="mainarea">
    <header className="topbar"><button className="menu-button" onClick={()=>setMobileMenu(!mobileMenu)} aria-label="Toggle navigation">☰</button><div className="breadcrumbs"><span>Workspace</span><span className="crumb-separator">/</span><strong>{group==='geometry'?'Geometry calculator':group==='finder'?'Event finder':'Time systems'}</strong></div><div className="top-actions"><span className="engine-chip"><span className={`status-dot ${catalogError?'bad':''}`}/>{catalogError?'OFFLINE':'ENGINE READY'}</span><a href="/api-info">API documentation <span>↗</span></a><div className="avatar">S</div></div></header>

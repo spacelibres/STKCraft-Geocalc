@@ -2,6 +2,7 @@
 import hashlib
 import json
 import struct
+import subprocess
 import sys
 import unittest
 from pathlib import Path
@@ -14,6 +15,11 @@ def digest(path):
 
 
 class CalculatorEvidence(unittest.TestCase):
+    def test_finder_json_captures_keep_original_bytes_in_git(self):
+        path='docs/reference/wgc-finders/finder-matrix-cases.json'
+        result=subprocess.check_output(['git','check-attr','text','--',path],cwd=ROOT,text=True)
+        self.assertTrue(result.rstrip().endswith(': unset'), result)
+
     def test_subpoint_cross_platform_native_evidence(self):
         directory=ROOT/'docs/reference/native-cross-platform'
         meta=json.loads((directory/'metadata.json').read_text(encoding='utf8'))

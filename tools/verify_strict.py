@@ -330,6 +330,8 @@ def main() -> int:
                 counts, failures = audit_rust_output(result.stdout)
                 record.update(counts)
                 report['failures'].extend(f'{name}: {failure}' for failure in failures)
+            if report['failures']:
+                break
     if not report['failures']:
         try:
             report['release_binary_sha256'] = tested_binary_inventory(DEST/'cargo/release')

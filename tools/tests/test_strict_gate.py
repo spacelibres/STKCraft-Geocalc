@@ -2,12 +2,38 @@ import importlib.util
 from pathlib import Path
 import unittest
 import tempfile
+import json
+import io
+from contextlib import redirect_stdout
+from types import SimpleNamespace
 from unittest.mock import patch
 
 spec=importlib.util.spec_from_file_location('strict_gate',Path(__file__).resolve().parents[1]/'verify_strict.py')
 gate=importlib.util.module_from_spec(spec);spec.loader.exec_module(gate)
 
 class StrictGate(unittest.TestCase):
+    def test_failed_python_precheck_stops_before_expensive_rust_tests(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root=Path(temp)
+            (root/'docs/reference').mkdir(parents=True)
+            (root/'docs/reference/CSPICE_N0067.json').write_text('{}')
+            dest=root/'reports'
+            results=[SimpleNamespace(returncode=0,stdout=''),
+                     SimpleNamespace(returncode=1,stdout='failed precheck')]
+            with patch.object(gate,'ROOT',root), patch.object(gate,'DEST',dest), \
+                 patch.object(gate,'audit_reference_files',return_value=[]), \
+                 patch.object(gate,'pinned_kernel_records',return_value=[]), \
+                 patch.object(gate,'time_dependency',return_value={'source_kind':'registry'}), \
+                 patch.object(gate,'source_manifest',return_value={'source':'hash'}), \
+                 patch.object(gate.subprocess,'run',side_effect=results) as run, \
+                 patch.object(gate.sys,'argv',['verify_strict.py']):
+                with redirect_stdout(io.StringIO()):
+                    self.assertEqual(gate.main(),1)
+            report=json.loads((dest/'report.json').read_text())
+            self.assertEqual(run.call_count,2)
+            self.assertEqual([c['name'] for c in report['checks']],['format','python-verifier'])
+            self.assertFalse(report['local_gate_passed'])
+
     def test_rust_gates_serialize_without_hiding_diagnostics(self):
         for release in (False,True):
             command=gate.rust_test_command(release)

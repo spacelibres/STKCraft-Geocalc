@@ -25,7 +25,7 @@ result visualizations, an event timeline, and a browsable API reference.
 See the [web workspace guide](web/README.md) and the
 [project wiki](https://github.com/spacelibres/STKCraft-Geocalc/wiki).
 
-The images below are captures of the local development workspace. Scene
+The images below were captured from the 0.2.1 local development workspace. Scene
 markers and line segments are visual aids; consult the numerical contract and
 kernel context when interpreting results. NASA comparisons currently cover
 only the mapped operations and compare displayed values.
@@ -52,13 +52,13 @@ option-level conformance remains open; see the gap register above.
 The crate requires Rust 1.75 or newer and uses `std`.
 
 ```sh
-cargo add stkcraft-geocalc@=0.2.1
-cargo install stkcraft-geocalc --version 0.2.1 --locked --features mcp --bins
+cargo add stkcraft-geocalc@=0.2.2
+cargo install stkcraft-geocalc --version 0.2.2 --locked --features mcp --bins
 ```
 
 ```toml
 [dependencies]
-stkcraft-geocalc = "=0.2.1"
+stkcraft-geocalc = "=0.2.2"
 ```
 
 The optional `mcp` feature installs `stkcraft-geocalc-mcp` alongside
@@ -74,7 +74,7 @@ sets the linker mode in `.cargo/config.toml`. Cargo registry installation and
 downstream library projects must supply their own configuration:
 
 ```powershell
-cargo install stkcraft-geocalc --version 0.2.1 --locked --features mcp --bins --config 'target.x86_64-pc-windows-msvc.rustflags=["-C","target-feature=+crt-static"]'
+cargo install stkcraft-geocalc --version 0.2.2 --locked --features mcp --bins --config 'target.x86_64-pc-windows-msvc.rustflags=["-C","target-feature=+crt-static"]'
 ```
 
 See [the numerical profile](docs/NUMERICS.md#windows-runtime-profile) for library
