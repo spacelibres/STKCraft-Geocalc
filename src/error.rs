@@ -101,7 +101,14 @@ impl fmt::Display for GeoError {
             }
             GeoError::Unsupported(message) => write!(f, "unsupported: {message}"),
             GeoError::BadSearch(message)
-                if matches!(*message, "SPICE(BODIESNOTDISTINCT)" | "SPICE(INVALIDFRAME)") =>
+                if matches!(
+                    *message,
+                    "SPICE(BODIESNOTDISTINCT)"
+                        | "SPICE(INVALIDFRAME)"
+                        | "SPICE(DEGENERATECASE)"
+                        | "SPICE(INVALIDOPTION)"
+                        | "SPICE(EMPTYSTRING)"
+                ) =>
             {
                 f.write_str(message)
             }

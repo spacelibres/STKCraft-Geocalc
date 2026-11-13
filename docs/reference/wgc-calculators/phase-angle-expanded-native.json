@@ -1,0 +1,397 @@
+{
+  "cspice": "CSPICE_N0067",
+  "native_library_sha256": "7fd2dcc58d73ed5293847e67109897caba34240b8f9c38ad739c0b2ec6ce7715",
+  "kernels_in_load_order": [
+    {
+      "name": "mar099s.bsp",
+      "sha256": "997dc93ba640e476da7a494d2237dcdeb145e528db37be8ccee588c615e4e1ff"
+    },
+    {
+      "name": "de442.bsp",
+      "sha256": "8d5001fab315eeff222cc51f7cf7ffcdb43fb38fb9ac73ff09e09a5b361fd388"
+    }
+  ],
+  "rows": [
+    {
+      "query": [
+        301,
+        10,
+        399,
+        -100000000.0,
+        "LT"
+      ],
+      "native_rad": "0x1.e5425a8e81414p-1",
+      "rust_rad": "0x1.e5425a8e81414p-1",
+      "bits_equal": true,
+      "native_degrees": 54.30332773915547,
+      "rust_degrees": 54.30332773915547
+    },
+    {
+      "query": [
+        301,
+        10,
+        399,
+        0.0,
+        "LT"
+      ],
+      "native_rad": "0x1.120712a9a5cc8p+1",
+      "rust_rad": "0x1.120712a9a5cc8p+1",
+      "bits_equal": true,
+      "native_degrees": 122.66114518886127,
+      "rust_degrees": 122.66114518886127
+    },
+    {
+      "query": [
+        301,
+        10,
+        399,
+        100000000.0,
+        "LT"
+      ],
+      "native_rad": "0x1.7b348c9859c92p+1",
+      "rust_rad": "0x1.7b348c9859c92p+1",
+      "bits_equal": true,
+      "native_degrees": 169.74110592151453,
+      "rust_degrees": 169.74110592151453
+    },
+    {
+      "query": [
+        301,
+        10,
+        399,
+        -100000000.0,
+        "CN"
+      ],
+      "native_rad": "0x1.e5425ab9700a0p-1",
+      "rust_rad": "0x1.e5425ab9700a0p-1",
+      "bits_equal": true,
+      "native_degrees": 54.303328025521495,
+      "rust_degrees": 54.303328025521495
+    },
+    {
+      "query": [
+        301,
+        10,
+        399,
+        0.0,
+        "CN"
+      ],
+      "native_rad": "0x1.120712a05e7a0p+1",
+      "rust_rad": "0x1.120712a05e7a0p+1",
+      "bits_equal": true,
+      "native_degrees": 122.66114494130419,
+      "rust_degrees": 122.66114494130419
+    },
+    {
+      "query": [
+        301,
+        10,
+        399,
+        100000000.0,
+        "CN"
+      ],
+      "native_rad": "0x1.7b348c95454b2p+1",
+      "rust_rad": "0x1.7b348c95454b2p+1",
+      "bits_equal": true,
+      "native_degrees": 169.74110583933754,
+      "rust_degrees": 169.74110583933754
+    },
+    {
+      "query": [
+        301,
+        10,
+        399,
+        -100000000.0,
+        "CN+S"
+      ],
+      "native_rad": "0x1.e55765e7fde7cp-1",
+      "rust_rad": "0x1.e55765e7fde7cp-1",
+      "bits_equal": true,
+      "native_degrees": 54.31252689330745,
+      "rust_degrees": 54.31252689330745
+    },
+    {
+      "query": [
+        301,
+        10,
+        399,
+        0.0,
+        "CN+S"
+      ],
+      "native_rad": "0x1.1208878c5a461p+1",
+      "rust_rad": "0x1.1208878c5a461p+1",
+      "bits_equal": true,
+      "native_degrees": 122.66369206781805,
+      "rust_degrees": 122.66369206781805
+    },
+    {
+      "query": [
+        301,
+        10,
+        399,
+        100000000.0,
+        "CN+S"
+      ],
+      "native_rad": "0x1.7b3496a2b51c7p+1",
+      "rust_rad": "0x1.7b3496a2b51c7p+1",
+      "bits_equal": true,
+      "native_degrees": 169.74117449972846,
+      "rust_degrees": 169.74117449972846
+    },
+    {
+      "query": [
+        399,
+        10,
+        301,
+        -100000000.0,
+        "LT"
+      ],
+      "native_rad": "0x1.1884040d5b8f1p+1",
+      "rust_rad": "0x1.1884040d5b8f1p+1",
+      "bits_equal": true,
+      "native_degrees": 125.56535111444518,
+      "rust_degrees": 125.56535111444518
+    },
+    {
+      "query": [
+        399,
+        10,
+        301,
+        0.0,
+        "LT"
+      ],
+      "native_rad": "0x1.ff4274ca729dcp-1",
+      "rust_rad": "0x1.ff4274ca729dcp-1",
+      "bits_equal": true,
+      "native_degrees": 57.21292383860877,
+      "rust_degrees": 57.21292383860877
+    },
+    {
+      "query": [
+        399,
+        10,
+        301,
+        100000000.0,
+        "LT"
+      ],
+      "native_rad": "0x1.6d5d729d0ce60p-3",
+      "rust_rad": "0x1.6d5d729d0ce60p-3",
+      "bits_equal": true,
+      "native_degrees": 10.22161826520438,
+      "rust_degrees": 10.22161826520438
+    },
+    {
+      "query": [
+        399,
+        10,
+        301,
+        -100000000.0,
+        "CN"
+      ],
+      "native_rad": "0x1.1884040336002p+1",
+      "rust_rad": "0x1.1884040336002p+1",
+      "bits_equal": true,
+      "native_degrees": 125.56535084372656,
+      "rust_degrees": 125.56535084372656
+    },
+    {
+      "query": [
+        399,
+        10,
+        301,
+        0.0,
+        "CN"
+      ],
+      "native_rad": "0x1.ff4274f1dd3d0p-1",
+      "rust_rad": "0x1.ff4274f1dd3d0p-1",
+      "bits_equal": true,
+      "native_degrees": 57.212924101520976,
+      "rust_degrees": 57.212924101520976
+    },
+    {
+      "query": [
+        399,
+        10,
+        301,
+        100000000.0,
+        "CN"
+      ],
+      "native_rad": "0x1.6d5d72d04f990p-3",
+      "rust_rad": "0x1.6d5d72d04f990p-3",
+      "bits_equal": true,
+      "native_degrees": 10.221618350682704,
+      "rust_degrees": 10.221618350682704
+    },
+    {
+      "query": [
+        399,
+        10,
+        301,
+        -100000000.0,
+        "CN+S"
+      ],
+      "native_rad": "0x1.1882cd13509a4p+1",
+      "rust_rad": "0x1.1882cd13509a4p+1",
+      "bits_equal": true,
+      "native_degrees": 125.56322708455399,
+      "rust_degrees": 125.56322708455399
+    },
+    {
+      "query": [
+        399,
+        10,
+        301,
+        0.0,
+        "CN+S"
+      ],
+      "native_rad": "0x1.ff2e992d9d974p-1",
+      "rust_rad": "0x1.ff2e992d9d974p-1",
+      "bits_equal": true,
+      "native_degrees": 57.20424332963395,
+      "rust_degrees": 57.20424332963395
+    },
+    {
+      "query": [
+        399,
+        10,
+        301,
+        100000000.0,
+        "CN+S"
+      ],
+      "native_rad": "0x1.6db81a952a3a0p-3",
+      "rust_rad": "0x1.6db81a952a3a0p-3",
+      "bits_equal": true,
+      "native_degrees": 10.231525441446308,
+      "rust_degrees": 10.231525441446308
+    },
+    {
+      "query": [
+        499,
+        10,
+        399,
+        -100000000.0,
+        "LT"
+      ],
+      "native_rad": "0x1.32a403938480cp-1",
+      "rust_rad": "0x1.32a403938480cp-1",
+      "bits_equal": true,
+      "native_degrees": 34.314876496743985,
+      "rust_degrees": 34.314876496743985
+    },
+    {
+      "query": [
+        499,
+        10,
+        399,
+        0.0,
+        "LT"
+      ],
+      "native_rad": "0x1.192b290ddea98p-1",
+      "rust_rad": "0x1.192b290ddea98p-1",
+      "bits_equal": true,
+      "native_degrees": 31.464402023126123,
+      "rust_degrees": 31.464402023126123
+    },
+    {
+      "query": [
+        499,
+        10,
+        399,
+        100000000.0,
+        "LT"
+      ],
+      "native_rad": "0x1.52e14b1ccdea8p-1",
+      "rust_rad": "0x1.52e14b1ccdea8p-1",
+      "bits_equal": true,
+      "native_degrees": 37.92264992640652,
+      "rust_degrees": 37.92264992640652
+    },
+    {
+      "query": [
+        499,
+        10,
+        399,
+        -100000000.0,
+        "CN"
+      ],
+      "native_rad": "0x1.32a403ab1e038p-1",
+      "rust_rad": "0x1.32a403ab1e038p-1",
+      "bits_equal": true,
+      "native_degrees": 34.31487665415618,
+      "rust_degrees": 34.31487665415618
+    },
+    {
+      "query": [
+        499,
+        10,
+        399,
+        0.0,
+        "CN"
+      ],
+      "native_rad": "0x1.192b292a35f68p-1",
+      "rust_rad": "0x1.192b292a35f68p-1",
+      "bits_equal": true,
+      "native_degrees": 31.464402212163737,
+      "rust_degrees": 31.464402212163737
+    },
+    {
+      "query": [
+        499,
+        10,
+        399,
+        100000000.0,
+        "CN"
+      ],
+      "native_rad": "0x1.52e14b3549594p-1",
+      "rust_rad": "0x1.52e14b3549594p-1",
+      "bits_equal": true,
+      "native_degrees": 37.92265008970513,
+      "rust_degrees": 37.92265008970513
+    },
+    {
+      "query": [
+        499,
+        10,
+        399,
+        -100000000.0,
+        "CN+S"
+      ],
+      "native_rad": "0x1.32a9072ea8d84p-1",
+      "rust_rad": "0x1.32a9072ea8d84p-1",
+      "bits_equal": true,
+      "native_degrees": 34.31706831473368,
+      "rust_degrees": 34.31706831473368
+    },
+    {
+      "query": [
+        499,
+        10,
+        399,
+        0.0,
+        "CN+S"
+      ],
+      "native_rad": "0x1.192899b0c5918p-1",
+      "rust_rad": "0x1.192899b0c5918p-1",
+      "bits_equal": true,
+      "native_degrees": 31.463282958675798,
+      "rust_degrees": 31.463282958675798
+    },
+    {
+      "query": [
+        499,
+        10,
+        399,
+        100000000.0,
+        "CN+S"
+      ],
+      "native_rad": "0x1.52e7bc2087228p-1",
+      "rust_rad": "0x1.52e7bc2087228p-1",
+      "bits_equal": true,
+      "native_degrees": 37.925465696728075,
+      "rust_degrees": 37.925465696728075
+    }
+  ],
+  "spiceypy": "8.3.0",
+  "rust_binary_sha256": "b4cffceeec8482679d15741c44fac3b6b7bda28f9759563b44a6744bba407430",
+  "rust_verified_profile": "glibc-fma-r3"
+}

@@ -1,5 +1,19 @@
 # Attribution
 
+## MIT-RLX glibc trigonometric port
+
+The optional `wgc-glibc-rotation` feature includes the sine and cosine
+portion of [`rlx-libm` 0.2.20](https://github.com/MIT-RLX/rlx/blob/8b478f230c2b9b040936cc8cbdaf60d75095c3ce/crates/numerics/rlx-libm/src/sin.rs),
+copyright 2026 Eugene Hauptmann and Nataliya Kosmyna, under the MIT option
+of its MIT OR Apache-2.0 license. The upstream MIT notice is reproduced in
+[third_party/licenses/rlx-libm-MIT.txt](third_party/licenses/rlx-libm-MIT.txt).
+The upstream crate archive SHA-256 is
+`41d596d6839614c8d26b7527c0097cdbf35e41af77997a4c28c30801c6d155e1`.
+The tangent-only section was omitted, the FMA helper is local, and literal
+constants were converted to round-trip decimal for Rust 1.75 compatibility.
+Retained fixtures and source comparisons are described in
+`docs/reference/native-cross-platform/SOURCE_AUDIT.md`.
+
 ## NASA NAIF / JPL / Caltech SPICE
 
 This project contains Rust adaptations of numerical algorithms and operation order from the official CSPICE N0067 source. It is third-party software, not the official toolkit, and it does not link CSPICE at runtime. It must not be described as a clean-room implementation or as NASA-certified.

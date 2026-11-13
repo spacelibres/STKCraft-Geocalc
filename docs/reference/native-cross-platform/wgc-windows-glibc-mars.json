@@ -1,0 +1,34 @@
+{
+  "scope": "Exact WGC displayed output; not raw WGC binary64 equality",
+  "server_kernel_bytes_verified": false,
+  "rows": 45,
+  "errors": [],
+  "trace_sha256": "d4c021b41d11b3c144f965dd78172d975dc52f42a2bdd9cf92846981b20da816",
+  "local_kernels": [
+    {
+      "name": "de442.bsp",
+      "sha256": "8d5001fab315eeff222cc51f7cf7ffcdb43fb38fb9ac73ff09e09a5b361fd388"
+    },
+    {
+      "name": "mar099s.bsp",
+      "sha256": "997dc93ba640e476da7a494d2237dcdeb145e528db37be8ccee588c615e4e1ff"
+    },
+    {
+      "name": "pck00011.tpc",
+      "sha256": "3dff7b1dbeceaa01f25467767d3fa25816051c85d162d1edf04acb310ee28bb1"
+    },
+    {
+      "name": "mars_iau2000_v1.tpc",
+      "sha256": "07ba38b939ae92c085882752a523addd749fde0abb7a3468423099ed02bb3949"
+    }
+  ],
+  "backend": {
+    "binary_sha256": "b4cffceeec8482679d15741c44fac3b6b7bda28f9759563b44a6744bba407430",
+    "modes": {
+      "size": 15
+    },
+    "glibc_rotation": true,
+    "verified_profile": "glibc-fma-r3"
+  },
+  "build_profile": "release"
+}

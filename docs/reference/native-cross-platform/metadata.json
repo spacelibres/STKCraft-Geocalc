@@ -1,0 +1,48 @@
+{
+  "cspice": "CSPICE_N0067",
+  "scope": "Same local kernels, Windows and Linux CSPICE N0067; WGC server kernel bytes not independently verified",
+  "windows_library_sha256": "7fd2dcc58d73ed5293847e67109897caba34240b8f9c38ad739c0b2ec6ce7715",
+  "linux_library_sha256": "1d9273fc9afce5201e904569a9439a0b010d2461dfc88c0de549d2a1b5ecdf84",
+  "kernels": {
+    "de442.bsp": "8d5001fab315eeff222cc51f7cf7ffcdb43fb38fb9ac73ff09e09a5b361fd388",
+    "pck00011.tpc": "3dff7b1dbeceaa01f25467767d3fa25816051c85d162d1edf04acb310ee28bb1",
+    "mars_iau2000_v1.tpc": "07ba38b939ae92c085882752a523addd749fde0abb7a3468423099ed02bb3949",
+    "gm_de431.tpc": "15756c162151853f329d473fa00c38d35e62d83c3e25ddceece6516bbd98738b",
+    "moon_pa_de440_200625.bpc": "60cd55aa401ea2ea97360636f567554bfe4e37bb829f901b4460a455dfaf783f",
+    "moon_de440_250416.tf": "a47c71e9c9f33796bdafb2c9d69a7ee447b6016ecad80f71cd6f3e479f9cf768",
+    "moon_assoc_me.tf": "52c622043ce0447d575e59ee01642f1894921e68c10f934ceff065f362da6c1c"
+  },
+  "captures": {
+    "sub-tangent-windows.json": "d0fd9ca731c59a87a1484166472b54a17624671fb52235a2b55260f7dee87a35",
+    "sub-tangent-linux.json": "a362e1049d7a44d0dc506316ad4e9c7a97c5fa8f14ecf7df16ebf1b864194902",
+    "orientation-windows.jsonl": "97555d7e8bbb87dc701dd7fff070514c885c604116caa188a95f2b9796c08a76",
+    "orientation-linux.jsonl": "637dda54c7ab17bc2c51367c27c73b185de81c5a6b3183601a1aa308ba0c2457",
+    "sub-tangent-linux-windows-cos.jsonl": "8c13206148360b0a0050212cde842daff6909c3f91c837e859872dfb7131a919",
+    "naif-official-surface.txt": "b2bcf5cb887fab774550b39cc1a50e51f023452576cc5555869a41b43bb5df44",
+    "naif-official-matrix.txt": "2bcf9d37aafb51aff3d6837447dd5492c614f54d5638cbf7c4e43708c56e3323",
+    "cos-inputs.txt": "035c47a8a7a8781bcc6d9a822dcb8913bc4586e603ec6bb9072d44ab4e4e6ef2",
+    "cos-libm-results.txt": "68d7297591d66a199b5c6c602df4873159c5bd7280941113e12709f957fbdf9e",
+    "cos-glibc-results.txt": "409621a42c553e1cc58366cb108c837e8ee56cc9d10b66372037a2b81922423e",
+    "naif-official-linux-surface.txt": "c00e5adc31fd05fe7832a0599eb26b375a89d6be85f281045a7477a7adc3c179",
+    "wgc-linux-calculators.json": "845692bbae19409bbe249cb5a5ad31199ff9520ca490903fb9a787495495d556",
+    "wgc-linux-finders.json": "1927c50a5c9de26717b0d03706bf9f3bf1ae6baf6ad67e318328c36fa571e0bb",
+    "naif-official-linux-matrix.txt": "656124105d8bbba0836fa66c05ca661563355750cd3a74fa2b0f077ce5af6120",
+    "wgc-linux-earth-frames.json": "625825362c44aff25d2f61577f0b436637360b08ea2ea7c03aa1d54a0b801e48",
+    "wgc-linux-mars.json": "4f943389d3171c64216e19d834ff40eeb989f1accebca454ffbea9826e43418a",
+    "glibc-trig-corpus-metadata.json": "a35df6ad44c72ab6cc9b24f3b1f6deaec2ea44fa1136315a92f2db6d1717f693",
+    "wgc-windows-glibc-calculators.json": "debe2b8b544e1c2a0e71e97783d7d9c812d9fc5be6b01455c7fe53f5e15b3acf",
+    "wgc-windows-glibc-earth-frames.json": "3092c5035c3ffb10f62ab2a3a8d7fee42ba0c5ca7f21b1c917abce5d937a3df5",
+    "wgc-windows-glibc-mars.json": "e1c23b95d9329922e30447e640a67190e2b954a3380c75ae5210abe92cb9d03a",
+    "wgc-windows-glibc-finders.json": "cab1e1db6a2d4cd34546f58639297aac3ff83c04a8aab23ccee7c7bae4093af0",
+    "wgc-linux-finder-matrix.json": "7d7bf2645f866c949914953a52ccb3bd8eda28cdb3691568fc24ff8c094b4f4e"
+  },
+  "naif_n0067_windows_package_sha256": "98d60b814b412fa55294aeaaeb7dab46d849cc87a8b709ffe835d08de17625dc",
+  "cos_comparison": {
+    "count": 20001,
+    "mismatches": 632,
+    "seed": 7143,
+    "candidate": "Rust libm 0.2.16",
+    "reference": "Debian glibc 2.41-12+deb13u4"
+  },
+  "naif_n0067_linux_package_sha256": "60a95b51a6472f1afe7e40d77ebdee43c12bb5b8823676ccc74692ddfede06ce"
+}

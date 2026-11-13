@@ -1,0 +1,172 @@
+{
+  "cspice": "CSPICE_N0067",
+  "kernels": {
+    "de442.bsp": "8d5001fab315eeff222cc51f7cf7ffcdb43fb38fb9ac73ff09e09a5b361fd388",
+    "pck00011.tpc": "3dff7b1dbeceaa01f25467767d3fa25816051c85d162d1edf04acb310ee28bb1",
+    "earth_1962_260806_2126_combined.bpc": "cc87ad1a495cf598800ba403763d350f087ac0b97da9fec603278a3864c6a53e"
+  },
+  "rows": [
+    {
+      "frame": "IAU_EARTH",
+      "correction": "NONE",
+      "et": 0.0,
+      "width_rad_hex": [
+        "0x1.02d4a9750d350p-5",
+        "0x1.03ab78acb14b8p-5"
+      ]
+    },
+    {
+      "frame": "IAU_EARTH",
+      "correction": "NONE",
+      "et": 100000000.0,
+      "width_rad_hex": [
+        "0x1.04ce070cd36e7p-5",
+        "0x1.05aab3275ca6dp-5"
+      ]
+    },
+    {
+      "frame": "IAU_EARTH",
+      "correction": "NONE",
+      "et": 500000000.0,
+      "width_rad_hex": [
+        "0x1.029bee1367799p-5",
+        "0x1.0376ba24c0755p-5"
+      ]
+    },
+    {
+      "frame": "IAU_EARTH",
+      "correction": "LT+S",
+      "et": 0.0,
+      "width_rad_hex": [
+        "0x1.02cf105725860p-5",
+        "0x1.03a5daef4f0b8p-5"
+      ]
+    },
+    {
+      "frame": "IAU_EARTH",
+      "correction": "LT+S",
+      "et": 100000000.0,
+      "width_rad_hex": [
+        "0x1.04cf2be4dd12ap-5",
+        "0x1.05abd8f1b381fp-5"
+      ]
+    },
+    {
+      "frame": "IAU_EARTH",
+      "correction": "LT+S",
+      "et": 500000000.0,
+      "width_rad_hex": [
+        "0x1.0295c45888519p-5",
+        "0x1.03708b2fe9fcep-5"
+      ]
+    },
+    {
+      "frame": "IAU_EARTH",
+      "correction": "CN+S",
+      "et": 0.0,
+      "width_rad_hex": [
+        "0x1.02cf103825938p-5",
+        "0x1.03a5dad0366dfp-5"
+      ]
+    },
+    {
+      "frame": "IAU_EARTH",
+      "correction": "CN+S",
+      "et": 100000000.0,
+      "width_rad_hex": [
+        "0x1.04cf2be393a4dp-5",
+        "0x1.05abd8f069ad7p-5"
+      ]
+    },
+    {
+      "frame": "IAU_EARTH",
+      "correction": "CN+S",
+      "et": 500000000.0,
+      "width_rad_hex": [
+        "0x1.0295c432edd70p-5",
+        "0x1.03708b0a2e2aap-5"
+      ]
+    },
+    {
+      "frame": "ITRF93",
+      "correction": "NONE",
+      "et": 0.0,
+      "width_rad_hex": [
+        "0x1.02d4a8aa2806ep-5",
+        "0x1.03ab78acbe4e2p-5"
+      ]
+    },
+    {
+      "frame": "ITRF93",
+      "correction": "NONE",
+      "et": 100000000.0,
+      "width_rad_hex": [
+        "0x1.04ce07865a450p-5",
+        "0x1.05aab32754bd5p-5"
+      ]
+    },
+    {
+      "frame": "ITRF93",
+      "correction": "NONE",
+      "et": 500000000.0,
+      "width_rad_hex": [
+        "0x1.029bedd818cdap-5",
+        "0x1.0376ba24c4417p-5"
+      ]
+    },
+    {
+      "frame": "ITRF93",
+      "correction": "LT+S",
+      "et": 0.0,
+      "width_rad_hex": [
+        "0x1.02cf0f8c44e50p-5",
+        "0x1.03a5daef5c0d3p-5"
+      ]
+    },
+    {
+      "frame": "ITRF93",
+      "correction": "LT+S",
+      "et": 100000000.0,
+      "width_rad_hex": [
+        "0x1.04cf2c5e64e10p-5",
+        "0x1.05abd8f1ab985p-5"
+      ]
+    },
+    {
+      "frame": "ITRF93",
+      "correction": "LT+S",
+      "et": 500000000.0,
+      "width_rad_hex": [
+        "0x1.0295c41d3ac54p-5",
+        "0x1.03708b2fedc89p-5"
+      ]
+    },
+    {
+      "frame": "ITRF93",
+      "correction": "CN+S",
+      "et": 0.0,
+      "width_rad_hex": [
+        "0x1.02cf0f6d44f2cp-5",
+        "0x1.03a5dad0436fcp-5"
+      ]
+    },
+    {
+      "frame": "ITRF93",
+      "correction": "CN+S",
+      "et": 100000000.0,
+      "width_rad_hex": [
+        "0x1.04cf2c5d1b732p-5",
+        "0x1.05abd8f061c3cp-5"
+      ]
+    },
+    {
+      "frame": "ITRF93",
+      "correction": "CN+S",
+      "et": 500000000.0,
+      "width_rad_hex": [
+        "0x1.0295c3f7a04a9p-5",
+        "0x1.03708b0a31f65p-5"
+      ]
+    }
+  ]
+}

@@ -3,6 +3,42 @@
 All notable changes are recorded in English using [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and [Semantic Versioning](https://semver.org/).
 Versions 0.1.2 through 0.1.5 below describe verified local checkpoints before Git initialization; they were not separately published releases.
 
+## [0.2.1] - 2026-11-13
+
+### Added
+
+- Add the STKCraft GeoCalc local web workspace with the official albatross
+  brand, guided examples, solar-system scene, event timeline, integrated Time
+  conversions, API reference and explicitly scoped NASA live comparisons.
+- Add five workspace screenshots and a linked documentation gallery.
+- Check the web build, presentation tests and NASA comparison serialization
+  in CI alongside the existing Rust verification jobs.
+- Add native and NASA evidence for representative angular-size, phase,
+  separation, frame and event-finder cases, including the bounded glibc
+  rotation profile. These cases do not establish complete WebGeocalc parity.
+
+### Changed
+
+- Align the maintained scope, validation and MCP documentation with the
+  separate local web workspace while retaining the historical review record.
+- Preserve the last complete scene frame while playback requests a matching
+  new position and trajectory frame, and identify any displayed epoch lag.
+- Present returned state and surface-point vectors, angles and event windows
+  in the workspace; other results retain their numeric summaries.
+
+### Fixed
+
+- Restrict root package file patterns so web dependency and build directories
+  do not enter crate archives when the workspace is present.
+- Include the README gallery and brand assets in binary release archives, so
+  the documented local image links resolve in the downloaded packages.
+- Align point-target coincidence, limb angular-size and surface-intercept
+  search edge behavior with the retained WebGeocalc and CSPICE evidence.
+- Preserve supported stellar corrections and native error symbols for ray
+  field-of-view searches in the CLI and MCP bridge.
+- Keep event-search results visible while the timeline moves within their
+  original search window.
+
 ## [0.2.0] - 2026-11-13
 
 ### Changed

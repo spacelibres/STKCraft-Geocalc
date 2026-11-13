@@ -21,6 +21,10 @@ fn main() {
 }
 fn run() -> Result<(), Box<dyn std::error::Error>> {
     let args: Vec<String> = std::env::args().collect();
+    if args.get(1).map(String::as_str) == Some("--rotation-profile") {
+        println!("{}", stkcraft_geocalc::rotation_math_profile());
+        return Ok(());
+    }
     let spk = std::env::var("STKCRAFT_SPK").unwrap_or_else(|_| "target/kernels/de442.bsp".into());
     let paths: Vec<_> = spk.split(',').collect();
     let mut kernel = SpkKernel::open_all(&paths)?;
@@ -104,7 +108,13 @@ fn evaluate(
     let observer = f[3].parse()?;
     let second = f[4].parse()?;
     let illuminator = f[5].parse()?;
-    let corr = Aberration::parse(f[15])?;
+    // Ray searches have their own NONE/S/XS correction grammar. The
+    // general body-correction value is unused in that branch.
+    let corr = if f[1] == "GF_RAY_IN_FOV_SEARCH" {
+        Aberration::None
+    } else {
+        Aberration::parse(f[15])?
+    };
     let system = CoordinateSystem::parse(f[9]).ok_or("unknown coordinate system")?;
     let coordinate = system.coordinate_index(f[10]).ok_or("unknown coordinate")?;
     let lo: f64 = f[13].parse()?;

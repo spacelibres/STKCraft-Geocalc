@@ -1,0 +1,20 @@
+{
+  "count": 500000,
+  "step": 49,
+  "fixture_rows": 10205,
+  "seed": 481051,
+  "scales": [
+    "pi",
+    "1e6",
+    "1e20",
+    "1e100",
+    "1e300"
+  ],
+  "glibc_package": "Debian glibc 2.41-12+deb13u4",
+  "port": "MIT-RLX rlx-libm 0.2.20 adapted to Rust 1.75",
+  "source_inputs_sha256": "2c3fa8dad2aa820dd3a844c66cf7d1a8cc709021afc2187b7d097529ddd38707",
+  "source_glibc_sha256": "c743ef8a7cbdefde378b1fd884042e2e594b5c1a127b7cd09bf6c578a73e075a",
+  "source_port_sha256": "c743ef8a7cbdefde378b1fd884042e2e594b5c1a127b7cd09bf6c578a73e075a",
+  "mismatching_pairs": 0,
+  "fixture_sha256": "00e2095d8200adf849360ddbfb548981f4d6e6f482ac8c0f7e4b82447418e9fe"
+}

@@ -1,0 +1,173 @@
+{
+  "scope": "Exact WGC formatted output; not native binary64 equivalence",
+  "kernel_set": 1,
+  "server_kernel_bytes_verified": false,
+  "local_spk_sha256": "8d5001fab315eeff222cc51f7cf7ffcdb43fb38fb9ac73ff09e09a5b361fd388",
+  "local_pck_sha256": "3dff7b1dbeceaa01f25467767d3fa25816051c85d162d1edf04acb310ee28bb1",
+  "frame_pcks": [
+    {
+      "name": "pck00011.tpc",
+      "sha256": "3dff7b1dbeceaa01f25467767d3fa25816051c85d162d1edf04acb310ee28bb1"
+    },
+    {
+      "name": "mars_iau2000_v1.tpc",
+      "sha256": "07ba38b939ae92c085882752a523addd749fde0abb7a3468423099ed02bb3949"
+    },
+    {
+      "name": "gm_de431.tpc",
+      "sha256": "15756c162151853f329d473fa00c38d35e62d83c3e25ddceece6516bbd98738b"
+    },
+    {
+      "name": "moon_pa_de440_200625.bpc",
+      "sha256": "60cd55aa401ea2ea97360636f567554bfe4e37bb829f901b4460a455dfaf783f"
+    }
+  ],
+  "frame_kernels": [
+    {
+      "name": "moon_de440_250416.tf",
+      "sha256": "a47c71e9c9f33796bdafb2c9d69a7ee447b6016ecad80f71cd6f3e479f9cf768"
+    },
+    {
+      "name": "moon_assoc_me.tf",
+      "sha256": "52c622043ce0447d575e59ee01642f1894921e68c10f934ceff065f362da6c1c"
+    }
+  ],
+  "cases": [
+    {
+      "case": "STATE_VECTOR object rows",
+      "count": 135,
+      "trace_sha256": "222c98db23d518cf1d9c8500f5725a9122e6a4cc29556d9b8b82b44246996227",
+      "errors": []
+    },
+    {
+      "case": "STATE_VECTOR representation cells",
+      "count": 2184,
+      "trace_sha256": "7e833044f019e10496c3d3b81bd96cc29c287c5c6a540a15591f058984399d58",
+      "errors": []
+    },
+    {
+      "case": "STATE_VECTOR point rows",
+      "count": 29,
+      "trace_sha256": "43d3bfb38ce618ffbcee874a226bd28946585f0520576d6dba4b324d2651a845",
+      "errors": []
+    },
+    {
+      "case": "ANGULAR_SEPARATION rows",
+      "count": 42,
+      "trace_sha256": "e0862ba397dba618cc7a19ef37d0bd0657c831b67c8e97f100a8ef886b1ec1ae",
+      "errors": []
+    },
+    {
+      "case": "ANGULAR_SIZE rows",
+      "count": 54,
+      "trace_sha256": "7addec4415046d881feb54c7a51f2d1378b300786f73e156f08ee3a1c299d0e9",
+      "errors": []
+    },
+    {
+      "case": "ANGULAR_SIZE Earth grid rows",
+      "count": 61,
+      "trace_sha256": "2c4ecdf71534ac4ad7e8d05a98baf7e98236629ddc7449d1894a899e46ed9dd5",
+      "errors": []
+    },
+    {
+      "case": "ANGULAR_SIZE limb matrix rows",
+      "count": 45,
+      "trace_sha256": "75da2805f7623ce23241e0421acf8464e26b5ffbe47405e889d03921ad49ff69",
+      "errors": []
+    },
+    {
+      "case": "FRAME_TRANSFORMATION rows",
+      "count": 87,
+      "trace_sha256": "7e97ea081acddd60e3d39498b6f838011174297896b93e97be60476c194c4e9d",
+      "errors": []
+    },
+    {
+      "case": "ILLUMINATION_ANGLES rows",
+      "count": 9,
+      "trace_sha256": "5b6c2fb1a564981f2a1d9b05a33357530de2fa08413a5492500afef9cefe98b9",
+      "errors": []
+    },
+    {
+      "case": "PHASE_ANGLE rows",
+      "count": 18,
+      "trace_sha256": "955e3807c5844dd64b16cb458a7937a67b43f97fdba53436dfbff701f9e1ea61",
+      "errors": []
+    },
+    {
+      "case": "POINTING_DIRECTION rows",
+      "count": 7,
+      "trace_sha256": "43f8cea577b7bd3c4b02e80879e423b974d6e4588e6e8445b9f17adcf648e40c",
+      "errors": []
+    },
+    {
+      "case": "SUB_SOLAR_POINT rows",
+      "count": 12,
+      "trace_sha256": "b64c8e70bd55181fdd91f1bca8740d313affbae1bbed97fa3d75782aca73578a",
+      "errors": []
+    },
+    {
+      "case": "SUB_OBSERVER_POINT rows",
+      "count": 12,
+      "trace_sha256": "4d94fcdc7dd764f3badf51608baf631fb0bc3aff1b7ba40072aee2009a6d7b3a",
+      "errors": []
+    },
+    {
+      "case": "SUB_OBSERVER_POINT local time grid",
+      "count": 60,
+      "trace_sha256": "fe77dd09083f0f70d330755f30c9726093f45da85af6b8c90b4312629df9c5ef",
+      "errors": []
+    },
+    {
+      "case": "SUB_OBSERVER_POINT local time matrix",
+      "count": 90,
+      "trace_sha256": "7308ab3dbc55ef8d25f94ddfda90c9f4aa712c5b5e365c383f07abd9a152febe",
+      "errors": []
+    },
+    {
+      "case": "SURFACE_INTERCEPT_POINT rows",
+      "count": 6,
+      "trace_sha256": "429725dc2e1b4cc3af6174be61a5c645261981f91114eade4a7670e1d3694100",
+      "errors": []
+    },
+    {
+      "case": "TANGENT_POINT rows",
+      "count": 9,
+      "trace_sha256": "0a67038c949c92f81f5a94f651001973b4165a681e83a7a6a7cf7f92e57f1ff5",
+      "errors": []
+    },
+    {
+      "case": "OSCULATING_ELEMENTS rows",
+      "count": 6,
+      "trace_sha256": "d5c4d0758768eaf81ba54d416f8f30cc9d93aff6f7f8b74d5080365f1cbcf66d",
+      "errors": []
+    },
+    {
+      "case": "PLANETOCENTRIC_SOLAR_LONGITUDE rows",
+      "count": 6,
+      "trace_sha256": "1f015e446aa0a6b603af9420f934e6339e73f5d08473cc74bc2b78d92499e979",
+      "errors": []
+    }
+  ],
+  "backend": {
+    "binary_sha256": "b4cffceeec8482679d15741c44fac3b6b7bda28f9759563b44a6744bba407430",
+    "modes": {
+      "state": 1,
+      "state_rep": 1,
+      "location": 1,
+      "separation": 1,
+      "size": 17,
+      "frame_rep": 1,
+      "illum": 1,
+      "phase": 1,
+      "pointing_full": 1,
+      "subpoint": 33,
+      "intercept": 1,
+      "tangent": 1,
+      "elements": 1,
+      "longitude": 1
+    },
+    "glibc_rotation": true,
+    "verified_profile": "glibc-fma-r3"
+  },
+  "build_profile": "release"
+}

@@ -35,7 +35,13 @@ cargo publish --locked --dry-run
 
 MCP protocol/compute regressions are part of the all-feature suite. See [MCP](MCP.md).
 
+## Web workspace checks
+
+The separate [web workspace](../web/README.md) uses the existing geometry and Time backends. Run its TypeScript check, production build, scene tests and local integration tests as described in that guide. These checks do not replace the Rust strict gate.
+
 ## Live NASA audit
+
+The [feature verification ledger](WGC_FEATURE_VERIFICATION.md) records the newer replay matrices and unresolved differences; the audit below is historical evidence rather than the full current coverage.
 
 The [family audit](https://github.com/spacelibres/STKCraft-Geocalc/blob/v0.1.8/docs/review-2026-11-11/geometry-parity-status.md) records all 24 non-time families. Replay genuine captures with explicit output-serialization comparison:
 

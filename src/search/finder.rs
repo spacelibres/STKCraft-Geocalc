@@ -66,8 +66,9 @@ impl AngularShape {
 /// Angular separation in radians between two targets seen from an
 /// observer, corrected with `abcorr`.
 ///
-/// Matches CSPICE `trgsep` with `POINT` shapes and the J2000 frame:
-/// the angle between the two apparent position vectors.
+/// The angle between the two apparent position vectors, using CSPICE `VSEP`
+/// semantics. WebGeocalc returns zero when a point target is the observer;
+/// CSPICE `trgsep` instead rejects non-distinct bodies.
 pub fn angular_separation(
     kernel: &SpkKernel,
     observer: i32,
@@ -78,16 +79,13 @@ pub fn angular_separation(
 ) -> Result<f64, GeoError> {
     let first = crate::surface::apparent_position(kernel, target1, observer, et, abcorr)?;
     let second = crate::surface::apparent_position(kernel, target2, observer, et, abcorr)?;
-    if norm(first) == 0.0 || norm(second) == 0.0 {
-        return Err(GeoError::BadSearch(
-            "observer coincides with separation target",
-        ));
-    }
     Ok(angle_between(first, second))
 }
 
 /// Angular separation in radians between two shaped targets, matching
-/// CSPICE `trgsep`.
+/// CSPICE `trgsep` for distinct bodies. For a point target coincident with
+/// the observer, WebGeocalc uses a zero vector instead of the native
+/// `SPICE(BODIESNOTDISTINCT)` error.
 ///
 /// With [`AngularShape::Sphere`] the angle is measured between the
 /// apparent **limbs** rather than the centers: the result is
@@ -110,8 +108,14 @@ pub fn angular_separation_shaped(
     let first = crate::surface::apparent_position(kernel, target1, observer, et, abcorr)?;
     let second = crate::surface::apparent_position(kernel, target2, observer, et, abcorr)?;
     let separation = angle_between(first, second);
-    let angle1 = apparent_angular_radius(first, shape1.radius(pck, target1)?)?;
-    let angle2 = apparent_angular_radius(second, shape2.radius(pck, target2)?)?;
+    let angle1 = match shape1 {
+        AngularShape::Point => 0.0,
+        AngularShape::Sphere => apparent_angular_radius(first, shape1.radius(pck, target1)?)?,
+    };
+    let angle2 = match shape2 {
+        AngularShape::Point => 0.0,
+        AngularShape::Sphere => apparent_angular_radius(second, shape2.radius(pck, target2)?)?,
+    };
     Ok(separation - angle1 - angle2)
 }
 
@@ -225,7 +229,7 @@ pub fn angular_size_with_method(
     let (center, light_time) =
         crate::spkapo::corrected_position(kernel, target, observer, et, abcorr)?;
     let distance = norm(center);
-    if distance == 0.0 {
+    if distance == 0.0 && method != AngularSizeMethod::LimbExtents {
         return Err(GeoError::BadSearch("observer and target coincide"));
     }
     let radii = pck.radii(target).ok_or(GeoError::MissingPckData(target))?;
@@ -244,9 +248,7 @@ pub fn angular_size_with_method(
             let rotation = pck
                 .body_rotation(target, epoch)
                 .ok_or(GeoError::MissingPckData(target))?;
-            let angular_radius =
-                crate::occult_ellipsoid::limb_angular_radius(center, radii, &rotation)?;
-            Ok(2.0 * angular_radius)
+            Ok(crate::occult_ellipsoid::limb_axis_extents(center, radii, &rotation)?[0])
         }
     }
 }
@@ -2736,8 +2738,7 @@ where
         adjustment: 0.0,
         ..options
     };
-    let q = |t: f64, positive: bool| -> Result<f64, GeoError> {
-        let p = position(t)?;
+    let point_longitude = |p: [f64; 3], positive: bool| {
         let mut angle = if p[0] == 0.0 && p[1] == 0.0 {
             0.0
         } else {
@@ -2746,10 +2747,12 @@ where
         if positive && angle < 0.0 {
             angle += 2.0 * PI;
         }
-        Ok(angle)
+        angle
     };
-    let sign = |t: f64| -> Result<f64, GeoError> {
-        let (p, v) = state(t)?;
+    let q = |t: f64, positive: bool| -> Result<f64, GeoError> {
+        Ok(point_longitude(position(t)?, positive))
+    };
+    let state_sign = |p, v| -> Result<f64, GeoError> {
         if coordinate_decreasing(p, v, CoordinateSystem::Latitudinal, 1, None, true)? {
             Ok(-1.0)
         } else if coordinate_decreasing(
@@ -2764,6 +2767,10 @@ where
         } else {
             Ok(0.0)
         }
+    };
+    let sign = |t: f64| -> Result<f64, GeoError> {
+        let (p, v) = state(t)?;
+        state_sign(p, v)
     };
     // mode 0=sin, 1=cos, 2=signed longitude, 3=RA.
     let proxy = |mode: usize,
@@ -2781,8 +2788,12 @@ where
                 })
             },
             |t| {
-                let angle = q(t, if mode < 2 { ra } else { mode == 3 })?;
-                let s = sign(t)?;
+                // ZZGFCOSD/ZZGFCOCD obtain both the coordinate and its
+                // derivative sign from ZZGFCOST. Its position can differ
+                // from the separate SINCPT value callback for LT searches.
+                let (p, v) = state(t)?;
+                let angle = point_longitude(p, if mode < 2 { ra } else { mode == 3 });
+                let s = state_sign(p, v)?;
                 Ok(match mode {
                     0 => angle.cos() * s < 0.0,
                     1 => -angle.sin() * s < 0.0,
@@ -3964,9 +3975,7 @@ pub fn find_angular_separation(
     options: FinderOptions,
 ) -> Result<Vec<Interval>, GeoError> {
     if observer == target1 || observer == target2 || target1 == target2 {
-        return Err(GeoError::BadSearch(
-            "GF angular separation requires three distinct bodies",
-        ));
+        return Err(GeoError::BadSearch("SPICE(BODIESNOTDISTINCT)"));
     }
     let radius1 = shape1.radius(pck, target1)?;
     let radius2 = shape2.radius(pck, target2)?;
@@ -4080,16 +4089,29 @@ mod angular_size_scalar_golden {
         {
             let f: Vec<_> = line.split(',').collect();
             let expected: f64 = f[5].parse().unwrap();
-            let actual = angular_size_with_method(
-                &kernel,
-                &pck,
-                f[1].parse().unwrap(),
-                f[0].parse().unwrap(),
-                f[3].parse().unwrap(),
-                Aberration::parse(f[2]).unwrap(),
-                AngularSizeMethod::parse(f[4]).unwrap(),
-            )
-            .unwrap();
+            let method = AngularSizeMethod::parse(f[4]).unwrap();
+            let actual = if method == AngularSizeMethod::LimbExtents {
+                angular_size_center_ray_extents(
+                    &kernel,
+                    &pck,
+                    f[1].parse().unwrap(),
+                    f[0].parse().unwrap(),
+                    f[3].parse().unwrap(),
+                    Aberration::parse(f[2]).unwrap(),
+                )
+                .unwrap()[0]
+            } else {
+                angular_size_with_method(
+                    &kernel,
+                    &pck,
+                    f[1].parse().unwrap(),
+                    f[0].parse().unwrap(),
+                    f[3].parse().unwrap(),
+                    Aberration::parse(f[2]).unwrap(),
+                    method,
+                )
+                .unwrap()
+            };
             if actual != expected {
                 errors.push(format!("{line}: actual{actual:?}"));
             }
@@ -4312,7 +4334,7 @@ mod angular_extents_golden {
         {
             let f: Vec<_> = line.split(',').collect();
             let expected = [f[4].parse::<f64>().unwrap(), f[5].parse().unwrap()];
-            let actual = angular_size_extents(
+            let actual = angular_size_center_ray_extents(
                 &kernel,
                 &pck,
                 f[1].parse().unwrap(),
@@ -4340,9 +4362,55 @@ mod angular_extents_golden {
     }
 }
 
-/// Minimum and maximum full apparent angular extents of an ellipsoid, radians.
-/// Uses SPKEZP, EDLIMB and both source ZZASRYEL extrema at the target epoch.
+/// WGC-compatible full angular widths of the limb ellipse's minor and major axes.
+///
+/// Observed WGC display values agree with twice the arctangent of each limb
+/// semi-axis length divided by the observer-to-limb-center distance. WGC's
+/// unrounded internal results are not available for independent comparison.
 pub fn angular_size_extents(
+    kernel: &SpkKernel,
+    pck: &Pck,
+    observer: i32,
+    target: i32,
+    et: f64,
+    abcorr: Aberration,
+) -> Result<[f64; 2], GeoError> {
+    let (center, light_time) =
+        crate::spkapo::corrected_position(kernel, target, observer, et, abcorr)?;
+    let radii = pck.radii(target).ok_or(GeoError::MissingPckData(target))?;
+    let epoch = crate::state_rep::time_at_target(et, light_time, abcorr);
+    let rotation = pck
+        .body_rotation(target, epoch)
+        .ok_or(GeoError::MissingPckData(target))?;
+    crate::occult_ellipsoid::limb_axis_extents(center, radii, &rotation)
+}
+
+/// WGC limb-axis angular widths in an explicit target-centered body-fixed frame.
+///
+/// The frame is evaluated at the aberration-corrected target epoch. Output
+/// consists of the minor and major full angular widths, in radians.
+#[allow(clippy::too_many_arguments)]
+pub fn angular_size_extents_in(
+    kernel: &SpkKernel,
+    pck: &Pck,
+    frames: &Frames,
+    target_frame: &str,
+    observer: i32,
+    target: i32,
+    et: f64,
+    abcorr: Aberration,
+) -> Result<[f64; 2], GeoError> {
+    crate::surface::validate_target_frame(frames, target_frame, target)?;
+    let (center, light_time) =
+        crate::spkapo::corrected_position(kernel, target, observer, et, abcorr)?;
+    let radii = pck.radii(target).ok_or(GeoError::MissingPckData(target))?;
+    let epoch = crate::state_rep::time_at_target(et, light_time, abcorr);
+    let rotation = frames.pxform_in("J2000", target_frame, epoch, Some(pck))?;
+    crate::occult_ellipsoid::limb_axis_extents(center, radii, &rotation)
+}
+
+/// Full angular extrema about the observer-to-target-center ray using ZZASRYEL.
+pub fn angular_size_center_ray_extents(
     kernel: &SpkKernel,
     pck: &Pck,
     observer: i32,

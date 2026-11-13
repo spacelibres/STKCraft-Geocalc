@@ -60,4 +60,14 @@ DskHit::plate_id preserves the native aggregate IC output; geometric_plate_id id
 
 finder and gf_constraints implement scalar relations, RANGE scheduling, confinement and interval processing. Supply the same search step, convergence inputs and windows used by the native reference. Other public modules provide orbital elements, pointing, coordinate representations, FOV, occultation, tangent points and point-location states.
 
+`angular_size_extents` returns full ellipse-axis angular widths inferred from
+the retained WebGeocalc limb-size outputs. `angular_size_center_ray_extents`
+returns the distinct CSPICE ZZASRYEL angular extrema around the center ray.
+`angular_size_extents_in` accepts an explicit target-centered body-fixed frame
+and evaluates it at the aberration-corrected target epoch.
+The two definitions can differ for an oblate body. WebGeocalc returns rounded
+numbers, so matching its displayed values does not establish bitwise equality
+with its unpublished internal results. See the
+[feature verification ledger](WGC_FEATURE_VERIFICATION.md) for tested cases.
+
 Read [the remaining scope](STRICT_REMAINING_GAPS.md) before choosing a shape or frame combination. Unsupported inputs return GeoError; missing data is not replaced with an approximate model.

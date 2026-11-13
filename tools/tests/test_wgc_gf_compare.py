@@ -9,6 +9,12 @@ class StrictGfRows(unittest.TestCase):
    with self.assertRaisesRegex(RuntimeError,'row count'):g.compare_gf_rows(result([['0','2',2.]]),rows,'gf')
  def test_empty_does_not_establish_endpoint_parity(self):
   with self.assertRaisesRegex(RuntimeError,'zero'):g.compare_gf_rows(result([]),[],'gf')
+ def test_explicit_empty_window_comparison(self):
+  match=g.compare_gf_rows(result([]),[],'gf',output_exact=True,allow_empty=True)
+  self.assertTrue(match['passed']);self.assertEqual(match['windows'],0);self.assertEqual(match['compared_cells'],0)
+  with self.assertRaises(RuntimeError):g.compare_gf_rows(result([]),[['0','1','1']],'gf',allow_empty=True)
+  missing=result([]);del missing['rows']
+  with self.assertRaises(RuntimeError):g.compare_gf_rows(missing,[],'gf',allow_empty=True)
  def test_nan_and_missing_duration_fail(self):
   for rows in [[['0','2','nan']],[['0','2']]]:
    with self.assertRaises(RuntimeError):g.compare_gf_rows(result([['0','2',2.]]),rows,'gf')

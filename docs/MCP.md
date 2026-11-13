@@ -23,7 +23,7 @@ Example client configuration:
 {"mcpServers":{"stkcraft-geocalc":{"command":"C:/tools/stkcraft-geocalc-mcp.exe","args":[]}}}
 ```
 
-Use the installed executable path for your platform. Calls are synchronous. Closing stdin terminates the server after the active calculation. HTTP, streaming progress, cancellation, background services and network kernel downloads are not implemented.
+Use the installed executable path for your platform. Calls are synchronous. Closing stdin terminates the server after the active calculation. The MCP server does not implement HTTP transport, streaming progress, cancellation, background services or network kernel downloads. The separate [GeoCalc web workspace](../web/README.md) exposes its own local HTTP endpoints.
 
 ## Protocol and resources
 
@@ -142,6 +142,12 @@ Every tool also requires kernels. Tables below are generated from the actual too
 | `method` | string | `"MAX_RADIUS"` |
 | `observer` | integer | `required` |
 | `target` | integer | `required` |
+| `target_frame` | string | `IAU_<target>` |
+
+`LIMB_EXTENTS` uses `target_frame` and returns the minor and major full
+angular widths in `min_angular_size_deg` and `max_angular_size_deg`, plus
+`min_angular_size_rad`. Spherical radius methods return `angular_size_rad`
+and `angular_size_deg`. The same column names apply to `calculate_csv`.
 
 ### `osculating_elements`
 
@@ -673,7 +679,7 @@ calculate_csv takes calculator, queries and kernels. queries must contain exactl
 | state | target, observer, et, correction |
 | separation | observer, target1, target2, et, correction, optional shape1, shape2 |
 | phase | target, illuminator, observer, et, correction |
-| size | observer, target, et, correction, optional MAX_RADIUS/MIN_RADIUS/LIMB_EXTENTS |
+| size | observer, target, et, correction, optional MAX_RADIUS/MIN_RADIUS/LIMB_EXTENTS, optional target frame |
 | state_rep | target, observer, et, correction, frame_code, representation, azccw, elplsz |
 | elements | orbiting, center, et, correction, optional GM source, inertial frame |
 | subpoint | solar/observer, target, observer, et, correction, optional method, target_frame |
@@ -703,7 +709,7 @@ Confinement is packed as start:end;start:end in ET seconds. Boolean fields are t
 
 ## Scope and verification
 
-The tools expose existing CLI calculation paths and supported options, not every WebGeocalc option. The typed state tool returns a J2000 object-object state; state_rep/location expose existing alternate-state paths through calculate_csv. Typed angular separation supports object centers and POINT/SPHERE models; the separate Rust TWO_DIRECTIONS API is not newly wrapped. Current CLI surface modes use ellipsoids, so the new DSK geometry remains available through Rust APIs. Surface-name resolution, DSK endpoint facades and other pending work remain in [strict remaining gaps](STRICT_REMAINING_GAPS.md).
+The tools expose existing CLI calculation paths and supported options, not every WebGeocalc option. The typed state tool returns a J2000 object-object state; state_rep/location expose existing alternate-state paths through calculate_csv. Typed angular separation supports object centers and POINT/SPHERE models; the separate Rust TWO_DIRECTIONS API is not newly wrapped. Ray-in-FOV searches accept the native `NONE`, `S` and `XS` correction options. Current CLI surface modes use ellipsoids, so the new DSK geometry remains available through Rust APIs. Surface-name resolution, DSK endpoint facades and other pending work remain in [strict remaining gaps](STRICT_REMAINING_GAPS.md).
 
 Time conversion remains in the separate [STKCraft Time](https://github.com/spacelibres/STKCraft-time) package and MCP server. This adapter does not duplicate time algorithms or advertise TIME_CONVERSION.
 

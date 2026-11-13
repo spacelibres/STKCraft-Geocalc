@@ -466,11 +466,14 @@ pub enum RayAberration {
 
 impl RayAberration {
     pub fn parse(text: &str) -> Result<Self, GeoError> {
+        if text.is_empty() {
+            return Err(GeoError::BadSearch("SPICE(EMPTYSTRING)"));
+        }
         match text.trim().to_ascii_uppercase().as_str() {
             "NONE" => Ok(Self::None),
             "S" => Ok(Self::Stellar),
             "XS" => Ok(Self::TransmissionStellar),
-            _ => Err(GeoError::BadAberration(text.into())),
+            _ => Err(GeoError::BadSearch("SPICE(INVALIDOPTION)")),
         }
     }
 }

@@ -34,6 +34,13 @@ docs/reference/CI_43023402135_FAILURE.json -text -whitespace
 docs/reference/RUNTIME_MATH_CAPTURE.json -text -whitespace
 docs/reference/RUNTIME_MATH_WINDOWS_2022.json -text -whitespace
 docs/reference/RUNTIME_MATH_WINDOWS_2025.json -text -whitespace
+docs/reference/angular-separation/*.jsonl -text -whitespace
+docs/reference/native-cross-platform/*.jsonl -text -whitespace
+docs/reference/native-cross-platform/*.txt -text -whitespace
+docs/reference/native-cross-platform/*.json -text -whitespace
+docs/reference/wgc-calculators/*.jsonl -text -whitespace
+docs/reference/wgc-calculators/*.json -text -whitespace
+docs/reference/wgc-finders/*.jsonl -text -whitespace
 *.tf -whitespace
 *.tpc -whitespace
 *.tsc -whitespace

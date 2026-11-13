@@ -2,7 +2,7 @@
 
 ## Scope and language
 
-Implement NASA NAIF/SPICE WebGeocalc computational behavior. HTTP compatibility is outside scope. Time is owned by STKCraft-time; do not edit that repository when only a handoff is authorized.
+Implement NASA NAIF/SPICE WebGeocalc computational behavior and the requested GeoCalc web workspace. NASA HTTP protocol compatibility and complete numerical parity remain unverified. Time is owned by STKCraft-time; do not edit that repository when only a handoff is authorized.
 
 All maintained content must be English: code comments, documentation, examples, Agent Skills, changelogs and commit messages. Original external captures are evidence, not editable numerical expectations.
 

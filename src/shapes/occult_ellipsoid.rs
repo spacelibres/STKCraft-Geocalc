@@ -231,7 +231,7 @@ pub(crate) fn edlimb(radii: [f64; 3], view: [f64; 3]) -> Result<Ellipse, GeoErro
     let square = axes.map(|a| a * a);
     let level = v[0] * v[0] / square[0] + v[1] * v[1] / square[1] + v[2] * v[2] / square[2];
     if level < 1.0 {
-        return Err(GeoError::BadSearch("viewing point is inside ellipsoid"));
+        return Err(GeoError::BadSearch("SPICE(DEGENERATECASE)"));
     }
     let normal = [v[0] / square[0], v[1] / square[1], v[2] / square[2]];
     let limb = intersect_plane(axes, plane_normal(normal, 1.0))?;
@@ -403,16 +403,6 @@ fn angular_extremum(
     let point = add(center, add(diff, v2));
     Ok((angle(diff, direction) * sign, point))
 }
-/// Minimum angular radius of the apparent limb about the center ray.
-pub(crate) fn limb_angular_radius(
-    center: [f64; 3],
-    radii: [f64; 3],
-    rotation: &Mat3,
-) -> Result<f64, GeoError> {
-    let view = neg(rotate(rotation, center));
-    let limb = edlimb(radii, view)?;
-    Ok(angular_extremum(true, limb, view, neg(view))?.0.abs())
-}
 fn safe_asin(value: f64) -> Result<f64, GeoError> {
     if value.abs() - 1e-12 > 1.0 {
         return Err(GeoError::BadSearch(
@@ -557,4 +547,42 @@ pub(crate) fn limb_angular_extents(
         angular_extremum(true, limb, view, neg(view))?.0.abs(),
         angular_extremum(false, limb, view, neg(view))?.0.abs(),
     ])
+}
+
+/// Full ellipse-axis angular widths used for WGC limb-size output.
+pub(crate) fn limb_axis_extents(
+    center: [f64; 3],
+    radii: [f64; 3],
+    rotation: &Mat3,
+) -> Result<[f64; 2], GeoError> {
+    if radii.iter().any(|axis| *axis <= 0.0) {
+        return Err(GeoError::BadSearch("SPICE(DEGENERATECASE)"));
+    }
+    let scale = radii[0].max(radii[1]).max(radii[2]);
+    if radii
+        .iter()
+        .any(|axis| (axis / scale) * (axis / scale) == 0.0)
+    {
+        return Err(GeoError::BadSearch("SPICE(DEGENERATECASE)"));
+    }
+    let view = neg(rotate(rotation, center));
+    let limb = edlimb(radii, view)?;
+    let distance = norm(sub(limb.center, view));
+    Ok([
+        2.0 * norm(limb.minor).atan2(distance),
+        2.0 * norm(limb.major).atan2(distance),
+    ])
+}
+
+#[cfg(test)]
+mod wgc_limb_error_tests {
+    use super::*;
+    #[test]
+    fn invalid_and_degenerate_axes_match_cspice_edlimb_c() {
+        let rotation = [[1.0, 0.0, 0.0], [0.0, 1.0, 0.0], [0.0, 0.0, 1.0]];
+        for radii in [[0.0, 1.0, 1.0], [-1.0, 1.0, 1.0], [1e-200, 1.0, 1.0]] {
+            let error = limb_axis_extents([3.0, 0.0, 0.0], radii, &rotation).unwrap_err();
+            assert_eq!(error.to_string(), "SPICE(DEGENERATECASE)");
+        }
+    }
 }

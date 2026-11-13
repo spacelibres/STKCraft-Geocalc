@@ -1,0 +1,143 @@
+{
+  "scope": "WGC displayed equality and recorded Windows CSPICE binary64 equality",
+  "server_kernel_bytes_verified": false,
+  "cases": [
+    {
+      "id": "distance",
+      "windows": 1,
+      "compared_cells": 3,
+      "wgc_failures": [],
+      "native_failures": [],
+      "trace_sha256": "f7691f91b8df72167f0c223c519bb0b44cbacaf2333b51cc6d80a964e1dcfdeb"
+    },
+    {
+      "id": "range_rate",
+      "windows": 2,
+      "compared_cells": 6,
+      "wgc_failures": [],
+      "native_failures": [],
+      "trace_sha256": "d99846411a7cfa8d15aacd234010d86a83b40dadc46de9055b00facf837ec4ac"
+    },
+    {
+      "id": "coordinate",
+      "windows": 1,
+      "compared_cells": 3,
+      "wgc_failures": [],
+      "native_failures": [],
+      "trace_sha256": "33bffabc3c7386f40fbb323246c04d97b771be0f074b7bbecdb2a9d1261b55b2"
+    },
+    {
+      "id": "phase",
+      "windows": 1,
+      "compared_cells": 3,
+      "wgc_failures": [],
+      "native_failures": [],
+      "trace_sha256": "44087331ea1f3a42204c81046228f06f9cbeb4cd491915500464d39c0642a7cf"
+    },
+    {
+      "id": "separation",
+      "windows": 2,
+      "compared_cells": 6,
+      "wgc_failures": [],
+      "native_failures": [],
+      "trace_sha256": "d59379833226c6cf7a4914189a39773c5fe07cd3ebc9404a30feb9c73416ffe2"
+    },
+    {
+      "id": "subpoint",
+      "windows": 1,
+      "compared_cells": 3,
+      "wgc_failures": [],
+      "native_failures": [],
+      "trace_sha256": "6a9dbdc212b0f16416edf1c46e931b336d8747536375a02994df2af2f645dbd2"
+    },
+    {
+      "id": "illumination",
+      "windows": 1,
+      "compared_cells": 3,
+      "wgc_failures": [],
+      "native_failures": [],
+      "trace_sha256": "fc43412fb95ad286789fd248ba911912495349cd33fe614e961c5280c3f651e8"
+    },
+    {
+      "id": "intercept",
+      "windows": 1,
+      "compared_cells": 3,
+      "wgc_failures": [],
+      "native_failures": [],
+      "trace_sha256": "8461c118e1d3f07e8452cb49b516a07875da4983104a1c48294c2a2d6c8134e6"
+    },
+    {
+      "id": "occultation",
+      "windows": 1,
+      "compared_cells": 3,
+      "wgc_failures": [],
+      "native_failures": [],
+      "trace_sha256": "ed4d7e12e59699c42c3f24534a326f403624be2fc5374fc6b89927a15c34980f"
+    },
+    {
+      "id": "range_postprocessing",
+      "windows": 5,
+      "compared_cells": 15,
+      "wgc_failures": [],
+      "native_failures": [],
+      "trace_sha256": "fdbd514f48e7acf4307125bf3e8031f6ce67fe0daa65e69a0f5e07a4724bff74"
+    },
+    {
+      "id": "target_fov",
+      "windows": 1,
+      "compared_cells": 3,
+      "wgc_failures": [],
+      "native_failures": [],
+      "trace_sha256": "f8f043ed315c7afcc606d7d45b1960731522465d6d1fb27c44bf6ad37e32da80"
+    },
+    {
+      "id": "ray_fov",
+      "windows": 1,
+      "compared_cells": 3,
+      "wgc_failures": [],
+      "native_failures": [],
+      "trace_sha256": "8e2c44da66ada7596db63293079ec74d0592e91593b452826b535ad0527f03ff"
+    }
+  ],
+  "cases_sha256": "a781b8da473147e5e0ce98dedec9737f8d4455b8d5ce8982e780ab7cbf602c59",
+  "local_kernel_sha256": {
+    "target/kernels/de442.bsp": "8d5001fab315eeff222cc51f7cf7ffcdb43fb38fb9ac73ff09e09a5b361fd388",
+    "target/kernels/pck00011.tpc": "3dff7b1dbeceaa01f25467767d3fa25816051c85d162d1edf04acb310ee28bb1",
+    "target/kernels/mars_iau2000_v1.tpc": "07ba38b939ae92c085882752a523addd749fde0abb7a3468423099ed02bb3949",
+    "target/kernels/gm_de431.tpc": "15756c162151853f329d473fa00c38d35e62d83c3e25ddceece6516bbd98738b",
+    "target/kernels/moon_pa_de440_200625.bpc": "60cd55aa401ea2ea97360636f567554bfe4e37bb829f901b4460a455dfaf783f",
+    "target/kernels/RSSD0002.TF": "8c26c450013584ebb21584e732734bbfd95030b316d26bef6cb26c7e6c72dc07",
+    "target/kernels/codes_300ast_20100725.tf": "15ee3b1731817774672725ccc226b249eb9ca5aa5d0a6a7805c91e5f57497f40",
+    "target/kernels/EARTHFIXEDITRF93.TF": "6c868a46aec9b64d8902bba16c8522cf5e8d65dc5d0931e8c66458a60fbb85bc",
+    "target/kernels/moon_080317.tf": "78732477b96f9863e7b0d65bcee3c22b8707ca5ed0db56d1173319cb2e8c7993",
+    "target/kernels/moon_de440_250416.tf": "a47c71e9c9f33796bdafb2c9d69a7ee447b6016ecad80f71cd6f3e479f9cf768",
+    "target/kernels/moon_assoc_me.tf": "52c622043ce0447d575e59ee01642f1894921e68c10f934ceff065f362da6c1c",
+    "target/kernels/jup347_nameid.tf": "1303dfccf7d758965c698fbcf0c110b41f73da67639fe63f0724de414f559228",
+    "target/kernels/jup348_nameid.tf": "c80fa162869789639123225024831d21c611380771aba3fffdd368c07b2c5e79",
+    "target/kernels/jup349_nameid.tf": "03ea700f2b05391e9cec4f41117ed6ca8b4b08c8856abb49c09e8aa88648eba7",
+    "target/kernels/nep098_nameid.tf": "c61ecda345d23c5b4b6e0252504e5c59e6debc21fb65774c7dc77c6a71b27f57",
+    "target/kernels/nep104_nameid.tf": "bcd74bd7c791b8d368953b794e8f76806784c1da5bbb22550700ce5b0f624d59",
+    "target/kernels/sat455_nameid.tf": "dc435939e80a35ff467764343a38d6588bd8f2620b6d07d41943ae2e38dd9003",
+    "target/kernels/sat456_nameid.tf": "57bcb7caa96085938324bca1f5f8996e0ca7e9510b348fc65b897b889b55e6e8",
+    "target/kernels/sat457_nameid.tf": "9e6edc2d9f38b8e137fef020a168db532c878a289b81500711cf3e1d0bf568e2",
+    "target/kernels/sat458_nameid.tf": "69832c484e0c83b69b3cc54cd98a2adadadade95ed718a14ed1fc1b5f286ce3e",
+    "target/kernels/sat459_nameid.tf": "e0fc8ba2a487b0d83bf5685411005f29b1bd6c9760c783377eebf042b6888c6e",
+    "target/kernels/sat480_nameid.tf": "c1c20ff442f69ad1663511b9e447e87627484acd1b27fa0ccae82c747af28acd",
+    "target/kernels/ura117_nameid.tf": "686d4b7acee62bf167d8c6d178c57159c73923654e582cb6d1f1fb1e220f65f1",
+    "target/kernels/cassini/200128RU_SCPSE_12280_12328.bsp": "2a7b1fb8e7deab5446a9590330f0c8af65b3681d0ff6527f1fc291e03c6b4ba8",
+    "target/kernels/cassini/pck00010.tpc": "9e8c02dfe283ff65c01ef1982a1d42746ea8b9a172e62dc1f453bcafb9ddbfc5",
+    "target/kernels/cassini/enceladus_ssd_250728_v2.tpc": "21577baf51ef428b77eeda488c03ca6df90fa764da8c6ba7d3ca7a4d879e6c04",
+    "target/kernels/cassini/cas_v44.tf": "c1e49749bec168e05c82e7c8b77455cd446c0bb8aafd31aeb1975d07ba6de02d",
+    "target/kernels/cassini/cas_iss_v10.ti": "1a88229e952caf282bc53090e3b37f495e99b1f4bf1a10783d00cf75365ae859",
+    "target/kernels/cassini/12289_12294ra.bc": "8bfca82a7ac6e0827ee27c79a6efd59fbc1a18ae773bf23c613c5fadfb207b82",
+    "target/kernels/naif0012.tls": "678e32bdb5a744117a467cd9601cd6b373f0e9bc9bbde1371d5eee39600a039b",
+    "target/kernels/cassini/cas00172.tsc": "066c3e7e4af11512a33d64d518c214b4b2637bcfd7f5b7c6077116019d377f0d"
+  },
+  "linux_profile": {
+    "binary_sha256": "1081eb85aba1b635934be413b369c561a4177ae2c3241507fd712b1c5287df0e",
+    "loader_sha256": "c8438e4fde1934e61c88311633f00949ff645d5c04cdb8671fa3d78164d2f307",
+    "verified_profile": "native",
+    "libm_sha256": "6d567d53e895273ca14a1f9dc164fc6c8d39aed2f60aa46a733c2784228915f3",
+    "libc_sha256": "9792e3cbb541c8f44c7acf5f14f4022ea62998ecc787d326bed4d8b6547dfd92"
+  }
+}

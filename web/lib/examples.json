@@ -1,0 +1,848 @@
+[
+  {
+    "id": "state_vector-1",
+    "operation": "state_vector",
+    "title": "Moon from Earth",
+    "explanation": "Calculate the Moon position and velocity relative to Earth in J2000.",
+    "output": "Position and velocity components, distance and light time.",
+    "parameters": {
+      "target": 301,
+      "observer": 399,
+      "correction": "NONE"
+    },
+    "source": "docs/reference/wgc-calculators/state-object.jsonl",
+    "epoch": 0
+  },
+  {
+    "id": "angular_separation-2",
+    "operation": "angular_separation",
+    "title": "Moon and Sun from Earth",
+    "explanation": "Measure the apparent angle between the Moon and the Sun as seen from Earth.",
+    "output": "Angular separation in degrees.",
+    "parameters": {
+      "observer": 399,
+      "target1": 301,
+      "target2": 10,
+      "shape1": "POINT",
+      "shape2": "POINT",
+      "correction": "NONE"
+    },
+    "source": "docs/reference/wgc-calculators/separation-objects.jsonl",
+    "epoch": 0
+  },
+  {
+    "id": "angular_size-3",
+    "operation": "angular_size",
+    "title": "Apparent size of the Moon",
+    "explanation": "Use the Moon maximum radius to calculate its apparent angular diameter from Earth.",
+    "output": "Angular diameter in degrees.",
+    "parameters": {
+      "target": 301,
+      "observer": 399,
+      "correction": "NONE",
+      "method": "MAX_RADIUS"
+    },
+    "source": "docs/reference/wgc-calculators/angular-size.jsonl",
+    "epoch": 0
+  },
+  {
+    "id": "frame_transformation-4",
+    "operation": "frame_transformation",
+    "title": "J2000 to ecliptic frame",
+    "explanation": "Transform directions from the inertial J2000 frame to the J2000 ecliptic frame.",
+    "output": "A rotation matrix relating the two reference frames.",
+    "parameters": {
+      "frame1": "J2000",
+      "frame2": "ECLIPJ2000",
+      "orientation": "MATRIX_ALL_ONE_ROW"
+    },
+    "source": "docs/reference/wgc-calculators/frame-transformation.jsonl",
+    "epoch": 0
+  },
+  {
+    "id": "illumination_angles-5",
+    "operation": "illumination_angles",
+    "title": "Sunlight on the Moon",
+    "explanation": "Evaluate illumination at a specified lunar longitude and latitude.",
+    "output": "Incidence, emission and phase angles.",
+    "parameters": {
+      "target": 301,
+      "observer": 399,
+      "correction": "NONE",
+      "target_frame": "IAU_MOON",
+      "illuminator": 10,
+      "longitude_deg": 10,
+      "latitude_deg": 20,
+      "altitude_km": 0
+    },
+    "source": "docs/reference/wgc-calculators/illumination.jsonl",
+    "epoch": 0
+  },
+  {
+    "id": "phase_angle-6",
+    "operation": "phase_angle",
+    "title": "Sun–Moon–Earth phase",
+    "explanation": "Calculate the Sun–Moon–Earth phase angle at the Moon.",
+    "output": "Phase angle in degrees.",
+    "parameters": {
+      "target": 301,
+      "observer": 399,
+      "correction": "NONE",
+      "illuminator": 10
+    },
+    "source": "docs/reference/wgc-calculators/phase-angle.jsonl",
+    "epoch": 0
+  },
+  {
+    "id": "pointing_direction-7",
+    "operation": "pointing_direction",
+    "title": "Moon direction in the Moon frame",
+    "explanation": "Express the Earth-to-Moon position vector in the Moon mean Earth frame.",
+    "output": "Three direction components in the MOON_ME frame.",
+    "parameters": {
+      "target": 301,
+      "observer": 399,
+      "direction_type": "POSITION",
+      "direction_frame": "J2000",
+      "output_frame": "MOON_ME",
+      "magnitude": "PRESERVE_ORIGINAL",
+      "representation": "RECTANGULAR",
+      "correction": "NONE"
+    },
+    "source": "docs/reference/wgc-calculators/pointing.jsonl",
+    "epoch": 0
+  },
+  {
+    "id": "sub_solar_point-8",
+    "operation": "sub_solar_point",
+    "title": "Sun-facing point on the Moon",
+    "explanation": "Find the sub-solar point on the lunar ellipsoid.",
+    "output": "Surface position, illumination angles and observer geometry.",
+    "parameters": {
+      "target": 301,
+      "observer": 399,
+      "correction": "NONE",
+      "target_frame": "IAU_MOON",
+      "method": "NEAR_POINT_ELLIPSOID"
+    },
+    "source": "docs/reference/wgc-calculators/sub-solar.jsonl",
+    "epoch": 0
+  },
+  {
+    "id": "sub_observer_point-9",
+    "operation": "sub_observer_point",
+    "title": "Earth-facing point on the Moon",
+    "explanation": "Find the lunar surface point nearest the Earth observer.",
+    "output": "Surface position, illumination angles and observer geometry.",
+    "parameters": {
+      "target": 301,
+      "observer": 399,
+      "correction": "NONE",
+      "target_frame": "IAU_MOON",
+      "method": "NEAR_POINT_ELLIPSOID"
+    },
+    "source": "docs/reference/wgc-calculators/sub-observer.jsonl",
+    "epoch": 0
+  },
+  {
+    "id": "surface_intercept_point-10",
+    "operation": "surface_intercept_point",
+    "title": "Earth-to-Moon surface intercept",
+    "explanation": "Trace the tested Earth-to-Moon direction to its intersection with the Moon ellipsoid.",
+    "output": "Intercept coordinates and observer distance.",
+    "parameters": {
+      "target": 301,
+      "observer": 399,
+      "correction": "NONE",
+      "target_frame": "MOON_ME",
+      "direction_frame": "J2000",
+      "x": -291608.3847334454,
+      "y": -266716.83330418577,
+      "z": -76102.48704883647
+    },
+    "source": "docs/reference/wgc-finders/finder-intercept.jsonl",
+    "epoch": 0
+  },
+  {
+    "id": "tangent_point-11",
+    "operation": "tangent_point",
+    "title": "Lunar limb tangent",
+    "explanation": "Calculate the tangent geometry for the tested Moon direction.",
+    "output": "Tangent and surface points, altitude and illumination.",
+    "parameters": {
+      "target": 301,
+      "observer": 399,
+      "correction": "NONE",
+      "target_frame": "IAU_MOON",
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "correction_locus": "TANGENT_POINT"
+    },
+    "source": "docs/reference/wgc-calculators/tangent.jsonl",
+    "epoch": 0
+  },
+  {
+    "id": "osculating_elements-12",
+    "operation": "osculating_elements",
+    "title": "Moon orbit around Earth",
+    "explanation": "Derive instantaneous osculating orbital elements of the Moon relative to Earth.",
+    "output": "Eccentricity, inclination, semi-major axis and other elements.",
+    "parameters": {
+      "target": 301,
+      "center": 399,
+      "correction": "NONE"
+    },
+    "source": "docs/reference/wgc-calculators/orbital-elements.jsonl",
+    "epoch": 0
+  },
+  {
+    "id": "planetocentric_solar_longitude-13",
+    "operation": "planetocentric_solar_longitude",
+    "title": "Solar longitude on Earth",
+    "explanation": "Calculate the planetocentric longitude of the Sun for Earth.",
+    "output": "Solar longitude in degrees.",
+    "parameters": {
+      "target": 399,
+      "correction": "NONE"
+    },
+    "source": "docs/reference/wgc-calculators/solar-longitude.jsonl",
+    "epoch": 0
+  },
+  {
+    "id": "gf_distance_search-14",
+    "operation": "gf_distance_search",
+    "title": "Moon closer than 400,000 km",
+    "explanation": "Find intervals when the Earth–Moon distance is below 400,000 km.",
+    "output": "Event intervals: start ET, end ET and duration.",
+    "parameters": {
+      "target": 301,
+      "observer": 399,
+      "second": 10,
+      "illuminator": 10,
+      "reference_frame": "J2000",
+      "target_frame": "IAU_MOON",
+      "method": "Near point: ellipsoid",
+      "coordinate_system": "RECTANGULAR",
+      "coordinate": "X",
+      "angle": "INCIDENCE",
+      "relation": "<",
+      "reference": 400000.0,
+      "upper": 0.0,
+      "correction": "NONE",
+      "step_seconds": 3600.0,
+      "adjustment": 0.0,
+      "complement": false,
+      "interval_adjustment": "NONE",
+      "interval_amount": 0.0,
+      "interval_units": "SECONDS",
+      "filter": false,
+      "filter_threshold": 0.0,
+      "filter_units": "SECONDS",
+      "duration_units": "SECONDS",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0,
+      "shape1": "POINT",
+      "shape2": "POINT",
+      "occultation_type": "ANY"
+    },
+    "source": "docs/reference/wgc-finders/finder-distance.jsonl",
+    "window": {
+      "start": 0.0,
+      "end": 2592000.0
+    },
+    "recorded": [
+      [
+        651217.8241794102,
+        2370468.738158972,
+        1719250.9139795618
+      ]
+    ],
+    "requirement": null
+  },
+  {
+    "id": "gf_range_rate_search-15",
+    "operation": "gf_range_rate_search",
+    "title": "Moon receding from Earth",
+    "explanation": "Find intervals when Earth–Moon range rate is positive.",
+    "output": "Event intervals: start ET, end ET and duration.",
+    "parameters": {
+      "target": 301,
+      "observer": 399,
+      "second": 10,
+      "illuminator": 10,
+      "reference_frame": "J2000",
+      "target_frame": "IAU_MOON",
+      "method": "Near point: ellipsoid",
+      "coordinate_system": "RECTANGULAR",
+      "coordinate": "X",
+      "angle": "INCIDENCE",
+      "relation": ">",
+      "reference": 0.0,
+      "upper": 0.0,
+      "correction": "NONE",
+      "step_seconds": 3600.0,
+      "adjustment": 0.0,
+      "complement": false,
+      "interval_adjustment": "NONE",
+      "interval_amount": 0.0,
+      "interval_units": "SECONDS",
+      "filter": false,
+      "filter_threshold": 0.0,
+      "filter_units": "SECONDS",
+      "duration_units": "SECONDS",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0,
+      "shape1": "POINT",
+      "shape2": "POINT",
+      "occultation_type": "ANY"
+    },
+    "source": "docs/reference/wgc-finders/finder-range_rate.jsonl",
+    "window": {
+      "start": 0.0,
+      "end": 2592000.0
+    },
+    "recorded": [
+      [
+        0.0,
+        260603.72716409084,
+        260603.72716409084
+      ],
+      [
+        1594118.2502700796,
+        2592000.0,
+        997881.7497299204
+      ]
+    ],
+    "requirement": null
+  },
+  {
+    "id": "gf_coordinate_search-16",
+    "operation": "gf_coordinate_search",
+    "title": "Moon longitude search",
+    "explanation": "Find intervals when the Moon longitude in the Earth-fixed frame is positive.",
+    "output": "Event intervals: start ET, end ET and duration.",
+    "parameters": {
+      "target": 301,
+      "observer": 399,
+      "second": 10,
+      "illuminator": 10,
+      "reference_frame": "IAU_EARTH",
+      "target_frame": "IAU_MOON",
+      "method": "Near point: ellipsoid",
+      "coordinate_system": "LATITUDINAL",
+      "coordinate": "LONGITUDE",
+      "angle": "INCIDENCE",
+      "relation": ">",
+      "reference": 0.0,
+      "upper": 0.0,
+      "correction": "NONE",
+      "step_seconds": 60.0,
+      "adjustment": 0.0,
+      "complement": false,
+      "interval_adjustment": "NONE",
+      "interval_amount": 0.0,
+      "interval_units": "SECONDS",
+      "filter": false,
+      "filter_threshold": 0.0,
+      "filter_units": "SECONDS",
+      "duration_units": "SECONDS",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0,
+      "shape1": "POINT",
+      "shape2": "POINT",
+      "occultation_type": "ANY"
+    },
+    "source": "docs/reference/wgc-finders/finder-coordinate.jsonl",
+    "window": {
+      "start": 0.0,
+      "end": 86400.0
+    },
+    "recorded": [
+      [
+        30246.09827877929,
+        74772.91604523291,
+        44526.81776645362
+      ]
+    ],
+    "requirement": null
+  },
+  {
+    "id": "gf_phase_angle_search-17",
+    "operation": "gf_phase_angle_search",
+    "title": "Lunar phase angle below 90°",
+    "explanation": "Find intervals when the Sun–Moon–Earth phase angle is below 90 degrees.",
+    "output": "Event intervals: start ET, end ET and duration.",
+    "parameters": {
+      "target": 301,
+      "observer": 399,
+      "second": 10,
+      "illuminator": 10,
+      "reference_frame": "J2000",
+      "target_frame": "IAU_MOON",
+      "method": "Near point: ellipsoid",
+      "coordinate_system": "RECTANGULAR",
+      "coordinate": "X",
+      "angle": "INCIDENCE",
+      "relation": "<",
+      "reference": 90.0,
+      "upper": 0.0,
+      "correction": "NONE",
+      "step_seconds": 3600.0,
+      "adjustment": 0.0,
+      "complement": false,
+      "interval_adjustment": "NONE",
+      "interval_amount": 0.0,
+      "interval_units": "SECONDS",
+      "filter": false,
+      "filter_threshold": 0.0,
+      "filter_units": "SECONDS",
+      "duration_units": "SECONDS",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0,
+      "shape1": "POINT",
+      "shape2": "POINT",
+      "occultation_type": "ANY"
+    },
+    "source": "docs/reference/wgc-finders/finder-phase.jsonl",
+    "window": {
+      "start": 0.0,
+      "end": 2592000.0
+    },
+    "recorded": [
+      [
+        1127939.4808831613,
+        2319499.0027605128,
+        1191559.5218773514
+      ]
+    ],
+    "requirement": null
+  },
+  {
+    "id": "gf_angular_separation_search-18",
+    "operation": "gf_angular_separation_search",
+    "title": "Moon–Sun angle below 90°",
+    "explanation": "Find intervals when the observed Moon–Sun separation is below 90 degrees.",
+    "output": "Event intervals: start ET, end ET and duration.",
+    "parameters": {
+      "target": 301,
+      "observer": 399,
+      "second": 10,
+      "illuminator": 10,
+      "reference_frame": "J2000",
+      "target_frame": "IAU_MOON",
+      "method": "Near point: ellipsoid",
+      "coordinate_system": "RECTANGULAR",
+      "coordinate": "X",
+      "angle": "INCIDENCE",
+      "relation": "<",
+      "reference": 90.0,
+      "upper": 0.0,
+      "correction": "NONE",
+      "step_seconds": 3600.0,
+      "adjustment": 0.0,
+      "complement": false,
+      "interval_adjustment": "NONE",
+      "interval_amount": 0.0,
+      "interval_units": "SECONDS",
+      "filter": false,
+      "filter_threshold": 0.0,
+      "filter_units": "SECONDS",
+      "duration_units": "SECONDS",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0,
+      "shape1": "POINT",
+      "shape2": "POINT",
+      "occultation_type": "ANY"
+    },
+    "source": "docs/reference/wgc-finders/finder-separation.jsonl",
+    "window": {
+      "start": 0.0,
+      "end": 2592000.0
+    },
+    "recorded": [
+      [
+        0.0,
+        1128953.4645812346,
+        1128953.4645812346
+      ],
+      [
+        2318307.3750584805,
+        2592000.0,
+        273692.62494151946
+      ]
+    ],
+    "requirement": null
+  },
+  {
+    "id": "gf_sub_point_search-19",
+    "operation": "gf_sub_point_search",
+    "title": "Lunar sub-observer latitude",
+    "explanation": "Find intervals when the lunar sub-observer latitude is positive.",
+    "output": "Event intervals: start ET, end ET and duration.",
+    "parameters": {
+      "target": 301,
+      "observer": 399,
+      "second": 10,
+      "illuminator": 10,
+      "reference_frame": "J2000",
+      "target_frame": "MOON_ME",
+      "method": "Near point: ellipsoid",
+      "coordinate_system": "LATITUDINAL",
+      "coordinate": "LATITUDE",
+      "angle": "INCIDENCE",
+      "relation": ">",
+      "reference": 0.0,
+      "upper": 0.0,
+      "correction": "NONE",
+      "step_seconds": 3600.0,
+      "adjustment": 0.0,
+      "complement": false,
+      "interval_adjustment": "NONE",
+      "interval_amount": 0.0,
+      "interval_units": "SECONDS",
+      "filter": false,
+      "filter_threshold": 0.0,
+      "filter_units": "SECONDS",
+      "duration_units": "SECONDS",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0,
+      "shape1": "POINT",
+      "shape2": "POINT",
+      "occultation_type": "ANY"
+    },
+    "source": "docs/reference/wgc-finders/finder-subpoint.jsonl",
+    "window": {
+      "start": 0.0,
+      "end": 2592000.0
+    },
+    "recorded": [
+      [
+        586774.380759953,
+        1719821.3325209434,
+        1133046.9517609903
+      ]
+    ],
+    "requirement": null
+  },
+  {
+    "id": "gf_illumination_angles_search-20",
+    "operation": "gf_illumination_angles_search",
+    "title": "Lunar surface incidence below 90°",
+    "explanation": "Search illumination at the recorded lunar surface point.",
+    "output": "Event intervals: start ET, end ET and duration.",
+    "parameters": {
+      "target": 301,
+      "observer": 399,
+      "second": 10,
+      "illuminator": 10,
+      "reference_frame": "J2000",
+      "target_frame": "MOON_ME",
+      "method": "Near point: ellipsoid",
+      "coordinate_system": "RECTANGULAR",
+      "coordinate": "X",
+      "angle": "INCIDENCE",
+      "relation": "<",
+      "reference": 90.0,
+      "upper": 0.0,
+      "correction": "NONE",
+      "step_seconds": 3600.0,
+      "adjustment": 0.0,
+      "complement": false,
+      "interval_adjustment": "NONE",
+      "interval_amount": 0.0,
+      "interval_units": "SECONDS",
+      "filter": false,
+      "filter_threshold": 0.0,
+      "filter_units": "SECONDS",
+      "duration_units": "SECONDS",
+      "x": 1607.818763309247,
+      "y": 283.5018280607376,
+      "z": 594.2257970140168,
+      "shape1": "ELLIPSOID",
+      "shape2": "POINT",
+      "occultation_type": "ANY"
+    },
+    "source": "docs/reference/wgc-finders/finder-illumination.jsonl",
+    "window": {
+      "start": 0.0,
+      "end": 2592000.0
+    },
+    "recorded": [
+      [
+        1007590.7626614573,
+        2289269.9649258833,
+        1281679.202264426
+      ]
+    ],
+    "requirement": null
+  },
+  {
+    "id": "gf_surface_intercept_point_search-21",
+    "operation": "gf_surface_intercept_point_search",
+    "title": "Lunar intercept longitude",
+    "explanation": "Search for intervals satisfying the tested surface-intercept longitude condition.",
+    "output": "Event intervals: start ET, end ET and duration.",
+    "parameters": {
+      "target": 301,
+      "observer": 399,
+      "second": 10,
+      "illuminator": 10,
+      "reference_frame": "J2000",
+      "target_frame": "MOON_ME",
+      "method": "Near point: ellipsoid",
+      "coordinate_system": "LATITUDINAL",
+      "coordinate": "LONGITUDE",
+      "angle": "INCIDENCE",
+      "relation": "<",
+      "reference": 0.0,
+      "upper": 0.0,
+      "correction": "NONE",
+      "step_seconds": 60.0,
+      "adjustment": 0.0,
+      "complement": false,
+      "interval_adjustment": "NONE",
+      "interval_amount": 0.0,
+      "interval_units": "SECONDS",
+      "filter": false,
+      "filter_threshold": 0.0,
+      "filter_units": "SECONDS",
+      "duration_units": "SECONDS",
+      "x": -291608.3847334454,
+      "y": -266716.83330418577,
+      "z": -76102.48704883647,
+      "shape1": "POINT",
+      "shape2": "POINT",
+      "occultation_type": "ANY"
+    },
+    "source": "docs/reference/wgc-finders/finder-intercept.jsonl",
+    "window": {
+      "start": -10000.0,
+      "end": 10000.0
+    },
+    "recorded": [
+      [
+        -1783.8617858125438,
+        -155.9511356969179,
+        1627.910650115626
+      ]
+    ],
+    "requirement": null
+  },
+  {
+    "id": "gf_occultation_search-22",
+    "operation": "gf_occultation_search",
+    "title": "Moon and Earth occultation",
+    "explanation": "Find the recorded 2017 occultation intervals as viewed from the Sun.",
+    "output": "Event intervals: start ET, end ET and duration.",
+    "parameters": {
+      "target": 301,
+      "observer": 10,
+      "second": 399,
+      "illuminator": 10,
+      "reference_frame": "J2000",
+      "target_frame": "IAU_MOON",
+      "method": "Near point: ellipsoid",
+      "coordinate_system": "RECTANGULAR",
+      "coordinate": "X",
+      "angle": "INCIDENCE",
+      "relation": ">",
+      "reference": 0.0,
+      "upper": 0.0,
+      "correction": "NONE",
+      "step_seconds": 60.0,
+      "adjustment": 0.0,
+      "complement": false,
+      "interval_adjustment": "NONE",
+      "interval_amount": 0.0,
+      "interval_units": "SECONDS",
+      "filter": false,
+      "filter_threshold": 0.0,
+      "filter_units": "SECONDS",
+      "duration_units": "SECONDS",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0,
+      "shape1": "ELLIPSOID",
+      "shape2": "ELLIPSOID",
+      "occultation_type": "ANY"
+    },
+    "source": "docs/reference/wgc-finders/finder-occultation.jsonl",
+    "window": {
+      "start": 556599669.1828043,
+      "end": 556628469.1827978
+    },
+    "recorded": [
+      [
+        556604340.3187094,
+        556619739.1464679,
+        15398.827758550644
+      ]
+    ],
+    "requirement": null
+  },
+  {
+    "id": "gf_target_in_instrument_fov_search-23",
+    "operation": "gf_target_in_instrument_fov_search",
+    "title": "Enceladus in Cassini camera",
+    "explanation": "Find when Enceladus intersects the Cassini instrument field of view.",
+    "output": "Event intervals: start ET, end ET and duration.",
+    "parameters": {
+      "target": 602,
+      "observer": -82,
+      "second": 10,
+      "illuminator": 10,
+      "reference_frame": "J2000",
+      "target_frame": "IAU_ENCELADUS",
+      "method": "Near point: ellipsoid",
+      "coordinate_system": "RECTANGULAR",
+      "coordinate": "X",
+      "angle": "INCIDENCE",
+      "relation": ">",
+      "reference": 0.0,
+      "upper": 0.0,
+      "correction": "NONE",
+      "step_seconds": 60.0,
+      "adjustment": 0.0,
+      "complement": false,
+      "interval_adjustment": "NONE",
+      "interval_amount": 0.0,
+      "interval_units": "SECONDS",
+      "filter": false,
+      "filter_threshold": 0.0,
+      "filter_units": "SECONDS",
+      "duration_units": "SECONDS",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0,
+      "shape1": "ELLIPSOID",
+      "shape2": "POINT",
+      "occultation_type": "ANY"
+    },
+    "source": "docs/reference/wgc-finders/finder-target_fov.jsonl",
+    "window": {
+      "start": 403902000.0,
+      "end": 403906000.0
+    },
+    "recorded": [
+      [
+        403904651.1992692,
+        403906000.0,
+        1348.8007308244705
+      ]
+    ],
+    "requirement": "Cassini spacecraft SPK, FK, CK, SCLK and instrument kernel; instrument ID -82360."
+  },
+  {
+    "id": "gf_ray_in_fov_search-24",
+    "operation": "gf_ray_in_fov_search",
+    "title": "Ray in Cassini camera",
+    "explanation": "Find when the recorded J2000 ray enters the Cassini instrument field of view.",
+    "output": "Event intervals: start ET, end ET and duration.",
+    "parameters": {
+      "target": 301,
+      "observer": -82,
+      "second": 10,
+      "illuminator": 10,
+      "reference_frame": "J2000",
+      "target_frame": "IAU_MOON",
+      "method": "Near point: ellipsoid",
+      "coordinate_system": "RECTANGULAR",
+      "coordinate": "X",
+      "angle": "INCIDENCE",
+      "relation": ">",
+      "reference": 0.0,
+      "upper": 0.0,
+      "correction": "NONE",
+      "step_seconds": 60.0,
+      "adjustment": 0.0,
+      "complement": false,
+      "interval_adjustment": "NONE",
+      "interval_amount": 0.0,
+      "interval_units": "SECONDS",
+      "filter": false,
+      "filter_threshold": 0.0,
+      "filter_units": "SECONDS",
+      "duration_units": "SECONDS",
+      "x": -0.8695336349509377,
+      "y": -0.4623392348503029,
+      "z": -0.17364817766693033,
+      "shape1": "POINT",
+      "shape2": "POINT",
+      "occultation_type": "ANY"
+    },
+    "source": "docs/reference/wgc-finders/finder-ray_fov.jsonl",
+    "window": {
+      "start": 403902000.0,
+      "end": 403906000.0
+    },
+    "recorded": [
+      [
+        403905462.16845226,
+        403905723.95332265,
+        261.78487038612366
+      ]
+    ],
+    "requirement": "Cassini spacecraft SPK, FK, CK, SCLK and instrument kernel; instrument ID -82360."
+  },
+  {
+    "id": "utc_to_et-25",
+    "operation": "utc_to_et",
+    "title": "UTC New Year 2024",
+    "explanation": "Convert a UTC civil date into the ephemeris time used by geometry.",
+    "output": "TDB seconds past J2000 (ET).",
+    "parameters": {
+      "year": 2024,
+      "month": 1,
+      "day": 1,
+      "hour": 0,
+      "minute": 0,
+      "second": 0
+    },
+    "source": "web/tests/integration.mjs"
+  },
+  {
+    "id": "utc_to_et-26",
+    "operation": "utc_to_et",
+    "title": "2016 leap second",
+    "explanation": "Convert the actual UTC leap-second label at the end of 2016.",
+    "output": "TDB seconds past J2000 (ET).",
+    "parameters": {
+      "year": 2016,
+      "month": 12,
+      "day": 31,
+      "hour": 23,
+      "minute": 59,
+      "second": 60
+    },
+    "source": "web/tests/integration.mjs"
+  },
+  {
+    "id": "wgc_gps_seconds_to_et-27",
+    "operation": "wgc_gps_seconds_to_et",
+    "title": "GPS epoch to ET",
+    "explanation": "Convert zero GPS seconds since the GPS epoch into ephemeris time.",
+    "output": "TDB seconds past J2000 (ET).",
+    "parameters": {
+      "gps_seconds": 0
+    },
+    "source": "web/tests/integration.mjs"
+  },
+  {
+    "id": "et_to_utc-28",
+    "operation": "et_to_utc",
+    "title": "J2000 ET to UTC",
+    "explanation": "Convert the J2000 ephemeris epoch to a UTC calendar date.",
+    "output": "UTC calendar fields.",
+    "parameters": {
+      "et": 0
+    },
+    "source": "web/tests/integration.mjs"
+  }
+]

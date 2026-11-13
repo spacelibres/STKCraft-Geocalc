@@ -86,6 +86,9 @@ pub use geometry::{
     coords, direction, fov, location, occult, orbit, pointing, separation, state_rep, surface,
     surface_coordinates, tangent,
 };
+#[cfg(feature = "wgc-glibc-rotation")]
+#[path = "numerics/glibc_trig.rs"]
+mod glibc_trig;
 mod search;
 pub use search::{finder, gf_constraints};
 
@@ -101,12 +104,13 @@ pub use direction::{
 pub use dsk::{DlaDescriptor, DskDescriptor, DskHit, DskKernel, DskSegment, DskSet};
 pub use error::GeoError;
 pub use finder::{
-    angular_separation, angular_separation_shaped, angular_size, angular_size_extents,
-    angular_size_with_method, complement_windows, contract_windows, expand_windows, fill_windows,
-    filter_windows, find_angular_separation, find_distance, find_illumination_angle,
-    find_illumination_angle_in, find_illumination_angle_with_illuminator, find_phase_angle,
-    find_position_coordinate, find_position_coordinate_with_radii, find_range_rate,
-    find_sub_point_coordinate, find_sub_point_coordinate_in, find_sub_point_coordinate_with_method,
+    angular_separation, angular_separation_shaped, angular_size, angular_size_center_ray_extents,
+    angular_size_extents, angular_size_extents_in, angular_size_with_method, complement_windows,
+    contract_windows, expand_windows, fill_windows, filter_windows, find_angular_separation,
+    find_distance, find_illumination_angle, find_illumination_angle_in,
+    find_illumination_angle_with_illuminator, find_phase_angle, find_position_coordinate,
+    find_position_coordinate_with_radii, find_range_rate, find_sub_point_coordinate,
+    find_sub_point_coordinate_in, find_sub_point_coordinate_with_method,
     find_surface_intercept_coordinate, find_surface_intercept_direction_coordinate,
     find_surface_intercept_direction_coordinate_in, find_surface_intercept_ray_coordinate,
     find_surface_intercept_ray_coordinate_in, find_surface_intercept_ray_coordinate_with_frame,
@@ -121,7 +125,7 @@ pub use fov::{
     ray_in_fov_in, target_in_fov, target_in_fov_shaped, target_in_fov_shaped_in,
     target_in_fov_with_pck, Fov, FovShape, FovTargetShape, RayAberration,
 };
-pub use frame::{FrameDef, FrameRotation, Frames, Mat3};
+pub use frame::{rotation_math_profile, FrameDef, FrameRotation, Frames, Mat3};
 pub use frame_calculation::{frame_transformation, FrameTimeLocation, FrameTransformation};
 pub use gf_constraints::{
     apply_scalar_constraint, postprocess_windows, window_durations, DurationUnits,

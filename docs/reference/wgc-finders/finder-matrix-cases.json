@@ -1,0 +1,3777 @@
+{
+  "scope": "Retained WGC displayed rows and independent Windows CSPICE endpoint bits; not unrounded server values",
+  "server_kernel_bytes_verified": false,
+  "cspice": "CSPICE_N0067",
+  "spiceypy": "8.3.0",
+  "native_library_sha256": "7fd2dcc58d73ed5293847e67109897caba34240b8f9c38ad739c0b2ec6ce7715",
+  "rust_binary_sha256": "4f46750fae813091be2f4ab49731fa6ed89a20a7afe8fa24fd2ba0c828a1f602",
+  "rust_profile": "glibc-fma-r3",
+  "native_kernels_in_load_order": [
+    {
+      "name": "de442.bsp",
+      "sha256": "8d5001fab315eeff222cc51f7cf7ffcdb43fb38fb9ac73ff09e09a5b361fd388"
+    },
+    {
+      "name": "naif0012.tls",
+      "sha256": "678e32bdb5a744117a467cd9601cd6b373f0e9bc9bbde1371d5eee39600a039b"
+    },
+    {
+      "name": "pck00011.tpc",
+      "sha256": "3dff7b1dbeceaa01f25467767d3fa25816051c85d162d1edf04acb310ee28bb1"
+    },
+    {
+      "name": "mars_iau2000_v1.tpc",
+      "sha256": "07ba38b939ae92c085882752a523addd749fde0abb7a3468423099ed02bb3949"
+    },
+    {
+      "name": "gm_de431.tpc",
+      "sha256": "15756c162151853f329d473fa00c38d35e62d83c3e25ddceece6516bbd98738b"
+    },
+    {
+      "name": "moon_pa_de440_200625.bpc",
+      "sha256": "60cd55aa401ea2ea97360636f567554bfe4e37bb829f901b4460a455dfaf783f"
+    },
+    {
+      "name": "RSSD0002.TF",
+      "sha256": "8c26c450013584ebb21584e732734bbfd95030b316d26bef6cb26c7e6c72dc07"
+    },
+    {
+      "name": "codes_300ast_20100725.tf",
+      "sha256": "15ee3b1731817774672725ccc226b249eb9ca5aa5d0a6a7805c91e5f57497f40"
+    },
+    {
+      "name": "EARTHFIXEDITRF93.TF",
+      "sha256": "6c868a46aec9b64d8902bba16c8522cf5e8d65dc5d0931e8c66458a60fbb85bc"
+    },
+    {
+      "name": "moon_080317.tf",
+      "sha256": "78732477b96f9863e7b0d65bcee3c22b8707ca5ed0db56d1173319cb2e8c7993"
+    },
+    {
+      "name": "moon_de440_250416.tf",
+      "sha256": "a47c71e9c9f33796bdafb2c9d69a7ee447b6016ecad80f71cd6f3e479f9cf768"
+    },
+    {
+      "name": "moon_assoc_me.tf",
+      "sha256": "52c622043ce0447d575e59ee01642f1894921e68c10f934ceff065f362da6c1c"
+    },
+    {
+      "name": "jup347_nameid.tf",
+      "sha256": "1303dfccf7d758965c698fbcf0c110b41f73da67639fe63f0724de414f559228"
+    },
+    {
+      "name": "jup348_nameid.tf",
+      "sha256": "c80fa162869789639123225024831d21c611380771aba3fffdd368c07b2c5e79"
+    },
+    {
+      "name": "jup349_nameid.tf",
+      "sha256": "03ea700f2b05391e9cec4f41117ed6ca8b4b08c8856abb49c09e8aa88648eba7"
+    },
+    {
+      "name": "nep098_nameid.tf",
+      "sha256": "c61ecda345d23c5b4b6e0252504e5c59e6debc21fb65774c7dc77c6a71b27f57"
+    },
+    {
+      "name": "nep104_nameid.tf",
+      "sha256": "bcd74bd7c791b8d368953b794e8f76806784c1da5bbb22550700ce5b0f624d59"
+    },
+    {
+      "name": "sat455_nameid.tf",
+      "sha256": "dc435939e80a35ff467764343a38d6588bd8f2620b6d07d41943ae2e38dd9003"
+    },
+    {
+      "name": "sat456_nameid.tf",
+      "sha256": "57bcb7caa96085938324bca1f5f8996e0ca7e9510b348fc65b897b889b55e6e8"
+    },
+    {
+      "name": "sat457_nameid.tf",
+      "sha256": "9e6edc2d9f38b8e137fef020a168db532c878a289b81500711cf3e1d0bf568e2"
+    },
+    {
+      "name": "sat458_nameid.tf",
+      "sha256": "69832c484e0c83b69b3cc54cd98a2adadadade95ed718a14ed1fc1b5f286ce3e"
+    },
+    {
+      "name": "sat459_nameid.tf",
+      "sha256": "e0fc8ba2a487b0d83bf5685411005f29b1bd6c9760c783377eebf042b6888c6e"
+    },
+    {
+      "name": "sat480_nameid.tf",
+      "sha256": "c1c20ff442f69ad1663511b9e447e87627484acd1b27fa0ccae82c747af28acd"
+    },
+    {
+      "name": "ura117_nameid.tf",
+      "sha256": "686d4b7acee62bf167d8c6d178c57159c73923654e582cb6d1f1fb1e220f65f1"
+    }
+  ],
+  "cases": [
+    {
+      "id": "distance_NONE_0",
+      "payload": {
+        "calculationType": "GF_DISTANCE_SEARCH",
+        "kernels": [
+          {
+            "type": "KERNEL_SET",
+            "id": 1
+          }
+        ],
+        "timeSystem": "TDB",
+        "timeFormat": "SECONDS_PAST_J2000",
+        "intervals": [
+          {
+            "startTime": "0.0",
+            "endTime": "2592000.0"
+          }
+        ],
+        "timeStep": 3600.0,
+        "timeStepUnits": "SECONDS",
+        "outputTimeSystem": "TDB",
+        "outputTimeFormat": "SECONDS_PAST_J2000",
+        "outputDurationUnits": "SECONDS",
+        "shouldComplementWindow": false,
+        "intervalAdjustment": "NO_ADJUSTMENT",
+        "intervalFiltering": "NO_FILTERING",
+        "target": "MOON",
+        "observer": "EARTH",
+        "aberrationCorrection": "NONE",
+        "condition": {
+          "relationalCondition": "<",
+          "referenceValue": 380000.0
+        }
+      },
+      "local": "distance_NONE_0,GF_DISTANCE_SEARCH,301,399,10,10,J2000,IAU_MOON,Near point: ellipsoid,RECTANGULAR,X,INCIDENCE,<,380000.0,0.0,NONE,0.0:2592000.0,3600.0,0.0,false,NONE,0.0,SECONDS,false,0.0,SECONDS,SECONDS,0.0,0.0,0.0,POINT,POINT,ANY",
+      "native": [
+        [
+          1091308.2994979941,
+          2045893.612000575,
+          954585.3125025809
+        ]
+      ],
+      "trace": "finder-matrix-distance.jsonl",
+      "before_fix_errors": []
+    },
+    {
+      "id": "distance_NONE_1",
+      "payload": {
+        "calculationType": "GF_DISTANCE_SEARCH",
+        "kernels": [
+          {
+            "type": "KERNEL_SET",
+            "id": 1
+          }
+        ],
+        "timeSystem": "TDB",
+        "timeFormat": "SECONDS_PAST_J2000",
+        "intervals": [
+          {
+            "startTime": "0.0",
+            "endTime": "2592000.0"
+          }
+        ],
+        "timeStep": 3600.0,
+        "timeStepUnits": "SECONDS",
+        "outputTimeSystem": "TDB",
+        "outputTimeFormat": "SECONDS_PAST_J2000",
+        "outputDurationUnits": "SECONDS",
+        "shouldComplementWindow": false,
+        "intervalAdjustment": "NO_ADJUSTMENT",
+        "intervalFiltering": "NO_FILTERING",
+        "target": "MOON",
+        "observer": "EARTH",
+        "aberrationCorrection": "NONE",
+        "condition": {
+          "relationalCondition": ">",
+          "referenceValue": 400000.0
+        }
+      },
+      "local": "distance_NONE_1,GF_DISTANCE_SEARCH,301,399,10,10,J2000,IAU_MOON,Near point: ellipsoid,RECTANGULAR,X,INCIDENCE,>,400000.0,0.0,NONE,0.0:2592000.0,3600.0,0.0,false,NONE,0.0,SECONDS,false,0.0,SECONDS,SECONDS,0.0,0.0,0.0,POINT,POINT,ANY",
+      "native": [
+        [
+          0.0,
+          651217.8241794102,
+          651217.8241794102
+        ],
+        [
+          2370468.738158972,
+          2592000.0,
+          221531.261841028
+        ]
+      ],
+      "trace": "finder-matrix-distance.jsonl",
+      "before_fix_errors": []
+    },
+    {
+      "id": "distance_NONE_2",
+      "payload": {
+        "calculationType": "GF_DISTANCE_SEARCH",
+        "kernels": [
+          {
+            "type": "KERNEL_SET",
+            "id": 1
+          }
+        ],
+        "timeSystem": "TDB",
+        "timeFormat": "SECONDS_PAST_J2000",
+        "intervals": [
+          {
+            "startTime": "0.0",
+            "endTime": "2592000.0"
+          }
+        ],
+        "timeStep": 3600.0,
+        "timeStepUnits": "SECONDS",
+        "outputTimeSystem": "TDB",
+        "outputTimeFormat": "SECONDS_PAST_J2000",
+        "outputDurationUnits": "SECONDS",
+        "shouldComplementWindow": false,
+        "intervalAdjustment": "NO_ADJUSTMENT",
+        "intervalFiltering": "NO_FILTERING",
+        "target": "MOON",
+        "observer": "EARTH",
+        "aberrationCorrection": "NONE",
+        "condition": {
+          "relationalCondition": "=",
+          "referenceValue": 390000.0
+        }
+      },
+      "local": "distance_NONE_2,GF_DISTANCE_SEARCH,301,399,10,10,J2000,IAU_MOON,Near point: ellipsoid,RECTANGULAR,X,INCIDENCE,=,390000.0,0.0,NONE,0.0:2592000.0,3600.0,0.0,false,NONE,0.0,SECONDS,false,0.0,SECONDS,SECONDS,0.0,0.0,0.0,POINT,POINT,ANY",
+      "native": [
+        [
+          904564.8833858789,
+          904564.8833858789,
+          0.0
+        ],
+        [
+          2188634.8625364676,
+          2188634.8625364676,
+          0.0
+        ]
+      ],
+      "trace": "finder-matrix-distance.jsonl",
+      "before_fix_errors": []
+    },
+    {
+      "id": "distance_LT_3",
+      "payload": {
+        "calculationType": "GF_DISTANCE_SEARCH",
+        "kernels": [
+          {
+            "type": "KERNEL_SET",
+            "id": 1
+          }
+        ],
+        "timeSystem": "TDB",
+        "timeFormat": "SECONDS_PAST_J2000",
+        "intervals": [
+          {
+            "startTime": "0.0",
+            "endTime": "2592000.0"
+          }
+        ],
+        "timeStep": 3600.0,
+        "timeStepUnits": "SECONDS",
+        "outputTimeSystem": "TDB",
+        "outputTimeFormat": "SECONDS_PAST_J2000",
+        "outputDurationUnits": "SECONDS",
+        "shouldComplementWindow": false,
+        "intervalAdjustment": "NO_ADJUSTMENT",
+        "intervalFiltering": "NO_FILTERING",
+        "target": "MOON",
+        "observer": "EARTH",
+        "aberrationCorrection": "LT",
+        "condition": {
+          "relationalCondition": "<",
+          "referenceValue": 380000.0
+        }
+      },
+      "local": "distance_LT_3,GF_DISTANCE_SEARCH,301,399,10,10,J2000,IAU_MOON,Near point: ellipsoid,RECTANGULAR,X,INCIDENCE,<,380000.0,0.0,LT,0.0:2592000.0,3600.0,0.0,false,NONE,0.0,SECONDS,false,0.0,SECONDS,SECONDS,0.0,0.0,0.0,POINT,POINT,ANY",
+      "native": [
+        [
+          1091970.6515976735,
+          2046319.0945102172,
+          954348.4429125437
+        ]
+      ],
+      "trace": "finder-matrix-distance.jsonl",
+      "before_fix_errors": []
+    },
+    {
+      "id": "distance_LT_4",
+      "payload": {
+        "calculationType": "GF_DISTANCE_SEARCH",
+        "kernels": [
+          {
+            "type": "KERNEL_SET",
+            "id": 1
+          }
+        ],
+        "timeSystem": "TDB",
+        "timeFormat": "SECONDS_PAST_J2000",
+        "intervals": [
+          {
+            "startTime": "0.0",
+            "endTime": "2592000.0"
+          }
+        ],
+        "timeStep": 3600.0,
+        "timeStepUnits": "SECONDS",
+        "outputTimeSystem": "TDB",
+        "outputTimeFormat": "SECONDS_PAST_J2000",
+        "outputDurationUnits": "SECONDS",
+        "shouldComplementWindow": false,
+        "intervalAdjustment": "NO_ADJUSTMENT",
+        "intervalFiltering": "NO_FILTERING",
+        "target": "MOON",
+        "observer": "EARTH",
+        "aberrationCorrection": "LT",
+        "condition": {
+          "relationalCondition": ">",
+          "referenceValue": 400000.0
+        }
+      },
+      "local": "distance_LT_4,GF_DISTANCE_SEARCH,301,399,10,10,J2000,IAU_MOON,Near point: ellipsoid,RECTANGULAR,X,INCIDENCE,>,400000.0,0.0,LT,0.0:2592000.0,3600.0,0.0,false,NONE,0.0,SECONDS,false,0.0,SECONDS,SECONDS,0.0,0.0,0.0,POINT,POINT,ANY",
+      "native": [
+        [
+          0.0,
+          651778.9130416277,
+          651778.9130416277
+        ],
+        [
+          2371413.467510524,
+          2592000.0,
+          220586.5324894758
+        ]
+      ],
+      "trace": "finder-matrix-distance.jsonl",
+      "before_fix_errors": []
+    },
+    {
+      "id": "distance_LT_5",
+      "payload": {
+        "calculationType": "GF_DISTANCE_SEARCH",
+        "kernels": [
+          {
+            "type": "KERNEL_SET",
+            "id": 1
+          }
+        ],
+        "timeSystem": "TDB",
+        "timeFormat": "SECONDS_PAST_J2000",
+        "intervals": [
+          {
+            "startTime": "0.0",
+            "endTime": "2592000.0"
+          }
+        ],
+        "timeStep": 3600.0,
+        "timeStepUnits": "SECONDS",
+        "outputTimeSystem": "TDB",
+        "outputTimeFormat": "SECONDS_PAST_J2000",
+        "outputDurationUnits": "SECONDS",
+        "shouldComplementWindow": false,
+        "intervalAdjustment": "NO_ADJUSTMENT",
+        "intervalFiltering": "NO_FILTERING",
+        "target": "MOON",
+        "observer": "EARTH",
+        "aberrationCorrection": "LT",
+        "condition": {
+          "relationalCondition": "=",
+          "referenceValue": 390000.0
+        }
+      },
+      "local": "distance_LT_5,GF_DISTANCE_SEARCH,301,399,10,10,J2000,IAU_MOON,Near point: ellipsoid,RECTANGULAR,X,INCIDENCE,=,390000.0,0.0,LT,0.0:2592000.0,3600.0,0.0,false,NONE,0.0,SECONDS,false,0.0,SECONDS,SECONDS,0.0,0.0,0.0,POINT,POINT,ANY",
+      "native": [
+        [
+          905261.4480706255,
+          905261.4480706255,
+          0.0
+        ],
+        [
+          2189207.446232913,
+          2189207.446232913,
+          0.0
+        ]
+      ],
+      "trace": "finder-matrix-distance.jsonl",
+      "before_fix_errors": []
+    },
+    {
+      "id": "distance_CN_S_6",
+      "payload": {
+        "calculationType": "GF_DISTANCE_SEARCH",
+        "kernels": [
+          {
+            "type": "KERNEL_SET",
+            "id": 1
+          }
+        ],
+        "timeSystem": "TDB",
+        "timeFormat": "SECONDS_PAST_J2000",
+        "intervals": [
+          {
+            "startTime": "0.0",
+            "endTime": "2592000.0"
+          }
+        ],
+        "timeStep": 3600.0,
+        "timeStepUnits": "SECONDS",
+        "outputTimeSystem": "TDB",
+        "outputTimeFormat": "SECONDS_PAST_J2000",
+        "outputDurationUnits": "SECONDS",
+        "shouldComplementWindow": false,
+        "intervalAdjustment": "NO_ADJUSTMENT",
+        "intervalFiltering": "NO_FILTERING",
+        "target": "MOON",
+        "observer": "EARTH",
+        "aberrationCorrection": "CN+S",
+        "condition": {
+          "relationalCondition": "<",
+          "referenceValue": 380000.0
+        }
+      },
+      "local": "distance_CN_S_6,GF_DISTANCE_SEARCH,301,399,10,10,J2000,IAU_MOON,Near point: ellipsoid,RECTANGULAR,X,INCIDENCE,<,380000.0,0.0,CN+S,0.0:2592000.0,3600.0,0.0,false,NONE,0.0,SECONDS,false,0.0,SECONDS,SECONDS,0.0,0.0,0.0,POINT,POINT,ANY",
+      "native": [
+        [
+          1091970.7180718738,
+          2046319.060117268,
+          954348.3420453942
+        ]
+      ],
+      "trace": "finder-matrix-distance.jsonl",
+      "before_fix_errors": []
+    },
+    {
+      "id": "distance_CN_S_7",
+      "payload": {
+        "calculationType": "GF_DISTANCE_SEARCH",
+        "kernels": [
+          {
+            "type": "KERNEL_SET",
+            "id": 1
+          }
+        ],
+        "timeSystem": "TDB",
+        "timeFormat": "SECONDS_PAST_J2000",
+        "intervals": [
+          {
+            "startTime": "0.0",
+            "endTime": "2592000.0"
+          }
+        ],
+        "timeStep": 3600.0,
+        "timeStepUnits": "SECONDS",
+        "outputTimeSystem": "TDB",
+        "outputTimeFormat": "SECONDS_PAST_J2000",
+        "outputDurationUnits": "SECONDS",
+        "shouldComplementWindow": false,
+        "intervalAdjustment": "NO_ADJUSTMENT",
+        "intervalFiltering": "NO_FILTERING",
+        "target": "MOON",
+        "observer": "EARTH",
+        "aberrationCorrection": "CN+S",
+        "condition": {
+          "relationalCondition": ">",
+          "referenceValue": 400000.0
+        }
+      },
+      "local": "distance_CN_S_7,GF_DISTANCE_SEARCH,301,399,10,10,J2000,IAU_MOON,Near point: ellipsoid,RECTANGULAR,X,INCIDENCE,>,400000.0,0.0,CN+S,0.0:2592000.0,3600.0,0.0,false,NONE,0.0,SECONDS,false,0.0,SECONDS,SECONDS,0.0,0.0,0.0,POINT,POINT,ANY",
+      "native": [
+        [
+          0.0,
+          651778.9372359905,
+          651778.9372359905
+        ],
+        [
+          2371413.3730980046,
+          2592000.0,
+          220586.6269019954
+        ]
+      ],
+      "trace": "finder-matrix-distance.jsonl",
+      "before_fix_errors": []
+    },
+    {
+      "id": "distance_CN_S_8",
+      "payload": {
+        "calculationType": "GF_DISTANCE_SEARCH",
+        "kernels": [
+          {
+            "type": "KERNEL_SET",
+            "id": 1
+          }
+        ],
+        "timeSystem": "TDB",
+        "timeFormat": "SECONDS_PAST_J2000",
+        "intervals": [
+          {
+            "startTime": "0.0",
+            "endTime": "2592000.0"
+          }
+        ],
+        "timeStep": 3600.0,
+        "timeStepUnits": "SECONDS",
+        "outputTimeSystem": "TDB",
+        "outputTimeFormat": "SECONDS_PAST_J2000",
+        "outputDurationUnits": "SECONDS",
+        "shouldComplementWindow": false,
+        "intervalAdjustment": "NO_ADJUSTMENT",
+        "intervalFiltering": "NO_FILTERING",
+        "target": "MOON",
+        "observer": "EARTH",
+        "aberrationCorrection": "CN+S",
+        "condition": {
+          "relationalCondition": "=",
+          "referenceValue": 390000.0
+        }
+      },
+      "local": "distance_CN_S_8,GF_DISTANCE_SEARCH,301,399,10,10,J2000,IAU_MOON,Near point: ellipsoid,RECTANGULAR,X,INCIDENCE,=,390000.0,0.0,CN+S,0.0:2592000.0,3600.0,0.0,false,NONE,0.0,SECONDS,false,0.0,SECONDS,SECONDS,0.0,0.0,0.0,POINT,POINT,ANY",
+      "native": [
+        [
+          905261.5081681444,
+          905261.5081681444,
+          0.0
+        ],
+        [
+          2189207.390993759,
+          2189207.390993759,
+          0.0
+        ]
+      ],
+      "trace": "finder-matrix-distance.jsonl",
+      "before_fix_errors": []
+    },
+    {
+      "id": "phase_NONE_0",
+      "payload": {
+        "calculationType": "GF_PHASE_ANGLE_SEARCH",
+        "kernels": [
+          {
+            "type": "KERNEL_SET",
+            "id": 1
+          }
+        ],
+        "timeSystem": "TDB",
+        "timeFormat": "SECONDS_PAST_J2000",
+        "intervals": [
+          {
+            "startTime": "0.0",
+            "endTime": "2592000.0"
+          }
+        ],
+        "timeStep": 3600.0,
+        "timeStepUnits": "SECONDS",
+        "outputTimeSystem": "TDB",
+        "outputTimeFormat": "SECONDS_PAST_J2000",
+        "outputDurationUnits": "SECONDS",
+        "shouldComplementWindow": false,
+        "intervalAdjustment": "NO_ADJUSTMENT",
+        "intervalFiltering": "NO_FILTERING",
+        "target": "MOON",
+        "observer": "EARTH",
+        "aberrationCorrection": "NONE",
+        "illuminator": "SUN",
+        "condition": {
+          "relationalCondition": "<",
+          "referenceValue": 60.0
+        }
+      },
+      "local": "phase_NONE_0,GF_PHASE_ANGLE_SEARCH,301,399,10,10,J2000,IAU_MOON,Near point: ellipsoid,RECTANGULAR,X,INCIDENCE,<,60.0,0.0,NONE,0.0:2592000.0,3600.0,0.0,false,NONE,0.0,SECONDS,false,0.0,SECONDS,SECONDS,0.0,0.0,0.0,POINT,POINT,ANY",
+      "native": [
+        [
+          1327951.5609901769,
+          2096670.643736383,
+          768719.0827462061
+        ]
+      ],
+      "trace": "finder-matrix-phase.jsonl",
+      "before_fix_errors": []
+    },
+    {
+      "id": "phase_NONE_1",
+      "payload": {
+        "calculationType": "GF_PHASE_ANGLE_SEARCH",
+        "kernels": [
+          {
+            "type": "KERNEL_SET",
+            "id": 1
+          }
+        ],
+        "timeSystem": "TDB",
+        "timeFormat": "SECONDS_PAST_J2000",
+        "intervals": [
+          {
+            "startTime": "0.0",
+            "endTime": "2592000.0"
+          }
+        ],
+        "timeStep": 3600.0,
+        "timeStepUnits": "SECONDS",
+        "outputTimeSystem": "TDB",
+        "outputTimeFormat": "SECONDS_PAST_J2000",
+        "outputDurationUnits": "SECONDS",
+        "shouldComplementWindow": false,
+        "intervalAdjustment": "NO_ADJUSTMENT",
+        "intervalFiltering": "NO_FILTERING",
+        "target": "MOON",
+        "observer": "EARTH",
+        "aberrationCorrection": "NONE",
+        "illuminator": "SUN",
+        "condition": {
+          "relationalCondition": ">",
+          "referenceValue": 100.0
+        }
+      },
+      "local": "phase_NONE_1,GF_PHASE_ANGLE_SEARCH,301,399,10,10,J2000,IAU_MOON,Near point: ellipsoid,RECTANGULAR,X,INCIDENCE,>,100.0,0.0,NONE,0.0:2592000.0,3600.0,0.0,false,NONE,0.0,SECONDS,false,0.0,SECONDS,SECONDS,0.0,0.0,0.0,POINT,POINT,ANY",
+      "native": [
+        [
+          0.0,
+          1058231.1518997706,
+          1058231.1518997706
+        ],
+        [
+          2397305.6703618937,
+          2592000.0,
+          194694.32963810628
+        ]
+      ],
+      "trace": "finder-matrix-phase.jsonl",
+      "before_fix_errors": []
+    },
+    {
+      "id": "phase_NONE_2",
+      "payload": {
+        "calculationType": "GF_PHASE_ANGLE_SEARCH",
+        "kernels": [
+          {
+            "type": "KERNEL_SET",
+            "id": 1
+          }
+        ],
+        "timeSystem": "TDB",
+        "timeFormat": "SECONDS_PAST_J2000",
+        "intervals": [
+          {
+            "startTime": "0.0",
+            "endTime": "2592000.0"
+          }
+        ],
+        "timeStep": 3600.0,
+        "timeStepUnits": "SECONDS",
+        "outputTimeSystem": "TDB",
+        "outputTimeFormat": "SECONDS_PAST_J2000",
+        "outputDurationUnits": "SECONDS",
+        "shouldComplementWindow": false,
+        "intervalAdjustment": "NO_ADJUSTMENT",
+        "intervalFiltering": "NO_FILTERING",
+        "target": "MOON",
+        "observer": "EARTH",
+        "aberrationCorrection": "NONE",
+        "illuminator": "SUN",
+        "condition": {
+          "relationalCondition": "=",
+          "referenceValue": 90.0
+        }
+      },
+      "local": "phase_NONE_2,GF_PHASE_ANGLE_SEARCH,301,399,10,10,J2000,IAU_MOON,Near point: ellipsoid,RECTANGULAR,X,INCIDENCE,=,90.0,0.0,NONE,0.0:2592000.0,3600.0,0.0,false,NONE,0.0,SECONDS,false,0.0,SECONDS,SECONDS,0.0,0.0,0.0,POINT,POINT,ANY",
+      "native": [
+        [
+          1127939.4808835306,
+          1127939.4808835306,
+          0.0
+        ],
+        [
+          2319499.002760029,
+          2319499.002760029,
+          0.0
+        ]
+      ],
+      "trace": "finder-matrix-phase.jsonl",
+      "before_fix_errors": []
+    },
+    {
+      "id": "phase_LT_3",
+      "payload": {
+        "calculationType": "GF_PHASE_ANGLE_SEARCH",
+        "kernels": [
+          {
+            "type": "KERNEL_SET",
+            "id": 1
+          }
+        ],
+        "timeSystem": "TDB",
+        "timeFormat": "SECONDS_PAST_J2000",
+        "intervals": [
+          {
+            "startTime": "0.0",
+            "endTime": "2592000.0"
+          }
+        ],
+        "timeStep": 3600.0,
+        "timeStepUnits": "SECONDS",
+        "outputTimeSystem": "TDB",
+        "outputTimeFormat": "SECONDS_PAST_J2000",
+        "outputDurationUnits": "SECONDS",
+        "shouldComplementWindow": false,
+        "intervalAdjustment": "NO_ADJUSTMENT",
+        "intervalFiltering": "NO_FILTERING",
+        "target": "MOON",
+        "observer": "EARTH",
+        "aberrationCorrection": "LT",
+        "illuminator": "SUN",
+        "condition": {
+          "relationalCondition": "<",
+          "referenceValue": 60.0
+        }
+      },
+      "local": "phase_LT_3,GF_PHASE_ANGLE_SEARCH,301,399,10,10,J2000,IAU_MOON,Near point: ellipsoid,RECTANGULAR,X,INCIDENCE,<,60.0,0.0,LT,0.0:2592000.0,3600.0,0.0,false,NONE,0.0,SECONDS,false,0.0,SECONDS,SECONDS,0.0,0.0,0.0,POINT,POINT,ANY",
+      "native": [
+        [
+          1327971.3814845749,
+          2096692.1151692811,
+          768720.7336847063
+        ]
+      ],
+      "trace": "finder-matrix-phase.jsonl",
+      "before_fix_errors": []
+    },
+    {
+      "id": "phase_LT_4",
+      "payload": {
+        "calculationType": "GF_PHASE_ANGLE_SEARCH",
+        "kernels": [
+          {
+            "type": "KERNEL_SET",
+            "id": 1
+          }
+        ],
+        "timeSystem": "TDB",
+        "timeFormat": "SECONDS_PAST_J2000",
+        "intervals": [
+          {
+            "startTime": "0.0",
+            "endTime": "2592000.0"
+          }
+        ],
+        "timeStep": 3600.0,
+        "timeStepUnits": "SECONDS",
+        "outputTimeSystem": "TDB",
+        "outputTimeFormat": "SECONDS_PAST_J2000",
+        "outputDurationUnits": "SECONDS",
+        "shouldComplementWindow": false,
+        "intervalAdjustment": "NO_ADJUSTMENT",
+        "intervalFiltering": "NO_FILTERING",
+        "target": "MOON",
+        "observer": "EARTH",
+        "aberrationCorrection": "LT",
+        "illuminator": "SUN",
+        "condition": {
+          "relationalCondition": ">",
+          "referenceValue": 100.0
+        }
+      },
+      "local": "phase_LT_4,GF_PHASE_ANGLE_SEARCH,301,399,10,10,J2000,IAU_MOON,Near point: ellipsoid,RECTANGULAR,X,INCIDENCE,>,100.0,0.0,LT,0.0:2592000.0,3600.0,0.0,false,NONE,0.0,SECONDS,false,0.0,SECONDS,SECONDS,0.0,0.0,0.0,POINT,POINT,ANY",
+      "native": [
+        [
+          0.0,
+          1058225.3421578465,
+          1058225.3421578465
+        ],
+        [
+          2397298.736091933,
+          2592000.0,
+          194701.2639080668
+        ]
+      ],
+      "trace": "finder-matrix-phase.jsonl",
+      "before_fix_errors": []
+    },
+    {
+      "id": "phase_LT_5",
+      "payload": {
+        "calculationType": "GF_PHASE_ANGLE_SEARCH",
+        "kernels": [
+          {
+            "type": "KERNEL_SET",
+            "id": 1
+          }
+        ],
+        "timeSystem": "TDB",
+        "timeFormat": "SECONDS_PAST_J2000",
+        "intervals": [
+          {
+            "startTime": "0.0",
+            "endTime": "2592000.0"
+          }
+        ],
+        "timeStep": 3600.0,
+        "timeStepUnits": "SECONDS",
+        "outputTimeSystem": "TDB",
+        "outputTimeFormat": "SECONDS_PAST_J2000",
+        "outputDurationUnits": "SECONDS",
+        "shouldComplementWindow": false,
+        "intervalAdjustment": "NO_ADJUSTMENT",
+        "intervalFiltering": "NO_FILTERING",
+        "target": "MOON",
+        "observer": "EARTH",
+        "aberrationCorrection": "LT",
+        "illuminator": "SUN",
+        "condition": {
+          "relationalCondition": "=",
+          "referenceValue": 90.0
+        }
+      },
+      "local": "phase_LT_5,GF_PHASE_ANGLE_SEARCH,301,399,10,10,J2000,IAU_MOON,Near point: ellipsoid,RECTANGULAR,X,INCIDENCE,=,90.0,0.0,LT,0.0:2592000.0,3600.0,0.0,false,NONE,0.0,SECONDS,false,0.0,SECONDS,SECONDS,0.0,0.0,0.0,POINT,POINT,ANY",
+      "native": [
+        [
+          1127940.7212474684,
+          1127940.7212474684,
+          0.0
+        ],
+        [
+          2319499.90939844,
+          2319499.90939844,
+          0.0
+        ]
+      ],
+      "trace": "finder-matrix-phase.jsonl",
+      "before_fix_errors": []
+    },
+    {
+      "id": "phase_CN_S_6",
+      "payload": {
+        "calculationType": "GF_PHASE_ANGLE_SEARCH",
+        "kernels": [
+          {
+            "type": "KERNEL_SET",
+            "id": 1
+          }
+        ],
+        "timeSystem": "TDB",
+        "timeFormat": "SECONDS_PAST_J2000",
+        "intervals": [
+          {
+            "startTime": "0.0",
+            "endTime": "2592000.0"
+          }
+        ],
+        "timeStep": 3600.0,
+        "timeStepUnits": "SECONDS",
+        "outputTimeSystem": "TDB",
+        "outputTimeFormat": "SECONDS_PAST_J2000",
+        "outputDurationUnits": "SECONDS",
+        "shouldComplementWindow": false,
+        "intervalAdjustment": "NO_ADJUSTMENT",
+        "intervalFiltering": "NO_FILTERING",
+        "target": "MOON",
+        "observer": "EARTH",
+        "aberrationCorrection": "CN+S",
+        "illuminator": "SUN",
+        "condition": {
+          "relationalCondition": "<",
+          "referenceValue": 60.0
+        }
+      },
+      "local": "phase_CN_S_6,GF_PHASE_ANGLE_SEARCH,301,399,10,10,J2000,IAU_MOON,Near point: ellipsoid,RECTANGULAR,X,INCIDENCE,<,60.0,0.0,CN+S,0.0:2592000.0,3600.0,0.0,false,NONE,0.0,SECONDS,false,0.0,SECONDS,SECONDS,0.0,0.0,0.0,POINT,POINT,ANY",
+      "native": [
+        [
+          1327914.9160907157,
+          2096630.1697619976,
+          768715.253671282
+        ]
+      ],
+      "trace": "finder-matrix-phase.jsonl",
+      "before_fix_errors": []
+    },
+    {
+      "id": "phase_CN_S_7",
+      "payload": {
+        "calculationType": "GF_PHASE_ANGLE_SEARCH",
+        "kernels": [
+          {
+            "type": "KERNEL_SET",
+            "id": 1
+          }
+        ],
+        "timeSystem": "TDB",
+        "timeFormat": "SECONDS_PAST_J2000",
+        "intervals": [
+          {
+            "startTime": "0.0",
+            "endTime": "2592000.0"
+          }
+        ],
+        "timeStep": 3600.0,
+        "timeStepUnits": "SECONDS",
+        "outputTimeSystem": "TDB",
+        "outputTimeFormat": "SECONDS_PAST_J2000",
+        "outputDurationUnits": "SECONDS",
+        "shouldComplementWindow": false,
+        "intervalAdjustment": "NO_ADJUSTMENT",
+        "intervalFiltering": "NO_FILTERING",
+        "target": "MOON",
+        "observer": "EARTH",
+        "aberrationCorrection": "CN+S",
+        "illuminator": "SUN",
+        "condition": {
+          "relationalCondition": ">",
+          "referenceValue": 100.0
+        }
+      },
+      "local": "phase_CN_S_7,GF_PHASE_ANGLE_SEARCH,301,399,10,10,J2000,IAU_MOON,Near point: ellipsoid,RECTANGULAR,X,INCIDENCE,>,100.0,0.0,CN+S,0.0:2592000.0,3600.0,0.0,false,NONE,0.0,SECONDS,false,0.0,SECONDS,SECONDS,0.0,0.0,0.0,POINT,POINT,ANY",
+      "native": [
+        [
+          0.0,
+          1058191.9593205627,
+          1058191.9593205627
+        ],
+        [
+          2397262.0455591506,
+          2592000.0,
+          194737.95444084937
+        ]
+      ],
+      "trace": "finder-matrix-phase.jsonl",
+      "before_fix_errors": []
+    },
+    {
+      "id": "phase_CN_S_8",
+      "payload": {
+        "calculationType": "GF_PHASE_ANGLE_SEARCH",
+        "kernels": [
+          {
+            "type": "KERNEL_SET",
+            "id": 1
+          }
+        ],
+        "timeSystem": "TDB",
+        "timeFormat": "SECONDS_PAST_J2000",
+        "intervals": [
+          {
+            "startTime": "0.0",
+            "endTime": "2592000.0"
+          }
+        ],
+        "timeStep": 3600.0,
+        "timeStepUnits": "SECONDS",
+        "outputTimeSystem": "TDB",
+        "outputTimeFormat": "SECONDS_PAST_J2000",
+        "outputDurationUnits": "SECONDS",
+        "shouldComplementWindow": false,
+        "intervalAdjustment": "NO_ADJUSTMENT",
+        "intervalFiltering": "NO_FILTERING",
+        "target": "MOON",
+        "observer": "EARTH",
+        "aberrationCorrection": "CN+S",
+        "illuminator": "SUN",
+        "condition": {
+          "relationalCondition": "=",
+          "referenceValue": 90.0
+        }
+      },
+      "local": "phase_CN_S_8,GF_PHASE_ANGLE_SEARCH,301,399,10,10,J2000,IAU_MOON,Near point: ellipsoid,RECTANGULAR,X,INCIDENCE,=,90.0,0.0,CN+S,0.0:2592000.0,3600.0,0.0,false,NONE,0.0,SECONDS,false,0.0,SECONDS,SECONDS,0.0,0.0,0.0,POINT,POINT,ANY",
+      "native": [
+        [
+          1127900.940775073,
+          1127900.940775073,
+          0.0
+        ],
+        [
+          2319455.899978047,
+          2319455.899978047,
+          0.0
+        ]
+      ],
+      "trace": "finder-matrix-phase.jsonl",
+      "before_fix_errors": []
+    },
+    {
+      "id": "range_rate_NONE_0",
+      "payload": {
+        "calculationType": "GF_RANGE_RATE_SEARCH",
+        "kernels": [
+          {
+            "type": "KERNEL_SET",
+            "id": 1
+          }
+        ],
+        "timeSystem": "TDB",
+        "timeFormat": "SECONDS_PAST_J2000",
+        "intervals": [
+          {
+            "startTime": "0.0",
+            "endTime": "2592000.0"
+          }
+        ],
+        "timeStep": 3600.0,
+        "timeStepUnits": "SECONDS",
+        "outputTimeSystem": "TDB",
+        "outputTimeFormat": "SECONDS_PAST_J2000",
+        "outputDurationUnits": "SECONDS",
+        "shouldComplementWindow": false,
+        "intervalAdjustment": "NO_ADJUSTMENT",
+        "intervalFiltering": "NO_FILTERING",
+        "target": "MOON",
+        "observer": "EARTH",
+        "aberrationCorrection": "NONE",
+        "condition": {
+          "relationalCondition": "<",
+          "referenceValue": -0.05
+        }
+      },
+      "local": "range_rate_NONE_0,GF_RANGE_RATE_SEARCH,301,399,10,10,J2000,IAU_MOON,Near point: ellipsoid,RECTANGULAR,X,INCIDENCE,<,-0.05,0.0,NONE,0.0:2592000.0,3600.0,0.0,false,NONE,0.0,SECONDS,false,0.0,SECONDS,SECONDS,0.0,0.0,0.0,POINT,POINT,ANY",
+      "native": [
+        [
+          931527.6859217086,
+          1321114.8465056268,
+          389587.1605839182
+        ]
+      ],
+      "trace": "finder-matrix-range_rate.jsonl",
+      "before_fix_errors": []
+    },
+    {
+      "id": "range_rate_NONE_1",
+      "payload": {
+        "calculationType": "GF_RANGE_RATE_SEARCH",
+        "kernels": [
+          {
+            "type": "KERNEL_SET",
+            "id": 1
+          }
+        ],
+        "timeSystem": "TDB",
+        "timeFormat": "SECONDS_PAST_J2000",
+        "intervals": [
+          {
+            "startTime": "0.0",
+            "endTime": "2592000.0"
+          }
+        ],
+        "timeStep": 3600.0,
+        "timeStepUnits": "SECONDS",
+        "outputTimeSystem": "TDB",
+        "outputTimeFormat": "SECONDS_PAST_J2000",
+        "outputDurationUnits": "SECONDS",
+        "shouldComplementWindow": false,
+        "intervalAdjustment": "NO_ADJUSTMENT",
+        "intervalFiltering": "NO_FILTERING",
+        "target": "MOON",
+        "observer": "EARTH",
+        "aberrationCorrection": "NONE",
+        "condition": {
+          "relationalCondition": ">",
+          "referenceValue": 0.05
+        }
+      },
+      "local": "range_rate_NONE_1,GF_RANGE_RATE_SEARCH,301,399,10,10,J2000,IAU_MOON,Near point: ellipsoid,RECTANGULAR,X,INCIDENCE,>,0.05,0.0,NONE,0.0:2592000.0,3600.0,0.0,false,NONE,0.0,SECONDS,false,0.0,SECONDS,SECONDS,0.0,0.0,0.0,POINT,POINT,ANY",
+      "native": [
+        [
+          1815611.0751156404,
+          2319343.5725136665,
+          503732.49739802605
+        ]
+      ],
+      "trace": "finder-matrix-range_rate.jsonl",
+      "before_fix_errors": []
+    },
+    {
+      "id": "range_rate_NONE_2",
+      "payload": {
+        "calculationType": "GF_RANGE_RATE_SEARCH",
+        "kernels": [
+          {
+            "type": "KERNEL_SET",
+            "id": 1
+          }
+        ],
+        "timeSystem": "TDB",
+        "timeFormat": "SECONDS_PAST_J2000",
+        "intervals": [
+          {
+            "startTime": "0.0",
+            "endTime": "2592000.0"
+          }
+        ],
+        "timeStep": 3600.0,
+        "timeStepUnits": "SECONDS",
+        "outputTimeSystem": "TDB",
+        "outputTimeFormat": "SECONDS_PAST_J2000",
+        "outputDurationUnits": "SECONDS",
+        "shouldComplementWindow": false,
+        "intervalAdjustment": "NO_ADJUSTMENT",
+        "intervalFiltering": "NO_FILTERING",
+        "target": "MOON",
+        "observer": "EARTH",
+        "aberrationCorrection": "NONE",
+        "condition": {
+          "relationalCondition": "=",
+          "referenceValue": 0.0
+        }
+      },
+      "local": "range_rate_NONE_2,GF_RANGE_RATE_SEARCH,301,399,10,10,J2000,IAU_MOON,Near point: ellipsoid,RECTANGULAR,X,INCIDENCE,=,0.0,0.0,NONE,0.0:2592000.0,3600.0,0.0,false,NONE,0.0,SECONDS,false,0.0,SECONDS,SECONDS,0.0,0.0,0.0,POINT,POINT,ANY",
+      "native": [
+        [
+          260603.72716389014,
+          260603.72716389014,
+          0.0
+        ],
+        [
+          1594118.250270079,
+          1594118.250270079,
+          0.0
+        ]
+      ],
+      "trace": "finder-matrix-range_rate.jsonl",
+      "before_fix_errors": []
+    },
+    {
+      "id": "range_rate_LT_3",
+      "payload": {
+        "calculationType": "GF_RANGE_RATE_SEARCH",
+        "kernels": [
+          {
+            "type": "KERNEL_SET",
+            "id": 1
+          }
+        ],
+        "timeSystem": "TDB",
+        "timeFormat": "SECONDS_PAST_J2000",
+        "intervals": [
+          {
+            "startTime": "0.0",
+            "endTime": "2592000.0"
+          }
+        ],
+        "timeStep": 3600.0,
+        "timeStepUnits": "SECONDS",
+        "outputTimeSystem": "TDB",
+        "outputTimeFormat": "SECONDS_PAST_J2000",
+        "outputDurationUnits": "SECONDS",
+        "shouldComplementWindow": false,
+        "intervalAdjustment": "NO_ADJUSTMENT",
+        "intervalFiltering": "NO_FILTERING",
+        "target": "MOON",
+        "observer": "EARTH",
+        "aberrationCorrection": "LT",
+        "condition": {
+          "relationalCondition": "<",
+          "referenceValue": -0.05
+        }
+      },
+      "local": "range_rate_LT_3,GF_RANGE_RATE_SEARCH,301,399,10,10,J2000,IAU_MOON,Near point: ellipsoid,RECTANGULAR,X,INCIDENCE,<,-0.05,0.0,LT,0.0:2592000.0,3600.0,0.0,false,NONE,0.0,SECONDS,false,0.0,SECONDS,SECONDS,0.0,0.0,0.0,POINT,POINT,ANY",
+      "native": [
+        [
+          932139.6712101432,
+          1321634.297604006,
+          389494.62639386277
+        ]
+      ],
+      "trace": "finder-matrix-range_rate.jsonl",
+      "before_fix_errors": []
+    },
+    {
+      "id": "range_rate_LT_4",
+      "payload": {
+        "calculationType": "GF_RANGE_RATE_SEARCH",
+        "kernels": [
+          {
+            "type": "KERNEL_SET",
+            "id": 1
+          }
+        ],
+        "timeSystem": "TDB",
+        "timeFormat": "SECONDS_PAST_J2000",
+        "intervals": [
+          {
+            "startTime": "0.0",
+            "endTime": "2592000.0"
+          }
+        ],
+        "timeStep": 3600.0,
+        "timeStepUnits": "SECONDS",
+        "outputTimeSystem": "TDB",
+        "outputTimeFormat": "SECONDS_PAST_J2000",
+        "outputDurationUnits": "SECONDS",
+        "shouldComplementWindow": false,
+        "intervalAdjustment": "NO_ADJUSTMENT",
+        "intervalFiltering": "NO_FILTERING",
+        "target": "MOON",
+        "observer": "EARTH",
+        "aberrationCorrection": "LT",
+        "condition": {
+          "relationalCondition": ">",
+          "referenceValue": 0.05
+        }
+      },
+      "local": "range_rate_LT_4,GF_RANGE_RATE_SEARCH,301,399,10,10,J2000,IAU_MOON,Near point: ellipsoid,RECTANGULAR,X,INCIDENCE,>,0.05,0.0,LT,0.0:2592000.0,3600.0,0.0,false,NONE,0.0,SECONDS,false,0.0,SECONDS,SECONDS,0.0,0.0,0.0,POINT,POINT,ANY",
+      "native": [
+        [
+          1816147.4756582512,
+          2319315.321863602,
+          503167.8462053507
+        ]
+      ],
+      "trace": "finder-matrix-range_rate.jsonl",
+      "before_fix_errors": []
+    },
+    {
+      "id": "range_rate_LT_5",
+      "payload": {
+        "calculationType": "GF_RANGE_RATE_SEARCH",
+        "kernels": [
+          {
+            "type": "KERNEL_SET",
+            "id": 1
+          }
+        ],
+        "timeSystem": "TDB",
+        "timeFormat": "SECONDS_PAST_J2000",
+        "intervals": [
+          {
+            "startTime": "0.0",
+            "endTime": "2592000.0"
+          }
+        ],
+        "timeStep": 3600.0,
+        "timeStepUnits": "SECONDS",
+        "outputTimeSystem": "TDB",
+        "outputTimeFormat": "SECONDS_PAST_J2000",
+        "outputDurationUnits": "SECONDS",
+        "shouldComplementWindow": false,
+        "intervalAdjustment": "NO_ADJUSTMENT",
+        "intervalFiltering": "NO_FILTERING",
+        "target": "MOON",
+        "observer": "EARTH",
+        "aberrationCorrection": "LT",
+        "condition": {
+          "relationalCondition": "=",
+          "referenceValue": 0.0
+        }
+      },
+      "local": "range_rate_LT_5,GF_RANGE_RATE_SEARCH,301,399,10,10,J2000,IAU_MOON,Near point: ellipsoid,RECTANGULAR,X,INCIDENCE,=,0.0,0.0,LT,0.0:2592000.0,3600.0,0.0,false,NONE,0.0,SECONDS,false,0.0,SECONDS,SECONDS,0.0,0.0,0.0,POINT,POINT,ANY",
+      "native": [
+        [
+          261403.18182565802,
+          261403.18182565802,
+          0.0
+        ],
+        [
+          1594528.2298135646,
+          1594528.2298135646,
+          0.0
+        ]
+      ],
+      "trace": "finder-matrix-range_rate.jsonl",
+      "before_fix_errors": []
+    },
+    {
+      "id": "range_rate_CN_S_6",
+      "payload": {
+        "calculationType": "GF_RANGE_RATE_SEARCH",
+        "kernels": [
+          {
+            "type": "KERNEL_SET",
+            "id": 1
+          }
+        ],
+        "timeSystem": "TDB",
+        "timeFormat": "SECONDS_PAST_J2000",
+        "intervals": [
+          {
+            "startTime": "0.0",
+            "endTime": "2592000.0"
+          }
+        ],
+        "timeStep": 3600.0,
+        "timeStepUnits": "SECONDS",
+        "outputTimeSystem": "TDB",
+        "outputTimeFormat": "SECONDS_PAST_J2000",
+        "outputDurationUnits": "SECONDS",
+        "shouldComplementWindow": false,
+        "intervalAdjustment": "NO_ADJUSTMENT",
+        "intervalFiltering": "NO_FILTERING",
+        "target": "MOON",
+        "observer": "EARTH",
+        "aberrationCorrection": "CN+S",
+        "condition": {
+          "relationalCondition": "<",
+          "referenceValue": -0.05
+        }
+      },
+      "local": "range_rate_CN_S_6,GF_RANGE_RATE_SEARCH,301,399,10,10,J2000,IAU_MOON,Near point: ellipsoid,RECTANGULAR,X,INCIDENCE,<,-0.05,0.0,CN+S,0.0:2592000.0,3600.0,0.0,false,NONE,0.0,SECONDS,false,0.0,SECONDS,SECONDS,0.0,0.0,0.0,POINT,POINT,ANY",
+      "native": [
+        [
+          932139.732075049,
+          1321634.339549303,
+          389494.6074742541
+        ]
+      ],
+      "trace": "finder-matrix-range_rate.jsonl",
+      "before_fix_errors": []
+    },
+    {
+      "id": "range_rate_CN_S_7",
+      "payload": {
+        "calculationType": "GF_RANGE_RATE_SEARCH",
+        "kernels": [
+          {
+            "type": "KERNEL_SET",
+            "id": 1
+          }
+        ],
+        "timeSystem": "TDB",
+        "timeFormat": "SECONDS_PAST_J2000",
+        "intervals": [
+          {
+            "startTime": "0.0",
+            "endTime": "2592000.0"
+          }
+        ],
+        "timeStep": 3600.0,
+        "timeStepUnits": "SECONDS",
+        "outputTimeSystem": "TDB",
+        "outputTimeFormat": "SECONDS_PAST_J2000",
+        "outputDurationUnits": "SECONDS",
+        "shouldComplementWindow": false,
+        "intervalAdjustment": "NO_ADJUSTMENT",
+        "intervalFiltering": "NO_FILTERING",
+        "target": "MOON",
+        "observer": "EARTH",
+        "aberrationCorrection": "CN+S",
+        "condition": {
+          "relationalCondition": ">",
+          "referenceValue": 0.05
+        }
+      },
+      "local": "range_rate_CN_S_7,GF_RANGE_RATE_SEARCH,301,399,10,10,J2000,IAU_MOON,Near point: ellipsoid,RECTANGULAR,X,INCIDENCE,>,0.05,0.0,CN+S,0.0:2592000.0,3600.0,0.0,false,NONE,0.0,SECONDS,false,0.0,SECONDS,SECONDS,0.0,0.0,0.0,POINT,POINT,ANY",
+      "native": [
+        [
+          1816147.4587043338,
+          2319315.3211882696,
+          503167.8624839359
+        ]
+      ],
+      "trace": "finder-matrix-range_rate.jsonl",
+      "before_fix_errors": []
+    },
+    {
+      "id": "range_rate_CN_S_8",
+      "payload": {
+        "calculationType": "GF_RANGE_RATE_SEARCH",
+        "kernels": [
+          {
+            "type": "KERNEL_SET",
+            "id": 1
+          }
+        ],
+        "timeSystem": "TDB",
+        "timeFormat": "SECONDS_PAST_J2000",
+        "intervals": [
+          {
+            "startTime": "0.0",
+            "endTime": "2592000.0"
+          }
+        ],
+        "timeStep": 3600.0,
+        "timeStepUnits": "SECONDS",
+        "outputTimeSystem": "TDB",
+        "outputTimeFormat": "SECONDS_PAST_J2000",
+        "outputDurationUnits": "SECONDS",
+        "shouldComplementWindow": false,
+        "intervalAdjustment": "NO_ADJUSTMENT",
+        "intervalFiltering": "NO_FILTERING",
+        "target": "MOON",
+        "observer": "EARTH",
+        "aberrationCorrection": "CN+S",
+        "condition": {
+          "relationalCondition": "=",
+          "referenceValue": 0.0
+        }
+      },
+      "local": "range_rate_CN_S_8,GF_RANGE_RATE_SEARCH,301,399,10,10,J2000,IAU_MOON,Near point: ellipsoid,RECTANGULAR,X,INCIDENCE,=,0.0,0.0,CN+S,0.0:2592000.0,3600.0,0.0,false,NONE,0.0,SECONDS,false,0.0,SECONDS,SECONDS,0.0,0.0,0.0,POINT,POINT,ANY",
+      "native": [
+        [
+          261403.14872721204,
+          261403.14872721204,
+          0.0
+        ],
+        [
+          1594528.2419905094,
+          1594528.2419905094,
+          0.0
+        ]
+      ],
+      "trace": "finder-matrix-range_rate.jsonl",
+      "before_fix_errors": []
+    },
+    {
+      "id": "separation_NONE_0",
+      "payload": {
+        "calculationType": "GF_ANGULAR_SEPARATION_SEARCH",
+        "kernels": [
+          {
+            "type": "KERNEL_SET",
+            "id": 1
+          }
+        ],
+        "timeSystem": "TDB",
+        "timeFormat": "SECONDS_PAST_J2000",
+        "intervals": [
+          {
+            "startTime": "0.0",
+            "endTime": "2592000.0"
+          }
+        ],
+        "timeStep": 3600.0,
+        "timeStepUnits": "SECONDS",
+        "outputTimeSystem": "TDB",
+        "outputTimeFormat": "SECONDS_PAST_J2000",
+        "outputDurationUnits": "SECONDS",
+        "shouldComplementWindow": false,
+        "intervalAdjustment": "NO_ADJUSTMENT",
+        "intervalFiltering": "NO_FILTERING",
+        "target1": "MOON",
+        "target2": "SUN",
+        "shape1": "POINT",
+        "shape2": "POINT",
+        "observer": "EARTH",
+        "aberrationCorrection": "NONE",
+        "condition": {
+          "relationalCondition": "<",
+          "referenceValue": 60.0
+        }
+      },
+      "local": "separation_NONE_0,GF_ANGULAR_SEPARATION_SEARCH,301,399,10,10,J2000,IAU_MOON,Near point: ellipsoid,RECTANGULAR,X,INCIDENCE,<,60.0,0.0,NONE,0.0:2592000.0,3600.0,0.0,false,NONE,0.0,SECONDS,false,0.0,SECONDS,SECONDS,0.0,0.0,0.0,POINT,POINT,ANY",
+      "native": [
+        [
+          0.0,
+          915305.0991963786,
+          915305.0991963786
+        ],
+        [
+          2554889.094258349,
+          2592000.0,
+          37110.90574165108
+        ]
+      ],
+      "trace": "finder-matrix-separation.jsonl",
+      "before_fix_errors": []
+    },
+    {
+      "id": "separation_NONE_1",
+      "payload": {
+        "calculationType": "GF_ANGULAR_SEPARATION_SEARCH",
+        "kernels": [
+          {
+            "type": "KERNEL_SET",
+            "id": 1
+          }
+        ],
+        "timeSystem": "TDB",
+        "timeFormat": "SECONDS_PAST_J2000",
+        "intervals": [
+          {
+            "startTime": "0.0",
+            "endTime": "2592000.0"
+          }
+        ],
+        "timeStep": 3600.0,
+        "timeStepUnits": "SECONDS",
+        "outputTimeSystem": "TDB",
+        "outputTimeFormat": "SECONDS_PAST_J2000",
+        "outputDurationUnits": "SECONDS",
+        "shouldComplementWindow": false,
+        "intervalAdjustment": "NO_ADJUSTMENT",
+        "intervalFiltering": "NO_FILTERING",
+        "target1": "MOON",
+        "target2": "SUN",
+        "shape1": "POINT",
+        "shape2": "POINT",
+        "observer": "EARTH",
+        "aberrationCorrection": "NONE",
+        "condition": {
+          "relationalCondition": ">",
+          "referenceValue": 120.0
+        }
+      },
+      "local": "separation_NONE_1,GF_ANGULAR_SEPARATION_SEARCH,301,399,10,10,J2000,IAU_MOON,Near point: ellipsoid,RECTANGULAR,X,INCIDENCE,>,120.0,0.0,NONE,0.0:2592000.0,3600.0,0.0,false,NONE,0.0,SECONDS,false,0.0,SECONDS,SECONDS,0.0,0.0,0.0,POINT,POINT,ANY",
+      "native": [
+        [
+          1328748.612063438,
+          2095751.8034078646,
+          767003.1913444267
+        ]
+      ],
+      "trace": "finder-matrix-separation.jsonl",
+      "before_fix_errors": []
+    },
+    {
+      "id": "separation_NONE_2",
+      "payload": {
+        "calculationType": "GF_ANGULAR_SEPARATION_SEARCH",
+        "kernels": [
+          {
+            "type": "KERNEL_SET",
+            "id": 1
+          }
+        ],
+        "timeSystem": "TDB",
+        "timeFormat": "SECONDS_PAST_J2000",
+        "intervals": [
+          {
+            "startTime": "0.0",
+            "endTime": "2592000.0"
+          }
+        ],
+        "timeStep": 3600.0,
+        "timeStepUnits": "SECONDS",
+        "outputTimeSystem": "TDB",
+        "outputTimeFormat": "SECONDS_PAST_J2000",
+        "outputDurationUnits": "SECONDS",
+        "shouldComplementWindow": false,
+        "intervalAdjustment": "NO_ADJUSTMENT",
+        "intervalFiltering": "NO_FILTERING",
+        "target1": "MOON",
+        "target2": "SUN",
+        "shape1": "POINT",
+        "shape2": "POINT",
+        "observer": "EARTH",
+        "aberrationCorrection": "NONE",
+        "condition": {
+          "relationalCondition": "=",
+          "referenceValue": 90.0
+        }
+      },
+      "local": "separation_NONE_2,GF_ANGULAR_SEPARATION_SEARCH,301,399,10,10,J2000,IAU_MOON,Near point: ellipsoid,RECTANGULAR,X,INCIDENCE,=,90.0,0.0,NONE,0.0:2592000.0,3600.0,0.0,false,NONE,0.0,SECONDS,false,0.0,SECONDS,SECONDS,0.0,0.0,0.0,POINT,POINT,ANY",
+      "native": [
+        [
+          1128953.4645810372,
+          1128953.4645810372,
+          0.0
+        ],
+        [
+          2318307.3750589048,
+          2318307.3750589048,
+          0.0
+        ]
+      ],
+      "trace": "finder-matrix-separation.jsonl",
+      "before_fix_errors": []
+    },
+    {
+      "id": "separation_LT_3",
+      "payload": {
+        "calculationType": "GF_ANGULAR_SEPARATION_SEARCH",
+        "kernels": [
+          {
+            "type": "KERNEL_SET",
+            "id": 1
+          }
+        ],
+        "timeSystem": "TDB",
+        "timeFormat": "SECONDS_PAST_J2000",
+        "intervals": [
+          {
+            "startTime": "0.0",
+            "endTime": "2592000.0"
+          }
+        ],
+        "timeStep": 3600.0,
+        "timeStepUnits": "SECONDS",
+        "outputTimeSystem": "TDB",
+        "outputTimeFormat": "SECONDS_PAST_J2000",
+        "outputDurationUnits": "SECONDS",
+        "shouldComplementWindow": false,
+        "intervalAdjustment": "NO_ADJUSTMENT",
+        "intervalFiltering": "NO_FILTERING",
+        "target1": "MOON",
+        "target2": "SUN",
+        "shape1": "POINT",
+        "shape2": "POINT",
+        "observer": "EARTH",
+        "aberrationCorrection": "LT",
+        "condition": {
+          "relationalCondition": "<",
+          "referenceValue": 60.0
+        }
+      },
+      "local": "separation_LT_3,GF_ANGULAR_SEPARATION_SEARCH,301,399,10,10,J2000,IAU_MOON,Near point: ellipsoid,RECTANGULAR,X,INCIDENCE,<,60.0,0.0,LT,0.0:2592000.0,3600.0,0.0,false,NONE,0.0,SECONDS,false,0.0,SECONDS,SECONDS,0.0,0.0,0.0,POINT,POINT,ANY",
+      "native": [
+        [
+          0.0,
+          915285.3810138614,
+          915285.3810138614
+        ],
+        [
+          2554867.247859009,
+          2592000.0,
+          37132.752140990924
+        ]
+      ],
+      "trace": "finder-matrix-separation.jsonl",
+      "before_fix_errors": []
+    },
+    {
+      "id": "separation_LT_4",
+      "payload": {
+        "calculationType": "GF_ANGULAR_SEPARATION_SEARCH",
+        "kernels": [
+          {
+            "type": "KERNEL_SET",
+            "id": 1
+          }
+        ],
+        "timeSystem": "TDB",
+        "timeFormat": "SECONDS_PAST_J2000",
+        "intervals": [
+          {
+            "startTime": "0.0",
+            "endTime": "2592000.0"
+          }
+        ],
+        "timeStep": 3600.0,
+        "timeStepUnits": "SECONDS",
+        "outputTimeSystem": "TDB",
+        "outputTimeFormat": "SECONDS_PAST_J2000",
+        "outputDurationUnits": "SECONDS",
+        "shouldComplementWindow": false,
+        "intervalAdjustment": "NO_ADJUSTMENT",
+        "intervalFiltering": "NO_FILTERING",
+        "target1": "MOON",
+        "target2": "SUN",
+        "shape1": "POINT",
+        "shape2": "POINT",
+        "observer": "EARTH",
+        "aberrationCorrection": "LT",
+        "condition": {
+          "relationalCondition": ">",
+          "referenceValue": 120.0
+        }
+      },
+      "local": "separation_LT_4,GF_ANGULAR_SEPARATION_SEARCH,301,399,10,10,J2000,IAU_MOON,Near point: ellipsoid,RECTANGULAR,X,INCIDENCE,>,120.0,0.0,LT,0.0:2592000.0,3600.0,0.0,false,NONE,0.0,SECONDS,false,0.0,SECONDS,SECONDS,0.0,0.0,0.0,POINT,POINT,ANY",
+      "native": [
+        [
+          1328768.5644873,
+          2095773.4238680531,
+          767004.859380753
+        ]
+      ],
+      "trace": "finder-matrix-separation.jsonl",
+      "before_fix_errors": []
+    },
+    {
+      "id": "separation_LT_5",
+      "payload": {
+        "calculationType": "GF_ANGULAR_SEPARATION_SEARCH",
+        "kernels": [
+          {
+            "type": "KERNEL_SET",
+            "id": 1
+          }
+        ],
+        "timeSystem": "TDB",
+        "timeFormat": "SECONDS_PAST_J2000",
+        "intervals": [
+          {
+            "startTime": "0.0",
+            "endTime": "2592000.0"
+          }
+        ],
+        "timeStep": 3600.0,
+        "timeStepUnits": "SECONDS",
+        "outputTimeSystem": "TDB",
+        "outputTimeFormat": "SECONDS_PAST_J2000",
+        "outputDurationUnits": "SECONDS",
+        "shouldComplementWindow": false,
+        "intervalAdjustment": "NO_ADJUSTMENT",
+        "intervalFiltering": "NO_FILTERING",
+        "target1": "MOON",
+        "target2": "SUN",
+        "shape1": "POINT",
+        "shape2": "POINT",
+        "observer": "EARTH",
+        "aberrationCorrection": "LT",
+        "condition": {
+          "relationalCondition": "=",
+          "referenceValue": 90.0
+        }
+      },
+      "local": "separation_LT_5,GF_ANGULAR_SEPARATION_SEARCH,301,399,10,10,J2000,IAU_MOON,Near point: ellipsoid,RECTANGULAR,X,INCIDENCE,=,90.0,0.0,LT,0.0:2592000.0,3600.0,0.0,false,NONE,0.0,SECONDS,false,0.0,SECONDS,SECONDS,0.0,0.0,0.0,POINT,POINT,ANY",
+      "native": [
+        [
+          1128954.9088698884,
+          1128954.9088698884,
+          0.0
+        ],
+        [
+          2318308.5210853433,
+          2318308.5210853433,
+          0.0
+        ]
+      ],
+      "trace": "finder-matrix-separation.jsonl",
+      "before_fix_errors": []
+    },
+    {
+      "id": "separation_CN_S_6",
+      "payload": {
+        "calculationType": "GF_ANGULAR_SEPARATION_SEARCH",
+        "kernels": [
+          {
+            "type": "KERNEL_SET",
+            "id": 1
+          }
+        ],
+        "timeSystem": "TDB",
+        "timeFormat": "SECONDS_PAST_J2000",
+        "intervals": [
+          {
+            "startTime": "0.0",
+            "endTime": "2592000.0"
+          }
+        ],
+        "timeStep": 3600.0,
+        "timeStepUnits": "SECONDS",
+        "outputTimeSystem": "TDB",
+        "outputTimeFormat": "SECONDS_PAST_J2000",
+        "outputDurationUnits": "SECONDS",
+        "shouldComplementWindow": false,
+        "intervalAdjustment": "NO_ADJUSTMENT",
+        "intervalFiltering": "NO_FILTERING",
+        "target1": "MOON",
+        "target2": "SUN",
+        "shape1": "POINT",
+        "shape2": "POINT",
+        "observer": "EARTH",
+        "aberrationCorrection": "CN+S",
+        "condition": {
+          "relationalCondition": "<",
+          "referenceValue": 60.0
+        }
+      },
+      "local": "separation_CN_S_6,GF_ANGULAR_SEPARATION_SEARCH,301,399,10,10,J2000,IAU_MOON,Near point: ellipsoid,RECTANGULAR,X,INCIDENCE,<,60.0,0.0,CN+S,0.0:2592000.0,3600.0,0.0,false,NONE,0.0,SECONDS,false,0.0,SECONDS,SECONDS,0.0,0.0,0.0,POINT,POINT,ANY",
+      "native": [
+        [
+          0.0,
+          915264.1435394874,
+          915264.1435394874
+        ],
+        [
+          2554844.516891631,
+          2592000.0,
+          37155.48310836917
+        ]
+      ],
+      "trace": "finder-matrix-separation.jsonl",
+      "before_fix_errors": []
+    },
+    {
+      "id": "separation_CN_S_7",
+      "payload": {
+        "calculationType": "GF_ANGULAR_SEPARATION_SEARCH",
+        "kernels": [
+          {
+            "type": "KERNEL_SET",
+            "id": 1
+          }
+        ],
+        "timeSystem": "TDB",
+        "timeFormat": "SECONDS_PAST_J2000",
+        "intervals": [
+          {
+            "startTime": "0.0",
+            "endTime": "2592000.0"
+          }
+        ],
+        "timeStep": 3600.0,
+        "timeStepUnits": "SECONDS",
+        "outputTimeSystem": "TDB",
+        "outputTimeFormat": "SECONDS_PAST_J2000",
+        "outputDurationUnits": "SECONDS",
+        "shouldComplementWindow": false,
+        "intervalAdjustment": "NO_ADJUSTMENT",
+        "intervalFiltering": "NO_FILTERING",
+        "target1": "MOON",
+        "target2": "SUN",
+        "shape1": "POINT",
+        "shape2": "POINT",
+        "observer": "EARTH",
+        "aberrationCorrection": "CN+S",
+        "condition": {
+          "relationalCondition": ">",
+          "referenceValue": 120.0
+        }
+      },
+      "local": "separation_CN_S_7,GF_ANGULAR_SEPARATION_SEARCH,301,399,10,10,J2000,IAU_MOON,Near point: ellipsoid,RECTANGULAR,X,INCIDENCE,>,120.0,0.0,CN+S,0.0:2592000.0,3600.0,0.0,false,NONE,0.0,SECONDS,false,0.0,SECONDS,SECONDS,0.0,0.0,0.0,POINT,POINT,ANY",
+      "native": [
+        [
+          1328712.8305498234,
+          2095712.289717868,
+          766999.4591680446
+        ]
+      ],
+      "trace": "finder-matrix-separation.jsonl",
+      "before_fix_errors": []
+    },
+    {
+      "id": "separation_CN_S_8",
+      "payload": {
+        "calculationType": "GF_ANGULAR_SEPARATION_SEARCH",
+        "kernels": [
+          {
+            "type": "KERNEL_SET",
+            "id": 1
+          }
+        ],
+        "timeSystem": "TDB",
+        "timeFormat": "SECONDS_PAST_J2000",
+        "intervals": [
+          {
+            "startTime": "0.0",
+            "endTime": "2592000.0"
+          }
+        ],
+        "timeStep": 3600.0,
+        "timeStepUnits": "SECONDS",
+        "outputTimeSystem": "TDB",
+        "outputTimeFormat": "SECONDS_PAST_J2000",
+        "outputDurationUnits": "SECONDS",
+        "shouldComplementWindow": false,
+        "intervalAdjustment": "NO_ADJUSTMENT",
+        "intervalFiltering": "NO_FILTERING",
+        "target1": "MOON",
+        "target2": "SUN",
+        "shape1": "POINT",
+        "shape2": "POINT",
+        "observer": "EARTH",
+        "aberrationCorrection": "CN+S",
+        "condition": {
+          "relationalCondition": "=",
+          "referenceValue": 90.0
+        }
+      },
+      "local": "separation_CN_S_8,GF_ANGULAR_SEPARATION_SEARCH,301,399,10,10,J2000,IAU_MOON,Near point: ellipsoid,RECTANGULAR,X,INCIDENCE,=,90.0,0.0,CN+S,0.0:2592000.0,3600.0,0.0,false,NONE,0.0,SECONDS,false,0.0,SECONDS,SECONDS,0.0,0.0,0.0,POINT,POINT,ANY",
+      "native": [
+        [
+          1128915.1228218838,
+          1128915.1228218838,
+          0.0
+        ],
+        [
+          2318264.4855808592,
+          2318264.4855808592,
+          0.0
+        ]
+      ],
+      "trace": "finder-matrix-separation.jsonl",
+      "before_fix_errors": []
+    },
+    {
+      "id": "subpoint_NONE_0",
+      "payload": {
+        "calculationType": "GF_SUB_POINT_SEARCH",
+        "kernels": [
+          {
+            "type": "KERNEL_SET",
+            "id": 1
+          }
+        ],
+        "timeSystem": "TDB",
+        "timeFormat": "SECONDS_PAST_J2000",
+        "intervals": [
+          {
+            "startTime": "0.0",
+            "endTime": "2592000.0"
+          }
+        ],
+        "timeStep": 3600.0,
+        "timeStepUnits": "SECONDS",
+        "outputTimeSystem": "TDB",
+        "outputTimeFormat": "SECONDS_PAST_J2000",
+        "outputDurationUnits": "SECONDS",
+        "shouldComplementWindow": false,
+        "intervalAdjustment": "NO_ADJUSTMENT",
+        "intervalFiltering": "NO_FILTERING",
+        "target": "MOON",
+        "observer": "EARTH",
+        "aberrationCorrection": "NONE",
+        "targetFrame": "MOON_ME",
+        "subPointType": "Near point: ellipsoid",
+        "condition": {
+          "coordinateSystem": "LATITUDINAL",
+          "coordinate": "LATITUDE",
+          "relationalCondition": "<",
+          "referenceValue": -5.0
+        }
+      },
+      "local": "subpoint_NONE_0,GF_SUB_POINT_SEARCH,301,399,10,10,J2000,MOON_ME,Near point: ellipsoid,LATITUDINAL,LATITUDE,INCIDENCE,<,-5.0,0.0,NONE,0.0:2592000.0,3600.0,0.0,false,NONE,0.0,SECONDS,false,0.0,SECONDS,SECONDS,0.0,0.0,0.0,POINT,POINT,ANY",
+      "native": [
+        [
+          0.0,
+          244443.29127782784,
+          244443.29127782784
+        ],
+        [
+          2001797.13774374,
+          2592000.0,
+          590202.8622562599
+        ]
+      ],
+      "trace": "finder-matrix-subpoint.jsonl",
+      "before_fix_errors": []
+    },
+    {
+      "id": "subpoint_NONE_1",
+      "payload": {
+        "calculationType": "GF_SUB_POINT_SEARCH",
+        "kernels": [
+          {
+            "type": "KERNEL_SET",
+            "id": 1
+          }
+        ],
+        "timeSystem": "TDB",
+        "timeFormat": "SECONDS_PAST_J2000",
+        "intervals": [
+          {
+            "startTime": "0.0",
+            "endTime": "2592000.0"
+          }
+        ],
+        "timeStep": 3600.0,
+        "timeStepUnits": "SECONDS",
+        "outputTimeSystem": "TDB",
+        "outputTimeFormat": "SECONDS_PAST_J2000",
+        "outputDurationUnits": "SECONDS",
+        "shouldComplementWindow": false,
+        "intervalAdjustment": "NO_ADJUSTMENT",
+        "intervalFiltering": "NO_FILTERING",
+        "target": "MOON",
+        "observer": "EARTH",
+        "aberrationCorrection": "NONE",
+        "targetFrame": "MOON_ME",
+        "subPointType": "Near point: ellipsoid",
+        "condition": {
+          "coordinateSystem": "LATITUDINAL",
+          "coordinate": "LATITUDE",
+          "relationalCondition": ">",
+          "referenceValue": 5.0
+        }
+      },
+      "local": "subpoint_NONE_1,GF_SUB_POINT_SEARCH,301,399,10,10,J2000,MOON_ME,Near point: ellipsoid,LATITUDINAL,LATITUDE,INCIDENCE,>,5.0,0.0,NONE,0.0:2592000.0,3600.0,0.0,false,NONE,0.0,SECONDS,false,0.0,SECONDS,SECONDS,0.0,0.0,0.0,POINT,POINT,ANY",
+      "native": [
+        [
+          915473.8555046993,
+          1448894.869264161,
+          533421.0137594617
+        ]
+      ],
+      "trace": "finder-matrix-subpoint.jsonl",
+      "before_fix_errors": []
+    },
+    {
+      "id": "subpoint_NONE_2",
+      "payload": {
+        "calculationType": "GF_SUB_POINT_SEARCH",
+        "kernels": [
+          {
+            "type": "KERNEL_SET",
+            "id": 1
+          }
+        ],
+        "timeSystem": "TDB",
+        "timeFormat": "SECONDS_PAST_J2000",
+        "intervals": [
+          {
+            "startTime": "0.0",
+            "endTime": "2592000.0"
+          }
+        ],
+        "timeStep": 3600.0,
+        "timeStepUnits": "SECONDS",
+        "outputTimeSystem": "TDB",
+        "outputTimeFormat": "SECONDS_PAST_J2000",
+        "outputDurationUnits": "SECONDS",
+        "shouldComplementWindow": false,
+        "intervalAdjustment": "NO_ADJUSTMENT",
+        "intervalFiltering": "NO_FILTERING",
+        "target": "MOON",
+        "observer": "EARTH",
+        "aberrationCorrection": "NONE",
+        "targetFrame": "MOON_ME",
+        "subPointType": "Near point: ellipsoid",
+        "condition": {
+          "coordinateSystem": "LATITUDINAL",
+          "coordinate": "LATITUDE",
+          "relationalCondition": "=",
+          "referenceValue": 0.0
+        }
+      },
+      "local": "subpoint_NONE_2,GF_SUB_POINT_SEARCH,301,399,10,10,J2000,MOON_ME,Near point: ellipsoid,LATITUDINAL,LATITUDE,INCIDENCE,=,0.0,0.0,NONE,0.0:2592000.0,3600.0,0.0,false,NONE,0.0,SECONDS,false,0.0,SECONDS,SECONDS,0.0,0.0,0.0,POINT,POINT,ANY",
+      "native": [
+        [
+          586774.3807602022,
+          586774.3807602022,
+          0.0
+        ],
+        [
+          1719821.332520746,
+          1719821.332520746,
+          0.0
+        ]
+      ],
+      "trace": "finder-matrix-subpoint.jsonl",
+      "before_fix_errors": []
+    },
+    {
+      "id": "subpoint_LT_3",
+      "payload": {
+        "calculationType": "GF_SUB_POINT_SEARCH",
+        "kernels": [
+          {
+            "type": "KERNEL_SET",
+            "id": 1
+          }
+        ],
+        "timeSystem": "TDB",
+        "timeFormat": "SECONDS_PAST_J2000",
+        "intervals": [
+          {
+            "startTime": "0.0",
+            "endTime": "2592000.0"
+          }
+        ],
+        "timeStep": 3600.0,
+        "timeStepUnits": "SECONDS",
+        "outputTimeSystem": "TDB",
+        "outputTimeFormat": "SECONDS_PAST_J2000",
+        "outputDurationUnits": "SECONDS",
+        "shouldComplementWindow": false,
+        "intervalAdjustment": "NO_ADJUSTMENT",
+        "intervalFiltering": "NO_FILTERING",
+        "target": "MOON",
+        "observer": "EARTH",
+        "aberrationCorrection": "LT",
+        "targetFrame": "MOON_ME",
+        "subPointType": "Near point: ellipsoid",
+        "condition": {
+          "coordinateSystem": "LATITUDINAL",
+          "coordinate": "LATITUDE",
+          "relationalCondition": "<",
+          "referenceValue": -5.0
+        }
+      },
+      "local": "subpoint_LT_3,GF_SUB_POINT_SEARCH,301,399,10,10,J2000,MOON_ME,Near point: ellipsoid,LATITUDINAL,LATITUDE,INCIDENCE,<,-5.0,0.0,LT,0.0:2592000.0,3600.0,0.0,false,NONE,0.0,SECONDS,false,0.0,SECONDS,SECONDS,0.0,0.0,0.0,POINT,POINT,ANY",
+      "native": [
+        [
+          0.0,
+          244451.4835488718,
+          244451.4835488718
+        ],
+        [
+          2001782.1576532666,
+          2592000.0,
+          590217.8423467334
+        ]
+      ],
+      "trace": "finder-matrix-subpoint.jsonl",
+      "before_fix_errors": []
+    },
+    {
+      "id": "subpoint_LT_4",
+      "payload": {
+        "calculationType": "GF_SUB_POINT_SEARCH",
+        "kernels": [
+          {
+            "type": "KERNEL_SET",
+            "id": 1
+          }
+        ],
+        "timeSystem": "TDB",
+        "timeFormat": "SECONDS_PAST_J2000",
+        "intervals": [
+          {
+            "startTime": "0.0",
+            "endTime": "2592000.0"
+          }
+        ],
+        "timeStep": 3600.0,
+        "timeStepUnits": "SECONDS",
+        "outputTimeSystem": "TDB",
+        "outputTimeFormat": "SECONDS_PAST_J2000",
+        "outputDurationUnits": "SECONDS",
+        "shouldComplementWindow": false,
+        "intervalAdjustment": "NO_ADJUSTMENT",
+        "intervalFiltering": "NO_FILTERING",
+        "target": "MOON",
+        "observer": "EARTH",
+        "aberrationCorrection": "LT",
+        "targetFrame": "MOON_ME",
+        "subPointType": "Near point: ellipsoid",
+        "condition": {
+          "coordinateSystem": "LATITUDINAL",
+          "coordinate": "LATITUDE",
+          "relationalCondition": ">",
+          "referenceValue": 5.0
+        }
+      },
+      "local": "subpoint_LT_4,GF_SUB_POINT_SEARCH,301,399,10,10,J2000,MOON_ME,Near point: ellipsoid,LATITUDINAL,LATITUDE,INCIDENCE,>,5.0,0.0,LT,0.0:2592000.0,3600.0,0.0,false,NONE,0.0,SECONDS,false,0.0,SECONDS,SECONDS,0.0,0.0,0.0,POINT,POINT,ANY",
+      "native": [
+        [
+          915498.9531938974,
+          1448883.4216266894,
+          533384.468432792
+        ]
+      ],
+      "trace": "finder-matrix-subpoint.jsonl",
+      "before_fix_errors": []
+    },
+    {
+      "id": "subpoint_LT_5",
+      "payload": {
+        "calculationType": "GF_SUB_POINT_SEARCH",
+        "kernels": [
+          {
+            "type": "KERNEL_SET",
+            "id": 1
+          }
+        ],
+        "timeSystem": "TDB",
+        "timeFormat": "SECONDS_PAST_J2000",
+        "intervals": [
+          {
+            "startTime": "0.0",
+            "endTime": "2592000.0"
+          }
+        ],
+        "timeStep": 3600.0,
+        "timeStepUnits": "SECONDS",
+        "outputTimeSystem": "TDB",
+        "outputTimeFormat": "SECONDS_PAST_J2000",
+        "outputDurationUnits": "SECONDS",
+        "shouldComplementWindow": false,
+        "intervalAdjustment": "NO_ADJUSTMENT",
+        "intervalFiltering": "NO_FILTERING",
+        "target": "MOON",
+        "observer": "EARTH",
+        "aberrationCorrection": "LT",
+        "targetFrame": "MOON_ME",
+        "subPointType": "Near point: ellipsoid",
+        "condition": {
+          "coordinateSystem": "LATITUDINAL",
+          "coordinate": "LATITUDE",
+          "relationalCondition": "=",
+          "referenceValue": 0.0
+        }
+      },
+      "local": "subpoint_LT_5,GF_SUB_POINT_SEARCH,301,399,10,10,J2000,MOON_ME,Near point: ellipsoid,LATITUDINAL,LATITUDE,INCIDENCE,=,0.0,0.0,LT,0.0:2592000.0,3600.0,0.0,false,NONE,0.0,SECONDS,false,0.0,SECONDS,SECONDS,0.0,0.0,0.0,POINT,POINT,ANY",
+      "native": [
+        [
+          586766.7658074992,
+          586766.7658074992,
+          0.0
+        ],
+        [
+          1719829.9109613292,
+          1719829.9109613292,
+          0.0
+        ]
+      ],
+      "trace": "finder-matrix-subpoint.jsonl",
+      "before_fix_errors": []
+    },
+    {
+      "id": "subpoint_CN_S_6",
+      "payload": {
+        "calculationType": "GF_SUB_POINT_SEARCH",
+        "kernels": [
+          {
+            "type": "KERNEL_SET",
+            "id": 1
+          }
+        ],
+        "timeSystem": "TDB",
+        "timeFormat": "SECONDS_PAST_J2000",
+        "intervals": [
+          {
+            "startTime": "0.0",
+            "endTime": "2592000.0"
+          }
+        ],
+        "timeStep": 3600.0,
+        "timeStepUnits": "SECONDS",
+        "outputTimeSystem": "TDB",
+        "outputTimeFormat": "SECONDS_PAST_J2000",
+        "outputDurationUnits": "SECONDS",
+        "shouldComplementWindow": false,
+        "intervalAdjustment": "NO_ADJUSTMENT",
+        "intervalFiltering": "NO_FILTERING",
+        "target": "MOON",
+        "observer": "EARTH",
+        "aberrationCorrection": "CN+S",
+        "targetFrame": "MOON_ME",
+        "subPointType": "Near point: ellipsoid",
+        "condition": {
+          "coordinateSystem": "LATITUDINAL",
+          "coordinate": "LATITUDE",
+          "relationalCondition": "<",
+          "referenceValue": -5.0
+        }
+      },
+      "local": "subpoint_CN_S_6,GF_SUB_POINT_SEARCH,301,399,10,10,J2000,MOON_ME,Near point: ellipsoid,LATITUDINAL,LATITUDE,INCIDENCE,<,-5.0,0.0,CN+S,0.0:2592000.0,3600.0,0.0,false,NONE,0.0,SECONDS,false,0.0,SECONDS,SECONDS,0.0,0.0,0.0,POINT,POINT,ANY",
+      "native": [
+        [
+          0.0,
+          244444.6407308289,
+          244444.6407308289
+        ],
+        [
+          2001798.3900286176,
+          2592000.0,
+          590201.6099713824
+        ]
+      ],
+      "trace": "finder-matrix-subpoint.jsonl",
+      "before_fix_errors": []
+    },
+    {
+      "id": "subpoint_CN_S_7",
+      "payload": {
+        "calculationType": "GF_SUB_POINT_SEARCH",
+        "kernels": [
+          {
+            "type": "KERNEL_SET",
+            "id": 1
+          }
+        ],
+        "timeSystem": "TDB",
+        "timeFormat": "SECONDS_PAST_J2000",
+        "intervals": [
+          {
+            "startTime": "0.0",
+            "endTime": "2592000.0"
+          }
+        ],
+        "timeStep": 3600.0,
+        "timeStepUnits": "SECONDS",
+        "outputTimeSystem": "TDB",
+        "outputTimeFormat": "SECONDS_PAST_J2000",
+        "outputDurationUnits": "SECONDS",
+        "shouldComplementWindow": false,
+        "intervalAdjustment": "NO_ADJUSTMENT",
+        "intervalFiltering": "NO_FILTERING",
+        "target": "MOON",
+        "observer": "EARTH",
+        "aberrationCorrection": "CN+S",
+        "targetFrame": "MOON_ME",
+        "subPointType": "Near point: ellipsoid",
+        "condition": {
+          "coordinateSystem": "LATITUDINAL",
+          "coordinate": "LATITUDE",
+          "relationalCondition": ">",
+          "referenceValue": 5.0
+        }
+      },
+      "local": "subpoint_CN_S_7,GF_SUB_POINT_SEARCH,301,399,10,10,J2000,MOON_ME,Near point: ellipsoid,LATITUDINAL,LATITUDE,INCIDENCE,>,5.0,0.0,CN+S,0.0:2592000.0,3600.0,0.0,false,NONE,0.0,SECONDS,false,0.0,SECONDS,SECONDS,0.0,0.0,0.0,POINT,POINT,ANY",
+      "native": [
+        [
+          915475.1510341084,
+          1448896.069398845,
+          533420.9183647367
+        ]
+      ],
+      "trace": "finder-matrix-subpoint.jsonl",
+      "before_fix_errors": []
+    },
+    {
+      "id": "subpoint_CN_S_8",
+      "payload": {
+        "calculationType": "GF_SUB_POINT_SEARCH",
+        "kernels": [
+          {
+            "type": "KERNEL_SET",
+            "id": 1
+          }
+        ],
+        "timeSystem": "TDB",
+        "timeFormat": "SECONDS_PAST_J2000",
+        "intervals": [
+          {
+            "startTime": "0.0",
+            "endTime": "2592000.0"
+          }
+        ],
+        "timeStep": 3600.0,
+        "timeStepUnits": "SECONDS",
+        "outputTimeSystem": "TDB",
+        "outputTimeFormat": "SECONDS_PAST_J2000",
+        "outputDurationUnits": "SECONDS",
+        "shouldComplementWindow": false,
+        "intervalAdjustment": "NO_ADJUSTMENT",
+        "intervalFiltering": "NO_FILTERING",
+        "target": "MOON",
+        "observer": "EARTH",
+        "aberrationCorrection": "CN+S",
+        "targetFrame": "MOON_ME",
+        "subPointType": "Near point: ellipsoid",
+        "condition": {
+          "coordinateSystem": "LATITUDINAL",
+          "coordinate": "LATITUDE",
+          "relationalCondition": "=",
+          "referenceValue": 0.0
+        }
+      },
+      "local": "subpoint_CN_S_8,GF_SUB_POINT_SEARCH,301,399,10,10,J2000,MOON_ME,Near point: ellipsoid,LATITUDINAL,LATITUDE,INCIDENCE,=,0.0,0.0,CN+S,0.0:2592000.0,3600.0,0.0,false,NONE,0.0,SECONDS,false,0.0,SECONDS,SECONDS,0.0,0.0,0.0,POINT,POINT,ANY",
+      "native": [
+        [
+          586775.7151148033,
+          586775.7151148033,
+          0.0
+        ],
+        [
+          1719822.5317410566,
+          1719822.5317410566,
+          0.0
+        ]
+      ],
+      "trace": "finder-matrix-subpoint.jsonl",
+      "before_fix_errors": []
+    },
+    {
+      "id": "illumination_NONE_0",
+      "payload": {
+        "calculationType": "GF_ILLUMINATION_ANGLES_SEARCH",
+        "kernels": [
+          {
+            "type": "KERNEL_SET",
+            "id": 1
+          }
+        ],
+        "timeSystem": "TDB",
+        "timeFormat": "SECONDS_PAST_J2000",
+        "intervals": [
+          {
+            "startTime": "0.0",
+            "endTime": "2592000.0"
+          }
+        ],
+        "timeStep": 3600.0,
+        "timeStepUnits": "SECONDS",
+        "outputTimeSystem": "TDB",
+        "outputTimeFormat": "SECONDS_PAST_J2000",
+        "outputDurationUnits": "SECONDS",
+        "shouldComplementWindow": false,
+        "intervalAdjustment": "NO_ADJUSTMENT",
+        "intervalFiltering": "NO_FILTERING",
+        "target": "MOON",
+        "observer": "EARTH",
+        "aberrationCorrection": "NONE",
+        "illuminator": "SUN",
+        "targetFrame": "MOON_ME",
+        "shape1": "ELLIPSOID",
+        "offSurfaceFlag": false,
+        "coordinateRepresentation": "PLANETODETIC",
+        "longitude": 10.0,
+        "latitude": 20.0,
+        "altitude": 0.0,
+        "condition": {
+          "angleType": "INCIDENCE",
+          "relationalCondition": "<",
+          "referenceValue": 60.0
+        }
+      },
+      "local": "illumination_NONE_0,GF_ILLUMINATION_ANGLES_SEARCH,301,399,10,10,J2000,MOON_ME,Near point: ellipsoid,RECTANGULAR,X,INCIDENCE,<,60.0,0.0,NONE,0.0:2592000.0,3600.0,0.0,false,NONE,0.0,SECONDS,false,0.0,SECONDS,SECONDS,1607.818763309247,283.5018280607376,594.2257970140168,ELLIPSOID,POINT,ANY",
+      "native": [
+        [
+          1236154.7805450163,
+          2060799.5937788894,
+          824644.8132338731
+        ]
+      ],
+      "trace": "finder-matrix-illumination.jsonl",
+      "before_fix_errors": []
+    },
+    {
+      "id": "illumination_NONE_1",
+      "payload": {
+        "calculationType": "GF_ILLUMINATION_ANGLES_SEARCH",
+        "kernels": [
+          {
+            "type": "KERNEL_SET",
+            "id": 1
+          }
+        ],
+        "timeSystem": "TDB",
+        "timeFormat": "SECONDS_PAST_J2000",
+        "intervals": [
+          {
+            "startTime": "0.0",
+            "endTime": "2592000.0"
+          }
+        ],
+        "timeStep": 3600.0,
+        "timeStepUnits": "SECONDS",
+        "outputTimeSystem": "TDB",
+        "outputTimeFormat": "SECONDS_PAST_J2000",
+        "outputDurationUnits": "SECONDS",
+        "shouldComplementWindow": false,
+        "intervalAdjustment": "NO_ADJUSTMENT",
+        "intervalFiltering": "NO_FILTERING",
+        "target": "MOON",
+        "observer": "EARTH",
+        "aberrationCorrection": "NONE",
+        "illuminator": "SUN",
+        "targetFrame": "MOON_ME",
+        "shape1": "ELLIPSOID",
+        "offSurfaceFlag": false,
+        "coordinateRepresentation": "PLANETODETIC",
+        "longitude": 10.0,
+        "latitude": 20.0,
+        "altitude": 0.0,
+        "condition": {
+          "angleType": "INCIDENCE",
+          "relationalCondition": ">",
+          "referenceValue": 120.0
+        }
+      },
+      "local": "illumination_NONE_1,GF_ILLUMINATION_ANGLES_SEARCH,301,399,10,10,J2000,MOON_ME,Near point: ellipsoid,RECTANGULAR,X,INCIDENCE,>,120.0,0.0,NONE,0.0:2592000.0,3600.0,0.0,false,NONE,0.0,SECONDS,false,0.0,SECONDS,SECONDS,1607.818763309247,283.5018280607376,594.2257970140168,ELLIPSOID,POINT,ANY",
+      "native": [
+        [
+          0.0,
+          779034.2288324838,
+          779034.2288324838
+        ],
+        [
+          2517323.669716087,
+          2592000.0,
+          74676.33028391283
+        ]
+      ],
+      "trace": "finder-matrix-illumination.jsonl",
+      "before_fix_errors": []
+    },
+    {
+      "id": "illumination_NONE_2",
+      "payload": {
+        "calculationType": "GF_ILLUMINATION_ANGLES_SEARCH",
+        "kernels": [
+          {
+            "type": "KERNEL_SET",
+            "id": 1
+          }
+        ],
+        "timeSystem": "TDB",
+        "timeFormat": "SECONDS_PAST_J2000",
+        "intervals": [
+          {
+            "startTime": "0.0",
+            "endTime": "2592000.0"
+          }
+        ],
+        "timeStep": 3600.0,
+        "timeStepUnits": "SECONDS",
+        "outputTimeSystem": "TDB",
+        "outputTimeFormat": "SECONDS_PAST_J2000",
+        "outputDurationUnits": "SECONDS",
+        "shouldComplementWindow": false,
+        "intervalAdjustment": "NO_ADJUSTMENT",
+        "intervalFiltering": "NO_FILTERING",
+        "target": "MOON",
+        "observer": "EARTH",
+        "aberrationCorrection": "NONE",
+        "illuminator": "SUN",
+        "targetFrame": "MOON_ME",
+        "shape1": "ELLIPSOID",
+        "offSurfaceFlag": false,
+        "coordinateRepresentation": "PLANETODETIC",
+        "longitude": 10.0,
+        "latitude": 20.0,
+        "altitude": 0.0,
+        "condition": {
+          "angleType": "INCIDENCE",
+          "relationalCondition": "=",
+          "referenceValue": 90.0
+        }
+      },
+      "local": "illumination_NONE_2,GF_ILLUMINATION_ANGLES_SEARCH,301,399,10,10,J2000,MOON_ME,Near point: ellipsoid,RECTANGULAR,X,INCIDENCE,=,90.0,0.0,NONE,0.0:2592000.0,3600.0,0.0,false,NONE,0.0,SECONDS,false,0.0,SECONDS,SECONDS,1607.818763309247,283.5018280607376,594.2257970140168,ELLIPSOID,POINT,ANY",
+      "native": [
+        [
+          1007590.762661099,
+          1007590.762661099,
+          0.0
+        ],
+        [
+          2289269.96492635,
+          2289269.96492635,
+          0.0
+        ]
+      ],
+      "trace": "finder-matrix-illumination.jsonl",
+      "before_fix_errors": []
+    },
+    {
+      "id": "illumination_LT_3",
+      "payload": {
+        "calculationType": "GF_ILLUMINATION_ANGLES_SEARCH",
+        "kernels": [
+          {
+            "type": "KERNEL_SET",
+            "id": 1
+          }
+        ],
+        "timeSystem": "TDB",
+        "timeFormat": "SECONDS_PAST_J2000",
+        "intervals": [
+          {
+            "startTime": "0.0",
+            "endTime": "2592000.0"
+          }
+        ],
+        "timeStep": 3600.0,
+        "timeStepUnits": "SECONDS",
+        "outputTimeSystem": "TDB",
+        "outputTimeFormat": "SECONDS_PAST_J2000",
+        "outputDurationUnits": "SECONDS",
+        "shouldComplementWindow": false,
+        "intervalAdjustment": "NO_ADJUSTMENT",
+        "intervalFiltering": "NO_FILTERING",
+        "target": "MOON",
+        "observer": "EARTH",
+        "aberrationCorrection": "LT",
+        "illuminator": "SUN",
+        "targetFrame": "MOON_ME",
+        "shape1": "ELLIPSOID",
+        "offSurfaceFlag": false,
+        "coordinateRepresentation": "PLANETODETIC",
+        "longitude": 10.0,
+        "latitude": 20.0,
+        "altitude": 0.0,
+        "condition": {
+          "angleType": "INCIDENCE",
+          "relationalCondition": "<",
+          "referenceValue": 60.0
+        }
+      },
+      "local": "illumination_LT_3,GF_ILLUMINATION_ANGLES_SEARCH,301,399,10,10,J2000,MOON_ME,Near point: ellipsoid,RECTANGULAR,X,INCIDENCE,<,60.0,0.0,LT,0.0:2592000.0,3600.0,0.0,false,NONE,0.0,SECONDS,false,0.0,SECONDS,SECONDS,1607.818763309247,283.5018280607376,594.2257970140168,ELLIPSOID,POINT,ANY",
+      "native": [
+        [
+          1236156.0101592387,
+          2060800.8586307713,
+          824644.8484715326
+        ]
+      ],
+      "trace": "finder-matrix-illumination.jsonl",
+      "before_fix_errors": []
+    },
+    {
+      "id": "illumination_LT_4",
+      "payload": {
+        "calculationType": "GF_ILLUMINATION_ANGLES_SEARCH",
+        "kernels": [
+          {
+            "type": "KERNEL_SET",
+            "id": 1
+          }
+        ],
+        "timeSystem": "TDB",
+        "timeFormat": "SECONDS_PAST_J2000",
+        "intervals": [
+          {
+            "startTime": "0.0",
+            "endTime": "2592000.0"
+          }
+        ],
+        "timeStep": 3600.0,
+        "timeStepUnits": "SECONDS",
+        "outputTimeSystem": "TDB",
+        "outputTimeFormat": "SECONDS_PAST_J2000",
+        "outputDurationUnits": "SECONDS",
+        "shouldComplementWindow": false,
+        "intervalAdjustment": "NO_ADJUSTMENT",
+        "intervalFiltering": "NO_FILTERING",
+        "target": "MOON",
+        "observer": "EARTH",
+        "aberrationCorrection": "LT",
+        "illuminator": "SUN",
+        "targetFrame": "MOON_ME",
+        "shape1": "ELLIPSOID",
+        "offSurfaceFlag": false,
+        "coordinateRepresentation": "PLANETODETIC",
+        "longitude": 10.0,
+        "latitude": 20.0,
+        "altitude": 0.0,
+        "condition": {
+          "angleType": "INCIDENCE",
+          "relationalCondition": ">",
+          "referenceValue": 120.0
+        }
+      },
+      "local": "illumination_LT_4,GF_ILLUMINATION_ANGLES_SEARCH,301,399,10,10,J2000,MOON_ME,Near point: ellipsoid,RECTANGULAR,X,INCIDENCE,>,120.0,0.0,LT,0.0:2592000.0,3600.0,0.0,false,NONE,0.0,SECONDS,false,0.0,SECONDS,SECONDS,1607.818763309247,283.5018280607376,594.2257970140168,ELLIPSOID,POINT,ANY",
+      "native": [
+        [
+          0.0,
+          779035.5363875527,
+          779035.5363875527
+        ],
+        [
+          2517325.014537425,
+          2592000.0,
+          74674.98546257522
+        ]
+      ],
+      "trace": "finder-matrix-illumination.jsonl",
+      "before_fix_errors": []
+    },
+    {
+      "id": "illumination_LT_5",
+      "payload": {
+        "calculationType": "GF_ILLUMINATION_ANGLES_SEARCH",
+        "kernels": [
+          {
+            "type": "KERNEL_SET",
+            "id": 1
+          }
+        ],
+        "timeSystem": "TDB",
+        "timeFormat": "SECONDS_PAST_J2000",
+        "intervals": [
+          {
+            "startTime": "0.0",
+            "endTime": "2592000.0"
+          }
+        ],
+        "timeStep": 3600.0,
+        "timeStepUnits": "SECONDS",
+        "outputTimeSystem": "TDB",
+        "outputTimeFormat": "SECONDS_PAST_J2000",
+        "outputDurationUnits": "SECONDS",
+        "shouldComplementWindow": false,
+        "intervalAdjustment": "NO_ADJUSTMENT",
+        "intervalFiltering": "NO_FILTERING",
+        "target": "MOON",
+        "observer": "EARTH",
+        "aberrationCorrection": "LT",
+        "illuminator": "SUN",
+        "targetFrame": "MOON_ME",
+        "shape1": "ELLIPSOID",
+        "offSurfaceFlag": false,
+        "coordinateRepresentation": "PLANETODETIC",
+        "longitude": 10.0,
+        "latitude": 20.0,
+        "altitude": 0.0,
+        "condition": {
+          "angleType": "INCIDENCE",
+          "relationalCondition": "=",
+          "referenceValue": 90.0
+        }
+      },
+      "local": "illumination_LT_5,GF_ILLUMINATION_ANGLES_SEARCH,301,399,10,10,J2000,MOON_ME,Near point: ellipsoid,RECTANGULAR,X,INCIDENCE,=,90.0,0.0,LT,0.0:2592000.0,3600.0,0.0,false,NONE,0.0,SECONDS,false,0.0,SECONDS,SECONDS,1607.818763309247,283.5018280607376,594.2257970140168,ELLIPSOID,POINT,ANY",
+      "native": [
+        [
+          1007592.0350446668,
+          1007592.0350446668,
+          0.0
+        ],
+        [
+          2289271.280745798,
+          2289271.280745798,
+          0.0
+        ]
+      ],
+      "trace": "finder-matrix-illumination.jsonl",
+      "before_fix_errors": []
+    },
+    {
+      "id": "illumination_CN_S_6",
+      "payload": {
+        "calculationType": "GF_ILLUMINATION_ANGLES_SEARCH",
+        "kernels": [
+          {
+            "type": "KERNEL_SET",
+            "id": 1
+          }
+        ],
+        "timeSystem": "TDB",
+        "timeFormat": "SECONDS_PAST_J2000",
+        "intervals": [
+          {
+            "startTime": "0.0",
+            "endTime": "2592000.0"
+          }
+        ],
+        "timeStep": 3600.0,
+        "timeStepUnits": "SECONDS",
+        "outputTimeSystem": "TDB",
+        "outputTimeFormat": "SECONDS_PAST_J2000",
+        "outputDurationUnits": "SECONDS",
+        "shouldComplementWindow": false,
+        "intervalAdjustment": "NO_ADJUSTMENT",
+        "intervalFiltering": "NO_FILTERING",
+        "target": "MOON",
+        "observer": "EARTH",
+        "aberrationCorrection": "CN+S",
+        "illuminator": "SUN",
+        "targetFrame": "MOON_ME",
+        "shape1": "ELLIPSOID",
+        "offSurfaceFlag": false,
+        "coordinateRepresentation": "PLANETODETIC",
+        "longitude": 10.0,
+        "latitude": 20.0,
+        "altitude": 0.0,
+        "condition": {
+          "angleType": "INCIDENCE",
+          "relationalCondition": "<",
+          "referenceValue": 60.0
+        }
+      },
+      "local": "illumination_CN_S_6,GF_ILLUMINATION_ANGLES_SEARCH,301,399,10,10,J2000,MOON_ME,Near point: ellipsoid,RECTANGULAR,X,INCIDENCE,<,60.0,0.0,CN+S,0.0:2592000.0,3600.0,0.0,false,NONE,0.0,SECONDS,false,0.0,SECONDS,SECONDS,1607.818763309247,283.5018280607376,594.2257970140168,ELLIPSOID,POINT,ANY",
+      "native": [
+        [
+          1236113.8918303433,
+          2060759.4320542593,
+          824645.5402239161
+        ]
+      ],
+      "trace": "finder-matrix-illumination.jsonl",
+      "before_fix_errors": []
+    },
+    {
+      "id": "illumination_CN_S_7",
+      "payload": {
+        "calculationType": "GF_ILLUMINATION_ANGLES_SEARCH",
+        "kernels": [
+          {
+            "type": "KERNEL_SET",
+            "id": 1
+          }
+        ],
+        "timeSystem": "TDB",
+        "timeFormat": "SECONDS_PAST_J2000",
+        "intervals": [
+          {
+            "startTime": "0.0",
+            "endTime": "2592000.0"
+          }
+        ],
+        "timeStep": 3600.0,
+        "timeStepUnits": "SECONDS",
+        "outputTimeSystem": "TDB",
+        "outputTimeFormat": "SECONDS_PAST_J2000",
+        "outputDurationUnits": "SECONDS",
+        "shouldComplementWindow": false,
+        "intervalAdjustment": "NO_ADJUSTMENT",
+        "intervalFiltering": "NO_FILTERING",
+        "target": "MOON",
+        "observer": "EARTH",
+        "aberrationCorrection": "CN+S",
+        "illuminator": "SUN",
+        "targetFrame": "MOON_ME",
+        "shape1": "ELLIPSOID",
+        "offSurfaceFlag": false,
+        "coordinateRepresentation": "PLANETODETIC",
+        "longitude": 10.0,
+        "latitude": 20.0,
+        "altitude": 0.0,
+        "condition": {
+          "angleType": "INCIDENCE",
+          "relationalCondition": ">",
+          "referenceValue": 120.0
+        }
+      },
+      "local": "illumination_CN_S_7,GF_ILLUMINATION_ANGLES_SEARCH,301,399,10,10,J2000,MOON_ME,Near point: ellipsoid,RECTANGULAR,X,INCIDENCE,>,120.0,0.0,CN+S,0.0:2592000.0,3600.0,0.0,false,NONE,0.0,SECONDS,false,0.0,SECONDS,SECONDS,1607.818763309247,283.5018280607376,594.2257970140168,ELLIPSOID,POINT,ANY",
+      "native": [
+        [
+          0.0,
+          778995.0022614801,
+          778995.0022614801
+        ],
+        [
+          2517285.0173742147,
+          2592000.0,
+          74714.98262578528
+        ]
+      ],
+      "trace": "finder-matrix-illumination.jsonl",
+      "before_fix_errors": []
+    },
+    {
+      "id": "illumination_CN_S_8",
+      "payload": {
+        "calculationType": "GF_ILLUMINATION_ANGLES_SEARCH",
+        "kernels": [
+          {
+            "type": "KERNEL_SET",
+            "id": 1
+          }
+        ],
+        "timeSystem": "TDB",
+        "timeFormat": "SECONDS_PAST_J2000",
+        "intervals": [
+          {
+            "startTime": "0.0",
+            "endTime": "2592000.0"
+          }
+        ],
+        "timeStep": 3600.0,
+        "timeStepUnits": "SECONDS",
+        "outputTimeSystem": "TDB",
+        "outputTimeFormat": "SECONDS_PAST_J2000",
+        "outputDurationUnits": "SECONDS",
+        "shouldComplementWindow": false,
+        "intervalAdjustment": "NO_ADJUSTMENT",
+        "intervalFiltering": "NO_FILTERING",
+        "target": "MOON",
+        "observer": "EARTH",
+        "aberrationCorrection": "CN+S",
+        "illuminator": "SUN",
+        "targetFrame": "MOON_ME",
+        "shape1": "ELLIPSOID",
+        "offSurfaceFlag": false,
+        "coordinateRepresentation": "PLANETODETIC",
+        "longitude": 10.0,
+        "latitude": 20.0,
+        "altitude": 0.0,
+        "condition": {
+          "angleType": "INCIDENCE",
+          "relationalCondition": "=",
+          "referenceValue": 90.0
+        }
+      },
+      "local": "illumination_CN_S_8,GF_ILLUMINATION_ANGLES_SEARCH,301,399,10,10,J2000,MOON_ME,Near point: ellipsoid,RECTANGULAR,X,INCIDENCE,=,90.0,0.0,CN+S,0.0:2592000.0,3600.0,0.0,false,NONE,0.0,SECONDS,false,0.0,SECONDS,SECONDS,1607.818763309247,283.5018280607376,594.2257970140168,ELLIPSOID,POINT,ANY",
+      "native": [
+        [
+          1007550.8789125092,
+          1007550.8789125092,
+          0.0
+        ],
+        [
+          2289230.49841367,
+          2289230.49841367,
+          0.0
+        ]
+      ],
+      "trace": "finder-matrix-illumination.jsonl",
+      "before_fix_errors": []
+    },
+    {
+      "id": "coordinate_NONE_0",
+      "payload": {
+        "calculationType": "GF_COORDINATE_SEARCH",
+        "kernels": [
+          {
+            "type": "KERNEL_SET",
+            "id": 1
+          }
+        ],
+        "timeSystem": "TDB",
+        "timeFormat": "SECONDS_PAST_J2000",
+        "intervals": [
+          {
+            "startTime": "0.0",
+            "endTime": "86400.0"
+          }
+        ],
+        "timeStep": 60.0,
+        "timeStepUnits": "SECONDS",
+        "outputTimeSystem": "TDB",
+        "outputTimeFormat": "SECONDS_PAST_J2000",
+        "outputDurationUnits": "SECONDS",
+        "shouldComplementWindow": false,
+        "intervalAdjustment": "NO_ADJUSTMENT",
+        "intervalFiltering": "NO_FILTERING",
+        "target": "MOON",
+        "observer": "EARTH",
+        "aberrationCorrection": "NONE",
+        "referenceFrame": "IAU_EARTH",
+        "condition": {
+          "coordinateSystem": "LATITUDINAL",
+          "coordinate": "LONGITUDE",
+          "relationalCondition": "<",
+          "referenceValue": -90.0
+        }
+      },
+      "local": "coordinate_NONE_0,GF_COORDINATE_SEARCH,301,399,10,10,IAU_EARTH,IAU_MOON,Near point: ellipsoid,LATITUDINAL,LONGITUDE,INCIDENCE,<,-90.0,0.0,NONE,0.0:86400.0,60.0,0.0,false,NONE,0.0,SECONDS,false,0.0,SECONDS,SECONDS,0.0,0.0,0.0,POINT,POINT,ANY",
+      "native": [
+        [
+          7987.688911179036,
+          30246.098278455363,
+          22258.409367276327
+        ]
+      ],
+      "trace": "finder-matrix-coordinate.jsonl",
+      "before_fix_errors": []
+    },
+    {
+      "id": "coordinate_NONE_1",
+      "payload": {
+        "calculationType": "GF_COORDINATE_SEARCH",
+        "kernels": [
+          {
+            "type": "KERNEL_SET",
+            "id": 1
+          }
+        ],
+        "timeSystem": "TDB",
+        "timeFormat": "SECONDS_PAST_J2000",
+        "intervals": [
+          {
+            "startTime": "0.0",
+            "endTime": "86400.0"
+          }
+        ],
+        "timeStep": 60.0,
+        "timeStepUnits": "SECONDS",
+        "outputTimeSystem": "TDB",
+        "outputTimeFormat": "SECONDS_PAST_J2000",
+        "outputDurationUnits": "SECONDS",
+        "shouldComplementWindow": false,
+        "intervalAdjustment": "NO_ADJUSTMENT",
+        "intervalFiltering": "NO_FILTERING",
+        "target": "MOON",
+        "observer": "EARTH",
+        "aberrationCorrection": "NONE",
+        "referenceFrame": "IAU_EARTH",
+        "condition": {
+          "coordinateSystem": "LATITUDINAL",
+          "coordinate": "LONGITUDE",
+          "relationalCondition": ">",
+          "referenceValue": 90.0
+        }
+      },
+      "local": "coordinate_NONE_1,GF_COORDINATE_SEARCH,301,399,10,10,IAU_EARTH,IAU_MOON,Near point: ellipsoid,LATITUDINAL,LONGITUDE,INCIDENCE,>,90.0,0.0,NONE,0.0:86400.0,60.0,0.0,false,NONE,0.0,SECONDS,false,0.0,SECONDS,SECONDS,0.0,0.0,0.0,POINT,POINT,ANY",
+      "native": [
+        [
+          30246.09827877929,
+          52507.69079167119,
+          22261.592512891904
+        ]
+      ],
+      "trace": "finder-matrix-coordinate.jsonl",
+      "before_fix_errors": []
+    },
+    {
+      "id": "coordinate_NONE_2",
+      "payload": {
+        "calculationType": "GF_COORDINATE_SEARCH",
+        "kernels": [
+          {
+            "type": "KERNEL_SET",
+            "id": 1
+          }
+        ],
+        "timeSystem": "TDB",
+        "timeFormat": "SECONDS_PAST_J2000",
+        "intervals": [
+          {
+            "startTime": "0.0",
+            "endTime": "86400.0"
+          }
+        ],
+        "timeStep": 60.0,
+        "timeStepUnits": "SECONDS",
+        "outputTimeSystem": "TDB",
+        "outputTimeFormat": "SECONDS_PAST_J2000",
+        "outputDurationUnits": "SECONDS",
+        "shouldComplementWindow": false,
+        "intervalAdjustment": "NO_ADJUSTMENT",
+        "intervalFiltering": "NO_FILTERING",
+        "target": "MOON",
+        "observer": "EARTH",
+        "aberrationCorrection": "NONE",
+        "referenceFrame": "IAU_EARTH",
+        "condition": {
+          "coordinateSystem": "LATITUDINAL",
+          "coordinate": "LONGITUDE",
+          "relationalCondition": "=",
+          "referenceValue": 0.0
+        }
+      },
+      "local": "coordinate_NONE_2,GF_COORDINATE_SEARCH,301,399,10,10,IAU_EARTH,IAU_MOON,Near point: ellipsoid,LATITUDINAL,LONGITUDE,INCIDENCE,=,0.0,0.0,NONE,0.0:86400.0,60.0,0.0,false,NONE,0.0,SECONDS,false,0.0,SECONDS,SECONDS,0.0,0.0,0.0,POINT,POINT,ANY",
+      "native": [
+        [
+          74772.9160452655,
+          74772.9160452655,
+          0.0
+        ]
+      ],
+      "trace": "finder-matrix-coordinate.jsonl",
+      "before_fix_errors": []
+    },
+    {
+      "id": "coordinate_LT_3",
+      "payload": {
+        "calculationType": "GF_COORDINATE_SEARCH",
+        "kernels": [
+          {
+            "type": "KERNEL_SET",
+            "id": 1
+          }
+        ],
+        "timeSystem": "TDB",
+        "timeFormat": "SECONDS_PAST_J2000",
+        "intervals": [
+          {
+            "startTime": "0.0",
+            "endTime": "86400.0"
+          }
+        ],
+        "timeStep": 60.0,
+        "timeStepUnits": "SECONDS",
+        "outputTimeSystem": "TDB",
+        "outputTimeFormat": "SECONDS_PAST_J2000",
+        "outputDurationUnits": "SECONDS",
+        "shouldComplementWindow": false,
+        "intervalAdjustment": "NO_ADJUSTMENT",
+        "intervalFiltering": "NO_FILTERING",
+        "target": "MOON",
+        "observer": "EARTH",
+        "aberrationCorrection": "LT",
+        "referenceFrame": "IAU_EARTH",
+        "condition": {
+          "coordinateSystem": "LATITUDINAL",
+          "coordinate": "LONGITUDE",
+          "relationalCondition": "<",
+          "referenceValue": -90.0
+        }
+      },
+      "local": "coordinate_LT_3,GF_COORDINATE_SEARCH,301,399,10,10,IAU_EARTH,IAU_MOON,Near point: ellipsoid,LATITUDINAL,LONGITUDE,INCIDENCE,<,-90.0,0.0,LT,0.0:86400.0,60.0,0.0,false,NONE,0.0,SECONDS,false,0.0,SECONDS,SECONDS,0.0,0.0,0.0,POINT,POINT,ANY",
+      "native": [
+        [
+          7988.45508280191,
+          30246.924357193267,
+          22258.46927439136
+        ]
+      ],
+      "trace": "finder-matrix-coordinate.jsonl",
+      "before_fix_errors": []
+    },
+    {
+      "id": "coordinate_LT_4",
+      "payload": {
+        "calculationType": "GF_COORDINATE_SEARCH",
+        "kernels": [
+          {
+            "type": "KERNEL_SET",
+            "id": 1
+          }
+        ],
+        "timeSystem": "TDB",
+        "timeFormat": "SECONDS_PAST_J2000",
+        "intervals": [
+          {
+            "startTime": "0.0",
+            "endTime": "86400.0"
+          }
+        ],
+        "timeStep": 60.0,
+        "timeStepUnits": "SECONDS",
+        "outputTimeSystem": "TDB",
+        "outputTimeFormat": "SECONDS_PAST_J2000",
+        "outputDurationUnits": "SECONDS",
+        "shouldComplementWindow": false,
+        "intervalAdjustment": "NO_ADJUSTMENT",
+        "intervalFiltering": "NO_FILTERING",
+        "target": "MOON",
+        "observer": "EARTH",
+        "aberrationCorrection": "LT",
+        "referenceFrame": "IAU_EARTH",
+        "condition": {
+          "coordinateSystem": "LATITUDINAL",
+          "coordinate": "LONGITUDE",
+          "relationalCondition": ">",
+          "referenceValue": 90.0
+        }
+      },
+      "local": "coordinate_LT_4,GF_COORDINATE_SEARCH,301,399,10,10,IAU_EARTH,IAU_MOON,Near point: ellipsoid,LATITUDINAL,LONGITUDE,INCIDENCE,>,90.0,0.0,LT,0.0:86400.0,60.0,0.0,false,NONE,0.0,SECONDS,false,0.0,SECONDS,SECONDS,0.0,0.0,0.0,POINT,POINT,ANY",
+      "native": [
+        [
+          30246.92435743621,
+          52508.57552512594,
+          22261.651167689728
+        ]
+      ],
+      "trace": "finder-matrix-coordinate.jsonl",
+      "before_fix_errors": []
+    },
+    {
+      "id": "coordinate_LT_5",
+      "payload": {
+        "calculationType": "GF_COORDINATE_SEARCH",
+        "kernels": [
+          {
+            "type": "KERNEL_SET",
+            "id": 1
+          }
+        ],
+        "timeSystem": "TDB",
+        "timeFormat": "SECONDS_PAST_J2000",
+        "intervals": [
+          {
+            "startTime": "0.0",
+            "endTime": "86400.0"
+          }
+        ],
+        "timeStep": 60.0,
+        "timeStepUnits": "SECONDS",
+        "outputTimeSystem": "TDB",
+        "outputTimeFormat": "SECONDS_PAST_J2000",
+        "outputDurationUnits": "SECONDS",
+        "shouldComplementWindow": false,
+        "intervalAdjustment": "NO_ADJUSTMENT",
+        "intervalFiltering": "NO_FILTERING",
+        "target": "MOON",
+        "observer": "EARTH",
+        "aberrationCorrection": "LT",
+        "referenceFrame": "IAU_EARTH",
+        "condition": {
+          "coordinateSystem": "LATITUDINAL",
+          "coordinate": "LONGITUDE",
+          "relationalCondition": "=",
+          "referenceValue": 0.0
+        }
+      },
+      "local": "coordinate_LT_5,GF_COORDINATE_SEARCH,301,399,10,10,IAU_EARTH,IAU_MOON,Near point: ellipsoid,LATITUDINAL,LONGITUDE,INCIDENCE,=,0.0,0.0,LT,0.0:86400.0,60.0,0.0,false,NONE,0.0,SECONDS,false,0.0,SECONDS,SECONDS,0.0,0.0,0.0,POINT,POINT,ANY",
+      "native": [
+        [
+          74773.85803001033,
+          74773.85803001033,
+          0.0
+        ]
+      ],
+      "trace": "finder-matrix-coordinate.jsonl",
+      "before_fix_errors": []
+    },
+    {
+      "id": "coordinate_CN_S_6",
+      "payload": {
+        "calculationType": "GF_COORDINATE_SEARCH",
+        "kernels": [
+          {
+            "type": "KERNEL_SET",
+            "id": 1
+          }
+        ],
+        "timeSystem": "TDB",
+        "timeFormat": "SECONDS_PAST_J2000",
+        "intervals": [
+          {
+            "startTime": "0.0",
+            "endTime": "86400.0"
+          }
+        ],
+        "timeStep": 60.0,
+        "timeStepUnits": "SECONDS",
+        "outputTimeSystem": "TDB",
+        "outputTimeFormat": "SECONDS_PAST_J2000",
+        "outputDurationUnits": "SECONDS",
+        "shouldComplementWindow": false,
+        "intervalAdjustment": "NO_ADJUSTMENT",
+        "intervalFiltering": "NO_FILTERING",
+        "target": "MOON",
+        "observer": "EARTH",
+        "aberrationCorrection": "CN+S",
+        "referenceFrame": "IAU_EARTH",
+        "condition": {
+          "coordinateSystem": "LATITUDINAL",
+          "coordinate": "LONGITUDE",
+          "relationalCondition": "<",
+          "referenceValue": -90.0
+        }
+      },
+      "local": "coordinate_CN_S_6,GF_COORDINATE_SEARCH,301,399,10,10,IAU_EARTH,IAU_MOON,Near point: ellipsoid,LATITUDINAL,LONGITUDE,INCIDENCE,<,-90.0,0.0,CN+S,0.0:86400.0,60.0,0.0,false,NONE,0.0,SECONDS,false,0.0,SECONDS,SECONDS,0.0,0.0,0.0,POINT,POINT,ANY",
+      "native": [
+        [
+          7987.644201408728,
+          30246.053309731367,
+          22258.409108322638
+        ]
+      ],
+      "trace": "finder-matrix-coordinate.jsonl",
+      "before_fix_errors": []
+    },
+    {
+      "id": "coordinate_CN_S_7",
+      "payload": {
+        "calculationType": "GF_COORDINATE_SEARCH",
+        "kernels": [
+          {
+            "type": "KERNEL_SET",
+            "id": 1
+          }
+        ],
+        "timeSystem": "TDB",
+        "timeFormat": "SECONDS_PAST_J2000",
+        "intervals": [
+          {
+            "startTime": "0.0",
+            "endTime": "86400.0"
+          }
+        ],
+        "timeStep": 60.0,
+        "timeStepUnits": "SECONDS",
+        "outputTimeSystem": "TDB",
+        "outputTimeFormat": "SECONDS_PAST_J2000",
+        "outputDurationUnits": "SECONDS",
+        "shouldComplementWindow": false,
+        "intervalAdjustment": "NO_ADJUSTMENT",
+        "intervalFiltering": "NO_FILTERING",
+        "target": "MOON",
+        "observer": "EARTH",
+        "aberrationCorrection": "CN+S",
+        "referenceFrame": "IAU_EARTH",
+        "condition": {
+          "coordinateSystem": "LATITUDINAL",
+          "coordinate": "LONGITUDE",
+          "relationalCondition": ">",
+          "referenceValue": 90.0
+        }
+      },
+      "local": "coordinate_CN_S_7,GF_COORDINATE_SEARCH,301,399,10,10,IAU_EARTH,IAU_MOON,Near point: ellipsoid,LATITUDINAL,LONGITUDE,INCIDENCE,>,90.0,0.0,CN+S,0.0:86400.0,60.0,0.0,false,NONE,0.0,SECONDS,false,0.0,SECONDS,SECONDS,0.0,0.0,0.0,POINT,POINT,ANY",
+      "native": [
+        [
+          30246.053310055293,
+          52507.64554161961,
+          22261.59223156432
+        ]
+      ],
+      "trace": "finder-matrix-coordinate.jsonl",
+      "before_fix_errors": []
+    },
+    {
+      "id": "coordinate_CN_S_8",
+      "payload": {
+        "calculationType": "GF_COORDINATE_SEARCH",
+        "kernels": [
+          {
+            "type": "KERNEL_SET",
+            "id": 1
+          }
+        ],
+        "timeSystem": "TDB",
+        "timeFormat": "SECONDS_PAST_J2000",
+        "intervals": [
+          {
+            "startTime": "0.0",
+            "endTime": "86400.0"
+          }
+        ],
+        "timeStep": 60.0,
+        "timeStepUnits": "SECONDS",
+        "outputTimeSystem": "TDB",
+        "outputTimeFormat": "SECONDS_PAST_J2000",
+        "outputDurationUnits": "SECONDS",
+        "shouldComplementWindow": false,
+        "intervalAdjustment": "NO_ADJUSTMENT",
+        "intervalFiltering": "NO_FILTERING",
+        "target": "MOON",
+        "observer": "EARTH",
+        "aberrationCorrection": "CN+S",
+        "referenceFrame": "IAU_EARTH",
+        "condition": {
+          "coordinateSystem": "LATITUDINAL",
+          "coordinate": "LONGITUDE",
+          "relationalCondition": "=",
+          "referenceValue": 0.0
+        }
+      },
+      "local": "coordinate_CN_S_8,GF_COORDINATE_SEARCH,301,399,10,10,IAU_EARTH,IAU_MOON,Near point: ellipsoid,LATITUDINAL,LONGITUDE,INCIDENCE,=,0.0,0.0,CN+S,0.0:86400.0,60.0,0.0,false,NONE,0.0,SECONDS,false,0.0,SECONDS,SECONDS,0.0,0.0,0.0,POINT,POINT,ANY",
+      "native": [
+        [
+          74772.8704950285,
+          74772.8704950285,
+          0.0
+        ]
+      ],
+      "trace": "finder-matrix-coordinate.jsonl",
+      "before_fix_errors": []
+    },
+    {
+      "id": "intercept_NONE_0",
+      "payload": {
+        "calculationType": "GF_SURFACE_INTERCEPT_POINT_SEARCH",
+        "kernels": [
+          {
+            "type": "KERNEL_SET",
+            "id": 1
+          }
+        ],
+        "timeSystem": "TDB",
+        "timeFormat": "SECONDS_PAST_J2000",
+        "intervals": [
+          {
+            "startTime": "-10000.0",
+            "endTime": "10000.0"
+          }
+        ],
+        "timeStep": 60.0,
+        "timeStepUnits": "SECONDS",
+        "outputTimeSystem": "TDB",
+        "outputTimeFormat": "SECONDS_PAST_J2000",
+        "outputDurationUnits": "SECONDS",
+        "shouldComplementWindow": false,
+        "intervalAdjustment": "NO_ADJUSTMENT",
+        "intervalFiltering": "NO_FILTERING",
+        "target": "MOON",
+        "observer": "EARTH",
+        "aberrationCorrection": "NONE",
+        "targetFrame": "MOON_ME",
+        "directionVectorType": "VECTOR_IN_REFERENCE_FRAME",
+        "directionFrame": "J2000",
+        "directionVectorX": -291608.3847334454,
+        "directionVectorY": -266716.83330418577,
+        "directionVectorZ": -76102.48704883647,
+        "condition": {
+          "coordinateSystem": "LATITUDINAL",
+          "coordinate": "LONGITUDE",
+          "relationalCondition": "<",
+          "referenceValue": -10.0
+        }
+      },
+      "local": "intercept_NONE_0,GF_SURFACE_INTERCEPT_POINT_SEARCH,301,399,10,10,J2000,MOON_ME,Near point: ellipsoid,LATITUDINAL,LONGITUDE,INCIDENCE,<,-10.0,0.0,NONE,-10000.0:10000.0,60.0,0.0,false,NONE,0.0,SECONDS,false,0.0,SECONDS,SECONDS,-291608.3847334454,-266716.83330418577,-76102.48704883647,POINT,POINT,ANY",
+      "native": [
+        [
+          -1783.8617858125438,
+          -461.61146571018145,
+          1322.2503201023624
+        ]
+      ],
+      "trace": "finder-matrix-intercept.jsonl",
+      "before_fix_errors": []
+    },
+    {
+      "id": "intercept_NONE_1",
+      "payload": {
+        "calculationType": "GF_SURFACE_INTERCEPT_POINT_SEARCH",
+        "kernels": [
+          {
+            "type": "KERNEL_SET",
+            "id": 1
+          }
+        ],
+        "timeSystem": "TDB",
+        "timeFormat": "SECONDS_PAST_J2000",
+        "intervals": [
+          {
+            "startTime": "-10000.0",
+            "endTime": "10000.0"
+          }
+        ],
+        "timeStep": 60.0,
+        "timeStepUnits": "SECONDS",
+        "outputTimeSystem": "TDB",
+        "outputTimeFormat": "SECONDS_PAST_J2000",
+        "outputDurationUnits": "SECONDS",
+        "shouldComplementWindow": false,
+        "intervalAdjustment": "NO_ADJUSTMENT",
+        "intervalFiltering": "NO_FILTERING",
+        "target": "MOON",
+        "observer": "EARTH",
+        "aberrationCorrection": "NONE",
+        "targetFrame": "MOON_ME",
+        "directionVectorType": "VECTOR_IN_REFERENCE_FRAME",
+        "directionFrame": "J2000",
+        "directionVectorX": -291608.3847334454,
+        "directionVectorY": -266716.83330418577,
+        "directionVectorZ": -76102.48704883647,
+        "condition": {
+          "coordinateSystem": "LATITUDINAL",
+          "coordinate": "LONGITUDE",
+          "relationalCondition": ">",
+          "referenceValue": 10.0
+        }
+      },
+      "local": "intercept_NONE_1,GF_SURFACE_INTERCEPT_POINT_SEARCH,301,399,10,10,J2000,MOON_ME,Near point: ellipsoid,LATITUDINAL,LONGITUDE,INCIDENCE,>,10.0,0.0,NONE,-10000.0:10000.0,60.0,0.0,false,NONE,0.0,SECONDS,false,0.0,SECONDS,SECONDS,-291608.3847334454,-266716.83330418577,-76102.48704883647,POINT,POINT,ANY",
+      "native": [
+        [
+          154.55740289529663,
+          1783.786772175001,
+          1629.2293692797043
+        ]
+      ],
+      "trace": "finder-matrix-intercept.jsonl",
+      "before_fix_errors": []
+    },
+    {
+      "id": "intercept_NONE_2",
+      "payload": {
+        "calculationType": "GF_SURFACE_INTERCEPT_POINT_SEARCH",
+        "kernels": [
+          {
+            "type": "KERNEL_SET",
+            "id": 1
+          }
+        ],
+        "timeSystem": "TDB",
+        "timeFormat": "SECONDS_PAST_J2000",
+        "intervals": [
+          {
+            "startTime": "-10000.0",
+            "endTime": "10000.0"
+          }
+        ],
+        "timeStep": 60.0,
+        "timeStepUnits": "SECONDS",
+        "outputTimeSystem": "TDB",
+        "outputTimeFormat": "SECONDS_PAST_J2000",
+        "outputDurationUnits": "SECONDS",
+        "shouldComplementWindow": false,
+        "intervalAdjustment": "NO_ADJUSTMENT",
+        "intervalFiltering": "NO_FILTERING",
+        "target": "MOON",
+        "observer": "EARTH",
+        "aberrationCorrection": "NONE",
+        "targetFrame": "MOON_ME",
+        "directionVectorType": "VECTOR_IN_REFERENCE_FRAME",
+        "directionFrame": "J2000",
+        "directionVectorX": -291608.3847334454,
+        "directionVectorY": -266716.83330418577,
+        "directionVectorZ": -76102.48704883647,
+        "condition": {
+          "coordinateSystem": "LATITUDINAL",
+          "coordinate": "LONGITUDE",
+          "relationalCondition": "=",
+          "referenceValue": 0.0
+        }
+      },
+      "local": "intercept_NONE_2,GF_SURFACE_INTERCEPT_POINT_SEARCH,301,399,10,10,J2000,MOON_ME,Near point: ellipsoid,LATITUDINAL,LONGITUDE,INCIDENCE,=,0.0,0.0,NONE,-10000.0:10000.0,60.0,0.0,false,NONE,0.0,SECONDS,false,0.0,SECONDS,SECONDS,-291608.3847334454,-266716.83330418577,-76102.48704883647,POINT,POINT,ANY",
+      "native": [
+        [
+          -155.95113566470826,
+          -155.95113566470826,
+          0.0
+        ]
+      ],
+      "trace": "finder-matrix-intercept.jsonl",
+      "before_fix_errors": []
+    },
+    {
+      "id": "intercept_LT_3",
+      "payload": {
+        "calculationType": "GF_SURFACE_INTERCEPT_POINT_SEARCH",
+        "kernels": [
+          {
+            "type": "KERNEL_SET",
+            "id": 1
+          }
+        ],
+        "timeSystem": "TDB",
+        "timeFormat": "SECONDS_PAST_J2000",
+        "intervals": [
+          {
+            "startTime": "-10000.0",
+            "endTime": "10000.0"
+          }
+        ],
+        "timeStep": 60.0,
+        "timeStepUnits": "SECONDS",
+        "outputTimeSystem": "TDB",
+        "outputTimeFormat": "SECONDS_PAST_J2000",
+        "outputDurationUnits": "SECONDS",
+        "shouldComplementWindow": false,
+        "intervalAdjustment": "NO_ADJUSTMENT",
+        "intervalFiltering": "NO_FILTERING",
+        "target": "MOON",
+        "observer": "EARTH",
+        "aberrationCorrection": "LT",
+        "targetFrame": "MOON_ME",
+        "directionVectorType": "VECTOR_IN_REFERENCE_FRAME",
+        "directionFrame": "J2000",
+        "directionVectorX": -291608.3847334454,
+        "directionVectorY": -266716.83330418577,
+        "directionVectorZ": -76102.48704883647,
+        "condition": {
+          "coordinateSystem": "LATITUDINAL",
+          "coordinate": "LONGITUDE",
+          "relationalCondition": "<",
+          "referenceValue": -10.0
+        }
+      },
+      "local": "intercept_LT_3,GF_SURFACE_INTERCEPT_POINT_SEARCH,301,399,10,10,J2000,MOON_ME,Near point: ellipsoid,LATITUDINAL,LONGITUDE,INCIDENCE,<,-10.0,0.0,LT,-10000.0:10000.0,60.0,0.0,false,NONE,0.0,SECONDS,false,0.0,SECONDS,SECONDS,-291608.3847334454,-266716.83330418577,-76102.48704883647,POINT,POINT,ANY",
+      "native": [
+        [
+          -1805.154955370592,
+          -482.87338428845993,
+          1322.2815710821321
+        ]
+      ],
+      "trace": "finder-matrix-intercept.jsonl",
+      "before_fix_errors": [
+        "native 0:1 -482.8733843324609 -482.87338428845993",
+        "native 0:2 1322.281571038131 1322.2815710821321",
+        "intercept_LT_3/row0/col2: actual=1322.281571038131 reference=1322.28157108 raw_difference=4.1869E-8 compared=1322.28157104"
+      ]
+    },
+    {
+      "id": "intercept_LT_4",
+      "payload": {
+        "calculationType": "GF_SURFACE_INTERCEPT_POINT_SEARCH",
+        "kernels": [
+          {
+            "type": "KERNEL_SET",
+            "id": 1
+          }
+        ],
+        "timeSystem": "TDB",
+        "timeFormat": "SECONDS_PAST_J2000",
+        "intervals": [
+          {
+            "startTime": "-10000.0",
+            "endTime": "10000.0"
+          }
+        ],
+        "timeStep": 60.0,
+        "timeStepUnits": "SECONDS",
+        "outputTimeSystem": "TDB",
+        "outputTimeFormat": "SECONDS_PAST_J2000",
+        "outputDurationUnits": "SECONDS",
+        "shouldComplementWindow": false,
+        "intervalAdjustment": "NO_ADJUSTMENT",
+        "intervalFiltering": "NO_FILTERING",
+        "target": "MOON",
+        "observer": "EARTH",
+        "aberrationCorrection": "LT",
+        "targetFrame": "MOON_ME",
+        "directionVectorType": "VECTOR_IN_REFERENCE_FRAME",
+        "directionFrame": "J2000",
+        "directionVectorX": -291608.3847334454,
+        "directionVectorY": -266716.83330418577,
+        "directionVectorZ": -76102.48704883647,
+        "condition": {
+          "coordinateSystem": "LATITUDINAL",
+          "coordinate": "LONGITUDE",
+          "relationalCondition": ">",
+          "referenceValue": 10.0
+        }
+      },
+      "local": "intercept_LT_4,GF_SURFACE_INTERCEPT_POINT_SEARCH,301,399,10,10,J2000,MOON_ME,Near point: ellipsoid,LATITUDINAL,LONGITUDE,INCIDENCE,>,10.0,0.0,LT,-10000.0:10000.0,60.0,0.0,false,NONE,0.0,SECONDS,false,0.0,SECONDS,SECONDS,-291608.3847334454,-266716.83330418577,-76102.48704883647,POINT,POINT,ANY",
+      "native": [
+        [
+          133.15487365970313,
+          1762.5078022314776,
+          1629.3529285717746
+        ]
+      ],
+      "trace": "finder-matrix-intercept.jsonl",
+      "before_fix_errors": [
+        "native 0:0 133.1548736712009 133.15487365970313",
+        "native 0:2 1629.3529285602767 1629.3529285717746",
+        "intercept_LT_4/row0/col2: actual=1629.3529285602767 reference=1629.35292857 raw_difference=9.7233E-9 compared=1629.35292856"
+      ]
+    },
+    {
+      "id": "intercept_LT_5",
+      "payload": {
+        "calculationType": "GF_SURFACE_INTERCEPT_POINT_SEARCH",
+        "kernels": [
+          {
+            "type": "KERNEL_SET",
+            "id": 1
+          }
+        ],
+        "timeSystem": "TDB",
+        "timeFormat": "SECONDS_PAST_J2000",
+        "intervals": [
+          {
+            "startTime": "-10000.0",
+            "endTime": "10000.0"
+          }
+        ],
+        "timeStep": 60.0,
+        "timeStepUnits": "SECONDS",
+        "outputTimeSystem": "TDB",
+        "outputTimeFormat": "SECONDS_PAST_J2000",
+        "outputDurationUnits": "SECONDS",
+        "shouldComplementWindow": false,
+        "intervalAdjustment": "NO_ADJUSTMENT",
+        "intervalFiltering": "NO_FILTERING",
+        "target": "MOON",
+        "observer": "EARTH",
+        "aberrationCorrection": "LT",
+        "targetFrame": "MOON_ME",
+        "directionVectorType": "VECTOR_IN_REFERENCE_FRAME",
+        "directionFrame": "J2000",
+        "directionVectorX": -291608.3847334454,
+        "directionVectorY": -266716.83330418577,
+        "directionVectorZ": -76102.48704883647,
+        "condition": {
+          "coordinateSystem": "LATITUDINAL",
+          "coordinate": "LONGITUDE",
+          "relationalCondition": "=",
+          "referenceValue": 0.0
+        }
+      },
+      "local": "intercept_LT_5,GF_SURFACE_INTERCEPT_POINT_SEARCH,301,399,10,10,J2000,MOON_ME,Near point: ellipsoid,LATITUDINAL,LONGITUDE,INCIDENCE,=,0.0,0.0,LT,-10000.0:10000.0,60.0,0.0,false,NONE,0.0,SECONDS,false,0.0,SECONDS,SECONDS,-291608.3847334454,-266716.83330418577,-76102.48704883647,POINT,POINT,ANY",
+      "native": [
+        [
+          -177.2833565523149,
+          -177.2833565523149,
+          0.0
+        ]
+      ],
+      "trace": "finder-matrix-intercept.jsonl",
+      "before_fix_errors": [
+        "native 0:0 -177.28335658559632 -177.2833565523149",
+        "native 0:1 -177.28335658559632 -177.2833565523149"
+      ]
+    },
+    {
+      "id": "intercept_CN_S_6",
+      "payload": {
+        "calculationType": "GF_SURFACE_INTERCEPT_POINT_SEARCH",
+        "kernels": [
+          {
+            "type": "KERNEL_SET",
+            "id": 1
+          }
+        ],
+        "timeSystem": "TDB",
+        "timeFormat": "SECONDS_PAST_J2000",
+        "intervals": [
+          {
+            "startTime": "-10000.0",
+            "endTime": "10000.0"
+          }
+        ],
+        "timeStep": 60.0,
+        "timeStepUnits": "SECONDS",
+        "outputTimeSystem": "TDB",
+        "outputTimeFormat": "SECONDS_PAST_J2000",
+        "outputDurationUnits": "SECONDS",
+        "shouldComplementWindow": false,
+        "intervalAdjustment": "NO_ADJUSTMENT",
+        "intervalFiltering": "NO_FILTERING",
+        "target": "MOON",
+        "observer": "EARTH",
+        "aberrationCorrection": "CN+S",
+        "targetFrame": "MOON_ME",
+        "directionVectorType": "VECTOR_IN_REFERENCE_FRAME",
+        "directionFrame": "J2000",
+        "directionVectorX": -291608.3847334454,
+        "directionVectorY": -266716.83330418577,
+        "directionVectorZ": -76102.48704883647,
+        "condition": {
+          "coordinateSystem": "LATITUDINAL",
+          "coordinate": "LONGITUDE",
+          "relationalCondition": "<",
+          "referenceValue": -10.0
+        }
+      },
+      "local": "intercept_CN_S_6,GF_SURFACE_INTERCEPT_POINT_SEARCH,301,399,10,10,J2000,MOON_ME,Near point: ellipsoid,LATITUDINAL,LONGITUDE,INCIDENCE,<,-10.0,0.0,CN+S,-10000.0:10000.0,60.0,0.0,false,NONE,0.0,SECONDS,false,0.0,SECONDS,SECONDS,-291608.3847334454,-266716.83330418577,-76102.48704883647,POINT,POINT,ANY",
+      "native": [
+        [
+          -1782.5177675320376,
+          -460.27289848243174,
+          1322.2448690496058
+        ]
+      ],
+      "trace": "finder-matrix-intercept.jsonl",
+      "before_fix_errors": []
+    },
+    {
+      "id": "intercept_CN_S_7",
+      "payload": {
+        "calculationType": "GF_SURFACE_INTERCEPT_POINT_SEARCH",
+        "kernels": [
+          {
+            "type": "KERNEL_SET",
+            "id": 1
+          }
+        ],
+        "timeSystem": "TDB",
+        "timeFormat": "SECONDS_PAST_J2000",
+        "intervals": [
+          {
+            "startTime": "-10000.0",
+            "endTime": "10000.0"
+          }
+        ],
+        "timeStep": 60.0,
+        "timeStepUnits": "SECONDS",
+        "outputTimeSystem": "TDB",
+        "outputTimeFormat": "SECONDS_PAST_J2000",
+        "outputDurationUnits": "SECONDS",
+        "shouldComplementWindow": false,
+        "intervalAdjustment": "NO_ADJUSTMENT",
+        "intervalFiltering": "NO_FILTERING",
+        "target": "MOON",
+        "observer": "EARTH",
+        "aberrationCorrection": "CN+S",
+        "targetFrame": "MOON_ME",
+        "directionVectorType": "VECTOR_IN_REFERENCE_FRAME",
+        "directionFrame": "J2000",
+        "directionVectorX": -291608.3847334454,
+        "directionVectorY": -266716.83330418577,
+        "directionVectorZ": -76102.48704883647,
+        "condition": {
+          "coordinateSystem": "LATITUDINAL",
+          "coordinate": "LONGITUDE",
+          "relationalCondition": ">",
+          "referenceValue": 10.0
+        }
+      },
+      "local": "intercept_CN_S_7,GF_SURFACE_INTERCEPT_POINT_SEARCH,301,399,10,10,J2000,MOON_ME,Near point: ellipsoid,LATITUDINAL,LONGITUDE,INCIDENCE,>,10.0,0.0,CN+S,-10000.0:10000.0,60.0,0.0,false,NONE,0.0,SECONDS,false,0.0,SECONDS,SECONDS,-291608.3847334454,-266716.83330418577,-76102.48704883647,POINT,POINT,ANY",
+      "native": [
+        [
+          155.89587348005531,
+          1785.1311650706996,
+          1629.2352915906442
+        ]
+      ],
+      "trace": "finder-matrix-intercept.jsonl",
+      "before_fix_errors": []
+    },
+    {
+      "id": "intercept_CN_S_8",
+      "payload": {
+        "calculationType": "GF_SURFACE_INTERCEPT_POINT_SEARCH",
+        "kernels": [
+          {
+            "type": "KERNEL_SET",
+            "id": 1
+          }
+        ],
+        "timeSystem": "TDB",
+        "timeFormat": "SECONDS_PAST_J2000",
+        "intervals": [
+          {
+            "startTime": "-10000.0",
+            "endTime": "10000.0"
+          }
+        ],
+        "timeStep": 60.0,
+        "timeStepUnits": "SECONDS",
+        "outputTimeSystem": "TDB",
+        "outputTimeFormat": "SECONDS_PAST_J2000",
+        "outputDurationUnits": "SECONDS",
+        "shouldComplementWindow": false,
+        "intervalAdjustment": "NO_ADJUSTMENT",
+        "intervalFiltering": "NO_FILTERING",
+        "target": "MOON",
+        "observer": "EARTH",
+        "aberrationCorrection": "CN+S",
+        "targetFrame": "MOON_ME",
+        "directionVectorType": "VECTOR_IN_REFERENCE_FRAME",
+        "directionFrame": "J2000",
+        "directionVectorX": -291608.3847334454,
+        "directionVectorY": -266716.83330418577,
+        "directionVectorZ": -76102.48704883647,
+        "condition": {
+          "coordinateSystem": "LATITUDINAL",
+          "coordinate": "LONGITUDE",
+          "relationalCondition": "=",
+          "referenceValue": 0.0
+        }
+      },
+      "local": "intercept_CN_S_8,GF_SURFACE_INTERCEPT_POINT_SEARCH,301,399,10,10,J2000,MOON_ME,Near point: ellipsoid,LATITUDINAL,LONGITUDE,INCIDENCE,=,0.0,0.0,CN+S,-10000.0:10000.0,60.0,0.0,false,NONE,0.0,SECONDS,false,0.0,SECONDS,SECONDS,-291608.3847334454,-266716.83330418577,-76102.48704883647,POINT,POINT,ANY",
+      "native": [
+        [
+          -154.61270392539217,
+          -154.61270392539217,
+          0.0
+        ]
+      ],
+      "trace": "finder-matrix-intercept.jsonl",
+      "before_fix_errors": []
+    }
+  ]
+}

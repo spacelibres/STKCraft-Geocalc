@@ -1,0 +1,30 @@
+{
+  "scope": "Exact WGC displayed output; not raw WGC binary64 equality",
+  "server_kernel_bytes_verified": false,
+  "rows": 18,
+  "errors": [],
+  "trace_sha256": "eeb924461ff77e487f398318eb92709e577d41a5b6dca9328b2f59c52500bb9d",
+  "local_kernels": [
+    {
+      "name": "de442.bsp",
+      "sha256": "8d5001fab315eeff222cc51f7cf7ffcdb43fb38fb9ac73ff09e09a5b361fd388"
+    },
+    {
+      "name": "pck00011.tpc",
+      "sha256": "3dff7b1dbeceaa01f25467767d3fa25816051c85d162d1edf04acb310ee28bb1"
+    },
+    {
+      "name": "earth_1962_260806_2126_combined.bpc",
+      "sha256": "cc87ad1a495cf598800ba403763d350f087ac0b97da9fec603278a3864c6a53e"
+    }
+  ],
+  "backend": {
+    "binary_sha256": "b4cffceeec8482679d15741c44fac3b6b7bda28f9759563b44a6744bba407430",
+    "modes": {
+      "size": 6
+    },
+    "glibc_rotation": true,
+    "verified_profile": "glibc-fma-r3"
+  },
+  "build_profile": "release"
+}

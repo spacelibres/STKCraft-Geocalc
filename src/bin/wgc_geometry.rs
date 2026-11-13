@@ -9,6 +9,7 @@
 //! ```text
 //! wgc-geometry state                          # target,observer,et,abcorr
 //! wgc-geometry separation                     # observer,t1,t2,et,abcorr
+//! wgc-geometry size <pck|-> <fk|->             # observer,target,et,abcorr[,method[,target_frame]]
 //! wgc-geometry state_rep <pck|->              # target,observer,et,abcorr,frame,representation,azccw,elplsz
 //! wgc-geometry frame_rep <fk|-> <pck|->    # f1,f2,et,orientation,f1f2f3,av,avaxes,units
 //! wgc-geometry location <pck|->              # point targets and observers
@@ -49,6 +50,10 @@ fn main() {
 fn run() -> Result<(), Box<dyn std::error::Error>> {
     let arguments: Vec<String> = std::env::args().collect();
     let mode = arguments.get(1).map(String::as_str).unwrap_or("");
+    if mode == "--rotation-profile" {
+        println!("{}", stkcraft_geocalc::rotation_math_profile());
+        return Ok(());
+    }
 
     let spk_path =
         std::env::var("STKCRAFT_SPK").unwrap_or_else(|_| "target/kernels/de442.bsp".to_string());
@@ -157,11 +162,12 @@ fn run() -> Result<(), Box<dyn std::error::Error>> {
             let kernel = load_spk(&spk_path)?;
             let pck_spec = arguments.get(2).map(String::as_str).unwrap_or("-");
             let pck = load_pck(pck_spec)?;
+            let mut frames = None;
             for line in stdin.lock().lines() {
                 let line = line?;
                 let fields = split(&line);
-                if fields.len() != 4 && fields.len() != 5 {
-                    println!("ERROR,expected observer,target,et,abcorr[,method]");
+                if !(4..=6).contains(&fields.len()) {
+                    println!("ERROR,expected observer,target,et,abcorr[,method[,target_frame]]");
                     continue;
                 }
                 let observer = fields[0].parse::<i32>()?;
@@ -175,6 +181,21 @@ fn run() -> Result<(), Box<dyn std::error::Error>> {
                             .ok_or("unknown angular size method")
                     })
                     .transpose()?;
+                if method==Some(stkcraft_geocalc::AngularSizeMethod::LimbExtents) {
+                    let result = if let Some(frame) = fields.get(5) {
+                        if frames.is_none() {
+                            frames = Some(load_frames(arguments.get(3).map(String::as_str).unwrap_or("-"))?);
+                        }
+                        stkcraft_geocalc::angular_size_extents_in(&kernel,&pck,frames.as_ref().expect("frames loaded"),frame,observer,target,et,abcorr)
+                    } else {
+                        stkcraft_geocalc::angular_size_extents(&kernel,&pck,observer,target,et,abcorr)
+                    };
+                    match result {
+                        Ok([minimum,maximum]) => println!("{observer},{target},{et},{},{minimum:?},{:?},{:?}",fields[3],minimum.to_degrees(),maximum.to_degrees()),
+                        Err(error) => println!("ERROR,{error}"),
+                    }
+                    continue;
+                }
                 let result = match method {
                     Some(method) => stkcraft_geocalc::angular_size_with_method(
                         &kernel, &pck, observer, target, et, abcorr, method,
@@ -183,12 +204,7 @@ fn run() -> Result<(), Box<dyn std::error::Error>> {
                 };
                 match result {
                     Ok(radians) => {
-                        if method==Some(stkcraft_geocalc::AngularSizeMethod::LimbExtents) {
-                            let [minimum,maximum]=stkcraft_geocalc::finder::angular_size_extents(&kernel,&pck,observer,target,et,abcorr)?;
-                            println!("{observer},{target},{et},{},{minimum:?},{:?},{:?}",fields[3],minimum.to_degrees(),maximum.to_degrees());
-                        }else{
-                            println!("{observer},{target},{et},{},{radians:?},{:?}",fields[3],radians.to_degrees());
-                        }
+                        println!("{observer},{target},{et},{},{radians:?},{:?}",fields[3],radians.to_degrees());
                     }
                     Err(error) => println!("ERROR,{error}"),
                 }
@@ -389,7 +405,15 @@ fn run() -> Result<(), Box<dyn std::error::Error>> {
                 match result {
                     Ok(point) => {
                         let illumination=stkcraft_geocalc::illumination_geometry_in(&kernel,&pck,&frames,target_frame,target,10,observer,et,abcorr,point.point)?;
-                        let lst=local_solar_time_with_frame(&kernel,&pck,target,point.epoch,point.point,Some((&frames,target_frame)))?;
+                        let lst = if kind == "observer" {
+                            let default_frame = frames.body_frame(target)?;
+                            let rotation = frames.pxform_in(target_frame, &default_frame, point.epoch, Some(&pck))?;
+                            let p = point.point;
+                            let default_point = rotation.map(|row| row[0] * p[0] + row[1] * p[1] + row[2] * p[2]);
+                            local_solar_time_with_frame(&kernel,&pck,target,point.epoch,default_point,Some((&frames,&default_frame)))?
+                        } else {
+                            local_solar_time_with_frame(&kernel,&pck,target,point.epoch,point.point,Some((&frames,target_frame)))?
+                        };
                         println!(
                         "{kind},{target},{observer},{et},{},{:?},{:?},{:?},{:?},{:?},{:?},{:?},{:?},{:?},{:?},{:?},{:?},{:?},{}",
                         fields[4], point.point[0], point.point[1], point.point[2], point.altitude,

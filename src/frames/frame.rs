@@ -1773,8 +1773,35 @@ pub(crate) fn rot2(angle: f64) -> Mat3 {
     [[cos, 0.0, -sin], [0.0, 1.0, 0.0], [sin, 0.0, cos]]
 }
 
+/// Selected R3 trigonometric profile. The first call fixes the process choice.
+pub fn rotation_math_profile() -> &'static str {
+    #[cfg(feature = "wgc-glibc-rotation")]
+    {
+        static USE_GLIBC: std::sync::OnceLock<bool> = std::sync::OnceLock::new();
+        if *USE_GLIBC.get_or_init(|| std::env::var("STKCRAFT_WGC_GLIBC_ROT3").as_deref() == Ok("1"))
+        {
+            "glibc-fma-r3"
+        } else {
+            "native"
+        }
+    }
+    #[cfg(not(feature = "wgc-glibc-rotation"))]
+    {
+        "native"
+    }
+}
+
 /// SPICE `[A]_3`.
 pub(crate) fn rot3(angle: f64) -> Mat3 {
+    #[cfg(feature = "wgc-glibc-rotation")]
+    let (sin, cos) = {
+        if rotation_math_profile() == "glibc-fma-r3" {
+            (crate::glibc_trig::sin(angle), crate::glibc_trig::cos(angle))
+        } else {
+            angle.sin_cos()
+        }
+    };
+    #[cfg(not(feature = "wgc-glibc-rotation"))]
     let (sin, cos) = angle.sin_cos();
     [[cos, sin, 0.0], [-sin, cos, 0.0], [0.0, 0.0, 1.0]]
 }

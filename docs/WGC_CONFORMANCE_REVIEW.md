@@ -4,7 +4,7 @@ Review date: 2026-11-11. **This is the pre-repair audit record, not the current 
 
 Read [strict parity status](STRICT_PARITY_STATUS.md) for maintained implementation status and limitations, and [geometry parity evidence](https://github.com/spacelibres/STKCraft-Geocalc/blob/v0.1.8/docs/review-2026-11-11/geometry-parity-status.md) for the later complete-family live audit. Historical tolerance-based passes below do not establish exact parity.
 
-The source tree was later organized into domain folders; see [architecture](ARCHITECTURE.md). Original source paths below are retained as historical evidence.
+The source tree was later organized into domain folders; see [architecture](ARCHITECTURE.md). Original source paths below are retained as historical evidence. A later request added a GeoCalc web workspace; the historical scope statements below describe the earlier review and do not exclude that current work. See the [web workspace guide](../web/README.md) for its actual HTTP scope.
 
 ## Scope and acceptance
 

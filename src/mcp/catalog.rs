@@ -60,7 +60,7 @@ pub fn specifications() -> Vec<Spec> {
  spec("state_vector","state","target:i! observer:i! epoch_et:n! correction:s:NONE","target,observer,epoch_et,correction,x_km,y_km,z_km,vx_km_s,vy_km_s,vz_km_s,light_time_s,range_km,speed_km_s,time_at_target_et"),
  spec("angular_separation","separation","observer:i! target1:i! target2:i! epoch_et:n! correction:s:NONE shape1:s:POINT shape2:s:POINT","observer,target1,target2,epoch_et,correction,separation_rad,separation_deg"),
  spec("phase_angle","phase","target:i! illuminator:i:10 observer:i! epoch_et:n! correction:s:NONE","target,illuminator,observer,epoch_et,correction,phase_rad,phase_deg"),
- spec("angular_size","size","observer:i! target:i! epoch_et:n! correction:s:NONE method:s:MAX_RADIUS","observer,target,epoch_et,correction,angular_size_rad,angular_size_deg"),
+ spec("angular_size","size","observer:i! target:i! epoch_et:n! correction:s:NONE method:s:MAX_RADIUS target_frame:s:@target_frame","observer,target,epoch_et,correction,angular_size_rad,angular_size_deg"),
  spec("osculating_elements","elements","target:i! center:i! epoch_et:n! correction:s:NONE gm_source:s:CENTER reference_frame:s:J2000","target,center,epoch_et,correction,perifocal_distance_km,eccentricity,inclination_deg,ascending_node_deg,argument_of_periapsis_deg,mean_anomaly_deg,true_anomaly_deg,semi_major_axis_km,period_s,range_km,speed_km_s,gm_km3_s2"),
  spec("sub_solar_point","subpoint","kind:s=:solar target:i! observer:i! epoch_et:n! correction:s:NONE method:s:NEAR_POINT/ELLIPSOID target_frame:s:@target_frame","kind,target,observer,epoch_et,correction,x_km,y_km,z_km,range_km,surface_epoch_et,light_time_s,surface_vector_x_km,surface_vector_y_km,surface_vector_z_km,radius_km,incidence_deg,emission_deg,phase_deg,local_solar_time"),
  spec("sub_observer_point","subpoint","kind:s=:observer target:i! observer:i! epoch_et:n! correction:s:NONE method:s:NEAR_POINT/ELLIPSOID target_frame:s:@target_frame","kind,target,observer,epoch_et,correction,x_km,y_km,z_km,range_km,surface_epoch_et,light_time_s,surface_vector_x_km,surface_vector_y_km,surface_vector_z_km,radius_km,incidence_deg,emission_deg,phase_deg,local_solar_time"),
@@ -111,7 +111,7 @@ fn field_schema(f: &Field) -> Value {
         _ => json!({"type":"string"}),
     };
     if f.name == "correction" {
-        v["description"]=json!("SPICE correction; VECTOR pointing accepts NONE, LT, CN, XLT, XCN, S or XS. Other families use NONE/LT/LT+S/CN/CN+S/XLT/XLT+S/XCN/XCN+S as supported by that native routine.");
+        v["description"]=json!("SPICE correction; ray-in-FOV searches accept NONE, S or XS. VECTOR pointing accepts NONE, LT, CN, XLT, XCN, S or XS. Other families use NONE/LT/LT+S/CN/CN+S/XLT/XLT+S/XCN/XCN+S as supported by that native routine.");
     }
     if f.name == "step_seconds" {
         v["exclusiveMinimum"] = json!(0);

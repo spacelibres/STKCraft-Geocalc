@@ -84,7 +84,7 @@ fn csv_args(args: &Value) -> Result<(String, Vec<String>, Vec<String>), String> 
     Ok((mode.into(), rows, columns))
 }
 pub fn prepare(name: &str, args: &Value) -> Result<(String, Vec<String>, Vec<String>), String> {
-    let result = if name == "calculate_csv" {
+    let mut result = if name == "calculate_csv" {
         csv_args(args)?
     } else {
         let spec = catalog::specifications()
@@ -95,6 +95,15 @@ pub fn prepare(name: &str, args: &Value) -> Result<(String, Vec<String>, Vec<Str
         (spec.mode, vec![row], spec.columns)
     };
     validate_rows(&result.1)?;
+    if result.0 == "size"
+        && result.1[0]
+            .split(',')
+            .nth(4)
+            .is_some_and(|value| value.trim().eq_ignore_ascii_case("LIMB_EXTENTS"))
+    {
+        result.2 = "observer,target,epoch_et,correction,min_angular_size_rad,min_angular_size_deg,max_angular_size_deg"
+            .split(',').map(str::to_string).collect();
+    }
     build_command(&result.0, args)?;
     Ok(result)
 }

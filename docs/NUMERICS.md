@@ -68,6 +68,34 @@ native corpus must both pass; a matching SDK label or ten sample primitives
 alone cannot establish acceptance. Other CPU/runtime/compiler profiles remain
 uncertified until independently checked against all required outputs.
 
+## Linux WebGeocalc observations
+
+The source also runs on Linux. A recorded x86-64 Linux glibc profile passes
+the retained 19 calculator groups and 12 finder cases, including the four
+near-zero calculator cells that differ on the Windows profile. The official
+NAIF N0067 Linux static library independently reproduces the Linux CSPICE
+values for those four cells. The corresponding Windows build reproduces the
+official Windows library instead. See the
+[cross-platform evidence](reference/native-cross-platform/README.md) and
+[feature ledger](WGC_FEATURE_VERIFICATION.md).
+
+These observations do not certify arbitrary Linux distributions, math library
+versions, compiler settings, WGC server kernels, or all calculation inputs.
+The WSL replay tools record the local binary and runtime library hashes.
+Matching WGC's displayed values does not prove its unrounded internal doubles.
+
+For a separately selectable experimental rotation profile, build with the
+`wgc-glibc-rotation` feature and set `STKCRAFT_WGC_GLIBC_ROT3=1` before the
+process starts. Its R3 rotations use an adapted glibc FMA sine/cosine port.
+The choice is fixed on the first R3 rotation or `rotation_math_profile()`
+call in that process. Both geometry and finder bridges report their actual
+selection with `--rotation-profile`. Without the
+environment setting, the feature keeps the native platform's existing math.
+It changes R3 trigonometry only; it is not a full glibc or WGC runtime. The
+retained sample results and limits are in the cross-platform evidence. Do not
+change the setting during a calculation or treat it as certification of
+unseen inputs.
+
 ## Limits
 
 Every equality claim is limited to the actual reference corpus, environment and data. Build success on a new platform is not evidence of bit equality. The accuracy of an SPK, PCK, CK or DSK data product is independent of arithmetic reproduction. Full option-level certification remains open in [the gap register](STRICT_REMAINING_GAPS.md).

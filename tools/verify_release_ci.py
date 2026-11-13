@@ -15,6 +15,7 @@ import verify_strict
 from runtime_profile import BINARY_NAMES, binary_inventory, validate_binaries
 
 REQUIRED_JOBS = {
+    'Web workspace build and unit tests',
     'Build, docs and package (ubuntu-latest)',
     'Build, docs and package (macos-15-intel)',
     'Build, docs and package (windows-2022)',

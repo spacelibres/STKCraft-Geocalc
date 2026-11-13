@@ -1,0 +1,20 @@
+{
+  "scope": "Local CSPICE position and VSEP plus host asin, and live WGC point-coincidence observations; not native TRGSEP equivalence",
+  "cspice": "CSPICE_N0067",
+  "spiceypy": "8.3.0",
+  "platform": "Windows-10-10.0.26300-SP0",
+  "spk_sha256": "8d5001fab315eeff222cc51f7cf7ffcdb43fb38fb9ac73ff09e09a5b361fd388",
+  "pck_sha256": "3dff7b1dbeceaa01f25467767d3fa25816051c85d162d1edf04acb310ee28bb1",
+  "library_sha256": "7fd2dcc58d73ed5293847e67109897caba34240b8f9c38ad739c0b2ec6ce7715",
+  "wgc_trace_sha256": "e07d19697e50d9f7b4f0fb12afa5a0df48338a0c93eb7177b0e750db62bdca40",
+  "et": 0.0,
+  "earth_minus_moon_position_bits": [
+    "4111cc6189f79077",
+    "41104773554db146",
+    "40f29467caf3b883"
+  ],
+  "earth_radius_km": 6378.1366,
+  "mixed_radians_bits": "bf903ab793085c7f",
+  "vsep_zero_bits": "0000000000000000",
+  "wgc_finder_trace_sha256": "65469e11053525472961f591c6ebea8c7f46a9024f9e8e5511ea414f069c2f8f"
+}

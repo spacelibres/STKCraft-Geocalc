@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/spacelibres/STKCraft_web/main/public/brand/albatross.png" alt="STKCraft — Albatross" width="128">
+  <img src="web/public/albatross.svg" alt="STKCraft — Albatross" width="128">
 </p>
 
-# STKCraft-geocalc
+# STKCraft GeoCalc
 
 **STKCraft project:** <https://www.stkcraft.com>
 **Repository:** <https://github.com/spacelibres/STKCraft-Geocalc>
@@ -17,22 +17,48 @@
 - [Source architecture](docs/ARCHITECTURE.md), [numerical contract](docs/NUMERICS.md), and [validation](docs/VALIDATION.md)
 - [Current evidence](docs/STRICT_PARITY_STATUS.md), [remaining gaps](docs/STRICT_REMAINING_GAPS.md), and [changelog](CHANGELOG.md)
 
+## GeoCalc workspace
+
+The GeoCalc web workspace brings the geometry and time libraries into one
+interactive view. It provides a solar-system scene, example calculations,
+result visualizations, an event timeline, and a browsable API reference.
+See the [web workspace guide](web/README.md) and the
+[project wiki](https://github.com/spacelibres/STKCraft-Geocalc/wiki).
+
+The images below are captures of the local development workspace. Scene
+markers and line segments are visual aids; consult the numerical contract and
+kernel context when interpreting results. NASA comparisons currently cover
+only the mapped operations and compare displayed values.
+
+| Workspace and result comparison | Event and time workflows |
+| --- | --- |
+| [![Solar-system workspace](docs/screenshots/01-workspace.jpg)](docs/screenshots/01-workspace.jpg) | [![Distance finder and event timeline](docs/screenshots/03-event-timeline.jpg)](docs/screenshots/03-event-timeline.jpg) |
+| Solar-system workspace and example selector | Distance finder and event timeline |
+| [![State vector and NASA comparison](docs/screenshots/02-state-nasa.jpg)](docs/screenshots/02-state-nasa.jpg) | [![UTC leap-second conversion and timeline](docs/screenshots/04-time-conversion.jpg)](docs/screenshots/04-time-conversion.jpg) |
+| State-vector result and NASA display comparison | UTC leap-second conversion and timeline |
+
+[![GeoCalc API reference](docs/screenshots/05-api-reference.jpg)](docs/screenshots/05-api-reference.jpg)
+
+The API reference lists the running backend's discovered operations and
+server endpoints. The web application is a local development workspace;
+complete WebGeocalc HTTP and option parity are not yet established.
+
 ## Installation and status
 
-Version 0.1.8 selects the static Windows CRT after native diagnostics reproduced
+The project selects the static Windows CRT after native diagnostics reproduced
 the earlier remote runtime differences. See [the runtime investigation](docs/reference/RUNTIME_MATH_INVESTIGATION.md).
 Complete WebGeocalc
 option-level conformance remains open; see the gap register above.
 The crate requires Rust 1.75 or newer and uses `std`.
 
 ```sh
-cargo add stkcraft-geocalc@=0.2.0
-cargo install stkcraft-geocalc --version 0.2.0 --locked --features mcp --bins
+cargo add stkcraft-geocalc@=0.2.1
+cargo install stkcraft-geocalc --version 0.2.1 --locked --features mcp --bins
 ```
 
 ```toml
 [dependencies]
-stkcraft-geocalc = "=0.2.0"
+stkcraft-geocalc = "=0.2.1"
 ```
 
 The optional `mcp` feature installs `stkcraft-geocalc-mcp` alongside
@@ -48,13 +74,21 @@ sets the linker mode in `.cargo/config.toml`. Cargo registry installation and
 downstream library projects must supply their own configuration:
 
 ```powershell
-cargo install stkcraft-geocalc --version 0.2.0 --locked --features mcp --bins --config 'target.x86_64-pc-windows-msvc.rustflags=["-C","target-feature=+crt-static"]'
+cargo install stkcraft-geocalc --version 0.2.1 --locked --features mcp --bins --config 'target.x86_64-pc-windows-msvc.rustflags=["-C","target-feature=+crt-static"]'
 ```
 
 See [the numerical profile](docs/NUMERICS.md#windows-runtime-profile) for library
 consumer configuration and native provenance. Linux/macOS build success does
 not establish equality to this Windows reference. Published Windows archives
 contain the exact executables exercised by the passing main CI Release tests.
+
+This checkout also contains an experimental `wgc-glibc-rotation` feature.
+To select it, set `STKCRAFT_WGC_GLIBC_ROT3=1` before starting a binary built
+with that feature. `wgc_geometry --rotation-profile` and
+`wgc_gf --rotation-profile` report the active selection. This affects R3
+rotations only; its validated cases and limitations are documented in the
+[numerical contract](docs/NUMERICS.md). Availability in a published release
+must be checked against that release's notes.
 
 A NAIF/SPICE-aligned geometry library written in Rust. It reads binary
 SPK kernels, evaluates geometric and aberration-corrected state vectors,
@@ -121,9 +155,11 @@ Implemented:
   result is negative when the disks overlap, exactly as `trgsep`
   documents. Plus a time-domain search for local extrema and threshold
   crossings with either shape.
-- Phase angle matching CSPICE `phaseq`, and angular size matching the
-  WebGeocalc Angular Size calculation with `MAX_RADIUS` (its default),
-  `MIN_RADIUS`, and `LIMB_EXTENTS`.
+- Phase angle matching CSPICE `phaseq`, and angular size with
+  `MAX_RADIUS` (the WebGeocalc default), `MIN_RADIUS`, and `LIMB_EXTENTS`.
+  The limb-axis method matches the retained WebGeocalc display cases; its
+  unrounded WebGeocalc results have not been independently verified. See
+  [the feature verification ledger](docs/WGC_FEATURE_VERIFICATION.md).
 - Text PCK parsing: body radii, gravitational parameters, and the IAU
   body-fixed orientation model (`POLE_RA`, `POLE_DEC`, `PM`, and the
   `NUT_PREC_*` series, including the `MAX_PHASE_DEGREE` quadratic phases),

@@ -1,0 +1,132 @@
+{
+  "cspice": "CSPICE_N0067",
+  "native_library_sha256": "7fd2dcc58d73ed5293847e67109897caba34240b8f9c38ad739c0b2ec6ce7715",
+  "kernels_in_load_order": [
+    {
+      "name": "200128RU_SCPSE_12280_12328.bsp",
+      "sha256": "2a7b1fb8e7deab5446a9590330f0c8af65b3681d0ff6527f1fc291e03c6b4ba8"
+    },
+    {
+      "name": "de442.bsp",
+      "sha256": "8d5001fab315eeff222cc51f7cf7ffcdb43fb38fb9ac73ff09e09a5b361fd388"
+    },
+    {
+      "name": "pck00010.tpc",
+      "sha256": "9e8c02dfe283ff65c01ef1982a1d42746ea8b9a172e62dc1f453bcafb9ddbfc5"
+    },
+    {
+      "name": "enceladus_ssd_250728_v2.tpc",
+      "sha256": "21577baf51ef428b77eeda488c03ca6df90fa764da8c6ba7d3ca7a4d879e6c04"
+    },
+    {
+      "name": "RSSD0002.TF",
+      "sha256": "8c26c450013584ebb21584e732734bbfd95030b316d26bef6cb26c7e6c72dc07"
+    },
+    {
+      "name": "codes_300ast_20100725.tf",
+      "sha256": "15ee3b1731817774672725ccc226b249eb9ca5aa5d0a6a7805c91e5f57497f40"
+    },
+    {
+      "name": "EARTHFIXEDITRF93.TF",
+      "sha256": "6c868a46aec9b64d8902bba16c8522cf5e8d65dc5d0931e8c66458a60fbb85bc"
+    },
+    {
+      "name": "moon_080317.tf",
+      "sha256": "78732477b96f9863e7b0d65bcee3c22b8707ca5ed0db56d1173319cb2e8c7993"
+    },
+    {
+      "name": "moon_de440_250416.tf",
+      "sha256": "a47c71e9c9f33796bdafb2c9d69a7ee447b6016ecad80f71cd6f3e479f9cf768"
+    },
+    {
+      "name": "moon_assoc_me.tf",
+      "sha256": "52c622043ce0447d575e59ee01642f1894921e68c10f934ceff065f362da6c1c"
+    },
+    {
+      "name": "jup347_nameid.tf",
+      "sha256": "1303dfccf7d758965c698fbcf0c110b41f73da67639fe63f0724de414f559228"
+    },
+    {
+      "name": "jup348_nameid.tf",
+      "sha256": "c80fa162869789639123225024831d21c611380771aba3fffdd368c07b2c5e79"
+    },
+    {
+      "name": "jup349_nameid.tf",
+      "sha256": "03ea700f2b05391e9cec4f41117ed6ca8b4b08c8856abb49c09e8aa88648eba7"
+    },
+    {
+      "name": "nep098_nameid.tf",
+      "sha256": "c61ecda345d23c5b4b6e0252504e5c59e6debc21fb65774c7dc77c6a71b27f57"
+    },
+    {
+      "name": "nep104_nameid.tf",
+      "sha256": "bcd74bd7c791b8d368953b794e8f76806784c1da5bbb22550700ce5b0f624d59"
+    },
+    {
+      "name": "sat455_nameid.tf",
+      "sha256": "dc435939e80a35ff467764343a38d6588bd8f2620b6d07d41943ae2e38dd9003"
+    },
+    {
+      "name": "sat456_nameid.tf",
+      "sha256": "57bcb7caa96085938324bca1f5f8996e0ca7e9510b348fc65b897b889b55e6e8"
+    },
+    {
+      "name": "sat457_nameid.tf",
+      "sha256": "9e6edc2d9f38b8e137fef020a168db532c878a289b81500711cf3e1d0bf568e2"
+    },
+    {
+      "name": "sat458_nameid.tf",
+      "sha256": "69832c484e0c83b69b3cc54cd98a2adadadade95ed718a14ed1fc1b5f286ce3e"
+    },
+    {
+      "name": "sat459_nameid.tf",
+      "sha256": "e0fc8ba2a487b0d83bf5685411005f29b1bd6c9760c783377eebf042b6888c6e"
+    },
+    {
+      "name": "sat480_nameid.tf",
+      "sha256": "c1c20ff442f69ad1663511b9e447e87627484acd1b27fa0ccae82c747af28acd"
+    },
+    {
+      "name": "ura117_nameid.tf",
+      "sha256": "686d4b7acee62bf167d8c6d178c57159c73923654e582cb6d1f1fb1e220f65f1"
+    },
+    {
+      "name": "cas_v44.tf",
+      "sha256": "c1e49749bec168e05c82e7c8b77455cd446c0bb8aafd31aeb1975d07ba6de02d"
+    },
+    {
+      "name": "naif0012.tls",
+      "sha256": "678e32bdb5a744117a467cd9601cd6b373f0e9bc9bbde1371d5eee39600a039b"
+    },
+    {
+      "name": "cas_iss_v10.ti",
+      "sha256": "1a88229e952caf282bc53090e3b37f495e99b1f4bf1a10783d00cf75365ae859"
+    },
+    {
+      "name": "12289_12294ra.bc",
+      "sha256": "8bfca82a7ac6e0827ee27c79a6efd59fbc1a18ae773bf23c613c5fadfb207b82"
+    },
+    {
+      "name": "cas00172.tsc",
+      "sha256": "066c3e7e4af11512a33d64d518c214b4b2637bcfd7f5b7c6077116019d377f0d"
+    }
+  ],
+  "rows": [
+    {
+      "correction": "",
+      "short": "SPICE(EMPTYSTRING)"
+    },
+    {
+      "correction": " ",
+      "short": "SPICE(INVALIDOPTION)"
+    },
+    {
+      "correction": "nonsense",
+      "short": "SPICE(INVALIDOPTION)"
+    },
+    {
+      "correction": "xcn+s",
+      "short": "SPICE(INVALIDOPTION)"
+    }
+  ]
+}

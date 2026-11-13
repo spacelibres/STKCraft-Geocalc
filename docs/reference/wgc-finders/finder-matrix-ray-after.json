@@ -1,0 +1,24 @@
+{
+  "scope": "WGC displayed values, native endpoint bits, and invalid-option symbols",
+  "server_kernel_bytes_verified": false,
+  "verified_profile": "native",
+  "binary_sha256": "7339d2232372b1cb2f105d8c4da80896d28b5910b570d3c8d4697ba52faaa261",
+  "trace_sha256": "b796f964bd83089d110ea457ffdb7adc07b6965dd6c5cdb513cb3e0410e5d340",
+  "capture_sha256": "1f59ac900f06e5727546d3ae691f77a4c7c0e1be6ee6d1f05b2c14e7efce648b",
+  "cases": [
+    {
+      "id": "ray_fov_S",
+      "native_errors": [],
+      "wgc_errors": []
+    },
+    {
+      "id": "ray_fov_XS",
+      "native_errors": [],
+      "wgc_errors": []
+    }
+  ],
+  "invalid_options_checked": [
+    "LT",
+    "CN+S"
+  ]
+}

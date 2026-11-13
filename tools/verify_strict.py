@@ -23,6 +23,14 @@ from bootstrap_reference import pinned_kernel_records,resolve_reference_binary
 from runtime_profile import tested_binary_inventory
 DEST = ROOT / 'target/strict-verification'
 REQUIRED_TESTS = [
+    'phase_angle_additional_corrections_match_native_bits',
+    'native_wgc_intercept_longitude_windows_match_bits',
+    'ray_finder_stellar_corrections_match_native_windows',
+    'mcp_ray_stellar_windows_match_native',
+    'finite_values_match_independent_glibc_bits',
+    'backend_reports_actual_rotation_profile',
+    'surface_and_tangent_match_linux_cspice',
+    'mcp_angular_size_limb_reports_both_extents_in_requested_frame',
     'native_historical_spk10_corrected_state_position_cells_exact',
     'native_latitudinal_surface_coordinates_exact',
     'native_surface_intercept_all_output_cells_exact',
@@ -295,7 +303,7 @@ def main() -> int:
     env = os.environ.copy()
     # Windows cannot overwrite a test executable while another worker runs it.
     env['CARGO_TARGET_DIR'] = str(DEST/'cargo')
-    for name in ['STKCRAFT_SPK','STKCRAFT_PCK','STKCRAFT_FK']:
+    for name in ['STKCRAFT_SPK','STKCRAFT_PCK','STKCRAFT_FK','STKCRAFT_WGC_GLIBC_ROT3']:
         env.pop(name, None)
     commands = [
         ('format', ['cargo','fmt','--all','--','--check']),

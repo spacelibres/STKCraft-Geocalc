@@ -1,0 +1,26 @@
+{
+  "name": "stkcraft-webgeocalc",
+  "version": "0.1.1",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --hostname 127.0.0.1",
+    "build": "next build",
+    "start": "next start --hostname 127.0.0.1",
+    "typecheck": "tsc --noEmit",
+    "test:integration": "node --test tests/integration.mjs",
+    "test:scene": "node --test tests/examples.test.mjs tests/scene.test.mjs tests/result-visualization.test.mjs tests/scene-snapshot.test.mjs"
+  },
+  "dependencies": {
+    "next": "16.4.6",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "three": "0.187.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@types/three": "^0.183.0",
+    "typescript": "^5.9.0"
+  }
+}

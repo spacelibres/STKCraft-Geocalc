@@ -1,6 +1,6 @@
 # Strict parity status
 
-This project targets all NASA NAIF/SPICE WebGeocalc computational features and identical results. HTTP service compatibility is outside scope. Time conversion belongs to STKCraft-time. **Complete WebGeocalc conformance has not been certified.**
+This project targets NASA NAIF/SPICE WebGeocalc computational behavior and includes the GeoCalc web workspace. The local HTTP contract is not yet a complete NASA API implementation. Time conversion belongs to STKCraft-time. **Complete WebGeocalc conformance has not been certified.**
 
 ## Acceptance
 
@@ -62,6 +62,8 @@ identify the native library, kernels and capture hashes. These cases do not
 certify every input or expose DSK methods in CLI/MCP.
 
 ## NASA family audit
+
+For the current per-feature checkpoints, newer finder matrices and remaining differences, see the [feature verification ledger](WGC_FEATURE_VERIFICATION.md). The historical audit below remains useful evidence, not a complete description of the current implementation.
 
 The [live audit](https://github.com/spacelibres/STKCraft-Geocalc/blob/v0.1.8/docs/review-2026-11-11/geometry-parity-status.md) checks all 24 non-time families: 13 geometry and 11 GF families. Geometry has 144 local query rows and 71 NASA calculations in 15 groups. GF has 12 requests, 18 nonempty intervals and 54 exact native start/stop/duration doubles. Explicit NASA serialization checks pass; raw transported-value differences are separately retained.
 

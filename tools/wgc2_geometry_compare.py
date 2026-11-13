@@ -314,7 +314,7 @@ def verified_pairs(queries, expected, values, mode):
             raise RuntimeError(f"{mode}: crate failed for {query}")
         if mode in widths or mode == "state_rep":
             prefix, width = widths[mode] if mode in widths else (4, len(reference[0]) + 3)
-            if mode=="size" and query.split(",")[-1]=="LIMB_EXTENTS": width=7
+            if mode=="size" and len(query.split(",")) > 4 and query.split(",")[4]=="LIMB_EXTENTS": width=7
             if len(ours) != width:
                 raise RuntimeError(f"{mode}: column count expected {width}, actual {len(ours)} for {query}")
             fields = query.split(",")
@@ -483,7 +483,7 @@ def crate_queries(
         "separation",
     ):
         command.append(parameter)
-    if mode in ("tangent","subpoint","illum","intercept","pointing_full"):
+    if mode in ("tangent","subpoint","illum","intercept","pointing_full","size"):
         command.append(CLOCK_FK)
     process = subprocess.run(
         command,

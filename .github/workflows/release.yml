@@ -146,8 +146,12 @@ jobs:
           for guide in pathlib.Path('docs').glob('*.md'):
               shutil.copy2(guide, dest / 'docs')
           shutil.copytree('docs/reference', dest / 'docs/reference')
+          shutil.copytree('docs/screenshots', dest / 'docs/screenshots')
           (dest / 'docs/releases').mkdir()
           shutil.copy2(pathlib.Path('docs/releases') / (os.environ['GITHUB_REF_NAME'] + '.md'), dest / 'docs/releases')
+          (dest / 'web/public').mkdir(parents=True)
+          shutil.copy2('web/README.md', dest / 'web/README.md')
+          shutil.copy2('web/public/albatross.svg', dest / 'web/public/albatross.svg')
           archive = 'stkcraft-geocalc-' + os.environ['GITHUB_REF_NAME'] + '-' + os.environ['ARTIFACT_PLATFORM']
           shutil.make_archive(archive, 'zip' if os.name == 'nt' else 'gztar', root_dir=dest)
       - name: Upload platform archive

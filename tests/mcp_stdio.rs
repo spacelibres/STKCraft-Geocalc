@@ -51,6 +51,89 @@ fn mcp_stdio_rejects_bad_requests_and_unknown_tools() {
 fn kernels() -> Value {
     json!({"spk":[format!("{}/target/kernels/de442s.bsp",env!("CARGO_MANIFEST_DIR"))],"pck":[format!("{}/target/kernels/pck00011.tpc",env!("CARGO_MANIFEST_DIR"))]})
 }
+
+#[test]
+fn mcp_ray_stellar_windows_match_native() {
+    let root = env!("CARGO_MANIFEST_DIR");
+    let context = json!({"spk":[format!("{root}/target/kernels/cassini/200128RU_SCPSE_12280_12328.bsp"),format!("{root}/target/kernels/de442.bsp")],
+        "pck":[format!("{root}/target/kernels/cassini/pck00010.tpc"),format!("{root}/target/kernels/cassini/enceladus_ssd_250728_v2.tpc")],
+        "fk":[format!("{root}/target/kernels/cassini/cas_v44.tf")],"ck":[format!("{root}/target/kernels/cassini/12289_12294ra.bc")],
+        "lsk":format!("{root}/target/kernels/naif0012.tls"),"sclk":[{"spacecraft_id":-82,"path":format!("{root}/target/kernels/cassini/cas00172.tsc")}],
+        "ik":format!("{root}/target/kernels/cassini/cas_iss_v10.ti"),"instrument_id":-82360});
+    let requests: Vec<_> = ["S", "XS", "LT", "", " "].iter().enumerate().map(|(i, correction)|
+        json!({"jsonrpc":"2.0","id":i+2,"method":"tools/call","params":{"name":"gf_ray_in_fov_search","arguments":{
+            "kernels":context,"observer":-82,"correction":correction,"reference_frame":"J2000",
+            "x":-0.8695336349509377,"y":-0.4623392348503029,"z":-0.17364817766693033,
+            "confinement":[{"start":403902000.0,"end":403906000.0}],"step_seconds":60.0}}}).to_string()).collect();
+    let result = run(&[
+        init(),
+        json!({"jsonrpc":"2.0","method":"notifications/initialized"}).to_string(),
+        requests[0].clone(),
+        requests[1].clone(),
+        requests[2].clone(),
+        requests[3].clone(),
+        requests[4].clone(),
+    ]);
+    let expected = [
+        [403905461.83247435_f64, 403905725.3333049, 263.5008305311203],
+        [403905462.5044329_f64, 403905718.7920408, 256.2876079082489],
+    ];
+    for (result, expected) in result[1..3].iter().zip(expected) {
+        assert_eq!(result["result"]["isError"], false, "{result}");
+        let rows = result["result"]["structuredContent"]["rows"]
+            .as_array()
+            .unwrap();
+        assert_eq!(rows.len(), 1, "{result}");
+        for (actual, expected) in rows[0].as_array().unwrap().iter().zip(expected) {
+            assert_eq!(actual.as_f64().unwrap().to_bits(), expected.to_bits());
+        }
+    }
+    assert_eq!(result[3]["result"]["isError"], true, "{}", result[3]);
+    assert!(result[3].to_string().contains("SPICE(INVALIDOPTION)"));
+    assert_eq!(result[4]["result"]["isError"], true, "{}", result[4]);
+    assert!(result[4].to_string().contains("SPICE(EMPTYSTRING)"));
+    assert_eq!(result[5]["result"]["isError"], true, "{}", result[5]);
+    assert!(result[5].to_string().contains("SPICE(INVALIDOPTION)"));
+}
+
+#[test]
+fn mcp_angular_size_limb_reports_both_extents_in_requested_frame() {
+    let root = env!("CARGO_MANIFEST_DIR");
+    let context = json!({"spk":[format!("{root}/target/kernels/de442.bsp")],"pck":[format!("{root}/target/kernels/pck00011.tpc"),format!("{root}/target/kernels/earth_1962_260806_2126_combined.bpc")]});
+    let result=run(&[init(),json!({"jsonrpc":"2.0","method":"notifications/initialized"}).to_string(),json!({"jsonrpc":"2.0","id":2,"method":"tools/call","params":{"name":"angular_size","arguments":{"kernels":context,"target":399,"observer":301,"epoch_et":0.0,"correction":"NONE","method":"LIMB_EXTENTS","target_frame":"ITRF93"}}}).to_string(),json!({"jsonrpc":"2.0","id":3,"method":"tools/call","params":{"name":"calculate_csv","arguments":{"kernels":context,"calculator":"size","queries":["301,399,0,NONE,LIMB_EXTENTS,ITRF93"]}}}).to_string(),json!({"jsonrpc":"2.0","id":4,"method":"tools/call","params":{"name":"angular_size","arguments":{"kernels":context,"target":399,"observer":301,"epoch_et":0.0}}}).to_string()]);
+    let data = &result[1]["result"]["structuredContent"];
+    assert_eq!(
+        data["columns"],
+        json!([
+            "observer",
+            "target",
+            "epoch_et",
+            "correction",
+            "min_angular_size_rad",
+            "min_angular_size_deg",
+            "max_angular_size_deg"
+        ]),
+        "{:?}",
+        result[1]
+    );
+    let row = data["rows"][0].as_array().unwrap();
+    assert_eq!(format!("{:.8}", row[5].as_f64().unwrap()), "1.81029134");
+    assert_eq!(format!("{:.8}", row[6].as_f64().unwrap()), "1.81616018");
+    let raw = &result[2]["result"]["structuredContent"];
+    assert_eq!(raw["columns"], data["columns"]);
+    assert_eq!(raw["rows"], data["rows"]);
+    assert_eq!(
+        result[3]["result"]["structuredContent"]["columns"],
+        json!([
+            "observer",
+            "target",
+            "epoch_et",
+            "correction",
+            "angular_size_rad",
+            "angular_size_deg"
+        ])
+    );
+}
 #[test]
 fn mcp_state_and_gf_preserve_native_backend_bits() {
     let state=json!({"jsonrpc":"2.0","id":2,"method":"tools/call","params":{"name":"state_vector","arguments":{"kernels":kernels(),"target":301,"observer":399,"epoch_et":0.0,"correction":"CN+S"}}}).to_string();

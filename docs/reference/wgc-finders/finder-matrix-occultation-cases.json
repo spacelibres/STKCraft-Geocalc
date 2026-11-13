@@ -1,0 +1,655 @@
+{
+  "scope": "WGC displayed values and independent native GFOCLT window bits, including empty windows",
+  "server_kernel_bytes_verified": false,
+  "cspice": "CSPICE_N0067",
+  "native_library_sha256": "7fd2dcc58d73ed5293847e67109897caba34240b8f9c38ad739c0b2ec6ce7715",
+  "native_kernels_in_load_order": [
+    {
+      "name": "de442.bsp",
+      "sha256": "8d5001fab315eeff222cc51f7cf7ffcdb43fb38fb9ac73ff09e09a5b361fd388"
+    },
+    {
+      "name": "naif0012.tls",
+      "sha256": "678e32bdb5a744117a467cd9601cd6b373f0e9bc9bbde1371d5eee39600a039b"
+    },
+    {
+      "name": "pck00011.tpc",
+      "sha256": "3dff7b1dbeceaa01f25467767d3fa25816051c85d162d1edf04acb310ee28bb1"
+    },
+    {
+      "name": "mars_iau2000_v1.tpc",
+      "sha256": "07ba38b939ae92c085882752a523addd749fde0abb7a3468423099ed02bb3949"
+    },
+    {
+      "name": "gm_de431.tpc",
+      "sha256": "15756c162151853f329d473fa00c38d35e62d83c3e25ddceece6516bbd98738b"
+    },
+    {
+      "name": "moon_pa_de440_200625.bpc",
+      "sha256": "60cd55aa401ea2ea97360636f567554bfe4e37bb829f901b4460a455dfaf783f"
+    },
+    {
+      "name": "RSSD0002.TF",
+      "sha256": "8c26c450013584ebb21584e732734bbfd95030b316d26bef6cb26c7e6c72dc07"
+    },
+    {
+      "name": "codes_300ast_20100725.tf",
+      "sha256": "15ee3b1731817774672725ccc226b249eb9ca5aa5d0a6a7805c91e5f57497f40"
+    },
+    {
+      "name": "EARTHFIXEDITRF93.TF",
+      "sha256": "6c868a46aec9b64d8902bba16c8522cf5e8d65dc5d0931e8c66458a60fbb85bc"
+    },
+    {
+      "name": "moon_080317.tf",
+      "sha256": "78732477b96f9863e7b0d65bcee3c22b8707ca5ed0db56d1173319cb2e8c7993"
+    },
+    {
+      "name": "moon_de440_250416.tf",
+      "sha256": "a47c71e9c9f33796bdafb2c9d69a7ee447b6016ecad80f71cd6f3e479f9cf768"
+    },
+    {
+      "name": "moon_assoc_me.tf",
+      "sha256": "52c622043ce0447d575e59ee01642f1894921e68c10f934ceff065f362da6c1c"
+    },
+    {
+      "name": "jup347_nameid.tf",
+      "sha256": "1303dfccf7d758965c698fbcf0c110b41f73da67639fe63f0724de414f559228"
+    },
+    {
+      "name": "jup348_nameid.tf",
+      "sha256": "c80fa162869789639123225024831d21c611380771aba3fffdd368c07b2c5e79"
+    },
+    {
+      "name": "jup349_nameid.tf",
+      "sha256": "03ea700f2b05391e9cec4f41117ed6ca8b4b08c8856abb49c09e8aa88648eba7"
+    },
+    {
+      "name": "nep098_nameid.tf",
+      "sha256": "c61ecda345d23c5b4b6e0252504e5c59e6debc21fb65774c7dc77c6a71b27f57"
+    },
+    {
+      "name": "nep104_nameid.tf",
+      "sha256": "bcd74bd7c791b8d368953b794e8f76806784c1da5bbb22550700ce5b0f624d59"
+    },
+    {
+      "name": "sat455_nameid.tf",
+      "sha256": "dc435939e80a35ff467764343a38d6588bd8f2620b6d07d41943ae2e38dd9003"
+    },
+    {
+      "name": "sat456_nameid.tf",
+      "sha256": "57bcb7caa96085938324bca1f5f8996e0ca7e9510b348fc65b897b889b55e6e8"
+    },
+    {
+      "name": "sat457_nameid.tf",
+      "sha256": "9e6edc2d9f38b8e137fef020a168db532c878a289b81500711cf3e1d0bf568e2"
+    },
+    {
+      "name": "sat458_nameid.tf",
+      "sha256": "69832c484e0c83b69b3cc54cd98a2adadadade95ed718a14ed1fc1b5f286ce3e"
+    },
+    {
+      "name": "sat459_nameid.tf",
+      "sha256": "e0fc8ba2a487b0d83bf5685411005f29b1bd6c9760c783377eebf042b6888c6e"
+    },
+    {
+      "name": "sat480_nameid.tf",
+      "sha256": "c1c20ff442f69ad1663511b9e447e87627484acd1b27fa0ccae82c747af28acd"
+    },
+    {
+      "name": "ura117_nameid.tf",
+      "sha256": "686d4b7acee62bf167d8c6d178c57159c73923654e582cb6d1f1fb1e220f65f1"
+    }
+  ],
+  "cases": [
+    {
+      "id": "occultation_0",
+      "payload": {
+        "calculationType": "GF_OCCULTATION_SEARCH",
+        "kernels": [
+          {
+            "type": "KERNEL_SET",
+            "id": 1
+          }
+        ],
+        "timeSystem": "TDB",
+        "timeFormat": "SECONDS_PAST_J2000",
+        "intervals": [
+          {
+            "startTime": "556599669.1828043",
+            "endTime": "556628469.1827978"
+          }
+        ],
+        "timeStep": 60.0,
+        "timeStepUnits": "SECONDS",
+        "outputTimeSystem": "TDB",
+        "outputTimeFormat": "SECONDS_PAST_J2000",
+        "outputDurationUnits": "SECONDS",
+        "shouldComplementWindow": false,
+        "intervalAdjustment": "NO_ADJUSTMENT",
+        "intervalFiltering": "NO_FILTERING",
+        "target1": "MOON",
+        "target2": "EARTH",
+        "shape1": "ELLIPSOID",
+        "shape2": "ELLIPSOID",
+        "frame1": "IAU_MOON",
+        "frame2": "IAU_EARTH",
+        "observer": "SUN",
+        "aberrationCorrection": "NONE",
+        "occultationType": "ANY"
+      },
+      "local": "occultation_0,GF_OCCULTATION_SEARCH,301,10,399,10,J2000,IAU_MOON,Near point: ellipsoid,RECTANGULAR,X,INCIDENCE,>,0.0,0.0,NONE,556599669.1828043:556628469.1827978,60.0,0.0,false,NONE,0.0,SECONDS,false,0.0,SECONDS,SECONDS,0.0,0.0,0.0,ELLIPSOID,ELLIPSOID,ANY",
+      "native": [
+        [
+          556604340.3187094,
+          556619739.1464679,
+          15398.827758550644
+        ]
+      ],
+      "errors": []
+    },
+    {
+      "id": "occultation_1",
+      "payload": {
+        "calculationType": "GF_OCCULTATION_SEARCH",
+        "kernels": [
+          {
+            "type": "KERNEL_SET",
+            "id": 1
+          }
+        ],
+        "timeSystem": "TDB",
+        "timeFormat": "SECONDS_PAST_J2000",
+        "intervals": [
+          {
+            "startTime": "556599669.1828043",
+            "endTime": "556628469.1827978"
+          }
+        ],
+        "timeStep": 60.0,
+        "timeStepUnits": "SECONDS",
+        "outputTimeSystem": "TDB",
+        "outputTimeFormat": "SECONDS_PAST_J2000",
+        "outputDurationUnits": "SECONDS",
+        "shouldComplementWindow": false,
+        "intervalAdjustment": "NO_ADJUSTMENT",
+        "intervalFiltering": "NO_FILTERING",
+        "target1": "MOON",
+        "target2": "EARTH",
+        "shape1": "ELLIPSOID",
+        "shape2": "ELLIPSOID",
+        "frame1": "IAU_MOON",
+        "frame2": "IAU_EARTH",
+        "observer": "SUN",
+        "aberrationCorrection": "NONE",
+        "occultationType": "FULL"
+      },
+      "local": "occultation_1,GF_OCCULTATION_SEARCH,301,10,399,10,J2000,IAU_MOON,Near point: ellipsoid,RECTANGULAR,X,INCIDENCE,>,0.0,0.0,NONE,556599669.1828043:556628469.1827978,60.0,0.0,false,NONE,0.0,SECONDS,false,0.0,SECONDS,SECONDS,0.0,0.0,0.0,ELLIPSOID,ELLIPSOID,FULL",
+      "native": [],
+      "errors": []
+    },
+    {
+      "id": "occultation_2",
+      "payload": {
+        "calculationType": "GF_OCCULTATION_SEARCH",
+        "kernels": [
+          {
+            "type": "KERNEL_SET",
+            "id": 1
+          }
+        ],
+        "timeSystem": "TDB",
+        "timeFormat": "SECONDS_PAST_J2000",
+        "intervals": [
+          {
+            "startTime": "556599669.1828043",
+            "endTime": "556628469.1827978"
+          }
+        ],
+        "timeStep": 60.0,
+        "timeStepUnits": "SECONDS",
+        "outputTimeSystem": "TDB",
+        "outputTimeFormat": "SECONDS_PAST_J2000",
+        "outputDurationUnits": "SECONDS",
+        "shouldComplementWindow": false,
+        "intervalAdjustment": "NO_ADJUSTMENT",
+        "intervalFiltering": "NO_FILTERING",
+        "target1": "MOON",
+        "target2": "EARTH",
+        "shape1": "ELLIPSOID",
+        "shape2": "ELLIPSOID",
+        "frame1": "IAU_MOON",
+        "frame2": "IAU_EARTH",
+        "observer": "SUN",
+        "aberrationCorrection": "NONE",
+        "occultationType": "PARTIAL"
+      },
+      "local": "occultation_2,GF_OCCULTATION_SEARCH,301,10,399,10,J2000,IAU_MOON,Near point: ellipsoid,RECTANGULAR,X,INCIDENCE,>,0.0,0.0,NONE,556599669.1828043:556628469.1827978,60.0,0.0,false,NONE,0.0,SECONDS,false,0.0,SECONDS,SECONDS,0.0,0.0,0.0,ELLIPSOID,ELLIPSOID,PARTIAL",
+      "native": [
+        [
+          556604340.3187094,
+          556608310.7599642,
+          3970.4412548542023
+        ],
+        [
+          556615773.2383528,
+          556619739.1464679,
+          3965.9081151485443
+        ]
+      ],
+      "errors": []
+    },
+    {
+      "id": "occultation_3",
+      "payload": {
+        "calculationType": "GF_OCCULTATION_SEARCH",
+        "kernels": [
+          {
+            "type": "KERNEL_SET",
+            "id": 1
+          }
+        ],
+        "timeSystem": "TDB",
+        "timeFormat": "SECONDS_PAST_J2000",
+        "intervals": [
+          {
+            "startTime": "556599669.1828043",
+            "endTime": "556628469.1827978"
+          }
+        ],
+        "timeStep": 60.0,
+        "timeStepUnits": "SECONDS",
+        "outputTimeSystem": "TDB",
+        "outputTimeFormat": "SECONDS_PAST_J2000",
+        "outputDurationUnits": "SECONDS",
+        "shouldComplementWindow": false,
+        "intervalAdjustment": "NO_ADJUSTMENT",
+        "intervalFiltering": "NO_FILTERING",
+        "target1": "MOON",
+        "target2": "EARTH",
+        "shape1": "ELLIPSOID",
+        "shape2": "ELLIPSOID",
+        "frame1": "IAU_MOON",
+        "frame2": "IAU_EARTH",
+        "observer": "SUN",
+        "aberrationCorrection": "NONE",
+        "occultationType": "ANNULAR"
+      },
+      "local": "occultation_3,GF_OCCULTATION_SEARCH,301,10,399,10,J2000,IAU_MOON,Near point: ellipsoid,RECTANGULAR,X,INCIDENCE,>,0.0,0.0,NONE,556599669.1828043:556628469.1827978,60.0,0.0,false,NONE,0.0,SECONDS,false,0.0,SECONDS,SECONDS,0.0,0.0,0.0,ELLIPSOID,ELLIPSOID,ANNULAR",
+      "native": [
+        [
+          556608310.7599642,
+          556615773.2383528,
+          7462.478388547897
+        ]
+      ],
+      "errors": []
+    },
+    {
+      "id": "occultation_4",
+      "payload": {
+        "calculationType": "GF_OCCULTATION_SEARCH",
+        "kernels": [
+          {
+            "type": "KERNEL_SET",
+            "id": 1
+          }
+        ],
+        "timeSystem": "TDB",
+        "timeFormat": "SECONDS_PAST_J2000",
+        "intervals": [
+          {
+            "startTime": "556599669.1828043",
+            "endTime": "556628469.1827978"
+          }
+        ],
+        "timeStep": 60.0,
+        "timeStepUnits": "SECONDS",
+        "outputTimeSystem": "TDB",
+        "outputTimeFormat": "SECONDS_PAST_J2000",
+        "outputDurationUnits": "SECONDS",
+        "shouldComplementWindow": false,
+        "intervalAdjustment": "NO_ADJUSTMENT",
+        "intervalFiltering": "NO_FILTERING",
+        "target1": "MOON",
+        "target2": "EARTH",
+        "shape1": "ELLIPSOID",
+        "shape2": "ELLIPSOID",
+        "frame1": "IAU_MOON",
+        "frame2": "IAU_EARTH",
+        "observer": "SUN",
+        "aberrationCorrection": "LT",
+        "occultationType": "ANY"
+      },
+      "local": "occultation_4,GF_OCCULTATION_SEARCH,301,10,399,10,J2000,IAU_MOON,Near point: ellipsoid,RECTANGULAR,X,INCIDENCE,>,0.0,0.0,LT,556599669.1828043:556628469.1827978,60.0,0.0,false,NONE,0.0,SECONDS,false,0.0,SECONDS,SECONDS,0.0,0.0,0.0,ELLIPSOID,ELLIPSOID,ANY",
+      "native": [
+        [
+          556604881.9063661,
+          556620278.1053231,
+          15396.1989569664
+        ]
+      ],
+      "errors": []
+    },
+    {
+      "id": "occultation_5",
+      "payload": {
+        "calculationType": "GF_OCCULTATION_SEARCH",
+        "kernels": [
+          {
+            "type": "KERNEL_SET",
+            "id": 1
+          }
+        ],
+        "timeSystem": "TDB",
+        "timeFormat": "SECONDS_PAST_J2000",
+        "intervals": [
+          {
+            "startTime": "556599669.1828043",
+            "endTime": "556628469.1827978"
+          }
+        ],
+        "timeStep": 60.0,
+        "timeStepUnits": "SECONDS",
+        "outputTimeSystem": "TDB",
+        "outputTimeFormat": "SECONDS_PAST_J2000",
+        "outputDurationUnits": "SECONDS",
+        "shouldComplementWindow": false,
+        "intervalAdjustment": "NO_ADJUSTMENT",
+        "intervalFiltering": "NO_FILTERING",
+        "target1": "MOON",
+        "target2": "EARTH",
+        "shape1": "ELLIPSOID",
+        "shape2": "ELLIPSOID",
+        "frame1": "IAU_MOON",
+        "frame2": "IAU_EARTH",
+        "observer": "SUN",
+        "aberrationCorrection": "LT",
+        "occultationType": "FULL"
+      },
+      "local": "occultation_5,GF_OCCULTATION_SEARCH,301,10,399,10,J2000,IAU_MOON,Near point: ellipsoid,RECTANGULAR,X,INCIDENCE,>,0.0,0.0,LT,556599669.1828043:556628469.1827978,60.0,0.0,false,NONE,0.0,SECONDS,false,0.0,SECONDS,SECONDS,0.0,0.0,0.0,ELLIPSOID,ELLIPSOID,FULL",
+      "native": [],
+      "errors": []
+    },
+    {
+      "id": "occultation_6",
+      "payload": {
+        "calculationType": "GF_OCCULTATION_SEARCH",
+        "kernels": [
+          {
+            "type": "KERNEL_SET",
+            "id": 1
+          }
+        ],
+        "timeSystem": "TDB",
+        "timeFormat": "SECONDS_PAST_J2000",
+        "intervals": [
+          {
+            "startTime": "556599669.1828043",
+            "endTime": "556628469.1827978"
+          }
+        ],
+        "timeStep": 60.0,
+        "timeStepUnits": "SECONDS",
+        "outputTimeSystem": "TDB",
+        "outputTimeFormat": "SECONDS_PAST_J2000",
+        "outputDurationUnits": "SECONDS",
+        "shouldComplementWindow": false,
+        "intervalAdjustment": "NO_ADJUSTMENT",
+        "intervalFiltering": "NO_FILTERING",
+        "target1": "MOON",
+        "target2": "EARTH",
+        "shape1": "ELLIPSOID",
+        "shape2": "ELLIPSOID",
+        "frame1": "IAU_MOON",
+        "frame2": "IAU_EARTH",
+        "observer": "SUN",
+        "aberrationCorrection": "LT",
+        "occultationType": "PARTIAL"
+      },
+      "local": "occultation_6,GF_OCCULTATION_SEARCH,301,10,399,10,J2000,IAU_MOON,Near point: ellipsoid,RECTANGULAR,X,INCIDENCE,>,0.0,0.0,LT,556599669.1828043:556628469.1827978,60.0,0.0,false,NONE,0.0,SECONDS,false,0.0,SECONDS,SECONDS,0.0,0.0,0.0,ELLIPSOID,ELLIPSOID,PARTIAL",
+      "native": [
+        [
+          556604881.9063661,
+          556608853.8007901,
+          3971.8944239616394
+        ],
+        [
+          556616310.7502482,
+          556620278.1053231,
+          3967.3550748825073
+        ]
+      ],
+      "errors": []
+    },
+    {
+      "id": "occultation_7",
+      "payload": {
+        "calculationType": "GF_OCCULTATION_SEARCH",
+        "kernels": [
+          {
+            "type": "KERNEL_SET",
+            "id": 1
+          }
+        ],
+        "timeSystem": "TDB",
+        "timeFormat": "SECONDS_PAST_J2000",
+        "intervals": [
+          {
+            "startTime": "556599669.1828043",
+            "endTime": "556628469.1827978"
+          }
+        ],
+        "timeStep": 60.0,
+        "timeStepUnits": "SECONDS",
+        "outputTimeSystem": "TDB",
+        "outputTimeFormat": "SECONDS_PAST_J2000",
+        "outputDurationUnits": "SECONDS",
+        "shouldComplementWindow": false,
+        "intervalAdjustment": "NO_ADJUSTMENT",
+        "intervalFiltering": "NO_FILTERING",
+        "target1": "MOON",
+        "target2": "EARTH",
+        "shape1": "ELLIPSOID",
+        "shape2": "ELLIPSOID",
+        "frame1": "IAU_MOON",
+        "frame2": "IAU_EARTH",
+        "observer": "SUN",
+        "aberrationCorrection": "LT",
+        "occultationType": "ANNULAR"
+      },
+      "local": "occultation_7,GF_OCCULTATION_SEARCH,301,10,399,10,J2000,IAU_MOON,Near point: ellipsoid,RECTANGULAR,X,INCIDENCE,>,0.0,0.0,LT,556599669.1828043:556628469.1827978,60.0,0.0,false,NONE,0.0,SECONDS,false,0.0,SECONDS,SECONDS,0.0,0.0,0.0,ELLIPSOID,ELLIPSOID,ANNULAR",
+      "native": [
+        [
+          556608853.8007901,
+          556616310.7502482,
+          7456.949458122253
+        ]
+      ],
+      "errors": []
+    },
+    {
+      "id": "occultation_8",
+      "payload": {
+        "calculationType": "GF_OCCULTATION_SEARCH",
+        "kernels": [
+          {
+            "type": "KERNEL_SET",
+            "id": 1
+          }
+        ],
+        "timeSystem": "TDB",
+        "timeFormat": "SECONDS_PAST_J2000",
+        "intervals": [
+          {
+            "startTime": "556599669.1828043",
+            "endTime": "556628469.1827978"
+          }
+        ],
+        "timeStep": 60.0,
+        "timeStepUnits": "SECONDS",
+        "outputTimeSystem": "TDB",
+        "outputTimeFormat": "SECONDS_PAST_J2000",
+        "outputDurationUnits": "SECONDS",
+        "shouldComplementWindow": false,
+        "intervalAdjustment": "NO_ADJUSTMENT",
+        "intervalFiltering": "NO_FILTERING",
+        "target1": "MOON",
+        "target2": "EARTH",
+        "shape1": "ELLIPSOID",
+        "shape2": "ELLIPSOID",
+        "frame1": "IAU_MOON",
+        "frame2": "IAU_EARTH",
+        "observer": "SUN",
+        "aberrationCorrection": "CN+S",
+        "occultationType": "ANY"
+      },
+      "local": "occultation_8,GF_OCCULTATION_SEARCH,301,10,399,10,J2000,IAU_MOON,Near point: ellipsoid,RECTANGULAR,X,INCIDENCE,>,0.0,0.0,CN+S,556599669.1828043:556628469.1827978,60.0,0.0,false,NONE,0.0,SECONDS,false,0.0,SECONDS,SECONDS,0.0,0.0,0.0,ELLIPSOID,ELLIPSOID,ANY",
+      "native": [
+        [
+          556604881.9039824,
+          556620278.1049395,
+          15396.20095705986
+        ]
+      ],
+      "errors": []
+    },
+    {
+      "id": "occultation_9",
+      "payload": {
+        "calculationType": "GF_OCCULTATION_SEARCH",
+        "kernels": [
+          {
+            "type": "KERNEL_SET",
+            "id": 1
+          }
+        ],
+        "timeSystem": "TDB",
+        "timeFormat": "SECONDS_PAST_J2000",
+        "intervals": [
+          {
+            "startTime": "556599669.1828043",
+            "endTime": "556628469.1827978"
+          }
+        ],
+        "timeStep": 60.0,
+        "timeStepUnits": "SECONDS",
+        "outputTimeSystem": "TDB",
+        "outputTimeFormat": "SECONDS_PAST_J2000",
+        "outputDurationUnits": "SECONDS",
+        "shouldComplementWindow": false,
+        "intervalAdjustment": "NO_ADJUSTMENT",
+        "intervalFiltering": "NO_FILTERING",
+        "target1": "MOON",
+        "target2": "EARTH",
+        "shape1": "ELLIPSOID",
+        "shape2": "ELLIPSOID",
+        "frame1": "IAU_MOON",
+        "frame2": "IAU_EARTH",
+        "observer": "SUN",
+        "aberrationCorrection": "CN+S",
+        "occultationType": "FULL"
+      },
+      "local": "occultation_9,GF_OCCULTATION_SEARCH,301,10,399,10,J2000,IAU_MOON,Near point: ellipsoid,RECTANGULAR,X,INCIDENCE,>,0.0,0.0,CN+S,556599669.1828043:556628469.1827978,60.0,0.0,false,NONE,0.0,SECONDS,false,0.0,SECONDS,SECONDS,0.0,0.0,0.0,ELLIPSOID,ELLIPSOID,FULL",
+      "native": [],
+      "errors": []
+    },
+    {
+      "id": "occultation_10",
+      "payload": {
+        "calculationType": "GF_OCCULTATION_SEARCH",
+        "kernels": [
+          {
+            "type": "KERNEL_SET",
+            "id": 1
+          }
+        ],
+        "timeSystem": "TDB",
+        "timeFormat": "SECONDS_PAST_J2000",
+        "intervals": [
+          {
+            "startTime": "556599669.1828043",
+            "endTime": "556628469.1827978"
+          }
+        ],
+        "timeStep": 60.0,
+        "timeStepUnits": "SECONDS",
+        "outputTimeSystem": "TDB",
+        "outputTimeFormat": "SECONDS_PAST_J2000",
+        "outputDurationUnits": "SECONDS",
+        "shouldComplementWindow": false,
+        "intervalAdjustment": "NO_ADJUSTMENT",
+        "intervalFiltering": "NO_FILTERING",
+        "target1": "MOON",
+        "target2": "EARTH",
+        "shape1": "ELLIPSOID",
+        "shape2": "ELLIPSOID",
+        "frame1": "IAU_MOON",
+        "frame2": "IAU_EARTH",
+        "observer": "SUN",
+        "aberrationCorrection": "CN+S",
+        "occultationType": "PARTIAL"
+      },
+      "local": "occultation_10,GF_OCCULTATION_SEARCH,301,10,399,10,J2000,IAU_MOON,Near point: ellipsoid,RECTANGULAR,X,INCIDENCE,>,0.0,0.0,CN+S,556599669.1828043:556628469.1827978,60.0,0.0,false,NONE,0.0,SECONDS,false,0.0,SECONDS,SECONDS,0.0,0.0,0.0,ELLIPSOID,ELLIPSOID,PARTIAL",
+      "native": [
+        [
+          556604881.9039824,
+          556608853.7988052,
+          3971.8948228359222
+        ],
+        [
+          556616310.7494693,
+          556620278.1049395,
+          3967.3554701805115
+        ]
+      ],
+      "errors": []
+    },
+    {
+      "id": "occultation_11",
+      "payload": {
+        "calculationType": "GF_OCCULTATION_SEARCH",
+        "kernels": [
+          {
+            "type": "KERNEL_SET",
+            "id": 1
+          }
+        ],
+        "timeSystem": "TDB",
+        "timeFormat": "SECONDS_PAST_J2000",
+        "intervals": [
+          {
+            "startTime": "556599669.1828043",
+            "endTime": "556628469.1827978"
+          }
+        ],
+        "timeStep": 60.0,
+        "timeStepUnits": "SECONDS",
+        "outputTimeSystem": "TDB",
+        "outputTimeFormat": "SECONDS_PAST_J2000",
+        "outputDurationUnits": "SECONDS",
+        "shouldComplementWindow": false,
+        "intervalAdjustment": "NO_ADJUSTMENT",
+        "intervalFiltering": "NO_FILTERING",
+        "target1": "MOON",
+        "target2": "EARTH",
+        "shape1": "ELLIPSOID",
+        "shape2": "ELLIPSOID",
+        "frame1": "IAU_MOON",
+        "frame2": "IAU_EARTH",
+        "observer": "SUN",
+        "aberrationCorrection": "CN+S",
+        "occultationType": "ANNULAR"
+      },
+      "local": "occultation_11,GF_OCCULTATION_SEARCH,301,10,399,10,J2000,IAU_MOON,Near point: ellipsoid,RECTANGULAR,X,INCIDENCE,>,0.0,0.0,CN+S,556599669.1828043:556628469.1827978,60.0,0.0,false,NONE,0.0,SECONDS,false,0.0,SECONDS,SECONDS,0.0,0.0,0.0,ELLIPSOID,ELLIPSOID,ANNULAR",
+      "native": [
+        [
+          556608853.7988052,
+          556616310.7494693,
+          7456.9506640434265
+        ]
+      ],
+      "errors": []
+    }
+  ]
+}

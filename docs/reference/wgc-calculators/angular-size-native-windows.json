@@ -1,0 +1,30 @@
+{
+  "platform": "Windows-10-10.0.26300-SP0",
+  "cspice": "CSPICE_N0067",
+  "library_sha256": "7fd2dcc58d73ed5293847e67109897caba34240b8f9c38ad739c0b2ec6ce7715",
+  "kernels": {
+    "de442.bsp": "8d5001fab315eeff222cc51f7cf7ffcdb43fb38fb9ac73ff09e09a5b361fd388",
+    "pck00011.tpc": "3dff7b1dbeceaa01f25467767d3fa25816051c85d162d1edf04acb310ee28bb1",
+    "mars_iau2000_v1.tpc": "07ba38b939ae92c085882752a523addd749fde0abb7a3468423099ed02bb3949"
+  },
+  "rows": [
+    {
+      "et": 0.0,
+      "correction": "NONE",
+      "angle_hex": "-0x1.6aae74b901e54p-15",
+      "full_extent_degrees": 0.004954366077265782
+    },
+    {
+      "et": 0.0,
+      "correction": "LT+S",
+      "angle_hex": "-0x1.6aae730810e16p-15",
+      "full_extent_degrees": 0.004954365724755317
+    },
+    {
+      "et": 500000000.0,
+      "correction": "LT+S",
+      "angle_hex": "-0x1.67938b069eedap-15",
+      "full_extent_degrees": 0.004911948848110497
+    }
+  ]
+}

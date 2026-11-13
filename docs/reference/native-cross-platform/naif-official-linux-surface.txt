@@ -1,0 +1,4 @@
+Near point: ellipsoid: 3d03858c56c2cdfd
+Intercept: ellipsoid: 3d0374d56b1479cf
+LT+S: bdc15d32ce5ac5e1
+CN+S: 3dd4e6c4bd222407

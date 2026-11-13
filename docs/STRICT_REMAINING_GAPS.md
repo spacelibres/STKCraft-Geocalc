@@ -18,7 +18,7 @@ All 24 non-time WebGeocalc families have independent representative references. 
 | --- | --- | --- |
 | STATE_VECTOR | SPKEZR, eight coordinate representations, point locations | Full source/frame/location/shape cross-product |
 | ANGULAR_SEPARATION | POINT/SPHERE and two directions | Additional source, shape and correction combinations |
-| ANGULAR_SIZE | MAX_RADIUS, MIN_RADIUS, LIMB_EXTENTS | Full target/kernel/limb degeneracy matrix |
+| ANGULAR_SIZE | MAX_RADIUS, MIN_RADIUS, LIMB_EXTENTS; explicit target frame for limb widths | Full target/kernel/limb degeneracy matrix and unrounded WGC reference |
 | FRAME_TRANSFORMATION | Fixed/PCK/CK/dynamic/switch; orientation and rates | Shared frame limits above and complete representation matrix |
 | ILLUMINATION_ANGLES | Ellipsoid and direct DSK ILLUMF | DSK facade integration and complete coordinate/error matrix |
 | PHASE_ANGLE | PHASEQ with independent illuminator | Full input/error/correction matrix |

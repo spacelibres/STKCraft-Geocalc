@@ -7,14 +7,17 @@ import importlib.util
 spec=importlib.util.spec_from_file_location('gf_geometry_compare',Path(__file__).with_name('wgc2_geometry_compare.py'))
 c=importlib.util.module_from_spec(spec);spec.loader.exec_module(c)
 
-def compare_gf_rows(reference,actual,label,*,output_exact=False):
+def compare_gf_rows(reference,actual,label,*,output_exact=False,allow_empty=False):
  columns=reference.get('columns',[])
  if [x.get('outputID')for x in columns]!=['DATE','DATE','DURATION'] or [x.get('type')for x in columns]!=['DATE','DATE','NUMBER']:
   raise RuntimeError(f'{label}: GF column schema mismatch')
  if not columns[0].get('name','').startswith('Start Time') or not columns[1].get('name','').startswith('Stop Time') or not columns[2].get('name','').startswith('Duration'):
   raise RuntimeError(f'{label}: GF column schema order mismatch')
- expected=reference.get('rows',[])
- c.checked_count(label+' GF',len(expected),len(actual))
+ if 'rows' not in reference or not isinstance(reference['rows'],list):raise RuntimeError(f'{label}: GF rows missing or invalid')
+ expected=reference['rows']
+ if allow_empty and not expected:
+  if actual:raise RuntimeError(f'{label}: expected an empty window, got {len(actual)} rows')
+ else:c.checked_count(label+' GF',len(expected),len(actual))
  failures=[];differences=[]
  for dataset,rows in [('reference',expected),('local',actual)]:
   previous=None
